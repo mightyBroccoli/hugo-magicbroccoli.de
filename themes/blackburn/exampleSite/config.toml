@@ -1,10 +1,9 @@
-baseURL = "https://xmpp.magicbroccoli.de/"
-languageCode = "de-de"
-title = "Magical XMPP Service"
+baseurl = "https://www.example.com/"
+languageCode = "en-us"
+title = "Blackburn Theme Demo"
 theme = "blackburn"
-author = "nico"
-# Shown in the side menu
-copyright = "&copy; 2017. All rights reserved."
+author = "Yoshiharu Yamashita"
+copyright = "&copy; 2016. All rights reserved."
 canonifyurls = true
 paginate = 10
 
@@ -14,15 +13,13 @@ paginate = 10
 
 [params]
   # Shown in the home page
-  subtitle = "just magical"
+  subtitle = "A Hugo Theme"
   brand = "Blackburn"
+  googleAnalytics = "Your Google Analytics tracking ID"
+  disqus = "Your Disqus shortname"
   # CSS name for highlight.js
   highlightjs = "androidstudio"
   dateFormat = "02 Jan 2006, 15:04"
-  # Include any custom CSS and/or JS files
-  # (relative to /static folder)
-  custom_css = ["css/my.css"]
-  custom_js = ["js/my.js"]
 
 [menu]
   # Shown in the side menu.
@@ -51,16 +48,11 @@ paginate = 10
     url = "/contact/"
 
 [social]
-  # Link your social networking accounts to the side menu
+  # Link your social networking accouns to the side menu
   # by entering your username or ID.
-
-  # SNS microblogging
-  twitter = "@magicbroccoli"
-  jabber = "broccoli@magicbroccoli.de"
-
-  # Techie
-  github = "mightyBroccoli"
-  bitbucket = "mightyBroccoli"
-
-  # Gaming
-  steam = "*"
+  twitter = "*"
+  facebook = "*"
+  instagram = "*"
+  github = "yoshiharuyamashita"
+  stackoverflow = "*"
+  linkedin = "*"
