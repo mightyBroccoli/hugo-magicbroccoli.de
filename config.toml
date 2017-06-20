@@ -1,0 +1,4 @@
+baseURL = "https://xmpp.magicbroccoli.de/"
+languageCode = "de-de"
+title = "Magical XMPP Service"
+theme = "hemingway"
