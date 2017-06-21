@@ -1,6 +1,6 @@
 +++
-date =date = "2017-06-21"
 title = "Terms of Use"
+date = "2017-06-21"
 sidemenu = "true"
 +++
 

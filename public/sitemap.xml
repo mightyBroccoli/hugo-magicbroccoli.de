@@ -1,45 +1,46 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <url>
-    <loc>https://magicbroccoli.de/post/First%20post/</loc>
-    <lastmod>2017-06-20T18:34:25+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://magicbroccoli.de/xmpp/</loc>
-    <lastmod>2017-06-20T18:34:25+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://magicbroccoli.de/termsofuse/</loc>
-    <lastmod>2017-06-20T18:34:25+02:00</lastmod>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>https://magicbroccoli.de/contact/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/datenschutz/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/impressum/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://magicbroccoli.de/xmpp/</loc>
+    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://magicbroccoli.de/termsofuse/</loc>
+    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://magicbroccoli.de/post/first-post/</loc>
+    <lastmod>2017-06-20T18:34:25+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/tags/jabber/</loc>
-    <lastmod>2017-06-20T18:34:25+02:00</lastmod>
+    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/</loc>
-    <lastmod>2017-06-20T18:34:25+02:00</lastmod>
+    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -51,18 +52,24 @@
   
   <url>
     <loc>https://magicbroccoli.de/tags/prosody/</loc>
-    <lastmod>2017-06-20T18:34:25+02:00</lastmod>
+    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/tags/</loc>
+    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://magicbroccoli.de/topics/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/tags/xmpp/</loc>
-    <lastmod>2017-06-20T18:34:25+02:00</lastmod>
+    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

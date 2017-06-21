@@ -2,351 +2,86 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Magical Broccoli</title>
-    <link>https://magicbroccoli.de/index.xml</link>
+    <link>https://magicbroccoli.de/</link>
     <description>Recent content on Magical Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 20 Jun 2017 18:34:25 +0200</lastBuildDate>
-    <atom:link href="https://magicbroccoli.de/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Jun 2017 00:00:00 +0000</lastBuildDate>
     
-    <item>
-      <title>Magical XMPP Server</title>
-      <link>https://magicbroccoli.de/post/First%20post/</link>
-      <pubDate>Tue, 20 Jun 2017 18:34:25 +0200</pubDate>
-      
-      <guid>https://magicbroccoli.de/post/First%20post/</guid>
-      <description>
-
-&lt;h1 id=&#34;this-is-my-first-blogpost-ever&#34;&gt;This is my first blogpost. EVER.&lt;/h1&gt;
-</description>
-    </item>
+	<atom:link href="https://magicbroccoli.de/index.xml" rel="self" type="application/rss+xml" />
     
-    <item>
-      <title>Magical XMPP Server</title>
-      <link>https://magicbroccoli.de/xmpp/</link>
-      <pubDate>Tue, 20 Jun 2017 18:34:25 +0200</pubDate>
-      
-      <guid>https://magicbroccoli.de/xmpp/</guid>
-      <description>
-
-&lt;h2 id=&#34;einführung&#34;&gt;Einführung&lt;/h2&gt;
-
-&lt;p&gt;Ich betreibe einen XMPP Instant Messaging der ursprünglich ausschließlich für die Besucher unseres TeamSpeak gedacht war, allerdings nun auch öffentlich zugänglich ist. Diese Seite ist dafür gedacht einige Features des Servers darzustellen.&lt;/p&gt;
-
-&lt;h5 id=&#34;how-to&#34;&gt;How to:&lt;/h5&gt;
-
-&lt;pre&gt;&lt;code&gt;server/ domain: magicbroccoli.de
-port: 5222
-ressource: random generiert oder ASCI Text
-BOSH URL: magicbroccoli.de:5281/http-bind/
-encryption: always required
-SOCKS5 Proxy: proxy.magicbroccoli.de
-jabber search: search.magicbroccoli.de
-conference server: conference.magicbroccoli.de
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hier &lt;a href=&#34;https://xmpp.org/software/clients.html&#34;&gt;XMPP Clients&lt;/a&gt;.&lt;br /&gt;
-Klare Empfehlung für Windows / Linux : &lt;a href=&#34;https://gajim.org/?lang=de&#34;&gt;Gajim&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Auszug aus den spezieller Server Features:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0033.html&#34;&gt;XEP-0033: Extended Stanza Addressing&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0035.html&#34;&gt;XEP-0035: SSL/TLS Integration&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0055.html&#34;&gt;XEP-0055: Basic implementation of Jabber Search&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0065.html&#34;&gt;XEP-0065: SOCKS5 Bytestreams&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0124.html&#34;&gt;XEP-0124: Bidirectional-streams Over Synchronous HTTP (BOSH)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0136.html&#34;&gt;XEP-0136: Message Archiving&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0198.html&#34;&gt;XEP-0198: Steam Managment&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0280.html&#34;&gt;XEP-0280: Message Carbons&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0313.html&#34;&gt;XEP-0313: Message Archive Management&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0363.html&#34;&gt;XEP-0363: HTTP File Upload&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;datenschutz&#34;&gt;Datenschutz&lt;/h3&gt;
-
-&lt;p&gt;Heutzutage ist eine Datenschutzerklärung wichtiger als je. Da es sich außerdem um persönliche Daten handelt ist hier die &lt;a href=&#34;https://magicbroccoli.de/datenschutz/&#34;&gt;Datenschutzerklärung&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Terms of Use</title>
-      <link>https://magicbroccoli.de/termsofuse/</link>
-      <pubDate>Tue, 20 Jun 2017 18:34:25 +0200</pubDate>
-      
-      <guid>https://magicbroccoli.de/termsofuse/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;Registration and use of the service is free of charge.&lt;/li&gt;
-&lt;li&gt;Users, who were more than 12 months inactive will be deleted automatically.&lt;/li&gt;
-&lt;li&gt;unused accounts will be deleted after 30 days&lt;/li&gt;
-&lt;li&gt;Advertising within the network (product advertising, spam, etc.) is prohibited.&lt;/li&gt;
-&lt;li&gt;The excessive use of the services ((Syn-) Flooding, etc.) and thus their impairment is prohibited.&lt;/li&gt;
-&lt;li&gt;Actions that advance against the laws of the Federal Republic of Germany are prohibited.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
     
     <item>
       <title>About me</title>
       <link>https://magicbroccoli.de/contact/</link>
-      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/contact/</guid>
-      <description>
-
-&lt;h4 id=&#34;mail&#34;&gt;mail&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;mailto:nico(at)magicbroccoli.de&#34;&gt;nico(at)magicbroccoli.de&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;pgp&#34;&gt;PGP&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://pgp.mit.edu/pks/lookup?op=get&amp;amp;search=0xEA7C31AAB1BDC1A2&#34;&gt;0xEA7C31AAB1BDC1A2&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;chat&#34;&gt;Chat&lt;/h4&gt;
-
-&lt;p&gt;XMPP: &lt;a href=&#34;xmpp:broccoli@magicbroccoli.de&#34;&gt;broccoli@magicbroccoli.de&lt;/a&gt;&lt;br /&gt;
-IRC: &lt;code&gt;mightyBroccoli&lt;/code&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;omemo-fingerabdrücke&#34;&gt;OMEMO Fingerabdrücke&lt;/h5&gt;
-
-&lt;p&gt;&lt;code&gt;1e56b6ec dd764842 674f2309 ba981a69 308e5959 ace5e6ed 6ddbf19a ee715324&lt;/code&gt; &lt;a href=&#34;https://conversations.im/&#34;&gt;[Conversations]&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;243C97D7 7D0D2533 298524BC B66EB5E4 E74F6EC5 47079162 C4B917C4 2B25714B&lt;/code&gt; [Gajim PC]&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;b85e592c 5db8519f cfc39b9d 82632a59 9dfa923f a009dc44 c7f9ba07 aa650c58&lt;/code&gt; [Gajim Notebook]&lt;/p&gt;
-</description>
+      <description>mail nico(at)magicbroccoli.de
+PGP 0xEA7C31AAB1BDC1A2
+Chat XMPP: broccoli@magicbroccoli.de
+IRC: mightyBroccoli
+OMEMO Fingerabdrücke 1e56b6ec dd764842 674f2309 ba981a69 308e5959 ace5e6ed 6ddbf19a ee715324 [Conversations]
+243C97D7 7D0D2533 298524BC B66EB5E4 E74F6EC5 47079162 C4B917C4 2B25714B [Gajim PC]
+b85e592c 5db8519f cfc39b9d 82632a59 9dfa923f a009dc44 c7f9ba07 aa650c58 [Gajim Notebook]</description>
     </item>
     
     <item>
       <title>Datenschutz</title>
       <link>https://magicbroccoli.de/datenschutz/</link>
-      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/datenschutz/</guid>
-      <description>
-
-&lt;h1 id=&#34;datenschutzerklärung&#34;&gt;Datenschutzerklärung&lt;/h1&gt;
-
-&lt;h2 id=&#34;datenschutz&#34;&gt;Datenschutz&lt;/h2&gt;
-
-&lt;p&gt;Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.&lt;/p&gt;
-
-&lt;p&gt;Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.&lt;/p&gt;
-
-&lt;p&gt;Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.&lt;/p&gt;
-
-&lt;h2 id=&#34;cookies&#34;&gt;Cookies&lt;/h2&gt;
-
-&lt;p&gt;Die Internetseiten verwenden teilweise so genannte Cookies. Cookies richten auf Ihrem Rechner keinen Schaden an und enthalten keine Viren. Cookies dienen dazu, unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen. Cookies sind kleine Textdateien, die auf Ihrem Rechner abgelegt werden und die Ihr Browser speichert.&lt;/p&gt;
-
-&lt;p&gt;Die meisten der von uns verwendeten Cookies sind so genannte „Session-Cookies“. Sie werden nach Ende Ihres Besuchs automatisch gelöscht. Andere Cookies bleiben auf Ihrem Endgerät gespeichert, bis Sie diese löschen. Diese Cookies ermöglichen es uns, Ihren Browser beim nächsten Besuch wiederzuerkennen.&lt;/p&gt;
-
-&lt;p&gt;Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browser aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalität dieser Website eingeschränkt sein.&lt;/p&gt;
-
-&lt;h2 id=&#34;server-log-files&#34;&gt;Server-Log-Files&lt;/h2&gt;
-
-&lt;p&gt;Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log Files, die Ihr Browser automatisch an uns übermittelt. Dies sind:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Browsertyp und Browserversion&lt;/li&gt;
-&lt;li&gt;verwendetes Betriebssystem&lt;/li&gt;
-&lt;li&gt;Referrer URL&lt;/li&gt;
-&lt;li&gt;Hostname des zugreifenden Rechners&lt;/li&gt;
-&lt;li&gt;Uhrzeit der Serveranfrage&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Diese Daten sind nicht bestimmten Personen zuordenbar. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Wir behalten uns vor, diese Daten nachträglich zu prüfen, wenn uns konkrete Anhaltspunkte für eine rechtswidrige Nutzung bekannt werden.&lt;/p&gt;
-
-&lt;h2 id=&#34;kontaktformular&#34;&gt;Kontaktformular&lt;/h2&gt;
-
-&lt;p&gt;Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.&lt;/p&gt;
-
-&lt;h2 id=&#34;newsletterdaten&#34;&gt;Newsletterdaten&lt;/h2&gt;
-
-&lt;p&gt;Wenn Sie den auf der Webseite angebotenen Newsletter beziehen möchten, benötigen wir von Ihnen eine E-Mail-Adresse sowie Informationen, welche uns die Überprüfung gestatten, dass Sie der Inhaber der angegebenen E-Mail-Adresse sind und mit dem Empfang des Newsletters einverstanden sind. Weitere Daten werden nicht erhoben. Diese Daten verwenden wir ausschließlich für den Versand der angeforderten Informationen und geben sie nicht an Dritte weiter.&lt;/p&gt;
-
-&lt;p&gt;Die erteilte Einwilligung zur Speicherung der Daten, der E-Mail-Adresse sowie deren Nutzung zum Versand des Newsletters können Sie jederzeit widerrufen, etwa über den “Austragen”-Link im Newsletter.&lt;/p&gt;
-
-&lt;h2 id=&#34;jabber&#34;&gt;Jabber&lt;/h2&gt;
-
-&lt;p&gt;Generell werden nur die zum Betrieb des Servers notwendigen Daten auf dem Server gespeichert. Im Detail werden folgende Daten gespeichert:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Name, JabberID, E-Mail-Adresse und Inhalte der VCard&lt;/li&gt;
-&lt;li&gt;Passwort in Form eines sicheren SCRAM-Hashes in der Datenbank&lt;/li&gt;
-&lt;li&gt;Datum und Uhrzeit wann das Benutzerkonto angelegt wurde, wann es das letzte Mal benutzt wurde bzw. wie lange der Benutzer bereits online ist.&lt;/li&gt;
-&lt;li&gt;Online-Status und Status-Nachrichten&lt;/li&gt;
-&lt;li&gt;Die Kontaktliste&lt;/li&gt;
-&lt;li&gt;Multi User Chats (MUCs) speichern je nach Einstellung des Moderators eine gewisse Anzahl oder alle Nachrichten.&lt;/li&gt;
-&lt;li&gt;Offline-Nachrichten&lt;/li&gt;
-&lt;li&gt;Einige Clients speichern weitere Daten (Bookmarks, PubSub, &amp;hellip;) auf dem Server. Über seinen Client hat der Benutzer die Kontrolle darüber, welche Daten auf dem Server liegen.&lt;/li&gt;
-&lt;li&gt;Wenn Nutzer die optionale Funktion Message Archive Managent nutzen um Chatverläufe auf verschiedenen Geräten zu synchronisieren, müssen diese Daten ebenfalls prinzipbedingt auf dem Server gespeichert werden. Nachrichten älter als 2 Monate werden jedoch automatisch vom Server gelöscht.&lt;/li&gt;
-&lt;li&gt;Wird die optionale Funktion HTTP File Upload genutzt um Dateien mit Kontakten auszutauschen, müssen diese Dateien prinzipbedingt auf dem Server gespeichert werden. Nach einem Monat werden diese Dateien automatisch vom Server gelöscht.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Es werden keine Daten an Dritte weitergeben, sofern wir nicht gesetzlich zur Herausgabe der Daten verpflichtet sind. Ausgenommen sind Daten die offensichtlich öffentlich sind:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Informationen der VCard und Avatar-Bilder (die Benutzersuche ist für alle registrierten Benutzer zugänglich)&lt;/li&gt;
-&lt;li&gt;Chat-Nachrichten und Status-Informationen in den öffentlichen Multi User Chats&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;datenschutzerklärung-für-die-nutzung-von-facebook-plugins-like-button&#34;&gt;Datenschutzerklärung für die Nutzung von Facebook-Plugins (Like-Button)&lt;/h2&gt;
-
-&lt;p&gt;Auf unseren Seiten sind Plugins des sozialen Netzwerks Facebook, Anbieter Facebook Inc., 1 Hacker Way, Menlo Park, California 94025, USA, integriert. Die Facebook-Plugins erkennen Sie an dem Facebook-Logo oder dem “Like-Button” (“Gefällt mir”) auf unserer Seite. Eine Übersicht über die Facebook-Plugins finden Sie hier: &lt;a href=&#34;http://developers.facebook.com/docs/plugins/&#34;&gt;http://developers.facebook.com/docs/plugins/&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Wenn Sie unsere Seiten besuchen, wird über das Plugin eine direkte Verbindung zwischen Ihrem Browser und dem Facebook-Server hergestellt. Facebook erhält dadurch die Information, dass Sie mit Ihrer IP-Adresse unsere Seite besucht haben. Wenn Sie den Facebook “Like-Button” anklicken während Sie in Ihrem Facebook- Account eingeloggt sind, können Sie die Inhalte unserer Seiten auf Ihrem Facebook-Profil verlinken. Dadurch kann Facebook den Besuch unserer Seiten Ihrem Benutzerkonto zuordnen. Wir weisen darauf hin, dass wir als Anbieter der Seiten keine Kenntnis vom Inhalt der übermittelten Daten sowie deren Nutzung durch Facebook erhalten. Weitere Informationen hierzu finden Sie in der Datenschutzerklärung von Facebook unter &lt;a href=&#34;http://de-de.facebook.com/policy.php&#34;&gt;http://de-de.facebook.com/policy.php&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Wenn Sie nicht wünschen, dass Facebook den Besuch unserer Seiten Ihrem Facebook-Nutzerkonto zuordnen kann, loggen Sie sich bitte aus Ihrem Facebook- Benutzerkonto aus.&lt;/p&gt;
-
-&lt;h2 id=&#34;datenschutzerklärung-für-die-nutzung-von-twitter&#34;&gt;Datenschutzerklärung für die Nutzung von Twitter&lt;/h2&gt;
-
-&lt;p&gt;Auf unseren Seiten sind Funktionen des Dienstes Twitter eingebunden. Diese Funktionen werden angeboten durch die Twitter Inc., 1355 Market Street, Suite 900, San Francisco, CA 94103, USA. Durch das Benutzen von Twitter und der Funktion “Re-Tweet” werden die von Ihnen besuchten Webseiten mit Ihrem Twitter-Account verknüpft und anderen Nutzern bekannt gegeben. Dabei werden auch Daten an Twitter übertragen. Wir weisen darauf hin, dass wir als Anbieter der Seiten keine Kenntnis vom Inhalt der übermittelten Daten sowie deren Nutzung durch Twitter erhalten. Weitere Informationen hierzu finden Sie in der Datenschutzerklärung von Twitter unter &lt;a href=&#34;http://twitter.com/privacy&#34;&gt;http://twitter.com/privacy&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Ihre Datenschutzeinstellungen bei Twitter können Sie in den Konto-Einstellungen unter: &lt;a href=&#34;http://twitter.com/account/settings&#34;&gt;http://twitter.com/account/settings&lt;/a&gt; ändern.&lt;/p&gt;
-
-&lt;h2 id=&#34;datenschutzerklärung-für-die-nutzung-von-google&#34;&gt;Datenschutzerklärung für die Nutzung von Google+&lt;/h2&gt;
-
-&lt;p&gt;Unsere Seiten nutzen Funktionen von Google+. Anbieter ist die Google Inc., 1600 Amphitheatre Parkway Mountain View, CA 94043, USA.&lt;/p&gt;
-
-&lt;p&gt;Erfassung und Weitergabe von Informationen: Mithilfe der Google+-Schaltfläche können Sie Informationen weltweit veröffentlichen. Über die Google+-Schaltfläche erhalten Sie und andere Nutzer personalisierte Inhalte von Google und unseren Partnern. Google speichert sowohl die Information, dass Sie für einen Inhalt +1 gegeben haben, als auch Informationen über die Seite, die Sie beim Klicken auf +1 angesehen haben. Ihre +1 können als Hinweise zusammen mit Ihrem Profilnamen und Ihrem Foto in Google-Diensten, wie etwa in Suchergebnissen oder in Ihrem Google-Profil, oder an anderen Stellen auf Websites und Anzeigen im Internet eingeblendet werden.&lt;/p&gt;
-
-&lt;p&gt;Google zeichnet Informationen über Ihre +1-Aktivitäten auf, um die Google-Dienste für Sie und andere zu verbessern. Um die Google+-Schaltfläche verwenden zu können, benötigen Sie ein weltweit sichtbares, öffentliches Google-Profil, das zumindest den für das Profil gewählten Namen enthalten muss. Dieser Name wird in allen Google-Diensten verwendet. In manchen Fällen kann dieser Name auch einen anderen Namen ersetzen, den Sie beim Teilen von Inhalten über Ihr Google-Konto verwendet haben. Die Identität Ihres Google-Profils kann Nutzern angezeigt werden, die Ihre E-Mail-Adresse kennen oder über andere identifizierende Informationen von Ihnen verfügen.&lt;/p&gt;
-
-&lt;p&gt;Verwendung der erfassten Informationen: Neben den oben erläuterten Verwendungszwecken werden die von Ihnen bereitgestellten Informationen gemäß den geltenden Google-Datenschutzbestimmungen genutzt. Google veröffentlicht möglicherweise zusammengefasste Statistiken über die +1-Aktivitäten der Nutzer bzw. gibt diese an Nutzer und Partner weiter, wie etwa Publisher, Inserenten oder verbundene Websites.&lt;/p&gt;
-
-&lt;h2 id=&#34;datenschutzerklärung-für-die-nutzung-von-instagram&#34;&gt;Datenschutzerklärung für die Nutzung von Instagram&lt;/h2&gt;
-
-&lt;p&gt;Auf unseren Seiten sind Funktionen des Dienstes Instagram eingebunden. Diese Funktionen werden angeboten durch die Instagram Inc., 1601 Willow Road, Menlo Park, CA, 94025, USA integriert. Wenn Sie in Ihrem Instagram-Account eingeloggt sind können Sie durch Anklicken des Instagram-Buttons die Inhalte unserer Seiten mit Ihrem Instagram-Profil verlinken. Dadurch kann Instagram den Besuch unserer Seiten Ihrem Benutzerkonto zuordnen. Wir weisen darauf hin, dass wir als Anbieter der Seiten keine Kenntnis vom Inhalt der u?bermittelten Daten sowie deren Nutzung durch Instagram erhalten.&lt;/p&gt;
-
-&lt;p&gt;Weitere Informationen hierzu finden Sie in der Datenschutzerklärung von Instagram: &lt;a href=&#34;http://instagram.com/about/legal/privacy/&#34;&gt;http://instagram.com/about/legal/privacy/&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;datenschutzerklärung-für-die-nutzung-von-pinterest&#34;&gt;Datenschutzerklärung für die Nutzung von Pinterest&lt;/h2&gt;
-
-&lt;p&gt;Auf unserer Seite verwenden wir Social Plugins des sozialen Netzwerkes Pinterest, das von der Pinterest Inc., 808 Brannan Street San Francisco, CA 94103-490, USA (“Pinterest”) betrieben wird. Wenn Sie eine Seite aufrufen, die ein solches Plugin enthält, stellt Ihr Browser eine direkte Verbindung zu den Servern von Pinterest her. Das Plugin übermittelt dabei Protokolldaten an den Server von Pinterest in die USA. Diese Protokolldaten enthalten möglicherweise Ihre IP-Adresse, die Adresse der besuchten Websites, die ebenfalls Pinterest-Funktionen enthalten, Art und Einstellungen des Browsers, Datum und Zeitpunkt der Anfrage, Ihre Verwendungsweise von Pinterest sowie Cookies.&lt;/p&gt;
-
-&lt;p&gt;Weitere Informationen zu Zweck, Umfang und weiterer Verarbeitung und Nutzung der Daten durch Pinterest sowie Ihre diesbezüglichen Rechte und Möglichkeiten zum Schutz Ihrer Privatsphäre finden Sie in den den Datenschutzhinweisen von Pinterest: &lt;a href=&#34;https://about.pinterest.com/de/privacy-policy&#34;&gt;https://about.pinterest.com/de/privacy-policy&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;datenschutzerklärung-für-die-nutzung-von-soundcloud&#34;&gt;Datenschutzerklärung für die Nutzung von SoundCloud&lt;/h2&gt;
-
-&lt;p&gt;Auf unseren Seiten können Plugins des sozialen Netzwerks SoundCloud (SoundCloud Limited, Berners House, 47-48 Berners Street, London W1T 3NF, Großbritannien.) integriert sein. Die SoundCloud-Plugins erkennen Sie an dem SoundCloud-Logo auf den betroffenen Seiten.&lt;/p&gt;
-
-&lt;p&gt;Wenn Sie unsere Seiten besuchen, wird nach Aktivierung des Plugin eine direkte Verbindung zwischen Ihrem Browser und dem SoundCloud-Server hergestellt. SoundCloud erhält dadurch die Information, dass Sie mit Ihrer IP-Adresse unsere Seite besucht haben. Wenn Sie den &amp;ldquo;Like-Button&amp;rdquo; oder &amp;ldquo;Share-Button&amp;rdquo; anklicken während Sie in Ihrem SoundCloud- Benutzerkonto eingeloggt sind, können Sie die Inhalte unserer Seiten mit Ihrem SoundCloud-Profil verlinken und/oder teilen. Dadurch kann SoundCloud Ihrem Benutzerkonto den Besuch unserer Seiten zuordnen. Wir weisen darauf hin, dass wir als Anbieter der Seiten keine Kenntnis vom Inhalt der übermittelten Daten sowie deren Nutzung durch SoundCloud erhalten. Weitere Informationen hierzu finden Sie in der Datenschutzerklärung von SoundCloud unter &lt;a href=&#34;https://soundcloud.com/pages/privacy&#34;&gt;https://soundcloud.com/pages/privacy&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Wenn Sie nicht wünschen, dass Soundcloud den Besuch unserer Seiten Ihrem SoundCloud- Benutzerkonto zuordnet, loggen Sie sich bitte aus Ihrem SoundCloud-Benutzerkonto aus bevor Sie Inhalte des SoundCloud-Plugins aktivieren.&lt;/p&gt;
-
-&lt;h2 id=&#34;datenschutzerklärung-für-die-nutzung-von-tumblr&#34;&gt;Datenschutzerklärung für die Nutzung von Tumblr&lt;/h2&gt;
-
-&lt;p&gt;Unsere Seiten nutzen Schaltflächen des Dienstes Tumblr. Anbieter ist die Tumblr, Inc., 35 East 21st St, 10th Floor, New York, NY 10010, USA. Diese Schaltflächen ermöglichen es Ihnen, einen Beitrag oder eine Seite bei Tumblr zu teilen oder dem Anbieter bei Tumblr zu folgen. Wenn Sie eine unserer Webseiten mit Tumblr-Button aufrufen, baut der Browser eine direkte Verbindung mit den Servern von Tumblr auf. Wir haben keinen Einfluss auf den Umfang der Daten, die Tumblr mit Hilfe dieses Plugins erhebt und übermittelt. Nach aktuellem Stand werden die IP-Adresse des Nutzers sowie die URL der jeweiligen Webseite übermittelt.&lt;/p&gt;
-
-&lt;p&gt;Weitere Informationen hierzu finden sich in der Datenschutzerklärung von Tumblr unter &lt;a href=&#34;http://www.tumblr.com/policy/de/privacy&#34;&gt;http://www.tumblr.com/policy/de/privacy&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;datenschutzerklärung-für-die-nutzung-von-youtube&#34;&gt;Datenschutzerklärung für die Nutzung von YouTube&lt;/h2&gt;
-
-&lt;p&gt;Unsere Webseite nutzt Plugins der von Google betriebenen Seite YouTube. Betreiber der Seiten ist die YouTube, LLC, 901 Cherry Ave., San Bruno, CA 94066, USA. Wenn Sie eine unserer mit einem YouTube-Plugin ausgestatteten Seiten besuchen, wird eine Verbindung zu den Servern von YouTube hergestellt. Dabei wird dem Youtube-Server mitgeteilt, welche unserer Seiten Sie besucht haben.&lt;/p&gt;
-
-&lt;p&gt;Wenn Sie in Ihrem YouTube-Account eingeloggt sind ermöglichen Sie YouTube, Ihr Surfverhalten direkt Ihrem persönlichen Profil zuzuordnen. Dies können Sie verhindern, indem Sie sich aus Ihrem YouTube-Account ausloggen.&lt;/p&gt;
-
-&lt;p&gt;Weitere Informationen zum Umgang von Nutzerdaten finden Sie in der Datenschutzerklärung von YouTube unter: &lt;a href=&#34;https://www.google.de/intl/de/policies/privacy&#34;&gt;https://www.google.de/intl/de/policies/privacy&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;kommentarfunktion-auf-dieser-webseite&#34;&gt;Kommentarfunktion auf dieser Webseite&lt;/h2&gt;
-
-&lt;p&gt;Für die Kommentarfunktion auf dieser Seite werden neben Ihrem Kommentar auch Angaben zum Zeitpunkt der Erstellung des Kommentars, Ihre E-Mail-Adresse und, wenn Sie nicht anonym posten, der von Ihnen gewählte Nutzername gespeichert.&lt;/p&gt;
-
-&lt;h4 id=&#34;speicherung-der-ip-adresse&#34;&gt;Speicherung der IP Adresse&lt;/h4&gt;
-
-&lt;p&gt;Unsere Kommentarfunktion speichert die IP-Adressen der Nutzer, die Kommentare verfassen. Da wir Kommentare auf unserer Seite nicht vor der Freischaltung prüfen, benötigen wir diese Daten, um im Falle von Rechtsverletzungen wie Beleidigungen oder Propaganda gegen den Verfasser vorgehen zu können.&lt;/p&gt;
-
-&lt;h4 id=&#34;abonnieren-von-kommentaren&#34;&gt;Abonnieren von Kommentaren&lt;/h4&gt;
-
-&lt;p&gt;Als Nutzer der Seite können Sie nach einer Anmeldung Kommentare abonnieren. Sie erhalten eine Bestätigungsemail, um zu prüfen, ob Sie der Inhaber der angegebenen E-Mail-Adresse sind. Sie können diese Funktion jederzeit über einen Link in den Info-Mails abbestellen.&lt;/p&gt;
-
-&lt;h2 id=&#34;ssl-verschlüsselung&#34;&gt;SSL-Verschlüsselung&lt;/h2&gt;
-
-&lt;p&gt;Diese Seite nutzt aus Gründen der Sicherheit und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel der Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von &amp;ldquo;http://&amp;rdquo; auf &amp;ldquo;https://&amp;rdquo; wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.&lt;/p&gt;
-
-&lt;p&gt;Wenn die SSL Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden.&lt;/p&gt;
-
-&lt;h2 id=&#34;auskunft-löschung-sperrung&#34;&gt;Auskunft, Löschung, Sperrung&lt;/h2&gt;
-
-&lt;p&gt;Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden.&lt;/p&gt;
-</description>
+      <description>Datenschutzerklärung Datenschutz Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.</description>
     </item>
     
     <item>
       <title>Impressum</title>
       <link>https://magicbroccoli.de/impressum/</link>
-      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/impressum/</guid>
-      <description>
-
-&lt;h2 id=&#34;impressum&#34;&gt;Impressum&lt;/h2&gt;
-
-&lt;p&gt;Angaben gemäß § 5 TMG&lt;/p&gt;
-
-&lt;p&gt;Nico Wellpott&lt;br /&gt;
-Scheideweg 157&lt;br /&gt;
-26127 Oldenburg&lt;/p&gt;
-
-&lt;h5 id=&#34;vertreten-durch&#34;&gt;Vertreten durch:&lt;/h5&gt;
-
-&lt;p&gt;Nico Wellpott&lt;/p&gt;
-
-&lt;h5 id=&#34;kontakt&#34;&gt;Kontakt:&lt;/h5&gt;
-
-&lt;p&gt;Telefon: 0441 93652965&lt;br /&gt;
-E-Mail: admin@magicbroccoli.de&lt;/p&gt;
-
-&lt;h5 id=&#34;verantwortlich-für-den-inhalt-nach-55-abs-2-rstv&#34;&gt;Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:&lt;/h5&gt;
-
-&lt;p&gt;Nico Wellpott&lt;br /&gt;
-Scheideweg 157&lt;br /&gt;
-26127 Oldenburg&lt;/p&gt;
-
-&lt;h4 id=&#34;haftungsausschluss&#34;&gt;Haftungsausschluss&lt;/h4&gt;
-
-&lt;h3 id=&#34;haftung-für-inhalte&#34;&gt;Haftung für Inhalte&lt;/h3&gt;
-
-&lt;p&gt;Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.&lt;/p&gt;
-
-&lt;h3 id=&#34;haftung-für-links&#34;&gt;Haftung für Links&lt;/h3&gt;
-
-&lt;p&gt;Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.&lt;/p&gt;
-
-&lt;h3 id=&#34;urheberrecht&#34;&gt;Urheberrecht&lt;/h3&gt;
-
-&lt;p&gt;Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.&lt;/p&gt;
-
-&lt;h3 id=&#34;datenschutz&#34;&gt;Datenschutz&lt;/h3&gt;
-
-&lt;p&gt;Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.
-Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
-Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.&lt;/p&gt;
-
-&lt;p&gt;&lt;div class=&#39;impressum&#39;&gt;&lt;h1&gt;Impressum&lt;/h1&gt;&lt;p&gt;Angaben gemäß § 5 TMG&lt;/p&gt;&lt;p&gt;Max Muster &lt;br&gt;
-Musterweg&lt;br&gt;
-12345 Musterstadt &lt;br&gt;
-&lt;/p&gt;&lt;p&gt; &lt;strong&gt;Vertreten durch: &lt;/strong&gt;&lt;br&gt;
-Max Muster&lt;br&gt;
-&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Kontakt:&lt;/strong&gt; &lt;br&gt;
-Telefon: 01234-789456&lt;br&gt;
-Fax: 1234-56789&lt;br&gt;
-E-Mail: &lt;a href=&#39;mailto:max@muster.de&#39;&gt;max@muster.de&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Umsatzsteuer-ID: &lt;/strong&gt; &lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;Musteraufsicht Musterstadt&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:&lt;/strong&gt;&lt;br&gt;
-Max Muster &lt;br&gt;
-Musterweg&lt;br&gt;
-12345 Musterstadt &lt;br&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Haftungsausschluss: &lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Haftung für Inhalte&lt;/strong&gt;&lt;br&gt;&lt;br&gt;
-Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Haftung für Links&lt;/strong&gt;&lt;br&gt;&lt;br&gt;
-Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Urheberrecht&lt;/strong&gt;&lt;br&gt;&lt;br&gt;
-Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Datenschutz&lt;/strong&gt;&lt;br&gt;&lt;br&gt;
-Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben. &lt;br&gt;
-Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich. &lt;br&gt;
-Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.&lt;br&gt;
-&lt;/p&gt;&lt;br&gt;&lt;/p&gt;
-</description>
+      <description>Impressum Angaben gemäß § 5 TMG
+Nico Wellpott
+Scheideweg 157
+26127 Oldenburg
+Vertreten durch: Nico Wellpott
+Kontakt: Telefon: 0441 93652965
+E-Mail: admin@magicbroccoli.de
+Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: Nico Wellpott
+Scheideweg 157
+26127 Oldenburg
+Haftungsausschluss Haftung für Inhalte Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.</description>
+    </item>
+    
+    <item>
+      <title>Magical XMPP Server</title>
+      <link>https://magicbroccoli.de/xmpp/</link>
+      <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/xmpp/</guid>
+      <description>Einführung Ich betreibe einen XMPP Instant Messaging Server, der ursprünglich ausschließlich für die Besucher meines TeamSpeak gedacht war. Allerdings nun auch öffentlich zugänglich ist. Hier möchte ich einige Dinge erläutern die für eine Verbindung, sowie Nachrichten Versand/Empfang notwendig sind.
+How to: server/ domain: magicbroccoli.de port: 5222 ressource: random generiert oder ASCI Text BOSH URL: magicbroccoli.de:5281/http-bind/ encryption: always required SOCKS5 Proxy: proxy.magicbroccoli.de jabber search: search.magicbroccoli.de conference server: conference.magicbroccoli.de  Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hier XMPP Clients.</description>
+    </item>
+    
+    <item>
+      <title>Terms of Use</title>
+      <link>https://magicbroccoli.de/termsofuse/</link>
+      <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/termsofuse/</guid>
+      <description> Registration and use of the service is free of charge. Users, who were more than 12 months inactive will be deleted automatically. unused accounts will be deleted after 30 days Advertising within the network (product advertising, spam, etc.) is prohibited. The excessive use of the services ((Syn-) Flooding, etc.) and thus their impairment is prohibited. Actions that advance against the laws of the Federal Republic of Germany are prohibited.  </description>
+    </item>
+    
+    <item>
+      <title>Magical XMPP Server</title>
+      <link>https://magicbroccoli.de/post/first-post/</link>
+      <pubDate>Tue, 20 Jun 2017 18:34:25 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/first-post/</guid>
+      <description> This is my first blogpost. EVER. </description>
     </item>
     
   </channel>
