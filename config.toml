@@ -29,25 +29,37 @@ paginate = 10
   [[menu.main]]
     name = "Home"
     pre = "<i class='fa fa-home fa-fw'></i>"
-    weight = 0
+    weight = 1
     identifier = "home"
     url = "/"
   [[menu.main]]
     name = "Posts"
     pre = "<i class='fa fa-list fa-fw'></i>"
-    weight = 1
+    weight = 2
     identifier = "post"
     url = "/post/"
   [[menu.main]]
-    name = "About"
+    name = "Impressum"
     pre = "<i class='fa fa-user fa-fw'></i>"
-    weight = 2
+    weight = 3
     identifier = "about"
-    url = "/about/"
+    url = "/impressum/"
+  [[menu.main]]
+    name = "Terms of Use"
+    pre = "<i class='fa fa-user fa-fw'></i>"
+    weight = 4
+    identifier = "Terms of Use"
+    url = "/termsofuse/"
+  [[menu.main]]
+    name = "Datenschutz"
+    pre = "<i class='fa fa-user-secret' aria-hidden='true'></i>"
+    weight = 5
+    identifier = "Datenschutz"
+    url = "/datenschutz/"
   [[menu.main]]
     name = "Contact"
-    pre = "<i class='fa fa-phone fa-fw'></i>"
-    weight = 3
+    pre = "<i class='fa fa-address-book-o' aria-hidden='true'></i>"
+    weight = 10
     url = "/contact/"
 
 [social]
@@ -55,7 +67,7 @@ paginate = 10
   # by entering your username or ID.
 
   # SNS microblogging
-  twitter = "@magicbroccoli"
+  twitter = "mightyBroccoli"
   jabber = "broccoli@magicbroccoli.de"
 
   # Techie
@@ -63,4 +75,4 @@ paginate = 10
   bitbucket = "mightyBroccoli"
 
   # Gaming
-  steam = "*"
+  # steam = "*"
