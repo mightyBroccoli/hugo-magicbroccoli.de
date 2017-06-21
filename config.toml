@@ -1,6 +1,6 @@
-baseURL = "https://xmpp.magicbroccoli.de/"
+baseURL = "https://magicbroccoli.de/"
 languageCode = "de-de"
-title = "Magical XMPP Service"
+title = "Magical Broccoli"
 theme = "blackburn"
 author = "nico"
 # Shown in the side menu
@@ -47,19 +47,19 @@ paginate = 10
   [[menu.main]]
     name = "Impressum"
     pre = "<i class='fa fa-user fa-fw'></i>"
-    weight = 3
+    weight = 7
     identifier = "Impressum"
     url = "/impressum/"
   [[menu.main]]
     name = "Terms of Use"
     pre = "<i class='fa fa-user fa-fw'></i>"
-    weight = 4
+    weight = 8
     identifier = "Terms of Use"
     url = "/termsofuse/"
   [[menu.main]]
     name = "Datenschutz"
     pre = "<i class='fa fa-user-secret' aria-hidden='true'></i>"
-    weight = 5
+    weight = 9
     identifier = "Datenschutz"
     url = "/datenschutz/"
   [[menu.main]]

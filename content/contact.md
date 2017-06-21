@@ -1,46 +1,24 @@
 +++
-title = "Contact"
+title = "About me"
 date = "2014-04-09"
 sidemenu = "true"
 description = "How to contact me"
 +++
 
-<form class="pure-form pure-form-stacked">
-  <fieldset>
-    <div class="pure-g">
-      <div class="pure-u-1 pure-u-md-1-3">
-        <label for="first-name">First Name</label>
-        <input id="first-name" class="pure-u-23-24" type="text">
-      </div>
+#### mail
+[nico(at)magicbroccoli.de](mailto:nico(at)magicbroccoli.de)
 
-      <div class="pure-u-1 pure-u-md-1-3">
-        <label for="last-name">Last Name</label>
-        <input id="last-name" class="pure-u-23-24" type="text">
-      </div>
+#### PGP
+[0xEA7C31AAB1BDC1A2](https://pgp.mit.edu/pks/lookup?op=get&search=0xEA7C31AAB1BDC1A2)
 
-      <div class="pure-u-1 pure-u-md-1-3">
-        <label for="email">E-Mail</label>
-        <input id="email" class="pure-u-23-24" type="email" required>
-      </div>
+#### Chat
+XMPP: [broccoli@magicbroccoli.de](xmpp:broccoli@magicbroccoli.de)  
+IRC: ```mightyBroccoli```
 
-      <div class="pure-u-1 pure-u-md-1-3">
-        <label for="city">City</label>
-        <input id="city" class="pure-u-23-24" type="text">
-      </div>
+##### OMEMO Fingerabdrücke
+`1e56b6ec dd764842 674f2309 ba981a69 308e5959 ace5e6ed 6ddbf19a ee715324` [Conversations](https://conversations.im/)  
+  
+`243C97D7 7D0D2533 298524BC B66EB5E4 E74F6EC5 47079162 C4B917C4 2B25714B` [Gajim PC]  
+  
+`b85e592c 5db8519f cfc39b9d 82632a59 9dfa923f a009dc44 c7f9ba07 aa650c58` [Gajim Notebook]  
 
-      <div class="pure-u-1 pure-u-md-1-3">
-        <label for="state">State</label>
-        <select id="state" class="pure-input-1-2">
-          <option>AL</option>
-          <option>CA</option>
-          <option>IL</option>
-        </select>
-      </div>
-    </div>
-    <fieldset class="pure-group">
-      <input type="text" class="pure-input-1-2" placeholder="A title">
-      <textarea class="pure-input-1-2" placeholder="Your message"></textarea>
-    </fieldset>
-    <button type="submit" class="pure-button pure-button-primary">Send</button>
-  </fieldset>
-</form>
