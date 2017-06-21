@@ -1,51 +1,76 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Magical XMPP Service</title>
-    <link>https://xmpp.magicbroccoli.de/</link>
-    <description>Recent content on Magical XMPP Service</description>
+    <title>Magical Broccoli</title>
+    <link>https://magicbroccoli.de/</link>
+    <description>Recent content on Magical Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
     <lastBuildDate>Tue, 20 Jun 2017 18:34:25 +0200</lastBuildDate>
     
-	<atom:link href="https://xmpp.magicbroccoli.de/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://magicbroccoli.de/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Terms of Use</title>
-      <link>https://xmpp.magicbroccoli.de/termsofuse/</link>
+      <title>Magical XMPP Server</title>
+      <link>https://magicbroccoli.de/post/first-post/</link>
       <pubDate>Tue, 20 Jun 2017 18:34:25 +0200</pubDate>
       
-      <guid>https://xmpp.magicbroccoli.de/termsofuse/</guid>
+      <guid>https://magicbroccoli.de/post/first-post/</guid>
+      <description> This is my first blogpost. EVER. </description>
+    </item>
+    
+    <item>
+      <title>Magical XMPP Server</title>
+      <link>https://magicbroccoli.de/xmpp/</link>
+      <pubDate>Tue, 20 Jun 2017 18:34:25 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/xmpp/</guid>
+      <description>Einführung Ich betreibe einen XMPP Instant Messaging der ursprünglich ausschließlich für die Besucher unseres TeamSpeak gedacht war, allerdings nun auch öffentlich zugänglich ist. Diese Seite ist dafür gedacht einige Features des Servers darzustellen.
+How to: server/ domain: magicbroccoli.de port: 5222 ressource: random generiert oder ASCI Text BOSH URL: magicbroccoli.de:5281/http-bind/ encryption: always required SOCKS5 Proxy: proxy.magicbroccoli.de jabber search: search.magicbroccoli.de conference server: conference.magicbroccoli.de  Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hier XMPP Clients.</description>
+    </item>
+    
+    <item>
+      <title>Terms of Use</title>
+      <link>https://magicbroccoli.de/termsofuse/</link>
+      <pubDate>Tue, 20 Jun 2017 18:34:25 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/termsofuse/</guid>
       <description> Registration and use of the service is free of charge. Users, who were more than 12 months inactive will be deleted automatically. unused accounts will be deleted after 30 days Advertising within the network (product advertising, spam, etc.) is prohibited. The excessive use of the services ((Syn-) Flooding, etc.) and thus their impairment is prohibited. Actions that advance against the laws of the Federal Republic of Germany are prohibited.  </description>
     </item>
     
     <item>
-      <title>Contact</title>
-      <link>https://xmpp.magicbroccoli.de/contact/</link>
+      <title>About me</title>
+      <link>https://magicbroccoli.de/contact/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://xmpp.magicbroccoli.de/contact/</guid>
-      <description> First Name  Last Name  E-Mail  City  State AL CA IL      Send   </description>
+      <guid>https://magicbroccoli.de/contact/</guid>
+      <description>mail nico(at)magicbroccoli.de
+PGP 0xEA7C31AAB1BDC1A2
+Chat XMPP: broccoli@magicbroccoli.de
+IRC: mightyBroccoli
+OMEMO Fingerabdrücke 1e56b6ec dd764842 674f2309 ba981a69 308e5959 ace5e6ed 6ddbf19a ee715324 Conversations
+243C97D7 7D0D2533 298524BC B66EB5E4 E74F6EC5 47079162 C4B917C4 2B25714B [Gajim PC]
+b85e592c 5db8519f cfc39b9d 82632a59 9dfa923f a009dc44 c7f9ba07 aa650c58 [Gajim Notebook]</description>
     </item>
     
     <item>
       <title>Datenschutz</title>
-      <link>https://xmpp.magicbroccoli.de/datenschutz/</link>
+      <link>https://magicbroccoli.de/datenschutz/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://xmpp.magicbroccoli.de/datenschutz/</guid>
+      <guid>https://magicbroccoli.de/datenschutz/</guid>
       <description>Datenschutzerklärung Datenschutz Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
 Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.</description>
     </item>
     
     <item>
       <title>Impressum</title>
-      <link>https://xmpp.magicbroccoli.de/impressum/</link>
+      <link>https://magicbroccoli.de/impressum/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://xmpp.magicbroccoli.de/impressum/</guid>
+      <guid>https://magicbroccoli.de/impressum/</guid>
       <description>Impressum Angaben gemäß § 5 TMG
 Nico Wellpott
 Scheideweg 157

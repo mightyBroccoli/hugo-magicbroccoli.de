@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jabber on Magical Broccoli</title>
+    <link>https://magicbroccoli.de/tags/jabber/</link>
+    <description>Recent content in Jabber on Magical Broccoli</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 20 Jun 2017 18:34:25 +0200</lastBuildDate>
+    
+	<atom:link href="https://magicbroccoli.de/tags/jabber/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Magical XMPP Server</title>
+      <link>https://magicbroccoli.de/xmpp/</link>
+      <pubDate>Tue, 20 Jun 2017 18:34:25 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/xmpp/</guid>
+      <description>Einführung Ich betreibe einen XMPP Instant Messaging der ursprünglich ausschließlich für die Besucher unseres TeamSpeak gedacht war, allerdings nun auch öffentlich zugänglich ist. Diese Seite ist dafür gedacht einige Features des Servers darzustellen.
+How to: server/ domain: magicbroccoli.de port: 5222 ressource: random generiert oder ASCI Text BOSH URL: magicbroccoli.de:5281/http-bind/ encryption: always required SOCKS5 Proxy: proxy.magicbroccoli.de jabber search: search.magicbroccoli.de conference server: conference.magicbroccoli.de  Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hier XMPP Clients.</description>
+    </item>
+    
+  </channel>
+</rss>
