@@ -39,10 +39,16 @@ paginate = 10
     identifier = "post"
     url = "/post/"
   [[menu.main]]
+    name = "XMPP Server"
+    pre = "<i class='fa fa-delicious' aria-hidden='true'></i>"
+    weight = 2
+    identifier = "xmpp"
+    url = "/xmpp/"
+  [[menu.main]]
     name = "Impressum"
     pre = "<i class='fa fa-user fa-fw'></i>"
     weight = 3
-    identifier = "about"
+    identifier = "Impressum"
     url = "/impressum/"
   [[menu.main]]
     name = "Terms of Use"
