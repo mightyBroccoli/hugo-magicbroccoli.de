@@ -2,23 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Magical Broccoli</title>
-    <link>https://magicbroccoli.de/post/</link>
+    <link>https://magicbroccoli.de/post/index.xml</link>
     <description>Recent content in Posts on Magical Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
     <lastBuildDate>Tue, 20 Jun 2017 18:34:25 +0200</lastBuildDate>
-    
-	<atom:link href="https://magicbroccoli.de/post/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="https://magicbroccoli.de/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Magical XMPP Server</title>
-      <link>https://magicbroccoli.de/post/first-post/</link>
+      <link>https://magicbroccoli.de/post/First%20post/</link>
       <pubDate>Tue, 20 Jun 2017 18:34:25 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/post/first-post/</guid>
-      <description> This is my first blogpost. EVER. </description>
+      <guid>https://magicbroccoli.de/post/First%20post/</guid>
+      <description>
+
+&lt;h1 id=&#34;this-is-my-first-blogpost-ever&#34;&gt;This is my first blogpost. EVER.&lt;/h1&gt;
+</description>
     </item>
     
   </channel>

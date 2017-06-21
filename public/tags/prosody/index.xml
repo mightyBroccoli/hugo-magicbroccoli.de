@@ -2,15 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Prosody on Magical Broccoli</title>
-    <link>https://magicbroccoli.de/tags/prosody/</link>
+    <link>https://magicbroccoli.de/tags/prosody/index.xml</link>
     <description>Recent content in Prosody on Magical Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 20 Jun 2017 18:34:25 +0200</lastBuildDate>
-    
-	<atom:link href="https://magicbroccoli.de/tags/prosody/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="https://magicbroccoli.de/tags/prosody/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Magical XMPP Server</title>
@@ -18,8 +15,46 @@
       <pubDate>Tue, 20 Jun 2017 18:34:25 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/xmpp/</guid>
-      <description>Einführung Ich betreibe einen XMPP Instant Messaging der ursprünglich ausschließlich für die Besucher unseres TeamSpeak gedacht war, allerdings nun auch öffentlich zugänglich ist. Diese Seite ist dafür gedacht einige Features des Servers darzustellen.
-How to: server/ domain: magicbroccoli.de port: 5222 ressource: random generiert oder ASCI Text BOSH URL: magicbroccoli.de:5281/http-bind/ encryption: always required SOCKS5 Proxy: proxy.magicbroccoli.de jabber search: search.magicbroccoli.de conference server: conference.magicbroccoli.de  Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hier XMPP Clients.</description>
+      <description>
+
+&lt;h2 id=&#34;einführung&#34;&gt;Einführung&lt;/h2&gt;
+
+&lt;p&gt;Ich betreibe einen XMPP Instant Messaging der ursprünglich ausschließlich für die Besucher unseres TeamSpeak gedacht war, allerdings nun auch öffentlich zugänglich ist. Diese Seite ist dafür gedacht einige Features des Servers darzustellen.&lt;/p&gt;
+
+&lt;h5 id=&#34;how-to&#34;&gt;How to:&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;server/ domain: magicbroccoli.de
+port: 5222
+ressource: random generiert oder ASCI Text
+BOSH URL: magicbroccoli.de:5281/http-bind/
+encryption: always required
+SOCKS5 Proxy: proxy.magicbroccoli.de
+jabber search: search.magicbroccoli.de
+conference server: conference.magicbroccoli.de
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hier &lt;a href=&#34;https://xmpp.org/software/clients.html&#34;&gt;XMPP Clients&lt;/a&gt;.&lt;br /&gt;
+Klare Empfehlung für Windows / Linux : &lt;a href=&#34;https://gajim.org/?lang=de&#34;&gt;Gajim&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Auszug aus den spezieller Server Features:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0033.html&#34;&gt;XEP-0033: Extended Stanza Addressing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0035.html&#34;&gt;XEP-0035: SSL/TLS Integration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0055.html&#34;&gt;XEP-0055: Basic implementation of Jabber Search&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0065.html&#34;&gt;XEP-0065: SOCKS5 Bytestreams&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0124.html&#34;&gt;XEP-0124: Bidirectional-streams Over Synchronous HTTP (BOSH)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0136.html&#34;&gt;XEP-0136: Message Archiving&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0198.html&#34;&gt;XEP-0198: Steam Managment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0280.html&#34;&gt;XEP-0280: Message Carbons&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0313.html&#34;&gt;XEP-0313: Message Archive Management&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0363.html&#34;&gt;XEP-0363: HTTP File Upload&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;datenschutz&#34;&gt;Datenschutz&lt;/h3&gt;
+
+&lt;p&gt;Heutzutage ist eine Datenschutzerklärung wichtiger als je. Da es sich außerdem um persönliche Daten handelt ist hier die &lt;a href=&#34;https://magicbroccoli.de/datenschutz/&#34;&gt;Datenschutzerklärung&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
   </channel>
