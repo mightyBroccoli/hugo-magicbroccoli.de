@@ -1,6 +1,6 @@
 +++
 title = "About me"
-date = "2014-04-09"
+date = "2017-06-21"
 sidemenu = "true"
 description = "How to contact me"
 +++
@@ -16,7 +16,7 @@ XMPP: [broccoli@magicbroccoli.de](xmpp:broccoli@magicbroccoli.de)
 IRC: ```mightyBroccoli```
 
 ##### OMEMO Fingerabdrücke
-`1e56b6ec dd764842 674f2309 ba981a69 308e5959 ace5e6ed 6ddbf19a ee715324` [[Conversations]](https://conversations.im/)  
+`1e56b6ec dd764842 674f2309 ba981a69 308e5959 ace5e6ed 6ddbf19a ee715324` [Conversations]  
   
 `243C97D7 7D0D2533 298524BC B66EB5E4 E74F6EC5 47079162 C4B917C4 2B25714B` [Gajim PC]  
   

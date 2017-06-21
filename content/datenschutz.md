@@ -1,8 +1,7 @@
 +++
 title = "Datenschutz"
-date = "2014-04-09"
+date = "2017-06-21"
 sidemenu = "true"
-#description = "Impressum"
 +++
 # Datenschutzerklärung
 ## Datenschutz

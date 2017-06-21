@@ -1,8 +1,7 @@
 +++
 title = "Impressum"
-date = "2014-04-09"
+date = "2017-06-21"
 sidemenu = "true"
-#description = "Impressum"
 +++
 ## Impressum
 Angaben gemäß § 5 TMG

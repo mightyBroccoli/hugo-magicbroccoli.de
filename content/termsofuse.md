@@ -1,7 +1,7 @@
 +++
-date = "2017-06-20T18:34:25+02:00"
+date =date = "2017-06-21"
 title = "Terms of Use"
-
+sidemenu = "true"
 +++
 
 * Registration and use of the service is free of charge.
