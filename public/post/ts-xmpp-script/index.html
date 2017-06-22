@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TeamSpeak Script">
+  <meta name="generator" content="Hugo 0.24" />
+
+  <title>TeamSpeak XMPP Push &middot; Magical Broccoli</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.2/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.2/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.2/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://magicbroccoli.de/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://magicbroccoli.de/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://magicbroccoli.de/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://magicbroccoli.de/img/favicon.ico" type="image/x-icon" />
+
+  
+    <link rel="stylesheet" href="https://magicbroccoli.de/css/my.css">
+  
+  
+    <script src="https://magicbroccoli.de/js/my.js"></script>
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://magicbroccoli.de/">Blackburn</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/xmpp/"><i class='fa fa-delicious' aria-hidden='true'></i>XMPP Server</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/tags/"><i class='fa fa-tags' aria-hidden='true'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/topics/"><i class='fa fa-folder-o' aria-hidden='true'></i>Topics</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/termsofuse/"><i class='fa fa-user fa-fw'></i>Terms of Use</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/datenschutz/"><i class='fa fa-user-secret' aria-hidden='true'></i>Datenschutz</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/contact/"><i class='fa fa-address-book-o' aria-hidden='true'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/impressum/"><i class='fa fa-user fa-fw'></i>Impressum</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/mightyBroccoli" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/mightyBroccoli" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://bitbucket.org/mightyBroccoli" target="_blank"><i class="fa fa-bitbucket-square fa-fw"></i>Bitbucket</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2017. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>TeamSpeak XMPP Push</h1>
+  <h2>TeamSpeak Script</h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>22 Jun 2017, 00:00</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/development">Development</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/bash">bash</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/teamspeak">TeamSpeak</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/xmpp">XMPP</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+
+<h2 id="idee">Idee</h2>
+
+<p>Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen.  linktitle: &ldquo;ts-xmpp-push&rdquo;</p>
+
+<p>Daher habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP pushed.</p>
+
+<h2 id="nutzen">Nutzen</h2>
+
+<p><strong>IMHO</strong> Gibt es genügend Beispiele von Fällen, in denen eine Benachrichtigung sehr praktisch ist.<br />
+Viele Server unterstützen eine Reihe von &ldquo;Automatischen Moderationen&rdquo;, trotzdem sollten User nicht in der Lage sein sich Gruppen zuzuweisen. Diese kurze Benachrichtigung sagt dem Admin/ Moderator wer und welche Gruppe betroffen ist.<br />
+Je nach Haufigkeit der Ausführung könnte die Benachrichtigung innerhalb von Sekunden gepushed werden.</p>
+
+<pre><code>---- Group change ----
+--- added ---
+2017-05-12 18:56:38.609377|INFO    |VirtualServer |1  |client (id:USER A) was added to servergroup 'SERVERGROUP NAME'(id:SERVERGROUP ID) by client 'USERNAME'(id:USER B)
+2017-05-12 22:09:01.658969|INFO    |VirtualServer |1  |client (id:USER ID) was added to servergroup 'SERVERGROUP NAME'(id:SERVERGROUP ID) by client 'USERNAME'(id:USER ID)
+---- Group change End ----
+</code></pre>
+
+<h2 id="filter">Filter</h2>
+
+<h4 id="server">Server</h4>
+
+<ul>
+<li>Accounting</li>
+<li>ServerMain</li>
+<li>Warning</li>
+<li>ERROR</li>
+</ul>
+
+<h4 id="user-spezifisch">User spezifisch</h4>
+
+<ul>
+<li>Complaint</li>
+<li>Kick</li>
+<li>Ban ( added and deleted )</li>
+<li>Group change</li>
+</ul>
+
+<h4 id="channel">Channel</h4>
+
+<ul>
+<li>creation</li>
+<li>deletion</li>
+<li>changed</li>
+</ul>
+
+<h2 id="bitbucket">Bitbucket</h2>
+
+<p>Gehostet habe ich das Projekt auf <a href="https://bitbucket.org/mightyBroccoli/logwatch-scripts/src/6551365b8135/teamspeak_scripts/?at=master">Bitbucket</a> dort ist auch ein Bereich für Issues, falls Probleme auftreten oder natürlich für Vorschläge.</p>
+
+<h2 id="debian-9">Debian 9</h2>
+
+<p>Leider besteht mit Debian Stretch mit mit perl wodurch <em>sendxmpp</em> der push Part des Skripts nicht mehr funktioniert. Leider kann ich da im Moment erst mal nicht machen aber ich repariere das Skipt für Debian Stretch sobal es möglich ist.</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://magicbroccoli.de/post/first-post/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://magicbroccoli.de/post/first-post/">Magical XMPP Server</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://magicbroccoli.de/js/ui.js"></script>
+
+
+
+
+</body>
+</html>
+

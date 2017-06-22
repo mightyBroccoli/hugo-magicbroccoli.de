@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://magicbroccoli.de/post/ts-xmpp-script/</loc>
+    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://magicbroccoli.de/contact/</loc>
     <lastmod>2017-06-21T00:00:00+00:00</lastmod>
   </url>
@@ -33,6 +38,18 @@
   </url>
   
   <url>
+    <loc>https://magicbroccoli.de/topics/bash/</loc>
+    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://magicbroccoli.de/topics/development/</loc>
+    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://magicbroccoli.de/tags/jabber/</loc>
     <lastmod>2017-06-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -40,13 +57,13 @@
   
   <url>
     <loc>https://magicbroccoli.de/</loc>
-    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
+    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/post/</loc>
-    <lastmod>2017-06-20T18:34:25+02:00</lastmod>
+    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -63,13 +80,26 @@
   </url>
   
   <url>
+    <loc>https://magicbroccoli.de/tags/teamspeak/</loc>
+    <lastmod>2017-06-20T18:34:25+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://magicbroccoli.de/topics/teamspeak/</loc>
+    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://magicbroccoli.de/topics/</loc>
+    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/tags/xmpp/</loc>
-    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
+    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

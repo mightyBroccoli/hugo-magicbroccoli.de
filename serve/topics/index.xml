@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Topics on Magical XMPP Service</title>
-    <link>https://xmpp.magicbroccoli.de/topics/</link>
-    <description>Recent content in Topics on Magical XMPP Service</description>
+    <title>Topics on Magical Broccoli</title>
+    <link>https://magicbroccoli.de/topics/</link>
+    <description>Recent content in Topics on Magical Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
     
-	<atom:link href="https://xmpp.magicbroccoli.de/topics/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://magicbroccoli.de/topics/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

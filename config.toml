@@ -1,5 +1,5 @@
 baseURL = "https://magicbroccoli.de/"
-languageCode = "de-de"
+languageCode = "de-DE"
 title = "Magical Broccoli"
 theme = "blackburn"
 author = "nico"
@@ -45,28 +45,40 @@ paginate = 10
     identifier = "xmpp"
     url = "/xmpp/"
   [[menu.main]]
-    name = "Impressum"
-    pre = "<i class='fa fa-user fa-fw'></i>"
-    weight = 7
-    identifier = "Impressum"
-    url = "/impressum/"
+    name = "Tags"
+    pre = "<i class='fa fa-tags' aria-hidden='true'></i>"
+    weight = 4
+    identifier = "tags"
+    url = "/tags/"
+  [[menu.main]]
+    name = "Topics"
+    pre = "<i class='fa fa-folder-o' aria-hidden='true'></i>"
+    weight = 5
+    identifier = "topics"
+    url = "/topics/"
   [[menu.main]]
     name = "Terms of Use"
     pre = "<i class='fa fa-user fa-fw'></i>"
-    weight = 8
+    weight = 7
     identifier = "Terms of Use"
     url = "/termsofuse/"
   [[menu.main]]
     name = "Datenschutz"
     pre = "<i class='fa fa-user-secret' aria-hidden='true'></i>"
-    weight = 9
+    weight = 8
     identifier = "Datenschutz"
     url = "/datenschutz/"
   [[menu.main]]
     name = "Contact"
     pre = "<i class='fa fa-address-book-o' aria-hidden='true'></i>"
-    weight = 10
+    weight = 9
     url = "/contact/"
+  [[menu.main]]
+    name = "Impressum"
+    pre = "<i class='fa fa-user fa-fw'></i>"
+    weight = 10
+    identifier = "Impressum"
+    url = "/impressum/"
 
 [social]
   # Link your social networking accounts to the side menu

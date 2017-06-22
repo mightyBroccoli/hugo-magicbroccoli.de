@@ -1,15 +1,43 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Magical XMPP Service</title>
-    <link>https://xmpp.magicbroccoli.de/tags/</link>
-    <description>Recent content in Tags on Magical XMPP Service</description>
+    <title>Tags on Magical Broccoli</title>
+    <link>https://magicbroccoli.de/tags/</link>
+    <description>Recent content in Tags on Magical Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 21 Jun 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://xmpp.magicbroccoli.de/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://magicbroccoli.de/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jabber</title>
+      <link>https://magicbroccoli.de/tags/jabber/</link>
+      <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/tags/jabber/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prosody</title>
+      <link>https://magicbroccoli.de/tags/prosody/</link>
+      <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/tags/prosody/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xmpp</title>
+      <link>https://magicbroccoli.de/tags/xmpp/</link>
+      <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/tags/xmpp/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

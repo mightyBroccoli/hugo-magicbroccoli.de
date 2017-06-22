@@ -1,9 +1,5 @@
-# xmpp.magicbroccoli.de Website
+# magicbroccoli.de Website
 
-## Impressum
-## Datenschutz
-## Terms of Use
 
 ### todo
-+ contact form
-+ ...
++ Blog Eintrag über Teamspeak Log Script XMPP Push

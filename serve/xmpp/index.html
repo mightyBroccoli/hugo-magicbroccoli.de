@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Powered by Prosody">
+  <meta name="generator" content="Hugo 0.24" />
+
+  <title>Magical XMPP Server &middot; Magical Broccoli</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.2/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.2/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.2/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://magicbroccoli.de/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://magicbroccoli.de/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://magicbroccoli.de/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://magicbroccoli.de/img/favicon.ico" type="image/x-icon" />
+
+  
+    <link rel="stylesheet" href="https://magicbroccoli.de/css/my.css">
+  
+  
+    <script src="https://magicbroccoli.de/js/my.js"></script>
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://magicbroccoli.de/">Blackburn</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/xmpp/"><i class='fa fa-delicious' aria-hidden='true'></i>XMPP Server</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/impressum/"><i class='fa fa-user fa-fw'></i>Impressum</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/termsofuse/"><i class='fa fa-user fa-fw'></i>Terms of Use</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/datenschutz/"><i class='fa fa-user-secret' aria-hidden='true'></i>Datenschutz</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/contact/"><i class='fa fa-address-book-o' aria-hidden='true'></i>Contact</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/mightyBroccoli" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/mightyBroccoli" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://bitbucket.org/mightyBroccoli" target="_blank"><i class="fa fa-bitbucket-square fa-fw"></i>Bitbucket</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2017. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Magical XMPP Server</h1>
+  <h2>Powered by Prosody</h2>
+</div>
+<div class="content">
+  
+
+<h2 id="einführung">Einführung</h2>
+
+<p>Ich betreibe einen XMPP Instant Messaging Server, der ursprünglich ausschließlich für die Besucher meines TeamSpeak gedacht war. Allerdings nun auch öffentlich zugänglich ist. Hier möchte ich einige Dinge erläutern die für eine Verbindung, sowie Nachrichten Versand/Empfang notwendig sind.</p>
+
+<h5 id="how-to">How to:</h5>
+
+<pre><code>server/ domain: magicbroccoli.de
+port: 5222
+ressource: random generiert oder ASCI Text
+BOSH URL: magicbroccoli.de:5281/http-bind/
+encryption: always required
+SOCKS5 Proxy: proxy.magicbroccoli.de
+jabber search: search.magicbroccoli.de
+conference server: conference.magicbroccoli.de
+</code></pre>
+
+<p>Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hier <a href="https://xmpp.org/software/clients.html">XMPP Clients</a>.</p>
+
+<p><strong>INHO</strong> : Die folgende Liste bezieht sich auf die Clients, die die meisten Features abdecken und möglichst vielen Standarts konform sind:</p>
+
+<ul>
+<li>Android: <a href="https://conversations.im/">Conversations</a> (€ 2,39 im <a href="https://play.google.com/store/apps/details?id=eu.siacs.conversations&amp;referrer=utm_source%3Dwebsite">Google Play Store</a> oder gratis auf <a href="https://f-droid.org/repository/browse%20/?fdid=eu.siacs.conversations">F-Droid</a>)</li>
+<li>iOS (iPhone): <a href="https://itunes.apple.com/de/app/chatsecure-verschl%C3%BCsselter-nachrichtendienst/id464200063?mt=8">ChatSecure</a></li>
+<li>Linux: <a href="https://gajim.org/?lang=de">Gajim</a></li>
+<li>Linux (console): <a href="https://mcabber.com/">mcabber</a> oder <a href="http://www.profanity.im/">Profanity</a></li>
+<li>macOS (Mac OS X): <a href="https://adium.im/">Adium</a></li>
+<li>Web (im Browser): <a href="https://conversejs.org/">Converse.js</a></li>
+<li>Windows: <a href="https://gajim.org/?lang=de">Gajim</a></li>
+</ul>
+
+<p>Eine kurze Einführung eine Registrierung / Benutzen eines solchen Clients aussieht:</p>
+
+<p><a href="https://dev.gajim.org/gajim/gajim/wikis/help/GajimHelpDe">Beispiel Gajim DE</a><br />
+<a href="https://uwetrottmann.com/software/pidgin-jabber-icq">Beispiel Pidgin DE</a></p>
+
+<p>Auszug aus den spezieller Server Features:</p>
+
+<ul>
+<li><a href="https://xmpp.org/extensions/xep-0033.html">XEP-0033: Extended Stanza Addressing</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0035.html">XEP-0035: SSL/TLS Integration</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0055.html">XEP-0055: Basic implementation of Jabber Search</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0065.html">XEP-0065: SOCKS5 Bytestreams</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0124.html">XEP-0124: Bidirectional-streams Over Synchronous HTTP (BOSH)</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0136.html">XEP-0136: Message Archiving</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0198.html">XEP-0198: Steam Managment</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0280.html">XEP-0280: Message Carbons</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0313.html">XEP-0313: Message Archive Management</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0363.html">XEP-0363: HTTP File Upload</a></li>
+</ul>
+
+<h3 id="datenschutz">Datenschutz</h3>
+
+<p>Heutzutage ist eine Datenschutzerklärung wichtiger den je. Da es sich außerdem um persönliche Daten handelt ist hier die <a href="https://magicbroccoli.de/datenschutz/">Datenschutzerklärung</a>.</p>
+
+</div>
+
+</div>
+</div>
+<script src="https://magicbroccoli.de/js/ui.js"></script>
+
+
+
+
+</body>
+</html>
+

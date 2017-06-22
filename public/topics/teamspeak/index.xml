@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Teamspeak on Magical Broccoli</title>
+    <link>https://magicbroccoli.de/topics/teamspeak/</link>
+    <description>Recent content in Teamspeak on Magical Broccoli</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-DE</language>
+    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
+    <lastBuildDate>Thu, 22 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://magicbroccoli.de/topics/teamspeak/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TeamSpeak XMPP Push</title>
+      <link>https://magicbroccoli.de/post/ts-xmpp-script/</link>
+      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/ts-xmpp-script/</guid>
+      <description>Idee Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen. linktitle: &amp;ldquo;ts-xmpp-push&amp;rdquo;
+Daher habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP pushed.
+Nutzen IMHO Gibt es genügend Beispiele von Fällen, in denen eine Benachrichtigung sehr praktisch ist.
+Viele Server unterstützen eine Reihe von &amp;ldquo;Automatischen Moderationen&amp;rdquo;, trotzdem sollten User nicht in der Lage sein sich Gruppen zuzuweisen.</description>
+    </item>
+    
+  </channel>
+</rss>

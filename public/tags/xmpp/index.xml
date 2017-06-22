@@ -5,12 +5,24 @@
     <link>https://magicbroccoli.de/tags/xmpp/</link>
     <description>Recent content in Xmpp on Magical Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>de-de</language>
+    <language>de-DE</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 21 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Jun 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/tags/xmpp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TeamSpeak XMPP Push</title>
+      <link>https://magicbroccoli.de/post/ts-xmpp-script/</link>
+      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/ts-xmpp-script/</guid>
+      <description>Idee Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen. linktitle: &amp;ldquo;ts-xmpp-push&amp;rdquo;
+Daher habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP pushed.
+Nutzen IMHO Gibt es genügend Beispiele von Fällen, in denen eine Benachrichtigung sehr praktisch ist.
+Viele Server unterstützen eine Reihe von &amp;ldquo;Automatischen Moderationen&amp;rdquo;, trotzdem sollten User nicht in der Lage sein sich Gruppen zuzuweisen.</description>
+    </item>
     
     <item>
       <title>Magical XMPP Server</title>
@@ -20,6 +32,15 @@
       <guid>https://magicbroccoli.de/xmpp/</guid>
       <description>Einführung Ich betreibe einen XMPP Instant Messaging Server, der ursprünglich ausschließlich für die Besucher meines TeamSpeak gedacht war. Allerdings nun auch öffentlich zugänglich ist. Hier möchte ich einige Dinge erläutern die für eine Verbindung, sowie Nachrichten Versand/Empfang notwendig sind.
 How to: server/ domain: magicbroccoli.de port: 5222 ressource: random generiert oder ASCI Text BOSH URL: magicbroccoli.de:5281/http-bind/ encryption: always required SOCKS5 Proxy: proxy.magicbroccoli.de jabber search: search.magicbroccoli.de conference server: conference.magicbroccoli.de  Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hier XMPP Clients.</description>
+    </item>
+    
+    <item>
+      <title>Magical XMPP Server</title>
+      <link>https://magicbroccoli.de/post/first-post/</link>
+      <pubDate>Tue, 20 Jun 2017 18:34:25 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/first-post/</guid>
+      <description>This is my first blogpost. EVER. hello world</description>
     </item>
     
   </channel>

@@ -5,12 +5,24 @@
     <link>https://magicbroccoli.de/</link>
     <description>Recent content on Magical Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>de-de</language>
+    <language>de-DE</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 21 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Jun 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TeamSpeak XMPP Push</title>
+      <link>https://magicbroccoli.de/post/ts-xmpp-script/</link>
+      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/ts-xmpp-script/</guid>
+      <description>Idee Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen. linktitle: &amp;ldquo;ts-xmpp-push&amp;rdquo;
+Daher habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP pushed.
+Nutzen IMHO Gibt es genügend Beispiele von Fällen, in denen eine Benachrichtigung sehr praktisch ist.
+Viele Server unterstützen eine Reihe von &amp;ldquo;Automatischen Moderationen&amp;rdquo;, trotzdem sollten User nicht in der Lage sein sich Gruppen zuzuweisen.</description>
+    </item>
     
     <item>
       <title>About me</title>
@@ -18,13 +30,14 @@
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/contact/</guid>
-      <description>mail nico(at)magicbroccoli.de
+      <description> mail nico(at)magicbroccoli.de
 PGP 0xEA7C31AAB1BDC1A2
 Chat XMPP: broccoli@magicbroccoli.de
-IRC: mightyBroccoli
+IRC: mightyBroccoli1
 OMEMO Fingerabdrücke 1e56b6ec dd764842 674f2309 ba981a69 308e5959 ace5e6ed 6ddbf19a ee715324 [Conversations]
 243C97D7 7D0D2533 298524BC B66EB5E4 E74F6EC5 47079162 C4B917C4 2B25714B [Gajim PC]
-b85e592c 5db8519f cfc39b9d 82632a59 9dfa923f a009dc44 c7f9ba07 aa650c58 [Gajim Notebook]</description>
+b85e592c 5db8519f cfc39b9d 82632a59 9dfa923f a009dc44 c7f9ba07 aa650c58 [Gajim Notebook]
+ freenode [return]   </description>
     </item>
     
     <item>
@@ -81,7 +94,7 @@ How to: server/ domain: magicbroccoli.de port: 5222 ressource: random generiert 
       <pubDate>Tue, 20 Jun 2017 18:34:25 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/post/first-post/</guid>
-      <description> This is my first blogpost. EVER. </description>
+      <description>This is my first blogpost. EVER. hello world</description>
     </item>
     
   </channel>
