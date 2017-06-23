@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="TeamSpeak Script">
-  <meta name="generator" content="Hugo 0.24" />
+  <meta name="generator" content="Hugo 0.23" />
 
   <title>TeamSpeak XMPP Push &middot; Magical Broccoli</title>
 
@@ -288,13 +288,12 @@
 
 <h2 id="idee">Idee</h2>
 
-<p>Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen.  linktitle: &ldquo;ts-xmpp-push&rdquo;</p>
-
-<p>Daher habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP pushed.</p>
+<p>Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen.<br />
+Für genau dieses Problem habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP sendet.</p>
 
 <h2 id="nutzen">Nutzen</h2>
 
-<p><strong>IMHO</strong> Gibt es genügend Beispiele von Fällen, in denen eine Benachrichtigung sehr praktisch ist.<br />
+<p><strong>IMHO</strong> Gibt es genügend Beispiele, in denen eine Benachrichtigung schnellstmöglichst sehr praktisch ist.<br />
 Viele Server unterstützen eine Reihe von &ldquo;Automatischen Moderationen&rdquo;, trotzdem sollten User nicht in der Lage sein sich Gruppen zuzuweisen. Diese kurze Benachrichtigung sagt dem Admin/ Moderator wer und welche Gruppe betroffen ist.<br />
 Je nach Haufigkeit der Ausführung könnte die Benachrichtigung innerhalb von Sekunden gepushed werden.</p>
 
@@ -335,11 +334,11 @@ Je nach Haufigkeit der Ausführung könnte die Benachrichtigung innerhalb von Se
 
 <h2 id="bitbucket">Bitbucket</h2>
 
-<p>Gehostet habe ich das Projekt auf <a href="https://bitbucket.org/mightyBroccoli/logwatch-scripts/src/6551365b8135/teamspeak_scripts/?at=master">Bitbucket</a> dort ist auch ein Bereich für Issues, falls Probleme auftreten oder natürlich für Vorschläge.</p>
+<p>Das Projekt ist gehostet <a href="https://bitbucket.org/mightyBroccoli/logwatch-scripts/src/6551365b8135/teamspeak_scripts/?at=master">Bitbucket</a> dort ist auch ein Bereich für <a href="https://bitbucket.org/mightyBroccoli/logwatch-scripts/issues?status=new&amp;status=open">Issues</a>, falls Probleme auftreten oder Verbesserungsvorschläge bestehen.</p>
 
 <h2 id="debian-9">Debian 9</h2>
 
-<p>Leider besteht mit Debian Stretch mit mit perl wodurch <em>sendxmpp</em> der push Part des Skripts nicht mehr funktioniert. Leider kann ich da im Moment erst mal nicht machen aber ich repariere das Skipt für Debian Stretch sobal es möglich ist.</p>
+<p>Leider besteht mit Debian Stretch ein Problem mit perl wodurch <em>sendxmpp</em>, das xmpp cli Modul des Skripts nicht mehr funktioniert. Leider kann ich da im Moment erst mal nichts machen, aber ich repariere das Skipt für Debian Stretch sobal es möglich ist.</p>
 
 
   
@@ -352,7 +351,7 @@ Je nach Haufigkeit der Ausführung könnte die Benachrichtigung innerhalb von Se
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://magicbroccoli.de/post/first-post/">Magical XMPP Server</a>
+      <a href="https://magicbroccoli.de/post/first-post/">Magical  Server</a>
     </nav>
     
   </div>

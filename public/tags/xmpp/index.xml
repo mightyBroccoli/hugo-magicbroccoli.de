@@ -18,9 +18,9 @@
       <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/post/ts-xmpp-script/</guid>
-      <description>Idee Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen. linktitle: &amp;ldquo;ts-xmpp-push&amp;rdquo;
-Daher habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP pushed.
-Nutzen IMHO Gibt es genügend Beispiele von Fällen, in denen eine Benachrichtigung sehr praktisch ist.
+      <description>Idee Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen.
+Für genau dieses Problem habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP sendet.
+Nutzen IMHO Gibt es genügend Beispiele, in denen eine Benachrichtigung schnellstmöglichst sehr praktisch ist.
 Viele Server unterstützen eine Reihe von &amp;ldquo;Automatischen Moderationen&amp;rdquo;, trotzdem sollten User nicht in der Lage sein sich Gruppen zuzuweisen.</description>
     </item>
     
@@ -35,7 +35,7 @@ How to: server/ domain: magicbroccoli.de port: 5222 ressource: random generiert 
     </item>
     
     <item>
-      <title>Magical XMPP Server</title>
+      <title>Magical  Server</title>
       <link>https://magicbroccoli.de/post/first-post/</link>
       <pubDate>Tue, 20 Jun 2017 18:34:25 +0200</pubDate>
       
