@@ -41,6 +41,10 @@ Auszug aus den speziellern Server-Features:
 - [XEP-0313: Message Archive Management](https://xmpp.org/extensions/xep-0313.html)
 - [XEP-0363: HTTP File Upload](https://xmpp.org/extensions/xep-0363.html)
 
+### HTTP-Bind / Bosh
+
+Adresse für HTTP-Bind:  https://magicbroccoli.de/http-bind
+
 ## Registrieren
 <center> <p>
 <a href="/register/">
