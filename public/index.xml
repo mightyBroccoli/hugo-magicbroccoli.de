@@ -7,10 +7,32 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 22 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jun 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Server Technik</title>
+      <link>https://magicbroccoli.de/technik/</link>
+      <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/technik/</guid>
+      <description>Sicherheit Das Hostsystem läuft unter Debian Stretch. Ich update das System und alle seine Komponenten regelmäßig. Dabei nehme ich teilweise Rücksicht darauf, dass es zu keinen reboot zu Stoßzeiten kommt. Wenn es aber gar nicht anders geht, ist eine kurze Downtime für wichtige Updates vertretbar.
+DNS Die gesamte Domain magicbroccoli.de ist mit DNSSEC signiert und lässt sich überprüfen.
+Prosody Der XMPP Server ist zur Zeit ein Prosody 0.10 nightly.</description>
+    </item>
+    
+    <item>
+      <title>Registrierung magicbroccoli.de XMPP</title>
+      <link>https://magicbroccoli.de/register/</link>
+      <pubDate>Sun, 25 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/register/</guid>
+      <description>Diese Seite ermöglicht es, dir einen neuen Account auf dem magicbroccoli.de XMPP Server anzulegen.
+Über deine Jabber Identifier (kurz JID; auch Jabber-ID), bestehend aus Benutzernamen und “@magicbroccoli.de”, können Dich andere Nutzer zu ihren Kontakten hinzufügen.
+Bitte notiere dir Benutzernamen und Passwort sorgfältig! Passwort-Resets durch den Administrator sind zwar grundsätzlich möglich, aber aufwendig und erfordern, dass du die Account-Inhaberschaft beweisen kannst!</description>
+    </item>
     
     <item>
       <title>TeamSpeak XMPP Push</title>
@@ -75,17 +97,19 @@ Haftungsausschluss Haftung für Inhalte Die Inhalte unserer Seiten wurden mit gr
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/xmpp/</guid>
-      <description>Einführung Ich betreibe einen XMPP Instant Messaging Server, der ursprünglich ausschließlich für die Besucher meines TeamSpeak gedacht war. Allerdings nun auch öffentlich zugänglich ist. Hier möchte ich einige Dinge erläutern die für eine Verbindung, sowie Nachrichten Versand/Empfang notwendig sind.
-How to: server/ domain: magicbroccoli.de port: 5222 ressource: random generiert oder ASCI Text BOSH URL: magicbroccoli.de:5281/http-bind/ encryption: always required SOCKS5 Proxy: proxy.magicbroccoli.de jabber search: search.magicbroccoli.de conference server: conference.magicbroccoli.de  Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hier XMPP Clients.</description>
+      <description>Einführung Ich betreibe einen XMPP Instant Messaging Server, der ursprünglich ausschließlich für die Besucher meines TeamSpeak gedacht war, allerdings nun auch öffentlich zugänglich ist. Hier möchte ich einige Dinge erläutern die für eine Verbindung, sowie Nachrichtenversand/ -empfang notwendig sind.
+How to XMPP? Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hier; XMPP Clients.
+INHO : Die folgende Liste bezieht sich auf die Clients, die die meisten Features abdecken und mit möglichst vielen Standards konform sind.</description>
     </item>
     
     <item>
-      <title>Terms of Use</title>
+      <title>Nutzungsbedingungen</title>
       <link>https://magicbroccoli.de/termsofuse/</link>
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/termsofuse/</guid>
-      <description> Registration and use of the service is free of charge. Users, who were more than 12 months inactive will be deleted automatically. unused accounts will be deleted after 30 days Advertising within the network (product advertising, spam, etc.) is prohibited. The excessive use of the services ((Syn-) Flooding, etc.) and thus their impairment is prohibited. Actions that advance against the laws of the Federal Republic of Germany are prohibited.  </description>
+      <description>Allgemein  Registrierung sowie Nutzung des XMPP Servers sind komplett kostenfrei. Nutzeraccount die länger als 1 Jahr inaktiv waren werden gelöscht. Jegliche Form von Werbung ist untersagt. Angriffe auf die Server sind untersagt und resultieren in einem sofortigen Ausschluss. Aktivitäten die gegen das geltende Recht der Bundesrepublik Deutschland verstoßen sind untersagt.  Netzwerk spezifisch Hier möchte ich auf einige Regeln eingehen die speziell für dieses Netzwerk gelten.
+ Accounts die einer freiheitlichen, friedlichen und toleranten Gesellschaft widersprechen werden gesperrt.</description>
     </item>
     
     <item>

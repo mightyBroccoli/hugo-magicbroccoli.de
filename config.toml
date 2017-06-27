@@ -51,12 +51,6 @@ paginate = 10
     identifier = "tags"
     url = "/tags/"
   [[menu.main]]
-    name = "Topics"
-    pre = "<i class='fa fa-folder-o' aria-hidden='true'></i>"
-    weight = 5
-    identifier = "topics"
-    url = "/topics/"
-  [[menu.main]]
     name = "Terms of Use"
     pre = "<i class='fa fa-user fa-fw'></i>"
     weight = 7

@@ -1,12 +1,19 @@
 +++
-title = "Terms of Use"
+title = "Nutzungsbedingungen"
 date = "2017-06-21"
 sidemenu = "true"
 +++
 
-* Registration and use of the service is free of charge.
-* Users, who were more than 12 months inactive will be deleted automatically.
-* unused accounts will be deleted after 30 days
-* Advertising within the network (product advertising, spam, etc.) is prohibited.
-* The excessive use of the services ((Syn-) Flooding, etc.) and thus their impairment is prohibited.
-* Actions that advance against the laws of the Federal Republic of Germany are prohibited.
+## Allgemein
+
+* Registrierung sowie Nutzung des XMPP Servers sind komplett kostenfrei.
+* Nutzeraccount die länger als 1 Jahr inaktiv waren werden gelöscht.
+* Jegliche Form von Werbung ist untersagt.
+* Angriffe auf die Server sind untersagt und resultieren in einem sofortigen Ausschluss.
+* Aktivitäten die gegen das geltende Recht der Bundesrepublik Deutschland verstoßen sind untersagt.
+
+
+## Netzwerk spezifisch
+Hier möchte ich auf einige Regeln eingehen die speziell für dieses Netzwerk gelten.
+
+* Accounts die einer freiheitlichen, friedlichen und toleranten Gesellschaft widersprechen werden gesperrt.

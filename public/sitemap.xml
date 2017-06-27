@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://magicbroccoli.de/technik/</loc>
+    <lastmod>2017-06-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://magicbroccoli.de/register/</loc>
+    <lastmod>2017-06-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://magicbroccoli.de/post/ts-xmpp-script/</loc>
     <lastmod>2017-06-22T00:00:00+00:00</lastmod>
   </url>
@@ -44,6 +54,12 @@
   </url>
   
   <url>
+    <loc>https://magicbroccoli.de/tags/debian/</loc>
+    <lastmod>2017-06-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://magicbroccoli.de/topics/development/</loc>
     <lastmod>2017-06-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -51,13 +67,13 @@
   
   <url>
     <loc>https://magicbroccoli.de/tags/jabber/</loc>
-    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
+    <lastmod>2017-06-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/</loc>
-    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
+    <lastmod>2017-06-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -69,13 +85,13 @@
   
   <url>
     <loc>https://magicbroccoli.de/tags/prosody/</loc>
-    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
+    <lastmod>2017-06-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/tags/</loc>
-    <lastmod>2017-06-21T00:00:00+00:00</lastmod>
+    <lastmod>2017-06-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -99,7 +115,7 @@
   
   <url>
     <loc>https://magicbroccoli.de/tags/xmpp/</loc>
-    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
+    <lastmod>2017-06-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

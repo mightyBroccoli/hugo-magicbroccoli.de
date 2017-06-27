@@ -6,24 +6,12 @@ description = "Powered by Prosody"
 tags = [ "Prosody", "XMPP", "Jabber" ]
 +++
 ## Einführung
-Ich betreibe einen XMPP Instant Messaging Server, der ursprünglich ausschließlich für die Besucher meines TeamSpeak gedacht war. Allerdings nun auch öffentlich zugänglich ist. Hier möchte ich einige Dinge erläutern die für eine Verbindung, sowie Nachrichten Versand/Empfang notwendig sind.
+Ich betreibe einen XMPP Instant Messaging Server, der ursprünglich ausschließlich für die Besucher meines TeamSpeak gedacht war, allerdings nun auch öffentlich zugänglich ist. Hier möchte ich einige Dinge erläutern die für eine Verbindung, sowie Nachrichtenversand/ -empfang notwendig sind.
 
+### How to XMPP?
+Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hier; [XMPP Clients](https://xmpp.org/software/clients.html).  
 
-##### How to:
-```
-server/ domain: magicbroccoli.de
-port: 5222
-ressource: random generiert oder ASCI Text
-BOSH URL: magicbroccoli.de:5281/http-bind/
-encryption: always required
-SOCKS5 Proxy: proxy.magicbroccoli.de
-jabber search: search.magicbroccoli.de
-conference server: conference.magicbroccoli.de
-```
-
-Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hier [XMPP Clients](https://xmpp.org/software/clients.html).  
-
-**INHO** : Die folgende Liste bezieht sich auf die Clients, die die meisten Features abdecken und möglichst vielen Standarts konform sind:
+**INHO** : Die folgende Liste bezieht sich auf die Clients, die die meisten Features abdecken und mit möglichst vielen Standards konform sind. Außerdem werden ausschließlich Clients gelistet, die aktiv entwickelt werden.
 
 - Android: [Conversations](https://conversations.im/) (€ 2,39 im [Google Play Store](https://play.google.com/store/apps/details?id=eu.siacs.conversations&referrer=utm_source%3Dwebsite) oder gratis auf [F-Droid](https://f-droid.org/repository/browse%20/?fdid=eu.siacs.conversations))
 - iOS (iPhone): [ChatSecure](https://itunes.apple.com/de/app/chatsecure-verschl%C3%BCsselter-nachrichtendienst/id464200063?mt=8)
@@ -32,24 +20,30 @@ Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hi
 - macOS (Mac OS X): [Adium](https://adium.im/)
 - Web (im Browser): [Converse.js](https://conversejs.org/)
 - Windows: [Gajim](https://gajim.org/?lang=de)
+- Windows (XMPP - Anfänger): [Pidgin](https://pidgin.im/) *mit deutlich eingeschränktem Funktionsumfang der Server-Features* 
 
-Eine kurze Einführung eine Registrierung / Benutzen eines solchen Clients aussieht:  
-
-[Beispiel Gajim DE](https://dev.gajim.org/gajim/gajim/wikis/help/GajimHelpDe)  
-[Beispiel Pidgin DE](https://uwetrottmann.com/software/pidgin-jabber-icq)
-
-Auszug aus den spezieller Server Features:
-
-- [XEP-0033: Extended Stanza Addressing](https://xmpp.org/extensions/xep-0033.html)
-- [XEP-0035: SSL/TLS Integration](https://xmpp.org/extensions/xep-0035.html)
-- [XEP-0055: Basic implementation of Jabber Search](https://xmpp.org/extensions/xep-0055.html)
-- [XEP-0065: SOCKS5 Bytestreams](https://xmpp.org/extensions/xep-0065.html)
-- [XEP-0124: Bidirectional-streams Over Synchronous HTTP (BOSH)](https://xmpp.org/extensions/xep-0124.html)
-- [XEP-0136: Message Archiving](https://xmpp.org/extensions/xep-0136.html)
-- [XEP-0198: Steam Managment](https://xmpp.org/extensions/xep-0198.html)
-- [XEP-0280: Message Carbons](https://xmpp.org/extensions/xep-0280.html)
-- [XEP-0313: Message Archive Management](https://xmpp.org/extensions/xep-0313.html)
-- [XEP-0363: HTTP File Upload](https://xmpp.org/extensions/xep-0363.html)
+## Registrieren
+<center> <p>
+<a href="/register/">
+<img src="/images/register.png" alt="Register" style="width: 200px;"/>
+</a></p>
+</center>
 
 ### Datenschutz
-Heutzutage ist eine Datenschutzerklärung wichtiger den je. Da es sich außerdem um persönliche Daten handelt ist hier die [Datenschutzerklärung](/datenschutz/).
+Heutzutage ist eine Datenschutzerklärung wichtiger denn je. Da es sich außerdem um persönliche Daten handelt ist hier die [Datenschutzerklärung](/datenschutz/).  
+**TLDR** : Für die Nutzung des Services müssen keine persönlichen Daten angegeben werden. Protokollierung von Nutzerinteraktionen mit dem Server sind auf das notwendige Minimum reduziert. Es gibt keine weiteren Personen die Zugriff zur Administration des Servers haben.
+
+### Kontakt
+Ich habe diesen Server ins Leben gerufen, weil es mir Spaß macht. Daher bin ich bei Fragen/ Anregungen oder Problemen zu erreichen. Ich werde dann versuchen, so schnell wie es mir möglich ist, zu antworten. Näheres zur Kontakaufname gibt es hier; [Kontakt](/contact/)
+
+### Technik/ Software
+Näheres zur verwendeten Technik bzw Software ist hier zu finden [Technik](/technik/)
+
+#### IM Observer
+<a href='https://check.messaging.one/result.php?domain=magicbroccoli.de&amp;type=client'>
+  <img src='https://check.messaging.one/badge.php?domain=magicbroccoli.de' alt='IM observatory score' />
+</a>
+
+- - -
+
+<center>[![](https://www.netcup.de/bilder/banner/netcup-hlogo-b220h100.png)](https://www.netcup.de)</center>

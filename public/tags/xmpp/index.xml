@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 22 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Jun 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/tags/xmpp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Registrierung magicbroccoli.de XMPP</title>
+      <link>https://magicbroccoli.de/register/</link>
+      <pubDate>Sun, 25 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/register/</guid>
+      <description>Diese Seite ermöglicht es, dir einen neuen Account auf dem magicbroccoli.de XMPP Server anzulegen.
+Über deine Jabber Identifier (kurz JID; auch Jabber-ID), bestehend aus Benutzernamen und “@magicbroccoli.de”, können Dich andere Nutzer zu ihren Kontakten hinzufügen.
+Bitte notiere dir Benutzernamen und Passwort sorgfältig! Passwort-Resets durch den Administrator sind zwar grundsätzlich möglich, aber aufwendig und erfordern, dass du die Account-Inhaberschaft beweisen kannst!</description>
+    </item>
     
     <item>
       <title>TeamSpeak XMPP Push</title>
@@ -30,8 +41,9 @@ Viele Server unterstützen eine Reihe von &amp;ldquo;Automatischen Moderationen&
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/xmpp/</guid>
-      <description>Einführung Ich betreibe einen XMPP Instant Messaging Server, der ursprünglich ausschließlich für die Besucher meines TeamSpeak gedacht war. Allerdings nun auch öffentlich zugänglich ist. Hier möchte ich einige Dinge erläutern die für eine Verbindung, sowie Nachrichten Versand/Empfang notwendig sind.
-How to: server/ domain: magicbroccoli.de port: 5222 ressource: random generiert oder ASCI Text BOSH URL: magicbroccoli.de:5281/http-bind/ encryption: always required SOCKS5 Proxy: proxy.magicbroccoli.de jabber search: search.magicbroccoli.de conference server: conference.magicbroccoli.de  Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hier XMPP Clients.</description>
+      <description>Einführung Ich betreibe einen XMPP Instant Messaging Server, der ursprünglich ausschließlich für die Besucher meines TeamSpeak gedacht war, allerdings nun auch öffentlich zugänglich ist. Hier möchte ich einige Dinge erläutern die für eine Verbindung, sowie Nachrichtenversand/ -empfang notwendig sind.
+How to XMPP? Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hier; XMPP Clients.
+INHO : Die folgende Liste bezieht sich auf die Clients, die die meisten Features abdecken und mit möglichst vielen Standards konform sind.</description>
     </item>
     
     <item>
