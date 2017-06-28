@@ -40,9 +40,9 @@ Die erteilte Einwilligung zur Speicherung der Daten, der E-Mail-Adresse sowie de
 ## Jabber
 Generell werden nur die zum Betrieb des Servers notwendigen Daten auf dem Server gespeichert. Im Detail werden folgende Daten gespeichert:
 
-- Name, JabberID, E-Mail-Adresse und Inhalte der VCard
+- Name, JabberID sowie alle weiteren Inhalte der VCard
 - Passwort in Form eines sicheren SCRAM-Hashes in der Datenbank
-- Datum und Uhrzeit wann das Benutzerkonto angelegt wurde, wann es das letzte Mal benutzt wurde bzw. wie lange der Benutzer bereits online ist.
+- Datum und Uhrzeit, der Accounterstellung, des Letzten Logins bzw. wie lange der Benutzer bereits online ist.
 - Online-Status und Status-Nachrichten
 - Die Kontaktliste
 - Multi User Chats (MUCs) speichern je nach Einstellung des Moderators eine gewisse Anzahl oder alle Nachrichten.
