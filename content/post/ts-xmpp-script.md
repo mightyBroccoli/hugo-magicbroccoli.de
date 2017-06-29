@@ -45,3 +45,21 @@ Das Projekt ist gehostet auf [Bitbucket](https://bitbucket.org/mightyBroccoli/lo
 
 ## Debian 9
 Leider besteht mit Debian Stretch ein Problem mit perl wodurch *sendxmpp*, das xmpp cli Modul des Skripts nicht mehr funktioniert. Leider kann ich da im Moment erst mal nichts machen, aber ich repariere das Skipt für Debian Stretch, sobald es möglich ist.
+
+-----
+
+Update : 28.07.2017 Debian 9 Perl5 Problematik
+```
+Use of uninitialized value in numeric eq (==) at /usr/share/perl5/XML/Stream.pm line 631.
+```  
+Ich hab mit etwas debugging herausgefunden was geändert werden muss um perl-xmlstream wieder zu fixxen.
+Es muss die Datei `/usr/share/perl5/XML/Stream.pm` geändert werden, oder eben jene in die in der Fehlermeldung genannt ist.  
+Mit nano lässt sich bequem nach der Zeile suchen, mit Shift + W. Danach ändert man diese Zeile
+```perl
+$self->{SIDS}->{default}->{ssl_ca_path} = '';
+```
+zu
+```perl
+$self->{SIDS}->{default}->{ssl_ca_path} = '/etc/ssl/certs';
+```
+Nach dieser Änderung hat sich das Problem eingestellt und sendxmpp funktionierte wieder genauso tadellos wie zuvor.
