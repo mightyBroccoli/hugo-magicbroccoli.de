@@ -23,5 +23,16 @@ DNS Die gesamte Domain magicbroccoli.de ist mit DNSSEC signiert und lässt sich 
 Prosody Der XMPP Server ist zur Zeit ein Prosody 0.10 nightly.</description>
     </item>
     
+    <item>
+      <title>Magical XMPP Server</title>
+      <link>https://magicbroccoli.de/xmpp/</link>
+      <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/xmpp/</guid>
+      <description>Einführung Ich betreibe einen XMPP Instant Messaging Server, der ursprünglich ausschließlich für die Besucher meines TeamSpeak gedacht war, allerdings nun auch öffentlich zugänglich ist. Hier möchte ich einige Dinge erläutern die für eine Verbindung, sowie Nachrichtenversand/ -empfang notwendig sind.
+How to XMPP? Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hier; XMPP Clients.
+INHO : Die folgende Liste bezieht sich auf die Clients, die die meisten Features abdecken und mit möglichst vielen Standards konform sind.</description>
+    </item>
+    
   </channel>
 </rss>

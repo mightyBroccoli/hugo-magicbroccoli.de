@@ -27,7 +27,7 @@ Der Provider der Seiten erhebt und speichert automatisch Informationen in so gen
 - Hostname des zugreifenden Rechners
 - Uhrzeit der Serveranfrage
 
-Diese Daten sind nicht bestimmten Personen zuordenbar. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Wir behalten uns vor, diese Daten nachträglich zu prüfen, wenn uns konkrete Anhaltspunkte für eine rechtswidrige Nutzung bekannt werden.
+Diese Daten sind nicht bestimmten Personen zuordenbar. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Wir behalten uns vor, diese Daten nachträglich zu prüfen, wenn uns konkrete Anhaltspunkte für eine rechtswidrige Nutzung bekannt werden. Server Logs werden nach 1 Monat rückstandslos gelöscht, Ausnahmen bestehen wenn Logs zu Debug Zwecken verwendet werde.
 
 ## Kontaktformular
 Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
@@ -49,7 +49,7 @@ Generell werden nur die zum Betrieb des Servers notwendigen Daten auf dem Server
 - Offline-Nachrichten
 - Einige Clients speichern weitere Daten (Bookmarks, PubSub, ...) auf dem Server. Über seinen Client hat der Benutzer die Kontrolle darüber, welche Daten auf dem Server liegen.
 - Wenn Nutzer die optionale Funktion Message Archive Managent nutzen um Chatverläufe auf verschiedenen Geräten zu synchronisieren, müssen diese Daten ebenfalls prinzipbedingt auf dem Server gespeichert werden. Nachrichten älter als 2 Monate werden jedoch automatisch vom Server gelöscht.
-- Wird die optionale Funktion HTTP File Upload genutzt um Dateien mit Kontakten auszutauschen, müssen diese Dateien prinzipbedingt auf dem Server gespeichert werden. Nach einem Monat werden diese Dateien automatisch vom Server gelöscht.
+- Wird die optionale Funktion HTTP Upload verwendet, um Dateien mit Kontakten auszutauschen, müssen diese Dateien prinzipbedingt auf dem Server gespeichert werden. Nach 31 Tagen werden diese Dateien automatisch vom Server gelöscht.
 
 Es werden keine Daten an Dritte weitergeben, sofern wir nicht gesetzlich zur Herausgabe der Daten verpflichtet sind. Ausgenommen sind Daten die offensichtlich öffentlich sind:
 

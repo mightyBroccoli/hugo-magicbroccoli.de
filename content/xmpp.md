@@ -3,7 +3,7 @@ date = "2017-06-21"
 title = "Magical XMPP Server"
 sidemenu = "true"
 description = "Powered by Prosody"
-tags = [ "Prosody", "XMPP", "Jabber" ]
+tags = [ "Prosody", "XMPP", "Debian" ]
 +++
 ## Einführung
 Ich betreibe einen XMPP Instant Messaging Server, der ursprünglich ausschließlich für die Besucher meines TeamSpeak gedacht war, allerdings nun auch öffentlich zugänglich ist. Hier möchte ich einige Dinge erläutern die für eine Verbindung, sowie Nachrichtenversand/ -empfang notwendig sind.
@@ -34,10 +34,10 @@ Heutzutage ist eine Datenschutzerklärung wichtiger denn je. Da es sich außerde
 **TLDR** : Für die Nutzung des Services müssen keine persönlichen Daten angegeben werden. Protokollierung von Nutzerinteraktionen mit dem Server sind auf das notwendige Minimum reduziert. Es gibt keine weiteren Personen die Zugriff zur Administration des Servers haben.
 
 ### Kontakt
-Ich habe diesen Server ins Leben gerufen, weil es mir Spaß macht. Daher bin ich bei Fragen/ Anregungen oder Problemen zu erreichen. Ich werde dann versuchen, so schnell wie es mir möglich ist, zu antworten. Näheres zur Kontakaufname gibt es hier; [Kontakt](/contact/)
+Ich habe diesen Server ins Leben gerufen, weil es mir Spaß macht. Daher bin ich bei Fragen/ Anregungen oder Problemen zu erreichen. Ich werde versuchen, so schnell wie es mir möglich ist, zu antworten. Näheres zur Kontakaufname gibt es hier; [Kontakt](/contact/)
 
 ### Kann ich meine eigene Domain mitbringen? (XMPP Domain Hosting)
-Ja! Ihr könnt Eure Domain mitbringen und ich betreibe für Euch den Dienst. Ihr werdet als Administrator für Eure Domain auf dem Jabber Server hinterlegt. Euch stehen also alle Admin-Befehle für Eure Domain auf dem XMPP Server zur Verfügung. Somit könnt Ihr eigene XMPP Accounts anlegen für Eure Freunde & Familie. Wenn Ihr interessiert seid dann kontaktiert mich. [Kontakt](/contact/)
+Ja! Ihr könnt Eure Domain mitbringen und ich betreibe für Euch den Dienst. Ihr werdet als Administrator für Eure Domain auf dem Jabber Server hinterlegt. Euch stehen also alle Admin-Befehle für Eure Domain auf dem XMPP Server zur Verfügung. Somit könnt Ihr eigene XMPP Accounts anlegen für Eure Freunde & Familie. Wenn Ihr interessiert seid dann kontaktiert mich; [Kontakt](/contact/)
 
 ### Technik/ Software
 Näheres zur verwendeten Technik bzw Software ist hier zu finden [Technik](/technik/)

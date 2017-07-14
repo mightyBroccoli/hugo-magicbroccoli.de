@@ -20,18 +20,7 @@
       <guid>https://magicbroccoli.de/register/</guid>
       <description>Diese Seite ermöglicht es, dir einen neuen Account auf dem magicbroccoli.de XMPP Server anzulegen.
 Über deine Jabber Identifier (kurz JID; auch Jabber-ID), bestehend aus Benutzernamen und “@magicbroccoli.de”, können Dich andere Nutzer zu ihren Kontakten hinzufügen.
-Bitte notiere dir Benutzernamen und Passwort sorgfältig! Passwort-Resets durch den Administrator sind zwar grundsätzlich möglich, aber aufwendig und erfordern, dass du die Account-Inhaberschaft beweisen kannst!</description>
-    </item>
-    
-    <item>
-      <title>Magical XMPP Server</title>
-      <link>https://magicbroccoli.de/xmpp/</link>
-      <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://magicbroccoli.de/xmpp/</guid>
-      <description>Einführung Ich betreibe einen XMPP Instant Messaging Server, der ursprünglich ausschließlich für die Besucher meines TeamSpeak gedacht war, allerdings nun auch öffentlich zugänglich ist. Hier möchte ich einige Dinge erläutern die für eine Verbindung, sowie Nachrichtenversand/ -empfang notwendig sind.
-How to XMPP? Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hier; XMPP Clients.
-INHO : Die folgende Liste bezieht sich auf die Clients, die die meisten Features abdecken und mit möglichst vielen Standards konform sind.</description>
+Bitte notiere Sie sich Ihren Benutzernamen und Passwort sorgfältig! Passwort-Resets durch den Administrator sind zwar grundsätzlich möglich, aber aufwendig und erfordern, dass Sie die Account-Inhaberschaft beweisen können!</description>
     </item>
     
   </channel>

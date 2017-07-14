@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 25 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jun 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/tags/xmpp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Server Technik</title>
+      <link>https://magicbroccoli.de/technik/</link>
+      <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/technik/</guid>
+      <description>Sicherheit Das Hostsystem läuft unter Debian Stretch. Ich update das System und alle seine Komponenten regelmäßig. Dabei nehme ich teilweise Rücksicht darauf, dass es zu keinen reboot zu Stoßzeiten kommt. Wenn es aber gar nicht anders geht, ist eine kurze Downtime für wichtige Updates vertretbar.
+DNS Die gesamte Domain magicbroccoli.de ist mit DNSSEC signiert und lässt sich überprüfen.
+Prosody Der XMPP Server ist zur Zeit ein Prosody 0.10 nightly.</description>
+    </item>
     
     <item>
       <title>Registrierung magicbroccoli.de XMPP</title>
@@ -20,7 +31,7 @@
       <guid>https://magicbroccoli.de/register/</guid>
       <description>Diese Seite ermöglicht es, dir einen neuen Account auf dem magicbroccoli.de XMPP Server anzulegen.
 Über deine Jabber Identifier (kurz JID; auch Jabber-ID), bestehend aus Benutzernamen und “@magicbroccoli.de”, können Dich andere Nutzer zu ihren Kontakten hinzufügen.
-Bitte notiere dir Benutzernamen und Passwort sorgfältig! Passwort-Resets durch den Administrator sind zwar grundsätzlich möglich, aber aufwendig und erfordern, dass du die Account-Inhaberschaft beweisen kannst!</description>
+Bitte notiere Sie sich Ihren Benutzernamen und Passwort sorgfältig! Passwort-Resets durch den Administrator sind zwar grundsätzlich möglich, aber aufwendig und erfordern, dass Sie die Account-Inhaberschaft beweisen können!</description>
     </item>
     
     <item>

@@ -12,7 +12,6 @@ sidemenu = "true"
 * Angriffe auf die Server sind untersagt und resultieren in einem sofortigen Ausschluss.
 * Aktivitäten, die gegen das geltende Recht der Bundesrepublik Deutschland verstoßen sind untersagt.
 
-
 ## Netzwerk spezifisch
 Hier möchte ich auf einige Regeln eingehen, die speziell für dieses Netzwerk gelten.
 

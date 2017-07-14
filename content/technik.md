@@ -2,7 +2,7 @@
 date = "2017-06-27"
 title = "Server Technik"
 sidemenu = "true"
-tags = [ "Prosody", "Debian" ]
+tags = [ "Prosody", "Debian", "XMPP" ]
 +++
 ## Sicherheit
 Das Hostsystem läuft unter ![Debian](/icons/debian_icon.png) Debian Stretch.
@@ -41,9 +41,14 @@ Auszug aus den speziellern Server-Features:
 - [XEP-0313: Message Archive Management](https://xmpp.org/extensions/xep-0313.html)
 - [XEP-0363: HTTP File Upload](https://xmpp.org/extensions/xep-0363.html)
 
-### HTTP-Bind / Bosh
+#### HTTP-Bind / Bosh
 
-Adresse für HTTP-Bind:  https://magicbroccoli.de/http-bind
+Adresse für HTTP-Bind:  [https://magicbroccoli.de/http-bind](https://magicbroccoli.de/http-bind)
+
+
+#### Websocket
+
+Adresse für Websocket: [https://magicbroccoli.de/xmpp-websocket](https://magicbroccoli.de/xmpp-websocket)
 
 ## Registrieren
 <center> <p>
