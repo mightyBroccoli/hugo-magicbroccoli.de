@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 27 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gajim Tutorial</title>
+      <link>https://magicbroccoli.de/tutorial/gajim/</link>
+      <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/tutorial/gajim/</guid>
+      <description>Account Registrierung Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt.
+Speziell bei magicbroccoli.de sollte Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifiizierung des Accountbesitzters möglich ist. Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die Nutzungsbedingungen sowie Datenschutzbestimmungen. Installation Gajim lässt sich unter Windows und Linux problemlos installieren.
+Gajim Download
+Archlinux Bei Archlinux ist die Installation einen Schritt länger aber nicht sonderlich schwierig.</description>
+    </item>
     
     <item>
       <title>Server Technik</title>

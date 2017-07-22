@@ -15,12 +15,12 @@ Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hi
 
 - Android: [Conversations](https://conversations.im/) (€ 2,39 im [Google Play Store](https://play.google.com/store/apps/details?id=eu.siacs.conversations&referrer=utm_source%3Dwebsite) oder gratis auf [F-Droid](https://f-droid.org/repository/browse%20/?fdid=eu.siacs.conversations))
 - iOS (iPhone): [ChatSecure](https://itunes.apple.com/de/app/chatsecure-verschl%C3%BCsselter-nachrichtendienst/id464200063?mt=8)
-- Linux: [Gajim](https://gajim.org/?lang=de)
+- Linux: [Gajim](https://gajim.org/?lang=de) -- [Tutorial](/tutorial/gajim/)
 - Linux (console): [mcabber](https://mcabber.com/) oder [Profanity](http://www.profanity.im/)
 - macOS (Mac OS X): [Adium](https://adium.im/)
 - Web (im Browser): [Converse.js](https://conversejs.org/)
-- Windows: [Gajim](https://gajim.org/?lang=de)
-- Windows (XMPP - Anfänger): [Pidgin](https://pidgin.im/) *mit deutlich eingeschränktem Funktionsumfang der Server-Features* 
+- Windows: [Gajim](https://gajim.org/?lang=de) -- [Tutorial](/tutorial/gajim/)
+- Windows (XMPP - Anfänger): [Pidgin](https://pidgin.im/) *mit deutlich eingeschränktem Funktionsumfang der Server-Features*
 
 ## Registrieren
 <center> <p>

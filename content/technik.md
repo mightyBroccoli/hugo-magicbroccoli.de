@@ -56,3 +56,11 @@ Adresse für Websocket: [https://magicbroccoli.de/xmpp-websocket](https://magicb
 <img src="/images/register.png" alt="Register" style="width: 200px;"/>
 </a></p>
 </center>
+
+## Statistiken
+<center> <p>
+![Client 2 Server Connections](https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_c2s-week.png)
+![Server 2 Server Connections](https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_s2s-week.png)
+![Stanzas](https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_stanzas-week.png)
+
+</center>

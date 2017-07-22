@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to use Gajim">
+  <meta name="generator" content="Hugo 0.23" />
+
+  <title>Gajim Tutorial &middot; Magical Broccoli</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.2/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.2/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.2/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://magicbroccoli.de/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://magicbroccoli.de/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://magicbroccoli.de/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://magicbroccoli.de/img/favicon.ico" type="image/x-icon" />
+
+  
+    <link rel="stylesheet" href="https://magicbroccoli.de/css/my.css">
+  
+  
+    <script src="https://magicbroccoli.de/js/my.js"></script>
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://magicbroccoli.de/">Blackburn</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/xmpp/"><i class='fa fa-delicious' aria-hidden='true'></i>XMPP Server</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/tags/"><i class='fa fa-tags' aria-hidden='true'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/termsofuse/"><i class='fa fa-user fa-fw'></i>Terms of Use</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/datenschutz/"><i class='fa fa-user-secret' aria-hidden='true'></i>Datenschutz</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/contact/"><i class='fa fa-address-book-o' aria-hidden='true'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/impressum/"><i class='fa fa-user fa-fw'></i>Impressum</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/mightyBroccoli" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/mightyBroccoli" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://bitbucket.org/mightyBroccoli" target="_blank"><i class="fa fa-bitbucket-square fa-fw"></i>Bitbucket</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2017. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Gajim Tutorial</h1>
+  <h2>How to use Gajim</h2>
+</div>
+<div class="content">
+  
+
+<h3 id="account-registrierung">Account Registrierung</h3>
+
+<p>Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt.<br />
+Speziell bei <strong>magicbroccoli.de</strong> sollte Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifiizierung des Accountbesitzters möglich ist.
+Durch den Klick auf &ldquo;Registrieren&rdquo; akzeptieren Sie die <a href="https://magicbroccoli.de/termsofuse/">Nutzungsbedingungen</a> sowie <a href="https://magicbroccoli.de/datenschutz/">Datenschutzbestimmungen</a>.
+<img src="https://magicbroccoli.de/images/tutorials/gajim/webregister.png" alt="" /></p>
+
+<h3 id="installation">Installation</h3>
+
+<p>Gajim lässt sich unter Windows und Linux problemlos installieren.<br />
+<a href="https://gajim.org/?lang=de">Gajim Download</a></p>
+
+<h5 id="archlinux">Archlinux</h5>
+
+<p>Bei Archlinux ist die Installation einen Schritt länger aber nicht sonderlich schwierig.
+Gajim lässt sich genauso über Pacman installieren allerdings wird für das Omemo Plugin zusätzlich das Packet <a href="https://aur.archlinux.org/packages/gajim-plugin-omemo/">gajim-plugin-omemo</a> aus dem AUR benötigt.</p>
+
+<p>Für das Gesamte Archlinux Tutorial; <a href="https://wiki.archlinux.org/index.php/Gajim">Gajim Archlinux</a></p>
+
+<h3 id="client-login">Client Login</h3>
+
+<p>Der Client Login gestaltet sich ähnlich einfach. Sie wählen aus das Sie bereits einen Account besitzen, Jenen, den Sie in Schritt 1 erstellt haben.
+<img src="https://magicbroccoli.de/images/tutorials/gajim/clientlogin.png" alt="" /><br />
+Diesen tragen sie wie hier in die Felder ein. <em>Dabei ersetzen sie die Daten natürlich mit ihren eigenen.</em>
+<img src="https://magicbroccoli.de/images/tutorials/gajim/logindata.png" alt="" /><br />
+Sollten Ihre Daten korrekt sein folgt der eigentliche Login.
+<img src="https://magicbroccoli.de/images/tutorials/gajim/login.png" alt="" /><br />
+Wenn Sie den Haken bei &ldquo;Mein Profil setzten, wenn ich mich verbinde&rdquo; setzen, bekommen Sie bei Ihrem ersten Login den möglichkeit Ihr Profil zu bearbeiten. Dies ist aber auch nachträglich noch möglich und ist 100% freiwillig und kann genauso kommplett leer gelassen werden.</p>
+
+<h3 id="gruppenchats">Gruppenchats</h3>
+
+<p>Aktionen &gt; Chatraum betreten &gt; Chatraum betreten führt zu einem Fenster das Ihnen einige Möglichkeiten bietet.
+<img src="https://magicbroccoli.de/images/tutorials/gajim/muc.png" alt="" /></p>
+
+<p>Das wichtigste Feld ist der Server. Dieser wird allerdings vom Server automatisch eingetragen, daher ist dort nichts weiter notwendig.</p>
+
+<ul>
+<li>Spitzname : Nickname unter dem Sie in dem Chatraum auftreten ( leer = username )</li>
+<li>Chatraum : Chatraum den Sie betreten möchten. Wenn dieser nicht vorhanden ist und sie auf Betreten drücken wird dieser für Sie erstellt.</li>
+<li>Diesen Chatraum merken : Sollten sie dieses Kästchen ankreuzen wird der Chatraum zu ihrer Kontaktliste hinzugefügt.</li>
+<li>Betrete diesen Chatraum automatisch&hellip; : Sobald der Client sich verbunden hat betreten sie diesen Chatraum</li>
+</ul>
+
+<h3 id="adhoc-befehle">Adhoc Befehle</h3>
+
+<p><img src="https://magicbroccoli.de/images/tutorials/gajim/howtoadhoc.png" alt="" /><br />
+<img src="https://magicbroccoli.de/images/tutorials/gajim/adhoc.png" alt="" /><br />
+Bei den Adhoc Befehlen handelt es sich um Befehle, die Ihr Client dem Server zur ausführung geben kann, um bestimmte Funktionen zu erhalten. Wie das Befehlsmenu zu erreichen ist zeigen die Bilder.</p>
+
+<h4 id="invite-user">Invite User</h4>
+
+<p>Die Invite Funktion ist eine besondere Funktion des Servers. Sie erlaubt einen speziellen Invite Link zu generieren, die zu einer gesonderten Registrierung führt. Der eingeladene User ist nach dieser Registrierung automatisch auf der Freundesliste der Person die ihn eingeladen hat.</p>
+
+<h4 id="ping">Ping</h4>
+
+<p>Sendet einen Ping an der Server der mit einem Pong und der aktuellen Serverzeit antwortet.</p>
+
+<h4 id="get-uptime">Get Uptime</h4>
+
+<p>Zeigt die Zeit an die der Server online ist.</p>
+
+<h4 id="archive-settings">Archive Settings</h4>
+
+<p><strong>Default = OFF</strong><br />
+Die Archive Funktion ermöglicht es Nachrichten für 1 Monat auf dem Server zu speichern. Sollten sie sich auf einem anderen Gerät einloggen, welches <a href="https://xmpp.org/extensions/xep-0313.html">Message Archive Management</a> unterstützt sendet der Server Ihnen, ihre Chatverläufe von vor bis zu 1 Monat. Nach dieser Zeit werden die Nachrichten verworfen.</p>
+
+<p><em>Verschlüsselte Nachrichten werden natürlich auch verschlüsselt gespeichert.</em></p>
+
+<h4 id="search-settings">Search settings</h4>
+
+<p><strong>Default = OFF</strong><br />
+Diese Funktion sollte man sie aktivieren erlaubt es sie über die generelle Benutzersuche zu finden.
+<img src="https://magicbroccoli.de/images/tutorials/gajim/search settings.png" alt="" /></p>
+
+</div>
+
+</div>
+</div>
+<script src="https://magicbroccoli.de/js/ui.js"></script>
+
+
+
+
+</body>
+</html>
+
