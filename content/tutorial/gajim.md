@@ -38,24 +38,24 @@ Wenn Sie den Haken bei "Mein Profil setzten, wenn ich mich verbinde" setzen, bek
 Unter Ändern > Plugins lassen sich viele unterschiedliche Plugins installieren, die die Funktionalität von Gajim erweitern. Um alle Server Features effektiv nutzen zu können empfehle ich folgende Plugins zu installieren.
 
 ### Omemo
-Bei Omemo handelt es sich um eine Weiterentwicklung der OTR ( Off the record ) Verfahrens, welches mehrere Ressource pro Account oder sogar Gruppenkonversationen verschlüsselt abwickeln kann.
+Bei Omemo handelt es sich um eine Weiterentwicklung des OTR ( Off the record ) Verfahrens, welches mehrere Ressourcen pro Account oder sogar Gruppenkonversationen verschlüsselt abwickeln kann.
 Besonders ist, das auch versendete Medien komplett verschlüsselt versendet werden.
 
 ### HTTP Upload
-HTTP Upload ist eine Funktion, wie sich auch WhatsApp und co verwenden. Dabei wird eine Medien Datei ( Bild, Video, etc. ) an den Server übertragen und dieser versendet dann einen Link zu der Datei an den/ oder die Empfänger. Mit diesem Plugin unterstützt Gajim dieses Verfahren.  
-Wichtig zu beachten sind bei diesem Plugin die Serverrichtlinien. Meistens gibt, wie auch hier, gibt es bestimmt Grenzen wie groß eine einzelne versendete Datei sein kann, oder wie viele Dateien pro Zeiteinheit versendet werden können.
+HTTP Upload ist eine Funktion des Medienversands, wie sie auch WhatsApp und Co verwenden. Dabei wird eine Mediendatei ( Bild, Video, etc. ) an den Server übertragen und dieser versendet anschließend einen Link zu der Datei an den/die Empfänger. Mithilfe dieses Plugins unterstützt Gajim dieses Verfahren.  
+Wichtig zu beachten sind bei diesem Plugin die Serverrichtlinien. Meistens gibt es, wie auch hier, bestimmte Grenzen, wie groß eine einzelne versendete Datei sein kann, oder wie viele Dateien pro Zeiteinheit versendet werden können.
 
-*Besonders bei diesem Plugin ist, dass es den verschlüsselten Versand von Medien unterstützt. Das heißt wird eine Omemo verschlüsselter Chat gestartet, sind auch mit HTTP Upload versendete Medien komplett verschlüsselt.*
+*Besonders bei diesem Plugin ist, dass es den verschlüsselten Versand von Medien unterstützt. Das heißt in einem Omemo verschlüsselten Chat, sind mit HTTP Upload versendete Medien auch komplett verschlüsselt.*
 
-Es ist darauf zu achten, dass das Plugin Images **kein** HTTP Upload Plugin ist sondern die Datei über das ältere Peer 2 Peer System überträgt, welchen viele mobile Geräte ablehnen.
+Es ist darauf zu achten, dass das Plugin [Images](https://dev.gajim.org/gajim/gajim-plugins/wikis/ImagePlugin) **kein** HTTP Upload Plugin ist, sondern die Datei über das ältere Peer 2 Peer System überträgt, welches viele mobile Geräte nicht unterstützen.
 
 ### URL Image Preview
-Erweiternd zum HTTP Upload ist das URL Image Preview Plugin. Dieses ermöglicht es Medien Dateien die über HTTP Upload versendet wurden direkt im Nachrichtenverlauf anzuzeigen. Damit ist der Medien Versand mit diesen beiden Plugins ( HTTP Upload / URL Image Preview ) vollständig.
+Erweiternd zum HTTP Upload ist das URL Image Preview Plugin. Dieses ermöglicht es, Medien Dateien die über HTTP Upload versendet wurden, direkt im Nachrichtenverlauf anzuzeigen. Damit ist der Medien Versand mit diesen beiden Plugins ( HTTP Upload / URL Image Preview ) vollständig integriert.
 
-*Besonders bei diesem Plugin ist, dass es das Öffnen von aesgcm// Links unterstützt. Das heißt das Medien die über Omemo versendet wurden, da sie verschlüsselt sind, erst herunterlädt sie dann entschlüsselt und danach anzeigt ohne das der User etwas dafür tun muss.*
+*Besonders bei diesem Plugin ist, dass es das Öffnen von aesgcm:// Links unterstützt. Das heißt, dass Medien die über Omemo versendet wurden, verschlüsselt geöffnet werden können ohne das der User etwas dafür tun muss.*
 
 ## Gruppenchats
-Aktionen > Chatraum betreten > Chatraum betreten führt zu einem Fenster das Ihnen einige Möglichkeiten bietet. 
+Aktionen > Chatraum betreten > Chatraum betreten führt zu einem Fenster das Ihnen einige Möglichkeiten bietet.  
 ![](/images/tutorials/gajim/muc.png)  
 
 Das wichtigste Feld ist der Server. Dieser wird allerdings vom Server automatisch eingetragen, daher ist dort nichts weiter notwendig.

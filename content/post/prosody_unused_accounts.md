@@ -1,5 +1,5 @@
 +++
-date = "2017-06-30T15:00"
+date = "2017-06-30"
 title = "Prosody Unused Accounts"
 sidemenu = "true"
 description = "Prosody Database Maintenance Skript"
