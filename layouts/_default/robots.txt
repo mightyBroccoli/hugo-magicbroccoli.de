@@ -1,0 +1,12 @@
+User-agent: *
+
+Disallow: /impressum/
+Disallow: /datenschutz/
+Disallow: /*.jpg$
+Disallow: /*.png$
+Disallow: /*.ico$
+
+Allow: /xmpp/
+Allow: /technik/
+
+Sitemap: https://magicbroccoli.de/sitemap.xml
