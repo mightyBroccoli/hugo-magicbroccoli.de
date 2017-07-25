@@ -327,9 +327,9 @@ Je nach Häufigkeit der Ausführung könnte die Benachrichtigung innerhalb von S
 <li>changed</li>
 </ul>
 
-<h2 id="bitbucket">Bitbucket</h2>
+<h2 id="github">Github</h2>
 
-<p>Das Projekt ist gehostet auf <a href="https://bitbucket.org/mightyBroccoli/logwatch-scripts/src/6551365b8135/teamspeak_scripts/?at=master">Bitbucket</a>. Dort ist auch ein Bereich für <a href="https://bitbucket.org/mightyBroccoli/logwatch-scripts/issues?status=new&amp;status=open">Issues</a>, falls Probleme auftreten oder Verbesserungsvorschläge bestehen.</p>
+<p>Das Projekt ist gehostet auf <a href="https://github.com/mightyBroccoli/logwatch-scripts">Github</a>. Dort ist auch ein Bereich für <a href="https://github.com/mightyBroccoli/logwatch-scripts/issues">Github - Issues</a>, falls Probleme auftreten oder Verbesserungsvorschläge bestehen.</p>
 
 <h2 id="debian-9">Debian 9</h2>
 
@@ -342,9 +342,9 @@ Je nach Häufigkeit der Ausführung könnte die Benachrichtigung innerhalb von S
 <pre><code>Use of uninitialized value in numeric eq (==) at /usr/share/perl5/XML/Stream.pm line 631.
 </code></pre>
 
-<p>Ich hab mit etwas debugging herausgefunden was geändert werden muss um perl-xmlstream wieder zu fixxen.
-Es muss die Datei <code>/usr/share/perl5/XML/Stream.pm</code> geändert werden, oder eben jene in die in der Fehlermeldung genannt ist.<br />
-Mit nano lässt sich bequem nach der Zeile suchen, mit Shift + W. Danach ändert man diese Zeile</p>
+<p>Ich hab mit etwas debugging herausgefunden, welche Zeilen geändert werden müssen, um perl-xmlstream wieder zu fixxen.
+Die Datei <code>/usr/share/perl5/XML/Stream.pm</code> müsste geändert werden. (Pfad kann abweichen je nach OS)<br />
+Mit nano lässt sich bequem nach der Zeile suchen, mit Shift + W. Danach ändert man Zeile 631.</p>
 
 <pre><code class="language-perl">$self-&gt;{SIDS}-&gt;{default}-&gt;{ssl_ca_path} = '';
 </code></pre>

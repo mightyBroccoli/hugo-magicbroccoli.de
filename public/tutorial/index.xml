@@ -18,9 +18,9 @@
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/tutorial/gajim/</guid>
-      <description>Account Registrierung Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt.
-Speziell bei magicbroccoli.de sollte Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist. Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die Nutzungsbedingungen sowie Datenschutzbestimmungen. Installation Gajim lässt sich unter Windows und Linux problemlos installieren. &amp;ndash;&amp;gt; Gajim Download
-Archlinux Bei Archlinux ist die Installation einen Schritt länger aber nicht sonderlich schwierig.</description>
+      <description>1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt.
+Speziell bei magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist. Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die Nutzungsbedingungen sowie Datenschutzbestimmungen. 2. Installation Gajim lässt sich unter Windows und Linux problemlos installieren. &amp;ndash;&amp;gt; Gajim Download
+2.1 Archlinux Bei Archlinux ist die Installation einen Schritt länger, aber nicht sonderlich schwierig.</description>
     </item>
     
   </channel>

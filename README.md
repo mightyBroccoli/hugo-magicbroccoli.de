@@ -1,5 +1,3 @@
 # magicbroccoli.de Website
 
-
-### todo
-+ Blog Eintrag über Teamspeak Log Script XMPP Push
+https://travis-ci.org/mightyBroccoli/hugo-magicbroccoli.de#

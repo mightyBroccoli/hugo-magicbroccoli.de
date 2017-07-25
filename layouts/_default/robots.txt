@@ -2,6 +2,7 @@ User-agent: *
 
 Disallow: /impressum/
 Disallow: /datenschutz/
+Disallow: /contact/
 Disallow: /*.jpg$
 Disallow: /*.png$
 Disallow: /*.ico$

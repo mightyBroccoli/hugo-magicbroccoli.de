@@ -18,9 +18,9 @@
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/tutorial/gajim/</guid>
-      <description>Account Registrierung Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt.
-Speziell bei magicbroccoli.de sollte Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist. Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die Nutzungsbedingungen sowie Datenschutzbestimmungen. Installation Gajim lässt sich unter Windows und Linux problemlos installieren. &amp;ndash;&amp;gt; Gajim Download
-Archlinux Bei Archlinux ist die Installation einen Schritt länger aber nicht sonderlich schwierig.</description>
+      <description>1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt.
+Speziell bei magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist. Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die Nutzungsbedingungen sowie Datenschutzbestimmungen. 2. Installation Gajim lässt sich unter Windows und Linux problemlos installieren. &amp;ndash;&amp;gt; Gajim Download
+2.1 Archlinux Bei Archlinux ist die Installation einen Schritt länger, aber nicht sonderlich schwierig.</description>
     </item>
     
     <item>
@@ -74,12 +74,12 @@ b85e592c 5db8519f cfc39b9d 82632a59 9dfa923f a009dc44 c7f9ba07 aa650c58 [Gajim N
     </item>
     
     <item>
-      <title>Datenschutz</title>
+      <title>Datenschutzerklärung</title>
       <link>https://magicbroccoli.de/datenschutz/</link>
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/datenschutz/</guid>
-      <description>Datenschutzerklärung Datenschutz Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+      <description>Datenschutz Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
 Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.</description>
     </item>
     
