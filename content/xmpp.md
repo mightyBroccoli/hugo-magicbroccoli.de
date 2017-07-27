@@ -12,14 +12,16 @@ Ich betreibe einen XMPP Instant Messaging Server, der ursprünglich ausschließl
 Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hier; [XMPP Clients](https://xmpp.org/software/clients.html).  
 
 **INHO** : Die folgende Liste bezieht sich auf die Clients, die die meisten Features abdecken und mit möglichst vielen Standards konform sind. Außerdem werden ausschließlich Clients gelistet, die aktiv entwickelt werden.
+Für einige der unten empfohlenen Clients sind Tutorials vorhanden; [Tutorials](/tutorial/)  
+Bei Verbesserungsvorschlägen ist die Mitarbeit bei Github gerne gesehen; [Github](https://github.com/mightyBroccoli/hugo-magicbroccoli.de)  
 
 - Android: [Conversations](https://conversations.im/) (€ 2,39 im [Google Play Store](https://play.google.com/store/apps/details?id=eu.siacs.conversations&referrer=utm_source%3Dwebsite) oder gratis auf [F-Droid](https://f-droid.org/repository/browse%20/?fdid=eu.siacs.conversations))
 - iOS (iPhone): [ChatSecure](https://itunes.apple.com/de/app/chatsecure-verschl%C3%BCsselter-nachrichtendienst/id464200063?mt=8)
-- Linux: [Gajim](https://gajim.org/?lang=de) -- [Tutorial](/tutorial/gajim/)
+- Linux: [Gajim](https://gajim.org/?lang=de)
 - Linux (console): [mcabber](https://mcabber.com/) oder [Profanity](http://www.profanity.im/)
 - macOS (Mac OS X): [Adium](https://adium.im/)
 - Web (im Browser): [Converse.js](https://conversejs.org/)
-- Windows: [Gajim](https://gajim.org/?lang=de) -- [Tutorial](/tutorial/gajim/)
+- Windows: [Gajim](https://gajim.org/?lang=de)
 - Windows (XMPP - Anfänger): [Pidgin](https://pidgin.im/) *mit deutlich eingeschränktem Funktionsumfang der Server-Features*
 
 ## Registrieren

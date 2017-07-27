@@ -78,7 +78,7 @@ Zeigt die Zeit an die der Server online ist.
 **Default = OFF**  
 Die Archive Funktion ermöglicht es Nachrichten für 1 Monat auf dem Server zu speichern. Sollten sie sich auf einem anderen Gerät einloggen, welches [Message Archive Management](https://xmpp.org/extensions/xep-0313.html) unterstützt sendet der Server Ihnen, ihre Chatverläufe von vor bis zu 1 Monat. Nach dieser Zeit werden die Nachrichten verworfen.  
 
-*Verschlüsselte Nachrichten werden natürlich auch verschlüsselt gespeichert.* 
+*Verschlüsselte Nachrichten werden natürlich auch verschlüsselt gespeichert.*
 
 ### 6.5 Search settings
 **Default = OFF**  
@@ -100,7 +100,7 @@ Einige Webseiten die weitergehende Tutorials bzw. ausführlichere Tutorials zur 
 #### Technische Übersicht von XMPP
 - [Eine Übersicht über XMPP](https://xmpp.org/about/technology-overview.html)
 
-
+[Zurück zur Übersicht](/xmpp/)  
 
 - - -
 Last Edit 25.07.17

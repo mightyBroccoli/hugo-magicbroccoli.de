@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/mightybroccoli
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://magicbroccoli.de
+  * I am mightybroccoli (https://keybase.io/mightybroccoli) on keybase.
+  * I have a public key ASDUxD9pMtKA8gUAms9O1c5J7udClqXeYdoDYIlRzyl2RQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120d4c43f6932d280f205009acf4ed5ce49eee74296a5de61da03608951cf2976450a",
+      "host": "keybase.io",
+      "kid": "0120d4c43f6932d280f205009acf4ed5ce49eee74296a5de61da03608951cf2976450a",
+      "uid": "60f34095fc9b334241a339403321e219",
+      "username": "mightybroccoli"
+    },
+    "service": {
+      "hostname": "magicbroccoli.de",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.22"
+  },
+  "ctime": 1501172820,
+  "expire_in": 504576000,
+  "merkle_root": {
+    "ctime": 1501172800,
+    "hash": "1a4369c41c80b54e0e5d3eae0287e34fc03b406386a1f4edc4f6553eeeba207d440f023b9c91d18c6f3f42c58e9f07489840abada3d1d1f3370356075d34e74f",
+    "seqno": 1285209
+  },
+  "prev": "1f20c2ea6d3b453c67e42a2498c1f16aa056875259339665a6e87592590a0b98",
+  "seqno": 10,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg1MQ/aTLSgPIFAJrPTtXOSe7nQpal3mHaA2CJUc8pdkUKp3BheWxvYWTFAwB7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwZDRjNDNmNjkzMmQyODBmMjA1MDA5YWNmNGVkNWNlNDllZWU3NDI5NmE1ZGU2MWRhMDM2MDg5NTFjZjI5NzY0NTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwZDRjNDNmNjkzMmQyODBmMjA1MDA5YWNmNGVkNWNlNDllZWU3NDI5NmE1ZGU2MWRhMDM2MDg5NTFjZjI5NzY0NTBhIiwidWlkIjoiNjBmMzQwOTVmYzliMzM0MjQxYTMzOTQwMzMyMWUyMTkiLCJ1c2VybmFtZSI6Im1pZ2h0eWJyb2Njb2xpIn0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJtYWdpY2Jyb2Njb2xpLmRlIiwicHJvdG9jb2wiOiJodHRwczoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMjIifSwiY3RpbWUiOjE1MDExNzI4MjAsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTUwMTE3MjgwMCwiaGFzaCI6IjFhNDM2OWM0MWM4MGI1NGUwZTVkM2VhZTAyODdlMzRmYzAzYjQwNjM4NmExZjRlZGM0ZjY1NTNlZWViYTIwN2Q0NDBmMDIzYjljOTFkMThjNmYzZjQyYzU4ZTlmMDc0ODk4NDBhYmFkYTNkMWQxZjMzNzAzNTYwNzVkMzRlNzRmIiwic2Vxbm8iOjEyODUyMDl9LCJwcmV2IjoiMWYyMGMyZWE2ZDNiNDUzYzY3ZTQyYTI0OThjMWYxNmFhMDU2ODc1MjU5MzM5NjY1YTZlODc1OTI1OTBhMGI5OCIsInNlcW5vIjoxMCwidGFnIjoic2lnbmF0dXJlIn2jc2lnxEAzRkfp9vXeSTXxNzWx4u3Syx2bgOOmfwuFS8lxWa/J67F6gWEHxpHODfSQJtbugW+4+dw13KNJH7Cw7tIAzPILqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQgofJGzS6TPzqz6u8JWSWzXsrewWLPdCm9F9E9/N5q9tWjdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/mightybroccoli
+
+==================================================================
