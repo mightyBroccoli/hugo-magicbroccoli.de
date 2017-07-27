@@ -8,7 +8,7 @@ description = "How to use XMPP Clients"
 Diese Seite existiert der Übersichtlichkeit halber. Folgend sind einige Tutorials die von mir geschrieben wurde und dazu einige außerhalb liegende.  
 
 ## Windows/ Linux
-- [Gajim](/tutorials/gajim)
+- [Gajim](/tutorial/gajim)
 
 ## Android
 - [Conversations](https://www.jabber.de/clients/android-ios/conversations-guide)
