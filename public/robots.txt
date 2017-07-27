@@ -1,15 +1,13 @@
 User-agent: *
 
-# disallow the complete domain
-Disallow: /
-
-# specially allow those paths
-Allow: /xmpp/
-Allow: /technik/
-
-# disallow indexing any pictures
+Disallow: /impressum/
+Disallow: /datenschutz/
+Disallow: /contact/
 Disallow: /*.jpg$
 Disallow: /*.png$
 Disallow: /*.ico$
+
+Allow: /xmpp/
+Allow: /technik/
 
 Sitemap: https://magicbroccoli.de/sitemap.xml

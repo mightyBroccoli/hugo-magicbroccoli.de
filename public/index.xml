@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 22 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tutorial Übersicht</title>
+      <link>https://magicbroccoli.de/tutorial/</link>
+      <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/tutorial/</guid>
+      <description>Tutorial Übersicht Diese Seite existiert der Übersichtlichkeit halber. Folgend sind einige Tutorials die von mir geschrieben wurde und dazu einige außerhalb liegende.
+Windows/ Linux  Gajim  Android  Conversations  Zurück zur Übersicht
+Last Edit 25.07.17</description>
+    </item>
     
     <item>
       <title>Gajim Tutorial</title>
@@ -64,13 +75,14 @@ Viele Server unterstützen eine Reihe von &amp;ldquo;Automatischen Moderationen&
       
       <guid>https://magicbroccoli.de/contact/</guid>
       <description> mail nico(at)magicbroccoli.de
-PGP 0xEA7C31AAB1BDC1A2
+PGP 0xEA7C31AAB1BDC1A21
+0xEA7C31AAB1BDC1A22
 Chat XMPP: broccoli@magicbroccoli.de
-IRC: mightyBroccoli1
+IRC: mightyBroccoli3
 OMEMO Fingerabdrücke 1e56b6ec dd764842 674f2309 ba981a69 308e5959 ace5e6ed 6ddbf19a ee715324 [Conversations]
 243C97D7 7D0D2533 298524BC B66EB5E4 E74F6EC5 47079162 C4B917C4 2B25714B [Gajim PC]
 b85e592c 5db8519f cfc39b9d 82632a59 9dfa923f a009dc44 c7f9ba07 aa650c58 [Gajim Notebook]
- freenode [return]   </description>
+ hosted at pgp.mit.edu[return] download directly from me[return] freenode[return]   </description>
     </item>
     
     <item>
