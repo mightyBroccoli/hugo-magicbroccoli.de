@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 27 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 31 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/tags/xmpp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>We support Omemo</title>
+      <link>https://magicbroccoli.de/post/omemo-statement/</link>
+      <pubDate>Mon, 31 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/omemo-statement/</guid>
+      <description>Hallo zusammen,
+Daniel Gultsch hat vor ein paar Tagen die Compliance Liste um die Spalte XEP-0384: OMEMO Encryption erweitert. Derzeit suggeriert diese, auf Grund einer fehlenden Erklärung, das nur conversations.im OMEMO Encryption unterstützen würde. Dies entspricht natürlich nicht der Wahrheit.
+Hintergrund ist, dass Daniel Gultsch empfiehlt, das das PEP-Modul der Server publish-options unterstützen sollte (ausführlichere Beschreibung). Dies bewirkt, dass User in Conversations ab Version 1.20+, auch Personen verschlüsselt anschreiben kann, ohne sie vorher in seinen Roster hinzufügen zu müssen.</description>
+    </item>
     
     <item>
       <title>Server Technik</title>
@@ -55,15 +66,6 @@ Viele Server unterstützen eine Reihe von &amp;ldquo;Automatischen Moderationen&
       <description>Einführung Ich betreibe einen XMPP Instant Messaging Server, der ursprünglich ausschließlich für die Besucher meines TeamSpeak gedacht war, allerdings nun auch öffentlich zugänglich ist. Hier möchte ich einige Dinge erläutern die für eine Verbindung, sowie Nachrichtenversand/ -empfang notwendig sind.
 How to XMPP? Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hier; XMPP Clients.
 INHO : Die folgende Liste bezieht sich auf die Clients, die die meisten Features abdecken und mit möglichst vielen Standards konform sind.</description>
-    </item>
-    
-    <item>
-      <title>Magical  Server</title>
-      <link>https://magicbroccoli.de/post/first-post/</link>
-      <pubDate>Tue, 20 Jun 2017 18:34:25 +0200</pubDate>
-      
-      <guid>https://magicbroccoli.de/post/first-post/</guid>
-      <description>This is my first blogpost. EVER. hello world</description>
     </item>
     
   </channel>

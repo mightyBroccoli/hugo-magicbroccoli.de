@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Omemo on Magical Broccoli</title>
+    <link>https://magicbroccoli.de/tags/omemo/</link>
+    <description>Recent content in Omemo on Magical Broccoli</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-DE</language>
+    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
+    <lastBuildDate>Mon, 31 Jul 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://magicbroccoli.de/tags/omemo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>We support Omemo</title>
+      <link>https://magicbroccoli.de/post/omemo-statement/</link>
+      <pubDate>Mon, 31 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/omemo-statement/</guid>
+      <description>Hallo zusammen,
+Daniel Gultsch hat vor ein paar Tagen die Compliance Liste um die Spalte XEP-0384: OMEMO Encryption erweitert. Derzeit suggeriert diese, auf Grund einer fehlenden Erklärung, das nur conversations.im OMEMO Encryption unterstützen würde. Dies entspricht natürlich nicht der Wahrheit.
+Hintergrund ist, dass Daniel Gultsch empfiehlt, das das PEP-Modul der Server publish-options unterstützen sollte (ausführlichere Beschreibung). Dies bewirkt, dass User in Conversations ab Version 1.20+, auch Personen verschlüsselt anschreiben kann, ohne sie vorher in seinen Roster hinzufügen zu müssen.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="Stellungnahme zur aktuellen Entwicklung um Omemo">
   <meta name="generator" content="Hugo 0.25.1" />
 
-  <title>Magical Broccoli</title>
+  <title>We support Omemo &middot; Magical Broccoli</title>
 
   
   
@@ -36,8 +36,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="Magical Broccoli" href="https://magicbroccoli.de/index.xml" />
   
 
   
@@ -130,10 +128,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://magicbroccoli.de/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -241,17 +235,12 @@
 
 
 <div class="header">
-  <h1>Magical Broccoli</h1>
-  <h2>just magical</h2>
+  <h1>We support Omemo</h1>
+  <h2>Stellungnahme zur aktuellen Entwicklung um Omemo</h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="https://magicbroccoli.de/post/omemo-statement/">We support Omemo</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
@@ -280,114 +269,56 @@
 
 </div>
 
-  </header>
+  <p>Hallo zusammen,</p>
 
-  <p>
-  Hallo zusammen,
-Daniel Gultsch hat vor ein paar Tagen die Compliance Liste um die Spalte XEP-0384: OMEMO Encryption erweitert. Derzeit suggeriert diese, auf Grund einer fehlenden Erklärung, das nur conversations.im OMEMO Encryption unterstützen würde. Dies entspricht natürlich nicht der Wahrheit.
-Hintergrund ist, dass Daniel Gultsch empfiehlt, das das PEP-Modul der Server publish-options unterstützen sollte (ausführlichere Beschreibung). Dies bewirkt, dass User in Conversations ab Version 1.20+, auch Personen verschlüsselt anschreiben kann, ohne sie vorher in seinen Roster hinzufügen zu müssen.
-  </p>
+<p>Daniel Gultsch hat vor ein paar Tagen die <a href="https://gultsch.de/compliance_ranked.html">Compliance Liste</a> um die Spalte <em>XEP-0384: OMEMO Encryption</em> erweitert. Derzeit suggeriert diese, auf Grund einer fehlenden Erklärung, das nur conversations.im OMEMO Encryption unterstützen würde. Dies entspricht natürlich nicht der Wahrheit.</p>
 
-  
-  <footer>
-    <a href="https://magicbroccoli.de/post/omemo-statement/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
+<p>Hintergrund ist, dass <a href="https://twitter.com/iNPUTmice/status/888826898335322113">Daniel Gultsch empfiehlt</a>, das das <a href="https://xmpp.org/extensions/xep-0163.html">PEP-Modul</a> der Server <a href="https://xmpp.org/extensions/xep-0060.html#publisher-publish-options">publish-options</a> unterstützen sollte (<a href="https://gist.github.com/iNPUTmice/7c52785ed69787516abb60e31703dbd2">ausführlichere Beschreibung</a>). Dies bewirkt, dass User in Conversations ab Version 1.20+, auch Personen verschlüsselt anschreiben kann, ohne sie vorher in seinen Roster hinzufügen zu müssen. Auch wir finden dieses Feature gut und würden es gern unterstützen, allerdings unterstützt das PEP Modul von prosody publish-options derzeit noch nicht.</p>
 
-  
-    <article>
-  <header>
-    <h2><a href="https://magicbroccoli.de/post/ts-xmpp-script/">TeamSpeak XMPP Push</a></h2>
+<p>Herr Gultsch selbst, schreibt an mehreren Stellen, dass es sich hierbei um <strong>kein</strong> <a href="https://github.com/iNPUTmice/ComplianceTester/issues/112#issuecomment-319008031">Security Risiko</a>, handelt, sondern lediglich um ein <a href="https://github.com/iNPUTmice/ComplianceTester/issues/112#issuecomment-319008031">Usability Problem</a>. Das heißt, dass es sich nicht um eine Vorraussetzung handelt, sondern um eine Empfehlung.<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Server support for publish-options is strongly recommended but not required for OMEMO in Conversations 1.20.0+</p>&mdash; Daniel Gultsch (@iNPUTmice) <a href="https://twitter.com/iNPUTmice/status/888826898335322113">July 22, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a href="https://github.com/iNPUTmice/ComplianceTester/issues/112">Der Vorschlag</a> eine kurze Erklärung zu der Spalte in seiner Liste hinzuzufügen, da das ganze sonst so eine falsche Aussage über die Server wiederspiegelt, wurde mit den folgenden Sätzen einfach ignoriert und das Ticket geschlossen:</p>
 
-    <div class="post-meta">
+<blockquote>
+<p>While not a security problems the lack of publish-options is a huge usability problem as this limits OMEMO to contacts you have mutual presence subscription with.
+Conversations users will except OMEMO to work with everyone. That’s why Conversations requires publish-options.</p>
+</blockquote>
 
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>22 Jun 2017, 00:00</time>
-  </div>
+<p>Hauptproblem hierbei ist, das die Darstellung für alle Server sehr „rufschädigend“ sein kann. Ich und einige andere Hoster haben versucht Daniel Gultsch darauf aufmerksam zu machen, dies wird von ihm allerdings komplett ignoriert.</p>
+
+<p><em>Lange Rede kurzer Sinn</em> – Ihr könnt mit Conversations und anderen Clients weiterhin OMEMO über unseren und die anderen Server verwenden, nur eben derzeit noch ohne das Feature Kontakte außerhalb eurer Kontaktliste direkt verschlüsselt anzuschreiben, ohne diese vorher zu adden.</p>
+
+<p><strong>Danke geht an Sebiastian von <a href="https://blog.5222.de/compliance-liste-wir-unterstuetzen-omemo/">5222.de</a> für die Textgrundlage.</strong></p>
+
 
   
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
     
-      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/development">Development</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/bash">bash</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/teamspeak">TeamSpeak</a>
+    <a href="https://magicbroccoli.de/post/ts-xmpp-script/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
+  <div class="pure-u-10-24">
     
-      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/xmpp">XMPP</a>
+    <nav class="prev">
+      <a href="https://magicbroccoli.de/post/ts-xmpp-script/">TeamSpeak XMPP Push</a>
+    </nav>
     
   </div>
-  
-  
-
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
 </div>
 
-  </header>
 
-  <p>
-  Idee Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen.
-Für genau dieses Problem habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP sendet.
-Nutzen IMHO gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung schnellstmöglichst sehr praktisch ist.
-Viele Server unterstützen eine Reihe von &ldquo;Automatischen Moderationen&rdquo;, trotzdem sollten User nicht in der Lage sein sich Gruppen zuzuweisen.
-  </p>
 
   
-  <footer>
-    <a href="https://magicbroccoli.de/post/ts-xmpp-script/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://magicbroccoli.de/post/first-post/">Magical  Server</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>20 Jun 2017, 18:34</time>
-  </div>
-
-  
-
-  
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  This is my first blogpost. EVER. hello world
-  </p>
-
-  
-</article>
-
-  
-
-  
-
 
 </div>
 
