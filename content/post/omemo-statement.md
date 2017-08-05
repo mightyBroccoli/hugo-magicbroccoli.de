@@ -1,12 +1,20 @@
 +++
 date = "2017-07-31"
-title = "We support Omemo"
+title = "Wir unterstützen Omemo"
 sidemenu = "true"
 description = "Stellungnahme zur aktuellen Entwicklung um Omemo"
 tags = [ "Prosody" , "Omemo" , "XMPP" ]
 categories = [ "Prosody" , "Omemo" ]
 author = [ "nico" ]
 +++
+### Update
+Herr Gultsch hat nun eine Erklärung in den Sourcecode von OMEMO.java des ComplianceTesters hinzugefügt. Außerdem fügte er in die Spalte XEP-0384: OMEMO Encryption ein Fragezeichen hinzu. Dieses führt zu der Erklärung im [Sourcecode auf Github](https://github.com/iNPUTmice/ComplianceTester/blob/master/src/main/java/eu/siacs/compliance/tests/OMEMO.java#L12-L17).  
+Auch wenn dies wirklich nur ein kleiner Hinweis ist, danken wir Herrn Gultsch dennoch das er unserem Wunsch nachgekommen ist.  
+
+> This test checks for the availability of publish-options on the account’s PEP service. publish-options allows a client to efficiently change the access model of the OMEMO key material such that everyone can access it. Without publish-options OMEMO is only available to contacts with mutual presence subscription.
+
+- - -  
+
 Hallo zusammen,
 
 Daniel Gultsch hat vor ein paar Tagen die [Compliance Liste](https://gultsch.de/compliance_ranked.html) um die Spalte *XEP-0384: OMEMO Encryption* erweitert. Derzeit suggeriert diese, auf Grund einer fehlenden Erklärung, das nur conversations.im OMEMO Encryption unterstützen würde. Dies entspricht natürlich nicht der Wahrheit.  
