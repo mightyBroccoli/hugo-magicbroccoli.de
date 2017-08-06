@@ -9,7 +9,7 @@ description = "ein Trauerspiel"
 +++
 ## How to setup XEP-0368 for XMPP over TLS
 ### Was ist XEP-0368
-Bei dem XEP-0369 handelt es sich um die Verfahren eines Clients, über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken, falls die regulären Wege blockiert sind, zb durch Firewalls oder ähnliches.
+Bei dem XEP-0368 handelt es sich um die Verfahren eines Clients, über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken, falls die regulären Wege blockiert sind, zb durch Firewalls oder ähnliches.
 
 <blockquote>
 XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method of discovering how to connect to an XMPP server. This XEP extends that to include new xmpps-client/xmpps-server SRV records pointing to direct TLS ports and combine priorities and weights as if they were a single SRV record similar to RFC 6186. It also provides an easy way for clients to bypass restrictive firewalls that only allow HTTPS, for servers to host multiple protocols/services on a single port, and for servers and clients to take advantage of less round trips and existing direct TLS loadbalancers.
@@ -17,9 +17,9 @@ XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method
 
 ### Was wird benötigt?
 - Prosody Server
-- gültiges SSL Zertifikat ( letsencrypt / oä ) **optional*
+- gültiges SSL Zertifikat ( letsencrypt / oä ) **optional**
 - 2 IPv4 Adressen ( **Hinweis beachten** )
-- iptables und iptables-restore
+- iptables und iptables-persistent
 - Kontrolle über euere DNS Zone
 
 #### Brauche ich wirklich 2 IP Adressen?
@@ -55,13 +55,15 @@ Ein neustart des Prosody Services ist nach dem setzen dieser Einstellung **erfor
 legacy_ssl_ports = { 5223 }
 ```
 
-### 3. SSL Zertifikat
+### 3. SSL Zertifikat ( *optional* )
 Hier wäre der Zeitpunkt das bestehende Zertifikat für `example.com` auf `xmpps.example.com` auszuweiten, um keinen `common name error` zu erzeugen. Dieses erweiterte Zertifikat ist dem Prosody zur Verfügung zu stellen.
+
+*Hinweis* : Dieser Teil ist vollkommen optional. Die [Prosody Docu](https://prosody.im/doc/certificates) zeigt auf das kein Zertifikat notwendig wäre, möglicherweise ist es bloß die Eigenart von mir das ich ein gültiges Zertifkiat auch an diesem Punkt präsentieren möchte.
 
 ### 4. iptables Regeln
 Für das eigentliche Umleiten wird die PREROUTING und POSTROUTING Kette von `iptables` verwendet. Dabei werden Pakete noch bevor sie überhaupt geroutet werden umgeleitet.  
 Dafür werden 2 Regeln verwendet um einen `malformed xml-error` zu vermeiden.  
-Regel Nr. 1 leitet den gesamten Traffic der zweiten IP der auf Port 443 ankommt, ohne Veränderung an Port 5223 weiter. 
+Regel Nr. 1 leitet den gesamten Traffic der zweiten IP der auf Port 443 ankommt, ohne Veränderung an Port 5223 weiter.
 
 Für die Antwort des Prosody Servers wird allerdings eine zweite Regel benötigt, die sich in der POSTROUTING Kette befindet. Diese stellt sicher das, dass Antwort Packet auch wieder über Port 443 den Server verlässt und nicht mit 5223.  
 *Sollte bei der Prosody Konfiguration ein anderer Port gewählt werden als der default port, muss dieser natürlich in den iptables Regeln ausgetauscht werden.*  
