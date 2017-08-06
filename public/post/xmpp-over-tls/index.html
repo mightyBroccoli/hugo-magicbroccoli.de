@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ein Trauerspiel">
+  <meta name="generator" content="Hugo 0.25.1" />
+
+  <title>XMPP over TLS Tutorial &middot; Magical Broccoli</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://magicbroccoli.de/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://magicbroccoli.de/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://magicbroccoli.de/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://magicbroccoli.de/img/favicon.ico" type="image/x-icon" />
+
+  
+    <link rel="stylesheet" href="https://magicbroccoli.de/css/my.css">
+  
+  
+    <script src="https://magicbroccoli.de/js/my.js"></script>
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://magicbroccoli.de/">Blackburn</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/xmpp/"><i class='fa fa-delicious' aria-hidden='true'></i>XMPP Server</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/tags/"><i class='fa fa-tags' aria-hidden='true'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/termsofuse/"><i class='fa fa-user fa-fw'></i>Terms of Use</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/datenschutz/"><i class='fa fa-user-secret' aria-hidden='true'></i>Datenschutz</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/contact/"><i class='fa fa-address-book-o' aria-hidden='true'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/impressum/"><i class='fa fa-user fa-fw'></i>Impressum</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/mightyBroccoli" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://bitbucket.org/mightyBroccoli" target="_blank"><i class="fa fa-bitbucket-square fa-fw"></i>Bitbucket</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://keybase.io/mightyBroccoli" target="_blank"><i class="fa fa-key fa-fw"></i>Keybase</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2017. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>XMPP over TLS Tutorial</h1>
+  <h2>ein Trauerspiel</h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>06 Aug 2017, 00:00</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/xep-0368">XEP-0368</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/prosody">Prosody</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/xmpp">XMPP</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/xmpp">XMPP</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/prosody">Prosody</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/config">config</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+
+<h2 id="how-to-setup-xep-0368-for-xmpp-over-tls">How to setup XEP-0368 for XMPP over TLS</h2>
+
+<h3 id="was-ist-xep-0368">Was ist XEP-0368</h3>
+
+<p>Bei <a href="https://xmpp.org/extensions/xep-0368.html">XEP-0368</a> handelt es sich um ein Verfahren von XMPP-Clients, über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken, falls die regulären Wege blockiert sind, zb. durch Firewalls.</p>
+
+<blockquote>
+XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method of discovering how to connect to an XMPP server. This XEP extends that to include new xmpps-client/xmpps-server SRV records pointing to direct TLS ports and combine priorities and weights as if they were a single SRV record similar to RFC 6186. It also provides an easy way for clients to bypass restrictive firewalls that only allow HTTPS, for servers to host multiple protocols/services on a single port, and for servers and clients to take advantage of less round trips and existing direct TLS loadbalancers.
+</blockquote>
+
+<h3 id="was-wird-benötigt">Was wird benötigt?</h3>
+
+<ul>
+<li>Prosody Server</li>
+<li><strong>optional</strong> gültiges SSL Zertifikat ( LetsEncrypt / oä )</li>
+<li>2 IPv4 Adressen ( <strong>Hinweis beachten</strong> )</li>
+<li>iptables und iptables-persistent</li>
+<li>Kontrolle über eure DNS Zone</li>
+</ul>
+
+<p><span style="color:red"><em>Hinweis</em>: Notwendigkeit 2 IPv4 Adressen</span><br />
+Es werden 2 IP Adressen benötigt wenn Ihre IP Adresse bereits auf Port 443 lauscht. Sprich eine <strong>https</strong> Website via Apache2 / nginx hostet. Da für diese Methode der Port verpflichtend benötigt wird. Ist dies nicht der Fall reicht eine IP Adresse vollkommen aus.</p>
+
+<hr />
+
+<h3 id="1-dns-einstellungen">1. DNS Einstellungen</h3>
+
+<p>Den Anfang machen die DNS Einstellungen, da die Publizierung der neuen DNS Einstellungen bis zu 48 Stunden dauern kann.<br />
+Zusätzlich zu den <a href="https://prosody.im/doc/dns">Standard SRV Einträgen</a> wird ein weiterer <code>_xmpps-client._tcp</code> Eintrag benötigt, sowie ein A Record für die Subdomain.</p>
+
+<p>In diesem Beispiel ist die Domain <code>example.com</code> und XMPP over TLS soll über <code>xmpps.example.com</code> erreichbar sein.</p>
+
+<pre><code class="language-bash"># Standard Settings
+_xmpp-client._tcp.example.com. 18000 IN SRV 0 5 5222 example.com.
+_xmpp-server._tcp.example.com. 18000 IN SRV 0 5 5269 example.com.
+
+# XMPP over TLS Settings
+_xmpps-client._tcp.example.com. 18000 IN SRV 10 5 xmpps.example.com.
+
+# A record
+xmpps.example.com. 18000 IN A $zweite_ip_adresse
+</code></pre>
+
+<h3 id="2-prosody-server-konfiguration">2. Prosody Server Konfiguration</h3>
+
+<p>In der Prosody Konfiguration muss <em>legacy_ssl_ports</em> definiert werden. Damit das <code>http</code> Modul auch auf dem gewählten Port lauschen soll. <em>mod_legacyauth wird hierfür nicht benötigt.</em><br />
+Ein Neustart des Prosody Services ist nach dem setzen dieser Einstellung <strong>erforderlich</strong>.</p>
+
+<pre><code>-- XEP-0368: SRV records for XMPP over TLS
+legacy_ssl_ports = { 5223 }
+</code></pre>
+
+<h3 id="3-ssl-zertifikat-optional">3. SSL Zertifikat ( <em>optional</em> )</h3>
+
+<p>Hier wäre der Zeitpunkt das bestehende Zertifikat für <code>example.com</code> auf <code>xmpps.example.com</code> auszuweiten, um keinen <code>common name error</code> zu erzeugen. Dieses erweiterte Zertifikat ist dem Prosody zur Verfügung zu stellen.</p>
+
+<p><em>Hinweis</em> : Dieser Teil ist vollkommen optional. Die <a href="https://prosody.im/doc/certificates">Prosody Dokumentation</a> zeigt auf, dass kein Zertifikat notwendig wäre.<br />
+<strong>IMHO</strong> Es macht das Gesamtbild einheitlicher, wenn auch diesem Endpunkt ein gültiges SSL Zertifikat präsentiert wird.</p>
+
+<h3 id="4-iptables-regeln">4. iptables Regeln</h3>
+
+<p>Für das Umleiten wird die PREROUTING und POSTROUTING Kette von <code>iptables</code> verwendet. Dabei werden Pakete, noch bevor sie überhaupt geroutet werden, umgeleitet.<br />
+Dafür werden 2 Regeln verwendet um einen <code>malformed xml-error</code> zu vermeiden.<br />
+Regel Nr. 1 leitet den gesamten Traffic der zweiten IP der auf Port 443 ankommt, ohne Veränderung an Port 5223 der ersten IP weiter.</p>
+
+<p>Für die Antwort des Prosody Servers wird allerdings eine zweite Regel benötigt, die sich in der POSTROUTING Kette befindet. Diese stellt sicher das, dass Antwort Paket auch wieder über Port 443 der zweiten IP Adresse den Server verlässt und nicht mit 5223.<br />
+<em>Sollte bei der Prosody Konfiguration ein anderer Port gewählt werden als der default Port, muss dieser natürlich in den iptables Regeln ausgetauscht werden.</em></p>
+
+<p>In diesem Beispiel ist $erste_ip, die IP auf der auch der httpd Server lauscht. $zweite_ip bezeichnet daher die zweite Adresse für XMPP over TLS.</p>
+
+<pre><code class="language-bash"># PREROUTING
+iptables -t nat -A PREROUTING -d $zweite_ip -p tcp --dport 443 -j DNAT --to-destination $erste_ip:5223
+
+# POSTROUTING
+iptables -t nat -A POSTROUTING -p tcp -d  $zweite_ip --dport 5223 -j SNAT --to-source $erste_ip:5223
+</code></pre>
+
+<p>Abschließend lassen sich diese Regeln mit <code>iptables-save</code> speichern, damit bei einem reboot die Regeln wieder geladen werden.</p>
+
+<pre><code class="language-bash">iptables-save &gt; /etc/iptables/rules.v4
+</code></pre>
+
+<h2 id="abschluss">Abschluss</h2>
+
+<p>Sollten alle diese Schritte erfolgreich abgeschlossen sein. Ist es sehr leicht möglich herauszufinden, ob alles so funktioniert wie es soll. Dafür lässt sich <code>curl -i</code> verwenden.</p>
+
+<pre><code class="language-bash">curl -i https://xmpps.example.com
+</code></pre>
+
+<p>Als Ergebnis sollte ein <em>xml stream error</em> zu sehen sein, <strong>ohne</strong> Apache2 / nginx header. Ist außerdem keine Fehlermeldung über ein ungültiges SSL Zertifikat dabei ist das Zertifikat auch für die Subdomain gültig und funktioniert.</p>
+
+<pre><code>&lt;?xml version='1.0'?&gt;
+&lt;stream:stream xmlns:stream='http://etherx.jabber.org/streams' xml:lang='en' xmlns='jabber:client'&gt;
+    &lt;stream:error&gt;
+        &lt;not-well-formed xmlns='urn:ietf:params:xml:ns:xmpp-streams'/&gt;
+    &lt;/stream:error&gt;
+&lt;/stream:stream&gt;
+</code></pre>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://magicbroccoli.de/post/omemo-statement/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://magicbroccoli.de/post/omemo-statement/">Wir unterstützen Omemo</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="https://magicbroccoli.de/js/ui.js"></script>
+
+
+
+
+</body>
+</html>
+
