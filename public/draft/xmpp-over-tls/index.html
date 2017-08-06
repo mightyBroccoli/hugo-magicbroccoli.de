@@ -245,7 +245,7 @@
 
 <h3 id="was-ist-xep-0368">Was ist XEP-0368</h3>
 
-<p>Bei dem XEP-0369 handelt es sich um die Verfahren eines Clients, über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken, falls die regulären Wege blockiert sind, zb durch Firewalls oder ähnliches.</p>
+<p>Bei dem XEP-0368 handelt es sich um die Verfahren eines Clients, über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken, falls die regulären Wege blockiert sind, zb durch Firewalls oder ähnliches.</p>
 
 <blockquote>
 XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method of discovering how to connect to an XMPP server. This XEP extends that to include new xmpps-client/xmpps-server SRV records pointing to direct TLS ports and combine priorities and weights as if they were a single SRV record similar to RFC 6186. It also provides an easy way for clients to bypass restrictive firewalls that only allow HTTPS, for servers to host multiple protocols/services on a single port, and for servers and clients to take advantage of less round trips and existing direct TLS loadbalancers.
@@ -255,9 +255,9 @@ XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method
 
 <ul>
 <li>Prosody Server</li>
-<li>gültiges SSL Zertifikat ( letsencrypt / oä ) *<em>optional</em></li>
+<li>gültiges SSL Zertifikat ( letsencrypt / oä ) <strong>optional</strong></li>
 <li>2 IPv4 Adressen ( <strong>Hinweis beachten</strong> )</li>
-<li>iptables und iptables-restore</li>
+<li>iptables und iptables-persistent</li>
 <li>Kontrolle über euere DNS Zone</li>
 </ul>
 
@@ -295,9 +295,11 @@ Ein neustart des Prosody Services ist nach dem setzen dieser Einstellung <strong
 legacy_ssl_ports = { 5223 }
 </code></pre>
 
-<h3 id="3-ssl-zertifikat">3. SSL Zertifikat</h3>
+<h3 id="3-ssl-zertifikat-optional">3. SSL Zertifikat ( <em>optional</em> )</h3>
 
 <p>Hier wäre der Zeitpunkt das bestehende Zertifikat für <code>example.com</code> auf <code>xmpps.example.com</code> auszuweiten, um keinen <code>common name error</code> zu erzeugen. Dieses erweiterte Zertifikat ist dem Prosody zur Verfügung zu stellen.</p>
+
+<p><em>Hinweis</em> : Dieser Teil ist vollkommen optional. Die <a href="https://prosody.im/doc/certificates">Prosody Docu</a> zeigt auf das kein Zertifikat notwendig wäre, möglicherweise ist es bloß die Eigenart von mir das ich ein gültiges Zertifkiat auch an diesem Punkt präsentieren möchte.</p>
 
 <h3 id="4-iptables-regeln">4. iptables Regeln</h3>
 
