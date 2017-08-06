@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Config on Magical Broccoli</title>
+    <link>https://magicbroccoli.de/tags/config/</link>
+    <description>Recent content in Config on Magical Broccoli</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-DE</language>
+    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 06 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://magicbroccoli.de/tags/config/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>XMPP over TLS Tutorial</title>
+      <link>https://magicbroccoli.de/draft/xmpp-over-tls/</link>
+      <pubDate>Sun, 06 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/draft/xmpp-over-tls/</guid>
+      <description>How to setup XEP-0368 for XMPP over TLS Was ist XEP-0368 Bei dem XEP-0369 handelt es sich um die Verfahren eines Clients, über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken, falls die regulären Wege blockiert sind, zb durch Firewalls oder ähnliches.
+ XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method of discovering how to connect to an XMPP server. This XEP extends that to include new xmpps-client/xmpps-server SRV records pointing to direct TLS ports and combine priorities and weights as if they were a single SRV record similar to RFC 6186.</description>
+    </item>
+    
+  </channel>
+</rss>

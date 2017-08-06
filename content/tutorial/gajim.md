@@ -21,18 +21,16 @@ Gajim lässt sich genauso über Pacman installieren, allerdings wird für das Om
 Für das Gesamte Archlinux Tutorial; [Gajim Archlinux](https://wiki.archlinux.org/index.php/Gajim)
 
 ## 3. Client Login
-Der Client Login gestaltet sich ähnlich einfach. Sie wählen aus, dass Sie bereits einen Account besitzen, jenen aus Schritt 1 oder einen bestehenden.
-![](/images/tutorials/gajim/clientlogin.png)  
-Diesen tragen sie wie hier in die Felder ein. *Dabei ersetzen sie die Daten natürlich mit ihren eigenen.*
-![](/images/tutorials/gajim/logindata.png)  
-Sollten Ihre Daten korrekt sein folgt der eigentliche Login.
-![](/images/tutorials/gajim/login.png)  
+Der Client Login gestaltet sich ähnlich einfach. Sie wählen aus, dass Sie bereits einen Account besitzen, jenen aus Schritt 1 oder einen bestehenden.  
+Diesen tragen sie wie hier in die Felder ein. *Dabei ersetzen sie die Daten natürlich mit ihren eigenen.*  
+Sollten Ihre Daten korrekt sein folgt der eigentliche Login.  
 Wenn Sie den Haken bei "Mein Profil setzten, wenn ich mich verbinde" setzen, bekommen Sie bei Ihrem ersten Login, die Möglichkeit Ihr Profil zu bearbeiten. Dies ist aber auch nachträglich noch möglich und ist 100% freiwillig und kann genauso komplett leer gelassen werden.
 
-* Spitzname : Nickname unter dem Sie in dem Chatraum auftreten ( leer = username )
-* Chatraum : Chatraum den Sie betreten möchten. Wenn dieser nicht vorhanden ist und sie auf Betreten drücken wird dieser für Sie erstellt.
-* Diesen Chatraum merken : Sollten sie dieses Kästchen ankreuzen wird der Chatraum zu ihrer Kontaktliste hinzugefügt.
-* Betrete diesen Chatraum automatisch... : Sobald der Client sich verbunden hat betreten sie diesen Chatraum
+{{< fluid_imgs
+  "pure-u-1-2|/images/tutorials/gajim/clientlogin.png|Login"
+  "pure-u-1-2|/images/tutorials/gajim/logindata.png|Login"
+  "pure-u-1-1|/images/tutorials/gajim/login.png|Login"
+>}}
 
 ## 4. Plugins
 Unter Ändern > Plugins lassen sich viele unterschiedliche Plugins installieren, die die Funktionalität von Gajim erweitern. Um alle Server Features effektiv nutzen zu können empfehle ich folgende Plugins zu installieren.
@@ -58,11 +56,20 @@ Erweiternd zum HTTP Upload ist das URL Image Preview Plugin. Dieses ermöglicht 
 Aktionen > Chatraum betreten > Chatraum betreten führt zu einem Fenster das Ihnen einige Möglichkeiten bietet.  
 ![](/images/tutorials/gajim/muc.png)  
 
-Das wichtigste Feld ist der Server. Dieser wird allerdings vom Server automatisch eingetragen, daher ist dort nichts weiter notwendig.
+* Spitzname : Nickname unter dem Sie in dem Chatraum auftreten ( leer = username )
+* Chatraum : Chatraum den Sie betreten möchten, wenn dieser nicht vorhanden ist wird dieser für Sie erstellt.
+* _Diesen Chatraum merken_ : Sollten sie dieses Kästchen ankreuzen wird der Chatraum zu ihrer Kontaktliste hinzugefügt.
+* _Betrete diesen Chatraum automatisch..._ : Nach dem Login betreten Sie diesen Raum automatisch.
+* Server : Adresse unter welchen die Chaträume zu erreichen sind.
+*
+*Hinweis* : Dieser wird allerdings vom Server automatisch eingetragen, daher ist dort nichts weiter notwendig.
 
 ## 6. Adhoc Befehle
-![](/images/tutorials/gajim/howtoadhoc.png)  
-![](/images/tutorials/gajim/adhoc.png)  
+{{< fluid_imgs
+  "pure-u-1-3|/images/tutorials/gajim/howtoadhoc.png|Adhoc"
+  "pure-u-1-2|/images/tutorials/gajim/adhoc.png|Adhoc"
+>}}
+
 Bei den Adhoc Befehlen handelt es sich um Befehle, die Ihr Client dem Server zur Ausführung geben kann, um bestimmte Funktionen zu erhalten. Wie das Befehlsmenu aufzurufen ist zeigen die Bilder.
 
 ### 6.1 Invite User

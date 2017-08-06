@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://magicbroccoli.de/draft/xmpp-over-tls/</loc>
+    <lastmod>2017-08-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://magicbroccoli.de/post/omemo-statement/</loc>
     <lastmod>2017-07-31T00:00:00+00:00</lastmod>
   </url>
@@ -69,6 +74,12 @@
   </url>
   
   <url>
+    <loc>https://magicbroccoli.de/tags/config/</loc>
+    <lastmod>2017-08-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://magicbroccoli.de/tags/debian/</loc>
     <lastmod>2017-06-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -81,6 +92,12 @@
   </url>
   
   <url>
+    <loc>https://magicbroccoli.de/draft/</loc>
+    <lastmod>2017-08-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://magicbroccoli.de/tags/jabber/</loc>
     <lastmod>2017-06-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -88,7 +105,7 @@
   
   <url>
     <loc>https://magicbroccoli.de/</loc>
-    <lastmod>2017-07-31T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -106,13 +123,19 @@
   
   <url>
     <loc>https://magicbroccoli.de/tags/prosody/</loc>
-    <lastmod>2017-07-31T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://magicbroccoli.de/topics/prosody/</loc>
+    <lastmod>2017-08-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/tags/</loc>
-    <lastmod>2017-06-27T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -135,8 +158,20 @@
   </url>
   
   <url>
+    <loc>https://magicbroccoli.de/topics/xep-0368/</loc>
+    <lastmod>2017-08-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://magicbroccoli.de/tags/xmpp/</loc>
-    <lastmod>2017-07-31T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://magicbroccoli.de/topics/xmpp/</loc>
+    <lastmod>2017-08-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
