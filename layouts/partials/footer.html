@@ -1,0 +1,15 @@
+</div>
+</div>
+<script src="{{ .Site.BaseURL }}js/ui.js"></script>
+
+{{ partial "google_analytics.html" . }}
+
+</body>
+
+<script>
+	converse.initialize({
+	bosh_service_url: 'https://magicbroccoli.de/http-bind', // Please use this connection manager only for testing purposes
+	show_controlbox_by_default: true
+	});
+</script>
+</html>

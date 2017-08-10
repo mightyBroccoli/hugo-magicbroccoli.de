@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="TeamSpeak Script">
-  <meta name="generator" content="Hugo 0.25.1" />
+  <meta name="generator" content="Hugo 0.26" />
 
   <title>TeamSpeak XMPP Push &middot; Magical Broccoli</title>
 
@@ -54,6 +54,10 @@
     <script src="https://magicbroccoli.de/js/my.js"></script>
   
 
+  
+  <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.conversejs.org/css/converse.min.css">
+  <script src="https://cdn.conversejs.org/dist/converse.min.js"></script>
+  
 </head>
 
 
@@ -402,5 +406,11 @@ Mit nano lässt sich bequem nach der Zeile suchen, mit Shift + W. Danach ändert
 
 
 </body>
-</html>
 
+<script>
+	converse.initialize({
+	bosh_service_url: 'https://magicbroccoli.de/http-bind', 
+	show_controlbox_by_default: true
+	});
+</script>
+</html>
