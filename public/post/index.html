@@ -74,7 +74,7 @@
 <div id="menu">
 
   
-  <a class="pure-menu-heading brand" href="https://magicbroccoli.de/">Blackburn</a>
+  <a class="pure-menu-heading brand" href="https://magicbroccoli.de/">just magical</a>
 
 
   <div class="pure-menu">
@@ -279,11 +279,23 @@
 
 <script>
 	converse.initialize({
+	allow_chat_pending_contacts: true,
+	allow_non_roster_messaging: true,
+	allow_registration: false,
 	bosh_service_url: 'https://magicbroccoli.de/http-bind',
-	websocket_url: 'https://magicbroccoli.de/xmpp-websocket',
-	show_controlbox_by_default: false,
+	csi_waiting_time: 25,
+	default_domain: 'magicbroccoli.de',
+	domain_placeholder: 'magicbroccoli.de',
+	locked_domain: 'magicbroccoli.de',
+	message_carbons: true,
+	muc_domain: 'conference.magicbroccoli.de',
+	providers_link: 'https://magicbroccoli.de/xmpp',
 	registration_domain: 'magicbroccoli.de',
-	message_carbons: true
+	roster_groups: true,
+	show_controlbox_by_default: true,
+	show_send_button: true,
+	websocket_url: 'https://magicbroccoli.de/xmpp-websocket',
 	});
 </script>
 </html>
+

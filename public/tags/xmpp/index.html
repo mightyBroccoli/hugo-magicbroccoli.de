@@ -74,7 +74,7 @@
 <div id="menu">
 
   
-  <a class="pure-menu-heading brand" href="https://magicbroccoli.de/">Blackburn</a>
+  <a class="pure-menu-heading brand" href="https://magicbroccoli.de/">just magical</a>
 
 
   <div class="pure-menu">
@@ -253,7 +253,6 @@
     <article>
   <header>
     <h2><a href="https://magicbroccoli.de/post/xmpp-over-tls/">XMPP over TLS Tutorial</a></h2>
-
     <div class="post-meta">
 
   <div>
@@ -296,7 +295,7 @@
   
 
 </div>
-
+    Reading Time: 4 minutes
   </header>
 
   <p>
@@ -315,7 +314,6 @@
     <article>
   <header>
     <h2><a href="https://magicbroccoli.de/post/omemo-statement/">Wir unterstützen Omemo</a></h2>
-
     <div class="post-meta">
 
   <div>
@@ -344,7 +342,7 @@
   
 
 </div>
-
+    Reading Time: 2 minutes
   </header>
 
   <p>
@@ -364,7 +362,6 @@ Auch wenn dies wirklich nur ein kleiner Hinweis ist, danken wir Herrn Gultsch de
     <article>
   <header>
     <h2><a href="https://magicbroccoli.de/technik/">Server Technik</a></h2>
-
     <div class="post-meta">
 
   <div>
@@ -393,12 +390,12 @@ Auch wenn dies wirklich nur ein kleiner Hinweis ist, danken wir Herrn Gultsch de
   
 
 </div>
-
+    Reading Time: 2 minutes
   </header>
 
   <p>
   Sicherheit Das Hostsystem läuft unter Debian Stretch. Ich update das System und alle seine Komponenten regelmäßig. Dabei nehme ich teilweise Rücksicht darauf, dass es zu keinen reboot zu Stoßzeiten kommt. Wenn es aber gar nicht anders geht, ist eine kurze Downtime für wichtige Updates vertretbar.
-DNS Die gesamte Domain magicbroccoli.de ist mit DNSSEC signiert und lässt sich überprüfen.
+DNS Die gesamte Zone von magicbroccoli.de ist mit DNSSEC signiert und lässt sich überprüfen.
 Prosody Der XMPP Server ist zur Zeit ein Prosody 0.10 nightly.
   </p>
 
@@ -413,7 +410,6 @@ Prosody Der XMPP Server ist zur Zeit ein Prosody 0.10 nightly.
     <article>
   <header>
     <h2><a href="https://magicbroccoli.de/register/">Registrierung magicbroccoli.de XMPP</a></h2>
-
     <div class="post-meta">
 
   <div>
@@ -442,7 +438,7 @@ Prosody Der XMPP Server ist zur Zeit ein Prosody 0.10 nightly.
   
 
 </div>
-
+    Reading Time: 1 minutes
   </header>
 
   <p>
@@ -458,7 +454,6 @@ Bitte notiere Sie sich Ihren Benutzernamen und Passwort sorgfältig! Passwort-Re
     <article>
   <header>
     <h2><a href="https://magicbroccoli.de/post/ts-xmpp-script/">TeamSpeak XMPP Push</a></h2>
-
     <div class="post-meta">
 
   <div>
@@ -497,7 +492,7 @@ Bitte notiere Sie sich Ihren Benutzernamen und Passwort sorgfältig! Passwort-Re
   
 
 </div>
-
+    Reading Time: 2 minutes
   </header>
 
   <p>
@@ -518,7 +513,6 @@ Viele Server unterstützen eine Reihe von &ldquo;Automatischen Moderationen&rdqu
     <article>
   <header>
     <h2><a href="https://magicbroccoli.de/xmpp/">Magical XMPP Server</a></h2>
-
     <div class="post-meta">
 
   <div>
@@ -547,7 +541,7 @@ Viele Server unterstützen eine Reihe von &ldquo;Automatischen Moderationen&rdqu
   
 
 </div>
-
+    Reading Time: 2 minutes
   </header>
 
   <p>
@@ -577,11 +571,22 @@ INHO : Die folgende Liste bezieht sich auf die Clients, die die meisten Features
 
 <script>
 	converse.initialize({
+	allow_chat_pending_contacts: true,
+	allow_non_roster_messaging: true,
+	allow_registration: false,
 	bosh_service_url: 'https://magicbroccoli.de/http-bind',
-	websocket_url: 'https://magicbroccoli.de/xmpp-websocket',
-	show_controlbox_by_default: false,
+	csi_waiting_time: 25,
+	default_domain: 'magicbroccoli.de',
+	domain_placeholder: 'magicbroccoli.de',
+	locked_domain: 'magicbroccoli.de',
+	message_carbons: true,
+	muc_domain: 'conference.magicbroccoli.de',
+	providers_link: 'https://magicbroccoli.de/xmpp',
 	registration_domain: 'magicbroccoli.de',
-	message_carbons: true
+	roster_groups: true,
+	show_controlbox_by_default: true,
+	show_send_button: true,
+	websocket_url: 'https://magicbroccoli.de/xmpp-websocket',
 	});
 </script>
 </html>
