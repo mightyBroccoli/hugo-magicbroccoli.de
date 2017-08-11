@@ -9,7 +9,7 @@ Das Hostsystem läuft unter ![Debian](/icons/debian_icon.png) Debian Stretch.
 Ich update das System und alle seine Komponenten regelmäßig. Dabei nehme ich teilweise Rücksicht darauf, dass es zu keinen reboot zu Stoßzeiten kommt. Wenn es aber gar nicht anders geht, ist eine kurze Downtime für wichtige Updates vertretbar.
 
 ### DNS
-Die gesamte Domain *magicbroccoli.de* ist mit DNSSEC signiert und lässt sich überprüfen.
+Die gesamte Zone von *magicbroccoli.de* ist mit DNSSEC signiert und lässt sich überprüfen.
 
 ## Prosody
 Der XMPP Server ist zur Zeit ein Prosody 0.10 nightly.
