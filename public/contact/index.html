@@ -293,8 +293,11 @@ IRC: <code>mightyBroccoli</code><sup class="footnote-ref" id="fnref:3"><a rel="f
 
 <script>
 	converse.initialize({
-	bosh_service_url: 'https://magicbroccoli.de/http-bind', 
-	show_controlbox_by_default: true
+	bosh_service_url: 'https://magicbroccoli.de/http-bind',
+	websocket_url: 'https://magicbroccoli.de/xmpp-websocket',
+	show_controlbox_by_default: false,
+	registration_domain: 'magicbroccoli.de',
+	message_carbons: true
 	});
 </script>
 </html>
