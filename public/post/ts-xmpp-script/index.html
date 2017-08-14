@@ -56,8 +56,11 @@
 
   
   <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.conversejs.org/css/converse.min.css">
-  <script src="https://cdn.conversejs.org/dist/converse.min.js"></script>
-  
+  <script>
+    if ( screen && screen.width < 960 ) {
+      document.write('<script> type="text\/javascript" src="https://cdn.conversejs.org/dist/converse.min.js"><\/script>');
+    }
+  </script>
 </head>
 
 
@@ -421,7 +424,7 @@ Mit nano lässt sich bequem nach der Zeile suchen, mit Shift + W. Danach ändert
 	providers_link: 'https://magicbroccoli.de/xmpp',
 	registration_domain: 'magicbroccoli.de',
 	roster_groups: true,
-	show_controlbox_by_default: false,
+	show_controlbox_by_default: true,
 	show_send_button: true,
 	});
 </script>
