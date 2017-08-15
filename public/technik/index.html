@@ -48,10 +48,6 @@
   <link rel="shortcut icon" href="https://magicbroccoli.de/img/favicon.ico" type="image/x-icon" />
 
   
-    <link rel="stylesheet" href="https://magicbroccoli.de/css/my.css">
-  
-  
-    <script src="https://magicbroccoli.de/js/my.js"></script>
   
 
   
@@ -95,13 +91,19 @@
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://magicbroccoli.de/xmpp/"><i class='fa fa-delicious' aria-hidden='true'></i>XMPP Server</a>
+          <a class="pure-menu-link" href="https://magicbroccoli.de/tags/"><i class='fa fa-tags' fa-fw></i>Tags</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://magicbroccoli.de/tags/"><i class='fa fa-tags' aria-hidden='true'></i>Tags</a>
+          <a class="pure-menu-link" href="https://magicbroccoli.de/xmpp/"><i class='fa fa-delicious' fa-fw></i>XMPP Server</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/register/"><i class='fa fa-plus' fa-fw'></i>Register</a>
       
         </li>
       
@@ -113,13 +115,13 @@
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://magicbroccoli.de/datenschutz/"><i class='fa fa-user-secret' aria-hidden='true'></i>Datenschutz</a>
+          <a class="pure-menu-link" href="https://magicbroccoli.de/datenschutz/"><i class='fa fa-user-secret' fa-fw></i>Privacy</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://magicbroccoli.de/contact/"><i class='fa fa-address-book-o' aria-hidden='true'></i>Contact</a>
+          <a class="pure-menu-link" href="https://magicbroccoli.de/contact/"><i class='fa fa-address-book-o' fa-fw></i>Contact</a>
       
         </li>
       
@@ -250,8 +252,8 @@
 
 <h2 id="sicherheit">Sicherheit</h2>
 
-<p>Das Hostsystem läuft unter <img src="https://magicbroccoli.de/icons/debian_icon.png" alt="Debian" /> Debian Stretch.
-Ich update das System und alle seine Komponenten regelmäßig. Dabei nehme ich teilweise Rücksicht darauf, dass es zu keinen reboot zu Stoßzeiten kommt. Wenn es aber gar nicht anders geht, ist eine kurze Downtime für wichtige Updates vertretbar.</p>
+<p>Das Hostsystem läuft unter <img src="https://magicbroccoli.de/icons/debian_icon.png" alt="Debian" /> Debian 9.1 Stretch.
+Ich update das System und alle seine Komponenten regelmäßig. Dabei nehme ich teilweise Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn es aber gar nicht anders geht, ist eine kurze Downtime für wichtige Updates vertretbar.</p>
 
 <h3 id="dns">DNS</h3>
 
@@ -263,27 +265,28 @@ Ich update das System und alle seine Komponenten regelmäßig. Dabei nehme ich t
 
 <h3 id="verschlüsselung">Verschlüsselung</h3>
 
-<p>Prosody ist so konfiguriert, ausschließlich verschlüsselte Verbindungen zuzulassen. Zusätzlich dazu ist der Server so konfiguriert ausschließlich Verschlüsselungsverfahren zuzulassen, die <a href="https://de.wikipedia.org/wiki/Perfect_Forward_Secrecy">Perfect Forward Secrecy</a> unterstützen.<br />
-Ungesicherte Verbindungen, oder Verbindungen mit zu schwacher Verschlüsselung bei <em>c2s</em> oder <em>s2s</em> werden blockiert. Leider werden dadurch einige Server sowie einige ältere Clients ausgesperrt, allerdings ist Verschlüsselng für mich ein Ausschlusskriterium.<br />
+<p>Prosody ist so konfiguriert, ausschließlich verschlüsselte Verbindungen zuzulassen. Zusätzlich dazu ist der Server so konfiguriert ausschließlich Verschlüsselungsverfahren zuzulassen, die <a href="https://de.wikipedia.org/wiki/Perfect_Forward_Secrecy">Perfect Forward Secrecy</a> unterstützen.
+Ungesicherte Verbindungen, oder Verbindungen mit zu schwacher Verschlüsselung bei <em>c2s</em> oder <em>s2s</em> werden blockiert. Leider werden dadurch einige Server sowie einige ältere Clients ausgesperrt, allerdings ist Verschlüsselng für mich ein Ausschlusskriterium.
 Eine Ansicht welche Verschlüsselungsverfahren zum Verbindungsaufbau zulässig sind ist hier zu finden: <a href="https://check.messaging.one/result.php?domain=magicbroccoli.de&amp;type=client#ciphers">zulässige Verschlüsselungsverfahren</a></p>
 
 <h3 id="zertifikate">Zertifikate</h3>
 
-<p>Es gibt viele öffentliche XMPP Server, die unter selbstsignierten oder ungültigen Zertifikaten betrieben werden. Mein Server ist so konfiguriert ausschließlich Zertifikate zuzulassen, die anerkannt  &ldquo;<em>valid</em>&rdquo; sind. Selbstsignierte Zertifikate werden nicht anerkannt und somit wird eine Verbindung blockiert.</p>
+<p>Es gibt viele öffentliche XMPP Server, die unter selbstsignierten oder ungültigen Zertifikaten betrieben werden. Mein Server ist so konfiguriert ausschließlich Zertifikate zuzulassen, die anerkannt &ldquo;<em>valid</em>&rdquo; sind. Selbstsignierte Zertifikate werden nicht anerkannt und somit wird eine Verbindung blockiert.</p>
 
 <h3 id="passwörter">Passwörter</h3>
 
-<p>Passwöter werden gehashed in einer Datenbank gespeichert, die nicht von außen erreichbar ist. Als Authentifizierungsverfahren wird entweder <a href="https://en.wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism"><em>SCRAM-SHA-1</em> oder <em>SCRAM-SHA-1-PLUS</em></a>.<br />
-Speziell das <a href="https://de.wikipedia.org/wiki/HTTP-Authentifizierung#Digest_Access_Authentication"><em>DIGEST-MD5</em></a> Verfahren, welches ältere Clients häufiger verwenden, wird nicht unterstützt.</p>
+<p>Passwöter werden gehashed in einer Datenbank gespeichert, die nicht von außen erreichbar ist. Als Authentifizierungsverfahren wird entweder <a href="https://en.wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism"><em>SCRAM-SHA-1</em></a> oder <a href="https://en.wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism"><em>SCRAM-SHA-1-PLUS</em></a>.
+Speziell das <a href="https://de.wikipedia.org/wiki/HTTP-Authentifizierung#Digest_Access_Authentication"><em>DIGEST-MD5</em></a> Verfahren, welches ältere Clients und Bots häufiger verwenden, wird nicht unterstützt.</p>
 
 <h2 id="features">Features</h2>
 
-<p>Der Server unterstützt eine große Vielfalt an XMPP-Erweiterungen (XEPs). Jeder Client unterstützt dabei eine andere Teilmenge dieser Features. Speziell gebe ich Acht darauf, <a href="https://conversations.im/">Conversations (Android)</a> in möglichst großem Umfang zu unterstützen.<br />
+<p>Der Server unterstützt eine große Vielfalt an XMPP-Erweiterungen (XEPs). Jeder Client unterstützt dabei eine andere Teilmenge dieser Features. Speziell gebe ich Acht darauf, <a href="https://conversations.im/">Conversations (Android)</a> in möglichst großem Umfang zu unterstützen.
 Auszug aus den speziellern Server-Features:</p>
 
 <ul>
 <li><a href="https://xmpp.org/extensions/xep-0033.html">XEP-0033: Extended Stanza Addressing</a></li>
 <li><a href="https://xmpp.org/extensions/xep-0035.html">XEP-0035: SSL/TLS Integration</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0045.html">XEP-0045: Multi-User Chat</a></li>
 <li><a href="https://xmpp.org/extensions/xep-0055.html">XEP-0055: Basic implementation of Jabber Search</a></li>
 <li><a href="https://xmpp.org/extensions/xep-0065.html">XEP-0065: SOCKS5 Bytestreams</a></li>
 <li><a href="https://xmpp.org/extensions/xep-0124.html">XEP-0124: Bidirectional-streams Over Synchronous HTTP (BOSH)</a></li>
@@ -294,30 +297,87 @@ Auszug aus den speziellern Server-Features:</p>
 <li><a href="https://xmpp.org/extensions/xep-0363.html">XEP-0363: HTTP File Upload</a></li>
 </ul>
 
-<h4 id="http-bind-bosh">HTTP-Bind / Bosh</h4>
+<h3 id="http-bind-bosh">HTTP-Bind / Bosh</h3>
 
-<p>Adresse für HTTP-Bind:  <a href="https://magicbroccoli.de/http-bind">https://magicbroccoli.de/http-bind</a></p>
+<p>HTTP-Bind Adresse: <a href="https://magicbroccoli.de/http-bind">https://magicbroccoli.de/http-bind</a></p>
 
-<h4 id="websocket">Websocket</h4>
+<h3 id="websocket">Websocket</h3>
 
-<p>Adresse für Websocket: <a href="https://magicbroccoli.de/xmpp-websocket">https://magicbroccoli.de/xmpp-websocket</a></p>
+<p>Websocket Adresse: <a href="https://magicbroccoli.de/xmpp-websocket">https://magicbroccoli.de/xmpp-websocket</a></p>
 
 <h2 id="registrieren">Registrieren</h2>
 
-<p><center> <p>
-<a href="https://magicbroccoli.de/register/">
-<img src="https://magicbroccoli.de/images/register.png" alt="Register" style="width: 200px;"/>
-</a></p>
+<p>Wenn dich diese Dinge überzeugt haben XMPP für dich und deine Freunde zu probieren. Kannst du dich hier direkt anmelden.
+<center> <p>
+  <a href="https://magicbroccoli.de/register/">
+  <img src="https://magicbroccoli.de/images/register.png" alt="Register" style="width: 200px;"/>
+  </a></p>
 </center></p>
 
 <h2 id="statistiken">Statistiken</h2>
 
-<p><center> <p>
-<img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_c2s-week.png" alt="Client 2 Server Connections" />
-<img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_s2s-week.png" alt="Server 2 Server Connections" />
-<img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_stanzas-week.png" alt="Stanzas" /></p>
 
-<p></center></p>
+
+<div class="pure-g">
+
+  
+  
+  
+  
+  <div class="pure-u-1-2">
+    <div style="padding: 0 .2em">
+      <img
+        class="pure-img-responsive"
+        src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_c2s-week.png"
+        alt="c2s">
+    </div>
+  </div>
+  
+
+  
+  
+  
+  
+  <div class="pure-u-1-2">
+    <div style="padding: 0 .2em">
+      <img
+        class="pure-img-responsive"
+        src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_s2s-week.png"
+        alt="s2s">
+    </div>
+  </div>
+  
+
+  
+  
+  
+  
+  <div class="pure-u-1-2">
+    <div style="padding: 0 .2em">
+      <img
+        class="pure-img-responsive"
+        src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_stanzas-week.png"
+        alt="stanzas">
+    </div>
+  </div>
+  
+
+  
+  
+  
+  
+  <div class="pure-u-1-2">
+    <div style="padding: 0 .2em">
+      <img
+        class="pure-img-responsive"
+        src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_uptime-week.png"
+        alt="uptime">
+    </div>
+  </div>
+  
+
+</div>
+
 
 </div>
 

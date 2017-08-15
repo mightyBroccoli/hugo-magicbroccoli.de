@@ -1,5 +1,5 @@
 +++
-date = "2017-06-22"
+date = "2017-06-22T14:15:25+02:00"
 title = "TeamSpeak XMPP Push"
 sidemenu = "true"
 description = "TeamSpeak Script"
@@ -7,12 +7,12 @@ tags = [ "XMPP" ]
 topics = [ "Development", "bash", "TeamSpeak" ]
 +++
 ## Idee
-Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen.  
+Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen.
 Für genau dieses Problem habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP sendet.
 
 ## Nutzen
-**IMHO** gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung schnellstmöglichst sehr praktisch ist.  
-Viele Server unterstützen eine Reihe von "Automatischen Moderationen", trotzdem sollten User nicht in der Lage sein sich Gruppen zuzuweisen. Diese kurze Benachrichtigung sagt dem Admin/ Moderator, wer und welche Gruppe betroffen ist.  
+**IMHO** gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung schnellstmöglichst sehr praktisch ist.
+Viele Server unterstützen eine Reihe von "Automatischen Moderationen", trotzdem sollten User nicht in der Lage sein sich Gruppen zuzuweisen. Diese kurze Benachrichtigung sagt dem Admin/ Moderator, wer und welche Gruppe betroffen ist.
 Je nach Häufigkeit der Ausführung könnte die Benachrichtigung innerhalb von Sekunden gepushed werden.
 
 ```
@@ -51,9 +51,9 @@ Leider besteht mit Debian Stretch ein Problem mit perl wodurch *sendxmpp*, das x
 Update : 28.07.2017 Debian 9 Perl5 Problematik
 ```
 Use of uninitialized value in numeric eq (==) at /usr/share/perl5/XML/Stream.pm line 631.
-```  
+```
 Ich hab mit etwas debugging herausgefunden, welche Zeilen geändert werden müssen, um perl-xmlstream wieder zu fixxen.
-Die Datei `/usr/share/perl5/XML/Stream.pm` müsste geändert werden. (Pfad kann abweichen je nach OS)  
+Die Datei `/usr/share/perl5/XML/Stream.pm` müsste geändert werden. (Pfad kann abweichen je nach OS)
 Mit nano lässt sich bequem nach der Zeile suchen, mit Shift + W. Danach ändert man Zeile 631.
 ```perl
 $self->{SIDS}->{default}->{ssl_ca_path} = '';

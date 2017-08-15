@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 22 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Jun 2017 14:15:25 +0200</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/topics/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Bash</title>
       <link>https://magicbroccoli.de/topics/bash/</link>
-      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 22 Jun 2017 14:15:25 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/topics/bash/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>Development</title>
       <link>https://magicbroccoli.de/topics/development/</link>
-      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 22 Jun 2017 14:15:25 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/topics/development/</guid>
       <description></description>
@@ -33,7 +33,7 @@
     <item>
       <title>Prosody</title>
       <link>https://magicbroccoli.de/topics/prosody/</link>
-      <pubDate>Sun, 06 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 06 Aug 2017 15:00:00 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/topics/prosody/</guid>
       <description></description>
@@ -42,7 +42,7 @@
     <item>
       <title>Teamspeak</title>
       <link>https://magicbroccoli.de/topics/teamspeak/</link>
-      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 22 Jun 2017 14:15:25 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/topics/teamspeak/</guid>
       <description></description>
@@ -51,7 +51,7 @@
     <item>
       <title>Xep 0368</title>
       <link>https://magicbroccoli.de/topics/xep-0368/</link>
-      <pubDate>Sun, 06 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 06 Aug 2017 15:00:00 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/topics/xep-0368/</guid>
       <description></description>
@@ -60,7 +60,7 @@
     <item>
       <title>Xmpp</title>
       <link>https://magicbroccoli.de/topics/xmpp/</link>
-      <pubDate>Sun, 06 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 06 Aug 2017 15:00:00 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/topics/xmpp/</guid>
       <description></description>

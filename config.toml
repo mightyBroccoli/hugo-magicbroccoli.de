@@ -8,6 +8,7 @@ copyright = "&copy; 2017. All rights reserved."
 canonifyurls = true
 paginate = 10
 DefaultContentLanguage = "de"
+defaultContentLanguageInSubdir =  true
 
 [indexes]
   tag = "tags"
@@ -22,8 +23,8 @@ DefaultContentLanguage = "de"
   dateFormat = "02 Jan 2006, 15:04"
   # Include any custom CSS and/or JS files
   # (relative to /static folder)
-  custom_css = ["css/my.css"]
-  custom_js = ["js/my.js"]
+  # custom_css = ["css/my.css"]
+  # custom_js = ["js/my.js"]
   enableRobotsTXT = true
   noTimes = true
 
@@ -42,17 +43,23 @@ DefaultContentLanguage = "de"
     identifier = "post"
     url = "/post/"
   [[menu.main]]
+    name = "Tags"
+    pre = "<i class='fa fa-tags' fa-fw></i>"
+    weight = 3
+    identifier = "tags"
+    url = "/tags/"
+  [[menu.main]]
     name = "XMPP Server"
-    pre = "<i class='fa fa-delicious' aria-hidden='true'></i>"
-    weight = 2
+    pre = "<i class='fa fa-delicious' fa-fw></i>"
+    weight = 4
     identifier = "xmpp"
     url = "/xmpp/"
   [[menu.main]]
-    name = "Tags"
-    pre = "<i class='fa fa-tags' aria-hidden='true'></i>"
-    weight = 4
-    identifier = "tags"
-    url = "/tags/"
+    name = "Register"
+    pre = "<i class='fa fa-plus' fa-fw'></i>"
+    weight = 5
+    identifier = "register"
+    url = "/register/"
   [[menu.main]]
     name = "Terms of Use"
     pre = "<i class='fa fa-user fa-fw'></i>"
@@ -60,14 +67,14 @@ DefaultContentLanguage = "de"
     identifier = "Terms of Use"
     url = "/termsofuse/"
   [[menu.main]]
-    name = "Datenschutz"
-    pre = "<i class='fa fa-user-secret' aria-hidden='true'></i>"
+    name = "Privacy"
+    pre = "<i class='fa fa-user-secret' fa-fw></i>"
     weight = 8
     identifier = "Datenschutz"
     url = "/datenschutz/"
   [[menu.main]]
     name = "Contact"
-    pre = "<i class='fa fa-address-book-o' aria-hidden='true'></i>"
+    pre = "<i class='fa fa-address-book-o' fa-fw></i>"
     weight = 9
     url = "/contact/"
   [[menu.main]]

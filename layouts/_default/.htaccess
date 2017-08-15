@@ -1,0 +1,7 @@
+# disable etag header to forcefully enable browsers to cache
+<IfModule mod_headers.c>
+  Header unset ETag
+</IfModule>
+FileETag None
+
+ErrorDocument 404 /404.html
