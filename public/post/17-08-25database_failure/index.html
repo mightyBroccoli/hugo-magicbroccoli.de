@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="Database Failure">
   <meta name="generator" content="Hugo 0.26" />
 
-  <title>Tags &middot; Magical Broccoli</title>
+  <title>Datenbank Zusammenbruch &middot; Magical Broccoli</title>
 
   
   
@@ -36,8 +36,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="Magical Broccoli" href="https://magicbroccoli.de/tags/index.xml" />
   
 
   
@@ -139,10 +137,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://magicbroccoli.de/tags/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -250,48 +244,90 @@
 
 
 <div class="header">
-  <h1>Tags</h1>
+  <h1>Datenbank Zusammenbruch</h1>
+  <h2>Database Failure</h2>
 </div>
 <div class="content">
-  <ul>
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>25 Aug 2017, 23:30</time>
+  </div>
+
+  
+
   
   
-    <li>
-      <a href="xmpp">xmpp</a>
-      <span>&#40;7&#41;</span>
-    </li>
   
-    <li>
-      <a href="prosody">prosody</a>
-      <span>&#40;5&#41;</span>
-    </li>
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/mariadb">MariaDB</a>
+    
+  </div>
   
-    <li>
-      <a href="debian">debian</a>
-      <span>&#40;2&#41;</span>
-    </li>
   
-    <li>
-      <a href="guide">guide</a>
-      <span>&#40;1&#41;</span>
-    </li>
+
   
-    <li>
-      <a href="jabber">jabber</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-    <li>
-      <a href="mariadb">mariadb</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-    <li>
-      <a href="omemo">omemo</a>
-      <span>&#40;1&#41;</span>
-    </li>
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/xmpp">XMPP</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/mariadb">MariaDB</a>
+    
+  </div>
   
-  </ul>
+  
+
+</div>
+
+  
+
+<h2 id="bekanntmachung">Bekanntmachung</h2>
+
+<p>Heute, am 25 August, kam es zu dem bisher größten Ausfall meiner Services jeher.  Leider ist aufgrund einer Fehler der mir bisher nicht weiter bekannt ist eine Platte des Server ausgefallen. Die Datenbank hat das ganze nicht sonderlich gut aufgenommen.</p>
+
+<p>Ich fahre regelmäßig Backups und die binlogs waren auch wiederherstellbar daher kam es zu keinem Datenverlust. Allerdings musste ich die Datenbank neu aufbauen, was sich als tricky herausstellte.</p>
+
+<p>Gegen 23:30 nach fast 5 Stunden ist es mir nun gelungen alle Datenbanken und User wiederherzustellen.</p>
+
+<p>Alle Services laufen wieder so wie sie es sollten.</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://magicbroccoli.de/post/xmpp-over-tls/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://magicbroccoli.de/post/xmpp-over-tls/">XMPP over TLS Tutorial</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+
 </div>
 
 </div>
@@ -322,3 +358,4 @@
 	});
 </script>
 </html>
+

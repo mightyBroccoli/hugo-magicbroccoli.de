@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://magicbroccoli.de/post/17-08-25database_failure/</loc>
+    <lastmod>2017-08-25T23:30:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://magicbroccoli.de/post/xmpp-over-tls/</loc>
     <lastmod>2017-08-06T15:00:00+02:00</lastmod>
   </url>
@@ -99,7 +104,19 @@
   
   <url>
     <loc>https://magicbroccoli.de/</loc>
-    <lastmod>2017-08-06T15:00:00+02:00</lastmod>
+    <lastmod>2017-08-25T23:30:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://magicbroccoli.de/topics/mariadb/</loc>
+    <lastmod>2017-08-25T23:30:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://magicbroccoli.de/tags/mariadb/</loc>
+    <lastmod>2017-08-25T23:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -111,7 +128,7 @@
   
   <url>
     <loc>https://magicbroccoli.de/post/</loc>
-    <lastmod>2017-08-06T15:00:00+02:00</lastmod>
+    <lastmod>2017-08-25T23:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -165,7 +182,7 @@
   
   <url>
     <loc>https://magicbroccoli.de/tags/xmpp/</loc>
-    <lastmod>2017-08-06T15:00:00+02:00</lastmod>
+    <lastmod>2017-08-25T23:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
