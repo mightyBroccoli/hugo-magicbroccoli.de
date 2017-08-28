@@ -7,7 +7,7 @@ topics = [ "XMPP", "Debian", "CA Bundle" ]
 description = "resolve cert error with jabber.ccc.de"
 +++
 ## Einleitung
-Der XMPP Server vom [Chaos Computer Club](https://ccc.de) wird unter einem Zertifikat von cacert.org betrieben. Das Zertifikat stammt hierbei von [cacert.org](https://cacert.org), allerdings wird das root Zertifikat von den meisten Browsern / Betriebssystemen nicht anerkannt. Dies stellt für die Erreichbarkeit des XMPP Servers ein Problem da.
+Der XMPP Server vom [Chaos Computer Club](https://ccc.de) wird unter einem Zertifikat von [cacert.org](https://cacert.org) betrieben. Das root Zertifikat wird allerdings von den meisten Browsern / Betriebssystemen nicht anerkannt. Dies stellt für die Erreichbarkeit des XMPP Servers ein Problem da.
 
 Speziell Server die auf Datenschutz und Sicherheit ausgelegt wollen keine unverschlüsselten Verbindung.Im Folgenden möchte daher ich aufzeigen, welche Änderungen notwendig wären, um Debian mit den entsprechenden Zertifikaten auszustatten.
 
