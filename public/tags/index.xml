@@ -7,15 +7,33 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 27 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 28 Aug 2017 13:30:00 +0200</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Ccc</title>
+      <link>https://magicbroccoli.de/tags/ccc/</link>
+      <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/tags/ccc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cert Error</title>
+      <link>https://magicbroccoli.de/tags/cert-error/</link>
+      <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/tags/cert-error/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Debian</title>
       <link>https://magicbroccoli.de/tags/debian/</link>
-      <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/tags/debian/</guid>
       <description></description>
@@ -69,7 +87,7 @@
     <item>
       <title>Xmpp</title>
       <link>https://magicbroccoli.de/tags/xmpp/</link>
-      <pubDate>Fri, 25 Aug 2017 23:30:00 +0200</pubDate>
+      <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/tags/xmpp/</guid>
       <description></description>

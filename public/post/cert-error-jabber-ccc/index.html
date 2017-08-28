@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Database Failure">
+  <meta name="description" content="resolve cert error with jabber.ccc.de">
   <meta name="generator" content="Hugo 0.26" />
 
-  <title>Datenbank Zusammenbruch &middot; Magical Broccoli</title>
+  <title>CCC Jabber Connection &middot; Magical Broccoli</title>
 
   
   
@@ -244,8 +244,8 @@
 
 
 <div class="header">
-  <h1>Datenbank Zusammenbruch</h1>
-  <h2>Database Failure</h2>
+  <h1>CCC Jabber Connection</h1>
+  <h2>resolve cert error with jabber.ccc.de</h2>
 </div>
 <div class="content">
 
@@ -253,7 +253,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>25 Aug 2017, 23:30</time>
+    <time>28 Aug 2017, 13:30</time>
   </div>
 
   
@@ -264,7 +264,11 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/mariadb">MariaDB</a>
+      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/xmpp">XMPP</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/debian">Debian</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/ca-bundle">CA Bundle</a>
     
   </div>
   
@@ -278,7 +282,11 @@
     
       <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/xmpp">XMPP</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/mariadb">MariaDB</a>
+      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/ccc">CCC</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/cert-error">Cert Error</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/debian">Debian</a>
     
   </div>
   
@@ -288,28 +296,95 @@
 
   
 
-<h2 id="bekanntmachung">Bekanntmachung</h2>
+<h2 id="einleitung">Einleitung</h2>
 
-<p>Heute, am 25 August, kam es zu dem bisher größten Ausfall meiner Services jeher.  Leider ist aufgrund einer Fehler der mir bisher nicht weiter bekannt ist eine Platte des Server ausgefallen. Die Datenbank hat das ganze nicht sonderlich gut aufgenommen.</p>
+<p>Der XMPP Server vom <a href="https://ccc.de">Chaos Computer Club</a> wird unter einem Zertifikat von cacert.org betrieben. Das Zertifikat stammt hierbei von <a href="https://cacert.org">cacert.org</a>, allerdings wird das root Zertifikat von den meisten Browsern / Betriebssystemen nicht anerkannt. Dies stellt für die Erreichbarkeit des XMPP Servers ein Problem da.</p>
 
-<p>Ich fahre regelmäßig Backups und die binlogs waren auch wiederherstellbar daher kam es zu keinem Datenverlust. Allerdings musste ich die Datenbank neu aufbauen, was sich als tricky herausstellte.</p>
+<p>Speziell Server die auf Datenschutz und Sicherheit ausgelegt wollen keine unverschlüsselten Verbindung.Im Folgenden möchte daher ich aufzeigen, welche Änderungen notwendig wären, um Debian mit den entsprechenden Zertifikaten auszustatten.</p>
 
-<p>Gegen 23:30 nach fast 5 Stunden ist es mir nun gelungen alle Datenbanken und User wiederherzustellen.</p>
+<p>Betroffen sind damit speziell Prosody Server, die folgende Konfiguration eingestellt haben.</p>
 
-<p>Alle Services laufen wieder so wie sie es sollten.</p>
+<pre><code class="language-lua">s2s_require_encryption = true
+s2s_secure_auth = true
+</code></pre>
+
+<p>Damit ist die Voraussetzung einer Verbindung ein Zertifikat, welches vom Server anerkannt wird. Da auch keine unverschlüsselte Verbindung aufgebaut werden kann, wird die Verbindung blockiert.
+<a href="https://prosody.im/doc/s2s#security">Prosody S2S Security</a><br></p>
+
+<p>Ein Verbindungsaufbau würde im Log dann so aussehen.</p>
+
+<pre><code>mod_s2s	warn	Forbidding insecure connection to/from jabber.ccc.de
+s2sin5637dae55f80	info	Incoming s2s stream jabber.ccc.de-&gt;magicbroccoli.de closed: Your server's certificate is invalid, expired, or not trusted by magicbroccoli.de
+</code></pre>
+
+<p>Es besteht die Möglichkeit Ausnahmen zu definieren, das Server trotz der Maßname, dass gültige Zertifikate präsentiert werden müssen, eine verschlüsselte Verbindung aufbauen können.<br>
+<strong>IMHO</strong>: <em>Ich persönlich halte nichts davon Ausnahmen in einer Sicherheitsrichtlinie zu definieren. Ich weigere mich ein Pflaster System zu unterstützen, daher wird es unter <a href="//magicbroccoli.de">magicbroccoli.de</a> keine Ausnahmen geben.</em></p>
+
+<ul>
+<li><a href="https://magicbroccoli.de/technik/#verschlüsselung">Technik/Verschlüsselung</a></li>
+<li><a href="https://magicbroccoli.de/technik/#zertifikate">Technik/Zertifikate</a></li>
+</ul>
+
+<h2 id="root-zertifikate-hinzufügen">Root Zertifikate hinzufügen</h2>
+
+<p>Es wichtig die Integrität des Systems zu erhalten, daher werden keine Systemdateien geändert und Dateien nur an Stellen eingefügt, wo allein der Pfad schon erkennbar macht, dass diese eine <em>manuelle</em> Erweiterung sind.</p>
+
+<pre><code>/usr/local/share/ca-certificates
+</code></pre>
+
+<p>In diesem Verzeichnis sollten grundsätzlich keine Dateien oder Ordner vorhanden sein. Dieses Verzeichnis fügt für alle <em>lokalen</em> User Certificate Authorities ( <em>im Folgenden nur noch CA genannt</em> ) Zertifikate ein.</p>
+
+<p><strong>Hinweis</strong>: <em>Das Hinzufügen eines CA Root Zertifikats kann das System einem erhöhten Risiko aussetzen. Es sollte sehr vorsichtig mit der Beglaubigung von wildfremden CAs umgegangen werden. Da euer System mit den folgenden Änderungen auch allen beglaubigten Zertifikaten der CA vertraut.</em></p>
+
+<p>In diesem Verzeichnis ist ein Ordner zu erstellen mit dem Namen der CA.<br></p>
+
+<pre><code class="language-bash">sudo mkdir /usr/local/share/ca-certificates/cacert.org
+</code></pre>
+
+<h3 id="download-der-zertifikate">Download der Zertifikate</h3>
+
+<pre><code>sudo wget -P /usr/local/share/ca-certificates/cacert.org \
+http://www.cacert.org/certs/root.crt \
+http://www.cacert.org/certs/class3.crt
+</code></pre>
+
+<h2 id="aktualisieren-des-zertifikat-bündels">Aktualisieren des Zertifikat Bündels</h2>
+
+<p>Zum Schluss muss der Zertifikat Speicher des System noch aktualisiert werden. Hierfür wird das Verzeichnis ausgelesen und alle Zertifikate die dort vorhanden sind werden hinzugefügt.</p>
+
+<pre><code>sudo update-ca-certificates
+</code></pre>
+
+<h2 id="entfernen-von-ca-root-zertifikaten">Entfernen von CA Root Zertifikaten</h2>
+
+<p><em><strong>VORSICHT</strong></em><br>
+Falls es, weswegen auch immer, gewollt ist einer CA und deren Zertifikaten nicht mehr zu vertrauen, sind die Schritte wie folgt.</p>
+
+<p>Es ist hier eine enorme Vorsicht geboten. Lieber sollte ein move Befehl verwendet werden, wenn es auch nur den Hauch eins Zweifels gibt. Außerdem sollte nur jemand der genau weiß was er tut überhaupt an den Zertifikaten des Systems arbeiten.</p>
+
+<p>Im Folgenden am Beispiel von cacert.org.</p>
+
+<ul>
+<li>Entfernen der Zertifikate/ des Zertifikat-Ordners aus<br>
+<code>sudo rm -r /usr/local/share/ca-certificates/cacert.org/</code></li>
+<li>löschen und neuerstellen der Symlinks<br>
+<code>sudo update-ca-certificates --fresh</code></li>
+</ul>
+
+<p>Mit diesen beiden Befehlen ist es möglich, jegliche CA aus dem trust store zu entfernen.</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://magicbroccoli.de/post/xmpp-over-tls/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://magicbroccoli.de/post/database_failure/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://magicbroccoli.de/post/xmpp-over-tls/">XMPP over TLS Tutorial</a>
+      <a href="https://magicbroccoli.de/post/database_failure/">Datenbank Zusammenbruch</a>
     </nav>
     
   </div>

@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.26" />
 
-  <title>Mariadb &middot; Magical Broccoli</title>
+  <title>Ccc &middot; Magical Broccoli</title>
 
   
   
@@ -37,7 +37,7 @@
 
   
   
-  <link rel="alternate" type="application/rss+xml" title="Magical Broccoli" href="https://magicbroccoli.de/tags/mariadb/index.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Magical Broccoli" href="https://magicbroccoli.de/tags/ccc/index.xml" />
   
 
   
@@ -141,7 +141,7 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://magicbroccoli.de/tags/mariadb/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      <a class="pure-menu-link" href="https://magicbroccoli.de/tags/ccc/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
     </li>
     
 
@@ -250,19 +250,19 @@
 
 
 <div class="header">
-  <h1>Mariadb</h1>
+  <h1>Ccc</h1>
 </div>
 
 <div class="content">
   
     <article>
   <header>
-    <h2><a href="https://magicbroccoli.de/post/database_failure/">Datenbank Zusammenbruch</a></h2>
+    <h2><a href="https://magicbroccoli.de/post/cert-error-jabber-ccc/">CCC Jabber Connection</a></h2>
     <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>25 Aug 2017, 23:30</time>
+    <time>28 Aug 2017, 13:30</time>
   </div>
 
   
@@ -273,7 +273,11 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/mariadb">MariaDB</a>
+      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/xmpp">XMPP</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/debian">Debian</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/ca-bundle">CA Bundle</a>
     
   </div>
   
@@ -285,25 +289,30 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/mariadb">MariaDB</a>
+      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/xmpp">XMPP</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/ccc">CCC</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/cert-error">Cert Error</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/debian">Debian</a>
     
   </div>
   
   
 
 </div>
-    Reading Time: 1 minutes
+    Reading Time: 3 minutes
   </header>
 
   <p>
-  Bekanntmachung Heute, am 25 August, kam es zu dem bisher größten Ausfall meiner Services. Leider ist aufgrund eines Fehler, der mir bisher nicht weiter bekannt ist, eine Platte des Server ausgefallen. Die Datenbank hat das ganze nicht sonderlich gut aufgenommen.
-Ich fahre regelmäßig Backups und die binlogs waren auch wiederherstellbar, daher kam es zu keinem Datenverlust. Allerdings musste ich die Datenbank neu aufbauen, was sich als zeitintensiv herausstellte.
-Gegen 23:30, nach fast 5 Stunden, ist es mir nun gelungen alle Datenbanken wiederherzustellen und alle Services vollständig wieder in Betrieb zu nehmen.
+  Einleitung Der XMPP Server vom Chaos Computer Club wird unter einem Zertifikat von cacert.org betrieben. Das Zertifikat stammt hierbei von cacert.org, allerdings wird das root Zertifikat von den meisten Browsern / Betriebssystemen nicht anerkannt. Dies stellt für die Erreichbarkeit des XMPP Servers ein Problem da.
+Speziell Server die auf Datenschutz und Sicherheit ausgelegt wollen keine unverschlüsselten Verbindung.Im Folgenden möchte daher ich aufzeigen, welche Änderungen notwendig wären, um Debian mit den entsprechenden Zertifikaten auszustatten.
   </p>
 
   
   <footer>
-    <a href="https://magicbroccoli.de/post/database_failure/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+    <a href="https://magicbroccoli.de/post/cert-error-jabber-ccc/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
   </footer>
   
 </article>

@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="Database Failure">
   <meta name="generator" content="Hugo 0.26" />
 
-  <title>Config &middot; Magical Broccoli</title>
+  <title>Datenbank Zusammenbruch &middot; Magical Broccoli</title>
 
   
   
@@ -37,8 +37,6 @@
 
   
   
-  <link rel="alternate" type="application/rss+xml" title="Magical Broccoli" href="https://magicbroccoli.de/tags/config/index.xml" />
-  
 
   
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
@@ -50,10 +48,6 @@
   <link rel="shortcut icon" href="https://magicbroccoli.de/img/favicon.ico" type="image/x-icon" />
 
   
-    <link rel="stylesheet" href="https://magicbroccoli.de/css/my.css">
-  
-  
-    <script src="https://magicbroccoli.de/js/my.js"></script>
   
 
   
@@ -97,13 +91,19 @@
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://magicbroccoli.de/xmpp/"><i class='fa fa-delicious' aria-hidden='true'></i>XMPP Server</a>
+          <a class="pure-menu-link" href="https://magicbroccoli.de/tags/"><i class='fa fa-tags' fa-fw></i>Tags</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://magicbroccoli.de/tags/"><i class='fa fa-tags' aria-hidden='true'></i>Tags</a>
+          <a class="pure-menu-link" href="https://magicbroccoli.de/xmpp/"><i class='fa fa-delicious' fa-fw></i>XMPP Server</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://magicbroccoli.de/register/"><i class='fa fa-plus' fa-fw'></i>Register</a>
       
         </li>
       
@@ -115,13 +115,13 @@
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://magicbroccoli.de/datenschutz/"><i class='fa fa-user-secret' aria-hidden='true'></i>Datenschutz</a>
+          <a class="pure-menu-link" href="https://magicbroccoli.de/datenschutz/"><i class='fa fa-user-secret' fa-fw></i>Privacy</a>
       
         </li>
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://magicbroccoli.de/contact/"><i class='fa fa-address-book-o' aria-hidden='true'></i>Contact</a>
+          <a class="pure-menu-link" href="https://magicbroccoli.de/contact/"><i class='fa fa-address-book-o' fa-fw></i>Contact</a>
       
         </li>
       
@@ -137,10 +137,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://magicbroccoli.de/tags/config/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -248,19 +244,16 @@
 
 
 <div class="header">
-  <h1>Config</h1>
+  <h1>Datenbank Zusammenbruch</h1>
+  <h2>Database Failure</h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="https://magicbroccoli.de/post/xmpp-over-tls/">XMPP over TLS Tutorial</a></h2>
-    <div class="post-meta">
+
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>06 Aug 2017, 00:00</time>
+    <time>25 Aug 2017, 23:30</time>
   </div>
 
   
@@ -271,11 +264,7 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/xep-0368">XEP-0368</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/prosody">Prosody</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/xmpp">XMPP</a>
+      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/mariadb">MariaDB</a>
     
   </div>
   
@@ -287,33 +276,60 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/xmpp">XMPP</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/prosody">Prosody</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/config">config</a>
+      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/mariadb">MariaDB</a>
     
   </div>
   
   
 
 </div>
-    Reading Time: 4 minutes
-  </header>
-
-  <p>
-  How to setup XEP-0368 for XMPP over TLS Was ist XEP-0368 Bei XEP-0368 handelt es sich um ein Verfahren von XMPP-Clients, über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken, falls die regulären Wege blockiert sind, zb. durch Firewalls.
- XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method of discovering how to connect to an XMPP server. This XEP extends that to include new xmpps-client/xmpps-server SRV records pointing to direct TLS ports and combine priorities and weights as if they were a single SRV record similar to RFC 6186.
-  </p>
 
   
-  <footer>
-    <a href="https://magicbroccoli.de/post/xmpp-over-tls/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
+
+<h2 id="bekanntmachung">Bekanntmachung</h2>
+
+<p>Heute, am 25 August, kam es zu dem bisher größten Ausfall meiner Services. Leider ist aufgrund eines Fehler, der mir bisher nicht weiter bekannt ist, eine Platte des Server ausgefallen. Die Datenbank hat das ganze nicht sonderlich gut aufgenommen.</p>
+
+<p>Ich fahre regelmäßig Backups und die binlogs waren auch wiederherstellbar, daher kam es zu <em>keinem</em> Datenverlust. Allerdings musste ich die Datenbank neu aufbauen, was sich als zeitintensiv herausstellte.</p>
+
+<p>Gegen 23:30, nach fast 5 Stunden, ist es mir nun gelungen alle Datenbanken wiederherzustellen und alle Services vollständig wieder in Betrieb zu nehmen.</p>
+
 
   
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://magicbroccoli.de/post/xmpp-over-tls/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://magicbroccoli.de/post/xmpp-over-tls/">XMPP over TLS Tutorial</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://magicbroccoli.de/post/cert-error-jabber-ccc/">CCC Jabber Connection</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://magicbroccoli.de/post/cert-error-jabber-ccc/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
 </div>
 
 </div>
@@ -344,3 +360,4 @@
 	});
 </script>
 </html>
+

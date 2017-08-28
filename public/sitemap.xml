@@ -3,7 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://magicbroccoli.de/post/17-08-25database_failure/</loc>
+    <loc>https://magicbroccoli.de/post/cert-error-jabber-ccc/</loc>
+    <lastmod>2017-08-28T13:30:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://magicbroccoli.de/post/database_failure/</loc>
     <lastmod>2017-08-25T23:30:00+02:00</lastmod>
   </url>
   
@@ -79,8 +84,32 @@
   </url>
   
   <url>
+    <loc>https://magicbroccoli.de/topics/ca-bundle/</loc>
+    <lastmod>2017-08-28T13:30:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://magicbroccoli.de/tags/ccc/</loc>
+    <lastmod>2017-08-28T13:30:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://magicbroccoli.de/tags/cert-error/</loc>
+    <lastmod>2017-08-28T13:30:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://magicbroccoli.de/tags/debian/</loc>
-    <lastmod>2017-06-27T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-28T13:30:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://magicbroccoli.de/topics/debian/</loc>
+    <lastmod>2017-08-28T13:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -104,18 +133,18 @@
   
   <url>
     <loc>https://magicbroccoli.de/</loc>
+    <lastmod>2017-08-28T13:30:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://magicbroccoli.de/tags/mariadb/</loc>
     <lastmod>2017-08-25T23:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/topics/mariadb/</loc>
-    <lastmod>2017-08-25T23:30:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://magicbroccoli.de/tags/mariadb/</loc>
     <lastmod>2017-08-25T23:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -128,13 +157,7 @@
   
   <url>
     <loc>https://magicbroccoli.de/post/</loc>
-    <lastmod>2017-08-25T23:30:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://magicbroccoli.de/topics/prosody/</loc>
-    <lastmod>2017-08-06T15:00:00+02:00</lastmod>
+    <lastmod>2017-08-28T13:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -145,8 +168,14 @@
   </url>
   
   <url>
+    <loc>https://magicbroccoli.de/topics/prosody/</loc>
+    <lastmod>2017-08-06T15:00:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://magicbroccoli.de/tags/</loc>
-    <lastmod>2017-06-27T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-28T13:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -175,14 +204,14 @@
   </url>
   
   <url>
-    <loc>https://magicbroccoli.de/topics/xmpp/</loc>
-    <lastmod>2017-08-06T15:00:00+02:00</lastmod>
+    <loc>https://magicbroccoli.de/tags/xmpp/</loc>
+    <lastmod>2017-08-28T13:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://magicbroccoli.de/tags/xmpp/</loc>
-    <lastmod>2017-08-25T23:30:00+02:00</lastmod>
+    <loc>https://magicbroccoli.de/topics/xmpp/</loc>
+    <lastmod>2017-08-28T13:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   

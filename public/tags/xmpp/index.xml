@@ -7,19 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 25 Aug 2017 23:30:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 28 Aug 2017 13:30:00 +0200</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/tags/xmpp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Datenbank Zusammenbruch</title>
-      <link>https://magicbroccoli.de/post/17-08-25database_failure/</link>
-      <pubDate>Fri, 25 Aug 2017 23:30:00 +0200</pubDate>
+      <title>CCC Jabber Connection</title>
+      <link>https://magicbroccoli.de/post/cert-error-jabber-ccc/</link>
+      <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/post/17-08-25database_failure/</guid>
-      <description>Bekanntmachung Heute, am 25 August, kam es zu dem bisher größten Ausfall meiner Services jeher. Leider ist aufgrund einer Fehler der mir bisher nicht weiter bekannt ist eine Platte des Server ausgefallen. Die Datenbank hat das ganze nicht sonderlich gut aufgenommen.
-Ich fahre regelmäßig Backups und die binlogs waren auch wiederherstellbar daher kam es zu keinem Datenverlust. Allerdings musste ich die Datenbank neu aufbauen, was sich als tricky herausstellte.</description>
+      <guid>https://magicbroccoli.de/post/cert-error-jabber-ccc/</guid>
+      <description>Einleitung Der XMPP Server vom Chaos Computer Club wird unter einem Zertifikat von cacert.org betrieben. Das Zertifikat stammt hierbei von cacert.org, allerdings wird das root Zertifikat von den meisten Browsern / Betriebssystemen nicht anerkannt. Dies stellt für die Erreichbarkeit des XMPP Servers ein Problem da.
+Speziell Server die auf Datenschutz und Sicherheit ausgelegt wollen keine unverschlüsselten Verbindung.Im Folgenden möchte daher ich aufzeigen, welche Änderungen notwendig wären, um Debian mit den entsprechenden Zertifikaten auszustatten.</description>
     </item>
     
     <item>
