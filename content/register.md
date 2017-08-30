@@ -8,4 +8,4 @@ Diese Seite ermöglicht es, dir einen neuen Account auf dem MagicBroccoli XMPP S
 
 **Bitte notiere Sie sich Ihren Benutzernamen und Passwort sorgfältig! Passwort-Resets durch den Administrator sind zwar grundsätzlich möglich, aber aufwendig und erfordern, dass Sie die Account-Inhaberschaft eindeutig beweisen können!**
 
-<center><iframe src="https://magicbroccoli.de/register_form" style="height: 600px; width: 50%;" frameBorder="0"></iframe></center>
+<center><iframe src="https://magicbroccoli.de/register_form" style="height: 600px; width: 600px;" frameBorder="0"></iframe></center>

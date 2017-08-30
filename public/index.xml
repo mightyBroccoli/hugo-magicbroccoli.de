@@ -184,5 +184,19 @@ INHO : Die folgende Liste bezieht sich auf die Clients, die die meisten Features
       <description>This is my first blogpost. EVER. hello world</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://magicbroccoli.de/donate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/donate/</guid>
+      <description>Unterstützung Der Betrieb der Server kostet Geld und viel Zeit. Falls es Ihnen möglich ist und sie als kleines Dankeschön mich unterstützen möchten, sind sie hier richtig. Alle Kosten werden im Moment alleinig und privat von mir getragen.
+Über kleine Beitrage zur Finanzierung freue ich mich sehr. Daueraufträge lassen auch eine längerfristige Planung zu.
+PayPal
+Bitcoin: 1QJZTWenBvdLWTUachpLLd2dLXAZMGeU87
+Banküberweisung: Bankverbindung gibt es auf Anfrage
+Vielen vielen Dank an alle, die sich einmalig oder dauerhaft an der Finanzierung des Servers beteiligen!</description>
+    </item>
+    
   </channel>
 </rss>

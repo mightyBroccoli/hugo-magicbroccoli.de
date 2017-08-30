@@ -78,6 +78,10 @@
   </url>
   
   <url>
+    <loc>https://magicbroccoli.de/donate/</loc>
+  </url>
+  
+  <url>
     <loc>https://magicbroccoli.de/topics/bash/</loc>
     <lastmod>2017-06-22T14:15:25+02:00</lastmod>
     <priority>0</priority>
@@ -102,13 +106,13 @@
   </url>
   
   <url>
-    <loc>https://magicbroccoli.de/tags/debian/</loc>
+    <loc>https://magicbroccoli.de/topics/debian/</loc>
     <lastmod>2017-08-28T13:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://magicbroccoli.de/topics/debian/</loc>
+    <loc>https://magicbroccoli.de/tags/debian/</loc>
     <lastmod>2017-08-28T13:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -138,13 +142,13 @@
   </url>
   
   <url>
-    <loc>https://magicbroccoli.de/tags/mariadb/</loc>
+    <loc>https://magicbroccoli.de/topics/mariadb/</loc>
     <lastmod>2017-08-25T23:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://magicbroccoli.de/topics/mariadb/</loc>
+    <loc>https://magicbroccoli.de/tags/mariadb/</loc>
     <lastmod>2017-08-25T23:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -162,13 +166,13 @@
   </url>
   
   <url>
-    <loc>https://magicbroccoli.de/tags/prosody/</loc>
+    <loc>https://magicbroccoli.de/topics/prosody/</loc>
     <lastmod>2017-08-06T15:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://magicbroccoli.de/topics/prosody/</loc>
+    <loc>https://magicbroccoli.de/tags/prosody/</loc>
     <lastmod>2017-08-06T15:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -204,13 +208,13 @@
   </url>
   
   <url>
-    <loc>https://magicbroccoli.de/tags/xmpp/</loc>
+    <loc>https://magicbroccoli.de/topics/xmpp/</loc>
     <lastmod>2017-08-28T13:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://magicbroccoli.de/topics/xmpp/</loc>
+    <loc>https://magicbroccoli.de/tags/xmpp/</loc>
     <lastmod>2017-08-28T13:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
