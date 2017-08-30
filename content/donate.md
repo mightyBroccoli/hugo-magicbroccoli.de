@@ -2,7 +2,7 @@
 Der Betrieb der Server kostet Geld und viel Zeit. Falls es Ihnen möglich ist und sie als kleines Dankeschön mich unterstützen möchten, sind sie hier richtig. Alle Kosten werden im Moment alleinig und privat von mir getragen.<br>
 Über kleine Beitrage zur Finanzierung freue ich mich sehr. Daueraufträge lassen auch eine längerfristige Planung zu.
 
-[PayPal](paypal.me/nwellpott)
+[PayPal](https://paypal.me/nwellpott)
 
 Bitcoin: `1QJZTWenBvdLWTUachpLLd2dLXAZMGeU87`<br>
 <img src="/images/bitcoin_qr.png" alt="bitcoin_qr" style="width: 150px;"/>
