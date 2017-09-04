@@ -41,8 +41,14 @@
   
 
   
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/perl.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lua.min.js"></script>
   
   <script>hljs.initHighlightingOnLoad();</script>
   
@@ -318,7 +324,7 @@ Betroffen sind damit speziell Prosody Server, die folgende Konfiguration eingest
   
 </article>
 
-  
+   
     <article>
   <header>
     <h2><a href="https://magicbroccoli.de/post/xmpp-over-tls/">XMPP over TLS Tutorial</a></h2>
@@ -369,7 +375,7 @@ Betroffen sind damit speziell Prosody Server, die folgende Konfiguration eingest
 
   <p>
   How to setup XEP-0368 for XMPP over TLS Was ist XEP-0368 Bei XEP-0368 handelt es sich um ein Verfahren von XMPP-Clients, über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken, falls die regulären Wege blockiert sind, zb. durch Firewalls.
- XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method of discovering how to connect to an XMPP server. This XEP extends that to include new xmpps-client/xmpps-server SRV records pointing to direct TLS ports and combine priorities and weights as if they were a single SRV record similar to RFC 6186.
+XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method of discovering how to connect to an XMPP server. This XEP extends that to include new xmpps-client/xmpps-server SRV records pointing to direct TLS ports and combine priorities and weights as if they were a single SRV record similar to RFC 6186.
   </p>
 
   
@@ -379,7 +385,7 @@ Betroffen sind damit speziell Prosody Server, die folgende Konfiguration eingest
   
 </article>
 
-  
+   
     <article>
   <header>
     <h2><a href="https://magicbroccoli.de/post/omemo-statement/">Wir unterstützen Omemo</a></h2>
@@ -416,7 +422,7 @@ Betroffen sind damit speziell Prosody Server, die folgende Konfiguration eingest
 
   <p>
   Update Herr Gultsch hat nun eine Erklärung in den Sourcecode von OMEMO.java des ComplianceTesters hinzugefügt. Außerdem fügte er in die Spalte XEP-0384: OMEMO Encryption ein Fragezeichen hinzu. Dieses führt zu der Erklärung im Sourcecode auf Github. Auch wenn dies wirklich nur ein kleiner Hinweis ist, danken wir Herrn Gultsch dennoch das er unserem Wunsch nachgekommen ist.
- This test checks for the availability of publish-options on the account’s PEP service.
+This test checks for the availability of publish-options on the account’s PEP service. publish-options allows a client to efficiently change the access model of the OMEMO key material such that everyone can access it.
   </p>
 
   
@@ -426,7 +432,7 @@ Betroffen sind damit speziell Prosody Server, die folgende Konfiguration eingest
   
 </article>
 
-  
+   
     <article>
   <header>
     <h2><a href="https://magicbroccoli.de/technik/">Server Technik</a></h2>
@@ -474,7 +480,7 @@ Prosody Der XMPP Server ist zur Zeit ein Prosody 0.
   
 </article>
 
-  
+   
     <article>
   <header>
     <h2><a href="https://magicbroccoli.de/register/">Registrierung magicbroccoli.de XMPP</a></h2>
@@ -517,7 +523,7 @@ Bitte notiere Sie sich Ihren Benutzernamen und Passwort sorgfältig! Passwort-Re
   
 </article>
 
-  
+   
     <article>
   <header>
     <h2><a href="https://magicbroccoli.de/post/ts-xmpp-script/">TeamSpeak XMPP Push</a></h2>
@@ -574,7 +580,7 @@ Nutzen IMHO gibt es genügend Beispiele, in denen eine schnellstmögliche Benach
   
 </article>
 
-  
+   
     <article>
   <header>
     <h2><a href="https://magicbroccoli.de/xmpp/">Magical XMPP Server</a></h2>
@@ -624,9 +630,9 @@ INHO : Die folgende Liste bezieht sich auf die Clients, die die meisten Features
   
 </article>
 
-  
+   
 </div>
-
+ 
 </div>
 </div>
 <script src="https://magicbroccoli.de/js/ui.js"></script>
@@ -655,3 +661,4 @@ INHO : Die folgende Liste bezieht sich auf die Clients, die die meisten Features
 	});
 </script>
 </html>
+

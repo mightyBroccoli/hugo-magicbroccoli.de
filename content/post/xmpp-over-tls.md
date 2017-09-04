@@ -11,9 +11,7 @@ description = "ein Trauerspiel"
 ### Was ist XEP-0368
 Bei [XEP-0368](https://xmpp.org/extensions/xep-0368.html) handelt es sich um ein Verfahren von XMPP-Clients, über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken, falls die regulären Wege blockiert sind, zb. durch Firewalls.
 
-<blockquote>
-XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method of discovering how to connect to an XMPP server. This XEP extends that to include new xmpps-client/xmpps-server SRV records pointing to direct TLS ports and combine priorities and weights as if they were a single SRV record similar to RFC 6186. It also provides an easy way for clients to bypass restrictive firewalls that only allow HTTPS, for servers to host multiple protocols/services on a single port, and for servers and clients to take advantage of less round trips and existing direct TLS loadbalancers.
-</blockquote>
+<blockquote cite="https://xmpp.org/extensions/xep-0368.html">XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method of discovering how to connect to an XMPP server. This XEP extends that to include new xmpps-client/xmpps-server SRV records pointing to direct TLS ports and combine priorities and weights as if they were a single SRV record similar to RFC 6186. It also provides an easy way for clients to bypass restrictive firewalls that only allow HTTPS, for servers to host multiple protocols/services on a single port, and for servers and clients to take advantage of less round trips and existing direct TLS loadbalancers.</blockquote>
 
 ### Was wird benötigt?
 - Prosody Server
@@ -33,7 +31,7 @@ Zusätzlich zu den [Standard SRV Einträgen](https://prosody.im/doc/dns) wird ei
 
 In diesem Beispiel ist die Domain `example.com` und XMPP over TLS soll über `xmpps.example.com` erreichbar sein.
 
-```bash
+```
 # Standard Settings
 _xmpp-client._tcp.example.com. 18000 IN SRV 0 5 5222 example.com.
 _xmpp-server._tcp.example.com. 18000 IN SRV 0 5 5269 example.com.
@@ -68,7 +66,7 @@ Für die Antwort des Prosody Servers wird allerdings eine zweite Regel benötigt
 *Sollte bei der Prosody Konfiguration ein anderer Port gewählt werden als der default Port, muss dieser natürlich in den iptables Regeln ausgetauscht werden.*
 
 In diesem Beispiel ist $erste_ip, die IP auf der auch der httpd Server lauscht. $zweite_ip bezeichnet daher die zweite Adresse für XMPP over TLS.
-```bash
+```#!/bin/bash
 # PREROUTING
 iptables -t nat -A PREROUTING -d $zweite_ip -p tcp --dport 443 -j DNAT --to-destination $erste_ip:5223
 
@@ -77,18 +75,18 @@ iptables -t nat -A POSTROUTING -p tcp -d  $zweite_ip --dport 5223 -j SNAT --to-s
 ```
 
 Abschließend lassen sich diese Regeln mit `iptables-save` speichern, damit bei einem reboot die Regeln wieder geladen werden.
-```bash
+```#!/bin/bash
 iptables-save > /etc/iptables/rules.v4
 ```
 
 ## Abschluss
 Sollten alle diese Schritte erfolgreich abgeschlossen sein. Ist es sehr leicht möglich herauszufinden, ob alles so funktioniert wie es soll. Dafür lässt sich `curl -i` verwenden.
-```bash
+```#!/bin/bash
 curl -i https://xmpps.example.com
 ```
 Als Ergebnis sollte ein *xml stream error* zu sehen sein, **ohne** Apache2 / nginx header. Ist außerdem keine Fehlermeldung über ein ungültiges SSL Zertifikat dabei ist das Zertifikat auch für die Subdomain gültig und funktioniert.
 
-```
+```xml
 <?xml version='1.0'?>
 <stream:stream xmlns:stream='http://etherx.jabber.org/streams' xml:lang='en' xmlns='jabber:client'>
 	<stream:error>

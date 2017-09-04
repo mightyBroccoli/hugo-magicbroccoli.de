@@ -1,6 +1,7 @@
 +++
 date = "2017-08-28T13:30:00+02:00"
 title = "CCC Jabber Connection"
+author = "nico"
 sidemenu = "true"
 tags = [ "XMPP", "CCC", "Cert Error", "Debian" ]
 topics = [ "XMPP", "Debian", "CA Bundle" ]
@@ -41,12 +42,12 @@ In diesem Verzeichnis sollten grundsätzlich keine Dateien oder Ordner vorhanden
 **Hinweis**: *Das Hinzufügen eines CA Root Zertifikats kann das System einem erhöhten Risiko aussetzen. Es sollte sehr vorsichtig mit der Beglaubigung von wildfremden CAs umgegangen werden. Da euer System mit den folgenden Änderungen auch allen beglaubigten Zertifikaten der CA vertraut.*
 
 In diesem Verzeichnis ist ein Ordner zu erstellen mit dem Namen der CA.<br>
-```bash
+```#!/bin/bash
 sudo mkdir /usr/local/share/ca-certificates/cacert.org
 ```
 
 ### Download der Zertifikate
-```
+```#!/bin/bash
 sudo wget -P /usr/local/share/ca-certificates/cacert.org \
 http://www.cacert.org/certs/root.crt \
 http://www.cacert.org/certs/class3.crt
@@ -54,7 +55,7 @@ http://www.cacert.org/certs/class3.crt
 
 ## Aktualisieren des Zertifikat Bündels
 Zum Schluss muss der Zertifikat Speicher des System noch aktualisiert werden. Hierfür wird das Verzeichnis ausgelesen und alle Zertifikate die dort vorhanden sind werden hinzugefügt.
-```
+```#!/bin/bash
 sudo update-ca-certificates
 ```
 
@@ -66,9 +67,13 @@ Es ist hier eine enorme Vorsicht geboten. Lieber sollte ein move Befehl verwende
 
 Im Folgenden am Beispiel von cacert.org.
 
-- Entfernen der Zertifikate/ des Zertifikat-Ordners aus<br>
-`sudo rm -r /usr/local/share/ca-certificates/cacert.org/`
-- löschen und neuerstellen der Symlinks<br>
-`sudo update-ca-certificates --fresh`
+- Entfernen der Zertifikate/ des Zertifikat-Ordners aus
+```#!/bin/bash
+sudo rm -r /usr/local/share/ca-certificates/cacert.org/
+```
 
+- löschen und neuerstellen der Symlinks
+```#!/bin/bash
+sudo update-ca-certificates --fresh
+```
 Mit diesen beiden Befehlen ist es möglich, jegliche CA aus dem trust store zu entfernen.

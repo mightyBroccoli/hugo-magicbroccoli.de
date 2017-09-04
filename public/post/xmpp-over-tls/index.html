@@ -39,8 +39,14 @@
   
 
   
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/perl.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lua.min.js"></script>
   
   <script>hljs.initHighlightingOnLoad();</script>
   
@@ -300,9 +306,7 @@
 
 <p>Bei <a href="https://xmpp.org/extensions/xep-0368.html">XEP-0368</a> handelt es sich um ein Verfahren von XMPP-Clients, über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken, falls die regulären Wege blockiert sind, zb. durch Firewalls.</p>
 
-<blockquote>
-XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method of discovering how to connect to an XMPP server. This XEP extends that to include new xmpps-client/xmpps-server SRV records pointing to direct TLS ports and combine priorities and weights as if they were a single SRV record similar to RFC 6186. It also provides an easy way for clients to bypass restrictive firewalls that only allow HTTPS, for servers to host multiple protocols/services on a single port, and for servers and clients to take advantage of less round trips and existing direct TLS loadbalancers.
-</blockquote>
+<blockquote cite="https://xmpp.org/extensions/xep-0368.html">XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method of discovering how to connect to an XMPP server. This XEP extends that to include new xmpps-client/xmpps-server SRV records pointing to direct TLS ports and combine priorities and weights as if they were a single SRV record similar to RFC 6186. It also provides an easy way for clients to bypass restrictive firewalls that only allow HTTPS, for servers to host multiple protocols/services on a single port, and for servers and clients to take advantage of less round trips and existing direct TLS loadbalancers.</blockquote>
 
 <h3 id="was-wird-benötigt">Was wird benötigt?</h3>
 
@@ -326,7 +330,7 @@ Zusätzlich zu den <a href="https://prosody.im/doc/dns">Standard SRV Einträgen<
 
 <p>In diesem Beispiel ist die Domain <code>example.com</code> und XMPP over TLS soll über <code>xmpps.example.com</code> erreichbar sein.</p>
 
-<pre><code class="language-bash"># Standard Settings
+<pre><code># Standard Settings
 _xmpp-client._tcp.example.com. 18000 IN SRV 0 5 5222 example.com.
 _xmpp-server._tcp.example.com. 18000 IN SRV 0 5 5269 example.com.
 
@@ -364,7 +368,7 @@ Regel Nr. 1 leitet den gesamten Traffic der zweiten IP der auf Port 443 ankommt,
 
 <p>In diesem Beispiel ist $erste_ip, die IP auf der auch der httpd Server lauscht. $zweite_ip bezeichnet daher die zweite Adresse für XMPP over TLS.</p>
 
-<pre><code class="language-bash"># PREROUTING
+<pre><code class="language-#!/bin/bash"># PREROUTING
 iptables -t nat -A PREROUTING -d $zweite_ip -p tcp --dport 443 -j DNAT --to-destination $erste_ip:5223
 
 # POSTROUTING
@@ -373,19 +377,19 @@ iptables -t nat -A POSTROUTING -p tcp -d  $zweite_ip --dport 5223 -j SNAT --to-s
 
 <p>Abschließend lassen sich diese Regeln mit <code>iptables-save</code> speichern, damit bei einem reboot die Regeln wieder geladen werden.</p>
 
-<pre><code class="language-bash">iptables-save &gt; /etc/iptables/rules.v4
+<pre><code class="language-#!/bin/bash">iptables-save &gt; /etc/iptables/rules.v4
 </code></pre>
 
 <h2 id="abschluss">Abschluss</h2>
 
 <p>Sollten alle diese Schritte erfolgreich abgeschlossen sein. Ist es sehr leicht möglich herauszufinden, ob alles so funktioniert wie es soll. Dafür lässt sich <code>curl -i</code> verwenden.</p>
 
-<pre><code class="language-bash">curl -i https://xmpps.example.com
+<pre><code class="language-#!/bin/bash">curl -i https://xmpps.example.com
 </code></pre>
 
 <p>Als Ergebnis sollte ein <em>xml stream error</em> zu sehen sein, <strong>ohne</strong> Apache2 / nginx header. Ist außerdem keine Fehlermeldung über ein ungültiges SSL Zertifikat dabei ist das Zertifikat auch für die Subdomain gültig und funktioniert.</p>
 
-<pre><code>&lt;?xml version='1.0'?&gt;
+<pre><code class="language-xml">&lt;?xml version='1.0'?&gt;
 &lt;stream:stream xmlns:stream='http://etherx.jabber.org/streams' xml:lang='en' xmlns='jabber:client'&gt;
     &lt;stream:error&gt;
         &lt;not-well-formed xmlns='urn:ietf:params:xml:ns:xmpp-streams'/&gt;

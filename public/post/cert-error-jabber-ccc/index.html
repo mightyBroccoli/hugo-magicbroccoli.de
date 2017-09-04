@@ -39,8 +39,14 @@
   
 
   
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/perl.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lua.min.js"></script>
   
   <script>hljs.initHighlightingOnLoad();</script>
   
@@ -338,12 +344,12 @@ s2sin5637dae55f80	info	Incoming s2s stream jabber.ccc.de-&gt;magicbroccoli.de cl
 
 <p>In diesem Verzeichnis ist ein Ordner zu erstellen mit dem Namen der CA.<br></p>
 
-<pre><code class="language-bash">sudo mkdir /usr/local/share/ca-certificates/cacert.org
+<pre><code class="language-#!/bin/bash">sudo mkdir /usr/local/share/ca-certificates/cacert.org
 </code></pre>
 
 <h3 id="download-der-zertifikate">Download der Zertifikate</h3>
 
-<pre><code>sudo wget -P /usr/local/share/ca-certificates/cacert.org \
+<pre><code class="language-#!/bin/bash">sudo wget -P /usr/local/share/ca-certificates/cacert.org \
 http://www.cacert.org/certs/root.crt \
 http://www.cacert.org/certs/class3.crt
 </code></pre>
@@ -352,7 +358,7 @@ http://www.cacert.org/certs/class3.crt
 
 <p>Zum Schluss muss der Zertifikat Speicher des System noch aktualisiert werden. Hierfür wird das Verzeichnis ausgelesen und alle Zertifikate die dort vorhanden sind werden hinzugefügt.</p>
 
-<pre><code>sudo update-ca-certificates
+<pre><code class="language-#!/bin/bash">sudo update-ca-certificates
 </code></pre>
 
 <h2 id="entfernen-von-ca-root-zertifikaten">Entfernen von CA Root Zertifikaten</h2>
@@ -365,13 +371,18 @@ Falls es, weswegen auch immer, gewollt ist einer CA und deren Zertifikaten nicht
 <p>Im Folgenden am Beispiel von cacert.org.</p>
 
 <ul>
-<li>Entfernen der Zertifikate/ des Zertifikat-Ordners aus<br>
-<code>sudo rm -r /usr/local/share/ca-certificates/cacert.org/</code></li>
-<li>löschen und neuerstellen der Symlinks<br>
-<code>sudo update-ca-certificates --fresh</code></li>
-</ul>
+<li><p>Entfernen der Zertifikate/ des Zertifikat-Ordners aus</p>
 
-<p>Mit diesen beiden Befehlen ist es möglich, jegliche CA aus dem trust store zu entfernen.</p>
+<pre><code class="language-#!/bin/bash">sudo rm -r /usr/local/share/ca-certificates/cacert.org/
+</code></pre></li>
+
+<li><p>löschen und neuerstellen der Symlinks</p>
+
+<pre><code class="language-#!/bin/bash">sudo update-ca-certificates --fresh
+</code></pre>
+
+<p>Mit diesen beiden Befehlen ist es möglich, jegliche CA aus dem trust store zu entfernen.</p></li>
+</ul>
 
 
   

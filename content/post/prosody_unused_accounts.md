@@ -15,7 +15,7 @@ draft = true
 
 
 
-```bash
+```sh
 #!/bin/bash
 #
 # script to automatically delete registerd but unused accounts after x days

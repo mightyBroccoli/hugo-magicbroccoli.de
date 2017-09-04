@@ -49,17 +49,17 @@ Leider besteht mit Debian Stretch ein Problem mit perl wodurch *sendxmpp*, das x
 -----
 
 Update : 28.07.2017 Debian 9 Perl5 Problematik
-```
+```pl
 Use of uninitialized value in numeric eq (==) at /usr/share/perl5/XML/Stream.pm line 631.
 ```
 Ich hab mit etwas debugging herausgefunden, welche Zeilen geändert werden müssen, um perl-xmlstream wieder zu fixxen.
 Die Datei `/usr/share/perl5/XML/Stream.pm` müsste geändert werden. (Pfad kann abweichen je nach OS)
 Mit nano lässt sich bequem nach der Zeile suchen, mit Shift + W. Danach ändert man Zeile 631.
-```perl
+```pl
 $self->{SIDS}->{default}->{ssl_ca_path} = '';
 ```
 zu
-```perl
+```pl
 $self->{SIDS}->{default}->{ssl_ca_path} = '/etc/ssl/certs';
 ```
 Nach dieser Änderung hat sich das Problem eingestellt und sendxmpp funktionierte wieder genauso tadellos wie zuvor.

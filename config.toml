@@ -8,7 +8,7 @@ copyright = "&copy; 2017. All rights reserved."
 canonifyurls = true
 paginate = 10
 DefaultContentLanguage = "de"
-defaultContentLanguageInSubdir =  true
+defaultContentLanguageInSubdir =  false
 
 [indexes]
   tag = "tags"
@@ -19,7 +19,8 @@ defaultContentLanguageInSubdir =  true
   subtitle = "just magical"
   brand = "just magical"
   # CSS name for highlight.js
-  highlightjs = "androidstudio"
+  highlightjs = "solarized-dark"
+  highlightjs_extra_languages = [ "bash", "perl", "lua" ]
   dateFormat = "02 Jan 2006, 15:04"
   # Include any custom CSS and/or JS files
   # (relative to /static folder)

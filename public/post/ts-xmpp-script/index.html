@@ -39,8 +39,14 @@
   
 
   
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/perl.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lua.min.js"></script>
   
   <script>hljs.initHighlightingOnLoad();</script>
   
@@ -348,19 +354,19 @@ Je nach Häufigkeit der Ausführung könnte die Benachrichtigung innerhalb von S
 
 <p>Update : 28.07.2017 Debian 9 Perl5 Problematik</p>
 
-<pre><code>Use of uninitialized value in numeric eq (==) at /usr/share/perl5/XML/Stream.pm line 631.
+<pre><code class="language-pl">Use of uninitialized value in numeric eq (==) at /usr/share/perl5/XML/Stream.pm line 631.
 </code></pre>
 
 <p>Ich hab mit etwas debugging herausgefunden, welche Zeilen geändert werden müssen, um perl-xmlstream wieder zu fixxen.
 Die Datei <code>/usr/share/perl5/XML/Stream.pm</code> müsste geändert werden. (Pfad kann abweichen je nach OS)
 Mit nano lässt sich bequem nach der Zeile suchen, mit Shift + W. Danach ändert man Zeile 631.</p>
 
-<pre><code class="language-perl">$self-&gt;{SIDS}-&gt;{default}-&gt;{ssl_ca_path} = '';
+<pre><code class="language-pl">$self-&gt;{SIDS}-&gt;{default}-&gt;{ssl_ca_path} = '';
 </code></pre>
 
 <p>zu</p>
 
-<pre><code class="language-perl">$self-&gt;{SIDS}-&gt;{default}-&gt;{ssl_ca_path} = '/etc/ssl/certs';
+<pre><code class="language-pl">$self-&gt;{SIDS}-&gt;{default}-&gt;{ssl_ca_path} = '/etc/ssl/certs';
 </code></pre>
 
 <p>Nach dieser Änderung hat sich das Problem eingestellt und sendxmpp funktionierte wieder genauso tadellos wie zuvor.</p>
