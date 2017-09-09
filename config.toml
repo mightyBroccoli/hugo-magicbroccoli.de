@@ -1,6 +1,6 @@
 baseurl = "https://magicbroccoli.de/"
 languageCode = "de-DE"
-title = "Magical Broccoli"
+title = "Magic Broccoli"
 author = "nico"
 #copyright = "&copy; 2017. All rights reserved."
 copyright = "All rights reserved."
@@ -9,7 +9,7 @@ paginate = 4
 theme = "hugo-bootstrap"
 DefaultContentLanguage = "de"
 
-disqusShortname = "xxxxxx"
+#disqusShortname = false
 
 [params]
   enableRobotsTXT = true
