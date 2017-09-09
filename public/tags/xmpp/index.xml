@@ -6,22 +6,11 @@
     <description>Recent content in Xmpp on Magical Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
-    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 28 Aug 2017 13:30:00 +0200</lastBuildDate>
+    <copyright>All rights reserved.</copyright>
+    <lastBuildDate>Sun, 06 Aug 2017 15:00:00 +0200</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/tags/xmpp/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>CCC Jabber Connection</title>
-      <link>https://magicbroccoli.de/post/cert-error-jabber-ccc/</link>
-      <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
-      
-      <guid>https://magicbroccoli.de/post/cert-error-jabber-ccc/</guid>
-      <description>Einleitung Der XMPP Server vom Chaos Computer Club wird unter einem Zertifikat von cacert.org betrieben. Das root Zertifikat wird allerdings von den meisten Browsern / Betriebssystemen nicht anerkannt. Dies stellt für die Erreichbarkeit des XMPP Servers ein Problem da.
-Speziell Server die auf Datenschutz und Sicherheit ausgelegt wollen keine unverschlüsselten Verbindung.Im Folgenden möchte daher ich aufzeigen, welche Änderungen notwendig wären, um Debian mit den entsprechenden Zertifikaten auszustatten.
-Betroffen sind damit speziell Prosody Server, die folgende Konfiguration eingestellt haben.</description>
-    </item>
     
     <item>
       <title>XMPP over TLS Tutorial</title>
@@ -29,7 +18,7 @@ Betroffen sind damit speziell Prosody Server, die folgende Konfiguration eingest
       <pubDate>Sun, 06 Aug 2017 15:00:00 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/post/xmpp-over-tls/</guid>
-      <description>How to setup XEP-0368 for XMPP over TLS Was ist XEP-0368 Bei XEP-0368 handelt es sich um ein Verfahren von XMPP-Clients, über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken, falls die regulären Wege blockiert sind, zb. durch Firewalls.
+      <description>How to setup XEP-0368 Was ist XEP-0368 Bei XEP-0368 handelt es sich um ein Verfahren von XMPP-Clients, über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken, falls die regulären Wege blockiert sind, zb. durch Firewalls.
 XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method of discovering how to connect to an XMPP server. This XEP extends that to include new xmpps-client/xmpps-server SRV records pointing to direct TLS ports and combine priorities and weights as if they were a single SRV record similar to RFC 6186.</description>
     </item>
     
@@ -44,47 +33,14 @@ This test checks for the availability of publish-options on the account’s PEP 
     </item>
     
     <item>
-      <title>Server Technik</title>
-      <link>https://magicbroccoli.de/technik/</link>
-      <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://magicbroccoli.de/technik/</guid>
-      <description>Sicherheit Das Hostsystem läuft unter Debian 9.1 Stretch. Ich update das System und alle seine Komponenten regelmäßig. Dabei nehme ich teilweise Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn es aber gar nicht anders geht, ist eine kurze Downtime für wichtige Updates vertretbar.
-DNS Die gesamte Zone von magicbroccoli.de ist mit DNSSEC signiert und lässt sich überprüfen.
-Prosody Der XMPP Server ist zur Zeit ein Prosody 0.</description>
-    </item>
-    
-    <item>
-      <title>Registrierung magicbroccoli.de XMPP</title>
-      <link>https://magicbroccoli.de/register/</link>
-      <pubDate>Sun, 25 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://magicbroccoli.de/register/</guid>
-      <description>Diese Seite ermöglicht es, dir einen neuen Account auf dem MagicBroccoli XMPP Server anzulegen. Über deinen Jabber Identifier (kurz JID; auch Jabber-ID), bestehend aus Benutzernamen und “@magicbroccoli.de”, können Dich andere Nutzer zu ihren Kontakten hinzufügen.
-Bitte notiere Sie sich Ihren Benutzernamen und Passwort sorgfältig! Passwort-Resets durch den Administrator sind zwar grundsätzlich möglich, aber aufwendig und erfordern, dass Sie die Account-Inhaberschaft eindeutig beweisen können!</description>
-    </item>
-    
-    <item>
       <title>TeamSpeak XMPP Push</title>
       <link>https://magicbroccoli.de/post/ts-xmpp-script/</link>
       <pubDate>Thu, 22 Jun 2017 14:15:25 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/post/ts-xmpp-script/</guid>
-      <description>Idee Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen. Für genau dieses Problem habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP sendet.
+      <description>Idee Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen.
+Für genau dieses Problem habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP sendet.
 Nutzen IMHO gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung schnellstmöglichst sehr praktisch ist. Viele Server unterstützen eine Reihe von &amp;ldquo;Automatischen Moderationen&amp;rdquo;, trotzdem sollten User nicht in der Lage sein sich Gruppen zuzuweisen.</description>
-    </item>
-    
-    <item>
-      <title>Magical XMPP Server</title>
-      <link>https://magicbroccoli.de/xmpp/</link>
-      <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://magicbroccoli.de/xmpp/</guid>
-      <description>Einführung MagicBroccoli XMPP ist ein freier XMPP Instant Messaging Server ausgelegt auf Datenschutz und Sicherheit. Hier möchte ich einige Dinge erläutern die für eine Verbindung, sowie Nachrichtenversand/ -empfang notwendig sind.
-How to XMPP? Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hier; XMPP Clients.
-Für einige der unten empfohlenen Clients sind Tutorials vorhanden; Tutorials
-Bei Verbesserungsvorschlägen ist die Mitarbeit bei Github gerne gesehen; Github
-INHO : Die folgende Liste bezieht sich auf die Clients, die die meisten Features abdecken und mit möglichst vielen Standards konform sind.</description>
     </item>
     
   </channel>

@@ -1,7 +1,10 @@
 +++
+type = "page"
 title = "Nutzungsbedingungen"
+description = "Nutzungsbedingungen"
+author = "nico"
 date = "2017-06-21"
-sidemenu = "true"
+keywords = [ "Nutzungsbedingungen", "Terms of use" ]
 +++
 
 ## Allgemein

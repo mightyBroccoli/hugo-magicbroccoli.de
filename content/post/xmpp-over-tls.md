@@ -1,13 +1,15 @@
 +++
+type = "post"
 date = "2017-08-06T15:00:00+02:00"
 title = "XMPP over TLS Tutorial"
-linktitel = "Tutorial XMPP over TLS"
-sidemenu = "true"
+author = "nico"
+description = ""
+keywords = [ "TeamSpeak Script", "XEP-0368", "XMPP" ]
 tags = [ "XMPP", "Prosody", "Guide" ]
-topics = [ "XEP-0368", "Prosody", "XMPP" ]
-description = "ein Trauerspiel"
+categories = [ "XEP-0368", "Prosody", "XMPP" ]
+banner = ""
 +++
-## How to setup XEP-0368 for XMPP over TLS
+## How to setup XEP-0368
 ### Was ist XEP-0368
 Bei [XEP-0368](https://xmpp.org/extensions/xep-0368.html) handelt es sich um ein Verfahren von XMPP-Clients, über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken, falls die regulären Wege blockiert sind, zb. durch Firewalls.
 

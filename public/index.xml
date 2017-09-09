@@ -6,7 +6,7 @@
     <description>Recent content on Magical Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
-    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
+    <copyright>All rights reserved.</copyright>
     <lastBuildDate>Mon, 28 Aug 2017 13:30:00 +0200</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/index.xml" rel="self" type="application/rss+xml" />
@@ -40,7 +40,7 @@ Gegen 23:30, nach fast 5 Stunden, ist es mir nun gelungen alle Datenbanken wiede
       <pubDate>Sun, 06 Aug 2017 15:00:00 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/post/xmpp-over-tls/</guid>
-      <description>How to setup XEP-0368 for XMPP over TLS Was ist XEP-0368 Bei XEP-0368 handelt es sich um ein Verfahren von XMPP-Clients, über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken, falls die regulären Wege blockiert sind, zb. durch Firewalls.
+      <description>How to setup XEP-0368 Was ist XEP-0368 Bei XEP-0368 handelt es sich um ein Verfahren von XMPP-Clients, über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken, falls die regulären Wege blockiert sind, zb. durch Firewalls.
 XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method of discovering how to connect to an XMPP server. This XEP extends that to include new xmpps-client/xmpps-server SRV records pointing to direct TLS ports and combine priorities and weights as if they were a single SRV record similar to RFC 6186.</description>
     </item>
     
@@ -56,10 +56,10 @@ This test checks for the availability of publish-options on the account’s PEP 
     
     <item>
       <title>Tutorial Übersicht</title>
-      <link>https://magicbroccoli.de/tutorial/</link>
+      <link>https://magicbroccoli.de/page/tutorial/</link>
       <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://magicbroccoli.de/tutorial/</guid>
+      <guid>https://magicbroccoli.de/page/tutorial/</guid>
       <description>Tutorial Übersicht Auf dieser Seite möchte ich einige Tutorials sammeln, die teils von mir selbst stammen, oder aber von außerhalb kommen. Einige Clients sind für Anfänger anfangs nicht einfach zu durchblicken, dabei sollen diese Tutorials helfen. Wer dazu beitragen möchte kann dies gerne via einem PullRequest auf Github tun.
 Windows/ Linux  Gajim  Android  Conversations  Zurück zur Übersicht
 Last Edit 25.07.17</description>
@@ -67,21 +67,20 @@ Last Edit 25.07.17</description>
     
     <item>
       <title>Gajim Tutorial</title>
-      <link>https://magicbroccoli.de/tutorial/gajim/</link>
+      <link>https://magicbroccoli.de/page/tutorial/gajim/</link>
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://magicbroccoli.de/tutorial/gajim/</guid>
-      <description>1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt.
-Speziell bei magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist. Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die Nutzungsbedingungen sowie Datenschutzbestimmungen. 2. Installation Gajim lässt sich unter Windows und Linux problemlos installieren. &amp;ndash;&amp;gt; Gajim Download
+      <guid>https://magicbroccoli.de/page/tutorial/gajim/</guid>
+      <description>1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt. Speziell bei magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist. Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die Nutzungsbedingungen sowie Datenschutzbestimmungen. 2. Installation Gajim lässt sich unter Windows und Linux problemlos installieren. &amp;ndash;&amp;gt; Gajim Download
 2.1 Archlinux Bei Archlinux ist die Installation einen Schritt länger, aber nicht sonderlich schwierig.</description>
     </item>
     
     <item>
       <title>Server Technik</title>
-      <link>https://magicbroccoli.de/technik/</link>
+      <link>https://magicbroccoli.de/page/technik/</link>
       <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://magicbroccoli.de/technik/</guid>
+      <guid>https://magicbroccoli.de/page/technik/</guid>
       <description>Sicherheit Das Hostsystem läuft unter Debian 9.1 Stretch. Ich update das System und alle seine Komponenten regelmäßig. Dabei nehme ich teilweise Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn es aber gar nicht anders geht, ist eine kurze Downtime für wichtige Updates vertretbar.
 DNS Die gesamte Zone von magicbroccoli.de ist mit DNSSEC signiert und lässt sich überprüfen.
 Prosody Der XMPP Server ist zur Zeit ein Prosody 0.</description>
@@ -103,7 +102,8 @@ Bitte notiere Sie sich Ihren Benutzernamen und Passwort sorgfältig! Passwort-Re
       <pubDate>Thu, 22 Jun 2017 14:15:25 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/post/ts-xmpp-script/</guid>
-      <description>Idee Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen. Für genau dieses Problem habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP sendet.
+      <description>Idee Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen.
+Für genau dieses Problem habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP sendet.
 Nutzen IMHO gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung schnellstmöglichst sehr praktisch ist. Viele Server unterstützen eine Reihe von &amp;ldquo;Automatischen Moderationen&amp;rdquo;, trotzdem sollten User nicht in der Lage sein sich Gruppen zuzuweisen.</description>
     </item>
     
@@ -113,15 +113,17 @@ Nutzen IMHO gibt es genügend Beispiele, in denen eine schnellstmögliche Benach
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/contact/</guid>
-      <description> mail nico(at)magicbroccoli.de
+      <description> mail  nico(at)magicbroccoli.de
 PGP 0xEA7C31AAB1BDC1A21
-0xEA7C31AAB1BDC1A22
+ Keybase: mightyBroccoli
 Chat XMPP: broccoli@magicbroccoli.de
-IRC: mightyBroccoli3
+IRC: mightyBroccoli2
 OMEMO Fingerabdrücke 1e56b6ec dd764842 674f2309 ba981a69 308e5959 ace5e6ed 6ddbf19a ee715324 [Conversations]
 243C97D7 7D0D2533 298524BC B66EB5E4 E74F6EC5 47079162 C4B917C4 2B25714B [Gajim PC]
 b85e592c 5db8519f cfc39b9d 82632a59 9dfa923f a009dc44 c7f9ba07 aa650c58 [Gajim Notebook]
- hosted at pgp.mit.edu[return] download directly from me[return] freenode[return]   </description>
+Code Hosting  Github: mightyBroccoli
+ Bitbucket: mightyBroccoli
+ download directly from me[return] freenode[return]   </description>
     </item>
     
     <item>
@@ -141,15 +143,10 @@ Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Date
       
       <guid>https://magicbroccoli.de/impressum/</guid>
       <description>Impressum Angaben gemäß § 5 TMG
-Nico Wellpott
-Scheideweg 157
-26127 Oldenburg
+Nico Wellpott Scheideweg 157 26127 Oldenburg
 Vertreten durch: Nico Wellpott
-Kontakt: Telefon: 0441 93652965
-E-Mail: admin@magicbroccoli.de
-Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: Nico Wellpott
-Scheideweg 157
-26127 Oldenburg
+Kontakt: Telefon: 0441 93652965 E-Mail: admin@magicbroccoli.de
+Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: Nico Wellpott Scheideweg 157 26127 Oldenburg
 Haftungsausschluss Haftung für Inhalte Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.</description>
     </item>
     
@@ -176,26 +173,26 @@ INHO : Die folgende Liste bezieht sich auf die Clients, die die meisten Features
     </item>
     
     <item>
+      <title>Unterstützen</title>
+      <link>https://magicbroccoli.de/page/donate/</link>
+      <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/page/donate/</guid>
+      <description>Unterstützung Der Betrieb der Server kostet Geld und viel Zeit. Falls es Ihnen möglich ist und sie als kleines Dankeschön mich unterstützen möchten, sind sie hier richtig. Alle Kosten werden im Moment alleinig und privat von mir getragen.
+Über kleine Beitrage zur Finanzierung freue ich mich sehr. Daueraufträge lassen auch eine längerfristige Planung zu.
+ PayPal
+ Bitcoin: 1QJZTWenBvdLWTUachpLLd2dLXAZMGeU87
+Banküberweisung: Bankverbindung gibt es auf Anfrage
+Vielen vielen Dank an alle, die sich einmalig oder dauerhaft an der Finanzierung des Servers beteiligen!</description>
+    </item>
+    
+    <item>
       <title>Magical  Server</title>
       <link>https://magicbroccoli.de/post/first-post/</link>
       <pubDate>Tue, 20 Jun 2017 12:34:25 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/post/first-post/</guid>
       <description>This is my first blogpost. EVER. hello world</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://magicbroccoli.de/donate/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://magicbroccoli.de/donate/</guid>
-      <description>Unterstützung Der Betrieb der Server kostet Geld und viel Zeit. Falls es Ihnen möglich ist und sie als kleines Dankeschön mich unterstützen möchten, sind sie hier richtig. Alle Kosten werden im Moment alleinig und privat von mir getragen.
-Über kleine Beitrage zur Finanzierung freue ich mich sehr. Daueraufträge lassen auch eine längerfristige Planung zu.
-PayPal
-Bitcoin: 1QJZTWenBvdLWTUachpLLd2dLXAZMGeU87
-Banküberweisung: Bankverbindung gibt es auf Anfrage
-Vielen vielen Dank an alle, die sich einmalig oder dauerhaft an der Finanzierung des Servers beteiligen!</description>
     </item>
     
   </channel>

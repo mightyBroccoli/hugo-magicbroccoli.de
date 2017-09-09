@@ -1,17 +1,19 @@
 +++
+type = "post"
 date = "2017-07-31T13:00:00+02:00"
 title = "Wir unterstützen Omemo"
-sidemenu = "true"
+author = "nico"
 description = "Stellungnahme zur aktuellen Entwicklung um Omemo"
+keywords = [ "Omemo Support", "pep - publish-options", "Daniel Gultsch" ]
 tags = [ "Prosody" , "Omemo" , "XMPP" ]
 categories = [ "Prosody" , "Omemo" ]
-author = [ "nico" ]
+banner = ""
 +++
 ### Update
 Herr Gultsch hat nun eine Erklärung in den Sourcecode von OMEMO.java des ComplianceTesters hinzugefügt. Außerdem fügte er in die Spalte XEP-0384: OMEMO Encryption ein Fragezeichen hinzu. Dieses führt zu der Erklärung im [Sourcecode auf Github](https://github.com/iNPUTmice/ComplianceTester/blob/master/src/main/java/eu/siacs/compliance/tests/OMEMO.java#L12-L17).
 Auch wenn dies wirklich nur ein kleiner Hinweis ist, danken wir Herrn Gultsch dennoch das er unserem Wunsch nachgekommen ist.
 
-<blockquote cite="iNPUTmice">This test checks for the availability of publish-options on the account’s PEP service. publish-options allows a client to efficiently change the access model of the OMEMO key material such that everyone can access it. Without publish-options OMEMO is only available to contacts with mutual presence subscription.</blockquote>
+<blockquote>This test checks for the availability of publish-options on the account’s PEP service. publish-options allows a client to efficiently change the access model of the OMEMO key material such that everyone can access it. Without publish-options OMEMO is only available to contacts with mutual presence subscription.</blockquote>
 
 - - -
 

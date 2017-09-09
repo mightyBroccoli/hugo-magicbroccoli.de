@@ -1,7 +1,10 @@
 +++
-date = "2017-06-25"
+type = "page"
 title = "Registrierung magicbroccoli.de XMPP"
-tags = [ "Prosody", "XMPP", "Jabber" ]
+description = "Registrierung magicbroccoli.de XMPP"
+date = "2017-06-25"
+author = "nico"
+keywords = [ "Registrierung MagicBroccoli XMPP", "XMPP", "MagicBroccoli XMPP" ]
 +++
 Diese Seite ermöglicht es, dir einen neuen Account auf dem MagicBroccoli XMPP Server anzulegen.
 Über deinen Jabber Identifier (kurz JID; auch Jabber-ID), bestehend aus Benutzernamen und “@magicbroccoli.de”, können Dich andere Nutzer zu ihren Kontakten hinzufügen.

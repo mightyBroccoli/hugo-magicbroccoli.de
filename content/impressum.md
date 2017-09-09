@@ -1,26 +1,28 @@
 +++
+type = "page"
 title = "Impressum"
 date = "2017-06-21"
-sidemenu = "true"
+description = "Impressum"
+keywords = [ "Impressum", "imprint" ]
 +++
 ## Impressum
 Angaben gemäß § 5 TMG
 
-Nico Wellpott  
-Scheideweg 157  
-26127 Oldenburg  
+Nico Wellpott
+Scheideweg 157
+26127 Oldenburg
 
 ##### Vertreten durch:
 Nico Wellpott
 
 ##### Kontakt:
-Telefon: 0441 93652965  
+Telefon: 0441 93652965
 E-Mail: admin@magicbroccoli.de
 
 ##### Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
-Nico Wellpott  
-Scheideweg 157  
-26127 Oldenburg  
+Nico Wellpott
+Scheideweg 157
+26127 Oldenburg
 
 #### Haftungsausschluss
 ### Haftung für Inhalte

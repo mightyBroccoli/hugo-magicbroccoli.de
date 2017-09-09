@@ -6,7 +6,7 @@
     <description>Recent content in Posts on Magical Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
-    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
+    <copyright>All rights reserved.</copyright>
     <lastBuildDate>Mon, 28 Aug 2017 13:30:00 +0200</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/post/index.xml" rel="self" type="application/rss+xml" />
@@ -40,7 +40,7 @@ Gegen 23:30, nach fast 5 Stunden, ist es mir nun gelungen alle Datenbanken wiede
       <pubDate>Sun, 06 Aug 2017 15:00:00 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/post/xmpp-over-tls/</guid>
-      <description>How to setup XEP-0368 for XMPP over TLS Was ist XEP-0368 Bei XEP-0368 handelt es sich um ein Verfahren von XMPP-Clients, über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken, falls die regulären Wege blockiert sind, zb. durch Firewalls.
+      <description>How to setup XEP-0368 Was ist XEP-0368 Bei XEP-0368 handelt es sich um ein Verfahren von XMPP-Clients, über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken, falls die regulären Wege blockiert sind, zb. durch Firewalls.
 XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method of discovering how to connect to an XMPP server. This XEP extends that to include new xmpps-client/xmpps-server SRV records pointing to direct TLS ports and combine priorities and weights as if they were a single SRV record similar to RFC 6186.</description>
     </item>
     
@@ -60,7 +60,8 @@ This test checks for the availability of publish-options on the account’s PEP 
       <pubDate>Thu, 22 Jun 2017 14:15:25 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/post/ts-xmpp-script/</guid>
-      <description>Idee Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen. Für genau dieses Problem habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP sendet.
+      <description>Idee Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen.
+Für genau dieses Problem habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP sendet.
 Nutzen IMHO gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung schnellstmöglichst sehr praktisch ist. Viele Server unterstützen eine Reihe von &amp;ldquo;Automatischen Moderationen&amp;rdquo;, trotzdem sollten User nicht in der Lage sein sich Gruppen zuzuweisen.</description>
     </item>
     

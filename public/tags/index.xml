@@ -6,11 +6,20 @@
     <description>Recent content in Tags on Magical Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
-    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
+    <copyright>All rights reserved.</copyright>
     <lastBuildDate>Mon, 28 Aug 2017 13:30:00 +0200</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ca Bundle</title>
+      <link>https://magicbroccoli.de/tags/ca-bundle/</link>
+      <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/tags/ca-bundle/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Ccc</title>
@@ -31,11 +40,11 @@
     </item>
     
     <item>
-      <title>Debian</title>
-      <link>https://magicbroccoli.de/tags/debian/</link>
-      <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
+      <title>Failure</title>
+      <link>https://magicbroccoli.de/tags/failure/</link>
+      <pubDate>Fri, 25 Aug 2017 23:30:00 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/tags/debian/</guid>
+      <guid>https://magicbroccoli.de/tags/failure/</guid>
       <description></description>
     </item>
     
@@ -45,15 +54,6 @@
       <pubDate>Sun, 06 Aug 2017 15:00:00 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/tags/guide/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jabber</title>
-      <link>https://magicbroccoli.de/tags/jabber/</link>
-      <pubDate>Sun, 25 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://magicbroccoli.de/tags/jabber/</guid>
       <description></description>
     </item>
     
@@ -78,7 +78,7 @@
     <item>
       <title>Prosody</title>
       <link>https://magicbroccoli.de/tags/prosody/</link>
-      <pubDate>Sun, 06 Aug 2017 15:00:00 +0200</pubDate>
+      <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/tags/prosody/</guid>
       <description></description>
@@ -87,7 +87,7 @@
     <item>
       <title>Xmpp</title>
       <link>https://magicbroccoli.de/tags/xmpp/</link>
-      <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
+      <pubDate>Sun, 06 Aug 2017 15:00:00 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/tags/xmpp/</guid>
       <description></description>

@@ -1,11 +1,14 @@
 +++
+draft = true
+type = "post"
 date = "2017-06-30T16:25:00+02:00"
 title = "Prosody Unused Accounts"
-sidemenu = "true"
+author = "nico"
 description = "Prosody Database Maintenance Skript"
+keywords = [ "Prosody", "Administration", "unused accunts" ]
 tags = [ "Prosody", "Database", "Maintenance" ]
-topics = [ "Development", "bash" ]
-draft = true
+categories = [ "Development", "bash", "Prosody" ]
+banner = ""
 +++
 
 

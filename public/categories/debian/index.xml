@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Debian on Magical Broccoli</title>
+    <link>https://magicbroccoli.de/categories/debian/</link>
+    <description>Recent content in Debian on Magical Broccoli</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-DE</language>
+    <copyright>All rights reserved.</copyright>
+    <lastBuildDate>Mon, 28 Aug 2017 13:30:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://magicbroccoli.de/categories/debian/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CCC Jabber Connection</title>
+      <link>https://magicbroccoli.de/post/cert-error-jabber-ccc/</link>
+      <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/cert-error-jabber-ccc/</guid>
+      <description>Einleitung Der XMPP Server vom Chaos Computer Club wird unter einem Zertifikat von cacert.org betrieben. Das root Zertifikat wird allerdings von den meisten Browsern / Betriebssystemen nicht anerkannt. Dies stellt für die Erreichbarkeit des XMPP Servers ein Problem da.
+Speziell Server die auf Datenschutz und Sicherheit ausgelegt wollen keine unverschlüsselten Verbindung.Im Folgenden möchte daher ich aufzeigen, welche Änderungen notwendig wären, um Debian mit den entsprechenden Zertifikaten auszustatten.
+Betroffen sind damit speziell Prosody Server, die folgende Konfiguration eingestellt haben.</description>
+    </item>
+    
+    <item>
+      <title>Datenbank Zusammenbruch</title>
+      <link>https://magicbroccoli.de/post/database_failure/</link>
+      <pubDate>Fri, 25 Aug 2017 23:30:00 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/database_failure/</guid>
+      <description>Bekanntmachung Heute, am 25 August, kam es zu dem bisher größten Ausfall meiner Services. Leider ist aufgrund eines Fehler, der mir bisher nicht weiter bekannt ist, eine Platte des Server ausgefallen. Die Datenbank hat das ganze nicht sonderlich gut aufgenommen.
+Ich fahre regelmäßig Backups und die binlogs waren auch wiederherstellbar, daher kam es zu keinem Datenverlust. Allerdings musste ich die Datenbank neu aufbauen, was sich als zeitintensiv herausstellte.
+Gegen 23:30, nach fast 5 Stunden, ist es mir nun gelungen alle Datenbanken wiederherzustellen und alle Services vollständig wieder in Betrieb zu nehmen.</description>
+    </item>
+    
+  </channel>
+</rss>

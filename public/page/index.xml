@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Magical Broccoli</title>
+    <link>https://magicbroccoli.de/page/</link>
+    <description>Recent content in Pages on Magical Broccoli</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-DE</language>
+    <copyright>All rights reserved.</copyright>
+    <lastBuildDate>Thu, 27 Jul 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://magicbroccoli.de/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tutorial Übersicht</title>
+      <link>https://magicbroccoli.de/page/tutorial/</link>
+      <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/page/tutorial/</guid>
+      <description>Tutorial Übersicht Auf dieser Seite möchte ich einige Tutorials sammeln, die teils von mir selbst stammen, oder aber von außerhalb kommen. Einige Clients sind für Anfänger anfangs nicht einfach zu durchblicken, dabei sollen diese Tutorials helfen. Wer dazu beitragen möchte kann dies gerne via einem PullRequest auf Github tun.
+Windows/ Linux  Gajim  Android  Conversations  Zurück zur Übersicht
+Last Edit 25.07.17</description>
+    </item>
+    
+    <item>
+      <title>Gajim Tutorial</title>
+      <link>https://magicbroccoli.de/page/tutorial/gajim/</link>
+      <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/page/tutorial/gajim/</guid>
+      <description>1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt. Speziell bei magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist. Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die Nutzungsbedingungen sowie Datenschutzbestimmungen. 2. Installation Gajim lässt sich unter Windows und Linux problemlos installieren. &amp;ndash;&amp;gt; Gajim Download
+2.1 Archlinux Bei Archlinux ist die Installation einen Schritt länger, aber nicht sonderlich schwierig.</description>
+    </item>
+    
+    <item>
+      <title>Server Technik</title>
+      <link>https://magicbroccoli.de/page/technik/</link>
+      <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/page/technik/</guid>
+      <description>Sicherheit Das Hostsystem läuft unter Debian 9.1 Stretch. Ich update das System und alle seine Komponenten regelmäßig. Dabei nehme ich teilweise Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn es aber gar nicht anders geht, ist eine kurze Downtime für wichtige Updates vertretbar.
+DNS Die gesamte Zone von magicbroccoli.de ist mit DNSSEC signiert und lässt sich überprüfen.
+Prosody Der XMPP Server ist zur Zeit ein Prosody 0.</description>
+    </item>
+    
+    <item>
+      <title>Unterstützen</title>
+      <link>https://magicbroccoli.de/page/donate/</link>
+      <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/page/donate/</guid>
+      <description>Unterstützung Der Betrieb der Server kostet Geld und viel Zeit. Falls es Ihnen möglich ist und sie als kleines Dankeschön mich unterstützen möchten, sind sie hier richtig. Alle Kosten werden im Moment alleinig und privat von mir getragen.
+Über kleine Beitrage zur Finanzierung freue ich mich sehr. Daueraufträge lassen auch eine längerfristige Planung zu.
+ PayPal
+ Bitcoin: 1QJZTWenBvdLWTUachpLLd2dLXAZMGeU87
+Banküberweisung: Bankverbindung gibt es auf Anfrage
+Vielen vielen Dank an alle, die sich einmalig oder dauerhaft an der Finanzierung des Servers beteiligen!</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,310 +1,205 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html class="no-js">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TeamSpeak Script">
-  <meta name="generator" content="Hugo 0.26" />
+  <title>TeamSpeak XMPP Push  &middot; Magical Broccoli</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>TeamSpeak XMPP Push &middot; Magical Broccoli</title>
 
-  
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+<meta name="description" content="" />
 
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
-  <!--<![endif]-->
+<meta name="keywords" content="TeamSpeak Script, ">
 
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="https://magicbroccoli.de/css/side-menu-old-ie.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://magicbroccoli.de/css/side-menu.css">
-  <!--<![endif]-->
 
-  <link rel="stylesheet" href="https://magicbroccoli.de/css/blackburn.css">
+<meta property="og:title" content="TeamSpeak XMPP Push  &middot; Magical Broccoli ">
+<meta property="og:site_name" content="Magical Broccoli"/>
+<meta property="og:url" content="https://magicbroccoli.de/post/ts-xmpp-script/" />
+<meta property="og:locale" content="de-DE">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2017-06-22T14:15:25&#43;02:00" />
+<meta property="og:article:modified_time" content="2017-06-22T14:15:25&#43;02:00" />
 
   
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
-
-  
+    
+<meta property="og:article:tag" content="TeamSpeak Script">
+    
   
 
   
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
-  
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/perl.min.js"></script>
-  
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lua.min.js"></script>
-  
-  <script>hljs.initHighlightingOnLoad();</script>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="TeamSpeak XMPP Push" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://magicbroccoli.de/post/ts-xmpp-script/" />
+<meta name="twitter:domain" content="https://magicbroccoli.de/">
   
 
-  <link rel="shortcut icon" href="https://magicbroccoli.de/img/favicon.ico" type="image/x-icon" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "TeamSpeak XMPP Push",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2017-06-22",
+    "description": "",
+    "wordCount": 336
+  }
+</script>
 
-  
-  
 
-  
-  <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.conversejs.org/css/converse.min.css">
-  <script>
-    if ( screen && screen.width > 960 ) {
-    document.write('<script type="text\/javascript" src="https://cdn.conversejs.org/dist/converse.min.js"><\/script>');
-    }
-   </script>
+
+<link rel="canonical" href="https://magicbroccoli.de/post/ts-xmpp-script/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://magicbroccoli.de/touch-icon-144-precomposed.png">
+<link href="https://magicbroccoli.de/favicon.ico" rel="icon">
+
+<meta name="generator" content="Hugo 0.26" />
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://magicbroccoli.de/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://magicbroccoli.de/assets/css/style.css">
+  <link rel="stylesheet" href="https://magicbroccoli.de/assets/css/tomorrow-night.css">
+  <link href='//fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+
 </head>
-
-
-<body>
-<div id="layout">
-
-  
-<a href="#menu" id="menuLink" class="menu-link">
-  
-  <span></span>
-</a>
-<div id="menu">
-
-  
-  <a class="pure-menu-heading brand" href="https://magicbroccoli.de/">just magical</a>
-
-
-  <div class="pure-menu">
-    <ul class="pure-menu-list">
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://magicbroccoli.de/"><i class='fa fa-home fa-fw'></i>Home</a>
-      
+<body class="bg-light">
+    <nav class="navbar navbar-expand-md navbar-light blog-header">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#exCollapsingNavbar2"
+        aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+      &#9776;
+    </button>
+    <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
+      <a class="navbar-brand" href="https://magicbroccoli.de/">Magical Broccoli</a>
+      <ul class="nav navbar-nav">
+        
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://magicbroccoli.de/">
+              <i class='fa fa-home fa-fw'></i>
+              <span>Home</span>
+          </a>
         </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://magicbroccoli.de/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
-      
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://magicbroccoli.de/xmpp/">
+              <i class='fa fa-delicious'></i>
+              <span>XMPP</span>
+          </a>
         </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://magicbroccoli.de/tags/"><i class='fa fa-tags' fa-fw></i>Tags</a>
-      
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://magicbroccoli.de/register/">
+              <i class='fa fa-plus' fa-fw'></i>
+              <span>Register</span>
+          </a>
         </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://magicbroccoli.de/xmpp/"><i class='fa fa-delicious' fa-fw></i>XMPP Server</a>
-      
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://magicbroccoli.de/contact">
+              <i class='fa fa-info-circle'></i>
+              <span>About me</span>
+          </a>
         </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://magicbroccoli.de/register/"><i class='fa fa-plus' fa-fw'></i>Register</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://magicbroccoli.de/termsofuse/"><i class='fa fa-user fa-fw'></i>Terms of Use</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://magicbroccoli.de/datenschutz/"><i class='fa fa-user-secret' fa-fw></i>Privacy</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://magicbroccoli.de/contact/"><i class='fa fa-address-book-o' fa-fw></i>Contact</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
-          <a class="pure-menu-link" href="https://magicbroccoli.de/impressum/"><i class='fa fa-user fa-fw'></i>Impressum</a>
-      
-        </li>
-      
-    </ul>
+        
+      </ul>
+    </div>
   </div>
+</nav>
 
-  <div class="pure-menu social">
-  <ul class="pure-menu-list">
+<div class="container p-a-0">
+  <div class="row m-l-0 m-r-0">
+    <div class="col-xs-12 col-md-9 post-container">
+      <div>
+  
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://github.com/mightyBroccoli" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
-    </li>
-    
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://bitbucket.org/mightyBroccoli" target="_blank"><i class="fa fa-bitbucket-square fa-fw"></i>Bitbucket</a>
-    </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://keybase.io/mightyBroccoli" target="_blank"><i class="fa fa-key fa-fw"></i>Keybase</a>
-    </li>
-    
-
-  </ul>
-</div>
-
-
-  <div>
-  <div class="small-print">
-    <small>&copy; 2017. All rights reserved.</small>
-  </div>
-  <div class="small-print">
-    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
-    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
-  </div>
-</div>
-
-</div>
-
-
-  <div id="main">
-
-
-<div class="header">
-  <h1>TeamSpeak XMPP Push</h1>
-  <h2>TeamSpeak Script</h2>
-</div>
-<div class="content">
+  <h1 class="post-title">TeamSpeak XMPP Push
+</h1>
 
   <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-06-22">22 Jun, 2017</time>
 
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>22 Jun 2017, 14:15</time>
+    
+      &middot; by nico
+    
+    &middot; 2 Minute Read
+    &middot; 336 Words
   </div>
 
   
+      
+      
+      <div class="post-meta-item">
+          <i class="fa fa-folder-open-o"></i>
+          
+          <a class="article-category-link" href="https://magicbroccoli.de/categories/development/">Development</a>
+          &middot;
+          
+          <a class="article-category-link" href="https://magicbroccoli.de/categories/bash/">Bash</a>
+          &middot;
+          
+          <a class="article-category-link" href="https://magicbroccoli.de/categories/teamspeak/">TeamSpeak</a>
+          &middot;
+          
+          <a class="article-category-link" href="https://magicbroccoli.de/categories/xmpp/">XMPP</a>
+          
+          
+      </div>
+      
+  
 
   
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://magicbroccoli.de/tags/xmpp/">XMPP</a>
+          
+          
+        </div>
+      
   
   
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/development">Development</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/bash">bash</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-topic" href="https://magicbroccoli.de/topics/teamspeak">TeamSpeak</a>
-    
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://magicbroccoli.de/post/ts-xmpp-script/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
   </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://magicbroccoli.de/tags/xmpp">XMPP</a>
-    
-  </div>
-  
   
 
 </div>
 
+</div>
+
+      <div class="content">
   
 
 <h2 id="idee">Idee</h2>
 
-<p>Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen.
+<p>Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen.<br>
 Für genau dieses Problem habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP sendet.</p>
 
 <h2 id="nutzen">Nutzen</h2>
 
 <p><strong>IMHO</strong> gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung schnellstmöglichst sehr praktisch ist.
-Viele Server unterstützen eine Reihe von &ldquo;Automatischen Moderationen&rdquo;, trotzdem sollten User nicht in der Lage sein sich Gruppen zuzuweisen. Diese kurze Benachrichtigung sagt dem Admin/ Moderator, wer und welche Gruppe betroffen ist.
+Viele Server unterstützen eine Reihe von &ldquo;Automatischen Moderationen&rdquo;, trotzdem sollten User nicht in der Lage sein sich Gruppen zuzuweisen. Diese kurze Benachrichtigung sagt dem Admin/ Moderator, wer und welche Gruppe betroffen ist.<br>
 Je nach Häufigkeit der Ausführung könnte die Benachrichtigung innerhalb von Sekunden gepushed werden.</p>
 
 <pre><code>---- Group change ----
@@ -344,7 +239,7 @@ Je nach Häufigkeit der Ausführung könnte die Benachrichtigung innerhalb von S
 
 <h2 id="github">Github</h2>
 
-<p>Das Projekt ist gehostet auf <a href="https://github.com/mightyBroccoli/logwatch-scripts">Github</a>. Dort ist auch ein Bereich für <a href="https://github.com/mightyBroccoli/logwatch-scripts/issues">Github - Issues</a>, falls Probleme auftreten oder Verbesserungsvorschläge bestehen.</p>
+<p>Das Projekt ist gehostet auf <a href="https://github.com/mightyBroccoli/logwatch-scripts" target="_blank">Github</a>. Dort ist auch ein Bereich für <a href="https://github.com/mightyBroccoli/logwatch-scripts/issues" target="_blank">Github - Issues</a>, falls Probleme auftreten oder Verbesserungsvorschläge bestehen.</p>
 
 <h2 id="debian-9">Debian 9</h2>
 
@@ -354,87 +249,348 @@ Je nach Häufigkeit der Ausführung könnte die Benachrichtigung innerhalb von S
 
 <p>Update : 28.07.2017 Debian 9 Perl5 Problematik</p>
 
-<pre><code class="language-pl">Use of uninitialized value in numeric eq (==) at /usr/share/perl5/XML/Stream.pm line 631.
+<pre><code>Use of uninitialized value in numeric eq (==) at /usr/share/perl5/XML/Stream.pm line 631.
 </code></pre>
 
 <p>Ich hab mit etwas debugging herausgefunden, welche Zeilen geändert werden müssen, um perl-xmlstream wieder zu fixxen.
 Die Datei <code>/usr/share/perl5/XML/Stream.pm</code> müsste geändert werden. (Pfad kann abweichen je nach OS)
 Mit nano lässt sich bequem nach der Zeile suchen, mit Shift + W. Danach ändert man Zeile 631.</p>
 
-<pre><code class="language-pl">$self-&gt;{SIDS}-&gt;{default}-&gt;{ssl_ca_path} = '';
+<pre><code>$self-&gt;{SIDS}-&gt;{default}-&gt;{ssl_ca_path} = '';
 </code></pre>
 
 <p>zu</p>
 
-<pre><code class="language-pl">$self-&gt;{SIDS}-&gt;{default}-&gt;{ssl_ca_path} = '/etc/ssl/certs';
+<pre><code>$self-&gt;{SIDS}-&gt;{default}-&gt;{ssl_ca_path} = '/etc/ssl/certs';
 </code></pre>
 
 <p>Nach dieser Änderung hat sich das Problem eingestellt und sendxmpp funktionierte wieder genauso tadellos wie zuvor.</p>
 
+</div>
+
+      <footer>
+    
+    
+      
+        <nav><ul class="pagination">
+        
+            <li class="page-item">
+              <a href="https://magicbroccoli.de/post/first-post/" title="Magical  Server " class="page-link">
+                <span aria-hidden="true">&larr;</span>Previous
+              </a>
+            </li>
+        
+
+        
+          <li class="page-item">
+            <a href="https://magicbroccoli.de/post/omemo-statement/" title="Wir unterstützen Omemo" class="page-link">
+                Next <span aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+        
+        </ul> </nav>
+      
+    
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      (function() {
+        
+        
+        if (window.location.hostname == "localhost")
+          return;
+
+        var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+        dsq.src = '//xxxxxx.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</footer>
+
+    </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="sidebar">
+  
 
   
-<div class="prev-next-post pure-g">
-  <div class="pure-u-1-24" style="text-align: left;">
-    
-    <a href="https://magicbroccoli.de/post/first-post/"><i class="fa fa-chevron-left"></i></a>
-    
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="prev">
-      <a href="https://magicbroccoli.de/post/first-post/">Magical  Server</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-2-24">
-    &nbsp;
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="next">
-      <a href="https://magicbroccoli.de/post/omemo-statement/">Wir unterstützen Omemo</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://magicbroccoli.de/post/omemo-statement/"><i class="fa fa-chevron-right"></i></a>
-    
+
+
+<div class="card card-block">
+  <h4 class="card-title">CATEGORIES</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/bash/">
+                bash
+            </a>
+            <span class="category-list-count">1</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/debian/">
+                debian
+            </a>
+            <span class="category-list-count">2</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/development/">
+                development
+            </a>
+            <span class="category-list-count">1</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/gajim/">
+                gajim
+            </a>
+            <span class="category-list-count">1</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/mariadb/">
+                mariadb
+            </a>
+            <span class="category-list-count">1</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/omemo/">
+                omemo
+            </a>
+            <span class="category-list-count">1</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/prosody/">
+                prosody
+            </a>
+            <span class="category-list-count">2</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/teamspeak/">
+                teamspeak
+            </a>
+            <span class="category-list-count">1</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/xep-0368/">
+                xep-0368
+            </a>
+            <span class="category-list-count">1</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/xmpp/">
+                xmpp
+            </a>
+            <span class="category-list-count">4</span>
+        </li>
+        
+      </ul>
+    </div>
   </div>
 </div>
+
 
 
 
   
 
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAGS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/ca-bundle/">ca-bundle</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/ccc/">ccc</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/cert-error/">cert-error</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/failure/">failure</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/guide/">guide</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/mariadb/">mariadb</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/omemo/">omemo</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/prosody/">prosody</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xmpp/">xmpp</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
 </div>
 
+
+
+
+  
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAG CLOUD</h4>
+  <p class="card-text">
+    
+        <a href="https://magicbroccoli.de/tags/ca-bundle/" class="badge badge-primary">
+        ca-bundle
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/ccc/" class="badge badge-primary">
+        ccc
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/cert-error/" class="badge badge-primary">
+        cert-error
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/failure/" class="badge badge-primary">
+        failure
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/guide/" class="badge badge-primary">
+        guide
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/mariadb/" class="badge badge-primary">
+        mariadb
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/omemo/" class="badge badge-primary">
+        omemo
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/prosody/" class="badge badge-primary">
+        prosody
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xmpp/" class="badge badge-primary">
+        xmpp
+        </a>
+    
+  </p>
 </div>
+
+
+
+
 </div>
-<script src="https://magicbroccoli.de/js/ui.js"></script>
+
+      </div>
+  </div>
+</div>
+      <footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-9">
+        <p class="text-xs-center m-a-0 p-a-0">
+          &copy; 2017 All rights reserved.
+        </p>
+        <p class="text-xs-center  m-a-0 p-a-0">
+            
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/impressum/">Impressum</a>
+              </span>
+              &middot; 
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/termsofuse/">Terms of Use</a>
+              </span>
+              &middot; 
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/datenschutz/">Privacy Policy</a>
+              </span>
+                
+        </p>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<script src="https://magicbroccoli.de/assets/js/highlight.pack.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script id="dsq-count-scr" src="//xxxxxx.disqus.com/count.js" async></script>
+
+
+<script src="https://magicbroccoli.de/assets/js/script.js"></script>
 
 
 
 
-</body>
-
+<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.conversejs.org/css/converse.min.css">
 <script>
-	converse.initialize({
-	allow_chat_pending_contacts: true,
-	allow_non_roster_messaging: true,
-	allow_registration: false,
-	bosh_service_url: 'https://magicbroccoli.de/http-bind',
-	csi_waiting_time: 25,
-	domain_placeholder: 'magicbroccoli.de',
-	default_domain: 'magicbroccoli.de',
-	message_carbons: true,
-	muc_domain: 'conference.magicbroccoli.de',
-	providers_link: 'https://magicbroccoli.de/xmpp',
-	registration_domain: 'magicbroccoli.de',
-	roster_groups: true,
-	show_controlbox_by_default: true,
-	show_send_button: true,
-	});
+  if ( screen && screen.width > 960 ) {
+  document.write('<script type="text\/javascript" src="https://cdn.conversejs.org/dist/converse.min.js"><\/script>');
+  }
 </script>
+<script>
+  converse.initialize({
+  allow_chat_pending_contacts: true,
+  allow_non_roster_messaging: true,
+  allow_registration: false,
+  bosh_service_url: 'https://magicbroccoli.de/http-bind',
+  csi_waiting_time: 25,
+  domain_placeholder: 'magicbroccoli.de',
+  default_domain: 'magicbroccoli.de',
+  message_carbons: true,
+  muc_domain: 'conference.magicbroccoli.de',
+  providers_link: 'https://magicbroccoli.de/xmpp',
+  registration_domain: 'magicbroccoli.de',
+  roster_groups: true,
+  show_controlbox_by_default: true,
+  show_send_button: true,
+  });
+</script>
+
+  </body>
 </html>
 

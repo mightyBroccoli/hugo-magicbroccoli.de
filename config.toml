@@ -1,100 +1,71 @@
-baseURL = "https://magicbroccoli.de/"
+baseurl = "https://magicbroccoli.de/"
 languageCode = "de-DE"
 title = "Magical Broccoli"
-theme = "blackburn"
 author = "nico"
-# Shown in the side menu
-copyright = "&copy; 2017. All rights reserved."
+#copyright = "&copy; 2017. All rights reserved."
+copyright = "All rights reserved."
 canonifyurls = true
-paginate = 10
+paginate = 4
+theme = "hugo-bootstrap"
 DefaultContentLanguage = "de"
-defaultContentLanguageInSubdir =  false
 
-[indexes]
-  tag = "tags"
-  topic = "topics"
+disqusShortname = "xxxxxx"
 
 [params]
-  # Shown in the home page
-  subtitle = "just magical"
-  brand = "just magical"
-  # CSS name for highlight.js
-  highlightjs = "solarized-dark"
-  highlightjs_extra_languages = [ "bash", "perl", "lua" ]
-  dateFormat = "02 Jan 2006, 15:04"
-  # Include any custom CSS and/or JS files
-  # (relative to /static folder)
-  # custom_css = ["css/my.css"]
-  # custom_js = ["js/my.js"]
   enableRobotsTXT = true
   noTimes = true
 
-[menu]
-  # Shown in the side menu.
-  [[menu.main]]
+[blackfriday]
+hrefTargetBlank = true
+
+[[menu.main]]
     name = "Home"
     pre = "<i class='fa fa-home fa-fw'></i>"
-    weight = 1
+    weight = -110
     identifier = "home"
     url = "/"
-  [[menu.main]]
-    name = "Posts"
-    pre = "<i class='fa fa-list fa-fw'></i>"
-    weight = 2
-    identifier = "post"
-    url = "/post/"
-  [[menu.main]]
-    name = "Tags"
-    pre = "<i class='fa fa-tags' fa-fw></i>"
-    weight = 3
-    identifier = "tags"
-    url = "/tags/"
-  [[menu.main]]
-    name = "XMPP Server"
-    pre = "<i class='fa fa-delicious' fa-fw></i>"
-    weight = 4
+
+[[menu.main]]
+    name = "XMPP"
+    pre = "<i class='fa fa-delicious'></i>"
+    weight = -100
     identifier = "xmpp"
     url = "/xmpp/"
-  [[menu.main]]
+
+[[menu.main]]
     name = "Register"
     pre = "<i class='fa fa-plus' fa-fw'></i>"
-    weight = 5
+    weight = -99
     identifier = "register"
     url = "/register/"
-  [[menu.main]]
-    name = "Terms of Use"
-    pre = "<i class='fa fa-user fa-fw'></i>"
-    weight = 7
-    identifier = "Terms of Use"
-    url = "/termsofuse/"
-  [[menu.main]]
-    name = "Privacy"
-    pre = "<i class='fa fa-user-secret' fa-fw></i>"
-    weight = 8
-    identifier = "Datenschutz"
+
+[[menu.main]]
+    name = "About me"
+    pre = "<i class='fa fa-info-circle'></i>"
+    weight = -90
+    identifier = "contact"
+    url = "/contact"
+
+[[menu.footer]]
+    name = "Privacy Policy"
+    weight = -110
+    identifier = "privacy"
     url = "/datenschutz/"
-  [[menu.main]]
-    name = "Contact"
-    pre = "<i class='fa fa-address-book-o' fa-fw></i>"
-    weight = 9
-    url = "/contact/"
-  [[menu.main]]
+
+[[menu.footer]]
+    name = "Terms of Use"
+    weight = -120
+    identifier = "termsofuse"
+    url = "/termsofuse/"
+
+[[menu.footer]]
     name = "Impressum"
-    pre = "<i class='fa fa-user fa-fw'></i>"
-    weight = 10
-    identifier = "Impressum"
+    weight = -130
+    identifier = "impress"
     url = "/impressum/"
 
-[social]
-  # Link your social networking accounts to the side menu
-  # by entering your username or ID.
-
-  # Techie
-  github = "mightyBroccoli"
-  bitbucket = "mightyBroccoli"
-
-  # Gaming
-  # steam = "*"
-
-  # Other
-  keybase = "mightyBroccoli"
+[params.widgets]
+  recent_articles = true
+  categories = true
+  tags = true
+  tag_cloud = true
