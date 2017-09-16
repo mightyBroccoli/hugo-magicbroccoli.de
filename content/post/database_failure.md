@@ -4,8 +4,8 @@ date = "2017-08-25T23:30:00+02:00"
 title = "Datenbank Zusammenbruch"
 author = "nico"
 description = "Maintenance Downtime wegen eines MariaDB Fehlers."
-keywords = [ "MariaDB", "Failure" ]
-tags = [ "MariaDB", "Failure" ]
+keywords = [ "MariaDB" ]
+tags = [ "MariaDB" ]
 categories = [ "MariaDB", "Debian" ]
 banner = "/banner/mariadb.png"
 +++

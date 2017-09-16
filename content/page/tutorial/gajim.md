@@ -4,15 +4,15 @@ date = "2017-07-22"
 title = "Gajim Tutorial"
 description = "How to use Gajim"
 author = "nico"
+tags = [ "Guide" ]
 categories = [ "XMPP", "Gajim" ]
 keywords = [ "MagicBroccoli XMPP", "XMPP", "Gajim", "Gajim Tutorial" ]
 +++
-
 ## 1. Account Registrierung
 Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt.
 Speziell bei **magicbroccoli.de** sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist.
 Durch den Klick auf "Registrieren" akzeptieren Sie die [Nutzungsbedingungen](/termsofuse/) sowie [Datenschutzbestimmungen](/datenschutz/).
-![](/images/tutorials/gajim/webregister.png)
+![](/images/tutorials/webregister.png)
 
 ## 2. Installation
 Gajim lässt sich unter Windows und Linux problemlos installieren. --> [Gajim Download](https://gajim.org/?lang=de)
@@ -29,12 +29,8 @@ Diesen tragen sie wie hier in die Felder ein. *Dabei ersetzen sie die Daten nat�
 Sollten Ihre Daten korrekt sein folgt der eigentliche Login.
 Wenn Sie den Haken bei "Mein Profil setzten, wenn ich mich verbinde" setzen, bekommen Sie bei Ihrem ersten Login, die Möglichkeit Ihr Profil zu bearbeiten. Dies ist aber auch nachträglich noch möglich und ist 100% freiwillig und kann genauso komplett leer gelassen werden.
 
-{{< fluid_imgs
-  "pure-u-1-2|/images/tutorials/gajim/clientlogin.png|Login"
-  "pure-u-1-2|/images/tutorials/gajim/logindata.png|Login"
-  "pure-u-1-1|/images/tutorials/gajim/login.png|Login"
->}}
-
+<img src="/images/tutorials/gajim/clientlogin.png" width="100%">
+<img src="/images/tutorials/gajim/logindata.png" width="50%"><img src="/images/tutorials/gajim/login.png" width="50%">
 ## 4. Plugins
 Unter Ändern > Plugins lassen sich viele unterschiedliche Plugins installieren, die die Funktionalität von Gajim erweitern. Um alle Server Features effektiv nutzen zu können empfehle ich folgende Plugins zu installieren.
 
@@ -68,10 +64,7 @@ Aktionen > Chatraum betreten > Chatraum betreten führt zu einem Fenster das Ihn
 *Hinweis* : Dieser wird allerdings vom Server automatisch eingetragen, daher ist dort nichts weiter notwendig.
 
 ## 6. Adhoc Befehle
-{{< fluid_imgs
-  "pure-u-1-3|/images/tutorials/gajim/howtoadhoc.png|Adhoc"
-  "pure-u-1-2|/images/tutorials/gajim/adhoc.png|Adhoc"
->}}
+<img src="/images/tutorials/gajim/howtoadhoc.png" width="40%"><img src="/images/tutorials/gajim/adhoc.png" width="60%">
 
 Bei den Adhoc Befehlen handelt es sich um Befehle, die Ihr Client dem Server zur Ausführung geben kann, um bestimmte Funktionen zu erhalten. Wie das Befehlsmenu aufzurufen ist zeigen die Bilder.
 
@@ -93,7 +86,7 @@ Die Archive Funktion ermöglicht es Nachrichten für 1 Monat auf dem Server zu s
 ### 6.5 Search settings
 **Default = OFF**
 Diese Funktion sollte man sie aktivieren erlaubt es sie über die generelle Benutzersuche zu finden.
-![](/images/tutorials/gajim/search settings.png)
+<img src="/images/tutorials/gajim/search settings.png" width="100%">
 
 ## 7. Nützliche Links
 Einige Webseiten die weitergehende Tutorials bzw. ausführlichere Tutorials zur Verfügung stellen.
@@ -103,12 +96,6 @@ Einige Webseiten die weitergehende Tutorials bzw. ausführlichere Tutorials zur 
 
 #### Omemo
 - [Datenschutzhelden.org - Omemo für den Desktop](https://datenschutzhelden.org/2017/07/20/gajim-omemo-fuer-den-desktop/)
-- [Maintainer Website von Omemo](https://conversations.im/omemo/)
-- [Omemo Audit (PDF Download)](https://conversations.im/omemo/audit.pdf)
-- [Omemo Wikipedia](https://de.wikipedia.org/wiki/OMEMO)
-
-#### Technische Übersicht von XMPP
-- [Eine Übersicht über XMPP](https://xmpp.org/about/technology-overview.html)
 
 [Zurück zur Übersicht](/xmpp/)
 

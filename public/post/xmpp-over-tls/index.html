@@ -56,7 +56,7 @@
     },
     "datePublished": "2017-08-06",
     "description": "",
-    "wordCount": 705
+    "wordCount": 901
   }
 </script>
 
@@ -67,7 +67,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://magicbroccoli.de/touch-icon-144-precomposed.png">
 <link href="https://magicbroccoli.de/favicon.ico" rel="icon">
 
-<meta name="generator" content="Hugo 0.26" />
+<meta name="generator" content="Hugo 0.27.1" />
 
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
@@ -113,7 +113,14 @@
         </li>
         
           <li class="nav-item">
-          <a class="nav-link menu-item" href="https://magicbroccoli.de/contact">
+          <a class="nav-link menu-item" href="https://magicbroccoli.de/page/tutorial/">
+              <i class='fa fa-question-circle' fa-fw'></i>
+              <span>Tutorials</span>
+          </a>
+        </li>
+        
+          <li class="nav-item">
+          <a class="nav-link menu-item" href="https://magicbroccoli.de/contact/">
               <i class='fa fa-info-circle'></i>
               <span>About me</span>
           </a>
@@ -141,8 +148,8 @@
     
       &middot; by nico
     
-    &middot; 4 Minute Read
-    &middot; 705 Words
+    &middot; 5 Minute Read
+    &middot; 901 Words
   </div>
 
   
@@ -206,6 +213,7 @@
 <li><strong>optional</strong> gültiges SSL Zertifikat ( LetsEncrypt / oä )</li>
 <li>2 IPv4 Adressen ( <strong>Hinweis beachten</strong> )</li>
 <li>iptables und iptables-persistent</li>
+<li><strong>optional</strong> Webserver</li>
 <li>Kontrolle über eure DNS Zone</li>
 </ul>
 
@@ -246,7 +254,8 @@ legacy_ssl_ports = { 5223 }
 <p>Hier wäre der Zeitpunkt das bestehende Zertifikat für <code>example.com</code> auf <code>xmpps.example.com</code> auszuweiten, um keinen <code>common name error</code> zu erzeugen. Dieses erweiterte Zertifikat ist dem Prosody zur Verfügung zu stellen.</p>
 
 <p><em>Hinweis</em> : Dieser Teil ist vollkommen optional. Die <a href="https://prosody.im/doc/certificates" target="_blank">Prosody Dokumentation</a> zeigt auf, dass kein Zertifikat notwendig wäre.
-<strong>IMHO</strong> Es macht das Gesamtbild einheitlicher, wenn auch diesem Endpunkt ein gültiges SSL Zertifikat präsentiert wird.</p>
+<strong>IMHO</strong> Es macht das Gesamtbild einheitlicher, wenn auch diesem Endpunkt ein gültiges SSL Zertifikat präsentiert wird.<br>
+In Section <a href="#5-webserver">5. Webserver</a> gehe ich darauf noch einmal genau ein.</p>
 
 <h3 id="4-iptables-regeln">4. iptables Regeln</h3>
 
@@ -257,13 +266,13 @@ Regel Nr. 1 leitet den gesamten Traffic der zweiten IP der auf Port 443 ankommt,
 <p>Für die Antwort des Prosody Servers wird allerdings eine zweite Regel benötigt, die sich in der POSTROUTING Kette befindet. Diese stellt sicher das, dass Antwort Paket auch wieder über Port 443 der zweiten IP Adresse den Server verlässt und nicht mit 5223.
 <em>Sollte bei der Prosody Konfiguration ein anderer Port gewählt werden als der default Port, muss dieser natürlich in den iptables Regeln ausgetauscht werden.</em></p>
 
-<p>In diesem Beispiel ist $erste_ip, die IP auf der auch der httpd Server lauscht. $zweite_ip bezeichnet daher die zweite Adresse für XMPP over TLS.</p>
+<p>In diesem Beispiel ist $erste_ip, die IP auf der auch der httpd Server lauscht. zweite_ip bezeichnet daher die zweite Adresse für XMPP over TLS.</p>
 
 <pre><code class="language-#!/bin/bash"># PREROUTING
-iptables -t nat -A PREROUTING -d $zweite_ip -p tcp --dport 443 -j DNAT --to-destination $erste_ip:5223
+iptables -t nat -A PREROUTING -d zweite_ip -p tcp --dport 443 -j DNAT --to-destination $erste_ip:5223
 
 # POSTROUTING
-iptables -t nat -A POSTROUTING -p tcp -d  $zweite_ip --dport 5223 -j SNAT --to-source $erste_ip:5223
+iptables -t nat -A POSTROUTING -p tcp -d  zweite_ip --dport 5223 -j SNAT --to-source $erste_ip:5223
 </code></pre>
 
 <p>Abschließend lassen sich diese Regeln mit <code>iptables-save</code> speichern, damit bei einem reboot die Regeln wieder geladen werden.</p>
@@ -271,12 +280,51 @@ iptables -t nat -A POSTROUTING -p tcp -d  $zweite_ip --dport 5223 -j SNAT --to-s
 <pre><code class="language-#!/bin/bash">iptables-save &gt; /etc/iptables/rules.v4
 </code></pre>
 
+<h3 id="5-webserver">5. Webserver</h3>
+
+<p>Die Konfiguration des Webserver ist grundsätzlich nicht notwendig, macht das testen der vorgenommenen Änderungen allerdings bedeutend einfacher.<br>
+Im Folgenden habe ich die simpelste Möglichkeit eins vHosts angenommen. Dabei ist als Beispiel immer example.de genommen worden.</p>
+
+<h5 id="nginx">nginx</h5>
+
+<pre><code>server {
+    listen zweite_ip:80;
+    server_name xmpps.example.de;
+    #hier kann je nach wunsch eine weiterleitung stattfinden
+    return 301 https://example.de;
+
+    # letsnecrypt love
+    location ^~ /.well-known/acme-challenge/ {
+        default_type &quot;text/plain&quot;;
+    }
+
+    location = /.well-known/acme-challenge/ {
+        return 404;
+    }
+}
+</code></pre>
+
+<h5 id="apache2">apache2</h5>
+
+<pre><code>&lt;VirtualHost zweite_ip:80&gt;
+    ServerName xmpps.example.de
+
+    # hier kann je nach wunsch eine weiterleitung stattfinden
+    Redirect / https://example.de;
+
+&lt;/VirtualHost&gt;
+</code></pre>
+
+<p>Sind diese Änderungen vorgenommen ist es leicht möglich via LetsEncrypt ein Zertifikat für die SubDomain auzustellen. Zusätzlich dazu ist es nun möglich direkt zu testen ob XMPP over TLS funktioniert.</p>
+
 <h2 id="abschluss">Abschluss</h2>
 
 <p>Sollten alle diese Schritte erfolgreich abgeschlossen sein. Ist es sehr leicht möglich herauszufinden, ob alles so funktioniert wie es soll. Dafür lässt sich <code>curl -i</code> verwenden.</p>
 
 <pre><code class="language-#!/bin/bash">curl -i https://xmpps.example.com
 </code></pre>
+
+<p><strong>Hinweis</strong>: Falls es keine gültigen Zertifikate gibt, sollte hier der Befehl <code>curl -ik</code> gewählt werden um den TLS Error zu ignorieren.</p>
 
 <p>Als Ergebnis sollte ein <em>xml stream error</em> zu sehen sein, <strong>ohne</strong> Apache2 / nginx header. Ist außerdem keine Fehlermeldung über ein ungültiges SSL Zertifikat dabei ist das Zertifikat auch für die Subdomain gültig und funktioniert.</p>
 
@@ -287,6 +335,8 @@ iptables -t nat -A POSTROUTING -p tcp -d  $zweite_ip --dport 5223 -j SNAT --to-s
     &lt;/stream:error&gt;
 &lt;/stream:stream&gt;
 </code></pre>
+
+<p><span style="color:red"><strong>Hinweis</strong>:</span> Für das Testen via curl sollte eine anderer Host gewählt werden. Wenn dieser auf der Maschine, die die iptables und Prosody hostet, ausgeführt wird, durchlaufen die Pakete nicht die PREROUTING bzw. POSTROUTING Kette daher wird die Verbindung nicht möglich sein.</p>
 
 </div>
 
@@ -336,6 +386,13 @@ iptables -t nat -A POSTROUTING -p tcp -d  $zweite_ip --dport 5223 -j SNAT --to-s
         <li class="category-list-item">
             <a href="https://magicbroccoli.de/categories/bash/">
                 bash
+            </a>
+            <span class="category-list-count">1</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/chatsecure/">
+                chatsecure
             </a>
             <span class="category-list-count">1</span>
         </li>
@@ -400,7 +457,7 @@ iptables -t nat -A POSTROUTING -p tcp -d  $zweite_ip --dport 5223 -j SNAT --to-s
             <a href="https://magicbroccoli.de/categories/xmpp/">
                 xmpp
             </a>
-            <span class="category-list-count">4</span>
+            <span class="category-list-count">5</span>
         </li>
         
       </ul>
@@ -437,13 +494,8 @@ iptables -t nat -A POSTROUTING -p tcp -d  $zweite_ip --dport 5223 -j SNAT --to-s
           </li>
         
           <li>
-            <a href="https://magicbroccoli.de/tags/failure/">failure</a>
-            <span class="category-list-count">1</span>
-          </li>
-        
-          <li>
             <a href="https://magicbroccoli.de/tags/guide/">guide</a>
-            <span class="category-list-count">1</span>
+            <span class="category-list-count">3</span>
           </li>
         
           <li>
@@ -491,10 +543,6 @@ iptables -t nat -A POSTROUTING -p tcp -d  $zweite_ip --dport 5223 -j SNAT --to-s
     
         <a href="https://magicbroccoli.de/tags/cert-error/" class="badge badge-primary">
         cert-error
-        </a>
-    
-        <a href="https://magicbroccoli.de/tags/failure/" class="badge badge-primary">
-        failure
         </a>
     
         <a href="https://magicbroccoli.de/tags/guide/" class="badge badge-primary">

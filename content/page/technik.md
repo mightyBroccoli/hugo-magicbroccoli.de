@@ -59,9 +59,5 @@ Wenn dich diese Dinge überzeugt haben XMPP für dich und deine Freunde zu probi
 </center>
 
 ## Statistiken
-{{< fluid_imgs
-  "pure-u-1-2|https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_c2s-week.png|c2s"
-  "pure-u-1-2|https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_s2s-week.png|s2s"
-  "pure-u-1-2|https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_stanzas-week.png|stanzas"
-  "pure-u-1-2|https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_uptime-week.png|uptime"
->}}
+<img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_c2s-week.png" width="45%"> <img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_s2s-week.png" width="45%">
+<img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_stanzas-week.png" width="45%"> <img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_uptime-week.png" width="45%">

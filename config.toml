@@ -11,9 +11,11 @@ DefaultContentLanguage = "de"
 
 #disqusShortname = false
 
+enableRobotsTXT = true
+noTimes = true
+
 [params]
-  enableRobotsTXT = true
-  noTimes = true
+
 
 [blackfriday]
 hrefTargetBlank = true
@@ -39,12 +41,19 @@ hrefTargetBlank = true
     identifier = "register"
     url = "/register/"
 
+  [[menu.main]]
+      name = "Tutorials"
+      pre = "<i class='fa fa-question-circle' fa-fw'></i>"
+      weight = -98
+      identifier = "tutorial"
+      url = "/page/tutorial/"
+
 [[menu.main]]
     name = "About me"
     pre = "<i class='fa fa-info-circle'></i>"
     weight = -90
     identifier = "contact"
-    url = "/contact"
+    url = "/contact/"
 
 [[menu.footer]]
     name = "Privacy Policy"

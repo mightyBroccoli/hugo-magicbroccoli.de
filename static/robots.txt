@@ -8,5 +8,8 @@ Disallow: /*.ico$
 Allow: /xmpp/
 Allow: /register/
 Allow: /technik/
+Allow: /post/*
+Allow: /categories/*
+Allow: /tags/*
 
 Sitemap: https://magicbroccoli.de/sitemap.xml

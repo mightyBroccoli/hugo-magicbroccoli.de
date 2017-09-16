@@ -19,8 +19,18 @@
       
       <guid>https://magicbroccoli.de/page/tutorial/</guid>
       <description>Tutorial Übersicht Auf dieser Seite möchte ich einige Tutorials sammeln, die teils von mir selbst stammen, oder aber von außerhalb kommen. Einige Clients sind für Anfänger anfangs nicht einfach zu durchblicken, dabei sollen diese Tutorials helfen. Wer dazu beitragen möchte kann dies gerne via einem PullRequest auf Github tun.
-Windows/ Linux  Gajim  Android  Conversations  Zurück zur Übersicht
-Last Edit 25.07.17</description>
+Windows/ Linux  Gajim  Android  Conversations Chatsecure  iPhone  Chatsecure  Prosody  XMPP over TLS
+  IMHO Nützliche Links Einige Webseiten die weitergehende Tutorials bzw.</description>
+    </item>
+    
+    <item>
+      <title>Chatsecure Tutorial</title>
+      <link>https://magicbroccoli.de/page/tutorial/chatsecure/</link>
+      <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/page/tutorial/chatsecure/</guid>
+      <description>Hinweis: Ein Dank geht an 5222.de die netterweise die Screenshots zur Verfügung gestellt haben. Da ich selbst kein iPhone besitzte wäre mir ein Tutorial sonst nicht möglich gewesen.
+1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt. Speziell bei magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist.</description>
     </item>
     
     <item>
@@ -42,20 +52,6 @@ Last Edit 25.07.17</description>
       <description>Sicherheit Das Hostsystem läuft unter Debian 9.1 Stretch. Ich update das System und alle seine Komponenten regelmäßig. Dabei nehme ich teilweise Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn es aber gar nicht anders geht, ist eine kurze Downtime für wichtige Updates vertretbar.
 DNS Die gesamte Zone von magicbroccoli.de ist mit DNSSEC signiert und lässt sich überprüfen.
 Prosody Der XMPP Server ist zur Zeit ein Prosody 0.</description>
-    </item>
-    
-    <item>
-      <title>Unterstützen</title>
-      <link>https://magicbroccoli.de/page/donate/</link>
-      <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://magicbroccoli.de/page/donate/</guid>
-      <description>Unterstützung Der Betrieb der Server kostet Geld und viel Zeit. Falls es Ihnen möglich ist und sie als kleines Dankeschön mich unterstützen möchten, sind sie hier richtig. Alle Kosten werden im Moment alleinig und privat von mir getragen.
-Über kleine Beitrage zur Finanzierung freue ich mich sehr. Daueraufträge lassen auch eine längerfristige Planung zu.
- PayPal
- Bitcoin: 1QJZTWenBvdLWTUachpLLd2dLXAZMGeU87
-Banküberweisung: Bankverbindung gibt es auf Anfrage
-Vielen vielen Dank an alle, die sich einmalig oder dauerhaft an der Finanzierung des Servers beteiligen!</description>
     </item>
     
   </channel>
