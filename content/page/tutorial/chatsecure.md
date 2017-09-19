@@ -8,7 +8,7 @@ tags = [ "Guide" ]
 categories = [ "XMPP", "Chatsecure" ]
 keywords = [ "MagicBroccoli XMPP", "XMPP", "Chatsecure", "Chatsecure Tutorial", "iPhone" ]
 +++
-**Hinweis**: _Ein Dank geht an [5222.de](5222.de) die netterweise die Screenshots zur Verfügung gestellt haben. Da ich selbst kein iPhone besitzte wäre mir ein Tutorial sonst nicht möglich gewesen._
+**Hinweis**: _Ein Dank geht an [5222.de](//5222.de) die netterweise die Screenshots zur Verfügung gestellt haben. Da ich selbst kein iPhone besitzte wäre mir ein Tutorial sonst nicht möglich gewesen._
 
 ## 1. Account Registrierung
 Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt.
@@ -29,7 +29,7 @@ Beim ersten Verbindungsaufbau erscheint eine Benachrichtung dem SSL Zertifikat z
 <br><img src="/images/tutorials/chatsecure/login_existing_account.png" width="25%"><img src="/images/tutorials/chatsecure/login_creds.png" width="25%"><img src="/images/tutorials/chatsecure/login_trustssl.png" width="25%"><img src="/images/tutorials/chatsecure/login_successfull.png" width="25%">
 
 ## 4. Settings
-Unter den Einstellungen von Chatsecure befinden sich einige Möglichkeiten, die sehr nützlich für den Chat Alltag sind. 
+Unter den Einstellungen von Chatsecure befinden sich einige Möglichkeiten, die sehr nützlich für den Chat Alltag sind.
 Neben den aktiven Konten gibt es dort die Möglichkeit, die verwendeten Zertifkate einzusehen und zu kontrollieren. Außerdem ist es möglich eine automatisch Löschung der Nachrichten zu aktivieren. Je nach Belieben ist es damit möglich beim Trennen der Verbindung oder verlassen des Gesprächs alle Nachricht im Verlauf zu löschen.<br>
 Das kleine gelbe Warndreieck symbolisiert, das ein Feature des Server verwendet wird diese aber Probleme hat. Sehr häufig handelt es sich hierbei um die Push Notifications.
 <br><img src="/images/tutorials/chatsecure/settings.png" width="33%"><img src="/images/tutorials/chatsecure/settings_konto.png" width="33%"><img src="/images/tutorials/chatsecure/settings_profile.png" width="33%">

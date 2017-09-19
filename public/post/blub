@@ -1,0 +1,17 @@
++++
+draft = true
+type = "post"
+date = "2017-09-19T13:30:00+02:00"
+title = "Prosody mod_mam cleanup"
+author = "nico"
+description = ""
+keywords = [ "Prosody", "mod_mam", "mysql", "mod_mam expire" ]
+tags = [ "Prosody", "mod_mam", "mariadb" ]
+categories = [ "XMPP", "Prosody" ]
+banner = ""
++++
+
+UNIX_TIMESTAMP(DATE_SUB(curdate(),INTERVAL 2 MONTH));
+
+
+select * from prosodyarchive where 'when' < UNIX_TIMESTAMP(DATE_SUB(curdate(),INTERVAL 2 MONTH));
