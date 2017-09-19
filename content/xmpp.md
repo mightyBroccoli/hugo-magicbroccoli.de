@@ -26,10 +26,8 @@ Bei Verbesserungsvorschlägen ist die Mitarbeit bei Github gerne gesehen; [Githu
 
 ## Registrieren
 Wenn dich diese Dinge überzeugt haben XMPP für dich und deine Freunde zu probieren. Kannst du dich hier direkt anmelden.
-<center> <p>
-  <a href="/register/">
-  <img src="/images/register.png" alt="Register" style="width: 200px;"/>
-  </a></p>
+<center>
+<a style="display: block; margin-top: 50px; margin-left: auto; margin-right: auto; margin-bottom: 50px; height: 50px; width: 300px; background-color: #0069a1; color: white; border-radius: 5px; line-height: 50px; text-align: center; font-weight: bold;" href="/register/">Registrieren</a>
 </center>
 
 ### Datenschutz
