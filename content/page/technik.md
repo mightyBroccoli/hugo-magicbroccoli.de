@@ -56,5 +56,14 @@ Wenn dich diese Dinge überzeugt haben XMPP für dich und deine Freunde zu probi
 <a style="display: block; margin-top: 50px; margin-left: auto; margin-right: auto; margin-bottom: 50px; height: 50px; width: 300px; background-color: #0069a1; color: white; border-radius: 5px; line-height: 50px; text-align: center; font-weight: bold;" href="/register/">Registrieren</a>
 </center>
 
+## IM Observer
+Bei dem IM Oberserver handelt es sich um ein automatisches System da XMPP Server auf verschiedene Faktoren testet. Dies sind meine Ergebnisse.<br>
+<a href='https://check.messaging.one/result.php?domain=magicbroccoli.de&amp;type=client'>
+  <img src='https://check.messaging.one/badge.php?domain=magicbroccoli.de' alt='IM observatory score' />
+</a>
+
+Mit dem Tool von [tls.imirhil.fr](https://tls.imirhil.fr) lässt sich ähnlich zum IM Observer ein Server prüfen.<br>
+MagicBroccoli XMPP hat dort ein Rating von A+ [CryptCheck Score](https://tls.imirhil.fr/xmpp/magicbroccoli.de).
+
 ## Statistiken
 <img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_c2s-week.png" width="45%"><img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_s2s-week.png" width="45%"><img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_stanzas-week.png" width="45%"><img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_uptime-week.png" width="45%">

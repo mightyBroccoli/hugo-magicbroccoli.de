@@ -124,16 +124,16 @@ Nutzen IMHO gibt es genügend Beispiele, in denen eine schnellstmögliche Benach
       
       <guid>https://magicbroccoli.de/contact/</guid>
       <description> mail  nico(at)magicbroccoli.de
-PGP 0xEA7C31AAB1BDC1A21
+PGP 0xEA7C31AAB1BDC1A2
  Keybase: mightyBroccoli
 Chat XMPP: broccoli@magicbroccoli.de
-IRC: mightyBroccoli2
+IRC: mightyBroccoli1
 OMEMO Fingerabdrücke 1e56b6ec dd764842 674f2309 ba981a69 308e5959 ace5e6ed 6ddbf19a ee715324 [Conversations]
 243C97D7 7D0D2533 298524BC B66EB5E4 E74F6EC5 47079162 C4B917C4 2B25714B [Gajim PC]
 b85e592c 5db8519f cfc39b9d 82632a59 9dfa923f a009dc44 c7f9ba07 aa650c58 [Gajim Notebook]
 Code Hosting  Github: mightyBroccoli
  Bitbucket: mightyBroccoli
- download directly from me[return] freenode[return]   </description>
+ freenode[return]   </description>
     </item>
     
     <item>
@@ -153,10 +153,15 @@ Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Date
       
       <guid>https://magicbroccoli.de/impressum/</guid>
       <description>Impressum Angaben gemäß § 5 TMG
-Nico Wellpott Scheideweg 157 26127 Oldenburg
+Nico Wellpott
+Scheideweg 157
+26127 Oldenburg
 Vertreten durch: Nico Wellpott
-Kontakt: Telefon: 0441 93652965 E-Mail: admin@magicbroccoli.de
-Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: Nico Wellpott Scheideweg 157 26127 Oldenburg
+Kontakt: Telefon: 0441 93652965
+E-Mail: admin@magicbroccoli.de
+Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: Nico Wellpott
+Scheideweg 157
+26127 Oldenburg
 Haftungsausschluss Haftung für Inhalte Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.</description>
     </item>
     
@@ -166,11 +171,9 @@ Haftungsausschluss Haftung für Inhalte Die Inhalte unserer Seiten wurden mit gr
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/xmpp/</guid>
-      <description>Einführung MagicBroccoli XMPP ist ein freier XMPP Instant Messaging Server ausgelegt auf Datenschutz und Sicherheit. Hier möchte ich einige Dinge erläutern die für eine Verbindung, sowie Nachrichtenversand/ -empfang notwendig sind.
-How to XMPP? Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es hier; XMPP Clients.
-Für einige der unten empfohlenen Clients sind Tutorials vorhanden; Tutorials
-Bei Verbesserungsvorschlägen ist die Mitarbeit bei Github gerne gesehen; Github
-INHO : Die folgende Liste bezieht sich auf die Clients, die die meisten Features abdecken und mit möglichst vielen Standards konform sind.</description>
+      <description>Einführung MagicBroccoli XMPP ist ein freier XMPP Server ausgelegt auf Datenschutz und Sicherheit.
+Was ist XMPP? XMPP ist ein Protokoll, welches ein Versenden von Nachrichten über das Internet ermöglicht. Es ist sehr ähnlich zu ICQ oder MSN besitzt dazu aber einige besondere Features.
+Wie funktioniert es? XMPP ist ein dezentrales Netzwerk. Das bedeutet das es entgegen WhatsApp oder Facebook weltweit viele Anbieter von XMPP Servern gibt, bei denen man seinen XMPP-Account einrichten kann.</description>
     </item>
     
     <item>
@@ -179,7 +182,7 @@ INHO : Die folgende Liste bezieht sich auf die Clients, die die meisten Features
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/termsofuse/</guid>
-      <description> Allgemein  Registrierung sowie Nutzung des XMPP Servers sind komplett kostenfrei. Nutzeraccounts die länger als 1 Jahr inaktiv sind, werden gelöscht. jegliche Form von Werbung ist untersagt. Angriffe auf die Server sind untersagt und resultieren in einem sofortigen Ausschluss. Aktivitäten, die gegen das geltende Recht der Bundesrepublik Deutschland verstoßen sind untersagt. Accounts, die einer freiheitlichen, friedlichen und toleranten Gesellschaft widersprechen, werden gesperrt.  </description>
+      <description>Allgemein  Registrierung sowie Nutzung des XMPP Servers sind komplett kostenfrei. Es besteht kein Anspruch auf Funktionalität Ausfallfreiheit sowie Fortführung dieses Dienstes. Das Versenden von Werbung jeglicher Form über diesen Server ist untersagt! Angriffe auf die Server sind untersagt und resultieren in einem sofortigen Ausschluss. Aktivitäten, die gegen das geltende Recht der Bundesrepublik Deutschland, oder internationales Recht verstoßen sind untersagt. Accounts, die einer freiheitlichen, friedlichen und toleranten Gesellschaft widersprechen, werden gesperrt.</description>
     </item>
     
     <item>

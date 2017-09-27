@@ -10,12 +10,12 @@ keywords = [ "contact", "Kontakt" ]
 <i class="fa fa-envelope"></i> [nico(at)magicbroccoli.de](mailto:nico(at)magicbroccoli.de)
 
 #### PGP
-[0xEA7C31AAB1BDC1A2](/pgp/pgp_keys.asc)[^1]<br>
+[0xEA7C31AAB1BDC1A2](/pgp/pgp_keys.asc)<br>
 <i class="fa fa-key"></i> Keybase: [mightyBroccoli](https://keybase.io/mightyBroccoli)<br>
 
 #### Chat
 XMPP: [broccoli@magicbroccoli.de](xmpp:broccoli@magicbroccoli.de)<br>
-IRC: `mightyBroccoli`[^2]<br>
+IRC: `mightyBroccoli`[^1]<br>
 
 ##### OMEMO Fingerabdrücke
 `1e56b6ec dd764842 674f2309 ba981a69 308e5959 ace5e6ed 6ddbf19a ee715324` [Conversations]<br>
@@ -25,5 +25,4 @@ IRC: `mightyBroccoli`[^2]<br>
 #### Code Hosting
 <i class="fa fa-github"></i> Github:  [mightyBroccoli](https://github.com/mightyBroccoli)<br>
 <i class="fa fa-bitbucket"></i> Bitbucket: [mightyBroccoli](https://bitbucket.org/mightyBroccoli/)<br>
-[^1]: download directly from me
-[^2]: freenode
+[^1]: freenode
