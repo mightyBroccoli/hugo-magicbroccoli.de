@@ -30,8 +30,8 @@ Beim ersten Verbindungsaufbau erscheint eine Benachrichtung dem SSL Zertifikat z
 
 ## 4. Settings
 Unter den Einstellungen von Chatsecure befinden sich einige Möglichkeiten, die sehr nützlich für den Chat Alltag sind.
-Neben den aktiven Konten gibt es dort die Möglichkeit, die verwendeten Zertifkate einzusehen und zu kontrollieren. Außerdem ist es möglich eine automatisch Löschung der Nachrichten zu aktivieren. Je nach Belieben ist es damit möglich beim Trennen der Verbindung oder verlassen des Gesprächs alle Nachricht im Verlauf zu löschen.<br>
-Das kleine gelbe Warndreieck symbolisiert, das ein Feature des Server verwendet wird diese aber Probleme hat. Sehr häufig handelt es sich hierbei um die Push Notifications.
+Neben den aktiven Konten gibt es dort die Möglichkeit, die verwendeten Zertifikate einzusehen und zu kontrollieren. Außerdem ist es möglich eine automatisch Löschung der Nachrichten zu aktivieren. Je nach Belieben ist es damit möglich beim Trennen der Verbindung oder Verlassen des Gesprächs alle Nachricht im Verlauf zu löschen.<br>
+Das kleine gelbe Warndreieck symbolisiert, das die App ein Feature des Server verwendet, welches allerdings nicht korrekt zu funktionieren scheint. Sehr häufig handelt es sich hierbei um die Push Notifications.
 <br><img src="/images/tutorials/chatsecure/settings.png" width="33%"><img src="/images/tutorials/chatsecure/settings_konto.png" width="33%"><img src="/images/tutorials/chatsecure/settings_profile.png" width="33%">
 Unter _Meine Schlüssel verwalten_ ist es möglich seine eigenen Omemo Schlüssel zu akzeptieren oder zu misstrauen.
 
@@ -39,15 +39,15 @@ Unter _Meine Schlüssel verwalten_ ist es möglich seine eigenen Omemo Schlüsse
 Bei Plugins ist Chatsecure sehr nah an Conversations dran. Viele Einstellungen werden automatisch vom Server übernommen und müssen vom Benutzer gar nicht bedacht werden. Einige Einstellungen müssen, um den Betrieb möglichst reibungslos zu gewährleisten, von Hand einmalig eingestellt werden.
 
 ### 5.1 Push Notifications
-Push Benachrichtigungen sind ein sehr nützliches Feature welches nicht alle Server Anbieter anbieten. Beim ersten verbinden erfragt das Telefon automatisch die verfügbaren Serverfeatures. Sollte sich darunter Push befinden, wird Ihr Telefon sie folgendes Fragen.
+Push Benachrichtigungen sind ein sehr nützliches Feature, welches nicht alle Server Anbieter anbieten. Beim ersten verbinden erfragt das Telefon automatisch die verfügbaren Serverfeatures. Sollte sich darunter Push befinden, wird Ihr Telefon sie folgendes Fragen.
 <br><img src="/images/tutorials/chatsecure/push_enable_1.png" width="50%"><img src="/images/tutorials/chatsecure/push_enable_2.png" width="50%">
 Um erfolgreich Push Benachrichtigungen zu erhalten ist es notwendig beide Fragen zu akzeptieren. Diese Frage wird einmalig pro Account gestellt.
-Es ist möglich die Erlaubnis in den Einstellungen zurückzusetzten oder sogar ganz zu verbieten.
+Es ist möglich die Erlaubnis in den Einstellungen zurückzusetzen oder sogar ganz zu verbieten.
 
-### 5.2 Omemo
-Das aktivieren von Omemo ist sehr einfach und schnell erledigt. Über das Profil ( Erreichbar über das kleine i oben rechts ) lässt sich über _Erweiterte Verschlüsselungseinstellungen_ auswählen welches Verfahren gewünscht ist.<br>
+### 5.2 OMEMO
+Das aktivieren von Omemo ist sehr einfach und schnell erledigt. Über das Profil ( Erreichbar über das kleine **i** oben rechts ) lässt sich über _Erweiterte Verschlüsselungseinstellungen_ auswählen welches Verfahren gewünscht ist.<br>
 Dabei ist _Beste verfügbare_ die optimalste Option. Wichtig ist hierbei, dass dies eine Änderung ist die nur für diesen Kontakt gilt.<br>
-Wenn der Account mobil genutzt wird ist Omemo definitiv die bessere Wahl, da die Verbindungsqualität bei OTR sehr sensibel ist.
+Wenn der Account mobil genutzt wird ist Omemo definitiv die bessere Wahl, da _OTR_ sensibel auf eine schwankende Verbindungsqualität reagiert, was zu Fehlern, wie z.B. nicht empfangenen Nachrichten führen kann.
 <br><img src="/images/tutorials/chatsecure/omemo_profile.png" width="33%"><img src="/images/tutorials/chatsecure/omemo_enable_encrypt.png" width="33%"><img src="/images/tutorials/chatsecure/omemo_chat.png" width="33%">
 
 ## 6. Nützliche Links
