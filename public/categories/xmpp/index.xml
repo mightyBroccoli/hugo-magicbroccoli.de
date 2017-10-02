@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
     <copyright>All rights reserved.</copyright>
-    <lastBuildDate>Mon, 28 Aug 2017 13:30:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 02 Oct 2017 13:30:00 +0200</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/categories/xmpp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Prosody housekeeping</title>
+      <link>https://magicbroccoli.de/post/prosody_housekeeping/</link>
+      <pubDate>Mon, 02 Oct 2017 13:30:00 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/prosody_housekeeping/</guid>
+      <description>Grundidee Ich habe mich in den letzen paar Tagen damit beschäftigt Dinge rund um den Prosody Server zu automatisieren. Daher möchte ich hier einfach mal meine Lösung einiger kleiner Probleme vorstellen.
+Problem Das grundsätzliche Problem, welches so ziemlich alle Server mit offener Registrierung teilen, sind Zombie Accounts. Sprich Accounts die erstellt wurden, allerdings nie verwendet werden. Oder Accounts die erstellt wurden und irgendwann von ihrem Nutzer/in nicht mehr verwendet werden.</description>
+    </item>
     
     <item>
       <title>CCC Jabber Connection</title>

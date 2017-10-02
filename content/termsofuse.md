@@ -4,7 +4,7 @@ title = "Nutzungsbedingungen"
 description = "Nutzungsbedingungen"
 author = "nico"
 date = "2017-06-21"
-keywords = [ "Nutzungsbedingungen", "Terms of use" ]
+keywords = [ "Nutzungsbedingungen", "Terms of use", "tos" ]
 +++
 
 ## Allgemein
@@ -14,5 +14,6 @@ keywords = [ "Nutzungsbedingungen", "Terms of use" ]
 * Angriffe auf die Server sind untersagt und resultieren in einem sofortigen Ausschluss.
 * Aktivitäten, die gegen das geltende Recht der Bundesrepublik Deutschland, oder internationales Recht verstoßen sind untersagt.
 * Accounts, die einer freiheitlichen, friedlichen und toleranten Gesellschaft widersprechen, werden gesperrt.
-* Nutzeraccounts die länger als 1 Jahr inaktiv sind, werden atumatische gelöscht.
+* Nutzeraccounts die länger als 1 Jahr inaktiv sind, werden automatisch gelöscht.
+* Nutzeraccounts die registriert wurden, jedoch nicht verwendet werden, werden automatisch nach 14 Tagen gelöscht.
 * Ein Verstoß gegen die Nutzungsbedingungen führt zu einem sofortigen Ausschluss sowie Löschung des Kontos.
