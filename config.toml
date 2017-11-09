@@ -9,13 +9,14 @@ paginate = 4
 theme = "hugo-bootstrap"
 DefaultContentLanguage = "de"
 
-#disqusShortname = false
-
 enableRobotsTXT = true
 noTimes = true
 
-[params]
-
+[params.widgets]
+  recent_articles = false
+  categories = true
+  tags = true
+  tag_cloud = true
 
 [blackfriday]
 hrefTargetBlank = true
@@ -72,9 +73,3 @@ hrefTargetBlank = true
     weight = -130
     identifier = "impress"
     url = "/impressum/"
-
-[params.widgets]
-  recent_articles = true
-  categories = true
-  tags = true
-  tag_cloud = true

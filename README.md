@@ -1,21 +1,22 @@
-# magicbroccoli.de Website
-
-## Bandnudeln mit Broccoli in einer Käse - Sahnesoße
-- 500 g	Bandnudeln
-- Wasser (leicht gesalzen)
-- 400 ml	süße Sahne
-- 200 g	Schmelzkäse
-- 350 g	Brokkoli
-- 250 ml	Gemüsebrühe oder Weißwein
-- Salz und Pfeffer
-- Knoblauch
-- Zucker
-- etwas	Öl
+## Reispfanne mit Mango und Broccoli
+- 1 Becher	Reis
+- 2 Becher	Wasser
+- Salz
+- 200 g	Lauch, TK
+- 500 g	Brokkoli, TK
+- 1 m.-große	Zwiebel(n)
+- 1 kl. Dose/n	Mango(s), oder eine frische Mango
+- 1 Becher	Sahne
+- 1 Becher	Milch
+- 1 EL	Currypulver, oder mehr, je nach Geschmack
+- 3 EL	Öl
+- 1 EL	Speisestärke
+- evtl.	Gemüsebrühe, gekörnte
 
 
 ### Zubereitung
-*Arbeitszeit: ca. 10 Min. / Schwierigkeitsgrad: simpel / Kalorien p. P.: ca. 550 kcal*
+*Arbeitszeit: ca. 20 Min. / Schwierigkeitsgrad: simpel / Kalorien p. P.: keine Angabe*
 
-Als Erstes die Nudeln wie gewohnt im Salzwasser kochen, jedoch ca. 1 - 2 Minuten vor al dente aus dem Kochtopf nehmen. Während die Nudeln kochen, kann man schon den Brokkoli in einer großen Pfanne mit etwas Öl und Zucker, bei Bedarf mit etwas Knoblauch, andünsten. Bevor der Brokkoli zu weich wird, die Gemüsebrühe und die süße Sahne hinzugeben.
+Den Reis in kaltem Salzwasser oder Wasser mit Instantbrühe aufsetzen, zudecken und bei kleiner Hitze gar köcheln lassen. Der Reis ist fertig, wenn keine Flüssigkeit mehr im Topf steht, umrühren ist nicht notwendig. Ich nehme dafür Basmati und Thai-Reis 1:1.
 
-Etwas einköcheln lassen und dann erst den Schmelzkäse und anschließend die vorgekochten Nudeln hinzugeben. Noch ca. 2 Minuten einköcheln lassen und fertig! Anstatt der Gemüsebrühe kann man auch Weißwein nehmen, je nach Geschmack.
+In der Zwischenzeit in einer großen Pfanne das Öl heiß werden lassen, in Streifen geschnittene Zwiebel und Lauch hinzu fügen und glasig werden lassen. Dann den aufgetauten Brokkoli in die Pfanne geben, 5 Minuten braten, anschließend mit der Sahne und der Milch ablöschen und mit Salz und Currypulver abschmecken. Die klein geschnittene Mango in der Sauce erwärmen und zuletzt den gegarten Reis unterheben.

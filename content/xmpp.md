@@ -2,7 +2,7 @@
 type = "page"
 date = "2017-06-21"
 title = "Magical XMPP Server"
-description = "magicBroccoli XMPP Server"
+description = "MagicBroccoli XMPP Server"
 keywords = [ "MagicBroccoli XMPP", "XMPP", "MagicBroccoli XMPP", "Prosody", "Debian" ]
 +++
 ## Einführung
@@ -48,7 +48,8 @@ Heutzutage ist eine Datenschutzerklärung wichtiger denn je. Da es sich zudem um
 Ich habe diesen Server ins Leben gerufen, weil es mir Spaß macht. Daher bin ich bei Fragen/ Anregungen oder Problemen zu erreichen. Ich werde versuchen, so schnell wie es mir möglich ist, zu antworten. Näheres zur Kontakaufname gibt es hier; [Kontakt](/contact/)
 
 ### Kann ich meine eigene Domain mitbringen? (XMPP Domain Hosting)
-Natürlich ist das möglich! Ihr könnt Eure Domain mitbringen und ich betreibe den Dienst für euch. Ihr erhaltet damit Administrator Rechte *für Eure Domain* auf dem Jabber Server. Damit stehen Euch alle Admin-Befehle *für Eure Domain* zur Verfügung. Es ist Euch damit möglich eigene XMPP Accounts anzulegen, für Freunde und/ oder Familie. Wenn Ihr interessiert seid dann kontaktiert mich.
+Natürlich ist das möglich! Ihr könnt Eure Domain mitbringen und ich betreibe den Dienst für euch. Ihr erhaltet damit Administrator Rechte *für Eure Domain* auf dem Jabber Server. Damit stehen Euch alle Admin-Befehle *für Eure Domain* zur Verfügung. Es ist Euch damit möglich eigene XMPP Accounts anzulegen, für Freunde und/ oder Familie.<br>
+Eine Übersicht über die nötigen Einstellungen und Bedingungen für ein Hosting findet Ihr [hier](/xmpp-hosting/). Bei Interesse kontaktiert mich und dann besprechen wir den Rest.
 
 ### Technik/ Software
 Näheres zur verwendeten Technik bzw Software ist hier zu finden [Technik](/page/technik/)

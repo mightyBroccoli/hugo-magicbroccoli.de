@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html class="no-js">
-
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>Magical XMPP Server  &middot; Magic Broccoli</title>
@@ -10,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="description" content="magicBroccoli XMPP Server" />
+<meta name="description" content="MagicBroccoli XMPP Server" />
 
 <meta name="keywords" content="MagicBroccoli XMPP, XMPP, MagicBroccoli XMPP, Prosody, Debian, ">
 
@@ -22,7 +21,7 @@
 
 
 <meta property="og:type" content="article" />
-<meta property="og:description" content="magicBroccoli XMPP Server"/>
+<meta property="og:description" content="MagicBroccoli XMPP Server"/>
 <meta property="og:article:published_time" content="2017-06-21T00:00:00Z" />
 <meta property="og:article:modified_time" content="2017-06-21T00:00:00Z" />
 
@@ -45,7 +44,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
 <meta name="twitter:title" content="Magical XMPP Server" />
-<meta name="twitter:description" content="magicBroccoli XMPP Server" />
+<meta name="twitter:description" content="MagicBroccoli XMPP Server" />
 <meta name="twitter:url" content="https://magicbroccoli.de/xmpp/" />
 <meta name="twitter:domain" content="https://magicbroccoli.de/">
   
@@ -60,8 +59,8 @@
       "name": "http://profiles.google.com/+?rel=author"
     },
     "datePublished": "2017-06-21",
-    "description": "magicBroccoli XMPP Server",
-    "wordCount": 516
+    "description": "MagicBroccoli XMPP Server",
+    "wordCount": 533
   }
 </script>
 
@@ -69,15 +68,16 @@
 
 <link rel="canonical" href="https://magicbroccoli.de/xmpp/" />
 
-<meta name="generator" content="Hugo 0.30" />
+<meta name="generator" content="Hugo 0.30.2" />
 
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
 
-  <link rel="stylesheet" href="https://magicbroccoli.de/assets/css/font-awesome.min.css">
+
   <link rel="stylesheet" href="https://magicbroccoli.de/assets/css/style.css">
   <link rel="stylesheet" href="https://magicbroccoli.de/assets/css/tomorrow-night.css">
-  <link href='//fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+
   <link rel="apple-touch-icon" sizes="57x57" href="https://magicbroccoli.de/favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="https://magicbroccoli.de/favicon/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="https://magicbroccoli.de/favicon/apple-icon-72x72.png">
@@ -96,64 +96,60 @@
 <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 </head>
-
 <body class="bg-light">
-  <nav class="navbar navbar-expand-md navbar-light blog-header">
-  <div class="container">
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-        data-target="#exCollapsingNavbar2"
-        aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
-      &#9776;
-    </button>
-    <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
-      <a class="navbar-brand" href="https://magicbroccoli.de/">Magic Broccoli</a>
-      <ul class="nav navbar-nav">
-        
-        
-          <li class="nav-item">
-          <a class="nav-link menu-item" href="https://magicbroccoli.de/">
-              <i class='fa fa-home fa-fw'></i>
-              <span>Home</span>
-          </a>
-        </li>
-        
-          <li class="nav-item">
-          <a class="nav-link menu-item" href="https://magicbroccoli.de/xmpp/">
-              <i class='fa fa-delicious'></i>
-              <span>XMPP</span>
-          </a>
-        </li>
-        
-          <li class="nav-item">
-          <a class="nav-link menu-item" href="https://magicbroccoli.de/register/">
-              <i class='fa fa-plus' fa-fw'></i>
-              <span>Register</span>
-          </a>
-        </li>
-        
-          <li class="nav-item">
-          <a class="nav-link menu-item" href="https://magicbroccoli.de/page/tutorial/">
-              <i class='fa fa-question-circle' fa-fw'></i>
-              <span>Tutorials</span>
-          </a>
-        </li>
-        
-          <li class="nav-item">
-          <a class="nav-link menu-item" href="https://magicbroccoli.de/contact/">
-              <i class='fa fa-info-circle'></i>
-              <span>About me</span>
-          </a>
-        </li>
-        
-      </ul>
-    </div>
+  <nav class="navbar navbar-expand-md fixed-top site-navbar bg-info">
+    <a class="navbar-brand text-white" href="https://magicbroccoli.de/">Magic Broccoli</a>
+  <button class="navbar-toggler" 
+  type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2"
+    aria-expanded="false" aria-label="Toggle navigation">
+    &#9776;
+  </button>
+  <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
+    <ul class="nav navbar-nav ml-auto">
+       
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/">
+          <i class='fa fa-home fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Home</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/xmpp/">
+          <i class='fa fa-delicious'></i>
+          <span class="text-capitalize no-decoration text-white">XMPP</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/register/">
+          <i class='fa fa-plus' fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Register</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/page/tutorial/">
+          <i class='fa fa-question-circle' fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Tutorials</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/contact/">
+          <i class='fa fa-info-circle'></i>
+          <span class="text-capitalize no-decoration text-white">About me</span>
+        </a>
+      </li>
+      
+    </ul>
   </div>
 </nav>
 
-<div class="container p-a-0">
-  <div class="row m-l-0 m-r-0">
+<div class="container p-b-2">
+  <div class="row">
     <div class="col-xs-12 col-md-9 post-container">
-      <div class="content">
+      <div class="content pt-2">
   
 
 <h2 id="einführung">Einführung</h2>
@@ -210,7 +206,8 @@ Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es <a
 
 <h3 id="kann-ich-meine-eigene-domain-mitbringen-xmpp-domain-hosting">Kann ich meine eigene Domain mitbringen? (XMPP Domain Hosting)</h3>
 
-<p>Natürlich ist das möglich! Ihr könnt Eure Domain mitbringen und ich betreibe den Dienst für euch. Ihr erhaltet damit Administrator Rechte <em>für Eure Domain</em> auf dem Jabber Server. Damit stehen Euch alle Admin-Befehle <em>für Eure Domain</em> zur Verfügung. Es ist Euch damit möglich eigene XMPP Accounts anzulegen, für Freunde und/ oder Familie. Wenn Ihr interessiert seid dann kontaktiert mich.</p>
+<p>Natürlich ist das möglich! Ihr könnt Eure Domain mitbringen und ich betreibe den Dienst für euch. Ihr erhaltet damit Administrator Rechte <em>für Eure Domain</em> auf dem Jabber Server. Damit stehen Euch alle Admin-Befehle <em>für Eure Domain</em> zur Verfügung. Es ist Euch damit möglich eigene XMPP Accounts anzulegen, für Freunde und/ oder Familie.<br>
+Eine Übersicht über die nötigen Einstellungen und Bedingungen für ein Hosting findet Ihr <a href="https://magicbroccoli.de/xmpp-hosting/">hier</a>. Bei Interesse kontaktiert mich und dann besprechen wir den Rest.</p>
 
 <h3 id="technik-software">Technik/ Software</h3>
 
@@ -447,7 +444,7 @@ Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es <a
       </div>
   </div>
 </div>
-      <footer class="footer">
+      <footer class="footer text-white bg-info">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-9">
@@ -458,15 +455,15 @@ Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es <a
         <p class="text-xs-center  m-a-0 p-a-0">
             
           <span class="p-l-1 p-r-1">
-                <a href="https://magicbroccoli.de/impressum/">Impressum</a>
+                <a href="https://magicbroccoli.de/impressum/" class="text-capitalize no-decoration text-white">Impressum</a>
               </span>
               &middot; 
           <span class="p-l-1 p-r-1">
-                <a href="https://magicbroccoli.de/termsofuse/">Terms of Use</a>
+                <a href="https://magicbroccoli.de/termsofuse/" class="text-capitalize no-decoration text-white">Terms of Use</a>
               </span>
               &middot; 
           <span class="p-l-1 p-r-1">
-                <a href="https://magicbroccoli.de/datenschutz/">Privacy Policy</a>
+                <a href="https://magicbroccoli.de/datenschutz/" class="text-capitalize no-decoration text-white">Privacy Policy</a>
               </span>
                 
         </p>
@@ -476,15 +473,13 @@ Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es <a
   </div>
 </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha256-GIa8Vh3sfESnVB2CN3rYGkD/MklvMq0lmITweQxE1qU=" crossorigin="anonymous"></script>
 
 <script src="https://magicbroccoli.de/assets/js/highlight.pack.js"></script>
 
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
+<script>hljs.initHighlightingOnLoad();</script>
 
 
 

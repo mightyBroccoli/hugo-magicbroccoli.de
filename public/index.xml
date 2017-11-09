@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
     <copyright>All rights reserved.</copyright>
-    <lastBuildDate>Mon, 02 Oct 2017 13:30:00 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 07 Nov 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Magical XMPP Hosting</title>
+      <link>https://magicbroccoli.de/xmpp-hosting/</link>
+      <pubDate>Tue, 07 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://magicbroccoli.de/xmpp-hosting/</guid>
+      <description>MagicBroccoli XMPP Hosting MagicBroccoli XMPP Hosting bietet einen freien XMPP Server der ausgelegt ist auf Datenschutz und Sicherheit unter Verwendung deiner eigenen Domain.
+Auf Anfrage und speziellen Wunsch, ist es auch möglich eine Subdomain z.B. xmpp.example.de zu betreiben mit einem dazugehörigen LetsEncrypt Zertifikat.
+Administration Zur Verwaltung des Jabber Servers stehen Ihnen 2 mögliche Wege zur Verfügung. Über das Webinterface können User hinzugefügt, entfernt oder geändert werden. Verfügt der verwendete XMPP-Client über die Möglichkeit Ad-Hoc Kommandos zu verwenden, kann die Verwaltung auch komplett über den Client vorgenommen werden.</description>
+    </item>
     
     <item>
       <title>Prosody housekeeping</title>
@@ -192,7 +203,7 @@ Wie funktioniert es? XMPP ist ein dezentrales Netzwerk. Das bedeutet das es entg
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/termsofuse/</guid>
-      <description>Allgemein  Registrierung sowie Nutzung des XMPP Servers sind komplett kostenfrei. Es besteht kein Anspruch auf Funktionalität Ausfallfreiheit sowie Fortführung dieses Dienstes. Das Versenden von Werbung jeglicher Form über diesen Server ist untersagt! Angriffe auf die Server sind untersagt und resultieren in einem sofortigen Ausschluss. Aktivitäten, die gegen das geltende Recht der Bundesrepublik Deutschland, oder internationales Recht verstoßen sind untersagt. Accounts, die einer freiheitlichen, friedlichen und toleranten Gesellschaft widersprechen, werden gesperrt.</description>
+      <description>Allgemein  Registrierung sowie Nutzung des XMPP Servers sind kostenfrei. Es besteht kein Anspruch auf Funktionalität, Ausfallfreiheit sowie Fortführung dieses Dienstes. Das Versenden von Werbung in jeglicher Form ist untersagt! Angriffe auf die Server sind untersagt und resultieren in einem sofortigen Ausschluss. Aktivitäten, die gegen das geltende Recht der Bundesrepublik Deutschland, oder internationales Recht verstoßen sind untersagt. Accounts, die einer freiheitlichen, friedlichen und toleranten Gesellschaft widersprechen, werden gesperrt. Nutzeraccounts die länger als 1 Jahr inaktiv sind, werden automatisch gelöscht.</description>
     </item>
     
     <item>
