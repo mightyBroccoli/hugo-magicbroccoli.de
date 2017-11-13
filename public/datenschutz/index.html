@@ -56,7 +56,7 @@
     },
     "datePublished": "2017-06-21",
     "description": "Datenschutzerklärung",
-    "wordCount": 2294
+    "wordCount": 2290
   }
 </script>
 
@@ -195,7 +195,7 @@
 <ul>
 <li>Name, JabberID sowie alle weiteren Inhalte der VCard</li>
 <li>Passwort in Form eines sicheren SCRAM-Hashes in der Datenbank</li>
-<li>Datum und Uhrzeit, der Accounterstellung, des Letzten Logins bzw. wie lange der Benutzer bereits online ist.</li>
+<li>Datum und Uhrzeit, des Letzten logins oder Logouts.</li>
 <li>Online-Status und Status-Nachrichten</li>
 <li>Die Kontaktliste</li>
 <li>Multi User Chats (MUCs) speichern je nach Einstellung des Moderators eine gewisse Anzahl oder alle Nachrichten.</li>
@@ -288,9 +288,7 @@
 
 <h2 id="ssl-verschlüsselung">SSL-Verschlüsselung</h2>
 
-<p>Diese Seite nutzt aus Gründen der Sicherheit und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel der Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von &ldquo;http://&rdquo; auf &ldquo;https://&rdquo; wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.</p>
-
-<p>Wenn die SSL Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden.</p>
+<p>Diese Seite nutzt aus Gründen der Sicherheit und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel der Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL-Verschlüsselung. Daher lässt der Webserver keine unerschlüsselte Verbindung zu. Wird eine unverschlüsselte Verbindung initiert wird der Webserver diese automatisch zu einer verschlüsselten Verbindung aktualisieren. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von &ldquo;http://&rdquo; auf &ldquo;https://&rdquo; wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.</p>
 
 <h2 id="auskunft-löschung-sperrung">Auskunft, Löschung, Sperrung</h2>
 
@@ -578,10 +576,12 @@
     allow_chat_pending_contacts: true,
     allow_non_roster_messaging: true,
     allow_registration: false,
+    auto_list_rooms: true,
     bosh_service_url: 'https://magicbroccoli.de/http-bind',
+    websocket_url: 'wss://magicbroccoli.de/xmpp-websocket',
     csi_waiting_time: 25,
-    domain_placeholder: 'magicbroccoli.de',
     default_domain: 'magicbroccoli.de',
+    domain_placeholder: 'magicbroccoli.de',
     message_carbons: true,
     muc_domain: 'conference.magicbroccoli.de',
     providers_link: 'https://magicbroccoli.de/xmpp',

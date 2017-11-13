@@ -14,7 +14,7 @@ keywords = [ "contact", "Kontakt" ]
 <i class="fa fa-key"></i> Keybase: [mightyBroccoli](https://keybase.io/mightyBroccoli)<br>
 
 #### Chat
-XMPP: [broccoli@magicbroccoli.de](xmpp:broccoli@magicbroccoli.de)<br>
+XMPP: [broccoli(at)magicbroccoli.de](xmpp:broccoli(at)magicbroccoli.de)<br>
 IRC: `mightyBroccoli`[^1]<br>
 
 ##### OMEMO Fingerabdrücke

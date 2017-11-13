@@ -7,7 +7,7 @@ Disallow: /*.ico$
 
 Allow: /xmpp/
 Allow: /register/
-Allow: /technik/
+Allow: /page/technik/
 Allow: /post/*
 Allow: /categories/*
 Allow: /tags/*

@@ -58,7 +58,7 @@
     },
     "datePublished": "2017-06-27",
     "description": "verwendete Server Technik",
-    "wordCount": 373
+    "wordCount": 408
   }
 </script>
 
@@ -152,20 +152,20 @@
 
 <h2 id="sicherheit">Sicherheit</h2>
 
-<p>Das Hostsystem läuft unter <img src="https://magicbroccoli.de/icons/debian_icon.png" alt="Debian" /> Debian 9.1 Stretch.
-Ich update das System und alle seine Komponenten regelmäßig. Dabei nehme ich teilweise Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn es aber gar nicht anders geht, ist eine kurze Downtime für wichtige Updates vertretbar.</p>
+<p>Das Hostsystem läuft unter <img src="https://magicbroccoli.de/icons/debian_icon.png" alt="Debian" /> Debian 9.2 Stretch.
+Das System und alle seine Komponenten werden regelmäßig aktualisiert. Dabei nehme ich teilweise Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn es aber gar nicht anders geht, ist eine kurze Downtime für wichtige Updates vertretbar.</p>
 
 <h3 id="dns">DNS</h3>
 
 <p>Die gesamte Zone von <em>magicbroccoli.de</em> ist mit DNSSEC signiert und lässt sich überprüfen.</p>
 
-<h2 id="prosody">Prosody</h2>
+<h3 id="prosody">Prosody</h3>
 
-<p>Der XMPP Server ist zur Zeit ein Prosody 0.10 nightly.</p>
+<p>Bei der XMPP Serversoftware handelt es ich um ein Prosody 0.10 nightly.</p>
 
 <h3 id="verschlüsselung">Verschlüsselung</h3>
 
-<p>Prosody ist so konfiguriert, ausschließlich verschlüsselte Verbindungen zuzulassen. Zusätzlich dazu ist der Server so konfiguriert ausschließlich Verschlüsselungsverfahren zuzulassen, die <a href="https://de.wikipedia.org/wiki/Perfect_Forward_Secrecy" target="_blank">Perfect Forward Secrecy</a> unterstützen.
+<p>Prosody ist so konfiguriert, ausschließlich verschlüsselte Verbindungen zuzulassen. Zusätzlich dazu ist der Server so konfiguriert ausschließlich Verschlüsselungsverfahren zu erlauben, die <a href="https://de.wikipedia.org/wiki/Perfect_Forward_Secrecy" target="_blank">Perfect Forward Secrecy</a> unterstützen.
 Ungesicherte Verbindungen, oder Verbindungen mit zu schwacher Verschlüsselung bei <em>c2s</em> oder <em>s2s</em> werden blockiert. Leider werden dadurch einige Server sowie einige ältere Clients ausgesperrt, allerdings ist Verschlüsselng für mich ein Ausschlusskriterium.
 Eine Ansicht welche Verschlüsselungsverfahren zum Verbindungsaufbau zulässig sind ist hier zu finden: <a href="https://check.messaging.one/result.php?domain=magicbroccoli.de&amp;type=client#ciphers" target="_blank">zulässige Verschlüsselungsverfahren</a></p>
 
@@ -185,46 +185,49 @@ Auszug aus den speziellern Server-Features:</p>
 
 <ul>
 <li><a href="https://xmpp.org/extensions/xep-0033.html" target="_blank">XEP-0033: Extended Stanza Addressing</a></li>
-<li><a href="https://xmpp.org/extensions/xep-0035.html" target="_blank">XEP-0035: SSL/TLS Integration</a></li>
 <li><a href="https://xmpp.org/extensions/xep-0045.html" target="_blank">XEP-0045: Multi-User Chat</a></li>
 <li><a href="https://xmpp.org/extensions/xep-0055.html" target="_blank">XEP-0055: Basic implementation of Jabber Search</a></li>
 <li><a href="https://xmpp.org/extensions/xep-0065.html" target="_blank">XEP-0065: SOCKS5 Bytestreams</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0115.html" target="_blank">XEP-0115: Entity Capabilities</a></li>
 <li><a href="https://xmpp.org/extensions/xep-0124.html" target="_blank">XEP-0124: Bidirectional-streams Over Synchronous HTTP (BOSH)</a></li>
-<li><a href="https://xmpp.org/extensions/xep-0136.html" target="_blank">XEP-0136: Message Archiving</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0156.html" target="_blank">XEP-0156: Discovering Alternative XMPP Connection Methods</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0163.html" target="_blank">XEP-0163: Personal Eventing Protocol</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0191.html" target="_blank">XEP-0191: Blocking Command</a></li>
 <li><a href="https://xmpp.org/extensions/xep-0198.html" target="_blank">XEP-0198: Stream Managment</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0237.html" target="_blank">XEP-0237: Roster Versioning</a></li>
 <li><a href="https://xmpp.org/extensions/xep-0280.html" target="_blank">XEP-0280: Message Carbons</a></li>
 <li><a href="https://xmpp.org/extensions/xep-0313.html" target="_blank">XEP-0313: Message Archive Management</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0352.html" target="_blank">XEP-0352: Client State Indication</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0357.html" target="_blank">XEP-0357: Push Notifications</a></li>
 <li><a href="https://xmpp.org/extensions/xep-0363.html" target="_blank">XEP-0363: HTTP File Upload</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0368.html" target="_blank">XEP-0368: SRV records for XMPP over TLS</a></li>
 </ul>
 
-<h3 id="http-bind-bosh">HTTP-Bind / Bosh</h3>
+<h3 id="xep-0156-alternative-xmpp-connection-methods">XEP-0156: Alternative XMPP Connection Methods</h3>
 
-<p>HTTP-Bind Adresse: <a href="https://magicbroccoli.de/http-bind" target="_blank">https://magicbroccoli.de/http-bind</a></p>
-
-<h3 id="websocket">Websocket</h3>
-
-<p>Websocket Adresse: <a href="https://magicbroccoli.de/xmpp-websocket" target="_blank">https://magicbroccoli.de/xmpp-websocket</a></p>
+<ul>
+<li>HTTP-Bind Adresse: <a href="https://magicbroccoli.de/http-bind" target="_blank">https://magicbroccoli.de/http-bind</a></li>
+<li>Websocket Adresse: <a href="https://magicbroccoli.de/xmpp-websocket" target="_blank">https://magicbroccoli.de/xmpp-websocket</a></li>
+<li>XMPP over TLS: <a href="https://xmpps.magicbroccoli.de" target="_blank">xmpps.magicbroccoli.de</a></li>
+</ul>
 
 <h2 id="registrieren">Registrieren</h2>
 
 <p>Wenn dich diese Dinge überzeugt haben XMPP für dich und deine Freunde zu probieren. Kannst du dich hier direkt anmelden.
-<center>
-<a style="display: block; margin-top: 50px; margin-left: auto; margin-right: auto; margin-bottom: 50px; height: 50px; width: 300px; background-color: #0069a1; color: white; border-radius: 5px; line-height: 50px; text-align: center; font-weight: bold;" href="https://magicbroccoli.de/register/">Registrieren</a>
-</center></p>
+<center><a style="display: block; margin-top: 50px; margin-left: auto; margin-right: auto; margin-bottom: 50px; height: 50px; width: 300px; background-color: #0069a1; color: white; border-radius: 5px; line-height: 50px; text-align: center; font-weight: bold;" href="https://magicbroccoli.de/register/">Registrieren</a></center></p>
 
 <h2 id="im-observer">IM Observer</h2>
 
-<p>Bei dem IM Oberserver handelt es sich um ein automatisches System da XMPP Server auf verschiedene Faktoren testet. Dies sind meine Ergebnisse.<br>
-<a href='https://check.messaging.one/result.php?domain=magicbroccoli.de&amp;type=client'>
-  <img src='https://check.messaging.one/badge.php?domain=magicbroccoli.de' alt='IM observatory score' />
+<p>IM Oberserver ist ein Testsuite die automatisiert XMPP Server auf verschiedene Faktoren hin testet. Die Ergebnisse für meinen Server sind wie folgt.<a href='https://check.messaging.one/result.php?domain=magicbroccoli.de&amp;type=client'>
+    <img src='https://check.messaging.one/badge.php?domain=magicbroccoli.de' alt='IM observatory score' />
 </a></p>
 
-<p>Mit dem Tool von <a href="https://tls.imirhil.fr" target="_blank">tls.imirhil.fr</a> lässt sich ähnlich zum IM Observer ein Server prüfen.<br>
-MagicBroccoli XMPP hat dort ein Rating von A+ <a href="https://tls.imirhil.fr/xmpp/magicbroccoli.de" target="_blank">CryptCheck Score</a>.</p>
+<p>Mit dem Tool von <a href="https://tls.imirhil.fr" target="_blank">tls.imirhil.fr</a> lässt sich ähnlich zum IM Observer ein Server prüfen. MagicBroccoli XMPP hat dort ein Rating von A+ <a href="https://tls.imirhil.fr/xmpp/magicbroccoli.de" target="_blank">CryptCheck Score</a>.</p>
 
 <h2 id="statistiken">Statistiken</h2>
 
-<p><img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_c2s-week.png" width="45%"><img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_s2s-week.png" width="45%"><img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_stanzas-week.png" width="45%"><img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_uptime-week.png" width="45%"></p>
+<p><img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_c2s-week.png" width="45%"> <img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_s2s-week.png" width="45%">
+<img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_stanzas-week.png" width="45%"> <img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_uptime-week.png" width="45%"></p>
 
 </div>
 
@@ -508,10 +511,12 @@ MagicBroccoli XMPP hat dort ein Rating von A+ <a href="https://tls.imirhil.fr/xm
     allow_chat_pending_contacts: true,
     allow_non_roster_messaging: true,
     allow_registration: false,
+    auto_list_rooms: true,
     bosh_service_url: 'https://magicbroccoli.de/http-bind',
+    websocket_url: 'wss://magicbroccoli.de/xmpp-websocket',
     csi_waiting_time: 25,
-    domain_placeholder: 'magicbroccoli.de',
     default_domain: 'magicbroccoli.de',
+    domain_placeholder: 'magicbroccoli.de',
     message_carbons: true,
     muc_domain: 'conference.magicbroccoli.de',
     providers_link: 'https://magicbroccoli.de/xmpp',

@@ -43,7 +43,7 @@ Generell werden nur die zum Betrieb des Servers notwendigen Daten auf dem Server
 
 - Name, JabberID sowie alle weiteren Inhalte der VCard
 - Passwort in Form eines sicheren SCRAM-Hashes in der Datenbank
-- Datum und Uhrzeit, der Accounterstellung, des Letzten Logins bzw. wie lange der Benutzer bereits online ist.
+- Datum und Uhrzeit, des Letzten logins oder Logouts.
 - Online-Status und Status-Nachrichten
 - Die Kontaktliste
 - Multi User Chats (MUCs) speichern je nach Einstellung des Moderators eine gewisse Anzahl oder alle Nachrichten.
@@ -120,9 +120,7 @@ Unsere Kommentarfunktion speichert die IP-Adressen der Nutzer, die Kommentare ve
 Als Nutzer der Seite können Sie nach einer Anmeldung Kommentare abonnieren. Sie erhalten eine Bestätigungsemail, um zu prüfen, ob Sie der Inhaber der angegebenen E-Mail-Adresse sind. Sie können diese Funktion jederzeit über einen Link in den Info-Mails abbestellen.
 
 ## SSL-Verschlüsselung
-Diese Seite nutzt aus Gründen der Sicherheit und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel der Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von "http://" auf "https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
-
-Wenn die SSL Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden.
+Diese Seite nutzt aus Gründen der Sicherheit und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel der Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL-Verschlüsselung. Daher lässt der Webserver keine unerschlüsselte Verbindung zu. Wird eine unverschlüsselte Verbindung initiert wird der Webserver diese automatisch zu einer verschlüsselten Verbindung aktualisieren. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von "http://" auf "https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
 
 ## Auskunft, Löschung, Sperrung
 Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden.

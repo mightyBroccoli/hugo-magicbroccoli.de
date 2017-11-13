@@ -8,7 +8,7 @@ keywords = [ "Tutorial", "Debian", "XMPP" ]
 +++
 # Tutorial Übersicht
 Auf dieser Seite möchte ich einige Tutorials sammeln, die teils von mir selbst stammen, oder aber von außerhalb kommen. Einige Clients sind für Anfänger anfangs nicht einfach zu durchblicken, dabei sollen diese Tutorials helfen.
-<br>Wer dazu beitragen möchte kann dies gerne via einem PullRequest auf [Github](https://github.com/mightyBroccoli/hugo-magicbroccoli.de) tun.
+<br>Wer dazu beitragen möchte, kann dies gerne via PullRequest auf [Github](https://github.com/mightyBroccoli/hugo-magicbroccoli.de) tun.
 
 ## Windows/ Linux
 - [Gajim](/page/tutorial/gajim)
@@ -24,7 +24,8 @@ Auf dieser Seite möchte ich einige Tutorials sammeln, die teils von mir selbst 
 - [XMPP over TLS](/post/xmpp-over-tls/)<br>
 
 ---
-## _IMHO_ Nützliche Links
+
+### _IMHO_ Nützliche Links
 Einige Webseiten die weitergehende Tutorials bzw. ausführlichere Tutorials zur Verfügung stellen.
 
 ##### Allgemein

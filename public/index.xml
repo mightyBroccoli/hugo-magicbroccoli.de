@@ -81,7 +81,7 @@ This test checks for the availability of publish-options on the account’s PEP 
       <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/page/tutorial/</guid>
-      <description>Tutorial Übersicht Auf dieser Seite möchte ich einige Tutorials sammeln, die teils von mir selbst stammen, oder aber von außerhalb kommen. Einige Clients sind für Anfänger anfangs nicht einfach zu durchblicken, dabei sollen diese Tutorials helfen. Wer dazu beitragen möchte kann dies gerne via einem PullRequest auf Github tun.
+      <description>Tutorial Übersicht Auf dieser Seite möchte ich einige Tutorials sammeln, die teils von mir selbst stammen, oder aber von außerhalb kommen. Einige Clients sind für Anfänger anfangs nicht einfach zu durchblicken, dabei sollen diese Tutorials helfen. Wer dazu beitragen möchte, kann dies gerne via PullRequest auf Github tun.
 Windows/ Linux  Gajim  Android  Conversations Chatsecure  iPhone  Chatsecure  Prosody  XMPP over TLS
   IMHO Nützliche Links Einige Webseiten die weitergehende Tutorials bzw.</description>
     </item>
@@ -112,9 +112,9 @@ Windows/ Linux  Gajim  Android  Conversations Chatsecure  iPhone  Chatsecure  Pr
       <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/page/technik/</guid>
-      <description>Sicherheit Das Hostsystem läuft unter Debian 9.1 Stretch. Ich update das System und alle seine Komponenten regelmäßig. Dabei nehme ich teilweise Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn es aber gar nicht anders geht, ist eine kurze Downtime für wichtige Updates vertretbar.
+      <description>Sicherheit Das Hostsystem läuft unter Debian 9.2 Stretch. Das System und alle seine Komponenten werden regelmäßig aktualisiert. Dabei nehme ich teilweise Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn es aber gar nicht anders geht, ist eine kurze Downtime für wichtige Updates vertretbar.
 DNS Die gesamte Zone von magicbroccoli.de ist mit DNSSEC signiert und lässt sich überprüfen.
-Prosody Der XMPP Server ist zur Zeit ein Prosody 0.</description>
+Prosody Bei der XMPP Serversoftware handelt es ich um ein Prosody 0.</description>
     </item>
     
     <item>
@@ -123,7 +123,7 @@ Prosody Der XMPP Server ist zur Zeit ein Prosody 0.</description>
       <pubDate>Sun, 25 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/register/</guid>
-      <description>Diese Seite ermöglicht es, dir einen neuen Account auf dem MagicBroccoli XMPP Server anzulegen. Über deinen Jabber Identifier (kurz JID; auch Jabber-ID), bestehend aus Benutzernamen und “@magicbroccoli.de”, können Dich andere Nutzer zu ihren Kontakten hinzufügen.
+      <description>Registrierung Diese Seite ermöglicht es, einen neuen Account auf dem MagicBroccoli XMPP Server anzulegen. Über deinen Jabber Identifier (kurz JID; auch Jabber-ID), bestehend aus Benutzernamen und “@magicbroccoli.de”, können Dich andere Nutzer zu ihren Kontakten hinzufügen.
 Bitte notiere Sie sich Ihren Benutzernamen und Passwort sorgfältig! Passwort-Resets durch den Administrator sind zwar grundsätzlich möglich, aber aufwendig und erfordern, dass Sie die Account-Inhaberschaft eindeutig beweisen können!</description>
     </item>
     
@@ -147,7 +147,7 @@ Nutzen IMHO gibt es genügend Beispiele, in denen eine schnellstmögliche Benach
       <description> mail  nico(at)magicbroccoli.de
 PGP 0xEA7C31AAB1BDC1A2
  Keybase: mightyBroccoli
-Chat XMPP: broccoli@magicbroccoli.de
+Chat XMPP: broccoli(at)magicbroccoli.de
 IRC: mightyBroccoli1
 OMEMO Fingerabdrücke 1e56b6ec dd764842 674f2309 ba981a69 308e5959 ace5e6ed 6ddbf19a ee715324 [Conversations]
 243C97D7 7D0D2533 298524BC B66EB5E4 E74F6EC5 47079162 C4B917C4 2B25714B [Gajim PC]
@@ -179,7 +179,7 @@ Scheideweg 157
 26127 Oldenburg
 Vertreten durch: Nico Wellpott
 Kontakt: Telefon: 0441 93652965
-E-Mail: admin@magicbroccoli.de
+E-Mail: admin(at)magicbroccoli.de
 Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: Nico Wellpott
 Scheideweg 157
 26127 Oldenburg
@@ -192,8 +192,7 @@ Haftungsausschluss Haftung für Inhalte Die Inhalte unserer Seiten wurden mit gr
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/xmpp/</guid>
-      <description>Einführung MagicBroccoli XMPP ist ein freier XMPP Server ausgelegt auf Datenschutz und Sicherheit.
-Was ist XMPP? XMPP ist ein Protokoll, welches ein Versenden von Nachrichten über das Internet ermöglicht. Es ist sehr ähnlich zu ICQ oder MSN besitzt dazu aber einige besondere Features.
+      <description>Was ist MagicBroccoli XMPP? MagicBroccoli XMPP ist ein freier XMPP Server ausgelegt auf Datenschutz und Sicherheit. XMPP ist ein Protokoll, welches ein Versenden von Nachrichten über das Internet ermöglicht. Es ist sehr ähnlich zu ICQ oder MSN besitzt dazu aber einige besondere Features.
 Wie funktioniert es? XMPP ist ein dezentrales Netzwerk. Das bedeutet das es entgegen WhatsApp oder Facebook weltweit viele Anbieter von XMPP Servern gibt, bei denen man seinen XMPP-Account einrichten kann.</description>
     </item>
     
@@ -212,12 +211,11 @@ Wie funktioniert es? XMPP ist ein dezentrales Netzwerk. Das bedeutet das es entg
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/donate/</guid>
-      <description>Unterstützung Der Betrieb der Server kostet Geld und viel Zeit. Falls es Ihnen möglich ist und sie als kleines Dankeschön mich unterstützen möchten, sind sie hier richtig. Alle Kosten werden im Moment alleinig und privat von mir getragen.
-Über kleine Beitrage zur Finanzierung freue ich mich sehr. Daueraufträge lassen auch eine längerfristige Planung zu.
+      <description>Unterstützung Der Betrieb des Servers und vor allem die Wartung kosten viel Zeit und natürlich auch Geld. Falls es Ihnen möglich ist und Sie als kleines Dankeschön mich unterstützen möchten, sind sie hier richtig. Momentan werden alle Kosten von mir privat getragen.
+Über kleine Beiträge zur Finanzierung freue ich mich sehr. Daueraufträge lassen auch eine längerfristige Planung zu.
  PayPal
  Bitcoin: 1QJZTWenBvdLWTUachpLLd2dLXAZMGeU87
-Banküberweisung: Bankverbindung gibt es auf Anfrage
-Vielen vielen Dank an alle, die sich einmalig oder dauerhaft an der Finanzierung des Servers beteiligen!</description>
+ Banküberweisung: Bankverbindung gibt es auf Anfrage</description>
     </item>
     
     <item>
