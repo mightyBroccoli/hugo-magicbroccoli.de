@@ -51,8 +51,10 @@ Eine Übersicht über die nötigen Vorraussetzungen und notwendigen Einstellunge
 Der Betrieb und vor allem die Wartung kosten Zeit und Geld. Finanziell wird das Projekt von mir privat getragen, jedoch ist [finanzielle Unterstützung](/donate/) jederzeit gern gesehen. Spenden sind per Bitcoin, Paypal oder auch per Banküberweisung möglich (Kontodaten nur nach vorheriger Anfrage).
 
 ### Technik/ Software
-Alles weitere wie aktivierte XEPs und näheres zur verwendeten Technik bzw Software ist hier zu finden: [Technik](/page/technik/)
+Alles weitere, wie aktivierte XEPs und näheres zur verwendeten Technik bzw Software, ist hier zu finden: [Technik](/page/technik/)
 
 - - -
 
 <center>[![](https://www.netcup.de/bilder/banner/netcup-hlogo-b220h100.png)](https://www.netcup.de)</center>
+
+Last Edit 26.11.17

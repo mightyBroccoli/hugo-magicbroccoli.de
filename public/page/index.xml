@@ -51,7 +51,7 @@ Windows/ Linux  Gajim  Android  Conversations Chatsecure  iPhone  Chatsecure  Pr
       <guid>https://magicbroccoli.de/page/technik/</guid>
       <description>Sicherheit Das Hostsystem läuft unter Debian 9.2 Stretch. Das System und alle seine Komponenten werden regelmäßig aktualisiert. Dabei nehme ich teilweise Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn es aber gar nicht anders geht, ist eine kurze Downtime für wichtige Updates vertretbar.
 DNS Die gesamte Zone von magicbroccoli.de ist mit DNSSEC signiert und lässt sich überprüfen.
-Prosody Bei der XMPP Serversoftware handelt es ich um ein Prosody 0.</description>
+nginx Alle Dienste der per HTTP erreichbar sind, werden durch einen nginx Server veröffentlicht.</description>
     </item>
     
   </channel>

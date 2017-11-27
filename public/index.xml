@@ -114,7 +114,7 @@ Windows/ Linux  Gajim  Android  Conversations Chatsecure  iPhone  Chatsecure  Pr
       <guid>https://magicbroccoli.de/page/technik/</guid>
       <description>Sicherheit Das Hostsystem läuft unter Debian 9.2 Stretch. Das System und alle seine Komponenten werden regelmäßig aktualisiert. Dabei nehme ich teilweise Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn es aber gar nicht anders geht, ist eine kurze Downtime für wichtige Updates vertretbar.
 DNS Die gesamte Zone von magicbroccoli.de ist mit DNSSEC signiert und lässt sich überprüfen.
-Prosody Bei der XMPP Serversoftware handelt es ich um ein Prosody 0.</description>
+nginx Alle Dienste der per HTTP erreichbar sind, werden durch einen nginx Server veröffentlicht.</description>
     </item>
     
     <item>
@@ -211,11 +211,12 @@ Wie funktioniert es? XMPP ist ein dezentrales Netzwerk. Das bedeutet das es entg
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/donate/</guid>
-      <description>Unterstützung Der Betrieb des Servers und vor allem die Wartung kosten viel Zeit und natürlich auch Geld. Falls es Ihnen möglich ist und Sie als kleines Dankeschön mich unterstützen möchten, sind sie hier richtig. Momentan werden alle Kosten von mir privat getragen.
+      <description>Unterstützung Der Betrieb des Servers sowie dessen Wartung kosten viel Zeit und natürlich auch Geld. Momentan werden alle Kosten von mir privat getragen. Wenn sie mich als kleines Dankeschön unterstützen möchten, sind sie hier absolut richtig.
 Über kleine Beiträge zur Finanzierung freue ich mich sehr. Daueraufträge lassen auch eine längerfristige Planung zu.
  PayPal
  Bitcoin: 1QJZTWenBvdLWTUachpLLd2dLXAZMGeU87
- Banküberweisung: Bankverbindung gibt es auf Anfrage</description>
+ Banküberweisung: Bankverbindung auf Anfrage
+Vielen vielen herzlichen Dank an alle, die sich einmalig oder dauerhaft an der Finanzierung des Servers beteiligen!</description>
     </item>
     
     <item>
