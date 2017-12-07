@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
     <copyright>All rights reserved.</copyright>
-    <lastBuildDate>Mon, 02 Oct 2017 13:30:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 07 Dec 2017 17:30:00 +0200</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/tags/mod_mam/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Prosody Datenbank Indizes</title>
+      <link>https://magicbroccoli.de/post/prosodydb_index/</link>
+      <pubDate>Thu, 07 Dec 2017 17:30:00 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/prosodydb_index/</guid>
+      <description>Prosody bietet die Möglichkeit persistente User Daten bzw. seit 0.10 MAM Daten in einer MySQL Datenbank zu sichern. Indizes in solchen Datenbanken, können Prozesse enorm beschleunigen. Bei Prosody werden diese, bei der ersten Installation Prosodys eingefügt.
+Allerdings werden Indizes, die nachträglich, z.B. in aktuelleren Patches, hinzugefügt werden, nur in Datenbanken eingetragen die neu erstellt werden.
+Damit haben ältere Datenbanken einen enormen Nachteil da aktuelle Indizes fehlen.
+Welche Indexe hat meine Datenbank überhaupt?</description>
+    </item>
     
     <item>
       <title>Prosody housekeeping</title>
