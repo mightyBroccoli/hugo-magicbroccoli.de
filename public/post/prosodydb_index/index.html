@@ -56,7 +56,7 @@
     },
     "datePublished": "2017-12-07",
     "description": "",
-    "wordCount": 371
+    "wordCount": 409
   }
 </script>
 
@@ -166,7 +166,7 @@
       &middot; by nico
     
     &middot; 2 Minute Read
-    &middot; 371 Words
+    &middot; 409 Words
   </div>
 
   
@@ -218,29 +218,27 @@
       <div class="content pt-2">
   
 
-<p>Prosody bietet die Möglichkeit persistente User Daten bzw. seit 0.10 MAM Daten in einer MySQL Datenbank zu sichern. Indizes in solchen Datenbanken, können Prozesse enorm beschleunigen. Bei Prosody werden diese, bei der ersten Installation Prosodys eingefügt.<br>
+<p>Prosody bietet die Möglichkeit persistente Userdaten bzw. seit <a href="https://prosody.im/doc/release/0.10.0" target="_blank">0.10</a> MAM Daten in einer MySQL Datenbank zu sichern. Indizes in solchen Datenbanken, können Prozesse enorm beschleunigen. Bei Prosody werden diese, bei der <a href="https://hg.prosody.im/0.10/file/e98b4352d7df/plugins/mod_storage_sql.lua#l426" target="_blank">ersten Installation Prosodys</a> eingefügt.<br>
 Allerdings werden Indizes, die nachträglich, z.B. in aktuelleren Patches, hinzugefügt werden, nur in Datenbanken eingetragen die neu erstellt werden.<br>
 Damit haben ältere Datenbanken einen enormen Nachteil da aktuelle Indizes fehlen.</p>
 
-<h4 id="welche-indexe-hat-meine-datenbank-überhaupt">Welche Indexe hat meine Datenbank überhaupt?</h4>
+<h4 id="welche-indizes-stehen-aktuell-zur-verfügung">Welche Indizes stehen aktuell zur Verfügung?</h4>
 
-<p>Diese Frage lässt sich leicht mit einem bzw. zwei Querys beantworten.<br>
-Hierbei ist natürlich <strong>db_name</strong> durch die Datenbanknamen zu ersetzen.</p>
+<p>Um herauszufinden welche Indizes im Moment überhaupt vorhanden sind, lässt sich dieser Query verwenden.<br>
+Hierbei ist natürlich <strong>db_name</strong> durch die zu testenden Datenbanknamen zu ersetzen.</p>
 
 <pre><code class="language-sql">SHOW INDEX FROM db_name
 </code></pre>
 
+<p>Sollte in der angezeigten Liste nur <em>prosodyarchive_index</em> enthalten sein, fehlen die zwei neuen Indizes <code>prosodyarchive_with</code> sowie <code>prosodyarchive_when</code> in der Datenbank. Sollten alle Indizes wie auf dem Bild vorhanden sein ist kein weiteres Zutun notwendig.</p>
+
 <p><img src="https://magicbroccoli.de/images/prosodydb/prosodydb_index.png" width="100%"></p>
 
-<p>Sollte in der angezeigten Liste nur <em>prosodyarchive_index</em> enthalten sein, fehlen die zwei neuen Indizes <code>prosodyarchive_with</code> sowie <code>prosodyarchive_when</code> in der Datenbank.</p>
+<h3 id="hinzufügen-der-indizes">Hinzufügen der Indizes</h3>
 
-<h3 id="hinzufügen-der-neuen-indexe">Hinzufügen der neuen Indexe</h3>
+<p><span style="color:red"><em>Wichtig</em></span> : Je größer die Datenbank ist desto länger kann das hinzufügen von Indizes dauern. Auch die Rechenleistung der Datenbank Maschine stellt einen wichtigen Faktor für die Geschwindigkeit der Befehle dar.</p>
 
-<p>Meine Archiv Datenbank beinhaltet knapp 70000 Zeilen, bei mir hat das hinzufügen knapp 10 Minuten gedauert. Daher ist das schnelle hinzufügen bei größeren Installationen mit Vorsicht zu genießen.<br></p>
-
-<p><em>Wichtig</em> : Je größer die Datenbank ist desto länger kann das hinzufügen von Indizes dauern.</p>
-
-<p>In diesen Beispiel Querys verwende ich die Datenbank <em>prosody</em> mit der Tabelle <em>prosodyarchive</em>. Der Query ist für die persönliche Konfiguration anzupassen.</p>
+<p>In diesen Beispiel Querys verwende ich die Datenbank <em>prosody</em> mit der Tabelle <em>prosodyarchive</em>. Der Query ist für die jeweils persönlichen Namen der Tabellen / Datenbanken anzupassen.</p>
 
 <pre><code class="language-sql">CREATE INDEX `prosodyarchive_with` USING BTREE
 ON prosody.prosodyarchive
@@ -253,11 +251,11 @@ ON prosody.prosodyarchive
 (`host`(20), `user`(20), `store`(20), `when`);
 </code></pre>
 
-<p>Nachdem diese beiden Querys erfolgreich durchlaufen wurden, kann mit dem <code>SHOW INDEX</code> Query erneut kontrolliert werden, ob beide Indizes erfolgreich erstellt wurden.</p>
+<p>Nachdem beide Querys erfolgreich ausgeführt wurden, kann mit dem <code>SHOW INDEX FROM db_name</code> Query erneut kontrolliert werden, ob alle Indizes erfolgreich hinzugefügt wurden. Für die Funktionalität von Prosody ist es nicht notwendig diesen neuzustarten. Die Indizes werden verwendet sobald sie erfolgreich hinzugefügt wurde.</p>
 
 <h3 id="testen-der-indizes">Testen der Indizes</h3>
 
-<p>Zum testen der Indizes können diese Querys verwendet werden. Hierbei ist ebenfalls zu beachten das abweichende Bezeichungen der Tabellen / Datenbanken anzupassen sind.</p>
+<p>Zum Testen der Indizes können diese Querys verwendet werden. Hierbei ist ebenfalls zu beachten das abweichende Bezeichnungen der Tabellen / Datenbanken anzupassen sind.</p>
 
 <pre><code class="language-sql">EXPLAIN SELECT * FROM prosody.prosodyarchive
 WHERE `host` = 'magicbroccoli.de' AND
@@ -272,13 +270,14 @@ WHERE `host` = 'magicbroccoli.de' AND
 AND `user` = 'username';
 </code></pre>
 
-<p>Relevant bei der Ausgabe sind die Ausgaben bei <code>possible_keys</code> und <code>key</code>. Sollten diese beiden bei einem der Querys <code>NULL</code> zeigen wird kein Index verwendet. Das Ergebnis sollte eine solche Form haben. Als Beispiel für den <em>prosodyarchive_when</em> Query ist hier mein Ergebnis.<br></p>
+<p>Relevant bei der Ausgabe sind die Ausgaben bei <code>possible_keys</code> und <code>key</code>. Diese sollen jeweils die neu hinzugefügten Indizes listen, sollten bei einem oder beiden der Querys <code>NULL</code> angezeigt werden wird kein Index verwendet.<br>
+Das Ergebnis sollte diese Form haben. Das Bild zeigt mein Ergebnis für den <em>prosodyarchive_when</em> Test-Query.<br></p>
 
 <p><img src="https://magicbroccoli.de/images/prosodydb/prosodyarchive_when.png" width="100%"></p>
 
 <h2 id="quellen">Quellen</h2>
 
-<p>Als Quelle ziehe ich hier die aktuellste stable Version von mod_storage_sql.lua. Dieser spezielle Abschnitt erstellt beim ersten laden die Datenbanken falls noch keine vorhanden sind, mit den ebenfalls aufgelisteten Indizes.</p>
+<p>Als Quelle ziehe ich hier die aktuellste stable Version von mod_storage_sql.lua zu Rate. Dieser spezielle Abschnitt ist zuständig beim ersten Laden die Datenbanken, falls noch keine vorhanden sind, zu erstellen.</p>
 
 <ul>
 <li><a href="https://hg.prosody.im/0.10/file/e98b4352d7df/plugins/mod_storage_sql.lua#l426" target="_blank">mod_storage_sql.lua</a></li>
