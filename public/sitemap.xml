@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://magicbroccoli.de/post/prosodydb_index/</loc>
+    <lastmod>2017-12-07T17:30:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://magicbroccoli.de/xmpp-hosting/</loc>
     <lastmod>2017-11-07T00:00:00+00:00</lastmod>
   </url>
@@ -153,37 +158,37 @@
   
   <url>
     <loc>https://magicbroccoli.de/tags/guide/</loc>
-    <lastmod>2017-10-02T13:30:00+02:00</lastmod>
+    <lastmod>2017-12-07T17:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/</loc>
-    <lastmod>2017-11-07T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-07T17:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/tags/maintenance/</loc>
-    <lastmod>2017-10-02T13:30:00+02:00</lastmod>
+    <lastmod>2017-12-07T17:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/tags/mariadb/</loc>
-    <lastmod>2017-10-02T13:30:00+02:00</lastmod>
+    <lastmod>2017-12-07T17:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/categories/mariadb/</loc>
-    <lastmod>2017-08-25T23:30:00+02:00</lastmod>
+    <lastmod>2017-12-07T17:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/tags/mod_mam/</loc>
-    <lastmod>2017-10-02T13:30:00+02:00</lastmod>
+    <lastmod>2017-12-07T17:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -207,19 +212,19 @@
   
   <url>
     <loc>https://magicbroccoli.de/post/</loc>
-    <lastmod>2017-10-02T13:30:00+02:00</lastmod>
+    <lastmod>2017-12-07T17:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/tags/prosody/</loc>
-    <lastmod>2017-10-02T13:30:00+02:00</lastmod>
+    <lastmod>2017-12-07T17:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/categories/prosody/</loc>
-    <lastmod>2017-10-02T13:30:00+02:00</lastmod>
+    <lastmod>2017-12-07T17:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   

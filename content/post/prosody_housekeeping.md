@@ -4,8 +4,8 @@ date = "2017-10-02T13:30:00+02:00"
 title = "Prosody housekeeping"
 author = "nico"
 description = ""
-keywords = [ "Prosody", "mod_mam", "mariadb", "mod_mam expire", "unused accounts", "old accounts" ]
-tags = [ "Prosody", "mod_mam", "mariadb", "maintenance", "Guide" ]
+keywords = [ "Prosody", "mod_mam", "MariaDB", "mod_mam expire", "unused accounts", "old accounts" ]
+tags = [ "Prosody", "mod_mam", "MariaDB", "maintenance", "Guide" ]
 categories = [ "XMPP", "Prosody" ]
 banner = "/banner/prosody.png"
 +++
