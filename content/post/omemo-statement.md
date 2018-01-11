@@ -4,9 +4,16 @@ date = "2017-07-31T13:00:00+02:00"
 title = "Wir unterstützen Omemo"
 author = "nico"
 description = "Stellungnahme zur aktuellen Entwicklung um Omemo"
-keywords = [ "Omemo Support", "pep - publish-options", "Daniel Gultsch" ]
-tags = [ "Prosody" , "Omemo" , "XMPP" ]
-categories = [ "Prosody" , "Omemo" ]
+keywords = [ "Omemo", "Prosody", "publish-options", "Daniel Gultsch" ]
+tags = [
+	"Prosody",
+	"Omemo",
+	"XMPP",
+	"Omemo",
+	"pep publish-options",
+	"Daniel Gultsch"
+]
+categories = [ "Prosody", "XMPP", "Omemo" ]
 banner = ""
 +++
 ### Update
@@ -26,8 +33,8 @@ Hintergrund ist, dass [Daniel Gultsch empfiehlt](https://twitter.com/iNPUTmice/s
 Herr Gultsch selbst, schreibt an mehreren Stellen, dass es sich hierbei um **kein** [Security Risiko](https://github.com/iNPUTmice/ComplianceTester/issues/112#issuecomment-319008031), handelt, sondern lediglich um ein [Usability Problem](https://github.com/iNPUTmice/ComplianceTester/issues/112#issuecomment-319008031). Das heißt, dass es sich nicht um eine Vorraussetzung handelt, sondern um eine Empfehlung.{{< tweet 888826898335322113 >}}
 [Der Vorschlag](https://github.com/iNPUTmice/ComplianceTester/issues/112) eine kurze Erklärung zu der Spalte in seiner Liste hinzuzufügen, da das ganze sonst so eine falsche Aussage über die Server wiederspiegelt, wurde mit den folgenden Sätzen einfach ignoriert und das Ticket geschlossen:
 
-> While not a security problems the lack of publish-options is a huge usability problem as this limits OMEMO to contacts you have mutual presence subscription with.
-> Conversations users will except OMEMO to work with everyone. That’s why Conversations requires publish-options.
+<blockquote>While not a security problems the lack of publish-options is a huge usability problem as this limits OMEMO to contacts you have mutual presence subscription with.
+Conversations users will except OMEMO to work with everyone. That’s why Conversations requires publish-options.</blockquote>
 
 Hauptproblem hierbei ist, das die Darstellung für alle Server sehr „rufschädigend“ sein kann. Ich und einige andere Hoster haben versucht Daniel Gultsch darauf aufmerksam zu machen, dies wird von ihm allerdings komplett ignoriert.
 

@@ -4,7 +4,6 @@ date = "2017-06-22T14:15:25+02:00"
 title = "TeamSpeak XMPP Push"
 author = "nico"
 description = ""
-keywords = [ "TeamSpeak Script" ]
 tags = [ "XMPP" ]
 categories = [ "Development", "Bash", "TeamSpeak", "XMPP" ]
 banner = ""

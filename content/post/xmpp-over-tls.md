@@ -4,9 +4,13 @@ date = "2017-08-06T15:00:00+02:00"
 title = "XMPP over TLS Tutorial"
 author = "nico"
 description = ""
-keywords = [ "TeamSpeak Script", "XEP-0368", "XMPP" ]
-tags = [ "XMPP", "Prosody", "Guide" ]
-categories = [ "XEP-0368", "Prosody", "XMPP" ]
+keywords = [ "Prosody", "XMPP", "XEP-0368", "XMPP over TLS" ]
+tags = [
+	"XMPP",
+	"Prosody",
+	"XEP-0368"
+]
+categories = [ "Prosody", "XMPP", "Guide" ]
 banner = ""
 +++
 ## How to setup XEP-0368

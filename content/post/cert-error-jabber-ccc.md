@@ -4,11 +4,18 @@ date = "2017-08-28T13:30:00+02:00"
 title = "CCC Jabber Connection"
 author = "nico"
 description = ""
-keywords = [ "jabber.ccc.de", "Cert Error", "Prosody" ]
-tags = [ "CA Bundle" , "CCC", "Cert Error", "Prosody" ]
-categories = [ "XMPP", "Debian" ]
+keywords = [ "jabber.ccc.de", "Cert Error", "Prosody", "cacert" ]
+tags = [
+	"CA Bundle",
+	"CCC",
+	"Cert Error",
+	"Prosody"
+]
+categories = [ "XMPP", "Debian", "Prosody" ]
 banner = "/banner/ccc-header.png"
 +++
+
+- - -
 ## Einleitung
 Der XMPP Server vom [Chaos Computer Club](https://ccc.de) wird unter einem Zertifikat von [cacert.org](https://cacert.org) betrieben. Das root Zertifikat wird allerdings von den meisten Browsern / Betriebssystemen nicht anerkannt. Dies stellt für die Erreichbarkeit des XMPP Servers ein Problem da.
 

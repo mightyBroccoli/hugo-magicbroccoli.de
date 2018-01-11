@@ -5,7 +5,9 @@ title = "Datenbank Zusammenbruch"
 author = "nico"
 description = "Maintenance Downtime wegen eines MariaDB Fehlers."
 keywords = [ "MariaDB" ]
-tags = [ "MariaDB" ]
+tags = [
+	"MariaDB",
+]
 categories = [ "MariaDB", "Debian" ]
 banner = "/banner/mariadb.png"
 +++

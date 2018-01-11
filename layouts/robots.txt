@@ -1,15 +1,7 @@
 User-agent: *
-
-Disallow: /
+Disallow:
 Disallow: /*.jpg$
 Disallow: /*.png$
 Disallow: /*.ico$
-
-Allow: /xmpp/
-Allow: /register/
-Allow: /page/technik/
-Allow: /post/*
-Allow: /categories/*
-Allow: /tags/*
 
 Sitemap: https://magicbroccoli.de/sitemap.xml
