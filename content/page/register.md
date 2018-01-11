@@ -5,6 +5,7 @@ description = "Registrierung magicbroccoli.de XMPP"
 date = "2017-06-25"
 author = "nico"
 keywords = [ "Registrierung MagicBroccoli XMPP", "XMPP", "MagicBroccoli XMPP" ]
+url = "register"
 +++
 ## Registrierung
 Diese Seite ermöglicht es, einen neuen Account auf dem MagicBroccoli XMPP Server anzulegen.

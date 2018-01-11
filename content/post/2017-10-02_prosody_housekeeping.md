@@ -13,6 +13,7 @@ tags = [
 ]
 categories = [ "XMPP", "Prosody", "Guide", "MariaDB" ]
 banner = "/banner/prosody.png"
+slug = "Prosody housekeeping"
 +++
 # Grundidee
 Ich habe mich in den letzen paar Tagen damit beschäftigt Dinge rund um den Prosody Server zu automatisieren.

@@ -10,6 +10,7 @@ tags = [
 ]
 categories = [ "MariaDB", "Debian" ]
 banner = "/banner/mariadb.png"
+slug = "database failure"
 +++
 ## Bekanntmachung
 Heute, am 25 August, kam es zu dem bisher größten Ausfall meiner Services. Leider ist aufgrund eines Fehler, der mir bisher nicht weiter bekannt ist, eine Platte des Server ausgefallen. Die Datenbank hat das ganze nicht sonderlich gut aufgenommen.

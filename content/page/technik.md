@@ -5,6 +5,7 @@ title = "Server Technik"
 description = "verwendete Server Technik"
 author = "nico"
 keywords = [ "Prosody", "Debian", "XMPP", "MagicBroccoli XMPP"]
+url = "technik"
 +++
 ## Sicherheit
 Das Hostsystem läuft unter ![Debian](/icons/debian_icon.png) Debian 9.2 Stretch.
@@ -92,8 +93,8 @@ IM Oberserver ist ein Testsuite die automatisiert XMPP Server auf verschiedene F
 Mit dem Tool von [tls.imirhil.fr](https://tls.imirhil.fr) lässt sich ähnlich zum IM Observer ein Server prüfen. MagicBroccoli XMPP hat dort ein Rating von A+ [CryptCheck Score](https://tls.imirhil.fr/xmpp/magicbroccoli.de).
 
 ## Statistiken
-<img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_c2s-week.png" width="45%"> <img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_s2s-week.png" width="45%">
-<img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_stanzas-week.png" width="45%"> <img src="https://magicbroccoli.de/munin/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_uptime-week.png" width="45%">
+<img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_c2s-day.png" width="45%"> <img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_s2s-week.png" width="45%">
+<img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_stanzas-week.png" width="45%"> <img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_uptime-week.png" width="45%">
 
 - - -
 Last Edit 26.11.17

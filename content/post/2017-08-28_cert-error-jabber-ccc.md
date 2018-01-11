@@ -13,9 +13,15 @@ tags = [
 ]
 categories = [ "XMPP", "Debian", "Prosody" ]
 banner = "/banner/ccc-header.png"
+slug = "CCC Jabber Connection"
 +++
 
 - - -
+# Update
+Die techniche Leitung des CCC Jabber Servers hat sich dazu entscheiden auch auf gültige Zertifikate umzusteigen. Daher ist dieser Blogpost überflüssig.
+
+- - -
+
 ## Einleitung
 Der XMPP Server vom [Chaos Computer Club](https://ccc.de) wird unter einem Zertifikat von [cacert.org](https://cacert.org) betrieben. Das root Zertifikat wird allerdings von den meisten Browsern / Betriebssystemen nicht anerkannt. Dies stellt für die Erreichbarkeit des XMPP Servers ein Problem da.
 

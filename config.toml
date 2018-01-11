@@ -1,16 +1,20 @@
 baseurl = "https://magicbroccoli.de/"
+DefaultContentLanguage = "de"
 languageCode = "de-DE"
+canonifyurls = true
 title = "Magic Broccoli"
 author = "nico"
-#copyright = "&copy; 2017. All rights reserved."
 copyright = "All rights reserved."
-canonifyurls = true
-paginate = 4
+paginate = 7
 theme = "hugo-bootstrap"
-DefaultContentLanguage = "de"
 
+disqusShortname = "magicbroccoli-de"
 enableRobotsTXT = true
 noTimes = true
+
+[params]
+description = "Ein moderner, deutscher XMPP Server mit einem Schwerpunkt auf Privatsphäre und Datenschutz. Erstelle dir hier kostenlos einen Account."
+keywords = ["xmpp, jabber, MagicBroccoli, MagicXMPP, deutschland, germany, datenschutz, server, account, secure"]
 
 [params.widgets]
   recent_articles = false

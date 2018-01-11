@@ -4,6 +4,7 @@ title = "Unterstützen"
 date = "2017-06-21"
 description = "How to donate to MagicBroccoli XMPP"
 keywords = [ "donate" ]
+url = "donate"
 +++
 ## Unterstützung
 Der Betrieb des Servers sowie dessen Wartung kosten viel Zeit und natürlich auch Geld. Momentan werden alle Kosten von mir privat getragen. Wenn sie mich als kleines Dankeschön unterstützen möchten, sind sie hier absolut richtig.<br>

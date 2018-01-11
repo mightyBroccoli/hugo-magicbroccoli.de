@@ -4,6 +4,7 @@ date = "2017-06-21"
 title = "Magical XMPP Server"
 description = "MagicBroccoli XMPP Server"
 keywords = [ "MagicBroccoli XMPP", "XMPP", "MagicBroccoli XMPP", "Prosody", "Debian" ]
+url = "xmpp"
 +++
 ## Was ist MagicBroccoli XMPP?
 MagicBroccoli XMPP ist ein freier XMPP Server ausgelegt auf Datenschutz und Sicherheit. XMPP ist ein Protokoll, welches ein Versenden von Nachrichten über das Internet ermöglicht. Es ist sehr ähnlich zu ICQ oder MSN besitzt dazu aber einige besondere Features.

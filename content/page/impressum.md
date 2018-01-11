@@ -4,6 +4,7 @@ title = "Impressum"
 date = "2017-06-21"
 description = "Impressum"
 keywords = [ "Impressum", "imprint" ]
+url = "impressum"
 +++
 ## Impressum
 Angaben gemäß § 5 TMG

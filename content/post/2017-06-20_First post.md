@@ -8,6 +8,7 @@ keywords = [ "start of something beautiful" ]
 #tags = ""
 #categories = ""
 banner = ""
+slug = "first post"
 +++
 # This is my first blogpost. EVER.
 

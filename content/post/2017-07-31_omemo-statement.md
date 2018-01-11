@@ -15,6 +15,7 @@ tags = [
 ]
 categories = [ "Prosody", "XMPP", "Omemo" ]
 banner = ""
+slug = "Omemo Statement"
 +++
 ### Update
 Herr Gultsch hat nun eine Erklärung in den Sourcecode von OMEMO.java des ComplianceTesters hinzugefügt. Außerdem fügte er in die Spalte XEP-0384: OMEMO Encryption ein Fragezeichen hinzu. Dieses führt zu der Erklärung im [Sourcecode auf Github](https://github.com/iNPUTmice/ComplianceTester/blob/master/src/main/java/eu/siacs/compliance/tests/OMEMO.java#L12-L17).

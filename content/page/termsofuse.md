@@ -5,6 +5,7 @@ description = "Nutzungsbedingungen"
 author = "nico"
 date = "2017-06-21"
 keywords = [ "Nutzungsbedingungen", "Terms of use", "tos" ]
+url = "termsofuse"
 +++
 ## Allgemein
 * Registrierung sowie Nutzung des XMPP Servers sind kostenfrei.

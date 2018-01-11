@@ -14,6 +14,7 @@ tags = [
 ]
 categories = [ "XMPP", "Prosody", "Guide", "MariaDB" ]
 banner = "/banner/mariadb.png"
+slug = "prosody db index"
 +++
 Prosody bietet die Möglichkeit persistente Userdaten bzw. seit [0.10](https://prosody.im/doc/release/0.10.0) auch MAM Archive in einer MySQL Datenbank zu sichern. Prosody erstellt beim ersten Laden des [Moduls](https://hg.prosody.im/0.10/file/e98b4352d7df/plugins/mod_storage_sql.lua#l426) alle relevanten Datenbanken sowie Indizes. Allerdings werden Indizes, die nachträglich, z.B. in [aktuelleren Patches](https://hg.prosody.im/0.10/rev/e98b4352d7df), hinzugefügt werden, nur in Datenbanken eingetragen, die neu erstellt werden. Damit fehlen in den allermeisten älteren Datenbanken die aktuellen Indizes.
 

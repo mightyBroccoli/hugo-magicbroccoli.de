@@ -4,9 +4,14 @@ date = "2017-06-22T14:15:25+02:00"
 title = "TeamSpeak XMPP Push"
 author = "nico"
 description = ""
-tags = [ "XMPP" ]
+keywords = [ "XMPP", "Teamspeak", "Push" ]
+tags = [ 
+	"XMPP",
+	"Teamspeak"
+]
 categories = [ "Development", "Bash", "TeamSpeak", "XMPP" ]
 banner = ""
+slug = "ts xmpp push"
 +++
 ## Idee
 Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen.<br>

@@ -12,6 +12,7 @@ tags = [
 ]
 categories = [ "Prosody", "XMPP", "Guide" ]
 banner = ""
+slug = "xmpp over tls guide"
 +++
 ## How to setup XEP-0368
 ### Was ist XEP-0368
