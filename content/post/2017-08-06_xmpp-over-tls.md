@@ -4,11 +4,9 @@ date = "2017-08-06T15:00:00+02:00"
 title = "XMPP over TLS Tutorial"
 author = "nico"
 description = ""
-keywords = [ "Prosody", "XMPP", "XEP-0368", "XMPP over TLS" ]
+keywords = [ "Prosody", "XMPP", "xep-0368", "XMPP over TLS" ]
 tags = [
-	"XMPP",
-	"Prosody",
-	"XEP-0368"
+	"xep-0368"
 ]
 categories = [ "Prosody", "XMPP", "Guide" ]
 banner = ""

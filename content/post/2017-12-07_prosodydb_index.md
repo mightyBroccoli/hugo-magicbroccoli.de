@@ -4,15 +4,13 @@ date = "2017-12-07T17:30:00+02:00"
 title = "Prosody Datenbank Indizes"
 author = "nico"
 description = ""
-keywords = [ "MariaDB", "Prosody", "MySQL" ]
+keywords = [ "MariaDB", "Prosody", "xep-0313", "maintenance" ]
 tags = [
-	"Prosody",
-	"XEP-313",
+	"xep-0313",
 	"MariaDB",
 	"maintenance",
-	"Guide"
 ]
-categories = [ "XMPP", "Prosody", "Guide", "MariaDB" ]
+categories = [ "XMPP", "Prosody", "Guide" ]
 banner = "/banner/mariadb.png"
 slug = "prosody db index"
 +++

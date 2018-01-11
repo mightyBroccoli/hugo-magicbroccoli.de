@@ -4,14 +4,14 @@ date = "2017-10-02T13:30:00+02:00"
 title = "Prosody housekeeping"
 author = "nico"
 description = ""
-keywords = [ "Prosody", "mod_mam", "MariaDB", "mod_mam expire", "unused accounts", "old accounts", "XEP-313" ]
+keywords = [ "Prosody", "mod_mam", "MariaDB", "unused accounts", "old accounts", "xep-0313" ]
 tags = [
-	"Prosody",
-	"XEP-313",
+	"xep-0313",
 	"MariaDB",
-	"maintenance"
+	"maintenance",
+	"mildly usefull"
 ]
-categories = [ "XMPP", "Prosody", "Guide", "MariaDB" ]
+categories = [ "Bash", "XMPP", "Prosody", "Guide" ]
 banner = "/banner/prosody.png"
 slug = "Prosody housekeeping"
 +++

@@ -8,7 +8,7 @@ keywords = [ "MariaDB" ]
 tags = [
 	"MariaDB",
 ]
-categories = [ "MariaDB", "Debian" ]
+categories = [ "Debian" ]
 banner = "/banner/mariadb.png"
 slug = "database failure"
 +++

@@ -6,19 +6,16 @@ author = "nico"
 description = ""
 keywords = [ "jabber.ccc.de", "Cert Error", "Prosody", "cacert" ]
 tags = [
-	"CA Bundle",
 	"CCC",
-	"Cert Error",
-	"Prosody"
+	"cacert",
 ]
-categories = [ "XMPP", "Debian", "Prosody" ]
+categories = [ "XMPP", "Prosody", "Debian" ]
 banner = "/banner/ccc-header.png"
 slug = "CCC Jabber Connection"
 +++
-
 - - -
 # Update
-Die techniche Leitung des CCC Jabber Servers hat sich dazu entscheiden auch auf gültige Zertifikate umzusteigen. Daher ist dieser Blogpost überflüssig.
+Die techniche Leitung des CCC Jabber Servers hat sich nun auch dazu entscheiden auf gültige Zertifikate umzusteigen. Daher ist dieser Blogpost überflüssig.
 
 - - -
 

@@ -2,11 +2,13 @@
 type = "page"
 date = "2017-07-22"
 title = "Chatsecure Tutorial"
-description = "How to use Chatsecure"
 author = "nico"
-tags = [ "Guide" ]
-categories = [ "XMPP", "Chatsecure" ]
+description = "Guide on how to use Chatsecure"
 keywords = [ "MagicBroccoli XMPP", "XMPP", "Chatsecure", "Chatsecure Tutorial", "iPhone" ]
+tags = [
+	"Chatsecure"
+]
+categories = [ "XMPP", "Guide" ]
 +++
 **Hinweis**: _Ein Dank geht an [5222.de](//5222.de) die netterweise die Screenshots zur Verfügung gestellt haben. Da ich selbst kein iPhone besitzte wäre mir ein Tutorial sonst nicht möglich gewesen._
 

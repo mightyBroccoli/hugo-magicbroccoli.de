@@ -4,16 +4,13 @@ date = "2017-07-31T13:00:00+02:00"
 title = "Wir unterstützen Omemo"
 author = "nico"
 description = "Stellungnahme zur aktuellen Entwicklung um Omemo"
-keywords = [ "Omemo", "Prosody", "publish-options", "Daniel Gultsch" ]
+keywords = [ "omemo", "xep-0384", "Prosody", "publish-options", "Daniel Gultsch" ]
 tags = [
-	"Prosody",
-	"Omemo",
-	"XMPP",
-	"Omemo",
-	"pep publish-options",
-	"Daniel Gultsch"
+	"omemo",
+	"xep-0384",
+	"publish-options",
 ]
-categories = [ "Prosody", "XMPP", "Omemo" ]
+categories = [ "Prosody", "XMPP" ]
 banner = ""
 slug = "Omemo Statement"
 +++

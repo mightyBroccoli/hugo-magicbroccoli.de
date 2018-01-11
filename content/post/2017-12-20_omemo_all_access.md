@@ -4,17 +4,14 @@ date = "2017-12-20T10:00:00+02:00"
 title = "Omemo Complicance"
 author = "nico"
 description = ""
-keywords = [ "Omemo", "omemo_all_access", "Prosody", "publish-options", "Daniel Gultsch" ]
+keywords = [ "Omemo", "xep-0384", "omemo_all_access", "Prosody", "publish-options", "Daniel Gultsch" ]
 tags = [
-	"Prosody",
-	"Omemo",
-	"XMPP",
-	"Omemo",
-	"pep publish-options",
-	"Daniel Gultsch",
+	"omemo",
+	"xep-0384",
+	"publish-options",
 	"omemo_all_access"
 ]
-categories = [ "Prosody", "XMPP", "Omemo" ]
+categories = [ "Prosody", "XMPP" ]
 banner = "/images/posts/omemo_all_access/omemo_logo.png"
 slug = "Omemo Complicance"
 +++

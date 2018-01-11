@@ -5,11 +5,10 @@ title = "TeamSpeak XMPP Push"
 author = "nico"
 description = ""
 keywords = [ "XMPP", "Teamspeak", "Push" ]
-tags = [ 
-	"XMPP",
-	"Teamspeak"
+tags = [
+	"mildly usefull"
 ]
-categories = [ "Development", "Bash", "TeamSpeak", "XMPP" ]
+categories = [ "Bash", "TeamSpeak", "XMPP" ]
 banner = ""
 slug = "ts xmpp push"
 +++

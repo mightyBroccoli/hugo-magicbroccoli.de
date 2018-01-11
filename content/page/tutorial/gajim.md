@@ -2,11 +2,13 @@
 type = "page"
 date = "2017-07-22"
 title = "Gajim Tutorial"
-description = "How to use Gajim"
 author = "nico"
-tags = [ "Guide" ]
-categories = [ "XMPP", "Gajim" ]
+description = "Guide on how to use Gajim"
 keywords = [ "MagicBroccoli XMPP", "XMPP", "Gajim", "Gajim Tutorial" ]
+tags = [
+	"Gajim"
+]
+categories = [ "XMPP", "Guide" ]
 +++
 ## 1. Account Registrierung
 Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt.
