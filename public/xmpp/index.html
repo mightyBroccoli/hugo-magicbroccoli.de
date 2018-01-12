@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Magical XMPP Server  &middot; Magic Broccoli</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="MagicBroccoli XMPP Server" />
+
+<meta name="keywords" content="MagicBroccoli XMPP, XMPP, MagicBroccoli XMPP, Prosody, Debian, ">
+
+
+<meta property="og:title" content="Magical XMPP Server  &middot; Magic Broccoli ">
+<meta property="og:site_name" content="Magic Broccoli"/>
+<meta property="og:url" content="https://magicbroccoli.de/xmpp/" />
+<meta property="og:locale" content="de-DE">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content="MagicBroccoli XMPP Server"/>
+<meta property="og:article:published_time" content="2017-06-21T00:00:00Z" />
+<meta property="og:article:modified_time" content="2017-06-21T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="MagicBroccoli XMPP">
+    
+<meta property="og:article:tag" content="XMPP">
+    
+<meta property="og:article:tag" content="MagicBroccoli XMPP">
+    
+<meta property="og:article:tag" content="Prosody">
+    
+<meta property="og:article:tag" content="Debian">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="Magical XMPP Server" />
+<meta name="twitter:description" content="MagicBroccoli XMPP Server" />
+<meta name="twitter:url" content="https://magicbroccoli.de/xmpp/" />
+<meta name="twitter:domain" content="https://magicbroccoli.de/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Magical XMPP Server",
+    "author": {
+      "@type": "Person",
+    },
+    "datePublished": "2017-06-21",
+    "description": "MagicBroccoli XMPP Server",
+    "wordCount": 514
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://magicbroccoli.de/xmpp/" />
+
+<meta name="generator" content="Hugo 0.32.4" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+
+  <link rel="stylesheet" href="https://magicbroccoli.de/assets/css/style.css">
+  <link rel="stylesheet" href="https://magicbroccoli.de/assets/css/tomorrow-night.css">
+
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://magicbroccoli.de/favicon/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://magicbroccoli.de/favicon/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://magicbroccoli.de/favicon/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://magicbroccoli.de/favicon/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://magicbroccoli.de/favicon/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://magicbroccoli.de/favicon/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://magicbroccoli.de/favicon/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://magicbroccoli.de/favicon/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://magicbroccoli.de/favicon/apple-touch-icon-180x180.png" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-128.png" sizes="128x128" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-196x196.png" sizes="196x196" />
+<meta name="application-name" content="Magic Broccoli"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="/favicon/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="/favicon/mstile-150x150.png" />
+<meta name="msapplication-square310x310logo" content="/favicon/mstile-310x310.png" />
+
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-expand-md fixed-top site-navbar bg-info">
+    <a class="navbar-brand text-white" href="https://magicbroccoli.de/">Magic Broccoli</a>
+  <button class="navbar-toggler" 
+  type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2"
+    aria-expanded="false" aria-label="Toggle navigation">
+    &#9776;
+  </button>
+  <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
+    <ul class="nav navbar-nav ml-auto">
+       
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/">
+          <i class='fa fa-home fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Home</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/xmpp/">
+          <i class='fa fa-delicious'></i>
+          <span class="text-capitalize no-decoration text-white">XMPP</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/register/">
+          <i class='fa fa-plus' fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Register</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/page/tutorial/">
+          <i class='fa fa-question-circle' fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Tutorials</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/contact/">
+          <i class='fa fa-info-circle'></i>
+          <span class="text-capitalize no-decoration text-white">About me</span>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+<div class="container p-b-2">
+  <div class="row">
+    <div class="col-xs-12 col-md-9 post-container">
+      <div class="content pt-2">
+  
+
+<h2 id="was-ist-magicbroccoli-xmpp">Was ist MagicBroccoli XMPP?</h2>
+
+<p>MagicBroccoli XMPP ist ein freier XMPP Server ausgelegt auf Datenschutz und Sicherheit. XMPP ist ein Protokoll, welches ein Versenden von Nachrichten über das Internet ermöglicht. Es ist sehr ähnlich zu ICQ oder MSN besitzt dazu aber einige besondere Features.</p>
+
+<h2 id="wie-funktioniert-es">Wie funktioniert es?</h2>
+
+<p>XMPP ist ein dezentrales Netzwerk. Das bedeutet das es entgegen WhatsApp oder Facebook weltweit viele Anbieter von XMPP Servern gibt, bei denen man seinen XMPP-Account einrichten kann. Ähnlich einem E-Mail Account besitzt jeder Account eine Adresse. Dieser besteht bei XMPP aus dem Username @ Servernamen.tld z.B. <em>&ldquo;user@magicbroccoli.de&rdquo;</em></p>
+
+<h2 id="worin-besteht-der-vorteil-von-xmpp">Worin besteht der Vorteil von XMPP?</h2>
+
+<ul>
+<li>meistens kostenlos, nur sehr wenige Anbieter sind kostenpflichtig</li>
+<li>Datenschutz und Sicherheit der User ist häufig ein Schwerpunkt daher werden für die Registrierung nur minimale Informationen benötigt.</li>
+<li>die freie Wahl, des Clients und des Servers. Für jedes Betriebssystem sind dutzende Clients mit unterschiedlichestem Funktionsumfang verfügbar.</li>
+</ul>
+
+<h3 id="how-to-xmpp">How to XMPP?</h3>
+
+<p>XMPP Clients funktioniert sehr ähnlich wie ICQ/ MSN. Nach der Registrierung eines Accounts werden diese Daten eingegeben und schon ist der Account einsatzbereit.
+Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es <a href="https://xmpp.org/software/clients.html" target="_blank">hier</a>. Für einige der unten empfohlenen Clients sind <a href="https://magicbroccoli.de/page/tutorial/">Tutorials</a> vorhanden. Bei Verbesserungsvorschlägen ist ein PullRequest auf <a href="https://github.com/mightyBroccoli/hugo-magicbroccoli.de" target="_blank">Github</a> gerne gesehen.</p>
+
+<p><strong>INHO</strong> : <em>Die folgende Liste bezieht sich auf die Clients, die die meisten Features abdecken und mit möglichst vielen Standards konform sind. Außerdem werden ausschließlich Clients gelistet, die aktiv entwickelt werden.</em></p>
+
+<ul>
+<li>Android: <a href="https://conversations.im/" target="_blank">Conversations</a> (€ 2,39 im <a href="https://play.google.com/store/apps/details?id=eu.siacs.conversations" target="_blank">Google Play Store</a> oder gratis auf <a href="https://f-droid.org/repository/browse%20/?fdid=eu.siacs.conversations" target="_blank">F-Droid</a>)</li>
+<li>Android: <a href="https://play.google.com/store/apps/details?id=com.xabber.android" target="_blank">Xabber</a></li>
+<li>iOS (iPhone): <a href="https://itunes.apple.com/de/app/chatsecure-Impressumverschl%C3%BCsselter-nachrichtendienst/id464200063?mt=8" target="_blank">ChatSecure</a></li>
+<li>Linux: <a href="https://gajim.org/?lang=de" target="_blank">Gajim</a></li>
+<li>Linux: <a href="https://github.com/dino/dino/wiki/Distribution-Packages" target="_blank">Dino</a> ( <em>muss noch selbstständig compiliert werden</em> )</li>
+<li>Linux (console): <a href="https://mcabber.com/" target="_blank">mcabber</a> oder <a href="http://www.profanity.im/" target="_blank">Profanity</a></li>
+<li>macOS: <a href="https://adium.im/" target="_blank">Adium</a></li>
+<li>macOS: <a href="https://github.com/dino/dino/wiki/Distribution-Packages" target="_blank">Dino</a> ( <em>muss noch selbstständig compiliert werden</em> )</li>
+<li>Windows: <a href="https://gajim.org/?lang=de" target="_blank">Gajim</a></li>
+<li>Windows (XMPP - Anfänger): <a href="https://pidgin.im/" target="_blank">Pidgin</a> <em>mit deutlich eingeschränktem Funktionsumfang der Server-Features</em></li>
+<li>Webbrowser: <a href="https://conversejs.org/" target="_blank">Converse.js</a></li>
+</ul>
+
+<h2 id="registrieren">Registrieren</h2>
+
+<p>Wenn dich diese Dinge überzeugt haben XMPP für dich und deine Freunde zu probieren. Ist es dir hier direkt möglich dich anzumelden.
+<center><a style="display: block; margin-top: 50px; margin-left: auto; margin-right: auto; margin-bottom: 50px; height: 50px; width: 300px; background-color: #0069a1; color: white; border-radius: 5px; line-height: 50px; text-align: center; font-weight: bold;" href="https://magicbroccoli.de/register/">Registrieren</a></center></p>
+
+<h3 id="datenschutz">Datenschutz</h3>
+
+<p>Da es sich zudem um persönliche Daten handelt, ist meine <a href="https://magicbroccoli.de/datenschutz/">Datenschutzerklärung</a> hier zu finden.<br></p>
+
+<p><strong>TLDR</strong> : <em>Für die Nutzung des Services müssen keine persönlichen Daten angegeben werden. Protokollierung von Nutzerinteraktionen mit dem Server sind auf das notwendige Minimum reduziert. Es gibt keine weiteren Personen die Zugriff zur Administration des Servers haben.</em></p>
+
+<h3 id="kann-ich-meine-domain-mitbringen-xmpp-domain-hosting">Kann ich meine Domain mitbringen? (XMPP Domain Hosting)</h3>
+
+<p>Natürlich ist das möglich! Ihr könnt Eure Domain mitbringen und ich betreibe den Dienst für euch. Ihr erhaltet damit administratorische Rechte <em>für Eure Domain</em>. Damit stehen Euch alle Admin-Befehle <em>innerhalb eurer Domain</em> zur Verfügung. Es ist Euch damit möglich eigene XMPP Accounts anzulegen, für Freunde und/ oder Familie.<br>
+Eine Übersicht über die nötigen Vorraussetzungen und notwendigen Einstellungen für ein Hosting findet Ihr in der <a href="https://magicbroccoli.de/xmpp-hosting/">Übersicht</a>. Bei Interesse <a href="https://magicbroccoli.de/contact/">kontaktiert</a> mich und wir besprechen den Rest.</p>
+
+<h3 id="kann-ich-den-serverbetreiber-unterstützen">Kann ich den Serverbetreiber unterstützen?</h3>
+
+<p>Der Betrieb und vor allem die Wartung kosten Zeit und Geld. Finanziell wird das Projekt von mir privat getragen, jedoch ist <a href="https://magicbroccoli.de/donate/">finanzielle Unterstützung</a> jederzeit gern gesehen. Spenden sind per Bitcoin, Paypal oder auch per Banküberweisung möglich (Kontodaten nur nach vorheriger Anfrage).</p>
+
+<h3 id="technik-software">Technik/ Software</h3>
+
+<p>Alles weitere, wie aktivierte XEPs und näheres zur verwendeten Technik bzw Software, ist hier zu finden: <a href="https://magicbroccoli.de/page/technik/">Technik</a></p>
+
+<hr />
+
+<p><center><a href="https://www.netcup.de" target="_blank"><img src="https://www.netcup.de/bilder/banner/netcup-hlogo-b220h100.png" alt="" /></a></center></p>
+
+<p>Last Edit 26.11.17</p>
+
+</div>
+
+    </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="sidebar">
+  
+
+  
+
+
+<div class="card card-block">
+  <h4 class="card-title">CATEGORIES</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/bash/">
+                bash
+            </a>
+            <span class="category-list-count">2</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/debian/">
+                debian
+            </a>
+            <span class="category-list-count">2</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/guide/">
+                guide
+            </a>
+            <span class="category-list-count">5</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/prosody/">
+                prosody
+            </a>
+            <span class="category-list-count">6</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/teamspeak/">
+                teamspeak
+            </a>
+            <span class="category-list-count">1</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/xmpp/">
+                xmpp
+            </a>
+            <span class="category-list-count">9</span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAGS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/cacert/">cacert</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/ccc/">ccc</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/chatsecure/">chatsecure</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/gajim/">gajim</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/maintenance/">maintenance</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/mariadb/">mariadb</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/mildly-usefull/">mildly-usefull</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/omemo/">omemo</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/omemo_all_access/">omemo_all_access</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/publish-options/">publish-options</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xep-0313/">xep-0313</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xep-0368/">xep-0368</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xep-0384/">xep-0384</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAG CLOUD</h4>
+  <p class="card-text">
+    
+        <a href="https://magicbroccoli.de/tags/cacert/" class="badge badge-primary">
+        cacert
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/ccc/" class="badge badge-primary">
+        ccc
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/chatsecure/" class="badge badge-primary">
+        chatsecure
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/gajim/" class="badge badge-primary">
+        gajim
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/maintenance/" class="badge badge-primary">
+        maintenance
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/mariadb/" class="badge badge-primary">
+        mariadb
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/mildly-usefull/" class="badge badge-primary">
+        mildly-usefull
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/omemo/" class="badge badge-primary">
+        omemo
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/omemo_all_access/" class="badge badge-primary">
+        omemo_all_access
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/publish-options/" class="badge badge-primary">
+        publish-options
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0313/" class="badge badge-primary">
+        xep-0313
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0368/" class="badge badge-primary">
+        xep-0368
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0384/" class="badge badge-primary">
+        xep-0384
+        </a>
+    
+  </p>
+</div>
+
+
+
+
+</div>
+
+      </div>
+  </div>
+</div>
+      <footer class="footer text-white bg-info">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-9">
+        <p class="text-xs-center m-a-0 p-a-0">
+          &copy; 2018 All rights reserved.
+        </p>
+        
+        <p class="text-xs-center  m-a-0 p-a-0">
+            
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/impressum/" class="text-capitalize no-decoration text-white">Impressum</a>
+              </span>
+              &middot; 
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/termsofuse/" class="text-capitalize no-decoration text-white">Terms of Use</a>
+              </span>
+              &middot; 
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/datenschutz/" class="text-capitalize no-decoration text-white">Privacy Policy</a>
+              </span>
+                
+        </p>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha256-GIa8Vh3sfESnVB2CN3rYGkD/MklvMq0lmITweQxE1qU=" crossorigin="anonymous"></script>
+
+<script src="https://magicbroccoli.de/assets/js/highlight.pack.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script id="dsq-count-scr" src="//magicbroccoli-de.disqus.com/count.js" async></script>
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.conversejs.org/css/converse.min.css">
+<script>
+  if (screen && screen.width > 960) {
+    document.write('<script type="text\/javascript" src="https://cdn.conversejs.org/dist/converse.min.js"><\/script>');
+  }
+</script>
+<script>
+  converse.initialize({
+    allow_chat_pending_contacts: true,
+    allow_non_roster_messaging: true,
+    allow_registration: false,
+    auto_list_rooms: true,
+    bosh_service_url: 'https://magicbroccoli.de/http-bind',
+    websocket_url: 'wss://magicbroccoli.de/xmpp-websocket',
+    csi_waiting_time: 25,
+    default_domain: 'magicbroccoli.de',
+    domain_placeholder: 'magicbroccoli.de',
+    message_carbons: true,
+    muc_domain: 'conference.magicbroccoli.de',
+    providers_link: 'https://magicbroccoli.de/xmpp',
+    registration_domain: 'magicbroccoli.de',
+    roster_groups: true,
+    show_controlbox_by_default: true,
+    show_send_button: true,
+  });
+</script>
+
+  </body>
+</html>
+

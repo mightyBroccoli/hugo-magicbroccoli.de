@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Prosody housekeeping  &middot; Magic Broccoli</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="Ein moderner, deutscher XMPP Server mit einem Schwerpunkt auf Privatsphäre und Datenschutz. Erstelle dir hier kostenlos einen Account." />
+
+<meta name="keywords" content="Prosody, mod_mam, MariaDB, unused accounts, old accounts, xep-0313, ">
+
+
+<meta property="og:title" content="Prosody housekeeping  &middot; Magic Broccoli ">
+<meta property="og:site_name" content="Magic Broccoli"/>
+<meta property="og:url" content="https://magicbroccoli.de/post/prosody-housekeeping/" />
+<meta property="og:locale" content="de-DE">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2017-10-02T13:30:00&#43;02:00" />
+<meta property="og:article:modified_time" content="2017-10-02T13:30:00&#43;02:00" />
+
+  
+    
+<meta property="og:article:tag" content="Prosody">
+    
+<meta property="og:article:tag" content="mod_mam">
+    
+<meta property="og:article:tag" content="MariaDB">
+    
+<meta property="og:article:tag" content="unused accounts">
+    
+<meta property="og:article:tag" content="old accounts">
+    
+<meta property="og:article:tag" content="xep-0313">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="Prosody housekeeping" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://magicbroccoli.de/post/prosody-housekeeping/" />
+<meta name="twitter:domain" content="https://magicbroccoli.de/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Prosody housekeeping",
+    "author": {
+      "@type": "Person",
+    },
+    "datePublished": "2017-10-02",
+    "description": "",
+    "wordCount": 703
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://magicbroccoli.de/post/prosody-housekeeping/" />
+
+<meta name="generator" content="Hugo 0.32.4" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+
+  <link rel="stylesheet" href="https://magicbroccoli.de/assets/css/style.css">
+  <link rel="stylesheet" href="https://magicbroccoli.de/assets/css/tomorrow-night.css">
+
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://magicbroccoli.de/favicon/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://magicbroccoli.de/favicon/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://magicbroccoli.de/favicon/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://magicbroccoli.de/favicon/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://magicbroccoli.de/favicon/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://magicbroccoli.de/favicon/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://magicbroccoli.de/favicon/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://magicbroccoli.de/favicon/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://magicbroccoli.de/favicon/apple-touch-icon-180x180.png" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-128.png" sizes="128x128" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-196x196.png" sizes="196x196" />
+<meta name="application-name" content="Magic Broccoli"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="/favicon/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="/favicon/mstile-150x150.png" />
+<meta name="msapplication-square310x310logo" content="/favicon/mstile-310x310.png" />
+
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-expand-md fixed-top site-navbar bg-info">
+    <a class="navbar-brand text-white" href="https://magicbroccoli.de/">Magic Broccoli</a>
+  <button class="navbar-toggler" 
+  type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2"
+    aria-expanded="false" aria-label="Toggle navigation">
+    &#9776;
+  </button>
+  <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
+    <ul class="nav navbar-nav ml-auto">
+       
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/">
+          <i class='fa fa-home fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Home</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/xmpp/">
+          <i class='fa fa-delicious'></i>
+          <span class="text-capitalize no-decoration text-white">XMPP</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/register/">
+          <i class='fa fa-plus' fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Register</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/page/tutorial/">
+          <i class='fa fa-question-circle' fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Tutorials</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/contact/">
+          <i class='fa fa-info-circle'></i>
+          <span class="text-capitalize no-decoration text-white">About me</span>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+<div class="container p-a-0">
+  <div class="row m-l-0 m-r-0">
+    <div class="col-xs-12 col-md-9 post-container">
+      <div>
+  
+<a href="https://magicbroccoli.de/post/prosody-housekeeping/" itemprop="url">
+    
+      <img src="https://magicbroccoli.de/banner/prosody.png" class="img-fluid" alt="Generic responsive image">
+    
+</a>
+
+
+  <h1 class="post-title mb-1">Prosody housekeeping
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2017-10-02">2 Oct, 2017</time>
+
+    
+      &middot; by nico
+    
+    &middot; 4 Minute Read
+    &middot; 703 Words
+  </div>
+
+  
+      
+      
+      <div class="post-meta-item">
+          <i class="fa fa-folder-open-o"></i>
+          
+          <a class="article-category-link" href="https://magicbroccoli.de/categories/bash/">Bash</a>
+          &middot;
+          
+          <a class="article-category-link" href="https://magicbroccoli.de/categories/xmpp/">XMPP</a>
+          &middot;
+          
+          <a class="article-category-link" href="https://magicbroccoli.de/categories/prosody/">Prosody</a>
+          &middot;
+          
+          <a class="article-category-link" href="https://magicbroccoli.de/categories/guide/">Guide</a>
+          
+          
+      </div>
+      
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://magicbroccoli.de/tags/xep-0313/">xep-0313</a>
+          &middot;
+          
+          <a href="https://magicbroccoli.de/tags/mariadb/">MariaDB</a>
+          &middot;
+          
+          <a href="https://magicbroccoli.de/tags/maintenance/">maintenance</a>
+          &middot;
+          
+          <a href="https://magicbroccoli.de/tags/mildly-usefull/">mildly usefull</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://magicbroccoli.de/post/prosody-housekeeping/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content pt-2">
+  
+
+<h1 id="grundidee">Grundidee</h1>
+
+<p>Ich habe mich in den letzen paar Tagen damit beschäftigt Dinge rund um den Prosody Server zu automatisieren.
+Daher möchte ich hier einfach mal meine Lösung einiger kleiner Probleme vorstellen.</p>
+
+<h1 id="problem">Problem</h1>
+
+<p>Das grundsätzliche Problem, welches so ziemlich alle Server mit offener Registrierung teilen, sind Zombie Accounts. Sprich Accounts die erstellt wurden, allerdings nie verwendet werden. Oder Accounts die erstellt wurden und irgendwann von ihrem Nutzer/in nicht mehr verwendet werden. Solche Accounts verursachen eine vermeidbare Last für das System.<br>
+Die zweite größere Quelle liegt in einem Problem Prosodys Dateien oder Datenbank Einträge korrekt bzw. überhaupt zu löschen. Namentlich sind hier <a href="https://modules.prosody.im/mod_http_upload.html" target="_blank">mod_http_upload</a> und <a href="https://modules.prosody.im/mod_mam.html" target="_blank">mod_mam</a> zu nennen.
+Vor allem bei dem Modul mam bestehen Probleme, da die Einträge eines jeden Users einzeln bearbeitet werden. Daher steigt die Bearbeitungszeit bei größeren Userzahlen enorm an.</p>
+
+<h1 id="lösungsansatz">Lösungsansatz</h1>
+
+<p>Als Lösungsansatz habe ich ein einfaches Skript geschrieben, das tägliche &ldquo;housekeeping&rdquo; Aufgaben für mich übernimmt.<br>
+<a href="https://thomas-leister.de/" target="_blank">Thomas Leister</a> hat vor einiger Zeit einen sehr ähnlichen <a href="https://thomas-leister.de/prosody-inaktive-accounts-loeschen" target="_blank">Lösungsansatz</a> veröffentlicht, den ich in meinem Skript erweitert habe, um ihn vollständig zu automatisieren.<br>
+Das im Folgenden beschriebene Skript steht auf <a href="https://github.com/mightyBroccoli/prosody_housekeeping" target="_blank">Github</a> zur Verfügung.</p>
+
+<p><strong>WARNUNG</strong>: Das Skript verfügt über einen <em>configtest</em>; durch das ausführen mit <code>--configtest</code> oder <code>-t</code> werden alle Filter angewendet, ohne das Einträge gelöscht werden. So ist es möglich anschauenlich zu sehen was bei einem ausführen passiert wäre. Es ist äußerste Vorsicht geboten beim konfigurieren des Skripts, daher ist ein testen der Konfiguration sehr empfohlen.</p>
+
+<h1 id="skript">Skript</h1>
+
+<p>Das Skript arbeitet nacheinander alle diese Probleme ab und beseitigt diese Probleme in mehreren Schritten ohne das Usereingaben notwendig sind.<br></p>
+
+<h2 id="konfiguration">Konfiguration</h2>
+
+<p>Für die Verwendung des Skriptes werden zwei Module benötigt. Diese sollten im Modul Verzeichnis von Prosody vorhanden sein.</p>
+
+<ul>
+<li><a href="https://modules.prosody.im/mod_list_inactive.html" target="_blank">mod_list_inactive</a></li>
+<li><a href="https://modules.prosody.im/mod_lastlog.html" target="_blank">mod_lastlog</a></li>
+</ul>
+
+<p>mod_lastlog lässt sich einfach in die modules_enabled{} Sektion der Prosody Konfiguration eintragen. Für das Modul ist keine weitere Konfiguration notwendig.
+Der einfachste Weg ist, das gesamte Mercurial Archiv der Community Module zu klonen und in der Prosody Konfiguration zu referenzieren. Eine Anleitung wie das geht findet sich in der Prosody <a href="https://prosody.im/doc/installing_modules#prosody-modules" target="_blank">Dokumentation</a>.<br></p>
+
+<p>Nun sollte im Skript selbst, über die Variabeln, eingestellt werden was für Zeiteinheiten gewünscht sind. Außerdem sollten eventuell abweichende Pfade auf die jeweiligen Systemverhältnisse angepasst werden.<br>
+Der Folgende Abschnitt zeigt einen Ausschnitt aus dem Skript, welcher die Konfigurationsvariablen, die Filter sowie den <code>--configtest</code> catch zeigt.</p>
+
+<pre><code>#!/bin/bash
+
+###### CONFIGURATION ######
+# configuration variables
+tmp_directory=/tmp/prosody/
+junk_to_delete=$tmp_directory/accounts_to_delete.txt
+
+# maximum timeframe for accounts registered but not logged in
+# needs to be in the syntax 1day 2weeks 3months 4years
+unused_accounts_timeframe=&quot;14days&quot;
+# maxium timeframe for accounts since last login
+old_accounts_timeframe=&quot;1year&quot;
+
+# maximum age of mod_mam messags stored in the database
+enable_mam_clearing=false
+# needs to be in mysql syntax 1 DAY 2 MONTH 3 YEAR
+mam_message_live=&quot;2 MONTH&quot;
+
+# prosody mysql login credentials
+prosody_db_user=&quot;prosody&quot;
+prosody_db_password=&quot;super_secret-password1337&quot;
+
+# http upload path
+http_upload_path=&quot;/var/lib/prosody/http_upload&quot;
+# http upload lifetime in days
+http_upload_expire=&quot;31&quot;
+
+catch_configtest()
+{
+	# test your configuration first to see what would have be deleted
+	if [ &quot;$1&quot; == &quot;-t&quot; ] || [ &quot;$1&quot; == &quot;--configtest&quot; ]; then
+		filter_unused_accounts
+		filter_old_accounts
+		filter_mam_messages --test
+
+		cat $junk_to_delete
+		exit
+	fi
+}
+
+###### FILTER SECTION ######
+filter_unused_accounts()
+{
+	# filter all registered but not logged in accounts older then $unused_accounts_timeframe
+	prosodyctl mod_list_inactive magicbroccoli.de &quot;$unused_accounts_timeframe&quot; event | grep registered | sed 's/registered//g' | sed -e 's/^/prosodyctl deluser /' &gt;&gt; $junk_to_delete
+}
+
+filter_old_accounts()
+{
+	# filter all inactive accounts older then $old_accounts_timeframe
+	prosodyctl mod_list_inactive magicbroccoli.de &quot;$old_accounts_timeframe&quot; | sed -e 's/^/prosodyctl deluser /' &gt;&gt; $junk_to_delete
+}
+
+filter_mam_messages()
+{
+	# only run this filter if $enable_mam_clearing is set to true
+	if [ &quot;$enable_mam_clearing&quot; = &quot;true&quot; ]; then
+		# catch config test
+		if [ &quot;$1&quot; = &quot;--test&quot; ]; then
+			# this is currently a workaround caused by the extrem slowness of prosodys own clearing mechanism
+			# filter all expired mod_mam messages from archive
+			echo &quot;SELECT * FROM prosody.prosodyarchive WHERE \`when\` &lt; UNIX_TIMESTAMP(DATE_SUB(curdate(),INTERVAL $mam_message_live));&quot; | mysql -u $prosody_db_user -p$prosody_db_password &amp;&gt;&gt; $junk_to_delete
+			return 1
+		fi
+		# this is currently a workaround caused by the extrem slowness of prosodys own clearing mechanism
+		# delete all expired mod_mam messages from archive
+		echo &quot;DELETE FROM prosody.prosodyarchive WHERE \`when\` &lt; UNIX_TIMESTAMP(DATE_SUB(curdate(),INTERVAL $mam_message_live));&quot; | mysql -u $prosody_db_user -p$prosody_db_password
+	fi
+}
+
+filter_expired_http_uploads()
+{
+	# currently a workaround as the mod_http_uploud is not removing the folder which holds the file
+	find $http_upload_path/* -maxdepth 0 -type d -mtime +$http_upload_expire | sed -e 's/^/rm -rf /' &gt;&gt; $junk_to_delete
+}
+</code></pre>
+
+</div>
+
+      <footer>
+  
+   
+  
+  <nav>
+    <ul class="pagination">
+      
+      <li class="page-item">
+        <a href="https://magicbroccoli.de/post/ccc-jabber-connection/" title="CCC Jabber Connection " class="page-link">
+          <span aria-hidden="true">&larr;</span>Previous
+        </a>
+      </li>
+       
+      
+      <li class="page-item">
+        <a href="https://magicbroccoli.de/post/prosody-db-index/" title="Prosody Datenbank Indizes" class="page-link">
+          Next
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+   
+  
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="pt-4">
+         <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "magicbroccoli-de" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a> 
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="sidebar">
+  
+
+  
+
+
+<div class="card card-block">
+  <h4 class="card-title">CATEGORIES</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/bash/">
+                bash
+            </a>
+            <span class="category-list-count">2</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/debian/">
+                debian
+            </a>
+            <span class="category-list-count">2</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/guide/">
+                guide
+            </a>
+            <span class="category-list-count">5</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/prosody/">
+                prosody
+            </a>
+            <span class="category-list-count">6</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/teamspeak/">
+                teamspeak
+            </a>
+            <span class="category-list-count">1</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/xmpp/">
+                xmpp
+            </a>
+            <span class="category-list-count">9</span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAGS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/cacert/">cacert</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/ccc/">ccc</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/chatsecure/">chatsecure</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/gajim/">gajim</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/maintenance/">maintenance</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/mariadb/">mariadb</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/mildly-usefull/">mildly-usefull</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/omemo/">omemo</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/omemo_all_access/">omemo_all_access</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/publish-options/">publish-options</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xep-0313/">xep-0313</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xep-0368/">xep-0368</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xep-0384/">xep-0384</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAG CLOUD</h4>
+  <p class="card-text">
+    
+        <a href="https://magicbroccoli.de/tags/cacert/" class="badge badge-primary">
+        cacert
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/ccc/" class="badge badge-primary">
+        ccc
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/chatsecure/" class="badge badge-primary">
+        chatsecure
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/gajim/" class="badge badge-primary">
+        gajim
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/maintenance/" class="badge badge-primary">
+        maintenance
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/mariadb/" class="badge badge-primary">
+        mariadb
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/mildly-usefull/" class="badge badge-primary">
+        mildly-usefull
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/omemo/" class="badge badge-primary">
+        omemo
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/omemo_all_access/" class="badge badge-primary">
+        omemo_all_access
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/publish-options/" class="badge badge-primary">
+        publish-options
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0313/" class="badge badge-primary">
+        xep-0313
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0368/" class="badge badge-primary">
+        xep-0368
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0384/" class="badge badge-primary">
+        xep-0384
+        </a>
+    
+  </p>
+</div>
+
+
+
+
+</div>
+
+      </div>
+  </div>
+</div>
+      <footer class="footer text-white bg-info">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-9">
+        <p class="text-xs-center m-a-0 p-a-0">
+          &copy; 2018 All rights reserved.
+        </p>
+        
+        <p class="text-xs-center  m-a-0 p-a-0">
+            
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/impressum/" class="text-capitalize no-decoration text-white">Impressum</a>
+              </span>
+              &middot; 
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/termsofuse/" class="text-capitalize no-decoration text-white">Terms of Use</a>
+              </span>
+              &middot; 
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/datenschutz/" class="text-capitalize no-decoration text-white">Privacy Policy</a>
+              </span>
+                
+        </p>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha256-GIa8Vh3sfESnVB2CN3rYGkD/MklvMq0lmITweQxE1qU=" crossorigin="anonymous"></script>
+
+<script src="https://magicbroccoli.de/assets/js/highlight.pack.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script id="dsq-count-scr" src="//magicbroccoli-de.disqus.com/count.js" async></script>
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.conversejs.org/css/converse.min.css">
+<script>
+  if (screen && screen.width > 960) {
+    document.write('<script type="text\/javascript" src="https://cdn.conversejs.org/dist/converse.min.js"><\/script>');
+  }
+</script>
+<script>
+  converse.initialize({
+    allow_chat_pending_contacts: true,
+    allow_non_roster_messaging: true,
+    allow_registration: false,
+    auto_list_rooms: true,
+    bosh_service_url: 'https://magicbroccoli.de/http-bind',
+    websocket_url: 'wss://magicbroccoli.de/xmpp-websocket',
+    csi_waiting_time: 25,
+    default_domain: 'magicbroccoli.de',
+    domain_placeholder: 'magicbroccoli.de',
+    message_carbons: true,
+    muc_domain: 'conference.magicbroccoli.de',
+    providers_link: 'https://magicbroccoli.de/xmpp',
+    registration_domain: 'magicbroccoli.de',
+    roster_groups: true,
+    show_controlbox_by_default: true,
+    show_send_button: true,
+  });
+</script>
+
+  </body>
+</html>
+

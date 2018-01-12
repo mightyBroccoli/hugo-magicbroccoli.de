@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Gajim Tutorial  &middot; Magic Broccoli</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="Guide on how to use Gajim" />
+
+<meta name="keywords" content="MagicBroccoli XMPP, XMPP, Gajim, Gajim Tutorial, ">
+
+
+<meta property="og:title" content="Gajim Tutorial  &middot; Magic Broccoli ">
+<meta property="og:site_name" content="Magic Broccoli"/>
+<meta property="og:url" content="https://magicbroccoli.de/page/tutorial/gajim/" />
+<meta property="og:locale" content="de-DE">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content="Guide on how to use Gajim"/>
+<meta property="og:article:published_time" content="2017-07-22T00:00:00Z" />
+<meta property="og:article:modified_time" content="2017-07-22T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="MagicBroccoli XMPP">
+    
+<meta property="og:article:tag" content="XMPP">
+    
+<meta property="og:article:tag" content="Gajim">
+    
+<meta property="og:article:tag" content="Gajim Tutorial">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="Gajim Tutorial" />
+<meta name="twitter:description" content="Guide on how to use Gajim" />
+<meta name="twitter:url" content="https://magicbroccoli.de/page/tutorial/gajim/" />
+<meta name="twitter:domain" content="https://magicbroccoli.de/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Gajim Tutorial",
+    "author": {
+      "@type": "Person",
+    },
+    "datePublished": "2017-07-22",
+    "description": "Guide on how to use Gajim",
+    "wordCount": 825
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://magicbroccoli.de/page/tutorial/gajim/" />
+
+<meta name="generator" content="Hugo 0.32.4" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+
+  <link rel="stylesheet" href="https://magicbroccoli.de/assets/css/style.css">
+  <link rel="stylesheet" href="https://magicbroccoli.de/assets/css/tomorrow-night.css">
+
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://magicbroccoli.de/favicon/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://magicbroccoli.de/favicon/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://magicbroccoli.de/favicon/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://magicbroccoli.de/favicon/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://magicbroccoli.de/favicon/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://magicbroccoli.de/favicon/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://magicbroccoli.de/favicon/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://magicbroccoli.de/favicon/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://magicbroccoli.de/favicon/apple-touch-icon-180x180.png" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-128.png" sizes="128x128" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-196x196.png" sizes="196x196" />
+<meta name="application-name" content="Magic Broccoli"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="/favicon/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="/favicon/mstile-150x150.png" />
+<meta name="msapplication-square310x310logo" content="/favicon/mstile-310x310.png" />
+
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-expand-md fixed-top site-navbar bg-info">
+    <a class="navbar-brand text-white" href="https://magicbroccoli.de/">Magic Broccoli</a>
+  <button class="navbar-toggler" 
+  type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2"
+    aria-expanded="false" aria-label="Toggle navigation">
+    &#9776;
+  </button>
+  <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
+    <ul class="nav navbar-nav ml-auto">
+       
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/">
+          <i class='fa fa-home fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Home</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/xmpp/">
+          <i class='fa fa-delicious'></i>
+          <span class="text-capitalize no-decoration text-white">XMPP</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/register/">
+          <i class='fa fa-plus' fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Register</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/page/tutorial/">
+          <i class='fa fa-question-circle' fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Tutorials</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/contact/">
+          <i class='fa fa-info-circle'></i>
+          <span class="text-capitalize no-decoration text-white">About me</span>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+<div class="container p-b-2">
+  <div class="row">
+    <div class="col-xs-12 col-md-9 post-container">
+      <div class="content pt-2">
+  
+
+<h2 id="1-account-registrierung">1. Account Registrierung</h2>
+
+<p>Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt.
+Speziell bei <strong>magicbroccoli.de</strong> sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist.
+Durch den Klick auf &ldquo;Registrieren&rdquo; akzeptieren Sie die <a href="https://magicbroccoli.de/termsofuse/">Nutzungsbedingungen</a> sowie <a href="https://magicbroccoli.de/datenschutz/">Datenschutzbestimmungen</a>.
+<img src="https://magicbroccoli.de/images/tutorials/webregister.png" alt="" /></p>
+
+<h2 id="2-installation">2. Installation</h2>
+
+<p>Gajim lässt sich unter Windows und Linux problemlos installieren. &ndash;&gt; <a href="https://gajim.org/?lang=de" target="_blank">Gajim Download</a></p>
+
+<h3 id="2-1-archlinux">2.1 Archlinux</h3>
+
+<p>Bei Archlinux ist die Installation einen Schritt länger, aber nicht sonderlich schwierig.
+Gajim lässt sich genauso über Pacman installieren, allerdings wird für das Omemo Plugin zusätzlich das Packet <a href="https://aur.archlinux.org/packages/gajim-plugin-omemo/" target="_blank">gajim-plugin-omemo</a> aus dem AUR benötigt.</p>
+
+<p>Für das Gesamte Archlinux Tutorial; <a href="https://wiki.archlinux.org/index.php/Gajim" target="_blank">Gajim Archlinux</a></p>
+
+<h2 id="3-client-login">3. Client Login</h2>
+
+<p>Der Client Login gestaltet sich ähnlich einfach. Sie wählen aus, dass Sie bereits einen Account besitzen, jenen aus Schritt 1 oder einen bestehenden.
+Diesen tragen sie wie hier in die Felder ein. <em>Dabei ersetzen sie die Daten natürlich mit ihren eigenen.</em>
+Sollten Ihre Daten korrekt sein folgt der eigentliche Login.
+Wenn Sie den Haken bei &ldquo;Mein Profil setzten, wenn ich mich verbinde&rdquo; setzen, bekommen Sie bei Ihrem ersten Login, die Möglichkeit Ihr Profil zu bearbeiten. Dies ist aber auch nachträglich noch möglich und ist 100% freiwillig und kann genauso komplett leer gelassen werden.</p>
+
+<p><img src="https://magicbroccoli.de/images/tutorials/gajim/clientlogin.png" width="100%">
+<img src="https://magicbroccoli.de/images/tutorials/gajim/logindata.png" width="50%"><img src="https://magicbroccoli.de/images/tutorials/gajim/login.png" width="50%"></p>
+
+<h2 id="4-plugins">4. Plugins</h2>
+
+<p>Unter Ändern &gt; Plugins lassen sich viele unterschiedliche Plugins installieren, die die Funktionalität von Gajim erweitern. Um alle Server Features effektiv nutzen zu können empfehle ich folgende Plugins zu installieren.</p>
+
+<h3 id="4-1-omemo">4.1 Omemo</h3>
+
+<p>Bei Omemo handelt es sich um eine Weiterentwicklung des OTR ( Off the record ) Verfahrens, welches mehrere Ressourcen pro Account oder sogar Gruppenkonversationen verschlüsselt abwickeln kann.
+Besonders ist, dass auch versendete Medien komplett verschlüsselt versendet werden.</p>
+
+<h3 id="4-2-http-upload">4.2 HTTP Upload</h3>
+
+<p>HTTP Upload ist eine Funktion des Medienversands, wie sie auch WhatsApp und Co verwenden. Dabei wird eine Mediendatei ( Bild, Video, etc. ) an den Server übertragen und dieser versendet anschließend einen Link zu der Datei an den/die Empfänger. Mithilfe dieses Plugins unterstützt Gajim dieses Verfahren.
+Wichtig zu beachten sind bei diesem Plugin die Serverrichtlinien. Meistens gibt es, wie auch hier, bestimmte Grenzen, wie groß eine einzelne versendete Datei sein kann oder wie viele Dateien pro Zeiteinheit versendet werden können.</p>
+
+<p><em>Besonders bei diesem Plugin ist, dass es den verschlüsselten Versand von Medien unterstützt, das heißt in einem Omemo verschlüsselten Chat sind mit HTTP Upload versendete Medien auch komplett verschlüsselt.</em></p>
+
+<p>Es ist darauf zu achten, dass das Plugin <a href="https://dev.gajim.org/gajim/gajim-plugins/wikis/ImagePlugin" target="_blank">Images</a> <strong>kein</strong> HTTP Upload Plugin ist, sondern die Datei über das ältere Peer 2 Peer System überträgt, welches viele mobile Geräte nicht unterstützen.</p>
+
+<h3 id="4-3-url-image-preview">4.3 URL Image Preview</h3>
+
+<p>Erweiternd zum HTTP Upload ist das URL Image Preview Plugin. Dieses ermöglicht es, Medien Dateien die über HTTP Upload versendet wurden, direkt im Nachrichtenverlauf anzuzeigen. Damit ist der Medien Versand mit diesen beiden Plugins ( HTTP Upload / URL Image Preview ) vollständig integriert.</p>
+
+<p><em>Besonders bei diesem Plugin ist, dass es das Öffnen von aesgcm:// Links unterstützt. Das heißt, dass Medien die über Omemo versendet wurden, verschlüsselt geöffnet werden können ohne das der User etwas dafür tun muss.</em></p>
+
+<h2 id="5-gruppenchats">5. Gruppenchats</h2>
+
+<p>Aktionen &gt; Chatraum betreten &gt; Chatraum betreten führt zu einem Fenster das Ihnen einige Möglichkeiten bietet.
+<img src="https://magicbroccoli.de/images/tutorials/gajim/muc.png" alt="" /></p>
+
+<ul>
+<li>Spitzname : Nickname unter dem Sie in dem Chatraum auftreten ( leer = username )</li>
+<li>Chatraum : Chatraum den Sie betreten möchten, wenn dieser nicht vorhanden ist wird dieser für Sie erstellt.</li>
+<li><em>Diesen Chatraum merken</em> : Sollten sie dieses Kästchen ankreuzen wird der Chatraum zu ihrer Kontaktliste hinzugefügt.</li>
+<li><em>Betrete diesen Chatraum automatisch&hellip;</em> : Nach dem Login betreten Sie diesen Raum automatisch.</li>
+<li>Server : Adresse unter welchen die Chaträume zu erreichen sind.
+*
+<em>Hinweis</em> : Dieser wird allerdings vom Server automatisch eingetragen, daher ist dort nichts weiter notwendig.</li>
+</ul>
+
+<h2 id="6-adhoc-befehle">6. Adhoc Befehle</h2>
+
+<p><img src="https://magicbroccoli.de/images/tutorials/gajim/howtoadhoc.png" width="40%"><img src="https://magicbroccoli.de/images/tutorials/gajim/adhoc.png" width="60%"></p>
+
+<p>Bei den Adhoc Befehlen handelt es sich um Befehle, die Ihr Client dem Server zur Ausführung geben kann, um bestimmte Funktionen zu erhalten. Wie das Befehlsmenu aufzurufen ist zeigen die Bilder.</p>
+
+<h3 id="6-1-invite-user">6.1 Invite User</h3>
+
+<p>Die Invite Funktion ist eine besondere Funktion des Servers. Sie erlaubt einen speziellen Invite Link zu generieren, die zu einer gesonderten Registrierung führt. Der eingeladene User ist nach dieser Registrierung automatisch auf der Freundesliste der Person die ihn eingeladen hat.</p>
+
+<h3 id="6-2-ping">6.2 Ping</h3>
+
+<p>Sendet einen Ping an den Server der mit einem Pong und der aktuellen Serverzeit antwortet.</p>
+
+<h3 id="6-3-get-uptime">6.3 Get Uptime</h3>
+
+<p>Zeigt die Zeit an die der Server online ist.</p>
+
+<h3 id="6-4-archive-settings">6.4 Archive Settings</h3>
+
+<p><strong>Default = OFF</strong>
+Die Archive Funktion ermöglicht es Nachrichten für 1 Monat auf dem Server zu speichern. Sollten sie sich auf einem anderen Gerät einloggen, welches <a href="https://xmpp.org/extensions/xep-0313.html" target="_blank">Message Archive Management</a> unterstützt sendet der Server Ihnen, ihre Chatverläufe von vor bis zu 1 Monat. Nach dieser Zeit werden die Nachrichten verworfen.</p>
+
+<p><em>Verschlüsselte Nachrichten werden natürlich auch verschlüsselt gespeichert.</em></p>
+
+<h3 id="6-5-search-settings">6.5 Search settings</h3>
+
+<p><strong>Default = OFF</strong>
+Diese Funktion sollte man sie aktivieren erlaubt es sie über die generelle Benutzersuche zu finden.
+<img src="https://magicbroccoli.de/images/tutorials/gajim/search settings.png" width="100%"></p>
+
+<h2 id="7-nützliche-links">7. Nützliche Links</h2>
+
+<p>Einige Webseiten die weitergehende Tutorials bzw. ausführlichere Tutorials zur Verfügung stellen.</p>
+
+<h4 id="allgemein">Allgemein</h4>
+
+<ul>
+<li><a href="https://datenschutzhelden.org/2017/07/12/daten-sparsame-xmpp-server/" target="_blank">Datenschutzhelden.org - XMPP Server explained</a></li>
+</ul>
+
+<h4 id="omemo">Omemo</h4>
+
+<ul>
+<li><a href="https://datenschutzhelden.org/2017/07/20/gajim-omemo-fuer-den-desktop/" target="_blank">Datenschutzhelden.org - Omemo für den Desktop</a></li>
+</ul>
+
+<p><a href="https://magicbroccoli.de/xmpp/">Zurück zur Übersicht</a></p>
+
+<hr />
+
+<p>Last Edit 25.07.17</p>
+
+</div>
+
+    </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="sidebar">
+  
+
+  
+
+
+<div class="card card-block">
+  <h4 class="card-title">CATEGORIES</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/bash/">
+                bash
+            </a>
+            <span class="category-list-count">2</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/debian/">
+                debian
+            </a>
+            <span class="category-list-count">2</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/guide/">
+                guide
+            </a>
+            <span class="category-list-count">5</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/prosody/">
+                prosody
+            </a>
+            <span class="category-list-count">6</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/teamspeak/">
+                teamspeak
+            </a>
+            <span class="category-list-count">1</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/xmpp/">
+                xmpp
+            </a>
+            <span class="category-list-count">9</span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAGS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/cacert/">cacert</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/ccc/">ccc</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/chatsecure/">chatsecure</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/gajim/">gajim</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/maintenance/">maintenance</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/mariadb/">mariadb</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/mildly-usefull/">mildly-usefull</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/omemo/">omemo</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/omemo_all_access/">omemo_all_access</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/publish-options/">publish-options</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xep-0313/">xep-0313</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xep-0368/">xep-0368</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xep-0384/">xep-0384</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAG CLOUD</h4>
+  <p class="card-text">
+    
+        <a href="https://magicbroccoli.de/tags/cacert/" class="badge badge-primary">
+        cacert
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/ccc/" class="badge badge-primary">
+        ccc
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/chatsecure/" class="badge badge-primary">
+        chatsecure
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/gajim/" class="badge badge-primary">
+        gajim
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/maintenance/" class="badge badge-primary">
+        maintenance
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/mariadb/" class="badge badge-primary">
+        mariadb
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/mildly-usefull/" class="badge badge-primary">
+        mildly-usefull
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/omemo/" class="badge badge-primary">
+        omemo
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/omemo_all_access/" class="badge badge-primary">
+        omemo_all_access
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/publish-options/" class="badge badge-primary">
+        publish-options
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0313/" class="badge badge-primary">
+        xep-0313
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0368/" class="badge badge-primary">
+        xep-0368
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0384/" class="badge badge-primary">
+        xep-0384
+        </a>
+    
+  </p>
+</div>
+
+
+
+
+</div>
+
+      </div>
+  </div>
+</div>
+      <footer class="footer text-white bg-info">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-9">
+        <p class="text-xs-center m-a-0 p-a-0">
+          &copy; 2018 All rights reserved.
+        </p>
+        
+        <p class="text-xs-center  m-a-0 p-a-0">
+            
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/impressum/" class="text-capitalize no-decoration text-white">Impressum</a>
+              </span>
+              &middot; 
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/termsofuse/" class="text-capitalize no-decoration text-white">Terms of Use</a>
+              </span>
+              &middot; 
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/datenschutz/" class="text-capitalize no-decoration text-white">Privacy Policy</a>
+              </span>
+                
+        </p>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha256-GIa8Vh3sfESnVB2CN3rYGkD/MklvMq0lmITweQxE1qU=" crossorigin="anonymous"></script>
+
+<script src="https://magicbroccoli.de/assets/js/highlight.pack.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script id="dsq-count-scr" src="//magicbroccoli-de.disqus.com/count.js" async></script>
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.conversejs.org/css/converse.min.css">
+<script>
+  if (screen && screen.width > 960) {
+    document.write('<script type="text\/javascript" src="https://cdn.conversejs.org/dist/converse.min.js"><\/script>');
+  }
+</script>
+<script>
+  converse.initialize({
+    allow_chat_pending_contacts: true,
+    allow_non_roster_messaging: true,
+    allow_registration: false,
+    auto_list_rooms: true,
+    bosh_service_url: 'https://magicbroccoli.de/http-bind',
+    websocket_url: 'wss://magicbroccoli.de/xmpp-websocket',
+    csi_waiting_time: 25,
+    default_domain: 'magicbroccoli.de',
+    domain_placeholder: 'magicbroccoli.de',
+    message_carbons: true,
+    muc_domain: 'conference.magicbroccoli.de',
+    providers_link: 'https://magicbroccoli.de/xmpp',
+    registration_domain: 'magicbroccoli.de',
+    roster_groups: true,
+    show_controlbox_by_default: true,
+    show_send_button: true,
+  });
+</script>
+
+  </body>
+</html>
+
