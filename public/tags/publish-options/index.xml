@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publish Options on Magic Broccoli</title>
+    <link>https://magicbroccoli.de/tags/publish-options/</link>
+    <description>Recent content in Publish Options on Magic Broccoli</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-DE</language>
+    <copyright>All rights reserved.</copyright>
+    <lastBuildDate>Wed, 20 Dec 2017 10:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://magicbroccoli.de/tags/publish-options/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Omemo Complicance</title>
+      <link>https://magicbroccoli.de/post/omemo-complicance/</link>
+      <pubDate>Wed, 20 Dec 2017 10:00:00 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/omemo-complicance/</guid>
+      <description>Seit gestern ist auf meinem Server ein neues OMEMO Modul aktiviert. Dieses ermöglicht es OMEMO verschlüsselte Konversationen zu beginnen, ohne das dafür eine gegenseitige presence subscription bestehen muss. Desweiteren hat dies Auswirkungen auf Chaträume, da es nun möglich ist in einem Chatraum OMEMO zu aktivieren ohne das sich alle Parteien hinzugefügt haben.
+I wrote a small @prosodyim module that gives non-contacts access to your OMEMO keys. It’s a temporary work around until proper support for node configuration / publish-options comes around.</description>
+    </item>
+    
+    <item>
+      <title>Wir unterstützen Omemo</title>
+      <link>https://magicbroccoli.de/post/omemo-statement/</link>
+      <pubDate>Mon, 31 Jul 2017 13:00:00 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/omemo-statement/</guid>
+      <description>Update Herr Gultsch hat nun eine Erklärung in den Sourcecode von OMEMO.java des ComplianceTesters hinzugefügt. Außerdem fügte er in die Spalte XEP-0384: OMEMO Encryption ein Fragezeichen hinzu. Dieses führt zu der Erklärung im Sourcecode auf Github. Auch wenn dies wirklich nur ein kleiner Hinweis ist, danken wir Herrn Gultsch dennoch das er unserem Wunsch nachgekommen ist.
+This test checks for the availability of publish-options on the account’s PEP service. publish-options allows a client to efficiently change the access model of the OMEMO key material such that everyone can access it.</description>
+    </item>
+    
+  </channel>
+</rss>

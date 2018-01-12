@@ -13,11 +13,11 @@
     
     
     <item>
-      <title>Ca Bundle</title>
-      <link>https://magicbroccoli.de/tags/ca-bundle/</link>
+      <title>Cacert</title>
+      <link>https://magicbroccoli.de/tags/cacert/</link>
       <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/tags/ca-bundle/</guid>
+      <guid>https://magicbroccoli.de/tags/cacert/</guid>
       <description></description>
     </item>
     
@@ -31,20 +31,20 @@
     </item>
     
     <item>
-      <title>Cert Error</title>
-      <link>https://magicbroccoli.de/tags/cert-error/</link>
-      <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
+      <title>Chatsecure</title>
+      <link>https://magicbroccoli.de/tags/chatsecure/</link>
+      <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://magicbroccoli.de/tags/cert-error/</guid>
+      <guid>https://magicbroccoli.de/tags/chatsecure/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Guide</title>
-      <link>https://magicbroccoli.de/tags/guide/</link>
-      <pubDate>Thu, 07 Dec 2017 17:30:00 +0200</pubDate>
+      <title>Gajim</title>
+      <link>https://magicbroccoli.de/tags/gajim/</link>
+      <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://magicbroccoli.de/tags/guide/</guid>
+      <guid>https://magicbroccoli.de/tags/gajim/</guid>
       <description></description>
     </item>
     
@@ -67,38 +67,65 @@
     </item>
     
     <item>
-      <title>Mod_mam</title>
-      <link>https://magicbroccoli.de/tags/mod_mam/</link>
-      <pubDate>Thu, 07 Dec 2017 17:30:00 +0200</pubDate>
+      <title>Mildly Usefull</title>
+      <link>https://magicbroccoli.de/tags/mildly-usefull/</link>
+      <pubDate>Mon, 02 Oct 2017 13:30:00 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/tags/mod_mam/</guid>
+      <guid>https://magicbroccoli.de/tags/mildly-usefull/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Omemo</title>
       <link>https://magicbroccoli.de/tags/omemo/</link>
-      <pubDate>Mon, 31 Jul 2017 13:00:00 +0200</pubDate>
+      <pubDate>Wed, 20 Dec 2017 10:00:00 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/tags/omemo/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Prosody</title>
-      <link>https://magicbroccoli.de/tags/prosody/</link>
-      <pubDate>Thu, 07 Dec 2017 17:30:00 +0200</pubDate>
+      <title>Omemo_all_access</title>
+      <link>https://magicbroccoli.de/tags/omemo_all_access/</link>
+      <pubDate>Wed, 20 Dec 2017 10:00:00 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/tags/prosody/</guid>
+      <guid>https://magicbroccoli.de/tags/omemo_all_access/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Xmpp</title>
-      <link>https://magicbroccoli.de/tags/xmpp/</link>
+      <title>Publish Options</title>
+      <link>https://magicbroccoli.de/tags/publish-options/</link>
+      <pubDate>Wed, 20 Dec 2017 10:00:00 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/tags/publish-options/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xep 0313</title>
+      <link>https://magicbroccoli.de/tags/xep-0313/</link>
+      <pubDate>Thu, 07 Dec 2017 17:30:00 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/tags/xep-0313/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xep 0368</title>
+      <link>https://magicbroccoli.de/tags/xep-0368/</link>
       <pubDate>Sun, 06 Aug 2017 15:00:00 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/tags/xmpp/</guid>
+      <guid>https://magicbroccoli.de/tags/xep-0368/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xep 0384</title>
+      <link>https://magicbroccoli.de/tags/xep-0384/</link>
+      <pubDate>Wed, 20 Dec 2017 10:00:00 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/tags/xep-0384/</guid>
       <description></description>
     </item>
     

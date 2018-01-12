@@ -7,50 +7,58 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
     <copyright>All rights reserved.</copyright>
-    <lastBuildDate>Thu, 07 Dec 2017 17:30:00 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 20 Dec 2017 10:00:00 +0200</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Omemo Complicance</title>
+      <link>https://magicbroccoli.de/post/omemo-complicance/</link>
+      <pubDate>Wed, 20 Dec 2017 10:00:00 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/omemo-complicance/</guid>
+      <description>Seit gestern ist auf meinem Server ein neues OMEMO Modul aktiviert. Dieses ermöglicht es OMEMO verschlüsselte Konversationen zu beginnen, ohne das dafür eine gegenseitige presence subscription bestehen muss. Desweiteren hat dies Auswirkungen auf Chaträume, da es nun möglich ist in einem Chatraum OMEMO zu aktivieren ohne das sich alle Parteien hinzugefügt haben.
+I wrote a small @prosodyim module that gives non-contacts access to your OMEMO keys. It’s a temporary work around until proper support for node configuration / publish-options comes around.</description>
+    </item>
+    
+    <item>
       <title>Prosody Datenbank Indizes</title>
-      <link>https://magicbroccoli.de/post/prosodydb_index/</link>
+      <link>https://magicbroccoli.de/post/prosody-db-index/</link>
       <pubDate>Thu, 07 Dec 2017 17:30:00 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/post/prosodydb_index/</guid>
-      <description>Prosody bietet die Möglichkeit persistente Userdaten bzw. seit 0.10 MAM Daten in einer MySQL Datenbank zu sichern. Indizes in solchen Datenbanken, können Prozesse enorm beschleunigen. Bei Prosody werden diese, bei der ersten Installation Prosodys eingefügt.
-Allerdings werden Indizes, die nachträglich, z.B. in aktuelleren Patches, hinzugefügt werden, nur in Datenbanken eingetragen die neu erstellt werden.
-Damit haben ältere Datenbanken einen enormen Nachteil da aktuelle Indizes fehlen.
-Welche Indizes stehen aktuell zur Verfügung?</description>
+      <guid>https://magicbroccoli.de/post/prosody-db-index/</guid>
+      <description>Prosody bietet die Möglichkeit persistente Userdaten bzw. seit 0.10 auch MAM Archive in einer MySQL Datenbank zu sichern. Prosody erstellt beim ersten Laden des Moduls alle relevanten Datenbanken sowie Indizes. Allerdings werden Indizes, die nachträglich, z.B. in aktuelleren Patches, hinzugefügt werden, nur in Datenbanken eingetragen, die neu erstellt werden. Damit fehlen in den allermeisten älteren Datenbanken die aktuellen Indizes.
+Notwendigkeit von Indizes Indizes können Datenbankabfragen enorm beschleunigen, da sie es bei einer Abfrage ermöglichen eine deutlich kleinere Anzahl an Zeilen zu vergleichen.</description>
     </item>
     
     <item>
       <title>Prosody housekeeping</title>
-      <link>https://magicbroccoli.de/post/prosody_housekeeping/</link>
+      <link>https://magicbroccoli.de/post/prosody-housekeeping/</link>
       <pubDate>Mon, 02 Oct 2017 13:30:00 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/post/prosody_housekeeping/</guid>
+      <guid>https://magicbroccoli.de/post/prosody-housekeeping/</guid>
       <description>Grundidee Ich habe mich in den letzen paar Tagen damit beschäftigt Dinge rund um den Prosody Server zu automatisieren. Daher möchte ich hier einfach mal meine Lösung einiger kleiner Probleme vorstellen.
 Problem Das grundsätzliche Problem, welches so ziemlich alle Server mit offener Registrierung teilen, sind Zombie Accounts. Sprich Accounts die erstellt wurden, allerdings nie verwendet werden. Oder Accounts die erstellt wurden und irgendwann von ihrem Nutzer/in nicht mehr verwendet werden.</description>
     </item>
     
     <item>
       <title>CCC Jabber Connection</title>
-      <link>https://magicbroccoli.de/post/cert-error-jabber-ccc/</link>
+      <link>https://magicbroccoli.de/post/ccc-jabber-connection/</link>
       <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/post/cert-error-jabber-ccc/</guid>
-      <description>Einleitung Der XMPP Server vom Chaos Computer Club wird unter einem Zertifikat von cacert.org betrieben. Das root Zertifikat wird allerdings von den meisten Browsern / Betriebssystemen nicht anerkannt. Dies stellt für die Erreichbarkeit des XMPP Servers ein Problem da.
-Speziell Server die auf Datenschutz und Sicherheit ausgelegt wollen keine unverschlüsselten Verbindung.Im Folgenden möchte daher ich aufzeigen, welche Änderungen notwendig wären, um Debian mit den entsprechenden Zertifikaten auszustatten.
-Betroffen sind damit speziell Prosody Server, die folgende Konfiguration eingestellt haben.</description>
+      <guid>https://magicbroccoli.de/post/ccc-jabber-connection/</guid>
+      <description>Update Die techniche Leitung des CCC Jabber Servers hat sich nun auch dazu entscheiden auf gültige Zertifikate umzusteigen. Daher ist dieser Blogpost überflüssig.
+Einleitung Der XMPP Server vom Chaos Computer Club wird unter einem Zertifikat von cacert.org betrieben. Das root Zertifikat wird allerdings von den meisten Browsern / Betriebssystemen nicht anerkannt. Dies stellt für die Erreichbarkeit des XMPP Servers ein Problem da.
+Speziell Server die auf Datenschutz und Sicherheit ausgelegt wollen keine unverschlüsselten Verbindung.</description>
     </item>
     
     <item>
       <title>Datenbank Zusammenbruch</title>
-      <link>https://magicbroccoli.de/post/database_failure/</link>
+      <link>https://magicbroccoli.de/post/database-failure/</link>
       <pubDate>Fri, 25 Aug 2017 23:30:00 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/post/database_failure/</guid>
+      <guid>https://magicbroccoli.de/post/database-failure/</guid>
       <description>Bekanntmachung Heute, am 25 August, kam es zu dem bisher größten Ausfall meiner Services. Leider ist aufgrund eines Fehler, der mir bisher nicht weiter bekannt ist, eine Platte des Server ausgefallen. Die Datenbank hat das ganze nicht sonderlich gut aufgenommen.
 Ich fahre regelmäßig Backups und die binlogs waren auch wiederherstellbar, daher kam es zu keinem Datenverlust. Allerdings musste ich die Datenbank neu aufbauen, was sich als zeitintensiv herausstellte.
 Gegen 23:30, nach fast 5 Stunden, ist es mir nun gelungen alle Datenbanken wiederherzustellen und alle Services vollständig wieder in Betrieb zu nehmen.</description>
@@ -58,10 +66,10 @@ Gegen 23:30, nach fast 5 Stunden, ist es mir nun gelungen alle Datenbanken wiede
     
     <item>
       <title>XMPP over TLS Tutorial</title>
-      <link>https://magicbroccoli.de/post/xmpp-over-tls/</link>
+      <link>https://magicbroccoli.de/post/xmpp-over-tls-guide/</link>
       <pubDate>Sun, 06 Aug 2017 15:00:00 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/post/xmpp-over-tls/</guid>
+      <guid>https://magicbroccoli.de/post/xmpp-over-tls-guide/</guid>
       <description>How to setup XEP-0368 Was ist XEP-0368 Bei XEP-0368 handelt es sich um ein Verfahren welches XMPP-Clients ermöglicht über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken. Dies ist äußerst nützlich, falls die regulären Verbindungswege blockiert sind zb. durch Firewalls.
 XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method of discovering how to connect to an XMPP server. This XEP extends that to include new xmpps-client/xmpps-server SRV records pointing to direct TLS ports and combine priorities and weights as if they were a single SRV record similar to RFC 6186.</description>
     </item>
@@ -78,10 +86,10 @@ This test checks for the availability of publish-options on the account’s PEP 
     
     <item>
       <title>TeamSpeak XMPP Push</title>
-      <link>https://magicbroccoli.de/post/ts-xmpp-script/</link>
+      <link>https://magicbroccoli.de/post/ts-xmpp-push/</link>
       <pubDate>Thu, 22 Jun 2017 14:15:25 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/post/ts-xmpp-script/</guid>
+      <guid>https://magicbroccoli.de/post/ts-xmpp-push/</guid>
       <description>Idee Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen.
 Für genau dieses Problem habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP sendet.
 Nutzen IMHO gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung schnellstmöglichst sehr praktisch ist. Viele Server unterstützen eine Reihe von &amp;ldquo;Automatischen Moderationen&amp;rdquo;, trotzdem sollten User nicht in der Lage sein sich Gruppen zuzuweisen.</description>
