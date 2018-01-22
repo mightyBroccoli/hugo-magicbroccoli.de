@@ -7,21 +7,23 @@ author = "nico"
 keywords = [ "Tutorial", "Debian", "XMPP" ]
 +++
 # Tutorial Übersicht
-Auf dieser Seite möchte ich einige Tutorials sammeln, die teils von mir selbst stammen, oder aber von außerhalb kommen. Einige Clients sind für Anfänger anfangs nicht einfach zu durchblicken, dabei sollen diese Tutorials helfen.
-<br>Wer dazu beitragen möchte, kann dies gerne via PullRequest auf [Github](https://github.com/mightyBroccoli/hugo-magicbroccoli.de) tun.
+Auf dieser Seite möchte ich einige Tutorials sammeln, teilweise stammen diese von mir selbst, oder aber von außerhalb. Einige Clients sind für XMPP-Anfänger anfangs nicht einfach zu durchblicken, dabei sollen diese Tutorials helfen.
+<br>Wer dazu beitragen möchte, kann dies gerne via [Pull Request](https://github.com/mightyBroccoli/hugo-magicbroccoli.de/pulls) tun.
 
 ## Windows/ Linux
-- [Gajim](/page/tutorial/gajim)
+- [Gajim](/page/tutorial_gajim)
 
 ## Android
 - [Conversations](https://www.jabber.de/clients/android-ios/conversations-guide)
-- [Chatsecure](/page/tutorial/chatsecure)
+- [Chatsecure](/page/tutorial_chatsecure)
 
 ## iPhone
-- [Chatsecure](/page/tutorial/chatsecure)
+- [Chatsecure](/page/tutorial_chatsecure)
 
 ## Prosody
-- [XMPP over TLS](/post/xmpp-over-tls/)<br>
+- [XMPP over TLS](/post/xmpp-over-tls-guide/)<br>
+- [Prosody Datenbank Indizes](/post/prosody-db-index/)<br>
+- [Prosody Housekeeping](/post/prosody-housekeeping/)<br>
 
 ---
 
@@ -42,5 +44,4 @@ Einige Webseiten die weitergehende Tutorials bzw. ausführlichere Tutorials zur 
 [Zurück zur Übersicht](/xmpp/)
 
 - - -
-
-Last Edit 25.07.17
+Last Edit 22.01.18

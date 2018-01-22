@@ -13,13 +13,12 @@ banner = ""
 slug = "ts xmpp push"
 +++
 ## Idee
-Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen.<br>
-Für genau dieses Problem habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP sendet.
+Die Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft mit einem Server verbunden sein kann, um nach dem Rechten zu sehen.<br>
+Dieses Problem versuche ich hiermit anzugehen. Dafür durchsucht dieses nach verschiedenen Regeln die Logfiles, gefundene Zeilen werden anschließend an definierte Kontakte per XMPP sendet.
 
-## Nutzen
-**IMHO** gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung schnellstmöglichst sehr praktisch ist.
-Viele Server unterstützen eine Reihe von "Automatischen Moderationen", trotzdem sollten User nicht in der Lage sein sich Gruppen zuzuweisen. Diese kurze Benachrichtigung sagt dem Admin/ Moderator, wer und welche Gruppe betroffen ist.<br>
-Je nach Häufigkeit der Ausführung könnte die Benachrichtigung innerhalb von Sekunden gepushed werden.
+### Nutzen
+**IMHO** gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung sehr praktisch ist. Viele Server unterstützen eine Reihe von "Automatischen Moderationen", dennoch finden User Möglichkeiten diese zu behindern oder sogar zu umgehen. Durch eine kurze Benachrichtigung ist es dem Admin/ Moderator möglich zu überblicken, was betroffen ist und ob sofortiges handeln notwendig ist.<br>
+Je nach Häufigkeit der Ausführung können die Benachrichtigung innerhalb von Sekunden gepushed werden.
 
 ```
 ---- Group change ----
@@ -53,19 +52,18 @@ Das Projekt ist gehostet auf [Github](https://github.com/mightyBroccoli/logwatch
 Leider besteht mit Debian Stretch ein Problem mit perl wodurch *sendxmpp*, das xmpp cli Modul des Skripts nicht mehr funktioniert. Leider kann ich da im Moment erst mal nichts machen, aber ich repariere das Skipt für Debian Stretch, sobald es möglich ist.
 
 -----
-
 Update : 28.07.2017 Debian 9 Perl5 Problematik
-```
+{{< highlight bash >}}
 Use of uninitialized value in numeric eq (==) at /usr/share/perl5/XML/Stream.pm line 631.
-```
+{{< /highlight >}}
 Ich hab mit etwas debugging herausgefunden, welche Zeilen geändert werden müssen, um perl-xmlstream wieder zu fixxen.
 Die Datei `/usr/share/perl5/XML/Stream.pm` müsste geändert werden. (Pfad kann abweichen je nach OS)
 Mit nano lässt sich bequem nach der Zeile suchen, mit Shift + W. Danach ändert man Zeile 631.
-```
+{{< highlight perl >}}
 $self->{SIDS}->{default}->{ssl_ca_path} = '';
-```
+{{< /highlight >}}
 zu
-```
+{{< highlight perl >}}
 $self->{SIDS}->{default}->{ssl_ca_path} = '/etc/ssl/certs';
-```
+{{< /highlight >}}
 Nach dieser Änderung hat sich das Problem eingestellt und sendxmpp funktionierte wieder genauso tadellos wie zuvor.

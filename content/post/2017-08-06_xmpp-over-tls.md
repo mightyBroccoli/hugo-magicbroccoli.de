@@ -52,10 +52,10 @@ xmpps.example.com. 18000 IN A $zweite_ip_adresse
 ### 2. Prosody Server Konfiguration
 Für den Verbindungsaufbau muss in der Prosody Konfiguration *legacy_ssl_ports* definiert werden, damit das `http` Modul auch auf dem gewählten Port lauscht. Das Modul *mod_legacyauth* wird hierfür allerdings nicht benötigt.
 Ein Neustart des Prosody Services ist nach dem setzen dieser Einstellung zwingend **erforderlich**.
-```
+{{< highlight lua >}}
 -- XEP-0368: SRV records for XMPP over TLS
 legacy_ssl_ports = { 5223 }
-```
+{{< /highlight >}}
 
 ### 3. SSL Zertifikat ( *optional* )
 Hier wäre der Zeitpunkt das bestehende Zertifikat für `example.com` auf `xmpps.example.com` auszuweiten, um keinen `common name error` zu erzeugen. Dieses erweiterte Zertifikat ist dem Prosody zur Verfügung zu stellen. Die Ausstellung eines neuen LetEncrypt Zertifikats ist nach [Schritt 5: Webserver](#5-webserver) deutlich einfacher.
@@ -73,25 +73,25 @@ Für die Antwort des Prosody Servers wird allerdings eine zweite Regel benötigt
 *Sollte bei der Prosody Konfiguration ein anderer Port gewählt werden als der default Port, muss dieser natürlich in den iptables Regeln ausgetauscht werden.*
 
 In diesem Beispiel ist erste_ip, jene IP-Adresse auf der auch der httpd Server lauscht. zweite_ip bezeichnet somit die zweite Adresse speziell für XMPP over TLS.
-```#!/bin/bash
+{{< highlight bash >}}
 # PREROUTING
 iptables -t nat -A PREROUTING -d zweite_ip -p tcp --dport 443 -j DNAT --to-destination erste_ip:5223
 
 # POSTROUTING
 iptables -t nat -A POSTROUTING -p tcp -d  zweite_ip --dport 5223 -j SNAT --to-source erste_ip:5223
-```
+{{< /highlight >}}
 
 Abschließend sollten diese Regeln mit `iptables-save` gespeichert werden, damit diese bei einem reboot erneut angewendet werden.
-```#!/bin/bash
+{{< highlight bash >}}
 iptables-save > /etc/iptables/rules.v4
-```
+{{< /highlight >}}
 
 ### 5. Webserver
 Die Konfiguration des Webserver ist grundsätzlich nicht notwendig, macht das testen der vorgenommenen Änderungen, sowie erzeugen bzw. erweitern bestehender Zertifikate allerdings bedeutend einfacher.<br>
 Im Folgenden habe ich die simpelste Möglichkeit eins vHosts angenommen. Dabei ist als Beispiel immer example.de verwendet worden.
 
-##### nginx 
-```
+##### nginx
+{{< highlight nginx >}}
 server {
 	listen zweite_ip:80;
 	server_name xmpps.example.de;
@@ -107,9 +107,9 @@ server {
     	return 404;
 	}
 }
-```
+{{< /highlight >}}
 ##### apache2
-```
+{{< highlight apache >}}
 <VirtualHost zweite_ip:80>
 	ServerName xmpps.example.de
 
@@ -117,24 +117,27 @@ server {
 	Redirect / https://example.de;
 
 </VirtualHost>
-```
+{{< /highlight >}}
+
 Sind diese Änderungen vorgenommen, ist es leicht möglich via LetsEncrypt ein Zertifikat für die SubDomain auzustellen. Zusätzlich dazu ist es nun möglich direkt zu testen ob XMPP over TLS funktioniert.
 
 ## Abschluss
 Sollten alle diese Schritte erfolgreich abgeschlossen sein, ist es sehr leicht möglich zu testen ob alles so funktioniert wie es soll. Hierfür lässt sich `curl -i` verwenden.
-```#!/bin/bash
+{{< highlight bash >}}
 curl -i https://xmpps.example.com
-```
+{{< /highlight >}}
+
 **Hinweis**: Falls es an diesem Endpunkt keine gültigen Zertifikate gibt, sollte hier der Befehl `curl -ik` gewählt werden, um den TLS Error zu ignorieren.
 
 Als Ergebnis sollte ein *xml stream error* zu sehen sein, **ohne** Apache2 / nginx header.
 
-```xml
+{{< highlight xml >}}
 <?xml version='1.0'?>
 <stream:stream xmlns:stream='http://etherx.jabber.org/streams' xml:lang='en' xmlns='jabber:client'>
 	<stream:error>
 		<not-well-formed xmlns='urn:ietf:params:xml:ns:xmpp-streams'/>
 	</stream:error>
 </stream:stream>
-```
+{{< /highlight >}}
+
 <span style="color:red">**Hinweis**:</span> Für das Testen via curl sollte eine andere Maschine gewählt werden. Ausgeführt auf der gleichen Maschine durchlaufen die Pakete nicht die PREROUTING bzw. POSTROUTING Kette, daher wird die Verbindung abgelehnt.

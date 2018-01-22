@@ -11,9 +11,8 @@ tags = [
 categories = [ "XMPP", "Guide" ]
 +++
 ## 1. Account Registrierung
-Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt.
-Speziell bei **magicbroccoli.de** sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist.
-Durch den Klick auf "Registrieren" akzeptieren Sie die [Nutzungsbedingungen](/termsofuse/) sowie [Datenschutzbestimmungen](/datenschutz/).
+Zuerst muss sich ein Account erstellt werden. Hierfür ist die Web Registrierung der Anlaufpunkt.
+Speziell für **magicbroccoli.de** sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist. Durch den Klick auf "Registrieren" akzeptieren Sie die [Nutzungsbedingungen](/termsofuse/) sowie [Datenschutzbestimmungen](/datenschutz/).
 ![](/images/tutorials/webregister.png)
 
 ## 2. Installation
@@ -21,9 +20,15 @@ Gajim lässt sich unter Windows und Linux problemlos installieren. --> [Gajim Do
 
 ### 2.1 Archlinux
 Bei Archlinux ist die Installation einen Schritt länger, aber nicht sonderlich schwierig.
-Gajim lässt sich genauso über Pacman installieren, allerdings wird für das Omemo Plugin zusätzlich das Packet [gajim-plugin-omemo](https://aur.archlinux.org/packages/gajim-plugin-omemo/) aus dem AUR benötigt.
+Gajim lässt sich genauso über Pacman installieren `sudo pacman -S gajim`. Allerdings wird für das Omemo Plugin zusätzlich das Packet [gajim-plugin-omemo](https://aur.archlinux.org/packages/gajim-plugin-omemo/) aus dem Arch AUR benötigt.
 
-Für das Gesamte Archlinux Tutorial; [Gajim Archlinux](https://wiki.archlinux.org/index.php/Gajim)
+Ein deutlich ausfürlicheres Tutorial finden Sie hier: [Gajim Archlinux](https://wiki.archlinux.org/index.php/Gajim)
+
+### 2.2 Ubuntu/Debian
+Je nach Wahl der Apt Repositories ist möglich und empfehlenswert Gajim direkt zu installieren.
+Hierfür wird meistens ein Administrator oder ein Benutzer mit Zugriff auf `sudo` benötigt. Anschließend lässt sich mit `sudo apt-get install gajim` Gajim installieren.
+
+Ein deutlich ausfürlicheres Tutorial finden Sie hier: [Gajim Ubuntu/Debian](https://wiki.ubuntuusers.de/Gajim/)
 
 ## 3. Client Login
 Der Client Login gestaltet sich ähnlich einfach. Sie wählen aus, dass Sie bereits einen Account besitzen, jenen aus Schritt 1 oder einen bestehenden.
@@ -34,24 +39,24 @@ Wenn Sie den Haken bei "Mein Profil setzten, wenn ich mich verbinde" setzen, bek
 <img src="/images/tutorials/gajim/clientlogin.png" width="100%">
 <img src="/images/tutorials/gajim/logindata.png" width="50%"><img src="/images/tutorials/gajim/login.png" width="50%">
 ## 4. Plugins
-Unter Ändern > Plugins lassen sich viele unterschiedliche Plugins installieren, die die Funktionalität von Gajim erweitern. Um alle Server Features effektiv nutzen zu können empfehle ich folgende Plugins zu installieren.
+Viele Funktionalitäten lassen sich bei Gajim mithilfe von Plugins stark erweitern. Unter Ändern > Plugins lassen sich unterschiedlichste Plugins installieren. Um alle Server Features effektiv nutzen zu können, empfehle ich mindestens folgende Plugins zu installieren.
 
 ### 4.1 Omemo
-Bei Omemo handelt es sich um eine Weiterentwicklung des OTR ( Off the record ) Verfahrens, welches mehrere Ressourcen pro Account oder sogar Gruppenkonversationen verschlüsselt abwickeln kann.
-Besonders ist, dass auch versendete Medien komplett verschlüsselt versendet werden.
+Bei [Omemo](https://conversations.im/omemo/) handelt es sich um eine Weiterentwicklung des OTR ([Off the record](https://wikipedia.org/wiki/Off-the-Record_Messaging)) Verfahrens. Besonders hierbei ist, dass mehrere Ressourcen pro Account und auch Gruppenkonversationen verschlüsselt werden können. Zusätzlich dazu können auch verschickte Medien verschlüsselt versendet werden.
 
 ### 4.2 HTTP Upload
-HTTP Upload ist eine Funktion des Medienversands, wie sie auch WhatsApp und Co verwenden. Dabei wird eine Mediendatei ( Bild, Video, etc. ) an den Server übertragen und dieser versendet anschließend einen Link zu der Datei an den/die Empfänger. Mithilfe dieses Plugins unterstützt Gajim dieses Verfahren.
-Wichtig zu beachten sind bei diesem Plugin die Serverrichtlinien. Meistens gibt es, wie auch hier, bestimmte Grenzen, wie groß eine einzelne versendete Datei sein kann oder wie viele Dateien pro Zeiteinheit versendet werden können.
+HTTP Upload ist eine Funktion des Medienversands, wie sie auch WhatsApp und Co verwenden. Dabei wird eine Mediendatei ( Bild, Video, etc. ) an den Server übertragen und dieser versendet anschließend einen Link zu der Datei an den/die Empfänger.
 
-*Besonders bei diesem Plugin ist, dass es den verschlüsselten Versand von Medien unterstützt, das heißt in einem Omemo verschlüsselten Chat sind mit HTTP Upload versendete Medien auch komplett verschlüsselt.*
+Bei diesem Plugin sind die Serverrichtlinien zu beachten. Meistens gibt es vorgegebene Grenzen, wie groß eine einzelne versendete Datei sein darf bzw wie viele Dateien pro Zeiteinheit versendet werden können.
 
-Es ist darauf zu achten, dass das Plugin [Images](https://dev.gajim.org/gajim/gajim-plugins/wikis/ImagePlugin) **kein** HTTP Upload Plugin ist, sondern die Datei über das ältere Peer 2 Peer System überträgt, welches viele mobile Geräte nicht unterstützen.
+*Wie [4.1](#4-1-omemo) erwähnt lässt dieses Plugin einen verschlüsselten Upload eines versendeten Mediums zu. Damit sind die versendeten Dateien, nach den Spezifikationen von Omemo nur für die*
+
+**Wichtig** : Das Plugin [Images](https://dev.gajim.org/gajim/gajim-plugins/wikis/ImagePlugin) verwendet **kein** HTTP Upload. Hierbei wird die Datei über das ältere Peer 2 Peer System übertragen. Viele mobile Geräte unterstützen diese Art der Übertragung nicht.
 
 ### 4.3 URL Image Preview
-Erweiternd zum HTTP Upload ist das URL Image Preview Plugin. Dieses ermöglicht es, Medien Dateien die über HTTP Upload versendet wurden, direkt im Nachrichtenverlauf anzuzeigen. Damit ist der Medien Versand mit diesen beiden Plugins ( HTTP Upload / URL Image Preview ) vollständig integriert.
+Um die volle Funktionalität von HTTP Upload auszuschöpfen kann das [URL Image Preview Plugin](https://dev.gajim.org/gajim/gajim-plugins/wikis/UrlImagePreviewPlugin) verwendet werden. Dieses ermöglicht Medien Dateien, die über HTTP Upload versendet wurden, direkt im Nachrichtenverlauf anzuzeigen. Damit ist der Medien Versand/Empfang mit diesen beiden Plugins ( HTTP Upload / URL Image Preview ) vollständig integriert.
 
-*Besonders bei diesem Plugin ist, dass es das Öffnen von aesgcm:// Links unterstützt. Das heißt, dass Medien die über Omemo versendet wurden, verschlüsselt geöffnet werden können ohne das der User etwas dafür tun muss.*
+*Besonders nützlich ist, dass dieses Plugin das  Öffnen von aesgcm:// Links unterstützt. Damit können auch mit Omemo verschlüsselt übertragene Medien direkt angezeigt werden.*
 
 ## 5. Gruppenchats
 Aktionen > Chatraum betreten > Chatraum betreten führt zu einem Fenster das Ihnen einige Möglichkeiten bietet.
@@ -102,4 +107,4 @@ Einige Webseiten die weitergehende Tutorials bzw. ausführlichere Tutorials zur 
 [Zurück zur Übersicht](/xmpp/)
 
 - - -
-Last Edit 25.07.17
+Last Edit 22.01.18

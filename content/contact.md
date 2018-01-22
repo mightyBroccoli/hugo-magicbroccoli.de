@@ -5,7 +5,6 @@ author = "nico"
 date = "2017-06-21"
 description = "How to contact me"
 keywords = [ "contact", "Kontakt","about me" ]
-url = "contact"
 +++
 #### mail
 <i class="fa fa-envelope"></i> [nico(at)magicbroccoli.de](mailto:nico(at)magicbroccoli.de)

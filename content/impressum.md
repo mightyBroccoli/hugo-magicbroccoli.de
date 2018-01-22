@@ -4,7 +4,6 @@ title = "Impressum"
 date = "2017-06-21"
 description = "Impressum"
 keywords = [ "Impressum", "imprint" ]
-url = "impressum"
 +++
 ## Impressum
 Angaben gemäß § 5 TMG
@@ -12,9 +11,6 @@ Angaben gemäß § 5 TMG
 Nico Wellpott<br>
 Scheideweg 157<br>
 26127 Oldenburg
-
-##### Vertreten durch:
-Nico Wellpott
 
 ##### Kontakt:
 Telefon: 0441 93652965<br>

@@ -27,9 +27,9 @@ Für den Betrieb sind die Indizes daher von größerer Wichtigkeit. Bei wachsend
 Um herauszufinden welche Indizes im Moment überhaupt vorhanden sind, lässt sich dieser Query verwenden.<br>
 In diesem Beispiel verwende ich **prosody.prosodyarchive**. Der Query ist für die jeweils persönlichen Namen der Tabellen / Datenbanken anzupassen.
 
-```sql
+{{< highlight sql >}}
 SHOW INDEX FROM prosody.prosodyarchive;
-```
+{{< /highlight >}}
 <img src="/images/prosodydb/prosodydb_index.png" width="100%">
 
 Sollten alle Indizes wie auf dem Bild vorhanden sein ist kein weiteres Zutun notwendig. Ist allerdings nur *prosodyarchive_index* gelistet, fehlen die zwei neuen Indizes `prosodyarchive_with` sowie `prosodyarchive_when` in der Datenbank.
@@ -39,22 +39,20 @@ Sollten alle Indizes wie auf dem Bild vorhanden sein ist kein weiteres Zutun not
 Der folgende Abschnitt beschreibt die notwendigen Schritte, um die aktuellen Indizes zur Datenbank hinzuzufügen. Anschließend sind noch Query beschrieben um zu testen, ob das Hinzufügen erfolgreich verlaufen ist.
 
 In diesen Beispiel Querys wird die Datenbank *prosody* mit der Tabelle *prosodyarchive* verwendet. Der Query ist für die jeweils persönlichen Namen der Tabellen / Datenbanken anzupassen.
-
-```sql
+{{< highlight sql >}}
 CREATE INDEX `prosodyarchive_with` USING BTREE
 ON prosody.prosodyarchive
 (`host`(20), `user`(20), `store`(20), `with`(20));
 
----
 
 CREATE INDEX `prosodyarchive_when` USING BTREE
 ON prosody.prosodyarchive
 (`host`(20), `user`(20), `store`(20), `when`);
-```
-```sql
+{{< /highlight >}}
+{{< highlight sql >}}
 Query OK, 0 rows affected (0.30 sec)
 Records: 0  Duplicates: 0  Warnings: 0
-```
+{{< /highlight >}}
 Nach dem Ausführen jedes Querys wird ein solches Ergebnis angezeigt. Dies ist normal, da durch das Hinzufügen von Indizes keine Zeilen verändert werden.
 
 Nachdem beide Querys erfolgreich ausgeführt wurden, kann mit dem `SHOW INDEX FROM db_name` Query kontrolliert werden, ob alle Indizes erfolgreich hinzugefügt wurden.
@@ -62,19 +60,18 @@ Nachdem beide Querys erfolgreich ausgeführt wurden, kann mit dem `SHOW INDEX FR
 ### Testen der Indizes
 Zum Testen der Indizes können diese Querys verwendet werden. Hierbei ist zu beachten das abweichende Bezeichnungen der Tabellen / Datenbanken anzupassen sind.
 
-```sql
+{{< highlight sql >}}
 EXPLAIN SELECT * FROM prosody.prosodyarchive
 WHERE `host` = 'magicbroccoli.de' AND
 `store` = 'archive2' AND `when` > '1512662458'
 AND `user` = 'username';
 
----
 
 EXPLAIN SELECT * FROM prosody.prosodyarchive
 WHERE `host` = 'magicbroccoli.de' AND
 `store` = 'archive2' AND `with` > 'brokkoli@magicbroccoli.de'
 AND `user` = 'username';
-```
+{{< /highlight >}}
 <img src="/images/prosodydb/prosodyarchive_when.png" width="100%">
 
 Relevant bei der Ausgabe sind die Angaben für `possible_keys` und `key`. Diese sollen die neu hinzugefügten Indizes auflisten. Sollten bei einem oder beiden der Spalten `NULL` angezeigt werden, wird kein Index verwendet. Es sollte nochmal kontrolliert werden ob alle Indizes erfolgreich hinzugefügt wurden.<br>

@@ -45,7 +45,7 @@ Der einfachste Weg ist, das gesamte Mercurial Archiv der Community Module zu klo
 
 Nun sollte im Skript selbst, über die Variabeln, eingestellt werden was für Zeiteinheiten gewünscht sind. Außerdem sollten eventuell abweichende Pfade auf die jeweiligen Systemverhältnisse angepasst werden.<br>
 Der Folgende Abschnitt zeigt einen Ausschnitt aus dem Skript, welcher die Konfigurationsvariablen, die Filter sowie den `--configtest` catch zeigt.
-```
+{{< highlight bash >}}
 #!/bin/bash
 
 ###### CONFIGURATION ######
@@ -121,4 +121,4 @@ filter_expired_http_uploads()
 	# currently a workaround as the mod_http_uploud is not removing the folder which holds the file
 	find $http_upload_path/* -maxdepth 0 -type d -mtime +$http_upload_expire | sed -e 's/^/rm -rf /' >> $junk_to_delete
 }
-```
+{{< /highlight >}}

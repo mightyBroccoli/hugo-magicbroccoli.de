@@ -51,7 +51,7 @@ hrefTargetBlank = true
       pre = "<i class='fa fa-question-circle' fa-fw'></i>"
       weight = -98
       identifier = "tutorial"
-      url = "/page/tutorial/"
+      url = "/tutorial"
 
 [[menu.main]]
     name = "About me"
