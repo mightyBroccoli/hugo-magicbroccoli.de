@@ -57,7 +57,7 @@
     },
     "datePublished": "2017-12-07",
     "description": "",
-    "wordCount": 631
+    "wordCount": 629
   }
 </script>
 
@@ -65,7 +65,7 @@
 
 <link rel="canonical" href="https://magicbroccoli.de/post/prosody-db-index/" />
 
-<meta name="generator" content="Hugo 0.32.4" />
+<meta name="generator" content="Hugo 0.33" />
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
@@ -130,7 +130,7 @@
       </li>
       
       <li class="nav-item">
-        <a class="nav-link menu-item" href="https://magicbroccoli.de/page/tutorial/">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/tutorial">
           <i class='fa fa-question-circle' fa-fw'></i>
           <span class="text-capitalize no-decoration text-white">Tutorials</span>
         </a>
@@ -171,7 +171,7 @@
       &middot; by nico
     
     &middot; 3 Minute Read
-    &middot; 631 Words
+    &middot; 629 Words
   </div>
 
   
@@ -242,10 +242,8 @@
 <p>Um herauszufinden welche Indizes im Moment überhaupt vorhanden sind, lässt sich dieser Query verwenden.<br>
 In diesem Beispiel verwende ich <strong>prosody.prosodyarchive</strong>. Der Query ist für die jeweils persönlichen Namen der Tabellen / Datenbanken anzupassen.</p>
 
-<pre><code class="language-sql">SHOW INDEX FROM prosody.prosodyarchive;
-</code></pre>
-
-<p><img src="https://magicbroccoli.de/images/prosodydb/prosodydb_index.png" width="100%"></p>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SHOW</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#66d9ef">FROM</span> prosody.prosodyarchive;</code></pre></div>
+<img src="https://magicbroccoli.de/images/prosodydb/prosodydb_index.png" width="100%"></p>
 
 <p>Sollten alle Indizes wie auf dem Bild vorhanden sein ist kein weiteres Zutun notwendig. Ist allerdings nur <em>prosodyarchive_index</em> gelistet, fehlen die zwei neuen Indizes <code>prosodyarchive_with</code> sowie <code>prosodyarchive_when</code> in der Datenbank.</p>
 
@@ -254,24 +252,18 @@ In diesem Beispiel verwende ich <strong>prosody.prosodyarchive</strong>. Der Que
 <p><span style="color:red"><em>Wichtig</em></span> : Je mehr Zeilen die Datenbank enthält desto länger kann das Hinzufügen von Indizes dauern.
 Der folgende Abschnitt beschreibt die notwendigen Schritte, um die aktuellen Indizes zur Datenbank hinzuzufügen. Anschließend sind noch Query beschrieben um zu testen, ob das Hinzufügen erfolgreich verlaufen ist.</p>
 
-<p>In diesen Beispiel Querys wird die Datenbank <em>prosody</em> mit der Tabelle <em>prosodyarchive</em> verwendet. Der Query ist für die jeweils persönlichen Namen der Tabellen / Datenbanken anzupassen.</p>
+<p>In diesen Beispiel Querys wird die Datenbank <em>prosody</em> mit der Tabelle <em>prosodyarchive</em> verwendet. Der Query ist für die jeweils persönlichen Namen der Tabellen / Datenbanken anzupassen.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#f92672">`</span>prosodyarchive_with<span style="color:#f92672">`</span> <span style="color:#66d9ef">USING</span> BTREE
+<span style="color:#66d9ef">ON</span> prosody.prosodyarchive
+(<span style="color:#f92672">`</span><span style="color:#66d9ef">host</span><span style="color:#f92672">`</span>(<span style="color:#ae81ff">20</span>), <span style="color:#f92672">`</span><span style="color:#66d9ef">user</span><span style="color:#f92672">`</span>(<span style="color:#ae81ff">20</span>), <span style="color:#f92672">`</span>store<span style="color:#f92672">`</span>(<span style="color:#ae81ff">20</span>), <span style="color:#f92672">`</span><span style="color:#66d9ef">with</span><span style="color:#f92672">`</span>(<span style="color:#ae81ff">20</span>));
 
-<pre><code class="language-sql">CREATE INDEX `prosodyarchive_with` USING BTREE
-ON prosody.prosodyarchive
-(`host`(20), `user`(20), `store`(20), `with`(20));
 
----
-
-CREATE INDEX `prosodyarchive_when` USING BTREE
-ON prosody.prosodyarchive
-(`host`(20), `user`(20), `store`(20), `when`);
-</code></pre>
-
-<pre><code class="language-sql">Query OK, 0 rows affected (0.30 sec)
-Records: 0  Duplicates: 0  Warnings: 0
-</code></pre>
-
-<p>Nach dem Ausführen jedes Querys wird ein solches Ergebnis angezeigt. Dies ist normal, da durch das Hinzufügen von Indizes keine Zeilen verändert werden.</p>
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#f92672">`</span>prosodyarchive_when<span style="color:#f92672">`</span> <span style="color:#66d9ef">USING</span> BTREE
+<span style="color:#66d9ef">ON</span> prosody.prosodyarchive
+(<span style="color:#f92672">`</span><span style="color:#66d9ef">host</span><span style="color:#f92672">`</span>(<span style="color:#ae81ff">20</span>), <span style="color:#f92672">`</span><span style="color:#66d9ef">user</span><span style="color:#f92672">`</span>(<span style="color:#ae81ff">20</span>), <span style="color:#f92672">`</span>store<span style="color:#f92672">`</span>(<span style="color:#ae81ff">20</span>), <span style="color:#f92672">`</span><span style="color:#66d9ef">when</span><span style="color:#f92672">`</span>);</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">Query OK, <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">rows</span> affected (<span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">30</span> sec)
+Records: <span style="color:#ae81ff">0</span>  Duplicates: <span style="color:#ae81ff">0</span>  Warnings: <span style="color:#ae81ff">0</span></code></pre></div>
+Nach dem Ausführen jedes Querys wird ein solches Ergebnis angezeigt. Dies ist normal, da durch das Hinzufügen von Indizes keine Zeilen verändert werden.</p>
 
 <p>Nachdem beide Querys erfolgreich ausgeführt wurden, kann mit dem <code>SHOW INDEX FROM db_name</code> Query kontrolliert werden, ob alle Indizes erfolgreich hinzugefügt wurden.</p>
 
@@ -279,20 +271,17 @@ Records: 0  Duplicates: 0  Warnings: 0
 
 <p>Zum Testen der Indizes können diese Querys verwendet werden. Hierbei ist zu beachten das abweichende Bezeichnungen der Tabellen / Datenbanken anzupassen sind.</p>
 
-<pre><code class="language-sql">EXPLAIN SELECT * FROM prosody.prosodyarchive
-WHERE `host` = 'magicbroccoli.de' AND
-`store` = 'archive2' AND `when` &gt; '1512662458'
-AND `user` = 'username';
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">EXPLAIN</span> <span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> prosody.prosodyarchive
+<span style="color:#66d9ef">WHERE</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">host</span><span style="color:#f92672">`</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;magicbroccoli.de&#39;</span> <span style="color:#66d9ef">AND</span>
+<span style="color:#f92672">`</span>store<span style="color:#f92672">`</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;archive2&#39;</span> <span style="color:#66d9ef">AND</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">when</span><span style="color:#f92672">`</span> <span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;1512662458&#39;</span>
+<span style="color:#66d9ef">AND</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">user</span><span style="color:#f92672">`</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;username&#39;</span>;
 
----
 
-EXPLAIN SELECT * FROM prosody.prosodyarchive
-WHERE `host` = 'magicbroccoli.de' AND
-`store` = 'archive2' AND `with` &gt; 'brokkoli@magicbroccoli.de'
-AND `user` = 'username';
-</code></pre>
-
-<p><img src="https://magicbroccoli.de/images/prosodydb/prosodyarchive_when.png" width="100%"></p>
+<span style="color:#66d9ef">EXPLAIN</span> <span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> prosody.prosodyarchive
+<span style="color:#66d9ef">WHERE</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">host</span><span style="color:#f92672">`</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;magicbroccoli.de&#39;</span> <span style="color:#66d9ef">AND</span>
+<span style="color:#f92672">`</span>store<span style="color:#f92672">`</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;archive2&#39;</span> <span style="color:#66d9ef">AND</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">with</span><span style="color:#f92672">`</span> <span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;brokkoli@magicbroccoli.de&#39;</span>
+<span style="color:#66d9ef">AND</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">user</span><span style="color:#f92672">`</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;username&#39;</span>;</code></pre></div>
+<img src="https://magicbroccoli.de/images/prosodydb/prosodyarchive_when.png" width="100%"></p>
 
 <p>Relevant bei der Ausgabe sind die Angaben für <code>possible_keys</code> und <code>key</code>. Diese sollen die neu hinzugefügten Indizes auflisten. Sollten bei einem oder beiden der Spalten <code>NULL</code> angezeigt werden, wird kein Index verwendet. Es sollte nochmal kontrolliert werden ob alle Indizes erfolgreich hinzugefügt wurden.<br>
 Das Ergebnis sollte diese Form haben. Das Bild zeigt mein Ergebnis für den <em>prosodyarchive_when</em> Test-Query.<br></p>
@@ -639,7 +628,8 @@ Das Ergebnis sollte diese Form haben. Das Bild zeigt mein Ergebnis für den <em>
     allow_chat_pending_contacts: true,
     allow_non_roster_messaging: true,
     allow_registration: false,
-    auto_list_rooms: true,
+    archived_messages_page_size: 30,
+    auto_list_rooms: false,
     bosh_service_url: 'https://magicbroccoli.de/http-bind',
     websocket_url: 'wss://magicbroccoli.de/xmpp-websocket',
     csi_waiting_time: 25,

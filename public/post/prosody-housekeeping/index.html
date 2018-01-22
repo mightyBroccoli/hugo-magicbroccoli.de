@@ -69,7 +69,7 @@
 
 <link rel="canonical" href="https://magicbroccoli.de/post/prosody-housekeeping/" />
 
-<meta name="generator" content="Hugo 0.32.4" />
+<meta name="generator" content="Hugo 0.33" />
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
@@ -134,7 +134,7 @@
       </li>
       
       <li class="nav-item">
-        <a class="nav-link menu-item" href="https://magicbroccoli.de/page/tutorial/">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/tutorial">
           <i class='fa fa-question-circle' fa-fw'></i>
           <span class="text-capitalize no-decoration text-white">Tutorials</span>
         </a>
@@ -273,84 +273,82 @@ Das im Folgenden beschriebene Skript steht auf <a href="https://github.com/might
 Der einfachste Weg ist, das gesamte Mercurial Archiv der Community Module zu klonen und in der Prosody Konfiguration zu referenzieren. Eine Anleitung wie das geht findet sich in der Prosody <a href="https://prosody.im/doc/installing_modules#prosody-modules" target="_blank">Dokumentation</a>.<br></p>
 
 <p>Nun sollte im Skript selbst, über die Variabeln, eingestellt werden was für Zeiteinheiten gewünscht sind. Außerdem sollten eventuell abweichende Pfade auf die jeweiligen Systemverhältnisse angepasst werden.<br>
-Der Folgende Abschnitt zeigt einen Ausschnitt aus dem Skript, welcher die Konfigurationsvariablen, die Filter sowie den <code>--configtest</code> catch zeigt.</p>
+Der Folgende Abschnitt zeigt einen Ausschnitt aus dem Skript, welcher die Konfigurationsvariablen, die Filter sowie den <code>--configtest</code> catch zeigt.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">###### CONFIGURATION ######
+</span><span style="color:#75715e"># configuration variables
+</span><span style="color:#75715e"></span>tmp_directory<span style="color:#f92672">=</span>/tmp/prosody/
+junk_to_delete<span style="color:#f92672">=</span>$tmp_directory/accounts_to_delete.txt
 
-<pre><code>#!/bin/bash
+<span style="color:#75715e"># maximum timeframe for accounts registered but not logged in
+</span><span style="color:#75715e"># needs to be in the syntax 1day 2weeks 3months 4years
+</span><span style="color:#75715e"></span>unused_accounts_timeframe<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;14days&#34;</span>
+<span style="color:#75715e"># maxium timeframe for accounts since last login
+</span><span style="color:#75715e"></span>old_accounts_timeframe<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1year&#34;</span>
 
-###### CONFIGURATION ######
-# configuration variables
-tmp_directory=/tmp/prosody/
-junk_to_delete=$tmp_directory/accounts_to_delete.txt
+<span style="color:#75715e"># maximum age of mod_mam messags stored in the database
+</span><span style="color:#75715e"></span>enable_mam_clearing<span style="color:#f92672">=</span>false
+<span style="color:#75715e"># needs to be in mysql syntax 1 DAY 2 MONTH 3 YEAR
+</span><span style="color:#75715e"></span>mam_message_live<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2 MONTH&#34;</span>
 
-# maximum timeframe for accounts registered but not logged in
-# needs to be in the syntax 1day 2weeks 3months 4years
-unused_accounts_timeframe=&quot;14days&quot;
-# maxium timeframe for accounts since last login
-old_accounts_timeframe=&quot;1year&quot;
+<span style="color:#75715e"># prosody mysql login credentials
+</span><span style="color:#75715e"></span>prosody_db_user<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;prosody&#34;</span>
+prosody_db_password<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;super_secret-password1337&#34;</span>
 
-# maximum age of mod_mam messags stored in the database
-enable_mam_clearing=false
-# needs to be in mysql syntax 1 DAY 2 MONTH 3 YEAR
-mam_message_live=&quot;2 MONTH&quot;
+<span style="color:#75715e"># http upload path
+</span><span style="color:#75715e"></span>http_upload_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/var/lib/prosody/http_upload&#34;</span>
+<span style="color:#75715e"># http upload lifetime in days
+</span><span style="color:#75715e"></span>http_upload_expire<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;31&#34;</span>
 
-# prosody mysql login credentials
-prosody_db_user=&quot;prosody&quot;
-prosody_db_password=&quot;super_secret-password1337&quot;
-
-# http upload path
-http_upload_path=&quot;/var/lib/prosody/http_upload&quot;
-# http upload lifetime in days
-http_upload_expire=&quot;31&quot;
-
-catch_configtest()
-{
-	# test your configuration first to see what would have be deleted
-	if [ &quot;$1&quot; == &quot;-t&quot; ] || [ &quot;$1&quot; == &quot;--configtest&quot; ]; then
+catch_configtest<span style="color:#f92672">()</span>
+<span style="color:#f92672">{</span>
+	<span style="color:#75715e"># test your configuration first to see what would have be deleted
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;-t&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;--configtest&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
 		filter_unused_accounts
 		filter_old_accounts
 		filter_mam_messages --test
 
 		cat $junk_to_delete
 		exit
-	fi
-}
+	<span style="color:#66d9ef">fi</span>
+<span style="color:#f92672">}</span>
 
-###### FILTER SECTION ######
-filter_unused_accounts()
-{
-	# filter all registered but not logged in accounts older then $unused_accounts_timeframe
-	prosodyctl mod_list_inactive magicbroccoli.de &quot;$unused_accounts_timeframe&quot; event | grep registered | sed 's/registered//g' | sed -e 's/^/prosodyctl deluser /' &gt;&gt; $junk_to_delete
-}
+<span style="color:#75715e">###### FILTER SECTION ######
+</span><span style="color:#75715e"></span>filter_unused_accounts<span style="color:#f92672">()</span>
+<span style="color:#f92672">{</span>
+	<span style="color:#75715e"># filter all registered but not logged in accounts older then $unused_accounts_timeframe
+</span><span style="color:#75715e"></span>	prosodyctl mod_list_inactive magicbroccoli.de <span style="color:#e6db74">&#34;</span>$unused_accounts_timeframe<span style="color:#e6db74">&#34;</span> event | grep registered | sed <span style="color:#e6db74">&#39;s/registered//g&#39;</span> | sed -e <span style="color:#e6db74">&#39;s/^/prosodyctl deluser /&#39;</span> &gt;&gt; $junk_to_delete
+<span style="color:#f92672">}</span>
 
-filter_old_accounts()
-{
-	# filter all inactive accounts older then $old_accounts_timeframe
-	prosodyctl mod_list_inactive magicbroccoli.de &quot;$old_accounts_timeframe&quot; | sed -e 's/^/prosodyctl deluser /' &gt;&gt; $junk_to_delete
-}
+filter_old_accounts<span style="color:#f92672">()</span>
+<span style="color:#f92672">{</span>
+	<span style="color:#75715e"># filter all inactive accounts older then $old_accounts_timeframe
+</span><span style="color:#75715e"></span>	prosodyctl mod_list_inactive magicbroccoli.de <span style="color:#e6db74">&#34;</span>$old_accounts_timeframe<span style="color:#e6db74">&#34;</span> | sed -e <span style="color:#e6db74">&#39;s/^/prosodyctl deluser /&#39;</span> &gt;&gt; $junk_to_delete
+<span style="color:#f92672">}</span>
 
-filter_mam_messages()
-{
-	# only run this filter if $enable_mam_clearing is set to true
-	if [ &quot;$enable_mam_clearing&quot; = &quot;true&quot; ]; then
-		# catch config test
-		if [ &quot;$1&quot; = &quot;--test&quot; ]; then
-			# this is currently a workaround caused by the extrem slowness of prosodys own clearing mechanism
-			# filter all expired mod_mam messages from archive
-			echo &quot;SELECT * FROM prosody.prosodyarchive WHERE \`when\` &lt; UNIX_TIMESTAMP(DATE_SUB(curdate(),INTERVAL $mam_message_live));&quot; | mysql -u $prosody_db_user -p$prosody_db_password &amp;&gt;&gt; $junk_to_delete
-			return 1
-		fi
-		# this is currently a workaround caused by the extrem slowness of prosodys own clearing mechanism
-		# delete all expired mod_mam messages from archive
-		echo &quot;DELETE FROM prosody.prosodyarchive WHERE \`when\` &lt; UNIX_TIMESTAMP(DATE_SUB(curdate(),INTERVAL $mam_message_live));&quot; | mysql -u $prosody_db_user -p$prosody_db_password
-	fi
-}
+filter_mam_messages<span style="color:#f92672">()</span>
+<span style="color:#f92672">{</span>
+	<span style="color:#75715e"># only run this filter if $enable_mam_clearing is set to true
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$enable_mam_clearing<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+		<span style="color:#75715e"># catch config test
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;--test&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+			<span style="color:#75715e"># this is currently a workaround caused by the extrem slowness of prosodys own clearing mechanism
+</span><span style="color:#75715e"></span>			<span style="color:#75715e"># filter all expired mod_mam messages from archive
+</span><span style="color:#75715e"></span>			echo <span style="color:#e6db74">&#34;SELECT * FROM prosody.prosodyarchive WHERE \`when\` &lt; UNIX_TIMESTAMP(DATE_SUB(curdate(),INTERVAL </span>$mam_message_live<span style="color:#e6db74">));&#34;</span> | mysql -u $prosody_db_user -p$prosody_db_password &amp;&gt;&gt; $junk_to_delete
+			<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+		<span style="color:#66d9ef">fi</span>
+		<span style="color:#75715e"># this is currently a workaround caused by the extrem slowness of prosodys own clearing mechanism
+</span><span style="color:#75715e"></span>		<span style="color:#75715e"># delete all expired mod_mam messages from archive
+</span><span style="color:#75715e"></span>		echo <span style="color:#e6db74">&#34;DELETE FROM prosody.prosodyarchive WHERE \`when\` &lt; UNIX_TIMESTAMP(DATE_SUB(curdate(),INTERVAL </span>$mam_message_live<span style="color:#e6db74">));&#34;</span> | mysql -u $prosody_db_user -p$prosody_db_password
+	<span style="color:#66d9ef">fi</span>
+<span style="color:#f92672">}</span>
 
-filter_expired_http_uploads()
-{
-	# currently a workaround as the mod_http_uploud is not removing the folder which holds the file
-	find $http_upload_path/* -maxdepth 0 -type d -mtime +$http_upload_expire | sed -e 's/^/rm -rf /' &gt;&gt; $junk_to_delete
-}
-</code></pre>
+filter_expired_http_uploads<span style="color:#f92672">()</span>
+<span style="color:#f92672">{</span>
+	<span style="color:#75715e"># currently a workaround as the mod_http_uploud is not removing the folder which holds the file
+</span><span style="color:#75715e"></span>	find $http_upload_path/* -maxdepth <span style="color:#ae81ff">0</span> -type d -mtime +$http_upload_expire | sed -e <span style="color:#e6db74">&#39;s/^/rm -rf /&#39;</span> &gt;&gt; $junk_to_delete
+<span style="color:#f92672">}</span></code></pre></div></p>
 
 </div>
 
@@ -680,7 +678,8 @@ filter_expired_http_uploads()
     allow_chat_pending_contacts: true,
     allow_non_roster_messaging: true,
     allow_registration: false,
-    auto_list_rooms: true,
+    archived_messages_page_size: 30,
+    auto_list_rooms: false,
     bosh_service_url: 'https://magicbroccoli.de/http-bind',
     websocket_url: 'wss://magicbroccoli.de/xmpp-websocket',
     csi_waiting_time: 25,

@@ -43,17 +43,17 @@
   </url>
   
   <url>
-    <loc>https://magicbroccoli.de/page/tutorial/</loc>
+    <loc>https://magicbroccoli.de/tutorial/</loc>
     <lastmod>2017-07-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://magicbroccoli.de/page/tutorial/chatsecure/</loc>
+    <loc>https://magicbroccoli.de/page/tutorial_chatsecure/</loc>
     <lastmod>2017-07-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://magicbroccoli.de/page/tutorial/gajim/</loc>
+    <loc>https://magicbroccoli.de/page/tutorial_gajim/</loc>
     <lastmod>2017-07-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -78,7 +78,7 @@
   </url>
   
   <url>
-    <loc>https://magicbroccoli.de/privacy/</loc>
+    <loc>https://magicbroccoli.de/datenschutz/</loc>
     <lastmod>2017-06-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -193,7 +193,7 @@
   
   <url>
     <loc>https://magicbroccoli.de/page/</loc>
-    <lastmod>2017-11-07T00:00:00+00:00</lastmod>
+    <lastmod>2017-07-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

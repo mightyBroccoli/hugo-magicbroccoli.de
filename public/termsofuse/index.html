@@ -55,7 +55,7 @@
     },
     "datePublished": "2017-06-21",
     "description": "Nutzungsbedingungen",
-    "wordCount": 130
+    "wordCount": 112
   }
 </script>
 
@@ -63,7 +63,7 @@
 
 <link rel="canonical" href="https://magicbroccoli.de/termsofuse/" />
 
-<meta name="generator" content="Hugo 0.32.4" />
+<meta name="generator" content="Hugo 0.33" />
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
@@ -128,7 +128,7 @@
       </li>
       
       <li class="nav-item">
-        <a class="nav-link menu-item" href="https://magicbroccoli.de/page/tutorial/">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/tutorial">
           <i class='fa fa-question-circle' fa-fw'></i>
           <span class="text-capitalize no-decoration text-white">Tutorials</span>
         </a>
@@ -156,8 +156,8 @@
 <ul>
 <li>Registrierung sowie Nutzung des XMPP Servers sind kostenfrei.</li>
 <li>Es besteht kein Anspruch auf Funktionalität, Ausfallfreiheit sowie Fortführung dieses Dienstes.</li>
-<li>Das Versenden von Werbung in jeglicher Form ist untersagt!</li>
-<li>Angriffe auf die Server sind untersagt und resultieren in einem sofortigen Ausschluss.</li>
+<li>Das Versenden von Werbung/ Spam in jeglicher Form ist untersagt!</li>
+<li>Angriffe auf die Server sind untersagt und resultieren in einem sofortigen Ausschluss jeglicher Dienste.</li>
 <li>Aktivitäten, die gegen das geltende Recht der Bundesrepublik Deutschland, oder internationales Recht verstoßen sind untersagt.</li>
 <li>Accounts, die einer freiheitlichen, friedlichen und toleranten Gesellschaft widersprechen, werden gesperrt.</li>
 <li>Nutzeraccounts die länger als 1 Jahr inaktiv sind, werden automatisch gelöscht.</li>
@@ -165,11 +165,9 @@
 <li>Ein Verstoß gegen die Nutzungsbedingungen führt zu einem sofortigen Ausschluss sowie Löschung des Kontos.</li>
 </ul>
 
-<h2 id="speziell-xmpp-hosting">speziell XMPP - Hosting</h2>
+<hr />
 
-<ul>
-<li>Aktivitäten, die gegen das geltende Recht der Bundesrepublik Deutschland, oder internationales Recht verstoßen führen zu einer soforting Beendigung des Hostings</li>
-</ul>
+<p>Last Edit 22.01.18</p>
 
 </div>
 
@@ -447,7 +445,8 @@
     allow_chat_pending_contacts: true,
     allow_non_roster_messaging: true,
     allow_registration: false,
-    auto_list_rooms: true,
+    archived_messages_page_size: 30,
+    auto_list_rooms: false,
     bosh_service_url: 'https://magicbroccoli.de/http-bind',
     websocket_url: 'wss://magicbroccoli.de/xmpp-websocket',
     csi_waiting_time: 25,

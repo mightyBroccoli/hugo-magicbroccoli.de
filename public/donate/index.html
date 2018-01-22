@@ -51,7 +51,7 @@
     },
     "datePublished": "2017-06-21",
     "description": "How to donate to MagicBroccoli XMPP",
-    "wordCount": 119
+    "wordCount": 125
   }
 </script>
 
@@ -59,7 +59,7 @@
 
 <link rel="canonical" href="https://magicbroccoli.de/donate/" />
 
-<meta name="generator" content="Hugo 0.32.4" />
+<meta name="generator" content="Hugo 0.33" />
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
@@ -124,7 +124,7 @@
       </li>
       
       <li class="nav-item">
-        <a class="nav-link menu-item" href="https://magicbroccoli.de/page/tutorial/">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/tutorial">
           <i class='fa fa-question-circle' fa-fw'></i>
           <span class="text-capitalize no-decoration text-white">Tutorials</span>
         </a>
@@ -149,15 +149,17 @@
 
 <h2 id="unterstützung">Unterstützung</h2>
 
-<p>Der Betrieb des Servers sowie dessen Wartung kosten viel Zeit und natürlich auch Geld. Momentan werden alle Kosten von mir privat getragen. Wenn sie mich als kleines Dankeschön unterstützen möchten, sind sie hier absolut richtig.<br>
-Über kleine Beiträge zur Finanzierung freue ich mich sehr. Daueraufträge lassen auch eine längerfristige Planung zu.</p>
+<p>Der Betrieb des Servers sowie dessen Wartung kosten viel Zeit und natürlich auch Geld. Momentan werden alle Kosten von mir privat getragen. Wenn Sie mich in meinem Bestreben Datenschutz für alle Verfügbar zu machen unterstützen möchten, sind sie hier gold richtig.<br>
+Über kleine Beiträge zur Finanzierung freue ich mich ungemein. Daueraufträge lassen sogar eine längerfristige Planung zu.</p>
 
 <p><i class="fa fa-paypal"></i> <a href="https://paypal.me/nwellpott" target="_blank">PayPal</a></p>
 
+<p><i class="fa fa-amazon"></i> <a href="https://www.amazon.de/registry/wishlist/CAI1GRDF2VDY" target="_blank">Amazon</a></p>
+
+<p><i class="fa fa-university"></i> Banküberweisung: <a href="https://magicbroccoli.de/contact/">auf Anfrage</a></p>
+
 <p><i class="fa fa-btc"></i>  Bitcoin: <code>1QJZTWenBvdLWTUachpLLd2dLXAZMGeU87</code><br>
 <img src="https://magicbroccoli.de/images/bitcoin_qr.png" alt="bitcoin_qr" style="width: 150px;"/></p>
-
-<p><i class="fa fa-university"></i> Banküberweisung: Bankverbindung auf <a href="https://magicbroccoli.de/contact/">Anfrage</a></p>
 
 <p>Vielen vielen herzlichen Dank an alle, die sich einmalig oder dauerhaft an der Finanzierung des Servers beteiligen! Es ist eine große Leidenschaft von mir und Ihr tragt dazu bei diese einfacher zu ermöglichen. <i class="fa fa-heart" aria-hidden="true"></i></p>
 
@@ -165,7 +167,7 @@
 
 <hr />
 
-<p>Last Edit 26.11.17</p>
+<p>Last Edit 22.01.18</p>
 
 </div>
 
@@ -443,7 +445,8 @@
     allow_chat_pending_contacts: true,
     allow_non_roster_messaging: true,
     allow_registration: false,
-    auto_list_rooms: true,
+    archived_messages_page_size: 30,
+    auto_list_rooms: false,
     bosh_service_url: 'https://magicbroccoli.de/http-bind',
     websocket_url: 'wss://magicbroccoli.de/xmpp-websocket',
     csi_waiting_time: 25,

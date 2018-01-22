@@ -65,7 +65,7 @@
 
 <link rel="canonical" href="https://magicbroccoli.de/post/xmpp-over-tls-guide/" />
 
-<meta name="generator" content="Hugo 0.32.4" />
+<meta name="generator" content="Hugo 0.33" />
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
@@ -130,7 +130,7 @@
       </li>
       
       <li class="nav-item">
-        <a class="nav-link menu-item" href="https://magicbroccoli.de/page/tutorial/">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/tutorial">
           <i class='fa fa-question-circle' fa-fw'></i>
           <span class="text-capitalize no-decoration text-white">Tutorials</span>
         </a>
@@ -260,11 +260,9 @@ xmpps.example.com. 18000 IN A $zweite_ip_adresse
 <h3 id="2-prosody-server-konfiguration">2. Prosody Server Konfiguration</h3>
 
 <p>Für den Verbindungsaufbau muss in der Prosody Konfiguration <em>legacy_ssl_ports</em> definiert werden, damit das <code>http</code> Modul auch auf dem gewählten Port lauscht. Das Modul <em>mod_legacyauth</em> wird hierfür allerdings nicht benötigt.
-Ein Neustart des Prosody Services ist nach dem setzen dieser Einstellung zwingend <strong>erforderlich</strong>.</p>
-
-<pre><code>-- XEP-0368: SRV records for XMPP over TLS
-legacy_ssl_ports = { 5223 }
-</code></pre>
+Ein Neustart des Prosody Services ist nach dem setzen dieser Einstellung zwingend <strong>erforderlich</strong>.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lua" data-lang="lua"><span style="color:#75715e">-- XEP-0368: SRV records for XMPP over TLS</span>
+legacy_ssl_ports <span style="color:#f92672">=</span> { <span style="color:#ae81ff">5223</span> }</code></pre></div></p>
 
 <h3 id="3-ssl-zertifikat-optional">3. SSL Zertifikat ( <em>optional</em> )</h3>
 
@@ -283,19 +281,15 @@ Regel Nr. 1 leitet den gesamten Traffic der zweiten IP von Port 443, ohne Verän
 <p>Für die Antwort des Prosody Servers wird allerdings eine zweite Regel benötigt, die sich in der POSTROUTING Kette befindet. Diese stellt sicher, dass das Antwort-Paket wieder über Port 443 der zweiten IP Adresse den Server verlässt.<br>
 <em>Sollte bei der Prosody Konfiguration ein anderer Port gewählt werden als der default Port, muss dieser natürlich in den iptables Regeln ausgetauscht werden.</em></p>
 
-<p>In diesem Beispiel ist erste_ip, jene IP-Adresse auf der auch der httpd Server lauscht. zweite_ip bezeichnet somit die zweite Adresse speziell für XMPP over TLS.</p>
+<p>In diesem Beispiel ist erste_ip, jene IP-Adresse auf der auch der httpd Server lauscht. zweite_ip bezeichnet somit die zweite Adresse speziell für XMPP over TLS.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># PREROUTING
+</span><span style="color:#75715e"></span>iptables -t nat -A PREROUTING -d zweite_ip -p tcp --dport <span style="color:#ae81ff">443</span> -j DNAT --to-destination erste_ip:5223
 
-<pre><code class="language-#!/bin/bash"># PREROUTING
-iptables -t nat -A PREROUTING -d zweite_ip -p tcp --dport 443 -j DNAT --to-destination erste_ip:5223
+<span style="color:#75715e"># POSTROUTING
+</span><span style="color:#75715e"></span>iptables -t nat -A POSTROUTING -p tcp -d  zweite_ip --dport <span style="color:#ae81ff">5223</span> -j SNAT --to-source erste_ip:5223</code></pre></div></p>
 
-# POSTROUTING
-iptables -t nat -A POSTROUTING -p tcp -d  zweite_ip --dport 5223 -j SNAT --to-source erste_ip:5223
-</code></pre>
-
-<p>Abschließend sollten diese Regeln mit <code>iptables-save</code> gespeichert werden, damit diese bei einem reboot erneut angewendet werden.</p>
-
-<pre><code class="language-#!/bin/bash">iptables-save &gt; /etc/iptables/rules.v4
-</code></pre>
+<p>Abschließend sollten diese Regeln mit <code>iptables-save</code> gespeichert werden, damit diese bei einem reboot erneut angewendet werden.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iptables-save &gt; /etc/iptables/rules.v4</code></pre></div></p>
 
 <h3 id="5-webserver">5. Webserver</h3>
 
@@ -304,54 +298,49 @@ Im Folgenden habe ich die simpelste Möglichkeit eins vHosts angenommen. Dabei i
 
 <h5 id="nginx">nginx</h5>
 
-<pre><code>server {
-	listen zweite_ip:80;
-	server_name xmpps.example.de;
-	#hier kann je nach wunsch eine weiterleitung stattfinden
-	return 301 https://example.de;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server</span> {
+	<span style="color:#f92672">listen</span> <span style="color:#e6db74">zweite_ip:80</span>;
+	<span style="color:#f92672">server_name</span> <span style="color:#e6db74">xmpps.example.de</span>;
+	<span style="color:#75715e">#hier kann je nach wunsch eine weiterleitung stattfinden
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">return</span> <span style="color:#ae81ff">301</span> <span style="color:#e6db74">https://example.de</span>;
 
-	# letsencrypt love
-	location ^~ /.well-known/acme-challenge/ {
-    	default_type &quot;text/plain&quot;;
+	<span style="color:#75715e"># letsencrypt love
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">location</span> <span style="color:#e6db74">^~</span> <span style="color:#e6db74">/.well-known/acme-challenge/</span> {
+    	<span style="color:#f92672">default_type</span> <span style="color:#e6db74">&#34;text/plain&#34;</span>;
 	}
 
-	location = /.well-known/acme-challenge/ {
-    	return 404;
+	<span style="color:#f92672">location</span> = <span style="color:#e6db74">/.well-known/acme-challenge/</span> {
+    	<span style="color:#f92672">return</span> <span style="color:#ae81ff">404</span>;
 	}
-}
-</code></pre>
+}</code></pre></div>
 
 <h5 id="apache2">apache2</h5>
 
-<pre><code>&lt;VirtualHost zweite_ip:80&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache"><span style="color:#f92672">&lt;VirtualHost</span> <span style="color:#e6db74">zweite_ip:80</span><span style="color:#f92672">&gt;</span>
 	ServerName xmpps.example.de
 
-	# hier kann je nach wunsch eine weiterleitung stattfinden
+	<span style="color:#75715e"># hier kann je nach wunsch eine weiterleitung stattfinden</span>
 	Redirect / https://example.de;
 
-&lt;/VirtualHost&gt;
-</code></pre>
+<span style="color:#f92672">&lt;/VirtualHost</span><span style="color:#e6db74"></span><span style="color:#f92672">&gt;</span></code></pre></div>
 
 <p>Sind diese Änderungen vorgenommen, ist es leicht möglich via LetsEncrypt ein Zertifikat für die SubDomain auzustellen. Zusätzlich dazu ist es nun möglich direkt zu testen ob XMPP over TLS funktioniert.</p>
 
 <h2 id="abschluss">Abschluss</h2>
 
-<p>Sollten alle diese Schritte erfolgreich abgeschlossen sein, ist es sehr leicht möglich zu testen ob alles so funktioniert wie es soll. Hierfür lässt sich <code>curl -i</code> verwenden.</p>
-
-<pre><code class="language-#!/bin/bash">curl -i https://xmpps.example.com
-</code></pre>
+<p>Sollten alle diese Schritte erfolgreich abgeschlossen sein, ist es sehr leicht möglich zu testen ob alles so funktioniert wie es soll. Hierfür lässt sich <code>curl -i</code> verwenden.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -i https://xmpps.example.com</code></pre></div></p>
 
 <p><strong>Hinweis</strong>: Falls es an diesem Endpunkt keine gültigen Zertifikate gibt, sollte hier der Befehl <code>curl -ik</code> gewählt werden, um den TLS Error zu ignorieren.</p>
 
 <p>Als Ergebnis sollte ein <em>xml stream error</em> zu sehen sein, <strong>ohne</strong> Apache2 / nginx header.</p>
 
-<pre><code class="language-xml">&lt;?xml version='1.0'?&gt;
-&lt;stream:stream xmlns:stream='http://etherx.jabber.org/streams' xml:lang='en' xmlns='jabber:client'&gt;
-	&lt;stream:error&gt;
-		&lt;not-well-formed xmlns='urn:ietf:params:xml:ns:xmpp-streams'/&gt;
-	&lt;/stream:error&gt;
-&lt;/stream:stream&gt;
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#39;1.0&#39;?&gt;</span>
+<span style="color:#f92672">&lt;stream:stream</span> <span style="color:#a6e22e">xmlns:stream=</span><span style="color:#e6db74">&#39;http://etherx.jabber.org/streams&#39;</span> <span style="color:#a6e22e">xml:lang=</span><span style="color:#e6db74">&#39;en&#39;</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#39;jabber:client&#39;</span><span style="color:#f92672">&gt;</span>
+	<span style="color:#f92672">&lt;stream:error&gt;</span>
+		<span style="color:#f92672">&lt;not-well-formed</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#39;urn:ietf:params:xml:ns:xmpp-streams&#39;</span><span style="color:#f92672">/&gt;</span>
+	<span style="color:#f92672">&lt;/stream:error&gt;</span>
+<span style="color:#f92672">&lt;/stream:stream&gt;</span></code></pre></div>
 
 <p><span style="color:red"><strong>Hinweis</strong>:</span> Für das Testen via curl sollte eine andere Maschine gewählt werden. Ausgeführt auf der gleichen Maschine durchlaufen die Pakete nicht die PREROUTING bzw. POSTROUTING Kette, daher wird die Verbindung abgelehnt.</p>
 
@@ -683,7 +672,8 @@ Im Folgenden habe ich die simpelste Möglichkeit eins vHosts angenommen. Dabei i
     allow_chat_pending_contacts: true,
     allow_non_roster_messaging: true,
     allow_registration: false,
-    auto_list_rooms: true,
+    archived_messages_page_size: 30,
+    auto_list_rooms: false,
     bosh_service_url: 'https://magicbroccoli.de/http-bind',
     websocket_url: 'wss://magicbroccoli.de/xmpp-websocket',
     csi_waiting_time: 25,

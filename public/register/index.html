@@ -55,7 +55,7 @@
     },
     "datePublished": "2017-06-25",
     "description": "Registrierung magicbroccoli.de XMPP",
-    "wordCount": 63
+    "wordCount": 64
   }
 </script>
 
@@ -63,7 +63,7 @@
 
 <link rel="canonical" href="https://magicbroccoli.de/register/" />
 
-<meta name="generator" content="Hugo 0.32.4" />
+<meta name="generator" content="Hugo 0.33" />
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
@@ -128,7 +128,7 @@
       </li>
       
       <li class="nav-item">
-        <a class="nav-link menu-item" href="https://magicbroccoli.de/page/tutorial/">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/tutorial">
           <i class='fa fa-question-circle' fa-fw'></i>
           <span class="text-capitalize no-decoration text-white">Tutorials</span>
         </a>
@@ -153,10 +153,10 @@
 
 <h2 id="registrierung">Registrierung</h2>
 
-<p>Diese Seite ermöglicht es, einen neuen Account auf dem MagicBroccoli XMPP Server anzulegen.
-Über deinen Jabber Identifier (kurz JID; auch Jabber-ID), bestehend aus Benutzernamen und “@magicbroccoli.de”, können Dich andere Nutzer zu ihren Kontakten hinzufügen.</p>
+<p>Mithilfe dieser Seite ist es Ihnen möglich, einen neuen Account auf dem MagicBroccoli XMPP Server anzulegen.
+Über den erstellten Jabber Identifier (kurz JID; auch Jabber-ID), bestehend aus Benutzernamen und &ldquo;magicbroccoli.de&rdquo;, können andere Nutzer Sie zu ihren Kontakten hinzufügen.</p>
 
-<p><strong>Bitte notiere Sie sich Ihren Benutzernamen und Passwort sorgfältig! Passwort-Resets durch den Administrator sind zwar grundsätzlich möglich, aber aufwendig und erfordern, dass Sie die Account-Inhaberschaft eindeutig beweisen können!</strong></p>
+<p><strong>Bitte notiere Sie sich Ihren Benutzernamen und Passwort sorgfältig! Passwort-Resets durch einen Administrator sind grundsätzlich möglich. Allerdings erfordert diese einen eindeutigen stichhaltigen Nachweis der Account-Inhaberschaft!</strong></p>
 
 <p><center><iframe src="https://magicbroccoli.de/registerform" style="height: 600px; width: 600px;" frameBorder="0"></iframe></center></p>
 
@@ -436,7 +436,8 @@
     allow_chat_pending_contacts: true,
     allow_non_roster_messaging: true,
     allow_registration: false,
-    auto_list_rooms: true,
+    archived_messages_page_size: 30,
+    auto_list_rooms: false,
     bosh_service_url: 'https://magicbroccoli.de/http-bind',
     websocket_url: 'wss://magicbroccoli.de/xmpp-websocket',
     csi_waiting_time: 25,

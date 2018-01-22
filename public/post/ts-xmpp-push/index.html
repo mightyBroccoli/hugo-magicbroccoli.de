@@ -55,7 +55,7 @@
     },
     "datePublished": "2017-06-22",
     "description": "",
-    "wordCount": 336
+    "wordCount": 340
   }
 </script>
 
@@ -63,7 +63,7 @@
 
 <link rel="canonical" href="https://magicbroccoli.de/post/ts-xmpp-push/" />
 
-<meta name="generator" content="Hugo 0.32.4" />
+<meta name="generator" content="Hugo 0.33" />
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
@@ -128,7 +128,7 @@
       </li>
       
       <li class="nav-item">
-        <a class="nav-link menu-item" href="https://magicbroccoli.de/page/tutorial/">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/tutorial">
           <i class='fa fa-question-circle' fa-fw'></i>
           <span class="text-capitalize no-decoration text-white">Tutorials</span>
         </a>
@@ -163,7 +163,7 @@
       &middot; by nico
     
     &middot; 2 Minute Read
-    &middot; 336 Words
+    &middot; 340 Words
   </div>
 
   
@@ -215,14 +215,13 @@
 
 <h2 id="idee">Idee</h2>
 
-<p>Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen.<br>
-Für genau dieses Problem habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP sendet.</p>
+<p>Die Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft mit einem Server verbunden sein kann, um nach dem Rechten zu sehen.<br>
+Dieses Problem versuche ich hiermit anzugehen. Dafür durchsucht dieses nach verschiedenen Regeln die Logfiles, gefundene Zeilen werden anschließend an definierte Kontakte per XMPP sendet.</p>
 
-<h2 id="nutzen">Nutzen</h2>
+<h3 id="nutzen">Nutzen</h3>
 
-<p><strong>IMHO</strong> gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung schnellstmöglichst sehr praktisch ist.
-Viele Server unterstützen eine Reihe von &ldquo;Automatischen Moderationen&rdquo;, trotzdem sollten User nicht in der Lage sein sich Gruppen zuzuweisen. Diese kurze Benachrichtigung sagt dem Admin/ Moderator, wer und welche Gruppe betroffen ist.<br>
-Je nach Häufigkeit der Ausführung könnte die Benachrichtigung innerhalb von Sekunden gepushed werden.</p>
+<p><strong>IMHO</strong> gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung sehr praktisch ist. Viele Server unterstützen eine Reihe von &ldquo;Automatischen Moderationen&rdquo;, dennoch finden User Möglichkeiten diese zu behindern oder sogar zu umgehen. Durch eine kurze Benachrichtigung ist es dem Admin/ Moderator möglich zu überblicken, was betroffen ist und ob sofortiges handeln notwendig ist.<br>
+Je nach Häufigkeit der Ausführung können die Benachrichtigung innerhalb von Sekunden gepushed werden.</p>
 
 <pre><code>---- Group change ----
 --- added ---
@@ -269,24 +268,15 @@ Je nach Häufigkeit der Ausführung könnte die Benachrichtigung innerhalb von S
 
 <hr />
 
-<p>Update : 28.07.2017 Debian 9 Perl5 Problematik</p>
-
-<pre><code>Use of uninitialized value in numeric eq (==) at /usr/share/perl5/XML/Stream.pm line 631.
-</code></pre>
-
-<p>Ich hab mit etwas debugging herausgefunden, welche Zeilen geändert werden müssen, um perl-xmlstream wieder zu fixxen.
+<p>Update : 28.07.2017 Debian 9 Perl5 Problematik
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Use of uninitialized value in numeric eq <span style="color:#f92672">(==)</span> at /usr/share/perl5/XML/Stream.pm line <span style="color:#ae81ff">631</span>.</code></pre></div>
+Ich hab mit etwas debugging herausgefunden, welche Zeilen geändert werden müssen, um perl-xmlstream wieder zu fixxen.
 Die Datei <code>/usr/share/perl5/XML/Stream.pm</code> müsste geändert werden. (Pfad kann abweichen je nach OS)
-Mit nano lässt sich bequem nach der Zeile suchen, mit Shift + W. Danach ändert man Zeile 631.</p>
-
-<pre><code>$self-&gt;{SIDS}-&gt;{default}-&gt;{ssl_ca_path} = '';
-</code></pre>
-
-<p>zu</p>
-
-<pre><code>$self-&gt;{SIDS}-&gt;{default}-&gt;{ssl_ca_path} = '/etc/ssl/certs';
-</code></pre>
-
-<p>Nach dieser Änderung hat sich das Problem eingestellt und sendxmpp funktionierte wieder genauso tadellos wie zuvor.</p>
+Mit nano lässt sich bequem nach der Zeile suchen, mit Shift + W. Danach ändert man Zeile 631.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">$self<span style="color:#f92672">-&gt;</span>{SIDS}<span style="color:#f92672">-&gt;</span>{default}<span style="color:#f92672">-&gt;</span>{ssl_ca_path} <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;</code></pre></div>
+zu
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">$self<span style="color:#f92672">-&gt;</span>{SIDS}<span style="color:#f92672">-&gt;</span>{default}<span style="color:#f92672">-&gt;</span>{ssl_ca_path} <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/etc/ssl/certs&#39;</span>;</code></pre></div>
+Nach dieser Änderung hat sich das Problem eingestellt und sendxmpp funktionierte wieder genauso tadellos wie zuvor.</p>
 
 </div>
 
@@ -616,7 +606,8 @@ Mit nano lässt sich bequem nach der Zeile suchen, mit Shift + W. Danach ändert
     allow_chat_pending_contacts: true,
     allow_non_roster_messaging: true,
     allow_registration: false,
-    auto_list_rooms: true,
+    archived_messages_page_size: 30,
+    auto_list_rooms: false,
     bosh_service_url: 'https://magicbroccoli.de/http-bind',
     websocket_url: 'wss://magicbroccoli.de/xmpp-websocket',
     csi_waiting_time: 25,

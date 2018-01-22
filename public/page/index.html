@@ -28,7 +28,7 @@
 
 <link rel="canonical" href="https://magicbroccoli.de/page/" />
 
-<meta name="generator" content="Hugo 0.32.4" />
+<meta name="generator" content="Hugo 0.33" />
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
@@ -93,7 +93,7 @@
       </li>
       
       <li class="nav-item">
-        <a class="nav-link menu-item" href="https://magicbroccoli.de/page/tutorial/">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/tutorial">
           <i class='fa fa-question-circle' fa-fw'></i>
           <span class="text-capitalize no-decoration text-white">Tutorials</span>
         </a>
@@ -118,63 +118,18 @@
   </header>
   
     <h3>
-  <a href="https://magicbroccoli.de/xmpp-hosting/">Magical XMPP Hosting</a>
+  <a href="https://magicbroccoli.de/page/tutorial_chatsecure/">Chatsecure Tutorial</a>
 </h3>
 
 
   
     <h3>
-  <a href="https://magicbroccoli.de/page/tutorial/">Tutorial Übersicht</a>
-</h3>
-
-
-  
-    <h3>
-  <a href="https://magicbroccoli.de/page/tutorial/chatsecure/">Chatsecure Tutorial</a>
-</h3>
-
-
-  
-    <h3>
-  <a href="https://magicbroccoli.de/page/tutorial/gajim/">Gajim Tutorial</a>
-</h3>
-
-
-  
-    <h3>
-  <a href="https://magicbroccoli.de/technik/">Server Technik</a>
-</h3>
-
-
-  
-    <h3>
-  <a href="https://magicbroccoli.de/register/">Registrierung magicbroccoli.de XMPP</a>
-</h3>
-
-
-  
-    <h3>
-  <a href="https://magicbroccoli.de/contact/">About me</a>
+  <a href="https://magicbroccoli.de/page/tutorial_gajim/">Gajim Tutorial</a>
 </h3>
 
 
   
   
-<div class="row ">
-    <ul class="pagination">
-      
-          
-          
-            <li class="page-item">
-              <a class="page-link" rel="next" href="https://magicbroccoli.de/page/page/2/">
-                  Next »
-              </a>
-            </li>
-          
-      
-    </ul>
-</div>
-
 
 </div>
       <footer class="footer text-white bg-info">
@@ -234,7 +189,8 @@
     allow_chat_pending_contacts: true,
     allow_non_roster_messaging: true,
     allow_registration: false,
-    auto_list_rooms: true,
+    archived_messages_page_size: 30,
+    auto_list_rooms: false,
     bosh_service_url: 'https://magicbroccoli.de/http-bind',
     websocket_url: 'wss://magicbroccoli.de/xmpp-websocket',
     csi_waiting_time: 25,

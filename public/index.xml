@@ -97,32 +97,32 @@ This test checks for the availability of publish-options on the account’s PEP 
     
     <item>
       <title>Tutorial Übersicht</title>
-      <link>https://magicbroccoli.de/page/tutorial/</link>
+      <link>https://magicbroccoli.de/tutorial/</link>
       <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://magicbroccoli.de/page/tutorial/</guid>
-      <description>Tutorial Übersicht Auf dieser Seite möchte ich einige Tutorials sammeln, die teils von mir selbst stammen, oder aber von außerhalb kommen. Einige Clients sind für Anfänger anfangs nicht einfach zu durchblicken, dabei sollen diese Tutorials helfen. Wer dazu beitragen möchte, kann dies gerne via PullRequest auf Github tun.
+      <guid>https://magicbroccoli.de/tutorial/</guid>
+      <description>Tutorial Übersicht Auf dieser Seite möchte ich einige Tutorials sammeln, teilweise stammen diese von mir selbst, oder aber von außerhalb. Einige Clients sind für XMPP-Anfänger anfangs nicht einfach zu durchblicken, dabei sollen diese Tutorials helfen. Wer dazu beitragen möchte, kann dies gerne via Pull Request tun.
 Windows/ Linux  Gajim  Android  Conversations Chatsecure  iPhone  Chatsecure  Prosody  XMPP over TLS
-  IMHO Nützliche Links Einige Webseiten die weitergehende Tutorials bzw.</description>
+ Prosody Datenbank Indizes</description>
     </item>
     
     <item>
       <title>Chatsecure Tutorial</title>
-      <link>https://magicbroccoli.de/page/tutorial/chatsecure/</link>
+      <link>https://magicbroccoli.de/page/tutorial_chatsecure/</link>
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://magicbroccoli.de/page/tutorial/chatsecure/</guid>
+      <guid>https://magicbroccoli.de/page/tutorial_chatsecure/</guid>
       <description>Hinweis: Ein Dank geht an 5222.de die netterweise die Screenshots zur Verfügung gestellt haben. Da ich selbst kein iPhone besitzte wäre mir ein Tutorial sonst nicht möglich gewesen.
 1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt. Speziell bei magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist.</description>
     </item>
     
     <item>
       <title>Gajim Tutorial</title>
-      <link>https://magicbroccoli.de/page/tutorial/gajim/</link>
+      <link>https://magicbroccoli.de/page/tutorial_gajim/</link>
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://magicbroccoli.de/page/tutorial/gajim/</guid>
-      <description>1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt. Speziell bei magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist. Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die Nutzungsbedingungen sowie Datenschutzbestimmungen. 2. Installation Gajim lässt sich unter Windows und Linux problemlos installieren. &amp;ndash;&amp;gt; Gajim Download
+      <guid>https://magicbroccoli.de/page/tutorial_gajim/</guid>
+      <description>1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Hierfür ist die Web Registrierung der Anlaufpunkt. Speziell für magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist. Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die Nutzungsbedingungen sowie Datenschutzbestimmungen. 2. Installation Gajim lässt sich unter Windows und Linux problemlos installieren. &amp;ndash;&amp;gt; Gajim Download
 2.1 Archlinux Bei Archlinux ist die Installation einen Schritt länger, aber nicht sonderlich schwierig.</description>
     </item>
     
@@ -132,8 +132,8 @@ Windows/ Linux  Gajim  Android  Conversations Chatsecure  iPhone  Chatsecure  Pr
       <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/technik/</guid>
-      <description>Sicherheit Das Hostsystem läuft unter Debian 9.2 Stretch. Das System und alle seine Komponenten werden regelmäßig aktualisiert. Dabei nehme ich teilweise Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn es aber gar nicht anders geht, ist eine kurze Downtime für wichtige Updates vertretbar.
-DNS Die gesamte Zone von magicbroccoli.de ist mit DNSSEC signiert und lässt sich überprüfen.
+      <description>System Das Hostsystem verwendet Debian 9.2 Stretch. Alle Komponenten werden regelmäßig aktualisiert. Teilweise nehme ich Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn sich dies allerdings nicht verhindern lässt, wird es zu einer möglichst kleinen Downtime für wichtige Updates kommen.
+DNS Die gesamte DNS-Zone von magicbroccoli.de ist mit DNSSEC signiert und lässt sich dahingehend überprüfen.
 nginx Alle Dienste der per HTTP erreichbar sind, werden durch einen nginx Server veröffentlicht.</description>
     </item>
     
@@ -143,8 +143,8 @@ nginx Alle Dienste der per HTTP erreichbar sind, werden durch einen nginx Server
       <pubDate>Sun, 25 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/register/</guid>
-      <description>Registrierung Diese Seite ermöglicht es, einen neuen Account auf dem MagicBroccoli XMPP Server anzulegen. Über deinen Jabber Identifier (kurz JID; auch Jabber-ID), bestehend aus Benutzernamen und “@magicbroccoli.de”, können Dich andere Nutzer zu ihren Kontakten hinzufügen.
-Bitte notiere Sie sich Ihren Benutzernamen und Passwort sorgfältig! Passwort-Resets durch den Administrator sind zwar grundsätzlich möglich, aber aufwendig und erfordern, dass Sie die Account-Inhaberschaft eindeutig beweisen können!</description>
+      <description>Registrierung Mithilfe dieser Seite ist es Ihnen möglich, einen neuen Account auf dem MagicBroccoli XMPP Server anzulegen. Über den erstellten Jabber Identifier (kurz JID; auch Jabber-ID), bestehend aus Benutzernamen und &amp;ldquo;magicbroccoli.de&amp;rdquo;, können andere Nutzer Sie zu ihren Kontakten hinzufügen.
+Bitte notiere Sie sich Ihren Benutzernamen und Passwort sorgfältig! Passwort-Resets durch einen Administrator sind grundsätzlich möglich. Allerdings erfordert diese einen eindeutigen stichhaltigen Nachweis der Account-Inhaberschaft!</description>
     </item>
     
     <item>
@@ -153,9 +153,9 @@ Bitte notiere Sie sich Ihren Benutzernamen und Passwort sorgfältig! Passwort-Re
       <pubDate>Thu, 22 Jun 2017 14:15:25 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/post/ts-xmpp-push/</guid>
-      <description>Idee Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen.
-Für genau dieses Problem habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP sendet.
-Nutzen IMHO gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung schnellstmöglichst sehr praktisch ist. Viele Server unterstützen eine Reihe von &amp;ldquo;Automatischen Moderationen&amp;rdquo;, trotzdem sollten User nicht in der Lage sein sich Gruppen zuzuweisen.</description>
+      <description>Idee Die Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft mit einem Server verbunden sein kann, um nach dem Rechten zu sehen.
+Dieses Problem versuche ich hiermit anzugehen. Dafür durchsucht dieses nach verschiedenen Regeln die Logfiles, gefundene Zeilen werden anschließend an definierte Kontakte per XMPP sendet.
+Nutzen IMHO gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung sehr praktisch ist. Viele Server unterstützen eine Reihe von &amp;ldquo;Automatischen Moderationen&amp;rdquo;, dennoch finden User Möglichkeiten diese zu behindern oder sogar zu umgehen.</description>
     </item>
     
     <item>
@@ -179,10 +179,10 @@ Code Hosting  Github: mightyBroccoli
     
     <item>
       <title>Datenschutzerklärung</title>
-      <link>https://magicbroccoli.de/privacy/</link>
+      <link>https://magicbroccoli.de/datenschutz/</link>
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://magicbroccoli.de/privacy/</guid>
+      <guid>https://magicbroccoli.de/datenschutz/</guid>
       <description>Datenschutz Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
 Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.</description>
     </item>
@@ -197,13 +197,12 @@ Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Date
 Nico Wellpott
 Scheideweg 157
 26127 Oldenburg
-Vertreten durch: Nico Wellpott
 Kontakt: Telefon: 0441 93652965
 E-Mail: admin(at)magicbroccoli.de
 Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: Nico Wellpott
 Scheideweg 157
 26127 Oldenburg
-Haftungsausschluss Haftung für Inhalte Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.</description>
+Haftungsausschluss Haftung für Inhalte Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.</description>
     </item>
     
     <item>
@@ -212,8 +211,8 @@ Haftungsausschluss Haftung für Inhalte Die Inhalte unserer Seiten wurden mit gr
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/xmpp/</guid>
-      <description>Was ist MagicBroccoli XMPP? MagicBroccoli XMPP ist ein freier XMPP Server ausgelegt auf Datenschutz und Sicherheit. XMPP ist ein Protokoll, welches ein Versenden von Nachrichten über das Internet ermöglicht. Es ist sehr ähnlich zu ICQ oder MSN besitzt dazu aber einige besondere Features.
-Wie funktioniert es? XMPP ist ein dezentrales Netzwerk. Das bedeutet das es entgegen WhatsApp oder Facebook weltweit viele Anbieter von XMPP Servern gibt, bei denen man seinen XMPP-Account einrichten kann.</description>
+      <description>MagicBroccoli XMPP MagicBroccoli XMPP ist ein freier XMPP Server ausgelegt auf Datenschutz und Sicherheit. XMPP ist ein Protokoll, welches ein Versenden von Nachrichten über das Internet ermöglicht. Es ist sehr ähnlich zu ICQ oder MSN besitzt dazu aber einige besondere Features.
+Wie funktioniert es? XMPP ist in einem dezentrales Netzwerk organisiert. Das bedeutet, dass es entgegen WhatsApp oder Facebook, weltweit viele Anbieter von XMPP Servern gibt. Daher kann theoretisch bei jedem Anbieter seinen Account registrieren.</description>
     </item>
     
     <item>
@@ -222,7 +221,7 @@ Wie funktioniert es? XMPP ist ein dezentrales Netzwerk. Das bedeutet das es entg
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/termsofuse/</guid>
-      <description>Allgemein  Registrierung sowie Nutzung des XMPP Servers sind kostenfrei. Es besteht kein Anspruch auf Funktionalität, Ausfallfreiheit sowie Fortführung dieses Dienstes. Das Versenden von Werbung in jeglicher Form ist untersagt! Angriffe auf die Server sind untersagt und resultieren in einem sofortigen Ausschluss. Aktivitäten, die gegen das geltende Recht der Bundesrepublik Deutschland, oder internationales Recht verstoßen sind untersagt. Accounts, die einer freiheitlichen, friedlichen und toleranten Gesellschaft widersprechen, werden gesperrt. Nutzeraccounts die länger als 1 Jahr inaktiv sind, werden automatisch gelöscht.</description>
+      <description>Allgemein  Registrierung sowie Nutzung des XMPP Servers sind kostenfrei. Es besteht kein Anspruch auf Funktionalität, Ausfallfreiheit sowie Fortführung dieses Dienstes. Das Versenden von Werbung/ Spam in jeglicher Form ist untersagt! Angriffe auf die Server sind untersagt und resultieren in einem sofortigen Ausschluss jeglicher Dienste. Aktivitäten, die gegen das geltende Recht der Bundesrepublik Deutschland, oder internationales Recht verstoßen sind untersagt. Accounts, die einer freiheitlichen, friedlichen und toleranten Gesellschaft widersprechen, werden gesperrt.</description>
     </item>
     
     <item>
@@ -231,12 +230,12 @@ Wie funktioniert es? XMPP ist ein dezentrales Netzwerk. Das bedeutet das es entg
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/donate/</guid>
-      <description>Unterstützung Der Betrieb des Servers sowie dessen Wartung kosten viel Zeit und natürlich auch Geld. Momentan werden alle Kosten von mir privat getragen. Wenn sie mich als kleines Dankeschön unterstützen möchten, sind sie hier absolut richtig.
-Über kleine Beiträge zur Finanzierung freue ich mich sehr. Daueraufträge lassen auch eine längerfristige Planung zu.
+      <description>Unterstützung Der Betrieb des Servers sowie dessen Wartung kosten viel Zeit und natürlich auch Geld. Momentan werden alle Kosten von mir privat getragen. Wenn Sie mich in meinem Bestreben Datenschutz für alle Verfügbar zu machen unterstützen möchten, sind sie hier gold richtig.
+Über kleine Beiträge zur Finanzierung freue ich mich ungemein. Daueraufträge lassen sogar eine längerfristige Planung zu.
  PayPal
- Bitcoin: 1QJZTWenBvdLWTUachpLLd2dLXAZMGeU87
- Banküberweisung: Bankverbindung auf Anfrage
-Vielen vielen herzlichen Dank an alle, die sich einmalig oder dauerhaft an der Finanzierung des Servers beteiligen!</description>
+ Amazon
+ Banküberweisung: auf Anfrage
+ Bitcoin: 1QJZTWenBvdLWTUachpLLd2dLXAZMGeU87</description>
     </item>
     
     <item>

@@ -57,7 +57,7 @@
     },
     "datePublished": "2017-06-27",
     "description": "verwendete Server Technik",
-    "wordCount": 655
+    "wordCount": 652
   }
 </script>
 
@@ -65,7 +65,7 @@
 
 <link rel="canonical" href="https://magicbroccoli.de/technik/" />
 
-<meta name="generator" content="Hugo 0.32.4" />
+<meta name="generator" content="Hugo 0.33" />
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
@@ -130,7 +130,7 @@
       </li>
       
       <li class="nav-item">
-        <a class="nav-link menu-item" href="https://magicbroccoli.de/page/tutorial/">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/tutorial">
           <i class='fa fa-question-circle' fa-fw'></i>
           <span class="text-capitalize no-decoration text-white">Tutorials</span>
         </a>
@@ -153,19 +153,18 @@
       <div class="content pt-2">
   
 
-<h2 id="sicherheit">Sicherheit</h2>
+<h2 id="system">System</h2>
 
-<p>Das Hostsystem läuft unter <img src="https://magicbroccoli.de/icons/debian_icon.png" alt="Debian" /> Debian 9.2 Stretch.
-Das System und alle seine Komponenten werden regelmäßig aktualisiert. Dabei nehme ich teilweise Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn es aber gar nicht anders geht, ist eine kurze Downtime für wichtige Updates vertretbar.</p>
+<p>Das Hostsystem verwendet <img src="https://magicbroccoli.de/icons/debian_icon.png" alt="Debian" /> Debian 9.2 Stretch. Alle Komponenten werden regelmäßig aktualisiert. Teilweise nehme ich Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn sich dies allerdings nicht verhindern lässt, wird es zu einer möglichst kleinen Downtime für wichtige Updates kommen.</p>
 
 <h3 id="dns">DNS</h3>
 
-<p>Die gesamte Zone von <em>magicbroccoli.de</em> ist mit DNSSEC signiert und lässt sich überprüfen.</p>
+<p>Die gesamte DNS-Zone von <em>magicbroccoli.de</em> ist mit DNSSEC signiert und lässt sich dahingehend überprüfen.</p>
 
 <h3 id="nginx">nginx</h3>
 
-<p>Alle Dienste der per HTTP erreichbar sind, werden durch einen <a href="https://nginx.org/" target="_blank">nginx</a> Server veröffentlicht. Dieser ist konfiguriert ausschließlich <a href="https://de.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS verschlüsselte Verbindungen</a> zuzulassen. Unverschlüsselte Verbindungen werden direkt zu einer verschlüsselten Verbindung aufgewertet. Ist dies nicht möglich, ist eine Verbindung nicht möglich.<br>
-Zur Verfügung stehen TLS1.2 sowie 1.3 mit eine definierten Auswahl an ciphers. Außerdem ist der Server in der Lage <a href="https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP.2F1.1" target="_blank">HTTP 1.1</a> sowie <a href="https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP.2F2" target="_blank">HTTP 2</a> Verbindungen zu erlauben.</p>
+<p>Alle Dienste der per HTTP erreichbar sind, werden durch einen <a href="https://nginx.org/" target="_blank">nginx</a> Server veröffentlicht. Dieser ist konfiguriert ausschließlich <a href="https://de.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS verschlüsselte Verbindungen</a> zuzulassen. Unverschlüsselte Verbindungen werden direkt zu einer verschlüsselten Verbindung aufgewertet. Ist dies nicht möglich, wird die Verbindung verweigert.<br>
+Zur Verfügung stehen TLS1.2 sowie 1.3 mit eine definierten Auswahl an ciphers. Außerdem ist der Server in der Lage <a href="https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP.2F1.1" target="_blank">HTTP 1.1</a> sowie <a href="https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP.2F2" target="_blank">HTTP 2</a> Verbindungen zur Verfügung zu stellen.</p>
 
 <pre><code>ssl_prefer_server_ciphers	on;
 ssl_ciphers 'ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256';
@@ -184,32 +183,32 @@ add_header Referrer-Policy &quot;no-referrer-when-downgrade&quot;;
 add_header Content-Security-Policy &quot;frame-ancestors 'self'&quot;;
 </code></pre>
 
-<p>Ähnlich wie bei meinem XMPP Server, ist es möglich über externe Testsuites die Konfiguration auf Lücken bzw. Schwächen hin zu überprüfen.<br>
-Besonders bekannt ist hierfür <a href="https://www.ssllabs.com" target="_blank">Qualys SSL Labs</a> dort sind <a href="https://www.ssllabs.com/ssltest/analyze.html?d=magicbroccoli.de" target="_blank">meine Ergebnisse</a> nachprüfbar. Die Ergebnisse werden dort leider nicht dauerhaft gespeichet.<br>
+<p>Ähnlich zum XMPP Server, ist es möglich über externe Testsuites die Konfiguration auf Lücken bzw. Schwächen hin zu überprüfen.<br>
+Besonders bekannt hierfür ist <a href="https://www.ssllabs.com" target="_blank">Qualys SSL Labs</a> dort sind <a href="https://www.ssllabs.com/ssltest/analyze.html?d=magicbroccoli.de" target="_blank">meine Ergebnisse</a> nachprüfbar. Die Ergebnisse werden dort leider nicht dauerhaft gespeichet.<br>
 ( <em>Der Test dauert ca. 1 Minute, daher kann der Test von jedem jederzeit wiederholt werden.</em> )</p>
 
 <h3 id="prosody">Prosody</h3>
 
 <p>Bei der XMPP Serversoftware handelt es ich um ein Prosody 0.10 stable nightly.<br>
-Mit stable nightly meine ich den aktuellsten Build im <a href="https://hg.prosody.im/0.10/" target="_blank">branch 0.10</a>. Auch der stable release wird mit diesem Branch gebildet, allerdings hängt dieser teilweise stark hinter dem aktuellen Build hinterher.<br>
-Ich verwende den stable nightly um einen stabilen Server zu garantieren allerdings lege ich auch Wert auf aktuelle Entwicklungen. Da es sich nicht um den testing branch handelt sind diese Features als stable anzusehen.</p>
+Mit stable nightly meine ich den aktuellsten Build im <a href="https://hg.prosody.im/0.10/" target="_blank">branch 0.10</a>. Auch der stable release wird mit diesem Branch gebaut, allerdings hängt dieser teilweise stark hinter dem aktuellen Build hinterher.<br>
+Ich verwende den stable nightly um einen stabilen Server zu garantieren. Allerdings lege ich auch Wert auf aktuelle Entwicklungen. Da es sich nicht um den testing branch handelt sind diese Features als stable anzusehen.</p>
 
-<h3 id="verschlüsselung">Verschlüsselung</h3>
+<h4 id="verschlüsselung">Verschlüsselung</h4>
 
-<p>Prosody ist so konfiguriert, ausschließlich verschlüsselte Verbindungen zuzulassen. Zusätzlich dazu ist der Server so konfiguriert ausschließlich Verschlüsselungsverfahren zu erlauben, die <a href="https://de.wikipedia.org/wiki/Perfect_Forward_Secrecy" target="_blank">Perfect Forward Secrecy</a> unterstützen.
+<p>Prosody ist so konfiguriert, ausschließlich verschlüsselte Verbindungen zuzulassen. Zusätzlich dazu ist der Server so konfiguriert ausschließlich Verschlüsselungsverfahren zu erlauben, die <a href="https://wikipedia.org/wiki/Perfect_Forward_Secrecy" target="_blank">Perfect Forward Secrecy</a> unterstützen.
 Ungesicherte Verbindungen, oder Verbindungen mit zu schwacher Verschlüsselung bei <em>c2s</em> oder <em>s2s</em> werden blockiert. Leider werden dadurch einige Server sowie einige ältere Clients ausgesperrt, allerdings ist unzureichende Verschlüsselng für mich ein Ausschlusskriterium.
 Eine Ansicht welche Verschlüsselungsverfahren zum Verbindungsaufbau zulässig sind ist hier zu finden: <a href="https://check.messaging.one/result.php?domain=magicbroccoli.de&amp;type=client#ciphers" target="_blank">zulässige Verschlüsselungsverfahren</a></p>
 
-<h3 id="zertifikate">Zertifikate</h3>
+<h4 id="zertifikate">Zertifikate</h4>
 
 <p>Es gibt viele öffentliche XMPP Server, die unter selbstsignierten oder ungültigen Zertifikaten betrieben werden. Mein Server ist so konfiguriert ausschließlich Zertifikate zuzulassen, die gültig sind. Selbstsignierte Zertifikate werden nicht akzeptiert somit wird eine Verbindung blockiert.</p>
 
-<h3 id="passwörter">Passwörter</h3>
+<h4 id="passwörter">Passwörter</h4>
 
-<p>Alle Passwöter werden gehashed in einer Datenbank gespeichert, die nicht von außen erreichbar ist. Als Authentifizierungsverfahren wird entweder <a href="https://en.wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism" target="_blank"><em>SCRAM-SHA-1</em></a> oder <a href="https://en.wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism" target="_blank"><em>SCRAM-SHA-1-PLUS</em></a> verwendet.<br>
-Speziell das <a href="https://de.wikipedia.org/wiki/HTTP-Authentifizierung#Digest_Access_Authentication" target="_blank"><em>DIGEST-MD5</em></a> Verfahren, welches ältere Clients und Bots häufiger verwenden, wird nicht unterstützt.</p>
+<p>Alle Passwöter werden gehashed in einer Datenbank gespeichert, die nicht von außen erreichbar ist. Als Authentifizierungsverfahren wird entweder <a href="https://wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism" target="_blank"><em>SCRAM-SHA-1</em></a> oder <a href="https://wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism" target="_blank"><em>SCRAM-SHA-1-PLUS</em></a> verwendet.<br>
+Speziell das <a href="https://wikipedia.org/wiki/HTTP-Authentifizierung#Digest_Access_Authentication" target="_blank"><em>DIGEST-MD5</em></a> Verfahren, welches ältere Clients und Bots häufiger verwenden, wird nicht unterstützt.</p>
 
-<h2 id="features">Features</h2>
+<h4 id="features">Features</h4>
 
 <p>Der Server unterstützt eine Vielfalt an XMPP-Erweiterungen (XEPs). Jeder Client unterstützt dabei eine andere Teilmenge dieser Features. Speziell gebe ich Acht darauf, <a href="https://conversations.im/" target="_blank">Conversations (Android)</a> in möglichst großem Umfang zu unterstützen.
 Auszug aus den speziellern Server-Features:</p>
@@ -234,7 +233,7 @@ Auszug aus den speziellern Server-Features:</p>
 <li><a href="https://xmpp.org/extensions/xep-0368.html" target="_blank">XEP-0368: SRV records for XMPP over TLS</a></li>
 </ul>
 
-<h3 id="xep-0156-alternative-xmpp-connection-methods">XEP-0156: Alternative XMPP Connection Methods</h3>
+<h5 id="xep-0156-alternative-xmpp-connection-methods">XEP-0156: Alternative XMPP Connection Methods</h5>
 
 <ul>
 <li>HTTP-Bind Adresse: <a href="https://magicbroccoli.de/http-bind" target="_blank">https://magicbroccoli.de/http-bind</a></li>
@@ -242,12 +241,12 @@ Auszug aus den speziellern Server-Features:</p>
 <li>XMPP over TLS: <a href="https://xmpps.magicbroccoli.de" target="_blank">xmpps.magicbroccoli.de</a></li>
 </ul>
 
-<h2 id="registrieren">Registrieren</h2>
+<h4 id="registrieren">Registrieren</h4>
 
 <p>Wenn dich diese Dinge überzeugt haben XMPP für dich und deine Freunde zu probieren. Kannst du dich hier direkt anmelden.
 <center><a style="display: block; margin-top: 50px; margin-left: auto; margin-right: auto; margin-bottom: 50px; height: 50px; width: 300px; background-color: #0069a1; color: white; border-radius: 5px; line-height: 50px; text-align: center; font-weight: bold;" href="https://magicbroccoli.de/register/">Registrieren</a></center></p>
 
-<h2 id="im-observer">IM Observer</h2>
+<h4 id="im-observer">IM Observer</h4>
 
 <p>IM Oberserver ist ein Testsuite die automatisiert XMPP Server auf verschiedene Faktoren hin testet. Die Ergebnisse für meinen Server sind wie folgt.<a href='https://check.messaging.one/result.php?domain=magicbroccoli.de&amp;type=client'>
     <img src='https://check.messaging.one/badge.php?domain=magicbroccoli.de' alt='IM observatory score' />
@@ -255,14 +254,14 @@ Auszug aus den speziellern Server-Features:</p>
 
 <p>Mit dem Tool von <a href="https://tls.imirhil.fr" target="_blank">tls.imirhil.fr</a> lässt sich ähnlich zum IM Observer ein Server prüfen. MagicBroccoli XMPP hat dort ein Rating von A+ <a href="https://tls.imirhil.fr/xmpp/magicbroccoli.de" target="_blank">CryptCheck Score</a>.</p>
 
-<h2 id="statistiken">Statistiken</h2>
+<h4 id="statistiken">Statistiken</h4>
 
 <p><img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_c2s-day.png" width="45%"> <img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_s2s-week.png" width="45%">
 <img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_stanzas-week.png" width="45%"> <img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_uptime-week.png" width="45%"></p>
 
 <hr />
 
-<p>Last Edit 26.11.17</p>
+<p>Last Edit 22.01.18</p>
 
 </div>
 
@@ -540,7 +539,8 @@ Auszug aus den speziellern Server-Features:</p>
     allow_chat_pending_contacts: true,
     allow_non_roster_messaging: true,
     allow_registration: false,
-    auto_list_rooms: true,
+    archived_messages_page_size: 30,
+    auto_list_rooms: false,
     bosh_service_url: 'https://magicbroccoli.de/http-bind',
     websocket_url: 'wss://magicbroccoli.de/xmpp-websocket',
     csi_waiting_time: 25,

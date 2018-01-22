@@ -75,21 +75,21 @@ This test checks for the availability of publish-options on the account’s PEP 
     
     <item>
       <title>Chatsecure Tutorial</title>
-      <link>https://magicbroccoli.de/page/tutorial/chatsecure/</link>
+      <link>https://magicbroccoli.de/page/tutorial_chatsecure/</link>
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://magicbroccoli.de/page/tutorial/chatsecure/</guid>
+      <guid>https://magicbroccoli.de/page/tutorial_chatsecure/</guid>
       <description>Hinweis: Ein Dank geht an 5222.de die netterweise die Screenshots zur Verfügung gestellt haben. Da ich selbst kein iPhone besitzte wäre mir ein Tutorial sonst nicht möglich gewesen.
 1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt. Speziell bei magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist.</description>
     </item>
     
     <item>
       <title>Gajim Tutorial</title>
-      <link>https://magicbroccoli.de/page/tutorial/gajim/</link>
+      <link>https://magicbroccoli.de/page/tutorial_gajim/</link>
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://magicbroccoli.de/page/tutorial/gajim/</guid>
-      <description>1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt. Speziell bei magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist. Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die Nutzungsbedingungen sowie Datenschutzbestimmungen. 2. Installation Gajim lässt sich unter Windows und Linux problemlos installieren. &amp;ndash;&amp;gt; Gajim Download
+      <guid>https://magicbroccoli.de/page/tutorial_gajim/</guid>
+      <description>1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Hierfür ist die Web Registrierung der Anlaufpunkt. Speziell für magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist. Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die Nutzungsbedingungen sowie Datenschutzbestimmungen. 2. Installation Gajim lässt sich unter Windows und Linux problemlos installieren. &amp;ndash;&amp;gt; Gajim Download
 2.1 Archlinux Bei Archlinux ist die Installation einen Schritt länger, aber nicht sonderlich schwierig.</description>
     </item>
     
@@ -99,9 +99,9 @@ This test checks for the availability of publish-options on the account’s PEP 
       <pubDate>Thu, 22 Jun 2017 14:15:25 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/post/ts-xmpp-push/</guid>
-      <description>Idee Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen.
-Für genau dieses Problem habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP sendet.
-Nutzen IMHO gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung schnellstmöglichst sehr praktisch ist. Viele Server unterstützen eine Reihe von &amp;ldquo;Automatischen Moderationen&amp;rdquo;, trotzdem sollten User nicht in der Lage sein sich Gruppen zuzuweisen.</description>
+      <description>Idee Die Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft mit einem Server verbunden sein kann, um nach dem Rechten zu sehen.
+Dieses Problem versuche ich hiermit anzugehen. Dafür durchsucht dieses nach verschiedenen Regeln die Logfiles, gefundene Zeilen werden anschließend an definierte Kontakte per XMPP sendet.
+Nutzen IMHO gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung sehr praktisch ist. Viele Server unterstützen eine Reihe von &amp;ldquo;Automatischen Moderationen&amp;rdquo;, dennoch finden User Möglichkeiten diese zu behindern oder sogar zu umgehen.</description>
     </item>
     
   </channel>
