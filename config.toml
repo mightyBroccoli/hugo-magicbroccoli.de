@@ -13,8 +13,8 @@ enableRobotsTXT = true
 noTimes = true
 
 [params]
-description = "Ein moderner, deutscher XMPP Server mit einem Schwerpunkt auf Privatsphäre und Datenschutz. Erstelle dir hier kostenlos einen Account."
-keywords = ["xmpp, jabber, MagicBroccoli, MagicXMPP, deutschland, germany, datenschutz, server, account, secure"]
+  description = "Ein moderner, deutscher XMPP Server mit einem Schwerpunkt auf Privatsphäre und Datenschutz. Erstelle dir hier kostenlos einen Account."
+  keywords = ["xmpp, jabber, MagicBroccoli, MagicXMPP, deutschland, germany, datenschutz, server, account, secure"]
 
 [params.widgets]
   recent_articles = false
@@ -23,57 +23,57 @@ keywords = ["xmpp, jabber, MagicBroccoli, MagicXMPP, deutschland, germany, daten
   tag_cloud = true
 
 [blackfriday]
-hrefTargetBlank = true
+  hrefTargetBlank = true
 
 [[menu.main]]
-    name = "Home"
-    pre = "<i class='fa fa-home fa-fw'></i>"
-    weight = -110
-    identifier = "home"
-    url = "/"
+  name = "Home"
+  pre = "<i class='fa fa-home fa-fw'></i>"
+  weight = -110
+  identifier = "home"
+  url = "/"
 
 [[menu.main]]
-    name = "XMPP"
-    pre = "<i class='fa fa-delicious'></i>"
-    weight = -100
-    identifier = "xmpp"
-    url = "/xmpp/"
+  name = "XMPP"
+  pre = "<i class='fa fa-delicious'></i>"
+  weight = -100
+  identifier = "xmpp"
+  url = "/xmpp/"
 
 [[menu.main]]
-    name = "Register"
-    pre = "<i class='fa fa-plus' fa-fw'></i>"
-    weight = -99
-    identifier = "register"
-    url = "/register/"
-
-  [[menu.main]]
-      name = "Tutorials"
-      pre = "<i class='fa fa-question-circle' fa-fw'></i>"
-      weight = -98
-      identifier = "tutorial"
-      url = "/tutorial"
+  name = "Register"
+  pre = "<i class='fa fa-plus' fa-fw'></i>"
+  weight = -99
+  identifier = "register"
+  url = "/register/"
 
 [[menu.main]]
-    name = "About me"
-    pre = "<i class='fa fa-info-circle'></i>"
-    weight = -90
-    identifier = "contact"
-    url = "/contact/"
+  name = "Tutorials"
+  pre = "<i class='fa fa-question-circle' fa-fw'></i>"
+  weight = -98
+  identifier = "tutorial"
+  url = "/tutorial"
+
+[[menu.main]]
+  name = "About me"
+  pre = "<i class='fa fa-info-circle'></i>"
+  weight = -90
+  identifier = "contact"
+  url = "/contact/"
 
 [[menu.footer]]
-    name = "Privacy Policy"
-    weight = -110
-    identifier = "privacy"
-    url = "/datenschutz/"
+  name = "Privacy Policy"
+  weight = -110
+  identifier = "privacy"
+  url = "/datenschutz/"
 
 [[menu.footer]]
-    name = "Terms of Use"
-    weight = -120
-    identifier = "termsofuse"
-    url = "/termsofuse/"
+  name = "Terms of Use"
+  weight = -120
+  identifier = "termsofuse"
+  url = "/termsofuse/"
 
 [[menu.footer]]
-    name = "Impressum"
-    weight = -130
-    identifier = "impress"
-    url = "/impressum/"
+  name = "Impressum"
+  weight = -130
+  identifier = "impress"
+  url = "/impressum/"
