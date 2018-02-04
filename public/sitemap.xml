@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://magicbroccoli.de/post/keybase-omemo-verify/</loc>
+    <lastmod>2018-02-03T15:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://magicbroccoli.de/post/omemo-complicance/</loc>
     <lastmod>2017-12-20T10:00:00+02:00</lastmod>
   </url>
@@ -156,8 +161,14 @@
   </url>
   
   <url>
+    <loc>https://magicbroccoli.de/tags/keybase.io/</loc>
+    <lastmod>2018-02-03T15:00:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://magicbroccoli.de/</loc>
-    <lastmod>2017-12-20T10:00:00+02:00</lastmod>
+    <lastmod>2018-02-03T15:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -181,7 +192,7 @@
   
   <url>
     <loc>https://magicbroccoli.de/tags/omemo/</loc>
-    <lastmod>2017-12-20T10:00:00+02:00</lastmod>
+    <lastmod>2018-02-03T15:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -199,7 +210,7 @@
   
   <url>
     <loc>https://magicbroccoli.de/post/</loc>
-    <lastmod>2017-12-20T10:00:00+02:00</lastmod>
+    <lastmod>2018-02-03T15:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -241,13 +252,13 @@
   
   <url>
     <loc>https://magicbroccoli.de/tags/xep-0384/</loc>
-    <lastmod>2017-12-20T10:00:00+02:00</lastmod>
+    <lastmod>2018-02-03T15:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/categories/xmpp/</loc>
-    <lastmod>2017-12-20T10:00:00+02:00</lastmod>
+    <lastmod>2018-02-03T15:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   

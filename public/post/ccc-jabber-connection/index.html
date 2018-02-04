@@ -240,9 +240,8 @@
 
 <p>Betroffen sind damit speziell Prosody Server, die folgende Konfiguration eingestellt haben.</p>
 
-<pre><code class="language-lua">s2s_require_encryption = true
-s2s_secure_auth = true
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lua" data-lang="lua">s2s_require_encryption <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+s2s_secure_auth <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span></code></pre></div>
 
 <p>Damit ist die Voraussetzung einer Verbindung ein Zertifikat, welches vom Server anerkannt wird. Da auch keine unverschlüsselte Verbindung aufgebaut werden kann, wird die Verbindung blockiert.
 <a href="https://prosody.im/doc/s2s#security" target="_blank">Prosody S2S Security</a><br></p>
@@ -263,33 +262,25 @@ s2sin5637dae55f80	info	Incoming s2s stream jabber.ccc.de-&gt;magicbroccoli.de cl
 
 <h2 id="root-zertifikate-hinzufügen">Root Zertifikate hinzufügen</h2>
 
-<p>Es wichtig die Integrität des Systems zu erhalten, daher werden keine Systemdateien geändert und Dateien nur an Stellen eingefügt, wo allein der Pfad schon erkennbar macht, dass diese eine <em>manuelle</em> Erweiterung sind.</p>
-
-<pre><code>/usr/local/share/ca-certificates
-</code></pre>
-
-<p>In diesem Verzeichnis sollten grundsätzlich keine Dateien oder Ordner vorhanden sein. Dieses Verzeichnis fügt für alle <em>lokalen</em> User Certificate Authorities ( <em>im Folgenden nur noch CA genannt</em> ) Zertifikate ein.</p>
+<p>Es wichtig die Integrität des Systems zu erhalten, daher werden keine Systemdateien geändert und Dateien nur an Stellen eingefügt, wo allein der Pfad schon erkennbar macht, dass diese eine <em>manuelle</em> Erweiterung ist.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/local/share/ca-certificates</code></pre></div>
+In diesem Verzeichnis sollten grundsätzlich keine Dateien oder Ordner vorhanden sein. Dieses Verzeichnis fügt für alle <em>lokalen</em> User Certificate Authorities ( <em>im Folgenden nur noch CA genannt</em> ) Zertifikate ein.</p>
 
 <p><strong>Hinweis</strong>: <em>Das Hinzufügen eines CA Root Zertifikats kann das System einem erhöhten Risiko aussetzen. Es sollte sehr vorsichtig mit der Beglaubigung von wildfremden CAs umgegangen werden. Da euer System mit den folgenden Änderungen auch allen beglaubigten Zertifikaten der CA vertraut.</em></p>
 
-<p>In diesem Verzeichnis ist ein Ordner zu erstellen mit dem Namen der CA.<br></p>
-
-<pre><code class="language-#!/bin/bash">sudo mkdir /usr/local/share/ca-certificates/cacert.org
-</code></pre>
+<p>In diesem Verzeichnis ist ein Ordner zu erstellen mit dem Namen der CA.<br>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo mkdir /usr/local/share/ca-certificates/cacert.org</code></pre></div></p>
 
 <h3 id="download-der-zertifikate">Download der Zertifikate</h3>
 
-<pre><code class="language-#!/bin/bash">sudo wget -P /usr/local/share/ca-certificates/cacert.org \
-http://www.cacert.org/certs/root.crt \
-http://www.cacert.org/certs/class3.crt
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo wget -P /usr/local/share/ca-certificates/cacert.org <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>http://www.cacert.org/certs/root.crt <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>http://www.cacert.org/certs/class3.crt</code></pre></div>
 
 <h2 id="aktualisieren-des-zertifikat-bündels">Aktualisieren des Zertifikat Bündels</h2>
 
-<p>Zum Schluss muss der Zertifikat Speicher des System noch aktualisiert werden. Hierfür wird das Verzeichnis ausgelesen und alle Zertifikate die dort vorhanden sind werden hinzugefügt.</p>
-
-<pre><code class="language-#!/bin/bash">sudo update-ca-certificates
-</code></pre>
+<p>Zum Schluss muss der Zertifikat Speicher des System noch aktualisiert werden. Hierfür wird das Verzeichnis ausgelesen und alle Zertifikate die dort vorhanden sind werden hinzugefügt.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo update-ca-certificates</code></pre></div></p>
 
 <h2 id="entfernen-von-ca-root-zertifikaten">Entfernen von CA Root Zertifikaten</h2>
 
@@ -301,18 +292,14 @@ Falls es, weswegen auch immer, gewollt ist einer CA und deren Zertifikaten nicht
 <p>Im Folgenden am Beispiel von cacert.org.</p>
 
 <ul>
-<li><p>Entfernen der Zertifikate/ des Zertifikat-Ordners aus</p>
+<li><p>Entfernen der Zertifikate/ des Zertifikat-Ordners aus
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo rm -r /usr/local/share/ca-certificates/cacert.org/</code></pre></div></p></li>
 
-<pre><code class="language-#!/bin/bash">sudo rm -r /usr/local/share/ca-certificates/cacert.org/
-</code></pre></li>
-
-<li><p>löschen und neuerstellen der Symlinks</p>
-
-<pre><code class="language-#!/bin/bash">sudo update-ca-certificates --fresh
-</code></pre>
-
-<p>Mit diesen beiden Befehlen ist es möglich, jegliche CA aus dem trust store zu entfernen.</p></li>
+<li><p>löschen und neuerstellen der Symlinks
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo update-ca-certificates --fresh</code></pre></div></p></li>
 </ul>
+
+<p>Mit diesen beiden Befehlen ist es möglich, jegliche CA aus dem trust store zu entfernen.</p>
 
 </div>
 
@@ -421,7 +408,7 @@ Falls es, weswegen auch immer, gewollt ist einer CA und deren Zertifikaten nicht
             <a href="https://magicbroccoli.de/categories/xmpp/">
                 xmpp
             </a>
-            <span class="category-list-count">9</span>
+            <span class="category-list-count">10</span>
         </li>
         
       </ul>
@@ -463,6 +450,11 @@ Falls es, weswegen auch immer, gewollt ist einer CA und deren Zertifikaten nicht
           </li>
         
           <li>
+            <a href="https://magicbroccoli.de/tags/keybase.io/">keybase.io</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
             <a href="https://magicbroccoli.de/tags/maintenance/">maintenance</a>
             <span class="category-list-count">2</span>
           </li>
@@ -479,7 +471,7 @@ Falls es, weswegen auch immer, gewollt ist einer CA und deren Zertifikaten nicht
         
           <li>
             <a href="https://magicbroccoli.de/tags/omemo/">omemo</a>
-            <span class="category-list-count">2</span>
+            <span class="category-list-count">3</span>
           </li>
         
           <li>
@@ -504,7 +496,7 @@ Falls es, weswegen auch immer, gewollt ist einer CA und deren Zertifikaten nicht
         
           <li>
             <a href="https://magicbroccoli.de/tags/xep-0384/">xep-0384</a>
-            <span class="category-list-count">2</span>
+            <span class="category-list-count">3</span>
           </li>
         
       </ul>
@@ -536,6 +528,10 @@ Falls es, weswegen auch immer, gewollt ist einer CA und deren Zertifikaten nicht
     
         <a href="https://magicbroccoli.de/tags/gajim/" class="badge badge-primary">
         gajim
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/keybase.io/" class="badge badge-primary">
+        keybase.io
         </a>
     
         <a href="https://magicbroccoli.de/tags/maintenance/" class="badge badge-primary">

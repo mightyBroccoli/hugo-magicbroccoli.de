@@ -29,7 +29,7 @@ done
 hugo --source "/home/nico/Programming/Github/hugo-magicbroccoli.de/"
 
 # precompiled list of folders
-for appDir in "${Folders[@]}"
+for appDir in "${Folders[@]}/public/"
 do
 	# fetch all existing gzipped CSS/JavaScript/webfont files and remove files that do not have a base uncompressed file
 	find "$appDir" -type f -regextype posix-extended -iregex ".*\\.(${ext})\\.gz$" -print0 | while read -d '' compressFile

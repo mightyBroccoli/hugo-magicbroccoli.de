@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
     <copyright>All rights reserved.</copyright>
-    <lastBuildDate>Wed, 20 Dec 2017 10:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 03 Feb 2018 15:00:00 +0200</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/categories/xmpp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Omemo Verification mit Keybase.io</title>
+      <link>https://magicbroccoli.de/post/keybase-omemo-verify/</link>
+      <pubDate>Sat, 03 Feb 2018 15:00:00 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/keybase-omemo-verify/</guid>
+      <description>Omemo Key Verification Um eine möglichst reibungslose Kommunikation zu ermöglichen versucht Conversations, neue Keys erstmal anzunehmen; Blind Trust Before Verification. Der Sinn einer spezifischen Verifikation liegt darin dieses Verhalten zu unterbinden. Nachdem ein Key verifiziert wurde, wird Conversations keine neuen Keys automatisch annehmen.
+ After such a verification happened Conversations will no longer blindly trust new devices that are created after the verification. By doing verification the user has proven three things a) they are capable of scanning barcodes b) they have some sort of out-of-band channel where such a verification can happen c) they have some interest in verified communication.</description>
+    </item>
     
     <item>
       <title>Omemo Complicance</title>
