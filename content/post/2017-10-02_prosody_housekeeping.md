@@ -46,8 +46,6 @@ Der einfachste Weg ist, das gesamte Mercurial Archiv der Community Module zu klo
 Nun sollte im Skript selbst, über die Variabeln, eingestellt werden was für Zeiteinheiten gewünscht sind. Außerdem sollten eventuell abweichende Pfade auf die jeweiligen Systemverhältnisse angepasst werden.<br>
 Der Folgende Abschnitt zeigt einen Ausschnitt aus dem Skript, welcher die Konfigurationsvariablen, die Filter sowie den `--configtest` catch zeigt.
 {{< highlight bash >}}
-#!/bin/bash
-
 ###### CONFIGURATION ######
 # configuration variables
 tmp_directory=/tmp/prosody/

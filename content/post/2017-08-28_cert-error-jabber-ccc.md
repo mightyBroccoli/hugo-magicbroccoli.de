@@ -25,10 +25,12 @@ Der XMPP Server vom [Chaos Computer Club](https://ccc.de) wird unter einem Zerti
 Speziell Server die auf Datenschutz und Sicherheit ausgelegt wollen keine unverschlüsselten Verbindung.Im Folgenden möchte daher ich aufzeigen, welche Änderungen notwendig wären, um Debian mit den entsprechenden Zertifikaten auszustatten.
 
 Betroffen sind damit speziell Prosody Server, die folgende Konfiguration eingestellt haben.
-```lua
+
+{{< highlight lua >}}
 s2s_require_encryption = true
 s2s_secure_auth = true
-```
+{{< /highlight >}}
+
 Damit ist die Voraussetzung einer Verbindung ein Zertifikat, welches vom Server anerkannt wird. Da auch keine unverschlüsselte Verbindung aufgebaut werden kann, wird die Verbindung blockiert.
 [Prosody S2S Security](https://prosody.im/doc/s2s#security)<br>
 
@@ -45,31 +47,31 @@ Es besteht die Möglichkeit Ausnahmen zu definieren, das Server trotz der Maßna
 - [Technik/Zertifikate](/technik/#zertifikate)
 
 ## Root Zertifikate hinzufügen
-Es wichtig die Integrität des Systems zu erhalten, daher werden keine Systemdateien geändert und Dateien nur an Stellen eingefügt, wo allein der Pfad schon erkennbar macht, dass diese eine *manuelle* Erweiterung sind.
-```
+Es wichtig die Integrität des Systems zu erhalten, daher werden keine Systemdateien geändert und Dateien nur an Stellen eingefügt, wo allein der Pfad schon erkennbar macht, dass diese eine *manuelle* Erweiterung ist.
+{{< highlight bash >}}
 /usr/local/share/ca-certificates
-```
+{{< /highlight >}}
 In diesem Verzeichnis sollten grundsätzlich keine Dateien oder Ordner vorhanden sein. Dieses Verzeichnis fügt für alle *lokalen* User Certificate Authorities ( *im Folgenden nur noch CA genannt* ) Zertifikate ein.
 
 **Hinweis**: *Das Hinzufügen eines CA Root Zertifikats kann das System einem erhöhten Risiko aussetzen. Es sollte sehr vorsichtig mit der Beglaubigung von wildfremden CAs umgegangen werden. Da euer System mit den folgenden Änderungen auch allen beglaubigten Zertifikaten der CA vertraut.*
 
 In diesem Verzeichnis ist ein Ordner zu erstellen mit dem Namen der CA.<br>
-```#!/bin/bash
+{{< highlight bash >}}
 sudo mkdir /usr/local/share/ca-certificates/cacert.org
-```
+{{< /highlight >}}
 
 ### Download der Zertifikate
-```#!/bin/bash
+{{< highlight bash >}}
 sudo wget -P /usr/local/share/ca-certificates/cacert.org \
 http://www.cacert.org/certs/root.crt \
 http://www.cacert.org/certs/class3.crt
-```
+{{< /highlight >}}
 
 ## Aktualisieren des Zertifikat Bündels
 Zum Schluss muss der Zertifikat Speicher des System noch aktualisiert werden. Hierfür wird das Verzeichnis ausgelesen und alle Zertifikate die dort vorhanden sind werden hinzugefügt.
-```#!/bin/bash
+{{< highlight bash >}}
 sudo update-ca-certificates
-```
+{{< /highlight >}}
 
 ## Entfernen von CA Root Zertifikaten
 _**VORSICHT**_<br>
@@ -80,12 +82,13 @@ Es ist hier eine enorme Vorsicht geboten. Lieber sollte ein move Befehl verwende
 Im Folgenden am Beispiel von cacert.org.
 
 - Entfernen der Zertifikate/ des Zertifikat-Ordners aus
-```#!/bin/bash
+{{< highlight bash >}}
 sudo rm -r /usr/local/share/ca-certificates/cacert.org/
-```
+{{< /highlight >}}
 
 - löschen und neuerstellen der Symlinks
-```#!/bin/bash
+{{< highlight bash >}}
 sudo update-ca-certificates --fresh
-```
+{{< /highlight >}}
+
 Mit diesen beiden Befehlen ist es möglich, jegliche CA aus dem trust store zu entfernen.

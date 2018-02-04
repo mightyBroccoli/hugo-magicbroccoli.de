@@ -24,11 +24,11 @@ Um eine möglichst reibungslose Kommunikation zu ermöglichen versucht Conversat
 Dies ist nur ein sehr kleiner Bruchteil der Funktionalität von Keybase.io. Für ein deutlich ausführlicheres Bild kann ich [secitem.eu](https://secitem.eu/blog/keybase-basics/) empfehlen. In dem Beitrag werden die basics zu Keybase ausführlich erklärt.
 
 ### Conversations
-Für Conversations gibt es die Möglichkeit jeden Key einzeln zu verifizieren oder mit nur einem QR Code alle Keys gleichzeitig zu verifizieren. Um den Aufwand möglichst gering zu halten bietet Conversations die Möglichkeit einen solchen QR Code direkt zu erstellen. Notwendig dafür ist es, dass die eigenen Omemo Keys alle angenommen und verifiziert sind. Ist dies der Fall, ist es möglich mit Conversations einen einzelnen QR Code zu erstellen der alle eigenen verifizierten Keys enthält.<br>
+Für Conversations gibt es die Möglichkeit jeden Key einzeln zu verifizieren oder mit nur einem QR Code alle Keys gleichzeitig. Um den Aufwand möglichst gering zu halten, bietet Conversations die Möglichkeit einen solchen QR Code direkt zu erstellen. Damit in diesem QR Code alle eigenen Keys enthalten sind ist es notwendig, dass die eigenen Omemo Keys alle angenommen und verifiziert sind. Ist dies der Fall, ist es möglich mit Conversations einen einzelnen QR Code zu erstellen der alle eigenen verifizierten Keys enthält.<br>
 Da nicht alle Clients im Moment ein direktes Verifizieren unterstützen (eg. Gajim, Pidgin), ist zusätzlich dazu noch ein Textdokument hinterlegt in dem die Fingerprints aufgelistet sind. Mit diesem Textdokument ist ein manueller Abgleich möglich.
 
 ### Struktur
-Um eine möglichst einheitliche und übersichtliche Struktur zu schaffen, habe ich die Ordner Struktur nach folgenden Prinzip gewählt. Das Namensschema ist ziemlich eindeutig gewählt und ist prinzipiell auch egal, da nur ein Bild und eine einzelne Textdatei vorhanden sind die anhand der Dateiendung eindeutig identifizierbar sind.
+Um eine möglichst einheitliche bzw. übersichtliche Struktur zu schaffen, habe ich die Ordner Struktur wie dargestellt gewählt. Das Namensschema ist ziemlich eindeutig aber prinzipiell auch egal, da nur ein Bild und eine einzelne Textdatei verwendet werden, die anhand der Dateiendung unterscheidbar sind.
 
 {{< highlight bash >}}
 omemo-verification

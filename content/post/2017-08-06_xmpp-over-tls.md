@@ -37,7 +37,7 @@ Zusätzlich zu den [Standard SRV Einträgen](https://prosody.im/doc/dns) wird ei
 
 In diesem Beispiel ist die Domain `example.com` und XMPP over TLS soll über die SubDomain `xmpps.example.com` erreichbar sein.
 
-```
+{{< highlight DNS >}}
 # Standard Settings
 _xmpp-client._tcp.example.com. 18000 IN SRV 0 5 5222 example.com.
 _xmpp-server._tcp.example.com. 18000 IN SRV 0 5 5269 example.com.
@@ -47,7 +47,7 @@ _xmpps-client._tcp.example.com. 18000 IN SRV 10 5 xmpps.example.com.
 
 # A record
 xmpps.example.com. 18000 IN A $zweite_ip_adresse
-```
+{{< /highlight >}}
 
 ### 2. Prosody Server Konfiguration
 Für den Verbindungsaufbau muss in der Prosody Konfiguration *legacy_ssl_ports* definiert werden, damit das `http` Modul auch auf dem gewählten Port lauscht. Das Modul *mod_legacyauth* wird hierfür allerdings nicht benötigt.
