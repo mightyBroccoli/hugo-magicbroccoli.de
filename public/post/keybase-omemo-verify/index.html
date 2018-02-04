@@ -57,7 +57,7 @@
     },
     "datePublished": "2018-02-03",
     "description": "",
-    "wordCount": 396
+    "wordCount": 462
   }
 </script>
 
@@ -170,8 +170,8 @@
     
       &middot; by nico
     
-    &middot; 2 Minute Read
-    &middot; 396 Words
+    &middot; 3 Minute Read
+    &middot; 462 Words
   </div>
 
   
@@ -223,11 +223,13 @@
 
 <h2 id="omemo-key-verification">Omemo Key Verification</h2>
 
-<p>Um eine möglichst reibungslose Kommunikation zu ermöglichen versucht Conversations, neue Keys erstmal anzunehmen; <a href="https://gultsch.de/trust.html" target="_blank">Blind Trust Before Verification</a>. Der Sinn einer spezifischen Verifikation liegt darin dieses Verhalten zu unterbinden. Nachdem ein Key verifiziert wurde, wird Conversations keine neuen Keys automatisch annehmen.</p>
+<p>Um eine möglichst reibungslose Kommunikation zu ermöglichen, vertraut Conversations in der Standardeinstellung neuen OMEMO-Keys erstmal blind. Wenn aber eine spezifische Verifikation - über das Scannen eines QR-Codes - stattgefunden hat, werden neue Keys grundsätzlich misstraut. Dies bietet einen weitere Möglichkeit um Man-In-The-Middle-Angriffe zu unterbinden. Dieses Vertrauenmodell heißt <a href="https://gultsch.de/trust.html" target="_blank">Blind Trust Before Verification</a>. Ohne Verifizierung ist eine explizit vertrauliche Kommunikation nur eingeschränkt möglich.</p>
 
 <blockquote>
 <p>After such a verification happened Conversations will no longer blindly trust new devices that are created after the verification. By doing verification the user has proven three things a) they are capable of scanning barcodes b) they have some sort of out-of-band channel where such a verification can happen c) they have some interest in verified communication.</p>
 </blockquote>
+
+<p>Aber wie kann man die eigenen Keys an andere verteilen, ohne zu großen Aufwand und das möglichst sicher? Die Lösung: Keybase.io</p>
 
 <h3 id="keybase-io">Keybase.io</h3>
 
@@ -249,9 +251,12 @@ Da nicht alle Clients im Moment ein direktes Verifizieren unterstützen (eg. Gaj
 
 <h3 id="ergebnis">Ergebnis</h3>
 
-<p>Ich habe für meine eigenen Schlüssel nach diesem Verfahren einen QR-Code sowie ein Textdokument zur Verifizierung veröffentlicht. Um auf darauf zuzugreifen gibt es unterschiedliche Methoden.
-Ist der <a href="https://keybase.io/download" target="_blank">Keybase.io Client</a> installiert kann mit <code>cd /keybase/public/mightybroccoli/omemo-verification/</code>, oder dem für das System entsprechende Befehl zum Öffnen eines Ordners, auf den öffentlichen Ordner zugegriffen werden.
-Ist der Keybase.io Client nicht installiert, kann auch durch einen Webbrowser auf den Ordner zugegriffen werden; <a href="https://keybase.pub/mightybroccoli/omemo-verification/" target="_blank">Omemo-Verification mightyBroccoli</a>.</p>
+<p>Ich habe für meine eigenen Schlüssel nach diesem Verfahren einen QR-Code sowie ein Textdokument zur Verifizierung veröffentlicht. Diese öffentliche Dateien können per Link an Kontakte verteilt werden, damit sie die Verifizierung durchführen können. Um selbst darauf zuzugreifen - etwa um sie aktuell zu halten - gibt es unterschiedliche Methoden.<br></p>
+
+<ul>
+<li>Ist der <a href="https://keybase.io/download" target="_blank">Keybase.io Client</a> installiert kann mit <code>cd /keybase/public/mightybroccoli/omemo-verification/</code>, oder dem für das System entsprechende Befehl zum Öffnen eines Ordners, auf den öffentlichen Ordner zugegriffen werden.<br></li>
+<li>Ist der Keybase.io Client nicht installiert, kann auch durch einen Webbrowser auf den Ordner zugegriffen werden; <a href="https://keybase.pub/mightybroccoli/omemo-verification/" target="_blank">Omemo-Verification mightyBroccoli</a>.</li>
+</ul>
 
 </div>
 
