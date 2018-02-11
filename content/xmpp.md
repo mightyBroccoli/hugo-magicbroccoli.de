@@ -23,13 +23,14 @@ Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es [h
 **INHO** : _Die folgende Liste bezieht sich auf die Clients, die die meisten Features abdecken und mit möglichst vielen Standards konform sind. Außerdem werden ausschließlich Clients gelistet, die aktiv entwickelt werden._
 
 - Android: [Conversations](https://conversations.im/) (€ 2,39 im [Google Play Store](https://play.google.com/store/apps/details?id=eu.siacs.conversations) oder gratis auf [F-Droid](https://f-droid.org/repository/browse%20/?fdid=eu.siacs.conversations))
-- Android: [Xabber](https://play.google.com/store/apps/details?id=com.xabber.android)
-- iOS (iPhone): [ChatSecure](https://itunes.apple.com/de/app/chatsecure-Impressumverschl%C3%BCsselter-nachrichtendienst/id464200063?mt=8)
+- Android: [Pix-Art Messenger](https://jabber.pix-art.de/) (Conversations Fork mit einigen Änderungen zur Verbesserung der Benutzerfreundlichkeit)
+- Android: [Xabber](https://www.xabber.com/)
+- iOS (iPhone): [ChatSecure](https://chatsecure.org/)
 - Linux: [Gajim](https://gajim.org/?lang=de)
-- Linux: [Dino](https://github.com/dino/dino/wiki/Distribution-Packages) ( _muss noch selbstständig compiliert werden_ )
+- Linux: [Dino](https://dino.im/) ( _nightly release [Repositorys](https://github.com/dino/dino/wiki/Distribution-Packages)_ )
 - Linux (console): [mcabber](https://mcabber.com/) oder [Profanity](http://www.profanity.im/)
 - macOS: [Adium](https://adium.im/)
-- macOS: [Dino](https://github.com/dino/dino/wiki/Distribution-Packages) ( _muss noch selbstständig compiliert werden_ )
+- macOS: [Dino](https://dino.im/) ( _muss noch selbstständig compiliert werden_ )
 - Windows: [Gajim](https://gajim.org/?lang=de)
 - Windows (XMPP - Anfänger): [Pidgin](https://pidgin.im/) *mit deutlich eingeschränktem Funktionsumfang der Server-Features*
 - Webbrowser: [Converse.js](https://conversejs.org/)
@@ -57,4 +58,4 @@ Alles weitere, wie aktivierte XEPs und näheres zur verwendeten Technik bzw Soft
 
 <center>[![](https://www.netcup.de/bilder/banner/netcup-hlogo-b220h100.png)](https://www.netcup.de)</center>
 
-Last Edit 22.01.18
+Last Edit 11.02.18
