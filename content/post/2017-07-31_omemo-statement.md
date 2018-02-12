@@ -39,4 +39,4 @@ Hauptproblem hierbei ist, das die Darstellung für alle Server sehr „rufschäd
 *Lange Rede kurzer Sinn* – Ihr könnt mit Conversations und anderen Clients weiterhin OMEMO über unseren und die anderen Server verwenden, nur eben derzeit noch ohne das Feature Kontakte außerhalb eurer Kontaktliste direkt verschlüsselt anzuschreiben, ohne diese vorher zu adden.
 
 
-**Danke geht an Sebastian von [5222.de](https://blog.5222.de/compliance-liste-wir-unterstuetzen-omemo/) für die Textgrundlage.**
+**Danke geht an Sebastian von [5222.de](https://blog.5222.de/posts/20170731_wir_unterstuetzen_omemo/) für die Textgrundlage.**
