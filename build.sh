@@ -2,9 +2,8 @@
 #
 ## Hugo Build script
 #
-
 ## variables
-Folders=("/home/nico/Programming/Github/hugo-magicbroccoli.de/public")
+Folders=("/home/nico/Programming/Github/hugo-magicbroccoli.de")
 ext="css|js|html|xml|svg|ico|eot|otf|ttf"
 
 ## functions
@@ -21,13 +20,16 @@ rm -rf "/home/nico/Programming/Github/hugo-magicbroccoli.de/public"
 
 # optimizing all png images with optipng
 echo "Optimizing static/*.png"
-#find $DIRECTORY/static/ -type f -name '*.png' -print0 | xargs optipng -nc -nb -o7 -silent
+for appDir in "${Folders[@]}"
+do
+	find "$appdir"/static/ -type f -regextype posix-extended -iregex ".*\\.png$" | xargs optipng -nc -nb -o7 -silent
+done
 
 # builging latest site
 hugo --source "/home/nico/Programming/Github/hugo-magicbroccoli.de/"
 
 # precompiled list of folders
-for appDir in "${Folders[@]}"
+for appDir in "${Folders[@]}/public/"
 do
 	# fetch all existing gzipped CSS/JavaScript/webfont files and remove files that do not have a base uncompressed file
 	find "$appDir" -type f -regextype posix-extended -iregex ".*\\.(${ext})\\.gz$" -print0 | while read -d '' compressFile

@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
     <copyright>All rights reserved.</copyright>
-    <lastBuildDate>Thu, 22 Jun 2017 14:15:25 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 02 Oct 2017 13:30:00 +0200</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,18 +15,9 @@
     <item>
       <title>Bash</title>
       <link>https://magicbroccoli.de/categories/bash/</link>
-      <pubDate>Thu, 22 Jun 2017 14:15:25 +0200</pubDate>
+      <pubDate>Mon, 02 Oct 2017 13:30:00 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/categories/bash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Chatsecure</title>
-      <link>https://magicbroccoli.de/categories/chatsecure/</link>
-      <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://magicbroccoli.de/categories/chatsecure/</guid>
       <description></description>
     </item>
     
@@ -40,45 +31,18 @@
     </item>
     
     <item>
-      <title>Development</title>
-      <link>https://magicbroccoli.de/categories/development/</link>
-      <pubDate>Thu, 22 Jun 2017 14:15:25 +0200</pubDate>
-      
-      <guid>https://magicbroccoli.de/categories/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gajim</title>
-      <link>https://magicbroccoli.de/categories/gajim/</link>
-      <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://magicbroccoli.de/categories/gajim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mariadb</title>
-      <link>https://magicbroccoli.de/categories/mariadb/</link>
+      <title>Guide</title>
+      <link>https://magicbroccoli.de/categories/guide/</link>
       <pubDate>Thu, 07 Dec 2017 17:30:00 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/categories/mariadb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Omemo</title>
-      <link>https://magicbroccoli.de/categories/omemo/</link>
-      <pubDate>Mon, 31 Jul 2017 13:00:00 +0200</pubDate>
-      
-      <guid>https://magicbroccoli.de/categories/omemo/</guid>
+      <guid>https://magicbroccoli.de/categories/guide/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Prosody</title>
       <link>https://magicbroccoli.de/categories/prosody/</link>
-      <pubDate>Thu, 07 Dec 2017 17:30:00 +0200</pubDate>
+      <pubDate>Wed, 20 Dec 2017 10:00:00 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/categories/prosody/</guid>
       <description></description>
@@ -94,18 +58,9 @@
     </item>
     
     <item>
-      <title>Xep 0368</title>
-      <link>https://magicbroccoli.de/categories/xep-0368/</link>
-      <pubDate>Sun, 06 Aug 2017 15:00:00 +0200</pubDate>
-      
-      <guid>https://magicbroccoli.de/categories/xep-0368/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Xmpp</title>
       <link>https://magicbroccoli.de/categories/xmpp/</link>
-      <pubDate>Mon, 02 Oct 2017 13:30:00 +0200</pubDate>
+      <pubDate>Sat, 03 Feb 2018 15:00:00 +0200</pubDate>
       
       <guid>https://magicbroccoli.de/categories/xmpp/</guid>
       <description></description>

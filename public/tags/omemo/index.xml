@@ -7,10 +7,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
     <copyright>All rights reserved.</copyright>
-    <lastBuildDate>Mon, 31 Jul 2017 13:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 03 Feb 2018 15:00:00 +0200</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/tags/omemo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Omemo Verification mit Keybase.io</title>
+      <link>https://magicbroccoli.de/post/keybase-omemo-verify/</link>
+      <pubDate>Sat, 03 Feb 2018 15:00:00 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/keybase-omemo-verify/</guid>
+      <description>Omemo Key Verification Um eine möglichst reibungslose Kommunikation zu ermöglichen, vertraut Conversations in der Standardeinstellung neuen OMEMO-Keys erstmal blind. Wenn aber eine spezifische Verifikation - über das Scannen eines QR-Codes - stattgefunden hat, werden neue Keys grundsätzlich misstraut. Dies bietet einen weitere Möglichkeit um Man-In-The-Middle-Angriffe zu unterbinden. Dieses Vertrauenmodell heißt Blind Trust Before Verification. Ohne Verifizierung ist eine explizit vertrauliche Kommunikation nur eingeschränkt möglich.
+ After such a verification happened Conversations will no longer blindly trust new devices that are created after the verification.</description>
+    </item>
+    
+    <item>
+      <title>Omemo Complicance</title>
+      <link>https://magicbroccoli.de/post/omemo-complicance/</link>
+      <pubDate>Wed, 20 Dec 2017 10:00:00 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/omemo-complicance/</guid>
+      <description>Seit gestern ist auf meinem Server ein neues OMEMO Modul aktiviert. Dieses ermöglicht es OMEMO verschlüsselte Konversationen zu beginnen, ohne das dafür eine gegenseitige presence subscription bestehen muss. Desweiteren hat dies Auswirkungen auf Chaträume, da es nun möglich ist in einem Chatraum OMEMO zu aktivieren ohne das sich alle Parteien hinzugefügt haben.
+I wrote a small @prosodyim module that gives non-contacts access to your OMEMO keys. It’s a temporary work around until proper support for node configuration / publish-options comes around.</description>
+    </item>
     
     <item>
       <title>Wir unterstützen Omemo</title>

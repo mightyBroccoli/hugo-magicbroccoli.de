@@ -7,51 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
     <copyright>All rights reserved.</copyright>
-    <lastBuildDate>Thu, 27 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/page/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Tutorial Übersicht</title>
-      <link>https://magicbroccoli.de/page/tutorial/</link>
-      <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://magicbroccoli.de/page/tutorial/</guid>
-      <description>Tutorial Übersicht Auf dieser Seite möchte ich einige Tutorials sammeln, die teils von mir selbst stammen, oder aber von außerhalb kommen. Einige Clients sind für Anfänger anfangs nicht einfach zu durchblicken, dabei sollen diese Tutorials helfen. Wer dazu beitragen möchte, kann dies gerne via PullRequest auf Github tun.
-Windows/ Linux  Gajim  Android  Conversations Chatsecure  iPhone  Chatsecure  Prosody  XMPP over TLS
-  IMHO Nützliche Links Einige Webseiten die weitergehende Tutorials bzw.</description>
-    </item>
-    
-    <item>
       <title>Chatsecure Tutorial</title>
-      <link>https://magicbroccoli.de/page/tutorial/chatsecure/</link>
+      <link>https://magicbroccoli.de/page/tutorial_chatsecure/</link>
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://magicbroccoli.de/page/tutorial/chatsecure/</guid>
+      <guid>https://magicbroccoli.de/page/tutorial_chatsecure/</guid>
       <description>Hinweis: Ein Dank geht an 5222.de die netterweise die Screenshots zur Verfügung gestellt haben. Da ich selbst kein iPhone besitzte wäre mir ein Tutorial sonst nicht möglich gewesen.
 1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt. Speziell bei magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist.</description>
     </item>
     
     <item>
       <title>Gajim Tutorial</title>
-      <link>https://magicbroccoli.de/page/tutorial/gajim/</link>
+      <link>https://magicbroccoli.de/page/tutorial_gajim/</link>
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://magicbroccoli.de/page/tutorial/gajim/</guid>
-      <description>1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt. Speziell bei magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist. Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die Nutzungsbedingungen sowie Datenschutzbestimmungen. 2. Installation Gajim lässt sich unter Windows und Linux problemlos installieren. &amp;ndash;&amp;gt; Gajim Download
+      <guid>https://magicbroccoli.de/page/tutorial_gajim/</guid>
+      <description>1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Hierfür ist die Web Registrierung der Anlaufpunkt. Speziell für magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist. Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die Nutzungsbedingungen sowie Datenschutzbestimmungen. 2. Installation Gajim lässt sich unter Windows und Linux problemlos installieren. &amp;ndash;&amp;gt; Gajim Download
 2.1 Archlinux Bei Archlinux ist die Installation einen Schritt länger, aber nicht sonderlich schwierig.</description>
-    </item>
-    
-    <item>
-      <title>Server Technik</title>
-      <link>https://magicbroccoli.de/page/technik/</link>
-      <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://magicbroccoli.de/page/technik/</guid>
-      <description>Sicherheit Das Hostsystem läuft unter Debian 9.2 Stretch. Das System und alle seine Komponenten werden regelmäßig aktualisiert. Dabei nehme ich teilweise Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn es aber gar nicht anders geht, ist eine kurze Downtime für wichtige Updates vertretbar.
-DNS Die gesamte Zone von magicbroccoli.de ist mit DNSSEC signiert und lässt sich überprüfen.
-nginx Alle Dienste der per HTTP erreichbar sind, werden durch einen nginx Server veröffentlicht.</description>
     </item>
     
   </channel>

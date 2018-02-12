@@ -11,7 +11,7 @@
 
 <meta name="description" content="Stellungnahme zur aktuellen Entwicklung um Omemo" />
 
-<meta name="keywords" content="Omemo Support, pep - publish-options, Daniel Gultsch, ">
+<meta name="keywords" content="omemo, xep-0384, Prosody, publish-options, Daniel Gultsch, ">
 
 
 <meta property="og:title" content="Wir unterstützen Omemo  &middot; Magic Broccoli ">
@@ -27,9 +27,13 @@
 
   
     
-<meta property="og:article:tag" content="Omemo Support">
+<meta property="og:article:tag" content="omemo">
     
-<meta property="og:article:tag" content="pep - publish-options">
+<meta property="og:article:tag" content="xep-0384">
+    
+<meta property="og:article:tag" content="Prosody">
+    
+<meta property="og:article:tag" content="publish-options">
     
 <meta property="og:article:tag" content="Daniel Gultsch">
     
@@ -52,7 +56,6 @@
     "headline": "Wir unterstützen Omemo",
     "author": {
       "@type": "Person",
-      "name": "http://profiles.google.com/+?rel=author"
     },
     "datePublished": "2017-07-31",
     "description": "Stellungnahme zur aktuellen Entwicklung um Omemo",
@@ -64,7 +67,7 @@
 
 <link rel="canonical" href="https://magicbroccoli.de/post/omemo-statement/" />
 
-<meta name="generator" content="Hugo 0.31.1" />
+<meta name="generator" content="Hugo 0.35" />
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
@@ -74,23 +77,27 @@
   <link rel="stylesheet" href="https://magicbroccoli.de/assets/css/style.css">
   <link rel="stylesheet" href="https://magicbroccoli.de/assets/css/tomorrow-night.css">
 
-  <link rel="apple-touch-icon" sizes="57x57" href="https://magicbroccoli.de/favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="https://magicbroccoli.de/favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="https://magicbroccoli.de/favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="https://magicbroccoli.de/favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="https://magicbroccoli.de/favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="https://magicbroccoli.de/favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="https://magicbroccoli.de/favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="https://magicbroccoli.de/favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://magicbroccoli.de/favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="https://magicbroccoli.de/favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://magicbroccoli.de/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="https://magicbroccoli.de/favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://magicbroccoli.de/favicon/favicon-16x16.png">
-<link rel="manifest" href="https://magicbroccoli.de/favicon/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://magicbroccoli.de/favicon/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://magicbroccoli.de/favicon/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://magicbroccoli.de/favicon/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://magicbroccoli.de/favicon/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://magicbroccoli.de/favicon/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://magicbroccoli.de/favicon/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://magicbroccoli.de/favicon/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://magicbroccoli.de/favicon/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://magicbroccoli.de/favicon/apple-touch-icon-180x180.png" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-128.png" sizes="128x128" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-196x196.png" sizes="196x196" />
+<meta name="application-name" content="Magic Broccoli"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="/favicon/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="/favicon/mstile-150x150.png" />
+<meta name="msapplication-square310x310logo" content="/favicon/mstile-310x310.png" />
+
 </head>
 <body class="bg-light">
   <nav class="navbar navbar-expand-md fixed-top site-navbar bg-info">
@@ -125,7 +132,7 @@
       </li>
       
       <li class="nav-item">
-        <a class="nav-link menu-item" href="https://magicbroccoli.de/page/tutorial/">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/tutorial">
           <i class='fa fa-question-circle' fa-fw'></i>
           <span class="text-capitalize no-decoration text-white">Tutorials</span>
         </a>
@@ -172,7 +179,7 @@
           <a class="article-category-link" href="https://magicbroccoli.de/categories/prosody/">Prosody</a>
           &middot;
           
-          <a class="article-category-link" href="https://magicbroccoli.de/categories/omemo/">Omemo</a>
+          <a class="article-category-link" href="https://magicbroccoli.de/categories/xmpp/">XMPP</a>
           
           
       </div>
@@ -185,18 +192,25 @@
         <div class="post-meta-item">
           <i class="fa fa-tags"></i>
           
-          <a href="https://magicbroccoli.de/tags/prosody/">Prosody</a>
+          <a href="https://magicbroccoli.de/tags/omemo/">omemo</a>
           &middot;
           
-          <a href="https://magicbroccoli.de/tags/omemo/">Omemo</a>
+          <a href="https://magicbroccoli.de/tags/xep-0384/">xep-0384</a>
           &middot;
           
-          <a href="https://magicbroccoli.de/tags/xmpp/">XMPP</a>
+          <a href="https://magicbroccoli.de/tags/publish-options/">publish-options</a>
           
           
         </div>
       
   
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://magicbroccoli.de/post/omemo-statement/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
   
 
 </div>
@@ -226,16 +240,14 @@ Auch wenn dies wirklich nur ein kleiner Hinweis ist, danken wir Herrn Gultsch de
 
 <a href="https://github.com/iNPUTmice/ComplianceTester/issues/112" target="_blank">Der Vorschlag</a> eine kurze Erklärung zu der Spalte in seiner Liste hinzuzufügen, da das ganze sonst so eine falsche Aussage über die Server wiederspiegelt, wurde mit den folgenden Sätzen einfach ignoriert und das Ticket geschlossen:</p>
 
-<blockquote>
-<p>While not a security problems the lack of publish-options is a huge usability problem as this limits OMEMO to contacts you have mutual presence subscription with.
-Conversations users will except OMEMO to work with everyone. That’s why Conversations requires publish-options.</p>
-</blockquote>
+<blockquote>While not a security problems the lack of publish-options is a huge usability problem as this limits OMEMO to contacts you have mutual presence subscription with.
+Conversations users will except OMEMO to work with everyone. That’s why Conversations requires publish-options.</blockquote>
 
 <p>Hauptproblem hierbei ist, das die Darstellung für alle Server sehr „rufschädigend“ sein kann. Ich und einige andere Hoster haben versucht Daniel Gultsch darauf aufmerksam zu machen, dies wird von ihm allerdings komplett ignoriert.</p>
 
 <p><em>Lange Rede kurzer Sinn</em> – Ihr könnt mit Conversations und anderen Clients weiterhin OMEMO über unseren und die anderen Server verwenden, nur eben derzeit noch ohne das Feature Kontakte außerhalb eurer Kontaktliste direkt verschlüsselt anzuschreiben, ohne diese vorher zu adden.</p>
 
-<p><strong>Danke geht an Sebastian von <a href="https://blog.5222.de/compliance-liste-wir-unterstuetzen-omemo/" target="_blank">5222.de</a> für die Textgrundlage.</strong></p>
+<p><strong>Danke geht an Sebastian von <a href="https://blog.5222.de/posts/20170731_wir_unterstuetzen_omemo/" target="_blank">5222.de</a> für die Textgrundlage.</strong></p>
 
 </div>
 
@@ -247,14 +259,14 @@ Conversations users will except OMEMO to work with everyone. That’s why Conver
     <ul class="pagination">
       
       <li class="page-item">
-        <a href="https://magicbroccoli.de/post/ts-xmpp-script/" title="TeamSpeak XMPP Push " class="page-link">
+        <a href="https://magicbroccoli.de/post/ts-xmpp-push/" title="TeamSpeak XMPP Push " class="page-link">
           <span aria-hidden="true">&larr;</span>Previous
         </a>
       </li>
        
       
       <li class="page-item">
-        <a href="https://magicbroccoli.de/post/xmpp-over-tls/" title="XMPP over TLS Tutorial" class="page-link">
+        <a href="https://magicbroccoli.de/post/xmpp-over-tls-guide/" title="XMPP over TLS Tutorial" class="page-link">
           Next
           <span aria-hidden="true">&rarr;</span>
         </a>
@@ -267,7 +279,26 @@ Conversations users will except OMEMO to work with everyone. That’s why Conver
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="pt-4">
-        
+         <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "magicbroccoli-de" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a> 
       </div>
     </div>
   </div>
@@ -290,14 +321,7 @@ Conversations users will except OMEMO to work with everyone. That’s why Conver
             <a href="https://magicbroccoli.de/categories/bash/">
                 bash
             </a>
-            <span class="category-list-count">1</span>
-        </li>
-        
-        <li class="category-list-item">
-            <a href="https://magicbroccoli.de/categories/chatsecure/">
-                chatsecure
-            </a>
-            <span class="category-list-count">1</span>
+            <span class="category-list-count">2</span>
         </li>
         
         <li class="category-list-item">
@@ -308,38 +332,17 @@ Conversations users will except OMEMO to work with everyone. That’s why Conver
         </li>
         
         <li class="category-list-item">
-            <a href="https://magicbroccoli.de/categories/development/">
-                development
+            <a href="https://magicbroccoli.de/categories/guide/">
+                guide
             </a>
-            <span class="category-list-count">1</span>
-        </li>
-        
-        <li class="category-list-item">
-            <a href="https://magicbroccoli.de/categories/gajim/">
-                gajim
-            </a>
-            <span class="category-list-count">1</span>
-        </li>
-        
-        <li class="category-list-item">
-            <a href="https://magicbroccoli.de/categories/mariadb/">
-                mariadb
-            </a>
-            <span class="category-list-count">2</span>
-        </li>
-        
-        <li class="category-list-item">
-            <a href="https://magicbroccoli.de/categories/omemo/">
-                omemo
-            </a>
-            <span class="category-list-count">1</span>
+            <span class="category-list-count">5</span>
         </li>
         
         <li class="category-list-item">
             <a href="https://magicbroccoli.de/categories/prosody/">
                 prosody
             </a>
-            <span class="category-list-count">4</span>
+            <span class="category-list-count">6</span>
         </li>
         
         <li class="category-list-item">
@@ -350,17 +353,10 @@ Conversations users will except OMEMO to work with everyone. That’s why Conver
         </li>
         
         <li class="category-list-item">
-            <a href="https://magicbroccoli.de/categories/xep-0368/">
-                xep-0368
-            </a>
-            <span class="category-list-count">1</span>
-        </li>
-        
-        <li class="category-list-item">
             <a href="https://magicbroccoli.de/categories/xmpp/">
                 xmpp
             </a>
-            <span class="category-list-count">6</span>
+            <span class="category-list-count">10</span>
         </li>
         
       </ul>
@@ -382,7 +378,7 @@ Conversations users will except OMEMO to work with everyone. That’s why Conver
       <ul>
         
           <li>
-            <a href="https://magicbroccoli.de/tags/ca-bundle/">ca-bundle</a>
+            <a href="https://magicbroccoli.de/tags/cacert/">cacert</a>
             <span class="category-list-count">1</span>
           </li>
         
@@ -392,13 +388,18 @@ Conversations users will except OMEMO to work with everyone. That’s why Conver
           </li>
         
           <li>
-            <a href="https://magicbroccoli.de/tags/cert-error/">cert-error</a>
+            <a href="https://magicbroccoli.de/tags/chatsecure/">chatsecure</a>
             <span class="category-list-count">1</span>
           </li>
         
           <li>
-            <a href="https://magicbroccoli.de/tags/guide/">guide</a>
-            <span class="category-list-count">5</span>
+            <a href="https://magicbroccoli.de/tags/gajim/">gajim</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/keybase.io/">keybase.io</a>
+            <span class="category-list-count">1</span>
           </li>
         
           <li>
@@ -412,22 +413,37 @@ Conversations users will except OMEMO to work with everyone. That’s why Conver
           </li>
         
           <li>
-            <a href="https://magicbroccoli.de/tags/mod_mam/">mod_mam</a>
+            <a href="https://magicbroccoli.de/tags/mildly-usefull/">mildly-usefull</a>
             <span class="category-list-count">2</span>
           </li>
         
           <li>
             <a href="https://magicbroccoli.de/tags/omemo/">omemo</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/omemo_all_access/">omemo_all_access</a>
             <span class="category-list-count">1</span>
           </li>
         
           <li>
-            <a href="https://magicbroccoli.de/tags/prosody/">prosody</a>
-            <span class="category-list-count">5</span>
+            <a href="https://magicbroccoli.de/tags/publish-options/">publish-options</a>
+            <span class="category-list-count">2</span>
           </li>
         
           <li>
-            <a href="https://magicbroccoli.de/tags/xmpp/">xmpp</a>
+            <a href="https://magicbroccoli.de/tags/xep-0313/">xep-0313</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xep-0368/">xep-0368</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xep-0384/">xep-0384</a>
             <span class="category-list-count">3</span>
           </li>
         
@@ -446,20 +462,24 @@ Conversations users will except OMEMO to work with everyone. That’s why Conver
   <h4 class="card-title">TAG CLOUD</h4>
   <p class="card-text">
     
-        <a href="https://magicbroccoli.de/tags/ca-bundle/" class="badge badge-primary">
-        ca-bundle
+        <a href="https://magicbroccoli.de/tags/cacert/" class="badge badge-primary">
+        cacert
         </a>
     
         <a href="https://magicbroccoli.de/tags/ccc/" class="badge badge-primary">
         ccc
         </a>
     
-        <a href="https://magicbroccoli.de/tags/cert-error/" class="badge badge-primary">
-        cert-error
+        <a href="https://magicbroccoli.de/tags/chatsecure/" class="badge badge-primary">
+        chatsecure
         </a>
     
-        <a href="https://magicbroccoli.de/tags/guide/" class="badge badge-primary">
-        guide
+        <a href="https://magicbroccoli.de/tags/gajim/" class="badge badge-primary">
+        gajim
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/keybase.io/" class="badge badge-primary">
+        keybase.io
         </a>
     
         <a href="https://magicbroccoli.de/tags/maintenance/" class="badge badge-primary">
@@ -470,20 +490,32 @@ Conversations users will except OMEMO to work with everyone. That’s why Conver
         mariadb
         </a>
     
-        <a href="https://magicbroccoli.de/tags/mod_mam/" class="badge badge-primary">
-        mod_mam
+        <a href="https://magicbroccoli.de/tags/mildly-usefull/" class="badge badge-primary">
+        mildly-usefull
         </a>
     
         <a href="https://magicbroccoli.de/tags/omemo/" class="badge badge-primary">
         omemo
         </a>
     
-        <a href="https://magicbroccoli.de/tags/prosody/" class="badge badge-primary">
-        prosody
+        <a href="https://magicbroccoli.de/tags/omemo_all_access/" class="badge badge-primary">
+        omemo_all_access
         </a>
     
-        <a href="https://magicbroccoli.de/tags/xmpp/" class="badge badge-primary">
-        xmpp
+        <a href="https://magicbroccoli.de/tags/publish-options/" class="badge badge-primary">
+        publish-options
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0313/" class="badge badge-primary">
+        xep-0313
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0368/" class="badge badge-primary">
+        xep-0368
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0384/" class="badge badge-primary">
+        xep-0384
         </a>
     
   </p>
@@ -502,7 +534,7 @@ Conversations users will except OMEMO to work with everyone. That’s why Conver
     <div class="row">
       <div class="col-xs-12 col-md-9">
         <p class="text-xs-center m-a-0 p-a-0">
-          &copy; 2017 All rights reserved.
+          &copy; 2018 All rights reserved.
         </p>
         
         <p class="text-xs-center  m-a-0 p-a-0">
@@ -535,6 +567,8 @@ Conversations users will except OMEMO to work with everyone. That’s why Conver
 <script>hljs.initHighlightingOnLoad();</script>
 
 
+<script id="dsq-count-scr" src="//magicbroccoli-de.disqus.com/count.js" async></script>
+
 
 
 
@@ -552,7 +586,8 @@ Conversations users will except OMEMO to work with everyone. That’s why Conver
     allow_chat_pending_contacts: true,
     allow_non_roster_messaging: true,
     allow_registration: false,
-    auto_list_rooms: true,
+    archived_messages_page_size: 30,
+    auto_list_rooms: false,
     bosh_service_url: 'https://magicbroccoli.de/http-bind',
     websocket_url: 'wss://magicbroccoli.de/xmpp-websocket',
     csi_waiting_time: 25,

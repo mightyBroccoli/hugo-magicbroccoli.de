@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cacert on Magic Broccoli</title>
+    <link>https://magicbroccoli.de/tags/cacert/</link>
+    <description>Recent content in Cacert on Magic Broccoli</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-DE</language>
+    <copyright>All rights reserved.</copyright>
+    <lastBuildDate>Mon, 28 Aug 2017 13:30:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://magicbroccoli.de/tags/cacert/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CCC Jabber Connection</title>
+      <link>https://magicbroccoli.de/post/ccc-jabber-connection/</link>
+      <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/ccc-jabber-connection/</guid>
+      <description>Update Die techniche Leitung des CCC Jabber Servers hat sich nun auch dazu entscheiden auf gültige Zertifikate umzusteigen. Daher ist dieser Blogpost überflüssig.
+Einleitung Der XMPP Server vom Chaos Computer Club wird unter einem Zertifikat von cacert.org betrieben. Das root Zertifikat wird allerdings von den meisten Browsern / Betriebssystemen nicht anerkannt. Dies stellt für die Erreichbarkeit des XMPP Servers ein Problem da.
+Speziell Server die auf Datenschutz und Sicherheit ausgelegt wollen keine unverschlüsselten Verbindung.</description>
+    </item>
+    
+  </channel>
+</rss>

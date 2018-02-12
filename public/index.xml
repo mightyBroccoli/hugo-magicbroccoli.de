@@ -7,21 +7,39 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
     <copyright>All rights reserved.</copyright>
-    <lastBuildDate>Thu, 07 Dec 2017 17:30:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 03 Feb 2018 15:00:00 +0200</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Omemo Verification mit Keybase.io</title>
+      <link>https://magicbroccoli.de/post/keybase-omemo-verify/</link>
+      <pubDate>Sat, 03 Feb 2018 15:00:00 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/keybase-omemo-verify/</guid>
+      <description>Omemo Key Verification Um eine möglichst reibungslose Kommunikation zu ermöglichen, vertraut Conversations in der Standardeinstellung neuen OMEMO-Keys erstmal blind. Wenn aber eine spezifische Verifikation - über das Scannen eines QR-Codes - stattgefunden hat, werden neue Keys grundsätzlich misstraut. Dies bietet einen weitere Möglichkeit um Man-In-The-Middle-Angriffe zu unterbinden. Dieses Vertrauenmodell heißt Blind Trust Before Verification. Ohne Verifizierung ist eine explizit vertrauliche Kommunikation nur eingeschränkt möglich.
+ After such a verification happened Conversations will no longer blindly trust new devices that are created after the verification.</description>
+    </item>
+    
+    <item>
+      <title>Omemo Complicance</title>
+      <link>https://magicbroccoli.de/post/omemo-complicance/</link>
+      <pubDate>Wed, 20 Dec 2017 10:00:00 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/omemo-complicance/</guid>
+      <description>Seit gestern ist auf meinem Server ein neues OMEMO Modul aktiviert. Dieses ermöglicht es OMEMO verschlüsselte Konversationen zu beginnen, ohne das dafür eine gegenseitige presence subscription bestehen muss. Desweiteren hat dies Auswirkungen auf Chaträume, da es nun möglich ist in einem Chatraum OMEMO zu aktivieren ohne das sich alle Parteien hinzugefügt haben.
+I wrote a small @prosodyim module that gives non-contacts access to your OMEMO keys. It’s a temporary work around until proper support for node configuration / publish-options comes around.</description>
+    </item>
+    
+    <item>
       <title>Prosody Datenbank Indizes</title>
-      <link>https://magicbroccoli.de/post/prosodydb_index/</link>
+      <link>https://magicbroccoli.de/post/prosody-db-index/</link>
       <pubDate>Thu, 07 Dec 2017 17:30:00 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/post/prosodydb_index/</guid>
-      <description>Prosody bietet die Möglichkeit persistente Userdaten bzw. seit 0.10 MAM Daten in einer MySQL Datenbank zu sichern. Indizes in solchen Datenbanken, können Prozesse enorm beschleunigen. Bei Prosody werden diese, bei der ersten Installation Prosodys eingefügt.
-Allerdings werden Indizes, die nachträglich, z.B. in aktuelleren Patches, hinzugefügt werden, nur in Datenbanken eingetragen die neu erstellt werden.
-Damit haben ältere Datenbanken einen enormen Nachteil da aktuelle Indizes fehlen.
-Welche Indizes stehen aktuell zur Verfügung?</description>
+      <guid>https://magicbroccoli.de/post/prosody-db-index/</guid>
+      <description>Prosody bietet die Möglichkeit persistente Userdaten bzw. seit 0.10 auch MAM Archive in einer MySQL Datenbank zu sichern. Prosody erstellt beim ersten Laden des Moduls alle relevanten Datenbanken sowie Indizes. Allerdings werden Indizes, die nachträglich, z.B. in aktuelleren Patches, hinzugefügt werden, nur in Datenbanken eingetragen, die neu erstellt werden. Damit fehlen in den allermeisten älteren Datenbanken die aktuellen Indizes.
+Notwendigkeit von Indizes Indizes können Datenbankabfragen enorm beschleunigen, da sie es bei einer Abfrage ermöglichen eine deutlich kleinere Anzahl an Zeilen zu vergleichen.</description>
     </item>
     
     <item>
@@ -37,31 +55,31 @@ Administration Zur Verwaltung des Jabber Servers stehen Ihnen 2 mögliche Wege z
     
     <item>
       <title>Prosody housekeeping</title>
-      <link>https://magicbroccoli.de/post/prosody_housekeeping/</link>
+      <link>https://magicbroccoli.de/post/prosody-housekeeping/</link>
       <pubDate>Mon, 02 Oct 2017 13:30:00 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/post/prosody_housekeeping/</guid>
+      <guid>https://magicbroccoli.de/post/prosody-housekeeping/</guid>
       <description>Grundidee Ich habe mich in den letzen paar Tagen damit beschäftigt Dinge rund um den Prosody Server zu automatisieren. Daher möchte ich hier einfach mal meine Lösung einiger kleiner Probleme vorstellen.
 Problem Das grundsätzliche Problem, welches so ziemlich alle Server mit offener Registrierung teilen, sind Zombie Accounts. Sprich Accounts die erstellt wurden, allerdings nie verwendet werden. Oder Accounts die erstellt wurden und irgendwann von ihrem Nutzer/in nicht mehr verwendet werden.</description>
     </item>
     
     <item>
       <title>CCC Jabber Connection</title>
-      <link>https://magicbroccoli.de/post/cert-error-jabber-ccc/</link>
+      <link>https://magicbroccoli.de/post/ccc-jabber-connection/</link>
       <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/post/cert-error-jabber-ccc/</guid>
-      <description>Einleitung Der XMPP Server vom Chaos Computer Club wird unter einem Zertifikat von cacert.org betrieben. Das root Zertifikat wird allerdings von den meisten Browsern / Betriebssystemen nicht anerkannt. Dies stellt für die Erreichbarkeit des XMPP Servers ein Problem da.
-Speziell Server die auf Datenschutz und Sicherheit ausgelegt wollen keine unverschlüsselten Verbindung.Im Folgenden möchte daher ich aufzeigen, welche Änderungen notwendig wären, um Debian mit den entsprechenden Zertifikaten auszustatten.
-Betroffen sind damit speziell Prosody Server, die folgende Konfiguration eingestellt haben.</description>
+      <guid>https://magicbroccoli.de/post/ccc-jabber-connection/</guid>
+      <description>Update Die techniche Leitung des CCC Jabber Servers hat sich nun auch dazu entscheiden auf gültige Zertifikate umzusteigen. Daher ist dieser Blogpost überflüssig.
+Einleitung Der XMPP Server vom Chaos Computer Club wird unter einem Zertifikat von cacert.org betrieben. Das root Zertifikat wird allerdings von den meisten Browsern / Betriebssystemen nicht anerkannt. Dies stellt für die Erreichbarkeit des XMPP Servers ein Problem da.
+Speziell Server die auf Datenschutz und Sicherheit ausgelegt wollen keine unverschlüsselten Verbindung.</description>
     </item>
     
     <item>
       <title>Datenbank Zusammenbruch</title>
-      <link>https://magicbroccoli.de/post/database_failure/</link>
+      <link>https://magicbroccoli.de/post/database-failure/</link>
       <pubDate>Fri, 25 Aug 2017 23:30:00 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/post/database_failure/</guid>
+      <guid>https://magicbroccoli.de/post/database-failure/</guid>
       <description>Bekanntmachung Heute, am 25 August, kam es zu dem bisher größten Ausfall meiner Services. Leider ist aufgrund eines Fehler, der mir bisher nicht weiter bekannt ist, eine Platte des Server ausgefallen. Die Datenbank hat das ganze nicht sonderlich gut aufgenommen.
 Ich fahre regelmäßig Backups und die binlogs waren auch wiederherstellbar, daher kam es zu keinem Datenverlust. Allerdings musste ich die Datenbank neu aufbauen, was sich als zeitintensiv herausstellte.
 Gegen 23:30, nach fast 5 Stunden, ist es mir nun gelungen alle Datenbanken wiederherzustellen und alle Services vollständig wieder in Betrieb zu nehmen.</description>
@@ -69,10 +87,10 @@ Gegen 23:30, nach fast 5 Stunden, ist es mir nun gelungen alle Datenbanken wiede
     
     <item>
       <title>XMPP over TLS Tutorial</title>
-      <link>https://magicbroccoli.de/post/xmpp-over-tls/</link>
+      <link>https://magicbroccoli.de/post/xmpp-over-tls-guide/</link>
       <pubDate>Sun, 06 Aug 2017 15:00:00 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/post/xmpp-over-tls/</guid>
+      <guid>https://magicbroccoli.de/post/xmpp-over-tls-guide/</guid>
       <description>How to setup XEP-0368 Was ist XEP-0368 Bei XEP-0368 handelt es sich um ein Verfahren welches XMPP-Clients ermöglicht über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken. Dies ist äußerst nützlich, falls die regulären Verbindungswege blockiert sind zb. durch Firewalls.
 XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method of discovering how to connect to an XMPP server. This XEP extends that to include new xmpps-client/xmpps-server SRV records pointing to direct TLS ports and combine priorities and weights as if they were a single SRV record similar to RFC 6186.</description>
     </item>
@@ -89,43 +107,43 @@ This test checks for the availability of publish-options on the account’s PEP 
     
     <item>
       <title>Tutorial Übersicht</title>
-      <link>https://magicbroccoli.de/page/tutorial/</link>
+      <link>https://magicbroccoli.de/tutorial/</link>
       <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://magicbroccoli.de/page/tutorial/</guid>
-      <description>Tutorial Übersicht Auf dieser Seite möchte ich einige Tutorials sammeln, die teils von mir selbst stammen, oder aber von außerhalb kommen. Einige Clients sind für Anfänger anfangs nicht einfach zu durchblicken, dabei sollen diese Tutorials helfen. Wer dazu beitragen möchte, kann dies gerne via PullRequest auf Github tun.
+      <guid>https://magicbroccoli.de/tutorial/</guid>
+      <description>Tutorial Übersicht Auf dieser Seite möchte ich einige Tutorials sammeln, teilweise stammen diese von mir selbst, oder aber von außerhalb. Einige Clients sind für XMPP-Anfänger anfangs nicht einfach zu durchblicken, dabei sollen diese Tutorials helfen. Wer dazu beitragen möchte, kann dies gerne via Pull Request tun.
 Windows/ Linux  Gajim  Android  Conversations Chatsecure  iPhone  Chatsecure  Prosody  XMPP over TLS
-  IMHO Nützliche Links Einige Webseiten die weitergehende Tutorials bzw.</description>
+ Prosody Datenbank Indizes</description>
     </item>
     
     <item>
       <title>Chatsecure Tutorial</title>
-      <link>https://magicbroccoli.de/page/tutorial/chatsecure/</link>
+      <link>https://magicbroccoli.de/page/tutorial_chatsecure/</link>
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://magicbroccoli.de/page/tutorial/chatsecure/</guid>
+      <guid>https://magicbroccoli.de/page/tutorial_chatsecure/</guid>
       <description>Hinweis: Ein Dank geht an 5222.de die netterweise die Screenshots zur Verfügung gestellt haben. Da ich selbst kein iPhone besitzte wäre mir ein Tutorial sonst nicht möglich gewesen.
 1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt. Speziell bei magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist.</description>
     </item>
     
     <item>
       <title>Gajim Tutorial</title>
-      <link>https://magicbroccoli.de/page/tutorial/gajim/</link>
+      <link>https://magicbroccoli.de/page/tutorial_gajim/</link>
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://magicbroccoli.de/page/tutorial/gajim/</guid>
-      <description>1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt. Speziell bei magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist. Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die Nutzungsbedingungen sowie Datenschutzbestimmungen. 2. Installation Gajim lässt sich unter Windows und Linux problemlos installieren. &amp;ndash;&amp;gt; Gajim Download
+      <guid>https://magicbroccoli.de/page/tutorial_gajim/</guid>
+      <description>1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Hierfür ist die Web Registrierung der Anlaufpunkt. Speziell für magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist. Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die Nutzungsbedingungen sowie Datenschutzbestimmungen. 2. Installation Gajim lässt sich unter Windows und Linux problemlos installieren. &amp;ndash;&amp;gt; Gajim Download
 2.1 Archlinux Bei Archlinux ist die Installation einen Schritt länger, aber nicht sonderlich schwierig.</description>
     </item>
     
     <item>
       <title>Server Technik</title>
-      <link>https://magicbroccoli.de/page/technik/</link>
+      <link>https://magicbroccoli.de/technik/</link>
       <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://magicbroccoli.de/page/technik/</guid>
-      <description>Sicherheit Das Hostsystem läuft unter Debian 9.2 Stretch. Das System und alle seine Komponenten werden regelmäßig aktualisiert. Dabei nehme ich teilweise Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn es aber gar nicht anders geht, ist eine kurze Downtime für wichtige Updates vertretbar.
-DNS Die gesamte Zone von magicbroccoli.de ist mit DNSSEC signiert und lässt sich überprüfen.
+      <guid>https://magicbroccoli.de/technik/</guid>
+      <description>System Das Hostsystem verwendet Debian 9.2 Stretch. Alle Komponenten werden regelmäßig aktualisiert. Teilweise nehme ich Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn sich dies allerdings nicht verhindern lässt, wird es zu einer möglichst kleinen Downtime für wichtige Updates kommen.
+DNS Die gesamte DNS-Zone von magicbroccoli.de ist mit DNSSEC signiert und lässt sich dahingehend überprüfen.
 nginx Alle Dienste der per HTTP erreichbar sind, werden durch einen nginx Server veröffentlicht.</description>
     </item>
     
@@ -135,19 +153,19 @@ nginx Alle Dienste der per HTTP erreichbar sind, werden durch einen nginx Server
       <pubDate>Sun, 25 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/register/</guid>
-      <description>Registrierung Diese Seite ermöglicht es, einen neuen Account auf dem MagicBroccoli XMPP Server anzulegen. Über deinen Jabber Identifier (kurz JID; auch Jabber-ID), bestehend aus Benutzernamen und “@magicbroccoli.de”, können Dich andere Nutzer zu ihren Kontakten hinzufügen.
-Bitte notiere Sie sich Ihren Benutzernamen und Passwort sorgfältig! Passwort-Resets durch den Administrator sind zwar grundsätzlich möglich, aber aufwendig und erfordern, dass Sie die Account-Inhaberschaft eindeutig beweisen können!</description>
+      <description>Registrierung Mithilfe dieser Seite ist es Ihnen möglich, einen neuen Account auf dem MagicBroccoli XMPP Server anzulegen. Über den erstellten Jabber Identifier (kurz JID; auch Jabber-ID), bestehend aus Benutzernamen und &amp;ldquo;magicbroccoli.de&amp;rdquo;, können andere Nutzer Sie zu ihren Kontakten hinzufügen.
+Bitte notiere Sie sich Ihren Benutzernamen und Passwort sorgfältig! Passwort-Resets durch einen Administrator sind grundsätzlich möglich. Allerdings erfordert diese einen eindeutigen stichhaltigen Nachweis der Account-Inhaberschaft!</description>
     </item>
     
     <item>
       <title>TeamSpeak XMPP Push</title>
-      <link>https://magicbroccoli.de/post/ts-xmpp-script/</link>
+      <link>https://magicbroccoli.de/post/ts-xmpp-push/</link>
       <pubDate>Thu, 22 Jun 2017 14:15:25 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/post/ts-xmpp-script/</guid>
-      <description>Idee Die grundsätzliche Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft auf einem Server sein kann, um nach dem Rechten zu sehen.
-Für genau dieses Problem habe ich ein kleines Skript entwickelt, dass nach verschiedenen Regeln die Logfiles cyklisch durchsucht und gefundene Zeilen an definierte Kontakte per XMPP sendet.
-Nutzen IMHO gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung schnellstmöglichst sehr praktisch ist. Viele Server unterstützen eine Reihe von &amp;ldquo;Automatischen Moderationen&amp;rdquo;, trotzdem sollten User nicht in der Lage sein sich Gruppen zuzuweisen.</description>
+      <guid>https://magicbroccoli.de/post/ts-xmpp-push/</guid>
+      <description>Idee Die Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft mit einem Server verbunden sein kann, um nach dem Rechten zu sehen.
+Dieses Problem versuche ich hiermit anzugehen. Dafür durchsucht dieses nach verschiedenen Regeln die Logfiles, gefundene Zeilen werden anschließend an definierte Kontakte per XMPP sendet.
+Nutzen IMHO gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung sehr praktisch ist. Viele Server unterstützen eine Reihe von &amp;ldquo;Automatischen Moderationen&amp;rdquo;, dennoch finden User Möglichkeiten diese zu behindern oder sogar zu umgehen.</description>
     </item>
     
     <item>
@@ -161,12 +179,13 @@ PGP 0xEA7C31AAB1BDC1A2
  Keybase: mightyBroccoli
 Chat XMPP: broccoli(at)magicbroccoli.de
 IRC: mightyBroccoli1
-OMEMO Fingerabdrücke 1e56b6ec dd764842 674f2309 ba981a69 308e5959 ace5e6ed 6ddbf19a ee715324 [Conversations]
+OMEMO Fingerabdrücke 559b0bf1 b04073a7 69ea30dc 29d05d4f 36015131 21358f26 720a780b 7cbef470 [Conversations]
 243C97D7 7D0D2533 298524BC B66EB5E4 E74F6EC5 47079162 C4B917C4 2B25714B [Gajim PC]
 b85e592c 5db8519f cfc39b9d 82632a59 9dfa923f a009dc44 c7f9ba07 aa650c58 [Gajim Notebook]
+OMEMO Verification  Keybase: mightyBroccoli
 Code Hosting  Github: mightyBroccoli
  Bitbucket: mightyBroccoli
- freenode[return]   </description>
+ freenode [return]   </description>
     </item>
     
     <item>
@@ -189,13 +208,12 @@ Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Date
 Nico Wellpott
 Scheideweg 157
 26127 Oldenburg
-Vertreten durch: Nico Wellpott
 Kontakt: Telefon: 0441 93652965
 E-Mail: admin(at)magicbroccoli.de
 Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: Nico Wellpott
 Scheideweg 157
 26127 Oldenburg
-Haftungsausschluss Haftung für Inhalte Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.</description>
+Haftungsausschluss Haftung für Inhalte Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.</description>
     </item>
     
     <item>
@@ -204,8 +222,8 @@ Haftungsausschluss Haftung für Inhalte Die Inhalte unserer Seiten wurden mit gr
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/xmpp/</guid>
-      <description>Was ist MagicBroccoli XMPP? MagicBroccoli XMPP ist ein freier XMPP Server ausgelegt auf Datenschutz und Sicherheit. XMPP ist ein Protokoll, welches ein Versenden von Nachrichten über das Internet ermöglicht. Es ist sehr ähnlich zu ICQ oder MSN besitzt dazu aber einige besondere Features.
-Wie funktioniert es? XMPP ist ein dezentrales Netzwerk. Das bedeutet das es entgegen WhatsApp oder Facebook weltweit viele Anbieter von XMPP Servern gibt, bei denen man seinen XMPP-Account einrichten kann.</description>
+      <description>MagicBroccoli XMPP MagicBroccoli XMPP ist ein freier XMPP Server ausgelegt auf Datenschutz und Sicherheit. XMPP ist ein Protokoll, welches ein Versenden von Nachrichten über das Internet ermöglicht. Es ist sehr ähnlich zu ICQ oder MSN besitzt dazu aber einige besondere Features.
+Wie funktioniert es? XMPP ist in einem dezentrales Netzwerk organisiert. Das bedeutet, dass es entgegen WhatsApp oder Facebook, weltweit viele Anbieter von XMPP Servern gibt. Daher kann theoretisch bei jedem Anbieter seinen Account registrieren.</description>
     </item>
     
     <item>
@@ -214,7 +232,7 @@ Wie funktioniert es? XMPP ist ein dezentrales Netzwerk. Das bedeutet das es entg
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/termsofuse/</guid>
-      <description>Allgemein  Registrierung sowie Nutzung des XMPP Servers sind kostenfrei. Es besteht kein Anspruch auf Funktionalität, Ausfallfreiheit sowie Fortführung dieses Dienstes. Das Versenden von Werbung in jeglicher Form ist untersagt! Angriffe auf die Server sind untersagt und resultieren in einem sofortigen Ausschluss. Aktivitäten, die gegen das geltende Recht der Bundesrepublik Deutschland, oder internationales Recht verstoßen sind untersagt. Accounts, die einer freiheitlichen, friedlichen und toleranten Gesellschaft widersprechen, werden gesperrt. Nutzeraccounts die länger als 1 Jahr inaktiv sind, werden automatisch gelöscht.</description>
+      <description>Allgemein  Registrierung sowie Nutzung des XMPP Servers sind kostenfrei. Es besteht kein Anspruch auf Funktionalität, Ausfallfreiheit sowie Fortführung dieses Dienstes. Das Versenden von Werbung/ Spam in jeglicher Form ist untersagt! Angriffe auf die Server sind untersagt und resultieren in einem sofortigen Ausschluss jeglicher Dienste. Aktivitäten, die gegen das geltende Recht der Bundesrepublik Deutschland, oder internationales Recht verstoßen sind untersagt. Accounts, die einer freiheitlichen, friedlichen und toleranten Gesellschaft widersprechen, werden gesperrt.</description>
     </item>
     
     <item>
@@ -223,12 +241,12 @@ Wie funktioniert es? XMPP ist ein dezentrales Netzwerk. Das bedeutet das es entg
       <pubDate>Wed, 21 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://magicbroccoli.de/donate/</guid>
-      <description>Unterstützung Der Betrieb des Servers sowie dessen Wartung kosten viel Zeit und natürlich auch Geld. Momentan werden alle Kosten von mir privat getragen. Wenn sie mich als kleines Dankeschön unterstützen möchten, sind sie hier absolut richtig.
-Über kleine Beiträge zur Finanzierung freue ich mich sehr. Daueraufträge lassen auch eine längerfristige Planung zu.
+      <description>Unterstützung Der Betrieb des Servers sowie dessen Wartung kosten viel Zeit und natürlich auch Geld. Momentan werden alle Kosten von mir privat getragen. Wenn Sie mich in meinem Bestreben Datenschutz für alle Verfügbar zu machen unterstützen möchten, sind sie hier gold richtig.
+Über kleine Beiträge zur Finanzierung freue ich mich ungemein. Daueraufträge lassen sogar eine längerfristige Planung zu.
  PayPal
- Bitcoin: 1QJZTWenBvdLWTUachpLLd2dLXAZMGeU87
- Banküberweisung: Bankverbindung auf Anfrage
-Vielen vielen herzlichen Dank an alle, die sich einmalig oder dauerhaft an der Finanzierung des Servers beteiligen!</description>
+ Amazon
+ Banküberweisung: auf Anfrage
+ Bitcoin: 1QJZTWenBvdLWTUachpLLd2dLXAZMGeU87</description>
     </item>
     
     <item>

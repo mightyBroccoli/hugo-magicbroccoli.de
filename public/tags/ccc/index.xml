@@ -14,13 +14,13 @@
     
     <item>
       <title>CCC Jabber Connection</title>
-      <link>https://magicbroccoli.de/post/cert-error-jabber-ccc/</link>
+      <link>https://magicbroccoli.de/post/ccc-jabber-connection/</link>
       <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
       
-      <guid>https://magicbroccoli.de/post/cert-error-jabber-ccc/</guid>
-      <description>Einleitung Der XMPP Server vom Chaos Computer Club wird unter einem Zertifikat von cacert.org betrieben. Das root Zertifikat wird allerdings von den meisten Browsern / Betriebssystemen nicht anerkannt. Dies stellt für die Erreichbarkeit des XMPP Servers ein Problem da.
-Speziell Server die auf Datenschutz und Sicherheit ausgelegt wollen keine unverschlüsselten Verbindung.Im Folgenden möchte daher ich aufzeigen, welche Änderungen notwendig wären, um Debian mit den entsprechenden Zertifikaten auszustatten.
-Betroffen sind damit speziell Prosody Server, die folgende Konfiguration eingestellt haben.</description>
+      <guid>https://magicbroccoli.de/post/ccc-jabber-connection/</guid>
+      <description>Update Die techniche Leitung des CCC Jabber Servers hat sich nun auch dazu entscheiden auf gültige Zertifikate umzusteigen. Daher ist dieser Blogpost überflüssig.
+Einleitung Der XMPP Server vom Chaos Computer Club wird unter einem Zertifikat von cacert.org betrieben. Das root Zertifikat wird allerdings von den meisten Browsern / Betriebssystemen nicht anerkannt. Dies stellt für die Erreichbarkeit des XMPP Servers ein Problem da.
+Speziell Server die auf Datenschutz und Sicherheit ausgelegt wollen keine unverschlüsselten Verbindung.</description>
     </item>
     
   </channel>

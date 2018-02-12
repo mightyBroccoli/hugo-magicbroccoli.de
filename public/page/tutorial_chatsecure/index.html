@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Chatsecure Tutorial  &middot; Magic Broccoli</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="Guide on how to use Chatsecure" />
+
+<meta name="keywords" content="MagicBroccoli XMPP, XMPP, Chatsecure, Chatsecure Tutorial, iPhone, ">
+
+
+<meta property="og:title" content="Chatsecure Tutorial  &middot; Magic Broccoli ">
+<meta property="og:site_name" content="Magic Broccoli"/>
+<meta property="og:url" content="https://magicbroccoli.de/page/tutorial_chatsecure/" />
+<meta property="og:locale" content="de-DE">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content="Guide on how to use Chatsecure"/>
+<meta property="og:article:published_time" content="2017-07-22T00:00:00Z" />
+<meta property="og:article:modified_time" content="2017-07-22T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="MagicBroccoli XMPP">
+    
+<meta property="og:article:tag" content="XMPP">
+    
+<meta property="og:article:tag" content="Chatsecure">
+    
+<meta property="og:article:tag" content="Chatsecure Tutorial">
+    
+<meta property="og:article:tag" content="iPhone">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="Chatsecure Tutorial" />
+<meta name="twitter:description" content="Guide on how to use Chatsecure" />
+<meta name="twitter:url" content="https://magicbroccoli.de/page/tutorial_chatsecure/" />
+<meta name="twitter:domain" content="https://magicbroccoli.de/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Chatsecure Tutorial",
+    "author": {
+      "@type": "Person",
+    },
+    "datePublished": "2017-07-22",
+    "description": "Guide on how to use Chatsecure",
+    "wordCount": 510
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://magicbroccoli.de/page/tutorial_chatsecure/" />
+
+<meta name="generator" content="Hugo 0.35" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+
+  <link rel="stylesheet" href="https://magicbroccoli.de/assets/css/style.css">
+  <link rel="stylesheet" href="https://magicbroccoli.de/assets/css/tomorrow-night.css">
+
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://magicbroccoli.de/favicon/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://magicbroccoli.de/favicon/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://magicbroccoli.de/favicon/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://magicbroccoli.de/favicon/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://magicbroccoli.de/favicon/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://magicbroccoli.de/favicon/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://magicbroccoli.de/favicon/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://magicbroccoli.de/favicon/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://magicbroccoli.de/favicon/apple-touch-icon-180x180.png" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-128.png" sizes="128x128" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-196x196.png" sizes="196x196" />
+<meta name="application-name" content="Magic Broccoli"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="/favicon/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="/favicon/mstile-150x150.png" />
+<meta name="msapplication-square310x310logo" content="/favicon/mstile-310x310.png" />
+
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-expand-md fixed-top site-navbar bg-info">
+    <a class="navbar-brand text-white" href="https://magicbroccoli.de/">Magic Broccoli</a>
+  <button class="navbar-toggler" 
+  type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2"
+    aria-expanded="false" aria-label="Toggle navigation">
+    &#9776;
+  </button>
+  <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
+    <ul class="nav navbar-nav ml-auto">
+       
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/">
+          <i class='fa fa-home fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Home</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/xmpp/">
+          <i class='fa fa-delicious'></i>
+          <span class="text-capitalize no-decoration text-white">XMPP</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/register/">
+          <i class='fa fa-plus' fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Register</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/tutorial">
+          <i class='fa fa-question-circle' fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Tutorials</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/contact/">
+          <i class='fa fa-info-circle'></i>
+          <span class="text-capitalize no-decoration text-white">About me</span>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+<div class="container p-b-2">
+  <div class="row">
+    <div class="col-xs-12 col-md-9 post-container">
+      <div class="content pt-2">
+  
+
+<p><strong>Hinweis</strong>: <em>Ein Dank geht an <a href="//5222.de" target="_blank">5222.de</a> die netterweise die Screenshots zur Verfügung gestellt haben. Da ich selbst kein iPhone besitzte wäre mir ein Tutorial sonst nicht möglich gewesen.</em></p>
+
+<h2 id="1-account-registrierung">1. Account Registrierung</h2>
+
+<p>Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt.
+Speziell bei <strong>magicbroccoli.de</strong> sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist.
+Durch den Klick auf &ldquo;Registrieren&rdquo; akzeptieren Sie die <a href="https://magicbroccoli.de/termsofuse/">Nutzungsbedingungen</a> sowie <a href="https://magicbroccoli.de/datenschutz/">Datenschutzbestimmungen</a>.
+<img src="https://magicbroccoli.de/images/tutorials/webregister.png" alt="" /></p>
+
+<h2 id="2-installation">2. Installation</h2>
+
+<p>Chatsecure lässt sich einfach über den AppStore installieren.
+<center><a href="https://itunes.apple.com/de/app/id464200063" target="_blank"><img src="https://magicbroccoli.de/icons/apple_appstore.png" alt="ChatSecure Download" /></a>
+<a href="https://play.google.com/store/apps/details?id=info.guardianproject.otr.app.im" target="_blank"><img src="https://magicbroccoli.de/icons/google_appstore.png" alt="ChatSecure Download" /></a></center></p>
+
+<h2 id="3-client-login">3. Client Login</h2>
+
+<p>Der Login zum Chat verläuft ähnlich zu jedem anderen Client. Da bereits ein Account in <a href="#1-account-registrierung">Schritt 1</a> erstellt wurde, wird <em>Existing Account</em> (en. bestehender Account) gewählt.<br>
+Daraufhin werden in den Feldern die zuvor gewählten Daten eingetragen. Ein Spitzname muss nicht eingetragen werden, ist allerdings für die Kontakte später sehr hilfreich.<br>
+Alle Einstellungen unter <em>Erweitert</em> müssen nicht verändert werden, die Standarteinstellungen sind korrekt.<br>
+Beim ersten Verbindungsaufbau erscheint eine Benachrichtung dem SSL Zertifikat zu vertrauen, dies ist für den weiteren Verbindungsaufbau zwingend notwendig zu akzeptieren.
+<br><img src="https://magicbroccoli.de/images/tutorials/chatsecure/login_existing_account.png" width="25%"><img src="https://magicbroccoli.de/images/tutorials/chatsecure/login_creds.png" width="25%"><img src="https://magicbroccoli.de/images/tutorials/chatsecure/login_trustssl.png" width="25%"><img src="https://magicbroccoli.de/images/tutorials/chatsecure/login_successfull.png" width="25%"></p>
+
+<h2 id="4-settings">4. Settings</h2>
+
+<p>Unter den Einstellungen von Chatsecure befinden sich einige Möglichkeiten, die sehr nützlich für den Chat Alltag sind.
+Neben den aktiven Konten gibt es dort die Möglichkeit, die verwendeten Zertifikate einzusehen und zu kontrollieren. Außerdem ist es möglich eine automatisch Löschung der Nachrichten zu aktivieren. Je nach Belieben ist es damit möglich beim Trennen der Verbindung oder Verlassen des Gesprächs alle Nachricht im Verlauf zu löschen.<br>
+Das kleine gelbe Warndreieck symbolisiert, das die App ein Feature des Server verwendet, welches allerdings nicht korrekt zu funktionieren scheint. Sehr häufig handelt es sich hierbei um die Push Notifications.
+<br><img src="https://magicbroccoli.de/images/tutorials/chatsecure/settings.png" width="33%"><img src="https://magicbroccoli.de/images/tutorials/chatsecure/settings_konto.png" width="33%"><img src="https://magicbroccoli.de/images/tutorials/chatsecure/settings_profile.png" width="33%">
+Unter <em>Meine Schlüssel verwalten</em> ist es möglich seine eigenen Omemo Schlüssel zu akzeptieren oder zu misstrauen.</p>
+
+<h2 id="5-plugins">5. Plugins</h2>
+
+<p>Bei Plugins ist Chatsecure sehr nah an Conversations dran. Viele Einstellungen werden automatisch vom Server übernommen und müssen vom Benutzer gar nicht bedacht werden. Einige Einstellungen müssen, um den Betrieb möglichst reibungslos zu gewährleisten, von Hand einmalig eingestellt werden.</p>
+
+<h3 id="5-1-push-notifications">5.1 Push Notifications</h3>
+
+<p>Push Benachrichtigungen sind ein sehr nützliches Feature, welches nicht alle Server Anbieter anbieten. Beim ersten verbinden erfragt das Telefon automatisch die verfügbaren Serverfeatures. Sollte sich darunter Push befinden, wird Ihr Telefon sie folgendes Fragen.
+<br><img src="https://magicbroccoli.de/images/tutorials/chatsecure/push_enable_1.png" width="50%"><img src="https://magicbroccoli.de/images/tutorials/chatsecure/push_enable_2.png" width="50%">
+Um erfolgreich Push Benachrichtigungen zu erhalten ist es notwendig beide Fragen zu akzeptieren. Diese Frage wird einmalig pro Account gestellt.
+Es ist möglich die Erlaubnis in den Einstellungen zurückzusetzen oder sogar ganz zu verbieten.</p>
+
+<h3 id="5-2-omemo">5.2 OMEMO</h3>
+
+<p>Das aktivieren von Omemo ist sehr einfach und schnell erledigt. Über das Profil ( Erreichbar über das kleine <strong>i</strong> oben rechts ) lässt sich über <em>Erweiterte Verschlüsselungseinstellungen</em> auswählen welches Verfahren gewünscht ist.<br>
+Dabei ist <em>Beste verfügbare</em> die optimalste Option. Wichtig ist hierbei, dass dies eine Änderung ist die nur für diesen Kontakt gilt.<br>
+Wenn der Account mobil genutzt wird ist Omemo definitiv die bessere Wahl, da <em>OTR</em> sensibel auf eine schwankende Verbindungsqualität reagiert, was zu Fehlern, wie z.B. nicht empfangenen Nachrichten führen kann.
+<br><img src="https://magicbroccoli.de/images/tutorials/chatsecure/omemo_profile.png" width="33%"><img src="https://magicbroccoli.de/images/tutorials/chatsecure/omemo_enable_encrypt.png" width="33%"><img src="https://magicbroccoli.de/images/tutorials/chatsecure/omemo_chat.png" width="33%"></p>
+
+<h2 id="6-nützliche-links">6. Nützliche Links</h2>
+
+<p>Einige Webseiten die weitergehende Informationen zur Verfügung stellen.</p>
+
+<h4 id="allgemein">Allgemein</h4>
+
+<ul>
+<li><a href="https://chatsecure.org/" target="_blank">ChatSecure Homepage</a></li>
+<li><a href="https://github.com/chatsecure" target="_blank">ChatSecure Github Repository</a></li>
+</ul>
+
+<p><a href="https://magicbroccoli.de/xmpp/">Zurück zur Übersicht</a></p>
+
+<hr />
+
+<p>Last Edit 13.10.17</p>
+
+</div>
+
+    </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="sidebar">
+  
+
+  
+
+
+<div class="card card-block">
+  <h4 class="card-title">CATEGORIES</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/bash/">
+                bash
+            </a>
+            <span class="category-list-count">2</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/debian/">
+                debian
+            </a>
+            <span class="category-list-count">2</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/guide/">
+                guide
+            </a>
+            <span class="category-list-count">5</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/prosody/">
+                prosody
+            </a>
+            <span class="category-list-count">6</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/teamspeak/">
+                teamspeak
+            </a>
+            <span class="category-list-count">1</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/xmpp/">
+                xmpp
+            </a>
+            <span class="category-list-count">10</span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAGS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/cacert/">cacert</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/ccc/">ccc</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/chatsecure/">chatsecure</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/gajim/">gajim</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/keybase.io/">keybase.io</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/maintenance/">maintenance</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/mariadb/">mariadb</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/mildly-usefull/">mildly-usefull</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/omemo/">omemo</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/omemo_all_access/">omemo_all_access</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/publish-options/">publish-options</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xep-0313/">xep-0313</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xep-0368/">xep-0368</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xep-0384/">xep-0384</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAG CLOUD</h4>
+  <p class="card-text">
+    
+        <a href="https://magicbroccoli.de/tags/cacert/" class="badge badge-primary">
+        cacert
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/ccc/" class="badge badge-primary">
+        ccc
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/chatsecure/" class="badge badge-primary">
+        chatsecure
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/gajim/" class="badge badge-primary">
+        gajim
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/keybase.io/" class="badge badge-primary">
+        keybase.io
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/maintenance/" class="badge badge-primary">
+        maintenance
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/mariadb/" class="badge badge-primary">
+        mariadb
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/mildly-usefull/" class="badge badge-primary">
+        mildly-usefull
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/omemo/" class="badge badge-primary">
+        omemo
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/omemo_all_access/" class="badge badge-primary">
+        omemo_all_access
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/publish-options/" class="badge badge-primary">
+        publish-options
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0313/" class="badge badge-primary">
+        xep-0313
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0368/" class="badge badge-primary">
+        xep-0368
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0384/" class="badge badge-primary">
+        xep-0384
+        </a>
+    
+  </p>
+</div>
+
+
+
+
+</div>
+
+      </div>
+  </div>
+</div>
+      <footer class="footer text-white bg-info">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-9">
+        <p class="text-xs-center m-a-0 p-a-0">
+          &copy; 2018 All rights reserved.
+        </p>
+        
+        <p class="text-xs-center  m-a-0 p-a-0">
+            
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/impressum/" class="text-capitalize no-decoration text-white">Impressum</a>
+              </span>
+              &middot; 
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/termsofuse/" class="text-capitalize no-decoration text-white">Terms of Use</a>
+              </span>
+              &middot; 
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/datenschutz/" class="text-capitalize no-decoration text-white">Privacy Policy</a>
+              </span>
+                
+        </p>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha256-GIa8Vh3sfESnVB2CN3rYGkD/MklvMq0lmITweQxE1qU=" crossorigin="anonymous"></script>
+
+<script src="https://magicbroccoli.de/assets/js/highlight.pack.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script id="dsq-count-scr" src="//magicbroccoli-de.disqus.com/count.js" async></script>
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.conversejs.org/css/converse.min.css">
+<script>
+  if (screen && screen.width > 960) {
+    document.write('<script type="text\/javascript" src="https://cdn.conversejs.org/dist/converse.min.js"><\/script>');
+  }
+</script>
+<script>
+  converse.initialize({
+    allow_chat_pending_contacts: true,
+    allow_non_roster_messaging: true,
+    allow_registration: false,
+    archived_messages_page_size: 30,
+    auto_list_rooms: false,
+    bosh_service_url: 'https://magicbroccoli.de/http-bind',
+    websocket_url: 'wss://magicbroccoli.de/xmpp-websocket',
+    csi_waiting_time: 25,
+    default_domain: 'magicbroccoli.de',
+    domain_placeholder: 'magicbroccoli.de',
+    message_carbons: true,
+    muc_domain: 'conference.magicbroccoli.de',
+    providers_link: 'https://magicbroccoli.de/xmpp',
+    registration_domain: 'magicbroccoli.de',
+    roster_groups: true,
+    show_controlbox_by_default: true,
+    show_send_button: true,
+  });
+</script>
+
+  </body>
+</html>
+

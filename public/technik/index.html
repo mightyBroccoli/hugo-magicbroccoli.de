@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Server Technik  &middot; Magic Broccoli</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="verwendete Server Technik" />
+
+<meta name="keywords" content="Prosody, Debian, XMPP, MagicBroccoli XMPP, ">
+
+
+<meta property="og:title" content="Server Technik  &middot; Magic Broccoli ">
+<meta property="og:site_name" content="Magic Broccoli"/>
+<meta property="og:url" content="https://magicbroccoli.de/technik/" />
+<meta property="og:locale" content="de-DE">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content="verwendete Server Technik"/>
+<meta property="og:article:published_time" content="2017-06-27T00:00:00Z" />
+<meta property="og:article:modified_time" content="2017-06-27T00:00:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="Prosody">
+    
+<meta property="og:article:tag" content="Debian">
+    
+<meta property="og:article:tag" content="XMPP">
+    
+<meta property="og:article:tag" content="MagicBroccoli XMPP">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="Server Technik" />
+<meta name="twitter:description" content="verwendete Server Technik" />
+<meta name="twitter:url" content="https://magicbroccoli.de/technik/" />
+<meta name="twitter:domain" content="https://magicbroccoli.de/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Server Technik",
+    "author": {
+      "@type": "Person",
+    },
+    "datePublished": "2017-06-27",
+    "description": "verwendete Server Technik",
+    "wordCount": 652
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://magicbroccoli.de/technik/" />
+
+<meta name="generator" content="Hugo 0.35" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+
+  <link rel="stylesheet" href="https://magicbroccoli.de/assets/css/style.css">
+  <link rel="stylesheet" href="https://magicbroccoli.de/assets/css/tomorrow-night.css">
+
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://magicbroccoli.de/favicon/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://magicbroccoli.de/favicon/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://magicbroccoli.de/favicon/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://magicbroccoli.de/favicon/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://magicbroccoli.de/favicon/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://magicbroccoli.de/favicon/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://magicbroccoli.de/favicon/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://magicbroccoli.de/favicon/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://magicbroccoli.de/favicon/apple-touch-icon-180x180.png" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-128.png" sizes="128x128" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-196x196.png" sizes="196x196" />
+<meta name="application-name" content="Magic Broccoli"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="/favicon/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="/favicon/mstile-150x150.png" />
+<meta name="msapplication-square310x310logo" content="/favicon/mstile-310x310.png" />
+
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-expand-md fixed-top site-navbar bg-info">
+    <a class="navbar-brand text-white" href="https://magicbroccoli.de/">Magic Broccoli</a>
+  <button class="navbar-toggler" 
+  type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2"
+    aria-expanded="false" aria-label="Toggle navigation">
+    &#9776;
+  </button>
+  <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
+    <ul class="nav navbar-nav ml-auto">
+       
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/">
+          <i class='fa fa-home fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Home</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/xmpp/">
+          <i class='fa fa-delicious'></i>
+          <span class="text-capitalize no-decoration text-white">XMPP</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/register/">
+          <i class='fa fa-plus' fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Register</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/tutorial">
+          <i class='fa fa-question-circle' fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Tutorials</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/contact/">
+          <i class='fa fa-info-circle'></i>
+          <span class="text-capitalize no-decoration text-white">About me</span>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+<div class="container p-b-2">
+  <div class="row">
+    <div class="col-xs-12 col-md-9 post-container">
+      <div class="content pt-2">
+  
+
+<h2 id="system">System</h2>
+
+<p>Das Hostsystem verwendet <img src="https://magicbroccoli.de/icons/debian_icon.png" alt="Debian" /> Debian 9.2 Stretch. Alle Komponenten werden regelmäßig aktualisiert. Teilweise nehme ich Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn sich dies allerdings nicht verhindern lässt, wird es zu einer möglichst kleinen Downtime für wichtige Updates kommen.</p>
+
+<h3 id="dns">DNS</h3>
+
+<p>Die gesamte DNS-Zone von <em>magicbroccoli.de</em> ist mit DNSSEC signiert und lässt sich dahingehend überprüfen.</p>
+
+<h3 id="nginx">nginx</h3>
+
+<p>Alle Dienste der per HTTP erreichbar sind, werden durch einen <a href="https://nginx.org/" target="_blank">nginx</a> Server veröffentlicht. Dieser ist konfiguriert ausschließlich <a href="https://de.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS verschlüsselte Verbindungen</a> zuzulassen. Unverschlüsselte Verbindungen werden direkt zu einer verschlüsselten Verbindung aufgewertet. Ist dies nicht möglich, wird die Verbindung verweigert.<br>
+Zur Verfügung stehen TLS1.2 sowie 1.3 mit eine definierten Auswahl an ciphers. Außerdem ist der Server in der Lage <a href="https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP.2F1.1" target="_blank">HTTP 1.1</a> sowie <a href="https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP.2F2" target="_blank">HTTP 2</a> Verbindungen zur Verfügung zu stellen.</p>
+
+<pre><code>ssl_prefer_server_ciphers	on;
+ssl_ciphers 'ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256';
+ssl_ecdh_curve	secp384r1:secp521r1;
+</code></pre>
+
+<p>Zusätzlich zu einer recht restriktiven TLS Konfiguration werden standartmäßig einige HTTP Header mitgesendet um die Sicherheit der Webpages zu erhöhen.</p>
+
+<pre><code>add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains; preload;&quot;;
+add_header X-Content-Type-Options nosniff;
+add_header X-XSS-Protection &quot;1; mode=block&quot;;
+add_header X-Robots-Tag none;
+add_header X-Download-Options noopen;
+add_header X-Permitted-Cross-Domain-Policies none;
+add_header Referrer-Policy &quot;no-referrer-when-downgrade&quot;;
+add_header Content-Security-Policy &quot;frame-ancestors 'self'&quot;;
+</code></pre>
+
+<p>Ähnlich zum XMPP Server, ist es möglich über externe Testsuites die Konfiguration auf Lücken bzw. Schwächen hin zu überprüfen.<br>
+Besonders bekannt hierfür ist <a href="https://www.ssllabs.com" target="_blank">Qualys SSL Labs</a> dort sind <a href="https://www.ssllabs.com/ssltest/analyze.html?d=magicbroccoli.de" target="_blank">meine Ergebnisse</a> nachprüfbar. Die Ergebnisse werden dort leider nicht dauerhaft gespeichet.<br>
+( <em>Der Test dauert ca. 1 Minute, daher kann der Test von jedem jederzeit wiederholt werden.</em> )</p>
+
+<h3 id="prosody">Prosody</h3>
+
+<p>Bei der XMPP Serversoftware handelt es ich um ein Prosody 0.10 stable nightly.<br>
+Mit stable nightly meine ich den aktuellsten Build im <a href="https://hg.prosody.im/0.10/" target="_blank">branch 0.10</a>. Auch der stable release wird mit diesem Branch gebaut, allerdings hängt dieser teilweise stark hinter dem aktuellen Build hinterher.<br>
+Ich verwende den stable nightly um einen stabilen Server zu garantieren. Allerdings lege ich auch Wert auf aktuelle Entwicklungen. Da es sich nicht um den testing branch handelt sind diese Features als stable anzusehen.</p>
+
+<h4 id="verschlüsselung">Verschlüsselung</h4>
+
+<p>Prosody ist so konfiguriert, ausschließlich verschlüsselte Verbindungen zuzulassen. Zusätzlich dazu ist der Server so konfiguriert ausschließlich Verschlüsselungsverfahren zu erlauben, die <a href="https://wikipedia.org/wiki/Perfect_Forward_Secrecy" target="_blank">Perfect Forward Secrecy</a> unterstützen.
+Ungesicherte Verbindungen, oder Verbindungen mit zu schwacher Verschlüsselung bei <em>c2s</em> oder <em>s2s</em> werden blockiert. Leider werden dadurch einige Server sowie einige ältere Clients ausgesperrt, allerdings ist unzureichende Verschlüsselng für mich ein Ausschlusskriterium.
+Eine Ansicht welche Verschlüsselungsverfahren zum Verbindungsaufbau zulässig sind ist hier zu finden: <a href="https://check.messaging.one/result.php?domain=magicbroccoli.de&amp;type=client#ciphers" target="_blank">zulässige Verschlüsselungsverfahren</a></p>
+
+<h4 id="zertifikate">Zertifikate</h4>
+
+<p>Es gibt viele öffentliche XMPP Server, die unter selbstsignierten oder ungültigen Zertifikaten betrieben werden. Mein Server ist so konfiguriert ausschließlich Zertifikate zuzulassen, die gültig sind. Selbstsignierte Zertifikate werden nicht akzeptiert somit wird eine Verbindung blockiert.</p>
+
+<h4 id="passwörter">Passwörter</h4>
+
+<p>Alle Passwöter werden gehashed in einer Datenbank gespeichert, die nicht von außen erreichbar ist. Als Authentifizierungsverfahren wird entweder <a href="https://wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism" target="_blank"><em>SCRAM-SHA-1</em></a> oder <a href="https://wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism" target="_blank"><em>SCRAM-SHA-1-PLUS</em></a> verwendet.<br>
+Speziell das <a href="https://wikipedia.org/wiki/HTTP-Authentifizierung#Digest_Access_Authentication" target="_blank"><em>DIGEST-MD5</em></a> Verfahren, welches ältere Clients und Bots häufiger verwenden, wird nicht unterstützt.</p>
+
+<h4 id="features">Features</h4>
+
+<p>Der Server unterstützt eine Vielfalt an XMPP-Erweiterungen (XEPs). Jeder Client unterstützt dabei eine andere Teilmenge dieser Features. Speziell gebe ich Acht darauf, <a href="https://conversations.im/" target="_blank">Conversations (Android)</a> in möglichst großem Umfang zu unterstützen.
+Auszug aus den speziellern Server-Features:</p>
+
+<ul>
+<li><a href="https://xmpp.org/extensions/xep-0033.html" target="_blank">XEP-0033: Extended Stanza Addressing</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0045.html" target="_blank">XEP-0045: Multi-User Chat</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0055.html" target="_blank">XEP-0055: Basic implementation of Jabber Search</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0065.html" target="_blank">XEP-0065: SOCKS5 Bytestreams</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0115.html" target="_blank">XEP-0115: Entity Capabilities</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0124.html" target="_blank">XEP-0124: Bidirectional-streams Over Synchronous HTTP (BOSH)</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0156.html" target="_blank">XEP-0156: Discovering Alternative XMPP Connection Methods</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0163.html" target="_blank">XEP-0163: Personal Eventing Protocol</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0191.html" target="_blank">XEP-0191: Blocking Command</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0198.html" target="_blank">XEP-0198: Stream Managment</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0237.html" target="_blank">XEP-0237: Roster Versioning</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0280.html" target="_blank">XEP-0280: Message Carbons</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0313.html" target="_blank">XEP-0313: Message Archive Management</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0352.html" target="_blank">XEP-0352: Client State Indication</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0357.html" target="_blank">XEP-0357: Push Notifications</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0363.html" target="_blank">XEP-0363: HTTP File Upload</a></li>
+<li><a href="https://xmpp.org/extensions/xep-0368.html" target="_blank">XEP-0368: SRV records for XMPP over TLS</a></li>
+</ul>
+
+<h5 id="xep-0156-alternative-xmpp-connection-methods">XEP-0156: Alternative XMPP Connection Methods</h5>
+
+<ul>
+<li>HTTP-Bind Adresse: <a href="https://magicbroccoli.de/http-bind" target="_blank">https://magicbroccoli.de/http-bind</a></li>
+<li>Websocket Adresse: <a href="https://magicbroccoli.de/xmpp-websocket" target="_blank">https://magicbroccoli.de/xmpp-websocket</a></li>
+<li>XMPP over TLS: <a href="https://xmpps.magicbroccoli.de" target="_blank">xmpps.magicbroccoli.de</a></li>
+</ul>
+
+<h4 id="registrieren">Registrieren</h4>
+
+<p>Wenn dich diese Dinge überzeugt haben XMPP für dich und deine Freunde zu probieren. Kannst du dich hier direkt anmelden.
+<center><a style="display: block; margin-top: 50px; margin-left: auto; margin-right: auto; margin-bottom: 50px; height: 50px; width: 300px; background-color: #0069a1; color: white; border-radius: 5px; line-height: 50px; text-align: center; font-weight: bold;" href="https://magicbroccoli.de/register/">Registrieren</a></center></p>
+
+<h4 id="im-observer">IM Observer</h4>
+
+<p>IM Oberserver ist ein Testsuite die automatisiert XMPP Server auf verschiedene Faktoren hin testet. Die Ergebnisse für meinen Server sind wie folgt.<a href='https://check.messaging.one/result.php?domain=magicbroccoli.de&amp;type=client'>
+    <img src='https://check.messaging.one/badge.php?domain=magicbroccoli.de' alt='IM observatory score' />
+</a></p>
+
+<p>Mit dem Tool von <a href="https://tls.imirhil.fr" target="_blank">tls.imirhil.fr</a> lässt sich ähnlich zum IM Observer ein Server prüfen. MagicBroccoli XMPP hat dort ein Rating von A+ <a href="https://tls.imirhil.fr/xmpp/magicbroccoli.de" target="_blank">CryptCheck Score</a>.</p>
+
+<h4 id="statistiken">Statistiken</h4>
+
+<p><img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_c2s-day.png" width="45%"> <img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_s2s-week.png" width="45%">
+<img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_stanzas-week.png" width="45%"> <img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_uptime-week.png" width="45%"></p>
+
+<hr />
+
+<p>Last Edit 22.01.18</p>
+
+</div>
+
+    </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="sidebar">
+  
+
+  
+
+
+<div class="card card-block">
+  <h4 class="card-title">CATEGORIES</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/bash/">
+                bash
+            </a>
+            <span class="category-list-count">2</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/debian/">
+                debian
+            </a>
+            <span class="category-list-count">2</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/guide/">
+                guide
+            </a>
+            <span class="category-list-count">5</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/prosody/">
+                prosody
+            </a>
+            <span class="category-list-count">6</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/teamspeak/">
+                teamspeak
+            </a>
+            <span class="category-list-count">1</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/xmpp/">
+                xmpp
+            </a>
+            <span class="category-list-count">10</span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAGS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/cacert/">cacert</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/ccc/">ccc</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/chatsecure/">chatsecure</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/gajim/">gajim</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/keybase.io/">keybase.io</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/maintenance/">maintenance</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/mariadb/">mariadb</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/mildly-usefull/">mildly-usefull</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/omemo/">omemo</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/omemo_all_access/">omemo_all_access</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/publish-options/">publish-options</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xep-0313/">xep-0313</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xep-0368/">xep-0368</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xep-0384/">xep-0384</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAG CLOUD</h4>
+  <p class="card-text">
+    
+        <a href="https://magicbroccoli.de/tags/cacert/" class="badge badge-primary">
+        cacert
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/ccc/" class="badge badge-primary">
+        ccc
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/chatsecure/" class="badge badge-primary">
+        chatsecure
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/gajim/" class="badge badge-primary">
+        gajim
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/keybase.io/" class="badge badge-primary">
+        keybase.io
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/maintenance/" class="badge badge-primary">
+        maintenance
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/mariadb/" class="badge badge-primary">
+        mariadb
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/mildly-usefull/" class="badge badge-primary">
+        mildly-usefull
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/omemo/" class="badge badge-primary">
+        omemo
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/omemo_all_access/" class="badge badge-primary">
+        omemo_all_access
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/publish-options/" class="badge badge-primary">
+        publish-options
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0313/" class="badge badge-primary">
+        xep-0313
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0368/" class="badge badge-primary">
+        xep-0368
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0384/" class="badge badge-primary">
+        xep-0384
+        </a>
+    
+  </p>
+</div>
+
+
+
+
+</div>
+
+      </div>
+  </div>
+</div>
+      <footer class="footer text-white bg-info">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-9">
+        <p class="text-xs-center m-a-0 p-a-0">
+          &copy; 2018 All rights reserved.
+        </p>
+        
+        <p class="text-xs-center  m-a-0 p-a-0">
+            
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/impressum/" class="text-capitalize no-decoration text-white">Impressum</a>
+              </span>
+              &middot; 
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/termsofuse/" class="text-capitalize no-decoration text-white">Terms of Use</a>
+              </span>
+              &middot; 
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/datenschutz/" class="text-capitalize no-decoration text-white">Privacy Policy</a>
+              </span>
+                
+        </p>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha256-GIa8Vh3sfESnVB2CN3rYGkD/MklvMq0lmITweQxE1qU=" crossorigin="anonymous"></script>
+
+<script src="https://magicbroccoli.de/assets/js/highlight.pack.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script id="dsq-count-scr" src="//magicbroccoli-de.disqus.com/count.js" async></script>
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.conversejs.org/css/converse.min.css">
+<script>
+  if (screen && screen.width > 960) {
+    document.write('<script type="text\/javascript" src="https://cdn.conversejs.org/dist/converse.min.js"><\/script>');
+  }
+</script>
+<script>
+  converse.initialize({
+    allow_chat_pending_contacts: true,
+    allow_non_roster_messaging: true,
+    allow_registration: false,
+    archived_messages_page_size: 30,
+    auto_list_rooms: false,
+    bosh_service_url: 'https://magicbroccoli.de/http-bind',
+    websocket_url: 'wss://magicbroccoli.de/xmpp-websocket',
+    csi_waiting_time: 25,
+    default_domain: 'magicbroccoli.de',
+    domain_placeholder: 'magicbroccoli.de',
+    message_carbons: true,
+    muc_domain: 'conference.magicbroccoli.de',
+    providers_link: 'https://magicbroccoli.de/xmpp',
+    registration_domain: 'magicbroccoli.de',
+    roster_groups: true,
+    show_controlbox_by_default: true,
+    show_send_button: true,
+  });
+</script>
+
+  </body>
+</html>
+
