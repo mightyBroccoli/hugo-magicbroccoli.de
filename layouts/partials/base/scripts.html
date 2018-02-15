@@ -1,7 +1,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha256-GIa8Vh3sfESnVB2CN3rYGkD/MklvMq0lmITweQxE1qU=" crossorigin="anonymous"></script>
-
 <script src="{{ "assets/js/highlight.pack.js" | relURL }}"></script>
 
 <script>hljs.initHighlightingOnLoad();</script>
@@ -15,10 +14,10 @@
 <!--{{ template "_internal/google_analytics_async.html" . }}-->
 
 <!-- Converse.js Chat -->
-<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.conversejs.org/css/converse.min.css">
+<link rel="stylesheet" media="screen" href="https://cdn.conversejs.org/css/converse.min.css" integrity="sha384-LxPLMPj51V5E3k1bH2V+Jhbj5uRNfe6AA1o6Zl+3KbkiQLNIbtingcxvVslE8QmH" crossorigin="anonymous">
 <script>
   if (screen && screen.width > 960) {
-    document.write('<script type="text\/javascript" src="https://cdn.conversejs.org/dist/converse.min.js"><\/script>');
+    document.write('<script type="text\/javascript" src="https://cdn.conversejs.org/dist/converse.min.js" integrity="sha384-bjuNOeRKz9ubJd7/TbcUAz0ScAJ67F5xVNGFaGyQIc4eDl7xvzrBVp+7Nw8xv7re" crossorigin="anonymous">><\/script>');
   }
 </script>
 <script>
