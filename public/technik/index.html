@@ -57,7 +57,7 @@
     },
     "datePublished": "2017-06-27",
     "description": "verwendete Server Technik",
-    "wordCount": 652
+    "wordCount": 747
   }
 </script>
 
@@ -163,7 +163,7 @@
 
 <h3 id="nginx">nginx</h3>
 
-<p>Alle Dienste der per HTTP erreichbar sind, werden durch einen <a href="https://nginx.org/" target="_blank">nginx</a> Server veröffentlicht. Dieser ist konfiguriert ausschließlich <a href="https://de.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS verschlüsselte Verbindungen</a> zuzulassen. Unverschlüsselte Verbindungen werden direkt zu einer verschlüsselten Verbindung aufgewertet. Ist dies nicht möglich, wird die Verbindung verweigert.<br>
+<p>Alle Dienste die per HTTPS erreichbar sind, werden durch einen <a href="https://nginx.org/" target="_blank">nginx</a> Server veröffentlicht. Dieser ist konfiguriert ausschließlich <a href="https://de.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS verschlüsselte Verbindungen</a> zuzulassen. Unverschlüsselte Verbindungen werden direkt zu einer verschlüsselten Verbindung aufgewertet. Ist dies nicht möglich, wird die Verbindung verweigert.<br>
 Zur Verfügung stehen TLS1.2 sowie 1.3 mit eine definierten Auswahl an ciphers. Außerdem ist der Server in der Lage <a href="https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP.2F1.1" target="_blank">HTTP 1.1</a> sowie <a href="https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP.2F2" target="_blank">HTTP 2</a> Verbindungen zur Verfügung zu stellen.</p>
 
 <pre><code>ssl_prefer_server_ciphers	on;
@@ -171,7 +171,7 @@ ssl_ciphers 'ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES
 ssl_ecdh_curve	secp384r1:secp521r1;
 </code></pre>
 
-<p>Zusätzlich zu einer recht restriktiven TLS Konfiguration werden standartmäßig einige HTTP Header mitgesendet um die Sicherheit der Webpages zu erhöhen.</p>
+<p>Zusätzlich zu einer recht restriktiven TLS Konfiguration werden standartmäßig einige HTTP Header mitgesendet um die Sicherheit der Webpages zu gewährleisten.</p>
 
 <pre><code>add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains; preload;&quot;;
 add_header X-Content-Type-Options nosniff;
@@ -210,8 +210,9 @@ Speziell das <a href="https://wikipedia.org/wiki/HTTP-Authentifizierung#Digest_A
 
 <h4 id="features">Features</h4>
 
-<p>Der Server unterstützt eine Vielfalt an XMPP-Erweiterungen (XEPs). Jeder Client unterstützt dabei eine andere Teilmenge dieser Features. Speziell gebe ich Acht darauf, <a href="https://conversations.im/" target="_blank">Conversations (Android)</a> in möglichst großem Umfang zu unterstützen.
-Auszug aus den speziellern Server-Features:</p>
+<p>Der Server unterstützt eine Vielfalt an XMPP-Erweiterungen (XEPs). Jeder Client unterstützt dabei eine andere Teilmenge dieser Features. Speziell gebe ich Acht darauf, <a href="https://conversations.im/" target="_blank">Conversations (Android)</a> in möglichst großem Umfang zu unterstützen.</p>
+
+<h5 id="auszug-aus-den-speziellern-server-features">Auszug aus den speziellern Server-Features:</h5>
 
 <ul>
 <li><a href="https://xmpp.org/extensions/xep-0033.html" target="_blank">XEP-0033: Extended Stanza Addressing</a></li>
@@ -241,6 +242,17 @@ Auszug aus den speziellern Server-Features:</p>
 <li>XMPP over TLS: <a href="https://xmpps.magicbroccoli.de" target="_blank">xmpps.magicbroccoli.de</a></li>
 </ul>
 
+<h5 id="tor-hidden-service">TOR Hidden Service</h5>
+
+<p>Für Fans von <a href="https://www.torproject.org/" target="_blank">Tor</a> biete ich nun einen Hidden Service an. Mit diesem ist es möglich Client-to-Server Verbindungen zum XMPP-Server durch onion routing aufzubauen. Die Adresse lautet: <a href="dyy2lc2at2hqfir6.onion:5222" target="_blank">dyy2lc2at2hqfir6.onion</a>.</p>
+
+<p><font color="red"><em>Hinweise</em>:</font></p>
+
+<ul>
+<li>Es ist nicht möglich, ein gültiges TLS-Zertifikat für eine .onion-Adresse anzubieten. Durch die Verwendung von Tor sollte der Zugang allerdings auch schon stark genug gesichert sein das dieser Faktor entfallen kann.</li>
+<li>Die Funktion http_upload verwendet bei Nutzung, auch mit konfigurierter .onion-Adresse, mit dem normalen DNS und klassischen Verbindungen ins Internet. Daher müsste für dessen Nutzung mindestens noch ein <em>normaler</em> Zugang zum Internet bestehen.</li>
+</ul>
+
 <h4 id="registrieren">Registrieren</h4>
 
 <p>Wenn dich diese Dinge überzeugt haben XMPP für dich und deine Freunde zu probieren. Kannst du dich hier direkt anmelden.
@@ -256,12 +268,12 @@ Auszug aus den speziellern Server-Features:</p>
 
 <h4 id="statistiken">Statistiken</h4>
 
-<p><img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_c2s-day.png" width="45%"> <img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_s2s-week.png" width="45%">
+<p><img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_c2s-week.png" width="45%"> <img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_s2s-week.png" width="45%">
 <img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_stanzas-week.png" width="45%"> <img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_uptime-week.png" width="45%"></p>
 
 <hr />
 
-<p>Last Edit 22.01.18</p>
+<p>Last Edit 24.02.18</p>
 
 </div>
 
