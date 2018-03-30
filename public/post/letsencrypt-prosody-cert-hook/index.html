@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Let&#39;s Encrypt Prosody Cert Hook  &middot; Magic Broccoli</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="Ein moderner, deutscher XMPP Server mit einem Schwerpunkt auf Privatsphäre und Datenschutz. Erstelle dir hier kostenlos einen Account." />
+
+<meta name="keywords" content="Prosody, LetsEncrypt, ">
+
+
+<meta property="og:title" content="Let&#39;s Encrypt Prosody Cert Hook  &middot; Magic Broccoli ">
+<meta property="og:site_name" content="Magic Broccoli"/>
+<meta property="og:url" content="https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/" />
+<meta property="og:locale" content="de-DE">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2018-03-30T13:37:00&#43;02:00" />
+<meta property="og:article:modified_time" content="2018-03-30T13:37:00&#43;02:00" />
+
+  
+    
+<meta property="og:article:tag" content="Prosody">
+    
+<meta property="og:article:tag" content="LetsEncrypt">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="Let&#39;s Encrypt Prosody Cert Hook" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/" />
+<meta name="twitter:domain" content="https://magicbroccoli.de/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Let&#39;s Encrypt Prosody Cert Hook",
+    "author": {
+      "@type": "Person",
+    },
+    "datePublished": "2018-03-30",
+    "description": "",
+    "wordCount": 423
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/" />
+
+<meta name="generator" content="Hugo 0.37.1" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+
+  <link rel="stylesheet" href="https://magicbroccoli.de/assets/css/style.css">
+  <link rel="stylesheet" href="https://magicbroccoli.de/assets/css/tomorrow-night.css">
+
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://magicbroccoli.de/favicon/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://magicbroccoli.de/favicon/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://magicbroccoli.de/favicon/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://magicbroccoli.de/favicon/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://magicbroccoli.de/favicon/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://magicbroccoli.de/favicon/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://magicbroccoli.de/favicon/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://magicbroccoli.de/favicon/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://magicbroccoli.de/favicon/apple-touch-icon-180x180.png" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-128.png" sizes="128x128" />
+<link rel="icon" type="image/png" href="https://magicbroccoli.de/favicon/favicon-196x196.png" sizes="196x196" />
+<meta name="application-name" content="Magic Broccoli"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="/favicon/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="/favicon/mstile-150x150.png" />
+<meta name="msapplication-square310x310logo" content="/favicon/mstile-310x310.png" />
+
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-expand-md fixed-top site-navbar bg-info">
+    <a class="navbar-brand text-white" href="https://magicbroccoli.de/">Magic Broccoli</a>
+  <button class="navbar-toggler" 
+  type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2"
+    aria-expanded="false" aria-label="Toggle navigation">
+    &#9776;
+  </button>
+  <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
+    <ul class="nav navbar-nav ml-auto">
+       
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/">
+          <i class='fa fa-home fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Home</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/xmpp/">
+          <i class='fa fa-delicious'></i>
+          <span class="text-capitalize no-decoration text-white">XMPP</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/register/">
+          <i class='fa fa-plus' fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Register</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/tutorial">
+          <i class='fa fa-question-circle' fa-fw'></i>
+          <span class="text-capitalize no-decoration text-white">Tutorials</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link menu-item" href="https://magicbroccoli.de/contact/">
+          <i class='fa fa-info-circle'></i>
+          <span class="text-capitalize no-decoration text-white">About me</span>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+<div class="container p-a-0">
+  <div class="row m-l-0 m-r-0">
+    <div class="col-xs-12 col-md-9 post-container">
+      <div>
+  
+<a href="https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/" itemprop="url">
+    
+      <img src="https://certbot.eff.org/images/certbot-logo-1A.svg" class="img-fluid" alt="Generic responsive image">
+    
+</a>
+
+
+  <h1 class="post-title mb-1">Let&#39;s Encrypt Prosody Cert Hook
+</h1>
+
+  <div class="post-meta">
+  <div class="post-meta-item">
+    <i class="fa fa-calendar"></i>
+    <time datetime="2018-03-30">30 Mar, 2018</time>
+
+    
+      &middot; by nico
+    
+    &middot; 2 Minute Read
+    &middot; 423 Words
+  </div>
+
+  
+      
+      
+      <div class="post-meta-item">
+          <i class="fa fa-folder-open-o"></i>
+          
+          <a class="article-category-link" href="https://magicbroccoli.de/categories/prosody/">Prosody</a>
+          
+          
+      </div>
+      
+  
+
+  
+      
+      
+        <div class="post-meta-item">
+          <i class="fa fa-tags"></i>
+          
+          <a href="https://magicbroccoli.de/tags/maintenance/">maintenance</a>
+          &middot;
+          
+          <a href="https://magicbroccoli.de/tags/mildly-usefull/">mildly-usefull</a>
+          
+          
+        </div>
+      
+  
+  
+  <div class="post-meta-item">
+    &nbsp;<i class="fa fa-comment-o"></i>
+    <a href="https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/#disqus_thread" class="article-comment-link">
+         Comments
+    </a>
+  </div>
+  
+
+</div>
+
+</div>
+
+      <div class="content pt-2">
+  
+
+<h3 id="prosody-let-s-encrypt-certificates">Prosody + Let&rsquo;s Encrypt certificates</h3>
+
+<p>As of right now Prosody is not able to update a live certificate while remain running. For the complete update it is necessary to restart Prosody, which is inconvenient.<br>
+With the <a href="https://prosody.im/doc/console" target="_blank">telnet console</a> however, it is possible to reload the config such that a changed certificate is updated correctly. The biggest problem lies in reloading all possible locations the &ldquo;old&rdquo; certificate is still active in. I use the Prosody Telnet console to invoke a reload, due to the fact that <code>prosodyctl reload</code> is not actually reloading the modules just the config.<br>
+For this matter I hacked together a little bash script, which together with the <a href="https://certbot.eff.org/" target="_blank">LetsEncrypt&rsquo;s certbot</a> and the default letsecrypt cli is used to import and update the Prosody certificate without a need to restart the instanz.</p>
+
+<h3 id="letsencrypt-setup">LetsEncrypt Setup</h3>
+
+<p>To use this script in fully automatic way some configuration is needed to be done.
+On install LetsEncrypt creates the directory <code>renewal-hooks</code>. Inside are three subfolders which represent the time, occasion for invocation (<a href="https://certbot.eff.org/docs/using.html#renewing-certificates" target="_blank">source</a>). This script uses the deploy hook, to only run when the certificate is actually renewed. As I am not checking the domainname after deployment it is needed to add another subdirectory to the deploy directory.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/etc/letsencrypt/renewal-hooks/
+└── deploy
+    └── example.de
+        └── prosody.sh</code></pre></div>
+
+<h4 id="deploy-hook">Deploy-Hook</h4>
+
+<p>In this example code the hook is placed inside the <code>example.de</code> folder as <code>prosody.sh</code>. The script first imports the defined list of domains from the LetsEncrypt live directory. After this is finished reloading takes place. The import is done as described in the <a href="https://prosody.im/doc/letsencrypt" target="_blank">Prosody Documentation</a>.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">### Prosody Cert Import ###
+</span><span style="color:#75715e"># active domains
+</span><span style="color:#75715e"></span>domains<span style="color:#f92672">=(</span><span style="color:#e6db74">&#34;example.de&#34;</span> <span style="color:#e6db74">&#34;example.com&#34;</span><span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># import the new certs
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> domain in <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>domains[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
+	prosodyctl --root cert import $domain /etc/letsencrypt/live
+<span style="color:#66d9ef">done</span>
+
+<span style="color:#75715e"># modules needing to be reloaded
+</span><span style="color:#75715e"></span>modules<span style="color:#f92672">=(</span><span style="color:#e6db74">&#34;s2s&#34;</span> <span style="color:#e6db74">&#34;c2s&#34;</span> <span style="color:#e6db74">&#34;http&#34;</span> <span style="color:#e6db74">&#34;tls&#34;</span><span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># loop over commands
+</span><span style="color:#75715e"></span><span style="color:#f92672">(</span>
+<span style="color:#66d9ef">for</span> command in <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>modules[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
+        echo <span style="color:#e6db74">&#34;module:reload([[</span>$command<span style="color:#e6db74">]])&#34;</span>
+<span style="color:#66d9ef">done</span>
+echo <span style="color:#e6db74">&#34;config:reload()&#34;</span>
+echo quit
+<span style="color:#f92672">)</span>| nc localhost <span style="color:#ae81ff">5582</span> &amp;&gt;/dev/null
+
+<span style="color:#75715e"># exit gracefully
+</span><span style="color:#75715e"></span>exit <span style="color:#ae81ff">0</span></code></pre></div>
+
+<h3 id="letsencrypt-renewal-config">LetsEncrypt Renewal config</h3>
+
+<p>At this time certbot would not run any deploy hook after renewing a certificate. The default configuration invokes <code>/bin/run-parts</code> on the predefined folders <code>pre</code>, <code>post</code> and <code>deploy</code>. To run the script on deployment it is needed to add the directory to the renew configfile of your domain. For this example I choose to use example.de which would resolve to <code>/etc/letsencrypt/renewal/example.de.conf</code>.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>renewalparams<span style="color:#f92672">]</span>
+...
+renew_hook <span style="color:#f92672">=</span> /bin/run-parts /etc/letsencrypt/renewal/example.de
+...</code></pre></div>
+
+<h3 id="todo">TODO</h3>
+
+<ul>
+<li>Prosody does archive the &ldquo;old&rdquo; certificates when importing a new one. After a while the directory is pretty cluttered</li>
+<li>implement $RENEWED_DOMAINS test to deploy hook without the need to reconfigure</li>
+</ul>
+
+</div>
+
+      <footer>
+  
+   
+  
+  <nav>
+    <ul class="pagination">
+      
+      <li class="page-item">
+        <a href="https://magicbroccoli.de/post/keybase-omemo-verify/" title="Omemo Verification mit Keybase.io " class="page-link">
+          <span aria-hidden="true">&larr;</span>Previous
+        </a>
+      </li>
+       
+      
+    </ul>
+  </nav>
+   
+  
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="pt-4">
+         <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "magicbroccoli-de" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a> 
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="sidebar">
+  
+
+  
+
+
+<div class="card card-block">
+  <h4 class="card-title">CATEGORIES</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/bash/">
+                bash
+            </a>
+            <span class="category-list-count">2</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/debian/">
+                debian
+            </a>
+            <span class="category-list-count">2</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/guide/">
+                guide
+            </a>
+            <span class="category-list-count">5</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/prosody/">
+                prosody
+            </a>
+            <span class="category-list-count">7</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/teamspeak/">
+                teamspeak
+            </a>
+            <span class="category-list-count">1</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/xmpp/">
+                xmpp
+            </a>
+            <span class="category-list-count">10</span>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAGS</h4>
+  <div class="card-text">
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/cacert/">cacert</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/ccc/">ccc</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/chatsecure/">chatsecure</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/gajim/">gajim</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/keybase.io/">keybase.io</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/maintenance/">maintenance</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/mariadb/">mariadb</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/mildly-usefull/">mildly-usefull</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/omemo/">omemo</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/omemo_all_access/">omemo_all_access</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/publish-options/">publish-options</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xep-0313/">xep-0313</a>
+            <span class="category-list-count">2</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xep-0368/">xep-0368</a>
+            <span class="category-list-count">1</span>
+          </li>
+        
+          <li>
+            <a href="https://magicbroccoli.de/tags/xep-0384/">xep-0384</a>
+            <span class="category-list-count">3</span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+
+<div class="card card-block">
+  <h4 class="card-title">TAG CLOUD</h4>
+  <p class="card-text">
+    
+        <a href="https://magicbroccoli.de/tags/cacert/" class="badge badge-primary">
+        cacert
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/ccc/" class="badge badge-primary">
+        ccc
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/chatsecure/" class="badge badge-primary">
+        chatsecure
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/gajim/" class="badge badge-primary">
+        gajim
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/keybase.io/" class="badge badge-primary">
+        keybase.io
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/maintenance/" class="badge badge-primary">
+        maintenance
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/mariadb/" class="badge badge-primary">
+        mariadb
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/mildly-usefull/" class="badge badge-primary">
+        mildly-usefull
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/omemo/" class="badge badge-primary">
+        omemo
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/omemo_all_access/" class="badge badge-primary">
+        omemo_all_access
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/publish-options/" class="badge badge-primary">
+        publish-options
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0313/" class="badge badge-primary">
+        xep-0313
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0368/" class="badge badge-primary">
+        xep-0368
+        </a>
+    
+        <a href="https://magicbroccoli.de/tags/xep-0384/" class="badge badge-primary">
+        xep-0384
+        </a>
+    
+  </p>
+</div>
+
+
+
+
+</div>
+
+      </div>
+  </div>
+</div>
+      <footer class="footer text-white bg-info">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-9">
+        <p class="text-xs-center m-a-0 p-a-0">
+          &copy; 2018 All rights reserved.
+        </p>
+        
+        <p class="text-xs-center  m-a-0 p-a-0">
+            
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/impressum/" class="text-capitalize no-decoration text-white">Impressum</a>
+              </span>
+              &middot; 
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/termsofuse/" class="text-capitalize no-decoration text-white">Terms of Use</a>
+              </span>
+              &middot; 
+          <span class="p-l-1 p-r-1">
+                <a href="https://magicbroccoli.de/datenschutz/" class="text-capitalize no-decoration text-white">Privacy Policy</a>
+              </span>
+                
+        </p>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha256-GIa8Vh3sfESnVB2CN3rYGkD/MklvMq0lmITweQxE1qU=" crossorigin="anonymous"></script>
+<script src="https://magicbroccoli.de/assets/js/highlight.pack.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script id="dsq-count-scr" src="//magicbroccoli-de.disqus.com/count.js" async></script>
+
+
+
+
+
+
+
+<link rel="stylesheet" media="screen" href="https://cdn.conversejs.org/css/converse.min.css" integrity="sha384-35gf2AQLe+cTvWZjGqTZ1V/JoxDqC865k68uNubzUksi8BFsV8YEsG3vtvgCJHeZ" crossorigin="anonymous">
+<script>
+  if (screen && screen.width > 960) {
+    document.write('<script type="text\/javascript" src="https://cdn.conversejs.org/dist/converse.min.js" integrity="sha384-kUGvELgVKs477uqdxNSGnoUabCLU8gF9h91Tcxaay7O4t/lPBXBlwrGRsg0R7qJD" crossorigin="anonymous">><\/script>');
+  }
+</script>
+<script>
+  converse.initialize({
+    allow_chat_pending_contacts: true,
+    allow_non_roster_messaging: true,
+    allow_registration: false,
+    archived_messages_page_size: 30,
+    auto_list_rooms: false,
+    bosh_service_url: 'https://magicbroccoli.de/http-bind',
+    websocket_url: 'wss://magicbroccoli.de/xmpp-websocket',
+    csi_waiting_time: 25,
+    default_domain: 'magicbroccoli.de',
+    domain_placeholder: 'magicbroccoli.de',
+    message_carbons: true,
+    muc_domain: 'conference.magicbroccoli.de',
+    providers_link: 'https://magicbroccoli.de/xmpp',
+    registration_domain: 'magicbroccoli.de',
+    roster_groups: true,
+    show_controlbox_by_default: true,
+    show_send_button: true,
+  });
+</script>
+
+  </body>
+</html>
+

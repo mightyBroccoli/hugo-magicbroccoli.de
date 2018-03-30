@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
     <copyright>All rights reserved.</copyright>
-    <lastBuildDate>Thu, 07 Dec 2017 17:30:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 30 Mar 2018 13:37:00 +0200</lastBuildDate>
     
 	<atom:link href="https://magicbroccoli.de/tags/maintenance/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Let&#39;s Encrypt Prosody Cert Hook</title>
+      <link>https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/</link>
+      <pubDate>Fri, 30 Mar 2018 13:37:00 +0200</pubDate>
+      
+      <guid>https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/</guid>
+      <description>Prosody + Let&amp;rsquo;s Encrypt certificates As of right now Prosody is not able to update a live certificate while remain running. For the complete update it is necessary to restart Prosody, which is inconvenient.
+With the telnet console however, it is possible to reload the config such that a changed certificate is updated correctly. The biggest problem lies in reloading all possible locations the &amp;ldquo;old&amp;rdquo; certificate is still active in.</description>
+    </item>
     
     <item>
       <title>Prosody Datenbank Indizes</title>
