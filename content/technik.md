@@ -69,6 +69,7 @@ Der Server unterstützt eine Vielfalt an XMPP-Erweiterungen (XEPs). Jeder Client
 - [XEP-0198: Stream Managment](https://xmpp.org/extensions/xep-0198.html)
 - [XEP-0237: Roster Versioning](https://xmpp.org/extensions/xep-0237.html)
 - [XEP-0280: Message Carbons](https://xmpp.org/extensions/xep-0280.html)
+- [XEP-0288: Bidirectional Server-to-Server Connections](https://xmpp.org/extensions/xep-0288.html)
 - [XEP-0313: Message Archive Management](https://xmpp.org/extensions/xep-0313.html)
 - [XEP-0352: Client State Indication](https://xmpp.org/extensions/xep-0352.html)
 - [XEP-0357: Push Notifications](https://xmpp.org/extensions/xep-0357.html)
@@ -104,4 +105,4 @@ Mit dem Tool von [tls.imirhil.fr](https://tls.imirhil.fr) lässt sich ähnlich z
 <img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_stanzas-week.png" width="45%"> <img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_uptime-week.png" width="45%">
 
 - - -
-Last Edit 24.02.18
+Last Edit 30.03.18

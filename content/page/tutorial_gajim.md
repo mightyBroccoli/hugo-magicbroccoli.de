@@ -75,22 +75,19 @@ Aktionen > Chatraum betreten > Chatraum betreten führt zu einem Fenster das Ihn
 
 Bei den Adhoc Befehlen handelt es sich um Befehle, die Ihr Client dem Server zur Ausführung geben kann, um bestimmte Funktionen zu erhalten. Wie das Befehlsmenu aufzurufen ist zeigen die Bilder.
 
-### 6.1 Invite User
-Die Invite Funktion ist eine besondere Funktion des Servers. Sie erlaubt einen speziellen Invite Link zu generieren, die zu einer gesonderten Registrierung führt. Der eingeladene User ist nach dieser Registrierung automatisch auf der Freundesliste der Person die ihn eingeladen hat.
-
-### 6.2 Ping
+### 6.1 Ping
 Sendet einen Ping an den Server der mit einem Pong und der aktuellen Serverzeit antwortet.
 
-### 6.3 Get Uptime
+### 6.2 Get Uptime
 Zeigt die Zeit an die der Server online ist.
 
-### 6.4 Archive Settings
+### 6.3 Archive Settings
 **Default = OFF**
 Die Archive Funktion ermöglicht es Nachrichten für 1 Monat auf dem Server zu speichern. Sollten sie sich auf einem anderen Gerät einloggen, welches [Message Archive Management](https://xmpp.org/extensions/xep-0313.html) unterstützt sendet der Server Ihnen, ihre Chatverläufe von vor bis zu 1 Monat. Nach dieser Zeit werden die Nachrichten verworfen.
 
 *Verschlüsselte Nachrichten werden natürlich auch verschlüsselt gespeichert.*
 
-### 6.5 Search settings
+### 6.4 Search settings
 **Default = OFF**
 Diese Funktion sollte man sie aktivieren erlaubt es sie über die generelle Benutzersuche zu finden.
 <img src="/images/tutorials/gajim/search settings.png" width="100%">
@@ -107,4 +104,4 @@ Einige Webseiten die weitergehende Tutorials bzw. ausführlichere Tutorials zur 
 [Zurück zur Übersicht](/xmpp/)
 
 - - -
-Last Edit 22.01.18
+Last Edit 30.03.18
