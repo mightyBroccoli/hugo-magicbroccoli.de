@@ -56,6 +56,6 @@ Alles weitere, wie aktivierte XEPs und näheres zur verwendeten Technik bzw Soft
 
 - - -
 
-<center>[![](https://www.netcup.de/bilder/banner/netcup-hlogo-b220h100.png)](https://www.netcup.de)</center>
+<center>[![](/images/netcup-hlogo-b220h100.png)](https://www.netcup.de)</center>
 
-Last Edit 11.02.18
+Last Edit 14.02.18

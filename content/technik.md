@@ -13,14 +13,14 @@ Das Hostsystem verwendet ![Debian](/icons/debian_icon.png) Debian 9.2 Stretch. A
 Die gesamte DNS-Zone von *magicbroccoli.de* ist mit DNSSEC signiert und lässt sich dahingehend überprüfen.
 
 ### nginx
-Alle Dienste der per HTTP erreichbar sind, werden durch einen [nginx](https://nginx.org/) Server veröffentlicht. Dieser ist konfiguriert ausschließlich [TLS verschlüsselte Verbindungen](https://de.wikipedia.org/wiki/Transport_Layer_Security) zuzulassen. Unverschlüsselte Verbindungen werden direkt zu einer verschlüsselten Verbindung aufgewertet. Ist dies nicht möglich, wird die Verbindung verweigert.<br>
+Alle Dienste die per HTTPS erreichbar sind, werden durch einen [nginx](https://nginx.org/) Server veröffentlicht. Dieser ist konfiguriert ausschließlich [TLS verschlüsselte Verbindungen](https://de.wikipedia.org/wiki/Transport_Layer_Security) zuzulassen. Unverschlüsselte Verbindungen werden direkt zu einer verschlüsselten Verbindung aufgewertet. Ist dies nicht möglich, wird die Verbindung verweigert.<br>
 Zur Verfügung stehen TLS1.2 sowie 1.3 mit eine definierten Auswahl an ciphers. Außerdem ist der Server in der Lage [HTTP 1.1](https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP.2F1.1) sowie [HTTP 2](https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP.2F2) Verbindungen zur Verfügung zu stellen.
 ```
 ssl_prefer_server_ciphers	on;
 ssl_ciphers 'ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256';
 ssl_ecdh_curve	secp384r1:secp521r1;
 ```
-Zusätzlich zu einer recht restriktiven TLS Konfiguration werden standartmäßig einige HTTP Header mitgesendet um die Sicherheit der Webpages zu erhöhen.
+Zusätzlich zu einer recht restriktiven TLS Konfiguration werden standartmäßig einige HTTP Header mitgesendet um die Sicherheit der Webpages zu gewährleisten.
 ```
 add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload;";
 add_header X-Content-Type-Options nosniff;
@@ -54,7 +54,8 @@ Speziell das [*DIGEST-MD5*](https://wikipedia.org/wiki/HTTP-Authentifizierung#Di
 
 #### Features
 Der Server unterstützt eine Vielfalt an XMPP-Erweiterungen (XEPs). Jeder Client unterstützt dabei eine andere Teilmenge dieser Features. Speziell gebe ich Acht darauf, [Conversations (Android)](https://conversations.im/) in möglichst großem Umfang zu unterstützen.
-Auszug aus den speziellern Server-Features:
+
+##### Auszug aus den speziellern Server-Features:
 
 - [XEP-0033: Extended Stanza Addressing](https://xmpp.org/extensions/xep-0033.html)
 - [XEP-0045: Multi-User Chat](https://xmpp.org/extensions/xep-0045.html)
@@ -68,6 +69,7 @@ Auszug aus den speziellern Server-Features:
 - [XEP-0198: Stream Managment](https://xmpp.org/extensions/xep-0198.html)
 - [XEP-0237: Roster Versioning](https://xmpp.org/extensions/xep-0237.html)
 - [XEP-0280: Message Carbons](https://xmpp.org/extensions/xep-0280.html)
+- [XEP-0288: Bidirectional Server-to-Server Connections](https://xmpp.org/extensions/xep-0288.html)
 - [XEP-0313: Message Archive Management](https://xmpp.org/extensions/xep-0313.html)
 - [XEP-0352: Client State Indication](https://xmpp.org/extensions/xep-0352.html)
 - [XEP-0357: Push Notifications](https://xmpp.org/extensions/xep-0357.html)
@@ -78,6 +80,14 @@ Auszug aus den speziellern Server-Features:
 - HTTP-Bind Adresse: [https://magicbroccoli.de/http-bind](https://magicbroccoli.de/http-bind)
 - Websocket Adresse: [https://magicbroccoli.de/xmpp-websocket](https://magicbroccoli.de/xmpp-websocket)
 - XMPP over TLS: [xmpps.magicbroccoli.de](https://xmpps.magicbroccoli.de)
+
+##### TOR Hidden Service
+Für Fans von [Tor](https://www.torproject.org/) biete ich nun einen Hidden Service an. Mit diesem ist es möglich Client-to-Server Verbindungen zum XMPP-Server durch onion routing aufzubauen. Die Adresse lautet: [dyy2lc2at2hqfir6.onion](dyy2lc2at2hqfir6.onion:5222).
+
+<font color="red">_Hinweise_:</font>
+
+- Es ist nicht möglich, ein gültiges TLS-Zertifikat für eine .onion-Adresse anzubieten. Durch die Verwendung von Tor sollte der Zugang allerdings auch schon stark genug gesichert sein das dieser Faktor entfallen kann.
+- Die Funktion http_upload verwendet bei Nutzung, auch mit konfigurierter .onion-Adresse, mit dem normalen DNS und klassischen Verbindungen ins Internet. Daher müsste für dessen Nutzung mindestens noch ein _normaler_ Zugang zum Internet bestehen.
 
 #### Registrieren
 Wenn dich diese Dinge überzeugt haben XMPP für dich und deine Freunde zu probieren. Kannst du dich hier direkt anmelden.
@@ -91,8 +101,8 @@ IM Oberserver ist ein Testsuite die automatisiert XMPP Server auf verschiedene F
 Mit dem Tool von [tls.imirhil.fr](https://tls.imirhil.fr) lässt sich ähnlich zum IM Observer ein Server prüfen. MagicBroccoli XMPP hat dort ein Rating von A+ [CryptCheck Score](https://tls.imirhil.fr/xmpp/magicbroccoli.de).
 
 #### Statistiken
-<img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_c2s-day.png" width="45%"> <img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_s2s-week.png" width="45%">
+<img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_c2s-week.png" width="45%"> <img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_s2s-week.png" width="45%">
 <img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_stanzas-week.png" width="45%"> <img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_uptime-week.png" width="45%">
 
 - - -
-Last Edit 22.01.18
+Last Edit 30.03.18

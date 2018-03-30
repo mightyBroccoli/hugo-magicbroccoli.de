@@ -52,4 +52,6 @@ In dem Fall, dass eine Subdomain von mir verwendet werden soll, kann damit ein L
 Falls noch kein Hoster für die Domain gefunden wurde kann ich Netcup als Hoster empfehlen. Auf Nachfrage könnte ich Coupon Codes ausstellen die einen Rabatt gewähren.
 - - -
 
-<center>[![](https://www.netcup.de/bilder/banner/netcup-hlogo-b220h100.png)](https://www.netcup.de)</center>
+<center>[![](/images/netcup-hlogo-b220h100.png)](https://www.netcup.de)</center>
+
+Last Edit 14.02.18

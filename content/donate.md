@@ -15,6 +15,9 @@ Der Betrieb des Servers sowie dessen Wartung kosten viel Zeit und natürlich auc
 
 <i class="fa fa-university"></i> Banküberweisung: [auf Anfrage](/contact/)
 
+<i class="fa fa-credit-card"></i> [LiberaPay](https://liberapay.com/mightyBroccoli): <script src="https://liberapay.com/mightyBroccoli/widgets/button.js"></script>
+<noscript><a href="https://liberapay.com/mightyBroccoli/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
+
 <i class="fa fa-btc"></i>  Bitcoin: `1QJZTWenBvdLWTUachpLLd2dLXAZMGeU87`<br>
 <img src="/images/bitcoin_qr.png" alt="bitcoin_qr" style="width: 150px;"/>
 

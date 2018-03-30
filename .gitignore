@@ -1,1 +1,3 @@
 /public/assets/js/script.js*
+!public/*.gz
+/public/housekeeping.log
