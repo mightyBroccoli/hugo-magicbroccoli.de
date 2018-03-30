@@ -53,7 +53,7 @@
     },
     "datePublished": "2018-03-30",
     "description": "",
-    "wordCount": 423
+    "wordCount": 424
   }
 </script>
 
@@ -167,7 +167,7 @@
       &middot; by nico
     
     &middot; 2 Minute Read
-    &middot; 423 Words
+    &middot; 424 Words
   </div>
 
   
@@ -216,14 +216,14 @@
 
 <h3 id="prosody-let-s-encrypt-certificates">Prosody + Let&rsquo;s Encrypt certificates</h3>
 
-<p>As of right now Prosody is not able to update a live certificate while remain running. For the complete update it is necessary to restart Prosody, which is inconvenient.<br>
+<p>As of right now Prosody is not able to update a live certificate while running. For the complete update it is necessary to restart Prosody, which is inconvenient.<br>
 With the <a href="https://prosody.im/doc/console" target="_blank">telnet console</a> however, it is possible to reload the config such that a changed certificate is updated correctly. The biggest problem lies in reloading all possible locations the &ldquo;old&rdquo; certificate is still active in. I use the Prosody Telnet console to invoke a reload, due to the fact that <code>prosodyctl reload</code> is not actually reloading the modules just the config.<br>
-For this matter I hacked together a little bash script, which together with the <a href="https://certbot.eff.org/" target="_blank">LetsEncrypt&rsquo;s certbot</a> and the default letsecrypt cli is used to import and update the Prosody certificate without a need to restart the instanz.</p>
+For this matter I hacked together a little bash script, which together with the <a href="https://certbot.eff.org/" target="_blank">Let&rsquo;sEncrypt&rsquo;s certbot</a> and the default letsecrypt cli is used to import and update the Prosody certificate without a need to restart the instanc.</p>
 
-<h3 id="letsencrypt-setup">LetsEncrypt Setup</h3>
+<h3 id="let-sencrypt-setup">Let&rsquo;sEncrypt Setup</h3>
 
-<p>To use this script in fully automatic way some configuration is needed to be done.
-On install LetsEncrypt creates the directory <code>renewal-hooks</code>. Inside are three subfolders which represent the time, occasion for invocation (<a href="https://certbot.eff.org/docs/using.html#renewing-certificates" target="_blank">source</a>). This script uses the deploy hook, to only run when the certificate is actually renewed. As I am not checking the domainname after deployment it is needed to add another subdirectory to the deploy directory.</p>
+<p>To use this script in a fully automatic way some configuration is needed.
+On install Let&rsquo;sEncrypt creates the directory <code>renewal-hooks</code>. Inside there are three subfolders which represent the time and/or occasion for invocation (<a href="https://certbot.eff.org/docs/using.html#renewing-certificates" target="_blank">source</a>). This script uses the deploy hook to only run when the certificate is actually renewed. As I am not checking the domain name after deployment it is needed to add another subdirectory to the deploy directory.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/etc/letsencrypt/renewal-hooks/
 └── deploy
@@ -232,7 +232,7 @@ On install LetsEncrypt creates the directory <code>renewal-hooks</code>. Inside 
 
 <h4 id="deploy-hook">Deploy-Hook</h4>
 
-<p>In this example code the hook is placed inside the <code>example.de</code> folder as <code>prosody.sh</code>. The script first imports the defined list of domains from the LetsEncrypt live directory. After this is finished reloading takes place. The import is done as described in the <a href="https://prosody.im/doc/letsencrypt" target="_blank">Prosody Documentation</a>.</p>
+<p>In this example code the hook is placed inside the <code>example.de</code> folder as <code>prosody.sh</code>. The script first imports the defined list of domains from the Let&rsquo;s Encrypt live directory. After this is finished reloading takes place. The import is done as described in the <a href="https://prosody.im/doc/letsencrypt" target="_blank">Prosody Documentation</a>.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
 </span><span style="color:#75715e"></span>
@@ -260,9 +260,9 @@ echo quit
 <span style="color:#75715e"># exit gracefully
 </span><span style="color:#75715e"></span>exit <span style="color:#ae81ff">0</span></code></pre></div>
 
-<h3 id="letsencrypt-renewal-config">LetsEncrypt Renewal config</h3>
+<h3 id="let-sencrypt-renewal-config">Let&rsquo;sEncrypt Renewal config</h3>
 
-<p>At this time certbot would not run any deploy hook after renewing a certificate. The default configuration invokes <code>/bin/run-parts</code> on the predefined folders <code>pre</code>, <code>post</code> and <code>deploy</code>. To run the script on deployment it is needed to add the directory to the renew configfile of your domain. For this example I choose to use example.de which would resolve to <code>/etc/letsencrypt/renewal/example.de.conf</code>.</p>
+<p>At this time certbot would not run any deploy hook after renewing a certificate. The default configuration invokes <code>/bin/run-parts</code> on the predefined folders <code>pre</code>, <code>post</code> and <code>deploy</code>. To run the script on deployment it is needed to add the directory to the renew config file of your domain. For this example I choose to use example.de which would resolve to <code>/etc/letsencrypt/renewal/example.de.conf</code>.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>renewalparams<span style="color:#f92672">]</span>
 ...
@@ -272,7 +272,7 @@ renew_hook <span style="color:#f92672">=</span> /bin/run-parts /etc/letsencrypt/
 <h3 id="todo">TODO</h3>
 
 <ul>
-<li>Prosody does archive the &ldquo;old&rdquo; certificates when importing a new one. After a while the directory is pretty cluttered</li>
+<li>Prosody archives the &ldquo;old&rdquo; certificates when importing a new one. After a while the directory is pretty cluttered.</li>
 <li>implement $RENEWED_DOMAINS test to deploy hook without the need to reconfigure</li>
 </ul>
 
