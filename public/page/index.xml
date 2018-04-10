@@ -6,30 +6,220 @@
     <description>Recent content in Pages on Magic Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
+    <managingEditor>mightyBroccoli (nico)</managingEditor>
+    <webMaster>mightyBroccoli (nico)</webMaster>
     <copyright>All rights reserved.</copyright>
     <lastBuildDate>Sat, 22 Jul 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://magicbroccoli.de/page/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://magicbroccoli.de/page/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Chatsecure Tutorial</title>
       <link>https://magicbroccoli.de/page/tutorial_chatsecure/</link>
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/page/tutorial_chatsecure/</guid>
-      <description>Hinweis: Ein Dank geht an 5222.de die netterweise die Screenshots zur Verfügung gestellt haben. Da ich selbst kein iPhone besitzte wäre mir ein Tutorial sonst nicht möglich gewesen.
-1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt. Speziell bei magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist.</description>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Hinweis&lt;/strong&gt;: &lt;em&gt;Ein Dank geht an &lt;a href=&#34;//5222.de&#34; target=&#34;_blank&#34;&gt;5222.de&lt;/a&gt; die netterweise die Screenshots zur Verfügung gestellt haben. Da ich selbst kein iPhone besitzte wäre mir ein Tutorial sonst nicht möglich gewesen.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;1-account-registrierung&#34;&gt;1. Account Registrierung&lt;/h2&gt;
+
+&lt;p&gt;Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt.
+Speziell bei &lt;strong&gt;magicbroccoli.de&lt;/strong&gt; sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist.
+Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die &lt;a href=&#34;https://magicbroccoli.de/termsofuse/&#34;&gt;Nutzungsbedingungen&lt;/a&gt; sowie &lt;a href=&#34;https://magicbroccoli.de/datenschutz/&#34;&gt;Datenschutzbestimmungen&lt;/a&gt;.
+&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/webregister.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;2-installation&#34;&gt;2. Installation&lt;/h2&gt;
+
+&lt;p&gt;Chatsecure lässt sich einfach über den AppStore installieren.
+&lt;center&gt;&lt;a href=&#34;https://itunes.apple.com/de/app/id464200063&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/icons/apple_appstore.png&#34; alt=&#34;ChatSecure Download&#34; /&gt;&lt;/a&gt;
+&lt;a href=&#34;https://play.google.com/store/apps/details?id=info.guardianproject.otr.app.im&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/icons/google_appstore.png&#34; alt=&#34;ChatSecure Download&#34; /&gt;&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;3-client-login&#34;&gt;3. Client Login&lt;/h2&gt;
+
+&lt;p&gt;Der Login zum Chat verläuft ähnlich zu jedem anderen Client. Da bereits ein Account in &lt;a href=&#34;#1-account-registrierung&#34;&gt;Schritt 1&lt;/a&gt; erstellt wurde, wird &lt;em&gt;Existing Account&lt;/em&gt; (en. bestehender Account) gewählt.&lt;br&gt;
+Daraufhin werden in den Feldern die zuvor gewählten Daten eingetragen. Ein Spitzname muss nicht eingetragen werden, ist allerdings für die Kontakte später sehr hilfreich.&lt;br&gt;
+Alle Einstellungen unter &lt;em&gt;Erweitert&lt;/em&gt; müssen nicht verändert werden, die Standarteinstellungen sind korrekt.&lt;br&gt;
+Beim ersten Verbindungsaufbau erscheint eine Benachrichtung dem SSL Zertifikat zu vertrauen, dies ist für den weiteren Verbindungsaufbau zwingend notwendig zu akzeptieren.
+&lt;br&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/login_existing_account.png&#34; width=&#34;25%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/login_creds.png&#34; width=&#34;25%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/login_trustssl.png&#34; width=&#34;25%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/login_successfull.png&#34; width=&#34;25%&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;4-settings&#34;&gt;4. Settings&lt;/h2&gt;
+
+&lt;p&gt;Unter den Einstellungen von Chatsecure befinden sich einige Möglichkeiten, die sehr nützlich für den Chat Alltag sind.
+Neben den aktiven Konten gibt es dort die Möglichkeit, die verwendeten Zertifikate einzusehen und zu kontrollieren. Außerdem ist es möglich eine automatisch Löschung der Nachrichten zu aktivieren. Je nach Belieben ist es damit möglich beim Trennen der Verbindung oder Verlassen des Gesprächs alle Nachricht im Verlauf zu löschen.&lt;br&gt;
+Das kleine gelbe Warndreieck symbolisiert, das die App ein Feature des Server verwendet, welches allerdings nicht korrekt zu funktionieren scheint. Sehr häufig handelt es sich hierbei um die Push Notifications.
+&lt;br&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/settings.png&#34; width=&#34;33%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/settings_konto.png&#34; width=&#34;33%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/settings_profile.png&#34; width=&#34;33%&#34;&gt;
+Unter &lt;em&gt;Meine Schlüssel verwalten&lt;/em&gt; ist es möglich seine eigenen Omemo Schlüssel zu akzeptieren oder zu misstrauen.&lt;/p&gt;
+
+&lt;h2 id=&#34;5-plugins&#34;&gt;5. Plugins&lt;/h2&gt;
+
+&lt;p&gt;Bei Plugins ist Chatsecure sehr nah an Conversations dran. Viele Einstellungen werden automatisch vom Server übernommen und müssen vom Benutzer gar nicht bedacht werden. Einige Einstellungen müssen, um den Betrieb möglichst reibungslos zu gewährleisten, von Hand einmalig eingestellt werden.&lt;/p&gt;
+
+&lt;h3 id=&#34;5-1-push-notifications&#34;&gt;5.1 Push Notifications&lt;/h3&gt;
+
+&lt;p&gt;Push Benachrichtigungen sind ein sehr nützliches Feature, welches nicht alle Server Anbieter anbieten. Beim ersten verbinden erfragt das Telefon automatisch die verfügbaren Serverfeatures. Sollte sich darunter Push befinden, wird Ihr Telefon sie folgendes Fragen.
+&lt;br&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/push_enable_1.png&#34; width=&#34;50%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/push_enable_2.png&#34; width=&#34;50%&#34;&gt;
+Um erfolgreich Push Benachrichtigungen zu erhalten ist es notwendig beide Fragen zu akzeptieren. Diese Frage wird einmalig pro Account gestellt.
+Es ist möglich die Erlaubnis in den Einstellungen zurückzusetzen oder sogar ganz zu verbieten.&lt;/p&gt;
+
+&lt;h3 id=&#34;5-2-omemo&#34;&gt;5.2 OMEMO&lt;/h3&gt;
+
+&lt;p&gt;Das aktivieren von Omemo ist sehr einfach und schnell erledigt. Über das Profil ( Erreichbar über das kleine &lt;strong&gt;i&lt;/strong&gt; oben rechts ) lässt sich über &lt;em&gt;Erweiterte Verschlüsselungseinstellungen&lt;/em&gt; auswählen welches Verfahren gewünscht ist.&lt;br&gt;
+Dabei ist &lt;em&gt;Beste verfügbare&lt;/em&gt; die optimalste Option. Wichtig ist hierbei, dass dies eine Änderung ist die nur für diesen Kontakt gilt.&lt;br&gt;
+Wenn der Account mobil genutzt wird ist Omemo definitiv die bessere Wahl, da &lt;em&gt;OTR&lt;/em&gt; sensibel auf eine schwankende Verbindungsqualität reagiert, was zu Fehlern, wie z.B. nicht empfangenen Nachrichten führen kann.
+&lt;br&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/omemo_profile.png&#34; width=&#34;33%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/omemo_enable_encrypt.png&#34; width=&#34;33%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/omemo_chat.png&#34; width=&#34;33%&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;6-nützliche-links&#34;&gt;6. Nützliche Links&lt;/h2&gt;
+
+&lt;p&gt;Einige Webseiten die weitergehende Informationen zur Verfügung stellen.&lt;/p&gt;
+
+&lt;h4 id=&#34;allgemein&#34;&gt;Allgemein&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://chatsecure.org/&#34; target=&#34;_blank&#34;&gt;ChatSecure Homepage&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/chatsecure&#34; target=&#34;_blank&#34;&gt;ChatSecure Github Repository&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://magicbroccoli.de/xmpp/&#34;&gt;Zurück zur Übersicht&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Last Edit 13.10.17&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Gajim Tutorial</title>
       <link>https://magicbroccoli.de/page/tutorial_gajim/</link>
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/page/tutorial_gajim/</guid>
-      <description>1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Hierfür ist die Web Registrierung der Anlaufpunkt. Speziell für magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist. Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die Nutzungsbedingungen sowie Datenschutzbestimmungen. 2. Installation Gajim lässt sich unter Windows und Linux problemlos installieren. &amp;ndash;&amp;gt; Gajim Download
-2.1 Archlinux Bei Archlinux ist die Installation einen Schritt länger, aber nicht sonderlich schwierig.</description>
+      <description>
+
+&lt;h2 id=&#34;1-account-registrierung&#34;&gt;1. Account Registrierung&lt;/h2&gt;
+
+&lt;p&gt;Zuerst muss sich ein Account erstellt werden. Hierfür ist die Web Registrierung der Anlaufpunkt.
+Speziell für &lt;strong&gt;magicbroccoli.de&lt;/strong&gt; sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist. Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die &lt;a href=&#34;https://magicbroccoli.de/termsofuse/&#34;&gt;Nutzungsbedingungen&lt;/a&gt; sowie &lt;a href=&#34;https://magicbroccoli.de/datenschutz/&#34;&gt;Datenschutzbestimmungen&lt;/a&gt;.
+&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/webregister.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;2-installation&#34;&gt;2. Installation&lt;/h2&gt;
+
+&lt;p&gt;Gajim lässt sich unter Windows und Linux problemlos installieren. &amp;ndash;&amp;gt; &lt;a href=&#34;https://gajim.org/?lang=de&#34; target=&#34;_blank&#34;&gt;Gajim Download&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;2-1-archlinux&#34;&gt;2.1 Archlinux&lt;/h3&gt;
+
+&lt;p&gt;Bei Archlinux ist die Installation einen Schritt länger, aber nicht sonderlich schwierig.
+Gajim lässt sich genauso über Pacman installieren &lt;code&gt;sudo pacman -S gajim&lt;/code&gt;. Allerdings wird für das Omemo Plugin zusätzlich das Packet &lt;a href=&#34;https://aur.archlinux.org/packages/gajim-plugin-omemo/&#34; target=&#34;_blank&#34;&gt;gajim-plugin-omemo&lt;/a&gt; aus dem Arch AUR benötigt.&lt;/p&gt;
+
+&lt;p&gt;Ein deutlich ausfürlicheres Tutorial finden Sie hier: &lt;a href=&#34;https://wiki.archlinux.org/index.php/Gajim&#34; target=&#34;_blank&#34;&gt;Gajim Archlinux&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;2-2-ubuntu-debian&#34;&gt;2.2 Ubuntu/Debian&lt;/h3&gt;
+
+&lt;p&gt;Je nach Wahl der Apt Repositories ist möglich und empfehlenswert Gajim direkt zu installieren.
+Hierfür wird meistens ein Administrator oder ein Benutzer mit Zugriff auf &lt;code&gt;sudo&lt;/code&gt; benötigt. Anschließend lässt sich mit &lt;code&gt;sudo apt-get install gajim&lt;/code&gt; Gajim installieren.&lt;/p&gt;
+
+&lt;p&gt;Ein deutlich ausfürlicheres Tutorial finden Sie hier: &lt;a href=&#34;https://wiki.ubuntuusers.de/Gajim/&#34; target=&#34;_blank&#34;&gt;Gajim Ubuntu/Debian&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;3-client-login&#34;&gt;3. Client Login&lt;/h2&gt;
+
+&lt;p&gt;Der Client Login gestaltet sich ähnlich einfach. Sie wählen aus, dass Sie bereits einen Account besitzen, jenen aus Schritt 1 oder einen bestehenden.
+Diesen tragen sie wie hier in die Felder ein. &lt;em&gt;Dabei ersetzen sie die Daten natürlich mit ihren eigenen.&lt;/em&gt;
+Sollten Ihre Daten korrekt sein folgt der eigentliche Login.
+Wenn Sie den Haken bei &amp;ldquo;Mein Profil setzten, wenn ich mich verbinde&amp;rdquo; setzen, bekommen Sie bei Ihrem ersten Login, die Möglichkeit Ihr Profil zu bearbeiten. Dies ist aber auch nachträglich noch möglich und ist 100% freiwillig und kann genauso komplett leer gelassen werden.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/gajim/clientlogin.png&#34; width=&#34;100%&#34;&gt;
+&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/gajim/logindata.png&#34; width=&#34;50%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/gajim/login.png&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;4-plugins&#34;&gt;4. Plugins&lt;/h2&gt;
+
+&lt;p&gt;Viele Funktionalitäten lassen sich bei Gajim mithilfe von Plugins stark erweitern. Unter Ändern &amp;gt; Plugins lassen sich unterschiedlichste Plugins installieren. Um alle Server Features effektiv nutzen zu können, empfehle ich mindestens folgende Plugins zu installieren.&lt;/p&gt;
+
+&lt;h3 id=&#34;4-1-omemo&#34;&gt;4.1 Omemo&lt;/h3&gt;
+
+&lt;p&gt;Bei &lt;a href=&#34;https://conversations.im/omemo/&#34; target=&#34;_blank&#34;&gt;Omemo&lt;/a&gt; handelt es sich um eine Weiterentwicklung des OTR (&lt;a href=&#34;https://wikipedia.org/wiki/Off-the-Record_Messaging&#34; target=&#34;_blank&#34;&gt;Off the record&lt;/a&gt;) Verfahrens. Besonders hierbei ist, dass mehrere Ressourcen pro Account und auch Gruppenkonversationen verschlüsselt werden können. Zusätzlich dazu können auch verschickte Medien verschlüsselt versendet werden.&lt;/p&gt;
+
+&lt;h3 id=&#34;4-2-http-upload&#34;&gt;4.2 HTTP Upload&lt;/h3&gt;
+
+&lt;p&gt;HTTP Upload ist eine Funktion des Medienversands, wie sie auch WhatsApp und Co verwenden. Dabei wird eine Mediendatei ( Bild, Video, etc. ) an den Server übertragen und dieser versendet anschließend einen Link zu der Datei an den/die Empfänger.&lt;/p&gt;
+
+&lt;p&gt;Bei diesem Plugin sind die Serverrichtlinien zu beachten. Meistens gibt es vorgegebene Grenzen, wie groß eine einzelne versendete Datei sein darf bzw wie viele Dateien pro Zeiteinheit versendet werden können.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Wie &lt;a href=&#34;#4-1-omemo&#34;&gt;4.1&lt;/a&gt; erwähnt lässt dieses Plugin einen verschlüsselten Upload eines versendeten Mediums zu. Damit sind die versendeten Dateien, nach den Spezifikationen von Omemo nur für die&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Wichtig&lt;/strong&gt; : Das Plugin &lt;a href=&#34;https://dev.gajim.org/gajim/gajim-plugins/wikis/ImagePlugin&#34; target=&#34;_blank&#34;&gt;Images&lt;/a&gt; verwendet &lt;strong&gt;kein&lt;/strong&gt; HTTP Upload. Hierbei wird die Datei über das ältere Peer 2 Peer System übertragen. Viele mobile Geräte unterstützen diese Art der Übertragung nicht.&lt;/p&gt;
+
+&lt;h3 id=&#34;4-3-url-image-preview&#34;&gt;4.3 URL Image Preview&lt;/h3&gt;
+
+&lt;p&gt;Um die volle Funktionalität von HTTP Upload auszuschöpfen kann das &lt;a href=&#34;https://dev.gajim.org/gajim/gajim-plugins/wikis/UrlImagePreviewPlugin&#34; target=&#34;_blank&#34;&gt;URL Image Preview Plugin&lt;/a&gt; verwendet werden. Dieses ermöglicht Medien Dateien, die über HTTP Upload versendet wurden, direkt im Nachrichtenverlauf anzuzeigen. Damit ist der Medien Versand/Empfang mit diesen beiden Plugins ( HTTP Upload / URL Image Preview ) vollständig integriert.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Besonders nützlich ist, dass dieses Plugin das  Öffnen von aesgcm:// Links unterstützt. Damit können auch mit Omemo verschlüsselt übertragene Medien direkt angezeigt werden.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;5-gruppenchats&#34;&gt;5. Gruppenchats&lt;/h2&gt;
+
+&lt;p&gt;Aktionen &amp;gt; Chatraum betreten &amp;gt; Chatraum betreten führt zu einem Fenster das Ihnen einige Möglichkeiten bietet.
+&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/gajim/muc.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Spitzname : Nickname unter dem Sie in dem Chatraum auftreten ( leer = username )&lt;/li&gt;
+&lt;li&gt;Chatraum : Chatraum den Sie betreten möchten, wenn dieser nicht vorhanden ist wird dieser für Sie erstellt.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Diesen Chatraum merken&lt;/em&gt; : Sollten sie dieses Kästchen ankreuzen wird der Chatraum zu ihrer Kontaktliste hinzugefügt.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Betrete diesen Chatraum automatisch&amp;hellip;&lt;/em&gt; : Nach dem Login betreten Sie diesen Raum automatisch.&lt;/li&gt;
+&lt;li&gt;Server : Adresse unter welchen die Chaträume zu erreichen sind.
+*
+&lt;em&gt;Hinweis&lt;/em&gt; : Dieser wird allerdings vom Server automatisch eingetragen, daher ist dort nichts weiter notwendig.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;6-adhoc-befehle&#34;&gt;6. Adhoc Befehle&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/gajim/howtoadhoc.png&#34; width=&#34;40%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/gajim/adhoc.png&#34; width=&#34;60%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;Bei den Adhoc Befehlen handelt es sich um Befehle, die Ihr Client dem Server zur Ausführung geben kann, um bestimmte Funktionen zu erhalten. Wie das Befehlsmenu aufzurufen ist zeigen die Bilder.&lt;/p&gt;
+
+&lt;h3 id=&#34;6-1-ping&#34;&gt;6.1 Ping&lt;/h3&gt;
+
+&lt;p&gt;Sendet einen Ping an den Server der mit einem Pong und der aktuellen Serverzeit antwortet.&lt;/p&gt;
+
+&lt;h3 id=&#34;6-2-get-uptime&#34;&gt;6.2 Get Uptime&lt;/h3&gt;
+
+&lt;p&gt;Zeigt die Zeit an die der Server online ist.&lt;/p&gt;
+
+&lt;h3 id=&#34;6-3-archive-settings&#34;&gt;6.3 Archive Settings&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Default = OFF&lt;/strong&gt;
+Die Archive Funktion ermöglicht es Nachrichten für 1 Monat auf dem Server zu speichern. Sollten sie sich auf einem anderen Gerät einloggen, welches &lt;a href=&#34;https://xmpp.org/extensions/xep-0313.html&#34; target=&#34;_blank&#34;&gt;Message Archive Management&lt;/a&gt; unterstützt sendet der Server Ihnen, ihre Chatverläufe von vor bis zu 1 Monat. Nach dieser Zeit werden die Nachrichten verworfen.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Verschlüsselte Nachrichten werden natürlich auch verschlüsselt gespeichert.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;6-4-search-settings&#34;&gt;6.4 Search settings&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Default = OFF&lt;/strong&gt;
+Diese Funktion sollte man sie aktivieren erlaubt es sie über die generelle Benutzersuche zu finden.
+&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/gajim/search settings.png&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;7-nützliche-links&#34;&gt;7. Nützliche Links&lt;/h2&gt;
+
+&lt;p&gt;Einige Webseiten die weitergehende Tutorials bzw. ausführlichere Tutorials zur Verfügung stellen.&lt;/p&gt;
+
+&lt;h4 id=&#34;allgemein&#34;&gt;Allgemein&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://datenschutzhelden.org/2017/07/12/daten-sparsame-xmpp-server/&#34; target=&#34;_blank&#34;&gt;Datenschutzhelden.org - XMPP Server explained&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;omemo&#34;&gt;Omemo&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://datenschutzhelden.org/2017/07/20/gajim-omemo-fuer-den-desktop/&#34; target=&#34;_blank&#34;&gt;Datenschutzhelden.org - Omemo für den Desktop&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://magicbroccoli.de/xmpp/&#34;&gt;Zurück zur Übersicht&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Last Edit 30.03.18&lt;/p&gt;
+</description>
     </item>
     
   </channel>

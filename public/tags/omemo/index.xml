@@ -6,40 +6,114 @@
     <description>Recent content in Omemo on Magic Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
+    <managingEditor>mightyBroccoli (nico)</managingEditor>
+    <webMaster>mightyBroccoli (nico)</webMaster>
     <copyright>All rights reserved.</copyright>
     <lastBuildDate>Sat, 03 Feb 2018 15:00:00 +0200</lastBuildDate>
     
-	<atom:link href="https://magicbroccoli.de/tags/omemo/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://magicbroccoli.de/tags/omemo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Omemo Verification mit Keybase.io</title>
       <link>https://magicbroccoli.de/post/keybase-omemo-verify/</link>
       <pubDate>Sat, 03 Feb 2018 15:00:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/keybase-omemo-verify/</guid>
-      <description>Omemo Key Verification Um eine möglichst reibungslose Kommunikation zu ermöglichen, vertraut Conversations in der Standardeinstellung neuen OMEMO-Keys erstmal blind. Wenn aber eine spezifische Verifikation - über das Scannen eines QR-Codes - stattgefunden hat, werden neue Keys grundsätzlich misstraut. Dies bietet einen weitere Möglichkeit um Man-In-The-Middle-Angriffe zu unterbinden. Dieses Vertrauenmodell heißt Blind Trust Before Verification. Ohne Verifizierung ist eine explizit vertrauliche Kommunikation nur eingeschränkt möglich.
- After such a verification happened Conversations will no longer blindly trust new devices that are created after the verification.</description>
+      <description>
+
+&lt;h2 id=&#34;omemo-key-verification&#34;&gt;Omemo Key Verification&lt;/h2&gt;
+
+&lt;p&gt;Um eine möglichst reibungslose Kommunikation zu ermöglichen, vertraut Conversations in der Standardeinstellung neuen OMEMO-Keys erstmal blind. Wenn aber eine spezifische Verifikation - über das Scannen eines QR-Codes - stattgefunden hat, werden neue Keys grundsätzlich misstraut. Dies bietet einen weitere Möglichkeit um Man-In-The-Middle-Angriffe zu unterbinden. Dieses Vertrauenmodell heißt &lt;a href=&#34;https://gultsch.de/trust.html&#34; target=&#34;_blank&#34;&gt;Blind Trust Before Verification&lt;/a&gt;. Ohne Verifizierung ist eine explizit vertrauliche Kommunikation nur eingeschränkt möglich.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;After such a verification happened Conversations will no longer blindly trust new devices that are created after the verification. By doing verification the user has proven three things a) they are capable of scanning barcodes b) they have some sort of out-of-band channel where such a verification can happen c) they have some interest in verified communication.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Aber wie kann man die eigenen Keys an andere verteilen, ohne zu großen Aufwand und das möglichst sicher? Die Lösung: Keybase.io&lt;/p&gt;
+
+&lt;h3 id=&#34;keybase-io&#34;&gt;Keybase.io&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://keybase.io&#34; target=&#34;_blank&#34;&gt;Keybase.io&lt;/a&gt; ermöglicht es Accounts auf anderen Plattformen bzw. PGP Keys gegeneinander zu verifizieren. Auch ist es möglich mit dem persönlichen PGP Key signierte Dateien abzulegen. Dadurch ist eine vertrauenswürdige Verifikation der zugehörigen Keys möglich.
+Dies ist nur ein sehr kleiner Bruchteil der Funktionalität von Keybase.io. Für ein deutlich ausführlicheres Bild kann ich &lt;a href=&#34;https://secitem.eu/blog/keybase-basics/&#34; target=&#34;_blank&#34;&gt;secitem.eu&lt;/a&gt; empfehlen. In dem Beitrag werden die basics zu Keybase ausführlich erklärt.&lt;/p&gt;
+
+&lt;h3 id=&#34;conversations&#34;&gt;Conversations&lt;/h3&gt;
+
+&lt;p&gt;Für Conversations gibt es die Möglichkeit jeden Key einzeln zu verifizieren oder mit nur einem QR-Code alle Keys gleichzeitig. Um den Aufwand möglichst gering zu halten, bietet Conversations die Möglichkeit einen solchen QR-Code direkt zu erstellen. Damit in diesem QR-Code alle eigenen Keys enthalten sind ist es notwendig, dass die eigenen Omemo Keys alle angenommen und verifiziert sind. Ist dies der Fall, ist es möglich mit Conversations einen einzelnen QR-Code zu erstellen der alle eigenen verifizierten Keys enthält.&lt;br&gt;
+Da nicht alle Clients im Moment ein direktes Verifizieren unterstützen (eg. Gajim, Pidgin), ist zusätzlich dazu noch ein Textdokument hinterlegt in dem die Fingerprints aufgelistet sind. Mit diesem Textdokument ist ein manueller Abgleich möglich.&lt;/p&gt;
+
+&lt;h3 id=&#34;struktur&#34;&gt;Struktur&lt;/h3&gt;
+
+&lt;p&gt;Um eine möglichst einheitliche bzw. übersichtliche Struktur zu schaffen, habe ich die Ordner Struktur wie dargestellt gewählt. Das Namensschema ist ziemlich eindeutig aber prinzipiell auch egal, da nur ein Bild und eine einzelne Textdatei verwendet werden, die anhand der Dateiendung unterscheidbar sind.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;omemo-verification
+    ├── broccoli@magicbroccoli.de_omemo-verification-fingerprints.txt
+    └── broccoli@magicbroccoli.de_omemo-verification.jpg&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;ergebnis&#34;&gt;Ergebnis&lt;/h3&gt;
+
+&lt;p&gt;Ich habe für meine eigenen Schlüssel nach diesem Verfahren einen QR-Code sowie ein Textdokument zur Verifizierung veröffentlicht. Diese öffentliche Dateien können per Link an Kontakte verteilt werden, damit sie die Verifizierung durchführen können. Um selbst darauf zuzugreifen - etwa um sie aktuell zu halten - gibt es unterschiedliche Methoden.&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ist der &lt;a href=&#34;https://keybase.io/download&#34; target=&#34;_blank&#34;&gt;Keybase.io Client&lt;/a&gt; installiert kann mit &lt;code&gt;cd /keybase/public/mightybroccoli/omemo-verification/&lt;/code&gt;, oder dem für das System entsprechende Befehl zum Öffnen eines Ordners, auf den öffentlichen Ordner zugegriffen werden.&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;Ist der Keybase.io Client nicht installiert, kann auch durch einen Webbrowser auf den Ordner zugegriffen werden; &lt;a href=&#34;https://keybase.pub/mightybroccoli/omemo-verification/&#34; target=&#34;_blank&#34;&gt;Omemo-Verification mightyBroccoli&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
       <title>Omemo Complicance</title>
       <link>https://magicbroccoli.de/post/omemo-complicance/</link>
       <pubDate>Wed, 20 Dec 2017 10:00:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/omemo-complicance/</guid>
-      <description>Seit gestern ist auf meinem Server ein neues OMEMO Modul aktiviert. Dieses ermöglicht es OMEMO verschlüsselte Konversationen zu beginnen, ohne das dafür eine gegenseitige presence subscription bestehen muss. Desweiteren hat dies Auswirkungen auf Chaträume, da es nun möglich ist in einem Chatraum OMEMO zu aktivieren ohne das sich alle Parteien hinzugefügt haben.
-I wrote a small @prosodyim module that gives non-contacts access to your OMEMO keys. It’s a temporary work around until proper support for node configuration / publish-options comes around.</description>
+      <description>&lt;p&gt;Seit gestern ist auf meinem Server ein neues OMEMO Modul aktiviert. Dieses ermöglicht es OMEMO verschlüsselte Konversationen zu beginnen, ohne das dafür eine gegenseitige presence subscription bestehen muss. Desweiteren hat dies Auswirkungen auf Chaträume, da es nun möglich ist in einem Chatraum OMEMO zu aktivieren ohne das sich alle Parteien hinzugefügt haben.&lt;/p&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;I wrote a small &lt;a href=&#34;https://twitter.com/prosodyim?ref_src=twsrc%5Etfw&#34;&gt;@prosodyim&lt;/a&gt; module that gives non-contacts access to your OMEMO keys. It’s a  temporary work around until proper support for node configuration /  publish-options comes around. It&amp;#39;s an important step towards our »OMEMO  by default« goal.&lt;a href=&#34;https://t.co/rVPXOf7m9o&#34;&gt;https://t.co/rVPXOf7m9o&lt;/a&gt;&lt;/p&gt;&amp;mdash; Daniel Gultsch (@iNPUTmice) &lt;a href=&#34;https://twitter.com/iNPUTmice/status/943181435120340992?ref_src=twsrc%5Etfw&#34;&gt;December 19, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Dieses Modul wird bereitgestellt von Daniel Gultsch ( Entwickler der App &lt;a href=&#34;https://conversations.im/&#34; target=&#34;_blank&#34;&gt;Conversations&lt;/a&gt; ) und steht auf GitHub unter &lt;a href=&#34;https://github.com/iNPUTmice/omemo_all_access&#34;&gt;iNPUTmice/omemo_all_access&lt;/a&gt; zur Verfügung. Vielen Dank an Daniel! Dies ist ein weiter wichtiger Schritt in Richtung &lt;em&gt;OMEMO by default&lt;/em&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Wir unterstützen Omemo</title>
       <link>https://magicbroccoli.de/post/omemo-statement/</link>
       <pubDate>Mon, 31 Jul 2017 13:00:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/omemo-statement/</guid>
-      <description>Update Herr Gultsch hat nun eine Erklärung in den Sourcecode von OMEMO.java des ComplianceTesters hinzugefügt. Außerdem fügte er in die Spalte XEP-0384: OMEMO Encryption ein Fragezeichen hinzu. Dieses führt zu der Erklärung im Sourcecode auf Github. Auch wenn dies wirklich nur ein kleiner Hinweis ist, danken wir Herrn Gultsch dennoch das er unserem Wunsch nachgekommen ist.
-This test checks for the availability of publish-options on the account’s PEP service. publish-options allows a client to efficiently change the access model of the OMEMO key material such that everyone can access it.</description>
+      <description>
+
+&lt;h3 id=&#34;update&#34;&gt;Update&lt;/h3&gt;
+
+&lt;p&gt;Herr Gultsch hat nun eine Erklärung in den Sourcecode von OMEMO.java des ComplianceTesters hinzugefügt. Außerdem fügte er in die Spalte XEP-0384: OMEMO Encryption ein Fragezeichen hinzu. Dieses führt zu der Erklärung im &lt;a href=&#34;https://github.com/iNPUTmice/ComplianceTester/blob/master/src/main/java/eu/siacs/compliance/tests/OMEMO.java#L12-L17&#34; target=&#34;_blank&#34;&gt;Sourcecode auf Github&lt;/a&gt;.
+Auch wenn dies wirklich nur ein kleiner Hinweis ist, danken wir Herrn Gultsch dennoch das er unserem Wunsch nachgekommen ist.&lt;/p&gt;
+
+&lt;blockquote&gt;This test checks for the availability of publish-options on the account’s PEP service. publish-options allows a client to efficiently change the access model of the OMEMO key material such that everyone can access it. Without publish-options OMEMO is only available to contacts with mutual presence subscription.&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Hallo zusammen,&lt;/p&gt;
+
+&lt;p&gt;Daniel Gultsch hat vor ein paar Tagen die &lt;a href=&#34;https://gultsch.de/compliance_ranked.html&#34; target=&#34;_blank&#34;&gt;Compliance Liste&lt;/a&gt; um die Spalte &lt;em&gt;XEP-0384: OMEMO Encryption&lt;/em&gt; erweitert. Derzeit suggeriert diese, auf Grund einer fehlenden Erklärung, das nur conversations.im OMEMO Encryption unterstützen würde. Dies entspricht natürlich nicht der Wahrheit.&lt;/p&gt;
+
+&lt;p&gt;Hintergrund ist, dass &lt;a href=&#34;https://twitter.com/iNPUTmice/status/888826898335322113&#34; target=&#34;_blank&#34;&gt;Daniel Gultsch empfiehlt&lt;/a&gt;, das das &lt;a href=&#34;https://xmpp.org/extensions/xep-0163.html&#34; target=&#34;_blank&#34;&gt;PEP-Modul&lt;/a&gt; der Server &lt;a href=&#34;https://xmpp.org/extensions/xep-0060.html#publisher-publish-options&#34; target=&#34;_blank&#34;&gt;publish-options&lt;/a&gt; unterstützen sollte (&lt;a href=&#34;https://gist.github.com/iNPUTmice/7c52785ed69787516abb60e31703dbd2&#34; target=&#34;_blank&#34;&gt;ausführlichere Beschreibung&lt;/a&gt;). Dies bewirkt, dass User in Conversations ab Version 1.20+, auch Personen verschlüsselt anschreiben kann, ohne sie vorher in seinen Roster hinzufügen zu müssen. Auch wir finden dieses Feature gut und würden es gern unterstützen, allerdings unterstützt das PEP Modul von prosody publish-options derzeit noch nicht.&lt;/p&gt;
+
+&lt;p&gt;Herr Gultsch selbst, schreibt an mehreren Stellen, dass es sich hierbei um &lt;strong&gt;kein&lt;/strong&gt; &lt;a href=&#34;https://github.com/iNPUTmice/ComplianceTester/issues/112#issuecomment-319008031&#34; target=&#34;_blank&#34;&gt;Security Risiko&lt;/a&gt;, handelt, sondern lediglich um ein &lt;a href=&#34;https://github.com/iNPUTmice/ComplianceTester/issues/112#issuecomment-319008031&#34; target=&#34;_blank&#34;&gt;Usability Problem&lt;/a&gt;. Das heißt, dass es sich nicht um eine Vorraussetzung handelt, sondern um eine Empfehlung.&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Server support for publish-options is strongly recommended but not required for OMEMO in Conversations 1.20.0+&lt;/p&gt;&amp;mdash; Daniel Gultsch (@iNPUTmice) &lt;a href=&#34;https://twitter.com/iNPUTmice/status/888826898335322113?ref_src=twsrc%5Etfw&#34;&gt;July 22, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;a href=&#34;https://github.com/iNPUTmice/ComplianceTester/issues/112&#34; target=&#34;_blank&#34;&gt;Der Vorschlag&lt;/a&gt; eine kurze Erklärung zu der Spalte in seiner Liste hinzuzufügen, da das ganze sonst so eine falsche Aussage über die Server wiederspiegelt, wurde mit den folgenden Sätzen einfach ignoriert und das Ticket geschlossen:&lt;/p&gt;
+
+&lt;blockquote&gt;While not a security problems the lack of publish-options is a huge usability problem as this limits OMEMO to contacts you have mutual presence subscription with.
+Conversations users will except OMEMO to work with everyone. That’s why Conversations requires publish-options.&lt;/blockquote&gt;
+
+&lt;p&gt;Hauptproblem hierbei ist, das die Darstellung für alle Server sehr „rufschädigend“ sein kann. Ich und einige andere Hoster haben versucht Daniel Gultsch darauf aufmerksam zu machen, dies wird von ihm allerdings komplett ignoriert.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Lange Rede kurzer Sinn&lt;/em&gt; – Ihr könnt mit Conversations und anderen Clients weiterhin OMEMO über unseren und die anderen Server verwenden, nur eben derzeit noch ohne das Feature Kontakte außerhalb eurer Kontaktliste direkt verschlüsselt anzuschreiben, ohne diese vorher zu adden.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Danke geht an Sebastian von &lt;a href=&#34;https://blog.5222.de/posts/20170731_wir_unterstuetzen_omemo/&#34; target=&#34;_blank&#34;&gt;5222.de&lt;/a&gt; für die Textgrundlage.&lt;/strong&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

@@ -6,81 +6,568 @@
     <description>Recent content in Prosody on Magic Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
+    <managingEditor>mightyBroccoli (nico)</managingEditor>
+    <webMaster>mightyBroccoli (nico)</webMaster>
     <copyright>All rights reserved.</copyright>
     <lastBuildDate>Fri, 30 Mar 2018 13:37:00 +0200</lastBuildDate>
     
-	<atom:link href="https://magicbroccoli.de/categories/prosody/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://magicbroccoli.de/categories/prosody/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Let&#39;s Encrypt Prosody Cert Hook</title>
       <link>https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/</link>
       <pubDate>Fri, 30 Mar 2018 13:37:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/</guid>
-      <description>Prosody + Let&amp;rsquo;s Encrypt certificates As of right now Prosody is not able to update a live certificate while running. For the complete update it is necessary to restart Prosody, which is inconvenient.
-With the telnet console however, it is possible to reload the config such that a changed certificate is updated correctly. The biggest problem lies in reloading all possible locations the &amp;ldquo;old&amp;rdquo; certificate is still active in. I use the Prosody Telnet console to invoke a reload, due to the fact that prosodyctl reload is not actually reloading the modules just the config.</description>
+      <description>
+
+&lt;h3 id=&#34;prosody-let-s-encrypt-certificates&#34;&gt;Prosody + Let&amp;rsquo;s Encrypt certificates&lt;/h3&gt;
+
+&lt;p&gt;As of right now Prosody is not able to update a live certificate while running. For the complete update it is necessary to restart Prosody, which is inconvenient.&lt;br&gt;
+With the &lt;a href=&#34;https://prosody.im/doc/console&#34; target=&#34;_blank&#34;&gt;telnet console&lt;/a&gt; however, it is possible to reload the config such that a changed certificate is updated correctly. The biggest problem lies in reloading all possible locations the &amp;ldquo;old&amp;rdquo; certificate is still active in. I use the Prosody Telnet console to invoke a reload, due to the fact that &lt;code&gt;prosodyctl reload&lt;/code&gt; is not actually reloading the modules just the config.&lt;br&gt;
+For this matter I hacked together a little bash script, which together with the &lt;a href=&#34;https://certbot.eff.org/&#34; target=&#34;_blank&#34;&gt;Let&amp;rsquo;sEncrypt&amp;rsquo;s certbot&lt;/a&gt; and the default letsecrypt cli is used to import and update the Prosody certificate without a need to restart the instanc.&lt;/p&gt;
+
+&lt;h3 id=&#34;let-sencrypt-setup&#34;&gt;Let&amp;rsquo;sEncrypt Setup&lt;/h3&gt;
+
+&lt;p&gt;To use this script in a fully automatic way some configuration is needed.
+On install Let&amp;rsquo;sEncrypt creates the directory &lt;code&gt;renewal-hooks&lt;/code&gt;. Inside there are three subfolders which represent the time and/or occasion for invocation (&lt;a href=&#34;https://certbot.eff.org/docs/using.html#renewing-certificates&#34; target=&#34;_blank&#34;&gt;source&lt;/a&gt;). This script uses the deploy hook to only run when the certificate is actually renewed. As I am not checking the domain name after deployment it is needed to add another subdirectory to the deploy directory.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;/etc/letsencrypt/renewal-hooks/
+└── deploy
+    └── example.de
+        └── prosody.sh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&#34;deploy-hook&#34;&gt;Deploy-Hook&lt;/h4&gt;
+
+&lt;p&gt;In this example code the hook is placed inside the &lt;code&gt;example.de&lt;/code&gt; folder as &lt;code&gt;prosody.sh&lt;/code&gt;. The script first imports the defined list of domains from the Let&amp;rsquo;s Encrypt live directory. After this is finished reloading takes place. The import is done as described in the &lt;a href=&#34;https://prosody.im/doc/letsencrypt&#34; target=&#34;_blank&#34;&gt;Prosody Documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;### Prosody Cert Import ###
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# active domains
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;domains&lt;span style=&#34;color:#f92672&#34;&gt;=(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;example.de&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;example.com&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# import the new certs
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; domain in &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;domains[@]&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+	prosodyctl --root cert import $domain /etc/letsencrypt/live
+&lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# modules needing to be reloaded
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;modules&lt;span style=&#34;color:#f92672&#34;&gt;=(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;s2s&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;c2s&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;tls&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# loop over commands
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; command in &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;modules[@]&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+        echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;module:reload([[&lt;/span&gt;$command&lt;span style=&#34;color:#e6db74&#34;&gt;]])&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;
+echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;config:reload()&amp;#34;&lt;/span&gt;
+echo quit
+&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;| nc localhost &lt;span style=&#34;color:#ae81ff&#34;&gt;5582&lt;/span&gt; &amp;amp;&amp;gt;/dev/null
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# exit gracefully
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;exit &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;let-sencrypt-renewal-config&#34;&gt;Let&amp;rsquo;sEncrypt Renewal config&lt;/h3&gt;
+
+&lt;p&gt;At this time certbot would not run any deploy hook after renewing a certificate. The default configuration invokes &lt;code&gt;/bin/run-parts&lt;/code&gt; on the predefined folders &lt;code&gt;pre&lt;/code&gt;, &lt;code&gt;post&lt;/code&gt; and &lt;code&gt;deploy&lt;/code&gt;. To run the script on deployment it is needed to add the directory to the renew config file of your domain. For this example I choose to use example.de which would resolve to &lt;code&gt;/etc/letsencrypt/renewal/example.de.conf&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;renewalparams&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+...
+renew_hook &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; /bin/run-parts /etc/letsencrypt/renewal/example.de
+...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;todo&#34;&gt;TODO&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Prosody archives the &amp;ldquo;old&amp;rdquo; certificates when importing a new one. After a while the directory is pretty cluttered.&lt;/li&gt;
+&lt;li&gt;implement $RENEWED_DOMAINS test to deploy hook without the need to reconfigure&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
       <title>Omemo Complicance</title>
       <link>https://magicbroccoli.de/post/omemo-complicance/</link>
       <pubDate>Wed, 20 Dec 2017 10:00:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/omemo-complicance/</guid>
-      <description>Seit gestern ist auf meinem Server ein neues OMEMO Modul aktiviert. Dieses ermöglicht es OMEMO verschlüsselte Konversationen zu beginnen, ohne das dafür eine gegenseitige presence subscription bestehen muss. Desweiteren hat dies Auswirkungen auf Chaträume, da es nun möglich ist in einem Chatraum OMEMO zu aktivieren ohne das sich alle Parteien hinzugefügt haben.
-I wrote a small @prosodyim module that gives non-contacts access to your OMEMO keys. It’s a temporary work around until proper support for node configuration / publish-options comes around.</description>
+      <description>&lt;p&gt;Seit gestern ist auf meinem Server ein neues OMEMO Modul aktiviert. Dieses ermöglicht es OMEMO verschlüsselte Konversationen zu beginnen, ohne das dafür eine gegenseitige presence subscription bestehen muss. Desweiteren hat dies Auswirkungen auf Chaträume, da es nun möglich ist in einem Chatraum OMEMO zu aktivieren ohne das sich alle Parteien hinzugefügt haben.&lt;/p&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;I wrote a small &lt;a href=&#34;https://twitter.com/prosodyim?ref_src=twsrc%5Etfw&#34;&gt;@prosodyim&lt;/a&gt; module that gives non-contacts access to your OMEMO keys. It’s a  temporary work around until proper support for node configuration /  publish-options comes around. It&amp;#39;s an important step towards our »OMEMO  by default« goal.&lt;a href=&#34;https://t.co/rVPXOf7m9o&#34;&gt;https://t.co/rVPXOf7m9o&lt;/a&gt;&lt;/p&gt;&amp;mdash; Daniel Gultsch (@iNPUTmice) &lt;a href=&#34;https://twitter.com/iNPUTmice/status/943181435120340992?ref_src=twsrc%5Etfw&#34;&gt;December 19, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Dieses Modul wird bereitgestellt von Daniel Gultsch ( Entwickler der App &lt;a href=&#34;https://conversations.im/&#34; target=&#34;_blank&#34;&gt;Conversations&lt;/a&gt; ) und steht auf GitHub unter &lt;a href=&#34;https://github.com/iNPUTmice/omemo_all_access&#34;&gt;iNPUTmice/omemo_all_access&lt;/a&gt; zur Verfügung. Vielen Dank an Daniel! Dies ist ein weiter wichtiger Schritt in Richtung &lt;em&gt;OMEMO by default&lt;/em&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Prosody Datenbank Indizes</title>
       <link>https://magicbroccoli.de/post/prosody-db-index/</link>
       <pubDate>Thu, 07 Dec 2017 17:30:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/prosody-db-index/</guid>
-      <description>Prosody bietet die Möglichkeit persistente Userdaten bzw. seit 0.10 auch MAM Archive in einer MySQL Datenbank zu sichern. Prosody erstellt beim ersten Laden des Moduls alle relevanten Datenbanken sowie Indizes. Allerdings werden Indizes, die nachträglich, z.B. in aktuelleren Patches, hinzugefügt werden, nur in Datenbanken eingetragen, die neu erstellt werden. Damit fehlen in den allermeisten älteren Datenbanken die aktuellen Indizes.
-Notwendigkeit von Indizes Indizes können Datenbankabfragen enorm beschleunigen, da sie es bei einer Abfrage ermöglichen eine deutlich kleinere Anzahl an Zeilen zu vergleichen.</description>
+      <description>
+
+&lt;p&gt;Prosody bietet die Möglichkeit persistente Userdaten bzw. seit &lt;a href=&#34;https://prosody.im/doc/release/0.10.0&#34; target=&#34;_blank&#34;&gt;0.10&lt;/a&gt; auch MAM Archive in einer MySQL Datenbank zu sichern. Prosody erstellt beim ersten Laden des &lt;a href=&#34;https://hg.prosody.im/0.10/file/e98b4352d7df/plugins/mod_storage_sql.lua#l426&#34; target=&#34;_blank&#34;&gt;Moduls&lt;/a&gt; alle relevanten Datenbanken sowie Indizes. Allerdings werden Indizes, die nachträglich, z.B. in &lt;a href=&#34;https://hg.prosody.im/0.10/rev/e98b4352d7df&#34; target=&#34;_blank&#34;&gt;aktuelleren Patches&lt;/a&gt;, hinzugefügt werden, nur in Datenbanken eingetragen, die neu erstellt werden. Damit fehlen in den allermeisten älteren Datenbanken die aktuellen Indizes.&lt;/p&gt;
+
+&lt;h4 id=&#34;notwendigkeit-von-indizes&#34;&gt;Notwendigkeit von Indizes&lt;/h4&gt;
+
+&lt;p&gt;Indizes können Datenbankabfragen enorm beschleunigen, da sie es bei einer Abfrage ermöglichen eine deutlich kleinere Anzahl an Zeilen zu vergleichen. Dadurch wird ein schnelleres, effizienteres und vor allem performanteres Ergebnis erzielt. Die &lt;a href=&#34;https://dev.mysql.com/doc/refman/5.5/en/mysql-indexes.html&#34; target=&#34;_blank&#34;&gt;MySQL Dokumentation&lt;/a&gt; beschreibt es wie folgt:&lt;/p&gt;
+
+&lt;blockquote&gt;Indexes are used to find rows with specific column values quickly. Without an index, MySQL must begin with the first row and then read through the entire table to find the relevant rows. The larger the table, the more this costs. If the table has an index for the columns in question, MySQL can quickly determine the position to seek to in the middle of the data file without having to look at all the data. This is much faster than reading every row sequentially.&lt;/blockquote&gt;
+
+&lt;p&gt;Für den Betrieb sind die Indizes daher von größerer Wichtigkeit. Bei wachsender Größe der &lt;code&gt;prosodyarchive&lt;/code&gt; Datenbank werden die Abfragen Performance hungriger. Diese Abfragen möglichst effizient abzuarbeiten ist essentiell.&lt;/p&gt;
+
+&lt;h4 id=&#34;abfrage-bestehender-indizes&#34;&gt;Abfrage bestehender Indizes&lt;/h4&gt;
+
+&lt;p&gt;Um herauszufinden welche Indizes im Moment überhaupt vorhanden sind, lässt sich dieser Query verwenden.&lt;br&gt;
+In diesem Beispiel verwende ich &lt;strong&gt;prosody.prosodyarchive&lt;/strong&gt;. Der Query ist für die jeweils persönlichen Namen der Tabellen / Datenbanken anzupassen.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SHOW&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;INDEX&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; prosody.prosodyarchive;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;img src=&#34;https://magicbroccoli.de/images/prosodydb/prosodydb_index.png&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;Sollten alle Indizes wie auf dem Bild vorhanden sein ist kein weiteres Zutun notwendig. Ist allerdings nur &lt;em&gt;prosodyarchive_index&lt;/em&gt; gelistet, fehlen die zwei neuen Indizes &lt;code&gt;prosodyarchive_with&lt;/code&gt; sowie &lt;code&gt;prosodyarchive_when&lt;/code&gt; in der Datenbank.&lt;/p&gt;
+
+&lt;h3 id=&#34;hinzufügen-der-fehlenden-indizes&#34;&gt;Hinzufügen der fehlenden Indizes&lt;/h3&gt;
+
+&lt;p&gt;&lt;span style=&#34;color:red&#34;&gt;&lt;em&gt;Wichtig&lt;/em&gt;&lt;/span&gt; : Je mehr Zeilen die Datenbank enthält desto länger kann das Hinzufügen von Indizes dauern.
+Der folgende Abschnitt beschreibt die notwendigen Schritte, um die aktuellen Indizes zur Datenbank hinzuzufügen. Anschließend sind noch Query beschrieben um zu testen, ob das Hinzufügen erfolgreich verlaufen ist.&lt;/p&gt;
+
+&lt;p&gt;In diesen Beispiel Querys wird die Datenbank &lt;em&gt;prosody&lt;/em&gt; mit der Tabelle &lt;em&gt;prosodyarchive&lt;/em&gt; verwendet. Der Query ist für die jeweils persönlichen Namen der Tabellen / Datenbanken anzupassen.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;INDEX&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;prosodyarchive_with&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;USING&lt;/span&gt; BTREE
+&lt;span style=&#34;color:#66d9ef&#34;&gt;ON&lt;/span&gt; prosody.prosodyarchive
+(&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;host&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;), &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;), &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;store&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;), &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;));
+
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;INDEX&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;prosodyarchive_when&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;USING&lt;/span&gt; BTREE
+&lt;span style=&#34;color:#66d9ef&#34;&gt;ON&lt;/span&gt; prosody.prosodyarchive
+(&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;host&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;), &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;), &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;store&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;), &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;when&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;Query OK, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;rows&lt;/span&gt; affected (&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;.&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt; sec)
+Records: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;  Duplicates: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;  Warnings: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Nach dem Ausführen jedes Querys wird ein solches Ergebnis angezeigt. Dies ist normal, da durch das Hinzufügen von Indizes keine Zeilen verändert werden.&lt;/p&gt;
+
+&lt;p&gt;Nachdem beide Querys erfolgreich ausgeführt wurden, kann mit dem &lt;code&gt;SHOW INDEX FROM db_name&lt;/code&gt; Query kontrolliert werden, ob alle Indizes erfolgreich hinzugefügt wurden.&lt;/p&gt;
+
+&lt;h3 id=&#34;testen-der-indizes&#34;&gt;Testen der Indizes&lt;/h3&gt;
+
+&lt;p&gt;Zum Testen der Indizes können diese Querys verwendet werden. Hierbei ist zu beachten das abweichende Bezeichnungen der Tabellen / Datenbanken anzupassen sind.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;EXPLAIN&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; prosody.prosodyarchive
+&lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;host&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;magicbroccoli.de&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;AND&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;store&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;archive2&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;AND&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;when&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;1512662458&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;AND&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;username&amp;#39;&lt;/span&gt;;
+
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;EXPLAIN&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; prosody.prosodyarchive
+&lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;host&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;magicbroccoli.de&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;AND&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;store&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;archive2&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;AND&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;brokkoli@magicbroccoli.de&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;AND&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;username&amp;#39;&lt;/span&gt;;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;img src=&#34;https://magicbroccoli.de/images/prosodydb/prosodyarchive_when.png&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;Relevant bei der Ausgabe sind die Angaben für &lt;code&gt;possible_keys&lt;/code&gt; und &lt;code&gt;key&lt;/code&gt;. Diese sollen die neu hinzugefügten Indizes auflisten. Sollten bei einem oder beiden der Spalten &lt;code&gt;NULL&lt;/code&gt; angezeigt werden, wird kein Index verwendet. Es sollte nochmal kontrolliert werden ob alle Indizes erfolgreich hinzugefügt wurden.&lt;br&gt;
+Das Ergebnis sollte diese Form haben. Das Bild zeigt mein Ergebnis für den &lt;em&gt;prosodyarchive_when&lt;/em&gt; Test-Query.&lt;br&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;prosody-neustart&#34;&gt;Prosody neustart?&lt;/h4&gt;
+
+&lt;p&gt;Für Prosody ist es &lt;em&gt;nicht&lt;/em&gt; notwendig neu zu starten. Die Indizes werden von der Datenbank verwendet und nicht von Prosody direkt. Daher ist es nicht notwendig.&lt;/p&gt;
+
+&lt;h2 id=&#34;quellen&#34;&gt;Quellen&lt;/h2&gt;
+
+&lt;p&gt;Als Quelle ziehe ich hier die aktuellste stable Version von mod_storage_sql.lua zu Rate. Dieser spezielle Abschnitt ist zuständig beim ersten Laden die Datenbanken, falls noch keine vorhanden sind, zu erstellen.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://hg.prosody.im/0.10/rev/e98b4352d7df&#34; target=&#34;_blank&#34;&gt;Patch vom 21. November 17&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hg.prosody.im/0.10/file/e98b4352d7df/plugins/mod_storage_sql.lua#l426&#34; target=&#34;_blank&#34;&gt;mod_storage_sql.lua&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.mysql.com/doc/refman/5.5/en/mysql-indexes.html&#34; target=&#34;_blank&#34;&gt;MySQL Dokumentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
       <title>Prosody housekeeping</title>
       <link>https://magicbroccoli.de/post/prosody-housekeeping/</link>
       <pubDate>Mon, 02 Oct 2017 13:30:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/prosody-housekeeping/</guid>
-      <description>Grundidee Ich habe mich in den letzen paar Tagen damit beschäftigt Dinge rund um den Prosody Server zu automatisieren. Daher möchte ich hier einfach mal meine Lösung einiger kleiner Probleme vorstellen.
-Problem Das grundsätzliche Problem, welches so ziemlich alle Server mit offener Registrierung teilen, sind Zombie Accounts. Sprich Accounts die erstellt wurden, allerdings nie verwendet werden. Oder Accounts die erstellt wurden und irgendwann von ihrem Nutzer/in nicht mehr verwendet werden.</description>
+      <description>
+
+&lt;h1 id=&#34;grundidee&#34;&gt;Grundidee&lt;/h1&gt;
+
+&lt;p&gt;Ich habe mich in den letzen paar Tagen damit beschäftigt Dinge rund um den Prosody Server zu automatisieren.
+Daher möchte ich hier einfach mal meine Lösung einiger kleiner Probleme vorstellen.&lt;/p&gt;
+
+&lt;h1 id=&#34;problem&#34;&gt;Problem&lt;/h1&gt;
+
+&lt;p&gt;Das grundsätzliche Problem, welches so ziemlich alle Server mit offener Registrierung teilen, sind Zombie Accounts. Sprich Accounts die erstellt wurden, allerdings nie verwendet werden. Oder Accounts die erstellt wurden und irgendwann von ihrem Nutzer/in nicht mehr verwendet werden. Solche Accounts verursachen eine vermeidbare Last für das System.&lt;br&gt;
+Die zweite größere Quelle liegt in einem Problem Prosodys Dateien oder Datenbank Einträge korrekt bzw. überhaupt zu löschen. Namentlich sind hier &lt;a href=&#34;https://modules.prosody.im/mod_http_upload.html&#34; target=&#34;_blank&#34;&gt;mod_http_upload&lt;/a&gt; und &lt;a href=&#34;https://modules.prosody.im/mod_mam.html&#34; target=&#34;_blank&#34;&gt;mod_mam&lt;/a&gt; zu nennen.
+Vor allem bei dem Modul mam bestehen Probleme, da die Einträge eines jeden Users einzeln bearbeitet werden. Daher steigt die Bearbeitungszeit bei größeren Userzahlen enorm an.&lt;/p&gt;
+
+&lt;h1 id=&#34;lösungsansatz&#34;&gt;Lösungsansatz&lt;/h1&gt;
+
+&lt;p&gt;Als Lösungsansatz habe ich ein einfaches Skript geschrieben, das tägliche &amp;ldquo;housekeeping&amp;rdquo; Aufgaben für mich übernimmt.&lt;br&gt;
+&lt;a href=&#34;https://thomas-leister.de/&#34; target=&#34;_blank&#34;&gt;Thomas Leister&lt;/a&gt; hat vor einiger Zeit einen sehr ähnlichen &lt;a href=&#34;https://thomas-leister.de/prosody-inaktive-accounts-loeschen&#34; target=&#34;_blank&#34;&gt;Lösungsansatz&lt;/a&gt; veröffentlicht, den ich in meinem Skript erweitert habe, um ihn vollständig zu automatisieren.&lt;br&gt;
+Das im Folgenden beschriebene Skript steht auf &lt;a href=&#34;https://github.com/mightyBroccoli/prosody_housekeeping&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt; zur Verfügung.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;WARNUNG&lt;/strong&gt;: Das Skript verfügt über einen &lt;em&gt;configtest&lt;/em&gt;; durch das ausführen mit &lt;code&gt;--configtest&lt;/code&gt; oder &lt;code&gt;-t&lt;/code&gt; werden alle Filter angewendet, ohne das Einträge gelöscht werden. So ist es möglich anschauenlich zu sehen was bei einem ausführen passiert wäre. Es ist äußerste Vorsicht geboten beim konfigurieren des Skripts, daher ist ein testen der Konfiguration sehr empfohlen.&lt;/p&gt;
+
+&lt;h1 id=&#34;skript&#34;&gt;Skript&lt;/h1&gt;
+
+&lt;p&gt;Das Skript arbeitet nacheinander alle diese Probleme ab und beseitigt diese Probleme in mehreren Schritten ohne das Usereingaben notwendig sind.&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;konfiguration&#34;&gt;Konfiguration&lt;/h2&gt;
+
+&lt;p&gt;Für die Verwendung des Skriptes werden zwei Module benötigt. Diese sollten im Modul Verzeichnis von Prosody vorhanden sein.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://modules.prosody.im/mod_list_inactive.html&#34; target=&#34;_blank&#34;&gt;mod_list_inactive&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://modules.prosody.im/mod_lastlog.html&#34; target=&#34;_blank&#34;&gt;mod_lastlog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;mod_lastlog lässt sich einfach in die modules_enabled{} Sektion der Prosody Konfiguration eintragen. Für das Modul ist keine weitere Konfiguration notwendig.
+Der einfachste Weg ist, das gesamte Mercurial Archiv der Community Module zu klonen und in der Prosody Konfiguration zu referenzieren. Eine Anleitung wie das geht findet sich in der Prosody &lt;a href=&#34;https://prosody.im/doc/installing_modules#prosody-modules&#34; target=&#34;_blank&#34;&gt;Dokumentation&lt;/a&gt;.&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Nun sollte im Skript selbst, über die Variabeln, eingestellt werden was für Zeiteinheiten gewünscht sind. Außerdem sollten eventuell abweichende Pfade auf die jeweiligen Systemverhältnisse angepasst werden.&lt;br&gt;
+Der Folgende Abschnitt zeigt einen Ausschnitt aus dem Skript, welcher die Konfigurationsvariablen, die Filter sowie den &lt;code&gt;--configtest&lt;/code&gt; catch zeigt.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;###### CONFIGURATION ######
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# configuration variables
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;tmp_directory&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/tmp/prosody/
+junk_to_delete&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$tmp_directory/accounts_to_delete.txt
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# maximum timeframe for accounts registered but not logged in
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# needs to be in the syntax 1day 2weeks 3months 4years
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;unused_accounts_timeframe&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;14days&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# maxium timeframe for accounts since last login
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;old_accounts_timeframe&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1year&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# maximum age of mod_mam messags stored in the database
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;enable_mam_clearing&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;false
+&lt;span style=&#34;color:#75715e&#34;&gt;# needs to be in mysql syntax 1 DAY 2 MONTH 3 YEAR
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;mam_message_live&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2 MONTH&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# prosody mysql login credentials
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;prosody_db_user&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;prosody&amp;#34;&lt;/span&gt;
+prosody_db_password&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;super_secret-password1337&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# http upload path
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;http_upload_path&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/var/lib/prosody/http_upload&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# http upload lifetime in days
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;http_upload_expire&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;31&amp;#34;&lt;/span&gt;
+
+catch_configtest&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75715e&#34;&gt;# test your configuration first to see what would have be deleted
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$1&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;-t&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$1&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;--configtest&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+		filter_unused_accounts
+		filter_old_accounts
+		filter_mam_messages --test
+
+		cat $junk_to_delete
+		exit
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;###### FILTER SECTION ######
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;filter_unused_accounts&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75715e&#34;&gt;# filter all registered but not logged in accounts older then $unused_accounts_timeframe
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	prosodyctl mod_list_inactive magicbroccoli.de &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$unused_accounts_timeframe&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; event | grep registered | sed &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;s/registered//g&amp;#39;&lt;/span&gt; | sed -e &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;s/^/prosodyctl deluser /&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; $junk_to_delete
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+
+filter_old_accounts&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75715e&#34;&gt;# filter all inactive accounts older then $old_accounts_timeframe
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	prosodyctl mod_list_inactive magicbroccoli.de &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$old_accounts_timeframe&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; | sed -e &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;s/^/prosodyctl deluser /&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; $junk_to_delete
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+
+filter_mam_messages&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75715e&#34;&gt;# only run this filter if $enable_mam_clearing is set to true
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$enable_mam_clearing&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+		&lt;span style=&#34;color:#75715e&#34;&gt;# catch config test
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$1&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;--test&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+			&lt;span style=&#34;color:#75715e&#34;&gt;# this is currently a workaround caused by the extrem slowness of prosodys own clearing mechanism
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;			&lt;span style=&#34;color:#75715e&#34;&gt;# filter all expired mod_mam messages from archive
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;			echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;SELECT * FROM prosody.prosodyarchive WHERE \`when\` &amp;lt; UNIX_TIMESTAMP(DATE_SUB(curdate(),INTERVAL &lt;/span&gt;$mam_message_live&lt;span style=&#34;color:#e6db74&#34;&gt;));&amp;#34;&lt;/span&gt; | mysql -u $prosody_db_user -p$prosody_db_password &amp;amp;&amp;gt;&amp;gt; $junk_to_delete
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+		&lt;span style=&#34;color:#75715e&#34;&gt;# this is currently a workaround caused by the extrem slowness of prosodys own clearing mechanism
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#75715e&#34;&gt;# delete all expired mod_mam messages from archive
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;DELETE FROM prosody.prosodyarchive WHERE \`when\` &amp;lt; UNIX_TIMESTAMP(DATE_SUB(curdate(),INTERVAL &lt;/span&gt;$mam_message_live&lt;span style=&#34;color:#e6db74&#34;&gt;));&amp;#34;&lt;/span&gt; | mysql -u $prosody_db_user -p$prosody_db_password
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+
+filter_expired_http_uploads&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75715e&#34;&gt;# currently a workaround as the mod_http_uploud is not removing the folder which holds the file
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	find $http_upload_path/* -maxdepth &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; -type d -mtime +$http_upload_expire | sed -e &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;s/^/rm -rf /&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; $junk_to_delete
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>CCC Jabber Connection</title>
       <link>https://magicbroccoli.de/post/ccc-jabber-connection/</link>
       <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/ccc-jabber-connection/</guid>
-      <description>Update Die techniche Leitung des CCC Jabber Servers hat sich nun auch dazu entscheiden auf gültige Zertifikate umzusteigen. Daher ist dieser Blogpost überflüssig.
-Einleitung Der XMPP Server vom Chaos Computer Club wird unter einem Zertifikat von cacert.org betrieben. Das root Zertifikat wird allerdings von den meisten Browsern / Betriebssystemen nicht anerkannt. Dies stellt für die Erreichbarkeit des XMPP Servers ein Problem da.
-Speziell Server die auf Datenschutz und Sicherheit ausgelegt wollen keine unverschlüsselten Verbindung.</description>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;update&#34;&gt;Update&lt;/h1&gt;
+
+&lt;p&gt;Die techniche Leitung des CCC Jabber Servers hat sich nun auch dazu entscheiden auf gültige Zertifikate umzusteigen. Daher ist dieser Blogpost überflüssig.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;einleitung&#34;&gt;Einleitung&lt;/h2&gt;
+
+&lt;p&gt;Der XMPP Server vom &lt;a href=&#34;https://ccc.de&#34; target=&#34;_blank&#34;&gt;Chaos Computer Club&lt;/a&gt; wird unter einem Zertifikat von &lt;a href=&#34;https://cacert.org&#34; target=&#34;_blank&#34;&gt;cacert.org&lt;/a&gt; betrieben. Das root Zertifikat wird allerdings von den meisten Browsern / Betriebssystemen nicht anerkannt. Dies stellt für die Erreichbarkeit des XMPP Servers ein Problem da.&lt;/p&gt;
+
+&lt;p&gt;Speziell Server die auf Datenschutz und Sicherheit ausgelegt wollen keine unverschlüsselten Verbindung.Im Folgenden möchte daher ich aufzeigen, welche Änderungen notwendig wären, um Debian mit den entsprechenden Zertifikaten auszustatten.&lt;/p&gt;
+
+&lt;p&gt;Betroffen sind damit speziell Prosody Server, die folgende Konfiguration eingestellt haben.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lua&#34; data-lang=&#34;lua&#34;&gt;s2s_require_encryption &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+s2s_secure_auth &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Damit ist die Voraussetzung einer Verbindung ein Zertifikat, welches vom Server anerkannt wird. Da auch keine unverschlüsselte Verbindung aufgebaut werden kann, wird die Verbindung blockiert.
+&lt;a href=&#34;https://prosody.im/doc/s2s#security&#34; target=&#34;_blank&#34;&gt;Prosody S2S Security&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Ein Verbindungsaufbau würde im Log dann so aussehen.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mod_s2s	warn	Forbidding insecure connection to/from jabber.ccc.de
+s2sin5637dae55f80	info	Incoming s2s stream jabber.ccc.de-&amp;gt;magicbroccoli.de closed: Your server&#39;s certificate is invalid, expired, or not trusted by magicbroccoli.de
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Es besteht die Möglichkeit Ausnahmen zu definieren, das Server trotz der Maßname, dass gültige Zertifikate präsentiert werden müssen, eine verschlüsselte Verbindung aufbauen können.&lt;br&gt;
+&lt;strong&gt;IMHO&lt;/strong&gt;: &lt;em&gt;Ich persönlich halte nichts davon Ausnahmen in einer Sicherheitsrichtlinie zu definieren. Ich weigere mich ein Pflaster System zu unterstützen, daher wird es unter &lt;a href=&#34;//magicbroccoli.de&#34; target=&#34;_blank&#34;&gt;magicbroccoli.de&lt;/a&gt; keine Ausnahmen geben.&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://magicbroccoli.de/technik/#verschlüsselung&#34;&gt;Technik/Verschlüsselung&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://magicbroccoli.de/technik/#zertifikate&#34;&gt;Technik/Zertifikate&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;root-zertifikate-hinzufügen&#34;&gt;Root Zertifikate hinzufügen&lt;/h2&gt;
+
+&lt;p&gt;Es wichtig die Integrität des Systems zu erhalten, daher werden keine Systemdateien geändert und Dateien nur an Stellen eingefügt, wo allein der Pfad schon erkennbar macht, dass diese eine &lt;em&gt;manuelle&lt;/em&gt; Erweiterung ist.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;/usr/local/share/ca-certificates&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+In diesem Verzeichnis sollten grundsätzlich keine Dateien oder Ordner vorhanden sein. Dieses Verzeichnis fügt für alle &lt;em&gt;lokalen&lt;/em&gt; User Certificate Authorities ( &lt;em&gt;im Folgenden nur noch CA genannt&lt;/em&gt; ) Zertifikate ein.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Hinweis&lt;/strong&gt;: &lt;em&gt;Das Hinzufügen eines CA Root Zertifikats kann das System einem erhöhten Risiko aussetzen. Es sollte sehr vorsichtig mit der Beglaubigung von wildfremden CAs umgegangen werden. Da euer System mit den folgenden Änderungen auch allen beglaubigten Zertifikaten der CA vertraut.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In diesem Verzeichnis ist ein Ordner zu erstellen mit dem Namen der CA.&lt;br&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo mkdir /usr/local/share/ca-certificates/cacert.org&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;download-der-zertifikate&#34;&gt;Download der Zertifikate&lt;/h3&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo wget -P /usr/local/share/ca-certificates/cacert.org &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;http://www.cacert.org/certs/root.crt &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;http://www.cacert.org/certs/class3.crt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;aktualisieren-des-zertifikat-bündels&#34;&gt;Aktualisieren des Zertifikat Bündels&lt;/h2&gt;
+
+&lt;p&gt;Zum Schluss muss der Zertifikat Speicher des System noch aktualisiert werden. Hierfür wird das Verzeichnis ausgelesen und alle Zertifikate die dort vorhanden sind werden hinzugefügt.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo update-ca-certificates&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;entfernen-von-ca-root-zertifikaten&#34;&gt;Entfernen von CA Root Zertifikaten&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;VORSICHT&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
+Falls es, weswegen auch immer, gewollt ist einer CA und deren Zertifikaten nicht mehr zu vertrauen, sind die Schritte wie folgt.&lt;/p&gt;
+
+&lt;p&gt;Es ist hier eine enorme Vorsicht geboten. Lieber sollte ein move Befehl verwendet werden, wenn es auch nur den Hauch eins Zweifels gibt. Außerdem sollte nur jemand der genau weiß was er tut überhaupt an den Zertifikaten des Systems arbeiten.&lt;/p&gt;
+
+&lt;p&gt;Im Folgenden am Beispiel von cacert.org.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Entfernen der Zertifikate/ des Zertifikat-Ordners aus
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo rm -r /usr/local/share/ca-certificates/cacert.org/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;löschen und neuerstellen der Symlinks
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo update-ca-certificates --fresh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Mit diesen beiden Befehlen ist es möglich, jegliche CA aus dem trust store zu entfernen.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>XMPP over TLS Tutorial</title>
       <link>https://magicbroccoli.de/post/xmpp-over-tls-guide/</link>
       <pubDate>Sun, 06 Aug 2017 15:00:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/xmpp-over-tls-guide/</guid>
-      <description>How to setup XEP-0368 Was ist XEP-0368 Bei XEP-0368 handelt es sich um ein Verfahren welches XMPP-Clients ermöglicht über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken. Dies ist äußerst nützlich, falls die regulären Verbindungswege blockiert sind zb. durch Firewalls.
-XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method of discovering how to connect to an XMPP server. This XEP extends that to include new xmpps-client/xmpps-server SRV records pointing to direct TLS ports and combine priorities and weights as if they were a single SRV record similar to RFC 6186.</description>
+      <description>
+
+&lt;h2 id=&#34;how-to-setup-xep-0368&#34;&gt;How to setup XEP-0368&lt;/h2&gt;
+
+&lt;h3 id=&#34;was-ist-xep-0368&#34;&gt;Was ist XEP-0368&lt;/h3&gt;
+
+&lt;p&gt;Bei &lt;a href=&#34;https://xmpp.org/extensions/xep-0368.html&#34; target=&#34;_blank&#34;&gt;XEP-0368&lt;/a&gt; handelt es sich um ein Verfahren welches XMPP-Clients ermöglicht über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken. Dies ist äußerst nützlich, falls die regulären Verbindungswege blockiert sind zb. durch Firewalls.&lt;/p&gt;
+
+&lt;blockquote cite=&#34;https://xmpp.org/extensions/xep-0368.html&#34;&gt;XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method of discovering how to connect to an XMPP server. This XEP extends that to include new xmpps-client/xmpps-server SRV records pointing to direct TLS ports and combine priorities and weights as if they were a single SRV record similar to RFC 6186. It also provides an easy way for clients to bypass restrictive firewalls that only allow HTTPS, for servers to host multiple protocols/services on a single port, and for servers and clients to take advantage of less round trips and existing direct TLS loadbalancers.&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;was-wird-benötigt&#34;&gt;Was wird benötigt?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Prosody Server&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;optional&lt;/strong&gt; gültiges SSL Zertifikat ( LetsEncrypt / oä )&lt;/li&gt;
+&lt;li&gt;2 IPv4 Adressen ( &lt;strong&gt;Hinweis beachten&lt;/strong&gt; )&lt;/li&gt;
+&lt;li&gt;iptables und iptables-persistent&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;optional&lt;/strong&gt; Webserver&lt;/li&gt;
+&lt;li&gt;Kontrolle über eure DNS Zone&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span style=&#34;color:red&#34;&gt;&lt;em&gt;Hinweis&lt;/em&gt;: Notwendigkeit 2 IPv4 Adressen&lt;/span&gt;
+Es werden 2 IP Adressen benötigt, wenn Ihre IP Adresse bereits auf Port 443 lauscht. Sprich eine &lt;strong&gt;https&lt;/strong&gt; Website via Apache2 / nginx gehostet wird. Da für diese Methode der Port verpflichtend benötigt wird. Ist dies nicht der Fall reicht eine einzelne IP Adresse vollkommen aus.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;1-dns-einstellungen&#34;&gt;1. DNS Einstellungen&lt;/h3&gt;
+
+&lt;p&gt;Den Anfang machen die DNS Einstellungen, da die Publizierung der neuen DNS Einstellungen bis zu 48 Stunden dauern kann.
+Zusätzlich zu den &lt;a href=&#34;https://prosody.im/doc/dns&#34; target=&#34;_blank&#34;&gt;Standard SRV Einträgen&lt;/a&gt; wird ein weiterer &lt;code&gt;_xmpps-client._tcp&lt;/code&gt; Eintrag benötigt. Außerdem ein weiterer A Record für die gewünschte Subdomain.&lt;/p&gt;
+
+&lt;p&gt;In diesem Beispiel ist die Domain &lt;code&gt;example.com&lt;/code&gt; und XMPP over TLS soll über die SubDomain &lt;code&gt;xmpps.example.com&lt;/code&gt; erreichbar sein.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-DNS&#34; data-lang=&#34;DNS&#34;&gt;# Standard Settings
+_xmpp-client._tcp.example.com. 18000 IN SRV 0 5 5222 example.com.
+_xmpp-server._tcp.example.com. 18000 IN SRV 0 5 5269 example.com.
+
+# XMPP over TLS Settings
+_xmpps-client._tcp.example.com. 18000 IN SRV 10 5 xmpps.example.com.
+
+# A record
+xmpps.example.com. 18000 IN A $zweite_ip_adresse&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;2-prosody-server-konfiguration&#34;&gt;2. Prosody Server Konfiguration&lt;/h3&gt;
+
+&lt;p&gt;Für den Verbindungsaufbau muss in der Prosody Konfiguration &lt;em&gt;legacy_ssl_ports&lt;/em&gt; definiert werden, damit das &lt;code&gt;http&lt;/code&gt; Modul auch auf dem gewählten Port lauscht. Das Modul &lt;em&gt;mod_legacyauth&lt;/em&gt; wird hierfür allerdings nicht benötigt.
+Ein Neustart des Prosody Services ist nach dem setzen dieser Einstellung zwingend &lt;strong&gt;erforderlich&lt;/strong&gt;.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lua&#34; data-lang=&#34;lua&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-- XEP-0368: SRV records for XMPP over TLS&lt;/span&gt;
+legacy_ssl_ports &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; { &lt;span style=&#34;color:#ae81ff&#34;&gt;5223&lt;/span&gt; }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;3-ssl-zertifikat-optional&#34;&gt;3. SSL Zertifikat ( &lt;em&gt;optional&lt;/em&gt; )&lt;/h3&gt;
+
+&lt;p&gt;Hier wäre der Zeitpunkt das bestehende Zertifikat für &lt;code&gt;example.com&lt;/code&gt; auf &lt;code&gt;xmpps.example.com&lt;/code&gt; auszuweiten, um keinen &lt;code&gt;common name error&lt;/code&gt; zu erzeugen. Dieses erweiterte Zertifikat ist dem Prosody zur Verfügung zu stellen. Die Ausstellung eines neuen LetEncrypt Zertifikats ist nach &lt;a href=&#34;#5-webserver&#34;&gt;Schritt 5: Webserver&lt;/a&gt; deutlich einfacher.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Hinweis&lt;/em&gt; : Dieser Teil ist vollkommen optional. Die &lt;a href=&#34;https://prosody.im/doc/certificates&#34; target=&#34;_blank&#34;&gt;Prosody Dokumentation&lt;/a&gt; zeigt auf, dass kein Zertifikat notwendig wäre.
+&lt;strong&gt;IMHO&lt;/strong&gt; Es macht das Gesamtbild einheitlicher, wenn auch an diesem Endpunkt ein gültiges SSL Zertifikat präsentiert wird.&lt;br&gt;
+In Section &lt;a href=&#34;#5-webserver&#34;&gt;5. Webserver&lt;/a&gt; gehe ich darauf noch einmal genau ein.&lt;/p&gt;
+
+&lt;h3 id=&#34;4-iptables-regeln&#34;&gt;4. iptables Regeln&lt;/h3&gt;
+
+&lt;p&gt;Für das Umleiten der Pakete wird die PREROUTING und POSTROUTING Kette von &lt;code&gt;iptables&lt;/code&gt; verwendet. Dabei werden Pakete noch bevor sie überhaupt geroutet werden umgeleitet.
+Dafür werden 2 Regeln verwendet um einen &lt;code&gt;malformed xml-error&lt;/code&gt; zu vermeiden.
+Regel Nr. 1 leitet den gesamten Traffic der zweiten IP von Port 443, ohne Veränderung an Port 5223 der ersten IP weiter.&lt;/p&gt;
+
+&lt;p&gt;Für die Antwort des Prosody Servers wird allerdings eine zweite Regel benötigt, die sich in der POSTROUTING Kette befindet. Diese stellt sicher, dass das Antwort-Paket wieder über Port 443 der zweiten IP Adresse den Server verlässt.&lt;br&gt;
+&lt;em&gt;Sollte bei der Prosody Konfiguration ein anderer Port gewählt werden als der default Port, muss dieser natürlich in den iptables Regeln ausgetauscht werden.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In diesem Beispiel ist erste_ip, jene IP-Adresse auf der auch der httpd Server lauscht. zweite_ip bezeichnet somit die zweite Adresse speziell für XMPP over TLS.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# PREROUTING
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;iptables -t nat -A PREROUTING -d zweite_ip -p tcp --dport &lt;span style=&#34;color:#ae81ff&#34;&gt;443&lt;/span&gt; -j DNAT --to-destination erste_ip:5223
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# POSTROUTING
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;iptables -t nat -A POSTROUTING -p tcp -d  zweite_ip --dport &lt;span style=&#34;color:#ae81ff&#34;&gt;5223&lt;/span&gt; -j SNAT --to-source erste_ip:5223&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;Abschließend sollten diese Regeln mit &lt;code&gt;iptables-save&lt;/code&gt; gespeichert werden, damit diese bei einem reboot erneut angewendet werden.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;iptables-save &amp;gt; /etc/iptables/rules.v4&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;5-webserver&#34;&gt;5. Webserver&lt;/h3&gt;
+
+&lt;p&gt;Die Konfiguration des Webserver ist grundsätzlich nicht notwendig, macht das testen der vorgenommenen Änderungen, sowie erzeugen bzw. erweitern bestehender Zertifikate allerdings bedeutend einfacher.&lt;br&gt;
+Im Folgenden habe ich die simpelste Möglichkeit eins vHosts angenommen. Dabei ist als Beispiel immer example.de verwendet worden.&lt;/p&gt;
+
+&lt;h5 id=&#34;nginx&#34;&gt;nginx&lt;/h5&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nginx&#34; data-lang=&#34;nginx&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;server&lt;/span&gt; {
+	&lt;span style=&#34;color:#f92672&#34;&gt;listen&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;zweite_ip:80&lt;/span&gt;;
+	&lt;span style=&#34;color:#f92672&#34;&gt;server_name&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;xmpps.example.de&lt;/span&gt;;
+	&lt;span style=&#34;color:#75715e&#34;&gt;#hier kann je nach wunsch eine weiterleitung stattfinden
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#f92672&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;301&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;https://example.de&lt;/span&gt;;
+
+	&lt;span style=&#34;color:#75715e&#34;&gt;# letsencrypt love
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;^~&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/.well-known/acme-challenge/&lt;/span&gt; {
+    	&lt;span style=&#34;color:#f92672&#34;&gt;default_type&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;text/plain&amp;#34;&lt;/span&gt;;
+	}
+
+	&lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;/.well-known/acme-challenge/&lt;/span&gt; {
+    	&lt;span style=&#34;color:#f92672&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;404&lt;/span&gt;;
+	}
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h5 id=&#34;apache2&#34;&gt;apache2&lt;/h5&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-apache&#34; data-lang=&#34;apache&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;VirtualHost&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;zweite_ip:80&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+	ServerName xmpps.example.de
+
+	&lt;span style=&#34;color:#75715e&#34;&gt;# hier kann je nach wunsch eine weiterleitung stattfinden&lt;/span&gt;
+	Redirect / https://example.de;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/VirtualHost&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Sind diese Änderungen vorgenommen, ist es leicht möglich via LetsEncrypt ein Zertifikat für die SubDomain auzustellen. Zusätzlich dazu ist es nun möglich direkt zu testen ob XMPP over TLS funktioniert.&lt;/p&gt;
+
+&lt;h2 id=&#34;abschluss&#34;&gt;Abschluss&lt;/h2&gt;
+
+&lt;p&gt;Sollten alle diese Schritte erfolgreich abgeschlossen sein, ist es sehr leicht möglich zu testen ob alles so funktioniert wie es soll. Hierfür lässt sich &lt;code&gt;curl -i&lt;/code&gt; verwenden.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl -i https://xmpps.example.com&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Hinweis&lt;/strong&gt;: Falls es an diesem Endpunkt keine gültigen Zertifikate gibt, sollte hier der Befehl &lt;code&gt;curl -ik&lt;/code&gt; gewählt werden, um den TLS Error zu ignorieren.&lt;/p&gt;
+
+&lt;p&gt;Als Ergebnis sollte ein &lt;em&gt;xml stream error&lt;/em&gt; zu sehen sein, &lt;strong&gt;ohne&lt;/strong&gt; Apache2 / nginx header.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?xml version=&amp;#39;1.0&amp;#39;?&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;stream:stream&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;xmlns:stream=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;http://etherx.jabber.org/streams&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;xml:lang=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;en&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;xmlns=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;jabber:client&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;stream:error&amp;gt;&lt;/span&gt;
+		&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;not-well-formed&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;xmlns=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;urn:ietf:params:xml:ns:xmpp-streams&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/stream:error&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/stream:stream&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;span style=&#34;color:red&#34;&gt;&lt;strong&gt;Hinweis&lt;/strong&gt;:&lt;/span&gt; Für das Testen via curl sollte eine andere Maschine gewählt werden. Ausgeführt auf der gleichen Maschine durchlaufen die Pakete nicht die PREROUTING bzw. POSTROUTING Kette, daher wird die Verbindung abgelehnt.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Wir unterstützen Omemo</title>
       <link>https://magicbroccoli.de/post/omemo-statement/</link>
       <pubDate>Mon, 31 Jul 2017 13:00:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/omemo-statement/</guid>
-      <description>Update Herr Gultsch hat nun eine Erklärung in den Sourcecode von OMEMO.java des ComplianceTesters hinzugefügt. Außerdem fügte er in die Spalte XEP-0384: OMEMO Encryption ein Fragezeichen hinzu. Dieses führt zu der Erklärung im Sourcecode auf Github. Auch wenn dies wirklich nur ein kleiner Hinweis ist, danken wir Herrn Gultsch dennoch das er unserem Wunsch nachgekommen ist.
-This test checks for the availability of publish-options on the account’s PEP service. publish-options allows a client to efficiently change the access model of the OMEMO key material such that everyone can access it.</description>
+      <description>
+
+&lt;h3 id=&#34;update&#34;&gt;Update&lt;/h3&gt;
+
+&lt;p&gt;Herr Gultsch hat nun eine Erklärung in den Sourcecode von OMEMO.java des ComplianceTesters hinzugefügt. Außerdem fügte er in die Spalte XEP-0384: OMEMO Encryption ein Fragezeichen hinzu. Dieses führt zu der Erklärung im &lt;a href=&#34;https://github.com/iNPUTmice/ComplianceTester/blob/master/src/main/java/eu/siacs/compliance/tests/OMEMO.java#L12-L17&#34; target=&#34;_blank&#34;&gt;Sourcecode auf Github&lt;/a&gt;.
+Auch wenn dies wirklich nur ein kleiner Hinweis ist, danken wir Herrn Gultsch dennoch das er unserem Wunsch nachgekommen ist.&lt;/p&gt;
+
+&lt;blockquote&gt;This test checks for the availability of publish-options on the account’s PEP service. publish-options allows a client to efficiently change the access model of the OMEMO key material such that everyone can access it. Without publish-options OMEMO is only available to contacts with mutual presence subscription.&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Hallo zusammen,&lt;/p&gt;
+
+&lt;p&gt;Daniel Gultsch hat vor ein paar Tagen die &lt;a href=&#34;https://gultsch.de/compliance_ranked.html&#34; target=&#34;_blank&#34;&gt;Compliance Liste&lt;/a&gt; um die Spalte &lt;em&gt;XEP-0384: OMEMO Encryption&lt;/em&gt; erweitert. Derzeit suggeriert diese, auf Grund einer fehlenden Erklärung, das nur conversations.im OMEMO Encryption unterstützen würde. Dies entspricht natürlich nicht der Wahrheit.&lt;/p&gt;
+
+&lt;p&gt;Hintergrund ist, dass &lt;a href=&#34;https://twitter.com/iNPUTmice/status/888826898335322113&#34; target=&#34;_blank&#34;&gt;Daniel Gultsch empfiehlt&lt;/a&gt;, das das &lt;a href=&#34;https://xmpp.org/extensions/xep-0163.html&#34; target=&#34;_blank&#34;&gt;PEP-Modul&lt;/a&gt; der Server &lt;a href=&#34;https://xmpp.org/extensions/xep-0060.html#publisher-publish-options&#34; target=&#34;_blank&#34;&gt;publish-options&lt;/a&gt; unterstützen sollte (&lt;a href=&#34;https://gist.github.com/iNPUTmice/7c52785ed69787516abb60e31703dbd2&#34; target=&#34;_blank&#34;&gt;ausführlichere Beschreibung&lt;/a&gt;). Dies bewirkt, dass User in Conversations ab Version 1.20+, auch Personen verschlüsselt anschreiben kann, ohne sie vorher in seinen Roster hinzufügen zu müssen. Auch wir finden dieses Feature gut und würden es gern unterstützen, allerdings unterstützt das PEP Modul von prosody publish-options derzeit noch nicht.&lt;/p&gt;
+
+&lt;p&gt;Herr Gultsch selbst, schreibt an mehreren Stellen, dass es sich hierbei um &lt;strong&gt;kein&lt;/strong&gt; &lt;a href=&#34;https://github.com/iNPUTmice/ComplianceTester/issues/112#issuecomment-319008031&#34; target=&#34;_blank&#34;&gt;Security Risiko&lt;/a&gt;, handelt, sondern lediglich um ein &lt;a href=&#34;https://github.com/iNPUTmice/ComplianceTester/issues/112#issuecomment-319008031&#34; target=&#34;_blank&#34;&gt;Usability Problem&lt;/a&gt;. Das heißt, dass es sich nicht um eine Vorraussetzung handelt, sondern um eine Empfehlung.&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Server support for publish-options is strongly recommended but not required for OMEMO in Conversations 1.20.0+&lt;/p&gt;&amp;mdash; Daniel Gultsch (@iNPUTmice) &lt;a href=&#34;https://twitter.com/iNPUTmice/status/888826898335322113?ref_src=twsrc%5Etfw&#34;&gt;July 22, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;a href=&#34;https://github.com/iNPUTmice/ComplianceTester/issues/112&#34; target=&#34;_blank&#34;&gt;Der Vorschlag&lt;/a&gt; eine kurze Erklärung zu der Spalte in seiner Liste hinzuzufügen, da das ganze sonst so eine falsche Aussage über die Server wiederspiegelt, wurde mit den folgenden Sätzen einfach ignoriert und das Ticket geschlossen:&lt;/p&gt;
+
+&lt;blockquote&gt;While not a security problems the lack of publish-options is a huge usability problem as this limits OMEMO to contacts you have mutual presence subscription with.
+Conversations users will except OMEMO to work with everyone. That’s why Conversations requires publish-options.&lt;/blockquote&gt;
+
+&lt;p&gt;Hauptproblem hierbei ist, das die Darstellung für alle Server sehr „rufschädigend“ sein kann. Ich und einige andere Hoster haben versucht Daniel Gultsch darauf aufmerksam zu machen, dies wird von ihm allerdings komplett ignoriert.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Lange Rede kurzer Sinn&lt;/em&gt; – Ihr könnt mit Conversations und anderen Clients weiterhin OMEMO über unseren und die anderen Server verwenden, nur eben derzeit noch ohne das Feature Kontakte außerhalb eurer Kontaktliste direkt verschlüsselt anzuschreiben, ohne diese vorher zu adden.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Danke geht an Sebastian von &lt;a href=&#34;https://blog.5222.de/posts/20170731_wir_unterstuetzen_omemo/&#34; target=&#34;_blank&#34;&gt;5222.de&lt;/a&gt; für die Textgrundlage.&lt;/strong&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

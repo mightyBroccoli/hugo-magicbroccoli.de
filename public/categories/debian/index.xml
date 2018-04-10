@@ -6,32 +6,117 @@
     <description>Recent content in Debian on Magic Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
+    <managingEditor>mightyBroccoli (nico)</managingEditor>
+    <webMaster>mightyBroccoli (nico)</webMaster>
     <copyright>All rights reserved.</copyright>
     <lastBuildDate>Mon, 28 Aug 2017 13:30:00 +0200</lastBuildDate>
     
-	<atom:link href="https://magicbroccoli.de/categories/debian/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://magicbroccoli.de/categories/debian/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CCC Jabber Connection</title>
       <link>https://magicbroccoli.de/post/ccc-jabber-connection/</link>
       <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/ccc-jabber-connection/</guid>
-      <description>Update Die techniche Leitung des CCC Jabber Servers hat sich nun auch dazu entscheiden auf gültige Zertifikate umzusteigen. Daher ist dieser Blogpost überflüssig.
-Einleitung Der XMPP Server vom Chaos Computer Club wird unter einem Zertifikat von cacert.org betrieben. Das root Zertifikat wird allerdings von den meisten Browsern / Betriebssystemen nicht anerkannt. Dies stellt für die Erreichbarkeit des XMPP Servers ein Problem da.
-Speziell Server die auf Datenschutz und Sicherheit ausgelegt wollen keine unverschlüsselten Verbindung.</description>
+      <description>
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;update&#34;&gt;Update&lt;/h1&gt;
+
+&lt;p&gt;Die techniche Leitung des CCC Jabber Servers hat sich nun auch dazu entscheiden auf gültige Zertifikate umzusteigen. Daher ist dieser Blogpost überflüssig.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;einleitung&#34;&gt;Einleitung&lt;/h2&gt;
+
+&lt;p&gt;Der XMPP Server vom &lt;a href=&#34;https://ccc.de&#34; target=&#34;_blank&#34;&gt;Chaos Computer Club&lt;/a&gt; wird unter einem Zertifikat von &lt;a href=&#34;https://cacert.org&#34; target=&#34;_blank&#34;&gt;cacert.org&lt;/a&gt; betrieben. Das root Zertifikat wird allerdings von den meisten Browsern / Betriebssystemen nicht anerkannt. Dies stellt für die Erreichbarkeit des XMPP Servers ein Problem da.&lt;/p&gt;
+
+&lt;p&gt;Speziell Server die auf Datenschutz und Sicherheit ausgelegt wollen keine unverschlüsselten Verbindung.Im Folgenden möchte daher ich aufzeigen, welche Änderungen notwendig wären, um Debian mit den entsprechenden Zertifikaten auszustatten.&lt;/p&gt;
+
+&lt;p&gt;Betroffen sind damit speziell Prosody Server, die folgende Konfiguration eingestellt haben.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lua&#34; data-lang=&#34;lua&#34;&gt;s2s_require_encryption &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+s2s_secure_auth &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Damit ist die Voraussetzung einer Verbindung ein Zertifikat, welches vom Server anerkannt wird. Da auch keine unverschlüsselte Verbindung aufgebaut werden kann, wird die Verbindung blockiert.
+&lt;a href=&#34;https://prosody.im/doc/s2s#security&#34; target=&#34;_blank&#34;&gt;Prosody S2S Security&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Ein Verbindungsaufbau würde im Log dann so aussehen.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mod_s2s	warn	Forbidding insecure connection to/from jabber.ccc.de
+s2sin5637dae55f80	info	Incoming s2s stream jabber.ccc.de-&amp;gt;magicbroccoli.de closed: Your server&#39;s certificate is invalid, expired, or not trusted by magicbroccoli.de
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Es besteht die Möglichkeit Ausnahmen zu definieren, das Server trotz der Maßname, dass gültige Zertifikate präsentiert werden müssen, eine verschlüsselte Verbindung aufbauen können.&lt;br&gt;
+&lt;strong&gt;IMHO&lt;/strong&gt;: &lt;em&gt;Ich persönlich halte nichts davon Ausnahmen in einer Sicherheitsrichtlinie zu definieren. Ich weigere mich ein Pflaster System zu unterstützen, daher wird es unter &lt;a href=&#34;//magicbroccoli.de&#34; target=&#34;_blank&#34;&gt;magicbroccoli.de&lt;/a&gt; keine Ausnahmen geben.&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://magicbroccoli.de/technik/#verschlüsselung&#34;&gt;Technik/Verschlüsselung&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://magicbroccoli.de/technik/#zertifikate&#34;&gt;Technik/Zertifikate&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;root-zertifikate-hinzufügen&#34;&gt;Root Zertifikate hinzufügen&lt;/h2&gt;
+
+&lt;p&gt;Es wichtig die Integrität des Systems zu erhalten, daher werden keine Systemdateien geändert und Dateien nur an Stellen eingefügt, wo allein der Pfad schon erkennbar macht, dass diese eine &lt;em&gt;manuelle&lt;/em&gt; Erweiterung ist.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;/usr/local/share/ca-certificates&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+In diesem Verzeichnis sollten grundsätzlich keine Dateien oder Ordner vorhanden sein. Dieses Verzeichnis fügt für alle &lt;em&gt;lokalen&lt;/em&gt; User Certificate Authorities ( &lt;em&gt;im Folgenden nur noch CA genannt&lt;/em&gt; ) Zertifikate ein.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Hinweis&lt;/strong&gt;: &lt;em&gt;Das Hinzufügen eines CA Root Zertifikats kann das System einem erhöhten Risiko aussetzen. Es sollte sehr vorsichtig mit der Beglaubigung von wildfremden CAs umgegangen werden. Da euer System mit den folgenden Änderungen auch allen beglaubigten Zertifikaten der CA vertraut.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In diesem Verzeichnis ist ein Ordner zu erstellen mit dem Namen der CA.&lt;br&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo mkdir /usr/local/share/ca-certificates/cacert.org&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;download-der-zertifikate&#34;&gt;Download der Zertifikate&lt;/h3&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo wget -P /usr/local/share/ca-certificates/cacert.org &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;http://www.cacert.org/certs/root.crt &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;http://www.cacert.org/certs/class3.crt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;aktualisieren-des-zertifikat-bündels&#34;&gt;Aktualisieren des Zertifikat Bündels&lt;/h2&gt;
+
+&lt;p&gt;Zum Schluss muss der Zertifikat Speicher des System noch aktualisiert werden. Hierfür wird das Verzeichnis ausgelesen und alle Zertifikate die dort vorhanden sind werden hinzugefügt.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo update-ca-certificates&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;entfernen-von-ca-root-zertifikaten&#34;&gt;Entfernen von CA Root Zertifikaten&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;VORSICHT&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
+Falls es, weswegen auch immer, gewollt ist einer CA und deren Zertifikaten nicht mehr zu vertrauen, sind die Schritte wie folgt.&lt;/p&gt;
+
+&lt;p&gt;Es ist hier eine enorme Vorsicht geboten. Lieber sollte ein move Befehl verwendet werden, wenn es auch nur den Hauch eins Zweifels gibt. Außerdem sollte nur jemand der genau weiß was er tut überhaupt an den Zertifikaten des Systems arbeiten.&lt;/p&gt;
+
+&lt;p&gt;Im Folgenden am Beispiel von cacert.org.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Entfernen der Zertifikate/ des Zertifikat-Ordners aus
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo rm -r /usr/local/share/ca-certificates/cacert.org/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;löschen und neuerstellen der Symlinks
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo update-ca-certificates --fresh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Mit diesen beiden Befehlen ist es möglich, jegliche CA aus dem trust store zu entfernen.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Datenbank Zusammenbruch</title>
       <link>https://magicbroccoli.de/post/database-failure/</link>
       <pubDate>Fri, 25 Aug 2017 23:30:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/database-failure/</guid>
-      <description>Bekanntmachung Heute, am 25 August, kam es zu dem bisher größten Ausfall meiner Services. Leider ist aufgrund eines Fehler, der mir bisher nicht weiter bekannt ist, eine Platte des Server ausgefallen. Die Datenbank hat das ganze nicht sonderlich gut aufgenommen.
-Ich fahre regelmäßig Backups und die binlogs waren auch wiederherstellbar, daher kam es zu keinem Datenverlust. Allerdings musste ich die Datenbank neu aufbauen, was sich als zeitintensiv herausstellte.
-Gegen 23:30, nach fast 5 Stunden, ist es mir nun gelungen alle Datenbanken wiederherzustellen und alle Services vollständig wieder in Betrieb zu nehmen.</description>
+      <description>
+
+&lt;h2 id=&#34;bekanntmachung&#34;&gt;Bekanntmachung&lt;/h2&gt;
+
+&lt;p&gt;Heute, am 25 August, kam es zu dem bisher größten Ausfall meiner Services. Leider ist aufgrund eines Fehler, der mir bisher nicht weiter bekannt ist, eine Platte des Server ausgefallen. Die Datenbank hat das ganze nicht sonderlich gut aufgenommen.&lt;/p&gt;
+
+&lt;p&gt;Ich fahre regelmäßig Backups und die binlogs waren auch wiederherstellbar, daher kam es zu &lt;em&gt;keinem&lt;/em&gt; Datenverlust. Allerdings musste ich die Datenbank neu aufbauen, was sich als zeitintensiv herausstellte.&lt;/p&gt;
+
+&lt;p&gt;Gegen 23:30, nach fast 5 Stunden, ist es mir nun gelungen alle Datenbanken wiederherzustellen und alle Services vollständig wieder in Betrieb zu nehmen.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

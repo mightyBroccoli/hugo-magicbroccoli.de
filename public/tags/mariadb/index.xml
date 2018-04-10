@@ -6,41 +6,234 @@
     <description>Recent content in Mariadb on Magic Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
+    <managingEditor>mightyBroccoli (nico)</managingEditor>
+    <webMaster>mightyBroccoli (nico)</webMaster>
     <copyright>All rights reserved.</copyright>
     <lastBuildDate>Thu, 07 Dec 2017 17:30:00 +0200</lastBuildDate>
     
-	<atom:link href="https://magicbroccoli.de/tags/mariadb/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://magicbroccoli.de/tags/mariadb/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Prosody Datenbank Indizes</title>
       <link>https://magicbroccoli.de/post/prosody-db-index/</link>
       <pubDate>Thu, 07 Dec 2017 17:30:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/prosody-db-index/</guid>
-      <description>Prosody bietet die Möglichkeit persistente Userdaten bzw. seit 0.10 auch MAM Archive in einer MySQL Datenbank zu sichern. Prosody erstellt beim ersten Laden des Moduls alle relevanten Datenbanken sowie Indizes. Allerdings werden Indizes, die nachträglich, z.B. in aktuelleren Patches, hinzugefügt werden, nur in Datenbanken eingetragen, die neu erstellt werden. Damit fehlen in den allermeisten älteren Datenbanken die aktuellen Indizes.
-Notwendigkeit von Indizes Indizes können Datenbankabfragen enorm beschleunigen, da sie es bei einer Abfrage ermöglichen eine deutlich kleinere Anzahl an Zeilen zu vergleichen.</description>
+      <description>
+
+&lt;p&gt;Prosody bietet die Möglichkeit persistente Userdaten bzw. seit &lt;a href=&#34;https://prosody.im/doc/release/0.10.0&#34; target=&#34;_blank&#34;&gt;0.10&lt;/a&gt; auch MAM Archive in einer MySQL Datenbank zu sichern. Prosody erstellt beim ersten Laden des &lt;a href=&#34;https://hg.prosody.im/0.10/file/e98b4352d7df/plugins/mod_storage_sql.lua#l426&#34; target=&#34;_blank&#34;&gt;Moduls&lt;/a&gt; alle relevanten Datenbanken sowie Indizes. Allerdings werden Indizes, die nachträglich, z.B. in &lt;a href=&#34;https://hg.prosody.im/0.10/rev/e98b4352d7df&#34; target=&#34;_blank&#34;&gt;aktuelleren Patches&lt;/a&gt;, hinzugefügt werden, nur in Datenbanken eingetragen, die neu erstellt werden. Damit fehlen in den allermeisten älteren Datenbanken die aktuellen Indizes.&lt;/p&gt;
+
+&lt;h4 id=&#34;notwendigkeit-von-indizes&#34;&gt;Notwendigkeit von Indizes&lt;/h4&gt;
+
+&lt;p&gt;Indizes können Datenbankabfragen enorm beschleunigen, da sie es bei einer Abfrage ermöglichen eine deutlich kleinere Anzahl an Zeilen zu vergleichen. Dadurch wird ein schnelleres, effizienteres und vor allem performanteres Ergebnis erzielt. Die &lt;a href=&#34;https://dev.mysql.com/doc/refman/5.5/en/mysql-indexes.html&#34; target=&#34;_blank&#34;&gt;MySQL Dokumentation&lt;/a&gt; beschreibt es wie folgt:&lt;/p&gt;
+
+&lt;blockquote&gt;Indexes are used to find rows with specific column values quickly. Without an index, MySQL must begin with the first row and then read through the entire table to find the relevant rows. The larger the table, the more this costs. If the table has an index for the columns in question, MySQL can quickly determine the position to seek to in the middle of the data file without having to look at all the data. This is much faster than reading every row sequentially.&lt;/blockquote&gt;
+
+&lt;p&gt;Für den Betrieb sind die Indizes daher von größerer Wichtigkeit. Bei wachsender Größe der &lt;code&gt;prosodyarchive&lt;/code&gt; Datenbank werden die Abfragen Performance hungriger. Diese Abfragen möglichst effizient abzuarbeiten ist essentiell.&lt;/p&gt;
+
+&lt;h4 id=&#34;abfrage-bestehender-indizes&#34;&gt;Abfrage bestehender Indizes&lt;/h4&gt;
+
+&lt;p&gt;Um herauszufinden welche Indizes im Moment überhaupt vorhanden sind, lässt sich dieser Query verwenden.&lt;br&gt;
+In diesem Beispiel verwende ich &lt;strong&gt;prosody.prosodyarchive&lt;/strong&gt;. Der Query ist für die jeweils persönlichen Namen der Tabellen / Datenbanken anzupassen.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SHOW&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;INDEX&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; prosody.prosodyarchive;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;img src=&#34;https://magicbroccoli.de/images/prosodydb/prosodydb_index.png&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;Sollten alle Indizes wie auf dem Bild vorhanden sein ist kein weiteres Zutun notwendig. Ist allerdings nur &lt;em&gt;prosodyarchive_index&lt;/em&gt; gelistet, fehlen die zwei neuen Indizes &lt;code&gt;prosodyarchive_with&lt;/code&gt; sowie &lt;code&gt;prosodyarchive_when&lt;/code&gt; in der Datenbank.&lt;/p&gt;
+
+&lt;h3 id=&#34;hinzufügen-der-fehlenden-indizes&#34;&gt;Hinzufügen der fehlenden Indizes&lt;/h3&gt;
+
+&lt;p&gt;&lt;span style=&#34;color:red&#34;&gt;&lt;em&gt;Wichtig&lt;/em&gt;&lt;/span&gt; : Je mehr Zeilen die Datenbank enthält desto länger kann das Hinzufügen von Indizes dauern.
+Der folgende Abschnitt beschreibt die notwendigen Schritte, um die aktuellen Indizes zur Datenbank hinzuzufügen. Anschließend sind noch Query beschrieben um zu testen, ob das Hinzufügen erfolgreich verlaufen ist.&lt;/p&gt;
+
+&lt;p&gt;In diesen Beispiel Querys wird die Datenbank &lt;em&gt;prosody&lt;/em&gt; mit der Tabelle &lt;em&gt;prosodyarchive&lt;/em&gt; verwendet. Der Query ist für die jeweils persönlichen Namen der Tabellen / Datenbanken anzupassen.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;INDEX&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;prosodyarchive_with&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;USING&lt;/span&gt; BTREE
+&lt;span style=&#34;color:#66d9ef&#34;&gt;ON&lt;/span&gt; prosody.prosodyarchive
+(&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;host&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;), &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;), &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;store&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;), &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;));
+
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;INDEX&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;prosodyarchive_when&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;USING&lt;/span&gt; BTREE
+&lt;span style=&#34;color:#66d9ef&#34;&gt;ON&lt;/span&gt; prosody.prosodyarchive
+(&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;host&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;), &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;), &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;store&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;), &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;when&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;Query OK, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;rows&lt;/span&gt; affected (&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;.&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt; sec)
+Records: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;  Duplicates: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;  Warnings: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Nach dem Ausführen jedes Querys wird ein solches Ergebnis angezeigt. Dies ist normal, da durch das Hinzufügen von Indizes keine Zeilen verändert werden.&lt;/p&gt;
+
+&lt;p&gt;Nachdem beide Querys erfolgreich ausgeführt wurden, kann mit dem &lt;code&gt;SHOW INDEX FROM db_name&lt;/code&gt; Query kontrolliert werden, ob alle Indizes erfolgreich hinzugefügt wurden.&lt;/p&gt;
+
+&lt;h3 id=&#34;testen-der-indizes&#34;&gt;Testen der Indizes&lt;/h3&gt;
+
+&lt;p&gt;Zum Testen der Indizes können diese Querys verwendet werden. Hierbei ist zu beachten das abweichende Bezeichnungen der Tabellen / Datenbanken anzupassen sind.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;EXPLAIN&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; prosody.prosodyarchive
+&lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;host&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;magicbroccoli.de&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;AND&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;store&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;archive2&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;AND&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;when&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;1512662458&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;AND&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;username&amp;#39;&lt;/span&gt;;
+
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;EXPLAIN&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; prosody.prosodyarchive
+&lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;host&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;magicbroccoli.de&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;AND&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;store&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;archive2&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;AND&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;brokkoli@magicbroccoli.de&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;AND&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;user&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;username&amp;#39;&lt;/span&gt;;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;img src=&#34;https://magicbroccoli.de/images/prosodydb/prosodyarchive_when.png&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;Relevant bei der Ausgabe sind die Angaben für &lt;code&gt;possible_keys&lt;/code&gt; und &lt;code&gt;key&lt;/code&gt;. Diese sollen die neu hinzugefügten Indizes auflisten. Sollten bei einem oder beiden der Spalten &lt;code&gt;NULL&lt;/code&gt; angezeigt werden, wird kein Index verwendet. Es sollte nochmal kontrolliert werden ob alle Indizes erfolgreich hinzugefügt wurden.&lt;br&gt;
+Das Ergebnis sollte diese Form haben. Das Bild zeigt mein Ergebnis für den &lt;em&gt;prosodyarchive_when&lt;/em&gt; Test-Query.&lt;br&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;prosody-neustart&#34;&gt;Prosody neustart?&lt;/h4&gt;
+
+&lt;p&gt;Für Prosody ist es &lt;em&gt;nicht&lt;/em&gt; notwendig neu zu starten. Die Indizes werden von der Datenbank verwendet und nicht von Prosody direkt. Daher ist es nicht notwendig.&lt;/p&gt;
+
+&lt;h2 id=&#34;quellen&#34;&gt;Quellen&lt;/h2&gt;
+
+&lt;p&gt;Als Quelle ziehe ich hier die aktuellste stable Version von mod_storage_sql.lua zu Rate. Dieser spezielle Abschnitt ist zuständig beim ersten Laden die Datenbanken, falls noch keine vorhanden sind, zu erstellen.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://hg.prosody.im/0.10/rev/e98b4352d7df&#34; target=&#34;_blank&#34;&gt;Patch vom 21. November 17&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hg.prosody.im/0.10/file/e98b4352d7df/plugins/mod_storage_sql.lua#l426&#34; target=&#34;_blank&#34;&gt;mod_storage_sql.lua&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.mysql.com/doc/refman/5.5/en/mysql-indexes.html&#34; target=&#34;_blank&#34;&gt;MySQL Dokumentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
       <title>Prosody housekeeping</title>
       <link>https://magicbroccoli.de/post/prosody-housekeeping/</link>
       <pubDate>Mon, 02 Oct 2017 13:30:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/prosody-housekeeping/</guid>
-      <description>Grundidee Ich habe mich in den letzen paar Tagen damit beschäftigt Dinge rund um den Prosody Server zu automatisieren. Daher möchte ich hier einfach mal meine Lösung einiger kleiner Probleme vorstellen.
-Problem Das grundsätzliche Problem, welches so ziemlich alle Server mit offener Registrierung teilen, sind Zombie Accounts. Sprich Accounts die erstellt wurden, allerdings nie verwendet werden. Oder Accounts die erstellt wurden und irgendwann von ihrem Nutzer/in nicht mehr verwendet werden.</description>
+      <description>
+
+&lt;h1 id=&#34;grundidee&#34;&gt;Grundidee&lt;/h1&gt;
+
+&lt;p&gt;Ich habe mich in den letzen paar Tagen damit beschäftigt Dinge rund um den Prosody Server zu automatisieren.
+Daher möchte ich hier einfach mal meine Lösung einiger kleiner Probleme vorstellen.&lt;/p&gt;
+
+&lt;h1 id=&#34;problem&#34;&gt;Problem&lt;/h1&gt;
+
+&lt;p&gt;Das grundsätzliche Problem, welches so ziemlich alle Server mit offener Registrierung teilen, sind Zombie Accounts. Sprich Accounts die erstellt wurden, allerdings nie verwendet werden. Oder Accounts die erstellt wurden und irgendwann von ihrem Nutzer/in nicht mehr verwendet werden. Solche Accounts verursachen eine vermeidbare Last für das System.&lt;br&gt;
+Die zweite größere Quelle liegt in einem Problem Prosodys Dateien oder Datenbank Einträge korrekt bzw. überhaupt zu löschen. Namentlich sind hier &lt;a href=&#34;https://modules.prosody.im/mod_http_upload.html&#34; target=&#34;_blank&#34;&gt;mod_http_upload&lt;/a&gt; und &lt;a href=&#34;https://modules.prosody.im/mod_mam.html&#34; target=&#34;_blank&#34;&gt;mod_mam&lt;/a&gt; zu nennen.
+Vor allem bei dem Modul mam bestehen Probleme, da die Einträge eines jeden Users einzeln bearbeitet werden. Daher steigt die Bearbeitungszeit bei größeren Userzahlen enorm an.&lt;/p&gt;
+
+&lt;h1 id=&#34;lösungsansatz&#34;&gt;Lösungsansatz&lt;/h1&gt;
+
+&lt;p&gt;Als Lösungsansatz habe ich ein einfaches Skript geschrieben, das tägliche &amp;ldquo;housekeeping&amp;rdquo; Aufgaben für mich übernimmt.&lt;br&gt;
+&lt;a href=&#34;https://thomas-leister.de/&#34; target=&#34;_blank&#34;&gt;Thomas Leister&lt;/a&gt; hat vor einiger Zeit einen sehr ähnlichen &lt;a href=&#34;https://thomas-leister.de/prosody-inaktive-accounts-loeschen&#34; target=&#34;_blank&#34;&gt;Lösungsansatz&lt;/a&gt; veröffentlicht, den ich in meinem Skript erweitert habe, um ihn vollständig zu automatisieren.&lt;br&gt;
+Das im Folgenden beschriebene Skript steht auf &lt;a href=&#34;https://github.com/mightyBroccoli/prosody_housekeeping&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt; zur Verfügung.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;WARNUNG&lt;/strong&gt;: Das Skript verfügt über einen &lt;em&gt;configtest&lt;/em&gt;; durch das ausführen mit &lt;code&gt;--configtest&lt;/code&gt; oder &lt;code&gt;-t&lt;/code&gt; werden alle Filter angewendet, ohne das Einträge gelöscht werden. So ist es möglich anschauenlich zu sehen was bei einem ausführen passiert wäre. Es ist äußerste Vorsicht geboten beim konfigurieren des Skripts, daher ist ein testen der Konfiguration sehr empfohlen.&lt;/p&gt;
+
+&lt;h1 id=&#34;skript&#34;&gt;Skript&lt;/h1&gt;
+
+&lt;p&gt;Das Skript arbeitet nacheinander alle diese Probleme ab und beseitigt diese Probleme in mehreren Schritten ohne das Usereingaben notwendig sind.&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;konfiguration&#34;&gt;Konfiguration&lt;/h2&gt;
+
+&lt;p&gt;Für die Verwendung des Skriptes werden zwei Module benötigt. Diese sollten im Modul Verzeichnis von Prosody vorhanden sein.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://modules.prosody.im/mod_list_inactive.html&#34; target=&#34;_blank&#34;&gt;mod_list_inactive&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://modules.prosody.im/mod_lastlog.html&#34; target=&#34;_blank&#34;&gt;mod_lastlog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;mod_lastlog lässt sich einfach in die modules_enabled{} Sektion der Prosody Konfiguration eintragen. Für das Modul ist keine weitere Konfiguration notwendig.
+Der einfachste Weg ist, das gesamte Mercurial Archiv der Community Module zu klonen und in der Prosody Konfiguration zu referenzieren. Eine Anleitung wie das geht findet sich in der Prosody &lt;a href=&#34;https://prosody.im/doc/installing_modules#prosody-modules&#34; target=&#34;_blank&#34;&gt;Dokumentation&lt;/a&gt;.&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Nun sollte im Skript selbst, über die Variabeln, eingestellt werden was für Zeiteinheiten gewünscht sind. Außerdem sollten eventuell abweichende Pfade auf die jeweiligen Systemverhältnisse angepasst werden.&lt;br&gt;
+Der Folgende Abschnitt zeigt einen Ausschnitt aus dem Skript, welcher die Konfigurationsvariablen, die Filter sowie den &lt;code&gt;--configtest&lt;/code&gt; catch zeigt.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;###### CONFIGURATION ######
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# configuration variables
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;tmp_directory&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/tmp/prosody/
+junk_to_delete&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$tmp_directory/accounts_to_delete.txt
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# maximum timeframe for accounts registered but not logged in
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# needs to be in the syntax 1day 2weeks 3months 4years
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;unused_accounts_timeframe&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;14days&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# maxium timeframe for accounts since last login
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;old_accounts_timeframe&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1year&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# maximum age of mod_mam messags stored in the database
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;enable_mam_clearing&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;false
+&lt;span style=&#34;color:#75715e&#34;&gt;# needs to be in mysql syntax 1 DAY 2 MONTH 3 YEAR
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;mam_message_live&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2 MONTH&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# prosody mysql login credentials
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;prosody_db_user&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;prosody&amp;#34;&lt;/span&gt;
+prosody_db_password&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;super_secret-password1337&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# http upload path
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;http_upload_path&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/var/lib/prosody/http_upload&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# http upload lifetime in days
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;http_upload_expire&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;31&amp;#34;&lt;/span&gt;
+
+catch_configtest&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75715e&#34;&gt;# test your configuration first to see what would have be deleted
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$1&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;-t&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$1&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;--configtest&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+		filter_unused_accounts
+		filter_old_accounts
+		filter_mam_messages --test
+
+		cat $junk_to_delete
+		exit
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;###### FILTER SECTION ######
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;filter_unused_accounts&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75715e&#34;&gt;# filter all registered but not logged in accounts older then $unused_accounts_timeframe
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	prosodyctl mod_list_inactive magicbroccoli.de &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$unused_accounts_timeframe&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; event | grep registered | sed &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;s/registered//g&amp;#39;&lt;/span&gt; | sed -e &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;s/^/prosodyctl deluser /&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; $junk_to_delete
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+
+filter_old_accounts&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75715e&#34;&gt;# filter all inactive accounts older then $old_accounts_timeframe
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	prosodyctl mod_list_inactive magicbroccoli.de &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$old_accounts_timeframe&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; | sed -e &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;s/^/prosodyctl deluser /&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; $junk_to_delete
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+
+filter_mam_messages&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75715e&#34;&gt;# only run this filter if $enable_mam_clearing is set to true
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$enable_mam_clearing&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+		&lt;span style=&#34;color:#75715e&#34;&gt;# catch config test
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$1&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;--test&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+			&lt;span style=&#34;color:#75715e&#34;&gt;# this is currently a workaround caused by the extrem slowness of prosodys own clearing mechanism
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;			&lt;span style=&#34;color:#75715e&#34;&gt;# filter all expired mod_mam messages from archive
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;			echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;SELECT * FROM prosody.prosodyarchive WHERE \`when\` &amp;lt; UNIX_TIMESTAMP(DATE_SUB(curdate(),INTERVAL &lt;/span&gt;$mam_message_live&lt;span style=&#34;color:#e6db74&#34;&gt;));&amp;#34;&lt;/span&gt; | mysql -u $prosody_db_user -p$prosody_db_password &amp;amp;&amp;gt;&amp;gt; $junk_to_delete
+			&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+		&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+		&lt;span style=&#34;color:#75715e&#34;&gt;# this is currently a workaround caused by the extrem slowness of prosodys own clearing mechanism
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		&lt;span style=&#34;color:#75715e&#34;&gt;# delete all expired mod_mam messages from archive
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;		echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;DELETE FROM prosody.prosodyarchive WHERE \`when\` &amp;lt; UNIX_TIMESTAMP(DATE_SUB(curdate(),INTERVAL &lt;/span&gt;$mam_message_live&lt;span style=&#34;color:#e6db74&#34;&gt;));&amp;#34;&lt;/span&gt; | mysql -u $prosody_db_user -p$prosody_db_password
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+
+filter_expired_http_uploads&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color:#75715e&#34;&gt;# currently a workaround as the mod_http_uploud is not removing the folder which holds the file
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	find $http_upload_path/* -maxdepth &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; -type d -mtime +$http_upload_expire | sed -e &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;s/^/rm -rf /&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; $junk_to_delete
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Datenbank Zusammenbruch</title>
       <link>https://magicbroccoli.de/post/database-failure/</link>
       <pubDate>Fri, 25 Aug 2017 23:30:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/database-failure/</guid>
-      <description>Bekanntmachung Heute, am 25 August, kam es zu dem bisher größten Ausfall meiner Services. Leider ist aufgrund eines Fehler, der mir bisher nicht weiter bekannt ist, eine Platte des Server ausgefallen. Die Datenbank hat das ganze nicht sonderlich gut aufgenommen.
-Ich fahre regelmäßig Backups und die binlogs waren auch wiederherstellbar, daher kam es zu keinem Datenverlust. Allerdings musste ich die Datenbank neu aufbauen, was sich als zeitintensiv herausstellte.
-Gegen 23:30, nach fast 5 Stunden, ist es mir nun gelungen alle Datenbanken wiederherzustellen und alle Services vollständig wieder in Betrieb zu nehmen.</description>
+      <description>
+
+&lt;h2 id=&#34;bekanntmachung&#34;&gt;Bekanntmachung&lt;/h2&gt;
+
+&lt;p&gt;Heute, am 25 August, kam es zu dem bisher größten Ausfall meiner Services. Leider ist aufgrund eines Fehler, der mir bisher nicht weiter bekannt ist, eine Platte des Server ausgefallen. Die Datenbank hat das ganze nicht sonderlich gut aufgenommen.&lt;/p&gt;
+
+&lt;p&gt;Ich fahre regelmäßig Backups und die binlogs waren auch wiederherstellbar, daher kam es zu &lt;em&gt;keinem&lt;/em&gt; Datenverlust. Allerdings musste ich die Datenbank neu aufbauen, was sich als zeitintensiv herausstellte.&lt;/p&gt;
+
+&lt;p&gt;Gegen 23:30, nach fast 5 Stunden, ist es mir nun gelungen alle Datenbanken wiederherzustellen und alle Services vollständig wieder in Betrieb zu nehmen.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

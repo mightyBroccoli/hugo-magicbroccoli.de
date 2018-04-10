@@ -6,21 +6,87 @@
     <description>Recent content in Teamspeak on Magic Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
+    <managingEditor>mightyBroccoli (nico)</managingEditor>
+    <webMaster>mightyBroccoli (nico)</webMaster>
     <copyright>All rights reserved.</copyright>
     <lastBuildDate>Thu, 22 Jun 2017 14:15:25 +0200</lastBuildDate>
     
-	<atom:link href="https://magicbroccoli.de/categories/teamspeak/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://magicbroccoli.de/categories/teamspeak/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>TeamSpeak XMPP Push</title>
       <link>https://magicbroccoli.de/post/ts-xmpp-push/</link>
       <pubDate>Thu, 22 Jun 2017 14:15:25 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/ts-xmpp-push/</guid>
-      <description>Idee Die Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft mit einem Server verbunden sein kann, um nach dem Rechten zu sehen.
-Dieses Problem versuche ich hiermit anzugehen. Dafür durchsucht dieses nach verschiedenen Regeln die Logfiles, gefundene Zeilen werden anschließend an definierte Kontakte per XMPP sendet.
-Nutzen IMHO gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung sehr praktisch ist. Viele Server unterstützen eine Reihe von &amp;ldquo;Automatischen Moderationen&amp;rdquo;, dennoch finden User Möglichkeiten diese zu behindern oder sogar zu umgehen.</description>
+      <description>
+
+&lt;h2 id=&#34;idee&#34;&gt;Idee&lt;/h2&gt;
+
+&lt;p&gt;Die Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft mit einem Server verbunden sein kann, um nach dem Rechten zu sehen.&lt;br&gt;
+Dieses Problem versuche ich hiermit anzugehen. Dafür durchsucht dieses nach verschiedenen Regeln die Logfiles, gefundene Zeilen werden anschließend an definierte Kontakte per XMPP sendet.&lt;/p&gt;
+
+&lt;h3 id=&#34;nutzen&#34;&gt;Nutzen&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;IMHO&lt;/strong&gt; gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung sehr praktisch ist. Viele Server unterstützen eine Reihe von &amp;ldquo;Automatischen Moderationen&amp;rdquo;, dennoch finden User Möglichkeiten diese zu behindern oder sogar zu umgehen. Durch eine kurze Benachrichtigung ist es dem Admin/ Moderator möglich zu überblicken, was betroffen ist und ob sofortiges handeln notwendig ist.&lt;br&gt;
+Je nach Häufigkeit der Ausführung können die Benachrichtigung innerhalb von Sekunden gepushed werden.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---- Group change ----
+--- added ---
+2017-05-12 18:56:38.609377|INFO    |VirtualServer |1  |client (id:USER A) was added to servergroup &#39;SERVERGROUP NAME&#39;(id:SERVERGROUP ID) by client &#39;USERNAME&#39;(id:USER B)
+2017-05-12 22:09:01.658969|INFO    |VirtualServer |1  |client (id:USER ID) was added to servergroup &#39;SERVERGROUP NAME&#39;(id:SERVERGROUP ID) by client &#39;USERNAME&#39;(id:USER ID)
+---- Group change End ----
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;filter&#34;&gt;Filter&lt;/h2&gt;
+
+&lt;h4 id=&#34;server&#34;&gt;Server&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Accounting&lt;/li&gt;
+&lt;li&gt;ServerMain&lt;/li&gt;
+&lt;li&gt;Warning&lt;/li&gt;
+&lt;li&gt;ERROR&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;user-spezifisch&#34;&gt;User spezifisch&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Complaint&lt;/li&gt;
+&lt;li&gt;Kick&lt;/li&gt;
+&lt;li&gt;Ban ( added and deleted )&lt;/li&gt;
+&lt;li&gt;Group change&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;channel&#34;&gt;Channel&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;creation&lt;/li&gt;
+&lt;li&gt;deletion&lt;/li&gt;
+&lt;li&gt;changed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;github&#34;&gt;Github&lt;/h2&gt;
+
+&lt;p&gt;Das Projekt ist gehostet auf &lt;a href=&#34;https://github.com/mightyBroccoli/logwatch-scripts&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt;. Dort ist auch ein Bereich für &lt;a href=&#34;https://github.com/mightyBroccoli/logwatch-scripts/issues&#34; target=&#34;_blank&#34;&gt;Github - Issues&lt;/a&gt;, falls Probleme auftreten oder Verbesserungsvorschläge bestehen.&lt;/p&gt;
+
+&lt;h2 id=&#34;debian-9&#34;&gt;Debian 9&lt;/h2&gt;
+
+&lt;p&gt;Leider besteht mit Debian Stretch ein Problem mit perl wodurch &lt;em&gt;sendxmpp&lt;/em&gt;, das xmpp cli Modul des Skripts nicht mehr funktioniert. Leider kann ich da im Moment erst mal nichts machen, aber ich repariere das Skipt für Debian Stretch, sobald es möglich ist.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Update : 28.07.2017 Debian 9 Perl5 Problematik
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Use of uninitialized value in numeric eq &lt;span style=&#34;color:#f92672&#34;&gt;(==)&lt;/span&gt; at /usr/share/perl5/XML/Stream.pm line &lt;span style=&#34;color:#ae81ff&#34;&gt;631&lt;/span&gt;.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Ich hab mit etwas debugging herausgefunden, welche Zeilen geändert werden müssen, um perl-xmlstream wieder zu fixxen.
+Die Datei &lt;code&gt;/usr/share/perl5/XML/Stream.pm&lt;/code&gt; müsste geändert werden. (Pfad kann abweichen je nach OS)
+Mit nano lässt sich bequem nach der Zeile suchen, mit Shift + W. Danach ändert man Zeile 631.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-perl&#34; data-lang=&#34;perl&#34;&gt;$self&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;{SIDS}&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;{default}&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;{ssl_ca_path} &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+zu
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-perl&#34; data-lang=&#34;perl&#34;&gt;$self&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;{SIDS}&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;{default}&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;{ssl_ca_path} &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/etc/ssl/certs&amp;#39;&lt;/span&gt;;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Nach dieser Änderung hat sich das Problem eingestellt und sendxmpp funktionierte wieder genauso tadellos wie zuvor.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

@@ -6,20 +6,150 @@
     <description>Recent content in Xep 0368 on Magic Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
+    <managingEditor>mightyBroccoli (nico)</managingEditor>
+    <webMaster>mightyBroccoli (nico)</webMaster>
     <copyright>All rights reserved.</copyright>
     <lastBuildDate>Sun, 06 Aug 2017 15:00:00 +0200</lastBuildDate>
     
-	<atom:link href="https://magicbroccoli.de/tags/xep-0368/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://magicbroccoli.de/tags/xep-0368/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>XMPP over TLS Tutorial</title>
       <link>https://magicbroccoli.de/post/xmpp-over-tls-guide/</link>
       <pubDate>Sun, 06 Aug 2017 15:00:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/xmpp-over-tls-guide/</guid>
-      <description>How to setup XEP-0368 Was ist XEP-0368 Bei XEP-0368 handelt es sich um ein Verfahren welches XMPP-Clients ermöglicht über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken. Dies ist äußerst nützlich, falls die regulären Verbindungswege blockiert sind zb. durch Firewalls.
-XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method of discovering how to connect to an XMPP server. This XEP extends that to include new xmpps-client/xmpps-server SRV records pointing to direct TLS ports and combine priorities and weights as if they were a single SRV record similar to RFC 6186.</description>
+      <description>
+
+&lt;h2 id=&#34;how-to-setup-xep-0368&#34;&gt;How to setup XEP-0368&lt;/h2&gt;
+
+&lt;h3 id=&#34;was-ist-xep-0368&#34;&gt;Was ist XEP-0368&lt;/h3&gt;
+
+&lt;p&gt;Bei &lt;a href=&#34;https://xmpp.org/extensions/xep-0368.html&#34; target=&#34;_blank&#34;&gt;XEP-0368&lt;/a&gt; handelt es sich um ein Verfahren welches XMPP-Clients ermöglicht über SRV Einträge im DNS, alternative Verbindungsmöglichkeiten zu entdecken. Dies ist äußerst nützlich, falls die regulären Verbindungswege blockiert sind zb. durch Firewalls.&lt;/p&gt;
+
+&lt;blockquote cite=&#34;https://xmpp.org/extensions/xep-0368.html&#34;&gt;XMPP Core specifies the use of xmpp-client/xmpp-server SRV records as the method of discovering how to connect to an XMPP server. This XEP extends that to include new xmpps-client/xmpps-server SRV records pointing to direct TLS ports and combine priorities and weights as if they were a single SRV record similar to RFC 6186. It also provides an easy way for clients to bypass restrictive firewalls that only allow HTTPS, for servers to host multiple protocols/services on a single port, and for servers and clients to take advantage of less round trips and existing direct TLS loadbalancers.&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;was-wird-benötigt&#34;&gt;Was wird benötigt?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Prosody Server&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;optional&lt;/strong&gt; gültiges SSL Zertifikat ( LetsEncrypt / oä )&lt;/li&gt;
+&lt;li&gt;2 IPv4 Adressen ( &lt;strong&gt;Hinweis beachten&lt;/strong&gt; )&lt;/li&gt;
+&lt;li&gt;iptables und iptables-persistent&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;optional&lt;/strong&gt; Webserver&lt;/li&gt;
+&lt;li&gt;Kontrolle über eure DNS Zone&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span style=&#34;color:red&#34;&gt;&lt;em&gt;Hinweis&lt;/em&gt;: Notwendigkeit 2 IPv4 Adressen&lt;/span&gt;
+Es werden 2 IP Adressen benötigt, wenn Ihre IP Adresse bereits auf Port 443 lauscht. Sprich eine &lt;strong&gt;https&lt;/strong&gt; Website via Apache2 / nginx gehostet wird. Da für diese Methode der Port verpflichtend benötigt wird. Ist dies nicht der Fall reicht eine einzelne IP Adresse vollkommen aus.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;1-dns-einstellungen&#34;&gt;1. DNS Einstellungen&lt;/h3&gt;
+
+&lt;p&gt;Den Anfang machen die DNS Einstellungen, da die Publizierung der neuen DNS Einstellungen bis zu 48 Stunden dauern kann.
+Zusätzlich zu den &lt;a href=&#34;https://prosody.im/doc/dns&#34; target=&#34;_blank&#34;&gt;Standard SRV Einträgen&lt;/a&gt; wird ein weiterer &lt;code&gt;_xmpps-client._tcp&lt;/code&gt; Eintrag benötigt. Außerdem ein weiterer A Record für die gewünschte Subdomain.&lt;/p&gt;
+
+&lt;p&gt;In diesem Beispiel ist die Domain &lt;code&gt;example.com&lt;/code&gt; und XMPP over TLS soll über die SubDomain &lt;code&gt;xmpps.example.com&lt;/code&gt; erreichbar sein.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-DNS&#34; data-lang=&#34;DNS&#34;&gt;# Standard Settings
+_xmpp-client._tcp.example.com. 18000 IN SRV 0 5 5222 example.com.
+_xmpp-server._tcp.example.com. 18000 IN SRV 0 5 5269 example.com.
+
+# XMPP over TLS Settings
+_xmpps-client._tcp.example.com. 18000 IN SRV 10 5 xmpps.example.com.
+
+# A record
+xmpps.example.com. 18000 IN A $zweite_ip_adresse&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;2-prosody-server-konfiguration&#34;&gt;2. Prosody Server Konfiguration&lt;/h3&gt;
+
+&lt;p&gt;Für den Verbindungsaufbau muss in der Prosody Konfiguration &lt;em&gt;legacy_ssl_ports&lt;/em&gt; definiert werden, damit das &lt;code&gt;http&lt;/code&gt; Modul auch auf dem gewählten Port lauscht. Das Modul &lt;em&gt;mod_legacyauth&lt;/em&gt; wird hierfür allerdings nicht benötigt.
+Ein Neustart des Prosody Services ist nach dem setzen dieser Einstellung zwingend &lt;strong&gt;erforderlich&lt;/strong&gt;.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lua&#34; data-lang=&#34;lua&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-- XEP-0368: SRV records for XMPP over TLS&lt;/span&gt;
+legacy_ssl_ports &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; { &lt;span style=&#34;color:#ae81ff&#34;&gt;5223&lt;/span&gt; }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;3-ssl-zertifikat-optional&#34;&gt;3. SSL Zertifikat ( &lt;em&gt;optional&lt;/em&gt; )&lt;/h3&gt;
+
+&lt;p&gt;Hier wäre der Zeitpunkt das bestehende Zertifikat für &lt;code&gt;example.com&lt;/code&gt; auf &lt;code&gt;xmpps.example.com&lt;/code&gt; auszuweiten, um keinen &lt;code&gt;common name error&lt;/code&gt; zu erzeugen. Dieses erweiterte Zertifikat ist dem Prosody zur Verfügung zu stellen. Die Ausstellung eines neuen LetEncrypt Zertifikats ist nach &lt;a href=&#34;#5-webserver&#34;&gt;Schritt 5: Webserver&lt;/a&gt; deutlich einfacher.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Hinweis&lt;/em&gt; : Dieser Teil ist vollkommen optional. Die &lt;a href=&#34;https://prosody.im/doc/certificates&#34; target=&#34;_blank&#34;&gt;Prosody Dokumentation&lt;/a&gt; zeigt auf, dass kein Zertifikat notwendig wäre.
+&lt;strong&gt;IMHO&lt;/strong&gt; Es macht das Gesamtbild einheitlicher, wenn auch an diesem Endpunkt ein gültiges SSL Zertifikat präsentiert wird.&lt;br&gt;
+In Section &lt;a href=&#34;#5-webserver&#34;&gt;5. Webserver&lt;/a&gt; gehe ich darauf noch einmal genau ein.&lt;/p&gt;
+
+&lt;h3 id=&#34;4-iptables-regeln&#34;&gt;4. iptables Regeln&lt;/h3&gt;
+
+&lt;p&gt;Für das Umleiten der Pakete wird die PREROUTING und POSTROUTING Kette von &lt;code&gt;iptables&lt;/code&gt; verwendet. Dabei werden Pakete noch bevor sie überhaupt geroutet werden umgeleitet.
+Dafür werden 2 Regeln verwendet um einen &lt;code&gt;malformed xml-error&lt;/code&gt; zu vermeiden.
+Regel Nr. 1 leitet den gesamten Traffic der zweiten IP von Port 443, ohne Veränderung an Port 5223 der ersten IP weiter.&lt;/p&gt;
+
+&lt;p&gt;Für die Antwort des Prosody Servers wird allerdings eine zweite Regel benötigt, die sich in der POSTROUTING Kette befindet. Diese stellt sicher, dass das Antwort-Paket wieder über Port 443 der zweiten IP Adresse den Server verlässt.&lt;br&gt;
+&lt;em&gt;Sollte bei der Prosody Konfiguration ein anderer Port gewählt werden als der default Port, muss dieser natürlich in den iptables Regeln ausgetauscht werden.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In diesem Beispiel ist erste_ip, jene IP-Adresse auf der auch der httpd Server lauscht. zweite_ip bezeichnet somit die zweite Adresse speziell für XMPP over TLS.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# PREROUTING
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;iptables -t nat -A PREROUTING -d zweite_ip -p tcp --dport &lt;span style=&#34;color:#ae81ff&#34;&gt;443&lt;/span&gt; -j DNAT --to-destination erste_ip:5223
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# POSTROUTING
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;iptables -t nat -A POSTROUTING -p tcp -d  zweite_ip --dport &lt;span style=&#34;color:#ae81ff&#34;&gt;5223&lt;/span&gt; -j SNAT --to-source erste_ip:5223&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;Abschließend sollten diese Regeln mit &lt;code&gt;iptables-save&lt;/code&gt; gespeichert werden, damit diese bei einem reboot erneut angewendet werden.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;iptables-save &amp;gt; /etc/iptables/rules.v4&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;5-webserver&#34;&gt;5. Webserver&lt;/h3&gt;
+
+&lt;p&gt;Die Konfiguration des Webserver ist grundsätzlich nicht notwendig, macht das testen der vorgenommenen Änderungen, sowie erzeugen bzw. erweitern bestehender Zertifikate allerdings bedeutend einfacher.&lt;br&gt;
+Im Folgenden habe ich die simpelste Möglichkeit eins vHosts angenommen. Dabei ist als Beispiel immer example.de verwendet worden.&lt;/p&gt;
+
+&lt;h5 id=&#34;nginx&#34;&gt;nginx&lt;/h5&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nginx&#34; data-lang=&#34;nginx&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;server&lt;/span&gt; {
+	&lt;span style=&#34;color:#f92672&#34;&gt;listen&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;zweite_ip:80&lt;/span&gt;;
+	&lt;span style=&#34;color:#f92672&#34;&gt;server_name&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;xmpps.example.de&lt;/span&gt;;
+	&lt;span style=&#34;color:#75715e&#34;&gt;#hier kann je nach wunsch eine weiterleitung stattfinden
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#f92672&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;301&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;https://example.de&lt;/span&gt;;
+
+	&lt;span style=&#34;color:#75715e&#34;&gt;# letsencrypt love
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;^~&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;/.well-known/acme-challenge/&lt;/span&gt; {
+    	&lt;span style=&#34;color:#f92672&#34;&gt;default_type&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;text/plain&amp;#34;&lt;/span&gt;;
+	}
+
+	&lt;span style=&#34;color:#f92672&#34;&gt;location&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;/.well-known/acme-challenge/&lt;/span&gt; {
+    	&lt;span style=&#34;color:#f92672&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;404&lt;/span&gt;;
+	}
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h5 id=&#34;apache2&#34;&gt;apache2&lt;/h5&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-apache&#34; data-lang=&#34;apache&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;VirtualHost&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;zweite_ip:80&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+	ServerName xmpps.example.de
+
+	&lt;span style=&#34;color:#75715e&#34;&gt;# hier kann je nach wunsch eine weiterleitung stattfinden&lt;/span&gt;
+	Redirect / https://example.de;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/VirtualHost&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Sind diese Änderungen vorgenommen, ist es leicht möglich via LetsEncrypt ein Zertifikat für die SubDomain auzustellen. Zusätzlich dazu ist es nun möglich direkt zu testen ob XMPP over TLS funktioniert.&lt;/p&gt;
+
+&lt;h2 id=&#34;abschluss&#34;&gt;Abschluss&lt;/h2&gt;
+
+&lt;p&gt;Sollten alle diese Schritte erfolgreich abgeschlossen sein, ist es sehr leicht möglich zu testen ob alles so funktioniert wie es soll. Hierfür lässt sich &lt;code&gt;curl -i&lt;/code&gt; verwenden.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl -i https://xmpps.example.com&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Hinweis&lt;/strong&gt;: Falls es an diesem Endpunkt keine gültigen Zertifikate gibt, sollte hier der Befehl &lt;code&gt;curl -ik&lt;/code&gt; gewählt werden, um den TLS Error zu ignorieren.&lt;/p&gt;
+
+&lt;p&gt;Als Ergebnis sollte ein &lt;em&gt;xml stream error&lt;/em&gt; zu sehen sein, &lt;strong&gt;ohne&lt;/strong&gt; Apache2 / nginx header.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?xml version=&amp;#39;1.0&amp;#39;?&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;stream:stream&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;xmlns:stream=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;http://etherx.jabber.org/streams&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;xml:lang=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;en&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;xmlns=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;jabber:client&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;stream:error&amp;gt;&lt;/span&gt;
+		&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;not-well-formed&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;xmlns=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;urn:ietf:params:xml:ns:xmpp-streams&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/stream:error&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/stream:stream&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;span style=&#34;color:red&#34;&gt;&lt;strong&gt;Hinweis&lt;/strong&gt;:&lt;/span&gt; Für das Testen via curl sollte eine andere Maschine gewählt werden. Ausgeführt auf der gleichen Maschine durchlaufen die Pakete nicht die PREROUTING bzw. POSTROUTING Kette, daher wird die Verbindung abgelehnt.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

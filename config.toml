@@ -3,7 +3,6 @@ DefaultContentLanguage = "de"
 languageCode = "de-DE"
 canonifyurls = true
 title = "Magic Broccoli"
-author = "nico"
 copyright = "All rights reserved."
 paginate = 7
 theme = "hugo-bootstrap"
@@ -12,6 +11,10 @@ disqusShortname = "magicbroccoli-de"
 enableRobotsTXT = true
 rssLimit = "15"
 noTimes = true
+
+[author]
+  name = "nico"
+  email = "mightyBroccoli"
 
 [params]
   description = "Ein moderner, deutscher XMPP Server mit einem Schwerpunkt auf Privatsphäre und Datenschutz. Erstelle dir hier kostenlos einen Account."

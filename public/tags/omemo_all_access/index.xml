@@ -6,20 +6,28 @@
     <description>Recent content in Omemo_all_access on Magic Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
+    <managingEditor>mightyBroccoli (nico)</managingEditor>
+    <webMaster>mightyBroccoli (nico)</webMaster>
     <copyright>All rights reserved.</copyright>
     <lastBuildDate>Wed, 20 Dec 2017 10:00:00 +0200</lastBuildDate>
     
-	<atom:link href="https://magicbroccoli.de/tags/omemo_all_access/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://magicbroccoli.de/tags/omemo_all_access/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Omemo Complicance</title>
       <link>https://magicbroccoli.de/post/omemo-complicance/</link>
       <pubDate>Wed, 20 Dec 2017 10:00:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/omemo-complicance/</guid>
-      <description>Seit gestern ist auf meinem Server ein neues OMEMO Modul aktiviert. Dieses ermöglicht es OMEMO verschlüsselte Konversationen zu beginnen, ohne das dafür eine gegenseitige presence subscription bestehen muss. Desweiteren hat dies Auswirkungen auf Chaträume, da es nun möglich ist in einem Chatraum OMEMO zu aktivieren ohne das sich alle Parteien hinzugefügt haben.
-I wrote a small @prosodyim module that gives non-contacts access to your OMEMO keys. It’s a temporary work around until proper support for node configuration / publish-options comes around.</description>
+      <description>&lt;p&gt;Seit gestern ist auf meinem Server ein neues OMEMO Modul aktiviert. Dieses ermöglicht es OMEMO verschlüsselte Konversationen zu beginnen, ohne das dafür eine gegenseitige presence subscription bestehen muss. Desweiteren hat dies Auswirkungen auf Chaträume, da es nun möglich ist in einem Chatraum OMEMO zu aktivieren ohne das sich alle Parteien hinzugefügt haben.&lt;/p&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;I wrote a small &lt;a href=&#34;https://twitter.com/prosodyim?ref_src=twsrc%5Etfw&#34;&gt;@prosodyim&lt;/a&gt; module that gives non-contacts access to your OMEMO keys. It’s a  temporary work around until proper support for node configuration /  publish-options comes around. It&amp;#39;s an important step towards our »OMEMO  by default« goal.&lt;a href=&#34;https://t.co/rVPXOf7m9o&#34;&gt;https://t.co/rVPXOf7m9o&lt;/a&gt;&lt;/p&gt;&amp;mdash; Daniel Gultsch (@iNPUTmice) &lt;a href=&#34;https://twitter.com/iNPUTmice/status/943181435120340992?ref_src=twsrc%5Etfw&#34;&gt;December 19, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Dieses Modul wird bereitgestellt von Daniel Gultsch ( Entwickler der App &lt;a href=&#34;https://conversations.im/&#34; target=&#34;_blank&#34;&gt;Conversations&lt;/a&gt; ) und steht auf GitHub unter &lt;a href=&#34;https://github.com/iNPUTmice/omemo_all_access&#34;&gt;iNPUTmice/omemo_all_access&lt;/a&gt; zur Verfügung. Vielen Dank an Daniel! Dies ist ein weiter wichtiger Schritt in Richtung &lt;em&gt;OMEMO by default&lt;/em&gt;.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

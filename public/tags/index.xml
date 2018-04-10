@@ -6,17 +6,19 @@
     <description>Recent content in Tags on Magic Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
+    <managingEditor>mightyBroccoli (nico)</managingEditor>
+    <webMaster>mightyBroccoli (nico)</webMaster>
     <copyright>All rights reserved.</copyright>
     <lastBuildDate>Mon, 28 Aug 2017 13:30:00 +0200</lastBuildDate>
     
-	<atom:link href="https://magicbroccoli.de/tags/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://magicbroccoli.de/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Cacert</title>
       <link>https://magicbroccoli.de/tags/cacert/</link>
       <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/tags/cacert/</guid>
       <description></description>
     </item>
@@ -25,7 +27,7 @@
       <title>Ccc</title>
       <link>https://magicbroccoli.de/tags/ccc/</link>
       <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/tags/ccc/</guid>
       <description></description>
     </item>
@@ -34,7 +36,7 @@
       <title>Chatsecure</title>
       <link>https://magicbroccoli.de/tags/chatsecure/</link>
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/tags/chatsecure/</guid>
       <description></description>
     </item>
@@ -43,7 +45,7 @@
       <title>Gajim</title>
       <link>https://magicbroccoli.de/tags/gajim/</link>
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/tags/gajim/</guid>
       <description></description>
     </item>
@@ -52,7 +54,7 @@
       <title>Keybase.io</title>
       <link>https://magicbroccoli.de/tags/keybase.io/</link>
       <pubDate>Sat, 03 Feb 2018 15:00:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/tags/keybase.io/</guid>
       <description></description>
     </item>
@@ -61,7 +63,7 @@
       <title>Maintenance</title>
       <link>https://magicbroccoli.de/tags/maintenance/</link>
       <pubDate>Fri, 30 Mar 2018 13:37:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/tags/maintenance/</guid>
       <description></description>
     </item>
@@ -70,7 +72,7 @@
       <title>Mariadb</title>
       <link>https://magicbroccoli.de/tags/mariadb/</link>
       <pubDate>Thu, 07 Dec 2017 17:30:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/tags/mariadb/</guid>
       <description></description>
     </item>
@@ -79,7 +81,7 @@
       <title>Mildly Usefull</title>
       <link>https://magicbroccoli.de/tags/mildly-usefull/</link>
       <pubDate>Fri, 30 Mar 2018 13:37:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/tags/mildly-usefull/</guid>
       <description></description>
     </item>
@@ -88,7 +90,7 @@
       <title>Omemo</title>
       <link>https://magicbroccoli.de/tags/omemo/</link>
       <pubDate>Sat, 03 Feb 2018 15:00:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/tags/omemo/</guid>
       <description></description>
     </item>
@@ -97,7 +99,7 @@
       <title>Omemo_all_access</title>
       <link>https://magicbroccoli.de/tags/omemo_all_access/</link>
       <pubDate>Wed, 20 Dec 2017 10:00:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/tags/omemo_all_access/</guid>
       <description></description>
     </item>
@@ -106,7 +108,7 @@
       <title>Publish Options</title>
       <link>https://magicbroccoli.de/tags/publish-options/</link>
       <pubDate>Wed, 20 Dec 2017 10:00:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/tags/publish-options/</guid>
       <description></description>
     </item>
@@ -115,7 +117,7 @@
       <title>Xep 0313</title>
       <link>https://magicbroccoli.de/tags/xep-0313/</link>
       <pubDate>Thu, 07 Dec 2017 17:30:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/tags/xep-0313/</guid>
       <description></description>
     </item>
@@ -124,7 +126,7 @@
       <title>Xep 0368</title>
       <link>https://magicbroccoli.de/tags/xep-0368/</link>
       <pubDate>Sun, 06 Aug 2017 15:00:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/tags/xep-0368/</guid>
       <description></description>
     </item>
@@ -133,7 +135,7 @@
       <title>Xep 0384</title>
       <link>https://magicbroccoli.de/tags/xep-0384/</link>
       <pubDate>Sat, 03 Feb 2018 15:00:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/tags/xep-0384/</guid>
       <description></description>
     </item>

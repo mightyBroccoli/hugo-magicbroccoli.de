@@ -6,20 +6,144 @@
     <description>Recent content in Gajim on Magic Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
+    <managingEditor>mightyBroccoli (nico)</managingEditor>
+    <webMaster>mightyBroccoli (nico)</webMaster>
     <copyright>All rights reserved.</copyright>
     <lastBuildDate>Sat, 22 Jul 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://magicbroccoli.de/tags/gajim/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://magicbroccoli.de/tags/gajim/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Gajim Tutorial</title>
       <link>https://magicbroccoli.de/page/tutorial_gajim/</link>
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/page/tutorial_gajim/</guid>
-      <description>1. Account Registrierung Zuerst muss sich ein Account erstellt werden. Hierfür ist die Web Registrierung der Anlaufpunkt. Speziell für magicbroccoli.de sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist. Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die Nutzungsbedingungen sowie Datenschutzbestimmungen. 2. Installation Gajim lässt sich unter Windows und Linux problemlos installieren. &amp;ndash;&amp;gt; Gajim Download
-2.1 Archlinux Bei Archlinux ist die Installation einen Schritt länger, aber nicht sonderlich schwierig.</description>
+      <description>
+
+&lt;h2 id=&#34;1-account-registrierung&#34;&gt;1. Account Registrierung&lt;/h2&gt;
+
+&lt;p&gt;Zuerst muss sich ein Account erstellt werden. Hierfür ist die Web Registrierung der Anlaufpunkt.
+Speziell für &lt;strong&gt;magicbroccoli.de&lt;/strong&gt; sollten Sie sich das Passwort unbedingt merken, da eine Wiederherstellung nur dann durchgeführt wird, wenn eine eindeutige Identifizierung des Accountbesitzers möglich ist. Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die &lt;a href=&#34;https://magicbroccoli.de/termsofuse/&#34;&gt;Nutzungsbedingungen&lt;/a&gt; sowie &lt;a href=&#34;https://magicbroccoli.de/datenschutz/&#34;&gt;Datenschutzbestimmungen&lt;/a&gt;.
+&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/webregister.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;2-installation&#34;&gt;2. Installation&lt;/h2&gt;
+
+&lt;p&gt;Gajim lässt sich unter Windows und Linux problemlos installieren. &amp;ndash;&amp;gt; &lt;a href=&#34;https://gajim.org/?lang=de&#34; target=&#34;_blank&#34;&gt;Gajim Download&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;2-1-archlinux&#34;&gt;2.1 Archlinux&lt;/h3&gt;
+
+&lt;p&gt;Bei Archlinux ist die Installation einen Schritt länger, aber nicht sonderlich schwierig.
+Gajim lässt sich genauso über Pacman installieren &lt;code&gt;sudo pacman -S gajim&lt;/code&gt;. Allerdings wird für das Omemo Plugin zusätzlich das Packet &lt;a href=&#34;https://aur.archlinux.org/packages/gajim-plugin-omemo/&#34; target=&#34;_blank&#34;&gt;gajim-plugin-omemo&lt;/a&gt; aus dem Arch AUR benötigt.&lt;/p&gt;
+
+&lt;p&gt;Ein deutlich ausfürlicheres Tutorial finden Sie hier: &lt;a href=&#34;https://wiki.archlinux.org/index.php/Gajim&#34; target=&#34;_blank&#34;&gt;Gajim Archlinux&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;2-2-ubuntu-debian&#34;&gt;2.2 Ubuntu/Debian&lt;/h3&gt;
+
+&lt;p&gt;Je nach Wahl der Apt Repositories ist möglich und empfehlenswert Gajim direkt zu installieren.
+Hierfür wird meistens ein Administrator oder ein Benutzer mit Zugriff auf &lt;code&gt;sudo&lt;/code&gt; benötigt. Anschließend lässt sich mit &lt;code&gt;sudo apt-get install gajim&lt;/code&gt; Gajim installieren.&lt;/p&gt;
+
+&lt;p&gt;Ein deutlich ausfürlicheres Tutorial finden Sie hier: &lt;a href=&#34;https://wiki.ubuntuusers.de/Gajim/&#34; target=&#34;_blank&#34;&gt;Gajim Ubuntu/Debian&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;3-client-login&#34;&gt;3. Client Login&lt;/h2&gt;
+
+&lt;p&gt;Der Client Login gestaltet sich ähnlich einfach. Sie wählen aus, dass Sie bereits einen Account besitzen, jenen aus Schritt 1 oder einen bestehenden.
+Diesen tragen sie wie hier in die Felder ein. &lt;em&gt;Dabei ersetzen sie die Daten natürlich mit ihren eigenen.&lt;/em&gt;
+Sollten Ihre Daten korrekt sein folgt der eigentliche Login.
+Wenn Sie den Haken bei &amp;ldquo;Mein Profil setzten, wenn ich mich verbinde&amp;rdquo; setzen, bekommen Sie bei Ihrem ersten Login, die Möglichkeit Ihr Profil zu bearbeiten. Dies ist aber auch nachträglich noch möglich und ist 100% freiwillig und kann genauso komplett leer gelassen werden.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/gajim/clientlogin.png&#34; width=&#34;100%&#34;&gt;
+&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/gajim/logindata.png&#34; width=&#34;50%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/gajim/login.png&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;4-plugins&#34;&gt;4. Plugins&lt;/h2&gt;
+
+&lt;p&gt;Viele Funktionalitäten lassen sich bei Gajim mithilfe von Plugins stark erweitern. Unter Ändern &amp;gt; Plugins lassen sich unterschiedlichste Plugins installieren. Um alle Server Features effektiv nutzen zu können, empfehle ich mindestens folgende Plugins zu installieren.&lt;/p&gt;
+
+&lt;h3 id=&#34;4-1-omemo&#34;&gt;4.1 Omemo&lt;/h3&gt;
+
+&lt;p&gt;Bei &lt;a href=&#34;https://conversations.im/omemo/&#34; target=&#34;_blank&#34;&gt;Omemo&lt;/a&gt; handelt es sich um eine Weiterentwicklung des OTR (&lt;a href=&#34;https://wikipedia.org/wiki/Off-the-Record_Messaging&#34; target=&#34;_blank&#34;&gt;Off the record&lt;/a&gt;) Verfahrens. Besonders hierbei ist, dass mehrere Ressourcen pro Account und auch Gruppenkonversationen verschlüsselt werden können. Zusätzlich dazu können auch verschickte Medien verschlüsselt versendet werden.&lt;/p&gt;
+
+&lt;h3 id=&#34;4-2-http-upload&#34;&gt;4.2 HTTP Upload&lt;/h3&gt;
+
+&lt;p&gt;HTTP Upload ist eine Funktion des Medienversands, wie sie auch WhatsApp und Co verwenden. Dabei wird eine Mediendatei ( Bild, Video, etc. ) an den Server übertragen und dieser versendet anschließend einen Link zu der Datei an den/die Empfänger.&lt;/p&gt;
+
+&lt;p&gt;Bei diesem Plugin sind die Serverrichtlinien zu beachten. Meistens gibt es vorgegebene Grenzen, wie groß eine einzelne versendete Datei sein darf bzw wie viele Dateien pro Zeiteinheit versendet werden können.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Wie &lt;a href=&#34;#4-1-omemo&#34;&gt;4.1&lt;/a&gt; erwähnt lässt dieses Plugin einen verschlüsselten Upload eines versendeten Mediums zu. Damit sind die versendeten Dateien, nach den Spezifikationen von Omemo nur für die&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Wichtig&lt;/strong&gt; : Das Plugin &lt;a href=&#34;https://dev.gajim.org/gajim/gajim-plugins/wikis/ImagePlugin&#34; target=&#34;_blank&#34;&gt;Images&lt;/a&gt; verwendet &lt;strong&gt;kein&lt;/strong&gt; HTTP Upload. Hierbei wird die Datei über das ältere Peer 2 Peer System übertragen. Viele mobile Geräte unterstützen diese Art der Übertragung nicht.&lt;/p&gt;
+
+&lt;h3 id=&#34;4-3-url-image-preview&#34;&gt;4.3 URL Image Preview&lt;/h3&gt;
+
+&lt;p&gt;Um die volle Funktionalität von HTTP Upload auszuschöpfen kann das &lt;a href=&#34;https://dev.gajim.org/gajim/gajim-plugins/wikis/UrlImagePreviewPlugin&#34; target=&#34;_blank&#34;&gt;URL Image Preview Plugin&lt;/a&gt; verwendet werden. Dieses ermöglicht Medien Dateien, die über HTTP Upload versendet wurden, direkt im Nachrichtenverlauf anzuzeigen. Damit ist der Medien Versand/Empfang mit diesen beiden Plugins ( HTTP Upload / URL Image Preview ) vollständig integriert.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Besonders nützlich ist, dass dieses Plugin das  Öffnen von aesgcm:// Links unterstützt. Damit können auch mit Omemo verschlüsselt übertragene Medien direkt angezeigt werden.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;5-gruppenchats&#34;&gt;5. Gruppenchats&lt;/h2&gt;
+
+&lt;p&gt;Aktionen &amp;gt; Chatraum betreten &amp;gt; Chatraum betreten führt zu einem Fenster das Ihnen einige Möglichkeiten bietet.
+&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/gajim/muc.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Spitzname : Nickname unter dem Sie in dem Chatraum auftreten ( leer = username )&lt;/li&gt;
+&lt;li&gt;Chatraum : Chatraum den Sie betreten möchten, wenn dieser nicht vorhanden ist wird dieser für Sie erstellt.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Diesen Chatraum merken&lt;/em&gt; : Sollten sie dieses Kästchen ankreuzen wird der Chatraum zu ihrer Kontaktliste hinzugefügt.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Betrete diesen Chatraum automatisch&amp;hellip;&lt;/em&gt; : Nach dem Login betreten Sie diesen Raum automatisch.&lt;/li&gt;
+&lt;li&gt;Server : Adresse unter welchen die Chaträume zu erreichen sind.
+*
+&lt;em&gt;Hinweis&lt;/em&gt; : Dieser wird allerdings vom Server automatisch eingetragen, daher ist dort nichts weiter notwendig.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;6-adhoc-befehle&#34;&gt;6. Adhoc Befehle&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/gajim/howtoadhoc.png&#34; width=&#34;40%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/gajim/adhoc.png&#34; width=&#34;60%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;Bei den Adhoc Befehlen handelt es sich um Befehle, die Ihr Client dem Server zur Ausführung geben kann, um bestimmte Funktionen zu erhalten. Wie das Befehlsmenu aufzurufen ist zeigen die Bilder.&lt;/p&gt;
+
+&lt;h3 id=&#34;6-1-ping&#34;&gt;6.1 Ping&lt;/h3&gt;
+
+&lt;p&gt;Sendet einen Ping an den Server der mit einem Pong und der aktuellen Serverzeit antwortet.&lt;/p&gt;
+
+&lt;h3 id=&#34;6-2-get-uptime&#34;&gt;6.2 Get Uptime&lt;/h3&gt;
+
+&lt;p&gt;Zeigt die Zeit an die der Server online ist.&lt;/p&gt;
+
+&lt;h3 id=&#34;6-3-archive-settings&#34;&gt;6.3 Archive Settings&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Default = OFF&lt;/strong&gt;
+Die Archive Funktion ermöglicht es Nachrichten für 1 Monat auf dem Server zu speichern. Sollten sie sich auf einem anderen Gerät einloggen, welches &lt;a href=&#34;https://xmpp.org/extensions/xep-0313.html&#34; target=&#34;_blank&#34;&gt;Message Archive Management&lt;/a&gt; unterstützt sendet der Server Ihnen, ihre Chatverläufe von vor bis zu 1 Monat. Nach dieser Zeit werden die Nachrichten verworfen.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Verschlüsselte Nachrichten werden natürlich auch verschlüsselt gespeichert.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;6-4-search-settings&#34;&gt;6.4 Search settings&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Default = OFF&lt;/strong&gt;
+Diese Funktion sollte man sie aktivieren erlaubt es sie über die generelle Benutzersuche zu finden.
+&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/gajim/search settings.png&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;7-nützliche-links&#34;&gt;7. Nützliche Links&lt;/h2&gt;
+
+&lt;p&gt;Einige Webseiten die weitergehende Tutorials bzw. ausführlichere Tutorials zur Verfügung stellen.&lt;/p&gt;
+
+&lt;h4 id=&#34;allgemein&#34;&gt;Allgemein&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://datenschutzhelden.org/2017/07/12/daten-sparsame-xmpp-server/&#34; target=&#34;_blank&#34;&gt;Datenschutzhelden.org - XMPP Server explained&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;omemo&#34;&gt;Omemo&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://datenschutzhelden.org/2017/07/20/gajim-omemo-fuer-den-desktop/&#34; target=&#34;_blank&#34;&gt;Datenschutzhelden.org - Omemo für den Desktop&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://magicbroccoli.de/xmpp/&#34;&gt;Zurück zur Übersicht&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Last Edit 30.03.18&lt;/p&gt;
+</description>
     </item>
     
   </channel>

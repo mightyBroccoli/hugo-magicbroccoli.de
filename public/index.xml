@@ -6,6 +6,8 @@
     <description>Recent content on Magic Broccoli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
+    <managingEditor>mightyBroccoli (nico)</managingEditor>
+    <webMaster>mightyBroccoli (nico)</webMaster>
     <copyright>All rights reserved.</copyright>
     <lastBuildDate>Fri, 30 Mar 2018 13:37:00 +0200</lastBuildDate>
     
@@ -16,7 +18,7 @@
       <title>Let&#39;s Encrypt Prosody Cert Hook</title>
       <link>https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/</link>
       <pubDate>Fri, 30 Mar 2018 13:37:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/</guid>
       <description>
 
@@ -88,7 +90,7 @@ renew_hook &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; /bin/run-par
       <title>Omemo Verification mit Keybase.io</title>
       <link>https://magicbroccoli.de/post/keybase-omemo-verify/</link>
       <pubDate>Sat, 03 Feb 2018 15:00:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/keybase-omemo-verify/</guid>
       <description>
 
@@ -135,7 +137,7 @@ Da nicht alle Clients im Moment ein direktes Verifizieren unterstützen (eg. Gaj
       <title>Omemo Complicance</title>
       <link>https://magicbroccoli.de/post/omemo-complicance/</link>
       <pubDate>Wed, 20 Dec 2017 10:00:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/omemo-complicance/</guid>
       <description>&lt;p&gt;Seit gestern ist auf meinem Server ein neues OMEMO Modul aktiviert. Dieses ermöglicht es OMEMO verschlüsselte Konversationen zu beginnen, ohne das dafür eine gegenseitige presence subscription bestehen muss. Desweiteren hat dies Auswirkungen auf Chaträume, da es nun möglich ist in einem Chatraum OMEMO zu aktivieren ohne das sich alle Parteien hinzugefügt haben.&lt;/p&gt;
 
@@ -151,7 +153,7 @@ Da nicht alle Clients im Moment ein direktes Verifizieren unterstützen (eg. Gaj
       <title>Prosody Datenbank Indizes</title>
       <link>https://magicbroccoli.de/post/prosody-db-index/</link>
       <pubDate>Thu, 07 Dec 2017 17:30:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/prosody-db-index/</guid>
       <description>
 
@@ -234,9 +236,9 @@ Das Ergebnis sollte diese Form haben. Das Bild zeigt mein Ergebnis für den &lt;
       <title>Magical XMPP Hosting</title>
       <link>https://magicbroccoli.de/xmpp-hosting/</link>
       <pubDate>Tue, 07 Nov 2017 00:00:00 +0000</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/xmpp-hosting/</guid>
-      <description><p class="lead">MagicBroccoli XMPP Hosting</p>
+      <description>
 
 &lt;h2 id=&#34;magicbroccoli-xmpp-hosting&#34;&gt;MagicBroccoli XMPP Hosting&lt;/h2&gt;
 
@@ -305,7 +307,7 @@ In dem Fall, dass eine Subdomain von mir verwendet werden soll, kann damit ein L
       <title>Prosody housekeeping</title>
       <link>https://magicbroccoli.de/post/prosody-housekeeping/</link>
       <pubDate>Mon, 02 Oct 2017 13:30:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/prosody-housekeeping/</guid>
       <description>
 
@@ -426,7 +428,7 @@ filter_expired_http_uploads&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span
       <title>CCC Jabber Connection</title>
       <link>https://magicbroccoli.de/post/ccc-jabber-connection/</link>
       <pubDate>Mon, 28 Aug 2017 13:30:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/ccc-jabber-connection/</guid>
       <description>
 
@@ -513,9 +515,9 @@ Falls es, weswegen auch immer, gewollt ist einer CA und deren Zertifikaten nicht
       <title>Datenbank Zusammenbruch</title>
       <link>https://magicbroccoli.de/post/database-failure/</link>
       <pubDate>Fri, 25 Aug 2017 23:30:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/database-failure/</guid>
-      <description><p class="lead">Maintenance Downtime wegen eines MariaDB Fehlers.</p>
+      <description>
 
 &lt;h2 id=&#34;bekanntmachung&#34;&gt;Bekanntmachung&lt;/h2&gt;
 
@@ -531,7 +533,7 @@ Falls es, weswegen auch immer, gewollt ist einer CA und deren Zertifikaten nicht
       <title>XMPP over TLS Tutorial</title>
       <link>https://magicbroccoli.de/post/xmpp-over-tls-guide/</link>
       <pubDate>Sun, 06 Aug 2017 15:00:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/xmpp-over-tls-guide/</guid>
       <description>
 
@@ -641,7 +643,7 @@ Im Folgenden habe ich die simpelste Möglichkeit eins vHosts angenommen. Dabei i
 	&lt;span style=&#34;color:#75715e&#34;&gt;# hier kann je nach wunsch eine weiterleitung stattfinden&lt;/span&gt;
 	Redirect / https://example.de;
 
-&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/VirtualHost&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/VirtualHost&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Sind diese Änderungen vorgenommen, ist es leicht möglich via LetsEncrypt ein Zertifikat für die SubDomain auzustellen. Zusätzlich dazu ist es nun möglich direkt zu testen ob XMPP over TLS funktioniert.&lt;/p&gt;
 
@@ -669,9 +671,9 @@ Im Folgenden habe ich die simpelste Möglichkeit eins vHosts angenommen. Dabei i
       <title>Wir unterstützen Omemo</title>
       <link>https://magicbroccoli.de/post/omemo-statement/</link>
       <pubDate>Mon, 31 Jul 2017 13:00:00 +0200</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/omemo-statement/</guid>
-      <description><p class="lead">Stellungnahme zur aktuellen Entwicklung um Omemo</p>
+      <description>
 
 &lt;h3 id=&#34;update&#34;&gt;Update&lt;/h3&gt;
 
@@ -708,9 +710,9 @@ Conversations users will except OMEMO to work with everyone. That’s why Conver
       <title>Tutorial Übersicht</title>
       <link>https://magicbroccoli.de/tutorial/</link>
       <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/tutorial/</guid>
-      <description><p class="lead">How to use XMPP Clients</p>
+      <description>
 
 &lt;h1 id=&#34;tutorial-übersicht&#34;&gt;Tutorial Übersicht&lt;/h1&gt;
 
@@ -782,9 +784,9 @@ Conversations users will except OMEMO to work with everyone. That’s why Conver
       <title>Chatsecure Tutorial</title>
       <link>https://magicbroccoli.de/page/tutorial_chatsecure/</link>
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/page/tutorial_chatsecure/</guid>
-      <description><p class="lead">Guide on how to use Chatsecure</p>
+      <description>
 
 &lt;p&gt;&lt;strong&gt;Hinweis&lt;/strong&gt;: &lt;em&gt;Ein Dank geht an &lt;a href=&#34;//5222.de&#34; target=&#34;_blank&#34;&gt;5222.de&lt;/a&gt; die netterweise die Screenshots zur Verfügung gestellt haben. Da ich selbst kein iPhone besitzte wäre mir ein Tutorial sonst nicht möglich gewesen.&lt;/em&gt;&lt;/p&gt;
 
@@ -858,9 +860,9 @@ Wenn der Account mobil genutzt wird ist Omemo definitiv die bessere Wahl, da &lt
       <title>Gajim Tutorial</title>
       <link>https://magicbroccoli.de/page/tutorial_gajim/</link>
       <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/page/tutorial_gajim/</guid>
-      <description><p class="lead">Guide on how to use Gajim</p>
+      <description>
 
 &lt;h2 id=&#34;1-account-registrierung&#34;&gt;1. Account Registrierung&lt;/h2&gt;
 
@@ -990,9 +992,9 @@ Diese Funktion sollte man sie aktivieren erlaubt es sie über die generelle Benu
       <title>Server Technik</title>
       <link>https://magicbroccoli.de/technik/</link>
       <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/technik/</guid>
-      <description><p class="lead">verwendete Server Technik</p>
+      <description>
 
 &lt;h2 id=&#34;system&#34;&gt;System&lt;/h2&gt;
 
@@ -1123,9 +1125,9 @@ Speziell das &lt;a href=&#34;https://wikipedia.org/wiki/HTTP-Authentifizierung#D
       <title>Registrierung magicbroccoli.de XMPP</title>
       <link>https://magicbroccoli.de/register/</link>
       <pubDate>Sun, 25 Jun 2017 00:00:00 +0000</pubDate>
-      
+      <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/register/</guid>
-      <description><p class="lead">Registrierung magicbroccoli.de XMPP</p>
+      <description>
 
 &lt;h2 id=&#34;registrierung&#34;&gt;Registrierung&lt;/h2&gt;
 
