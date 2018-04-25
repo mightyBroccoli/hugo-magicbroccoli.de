@@ -45,13 +45,13 @@ _xmppconnect.example.tld. IN TXT "_xmpp-client-websocket=wss://magicbroccoli.de/
 Bei Problemen zörgere nicht mich zu [kontaktieren](/contact/).
 
 ### Zertifikat
-Wenn der Wunsch besteht ein bereits bestehendes gültiges Zertifikat zu verwenden, bitte ich darum, das dieses mindestens 1 Jahr gültig ist. Allerdings wird für ein Hosting kein Zertifikat unbedingt benötigt. Falls kein Zertifikat zur Verfügung gestellt wird, wird das magicbroccoli.de Zertifikat verwendet.<br>
+Wenn der Wunsch besteht ein bereits bestehendes gültiges Zertifikat zu verwenden, bitte ich darum, das dieses mindestens 1 Jahr gültig ist. Falls kein Zertifikat zur Verfügung gestellt wird, wird das magicbroccoli.de Zertifikat verwendet.<br>
 In dem Fall, dass eine Subdomain von mir verwendet werden soll, kann damit ein LetsEncrypt Zertifikat bereitgestellt werden.
 
 ## Hosting Provider
-Falls noch kein Hoster für die Domain gefunden wurde kann ich Netcup als Hoster empfehlen. Auf Nachfrage könnte ich Coupon Codes ausstellen die einen Rabatt gewähren.
+Falls noch kein Hoster für die Domain gefunden wurde kann ich Netcup als Hoster empfehlen. Gerne können sie auf Nachfrage Coupon Codes von mir ausstellen lassen die einen Rabatt gewähren.
 - - -
 
 <center>[![](/images/netcup-hlogo-b220h100.png)](https://www.netcup.de)</center>
 
-Last Edit 14.02.18
+Last Edit 25.04.18

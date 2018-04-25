@@ -87,11 +87,6 @@ Die Archive Funktion ermöglicht es Nachrichten für 1 Monat auf dem Server zu s
 
 *Verschlüsselte Nachrichten werden natürlich auch verschlüsselt gespeichert.*
 
-### 6.4 Search settings
-**Default = OFF**
-Diese Funktion sollte man sie aktivieren erlaubt es sie über die generelle Benutzersuche zu finden.
-<img src="/images/tutorials/gajim/search settings.png" width="100%">
-
 ## 7. Nützliche Links
 Einige Webseiten die weitergehende Tutorials bzw. ausführlichere Tutorials zur Verfügung stellen.
 

@@ -288,18 +288,18 @@ _xmppconnect.example.tld. IN TXT &amp;quot;_xmpp-client-websocket=wss://magicbro
 
 &lt;h3 id=&#34;zertifikat&#34;&gt;Zertifikat&lt;/h3&gt;
 
-&lt;p&gt;Wenn der Wunsch besteht ein bereits bestehendes gültiges Zertifikat zu verwenden, bitte ich darum, das dieses mindestens 1 Jahr gültig ist. Allerdings wird für ein Hosting kein Zertifikat unbedingt benötigt. Falls kein Zertifikat zur Verfügung gestellt wird, wird das magicbroccoli.de Zertifikat verwendet.&lt;br&gt;
+&lt;p&gt;Wenn der Wunsch besteht ein bereits bestehendes gültiges Zertifikat zu verwenden, bitte ich darum, das dieses mindestens 1 Jahr gültig ist. Falls kein Zertifikat zur Verfügung gestellt wird, wird das magicbroccoli.de Zertifikat verwendet.&lt;br&gt;
 In dem Fall, dass eine Subdomain von mir verwendet werden soll, kann damit ein LetsEncrypt Zertifikat bereitgestellt werden.&lt;/p&gt;
 
 &lt;h2 id=&#34;hosting-provider&#34;&gt;Hosting Provider&lt;/h2&gt;
 
-&lt;p&gt;Falls noch kein Hoster für die Domain gefunden wurde kann ich Netcup als Hoster empfehlen. Auf Nachfrage könnte ich Coupon Codes ausstellen die einen Rabatt gewähren.&lt;/p&gt;
+&lt;p&gt;Falls noch kein Hoster für die Domain gefunden wurde kann ich Netcup als Hoster empfehlen. Gerne können sie auf Nachfrage Coupon Codes von mir ausstellen lassen die einen Rabatt gewähren.&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;p&gt;&lt;center&gt;&lt;a href=&#34;https://www.netcup.de&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/netcup-hlogo-b220h100.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;
 
-&lt;p&gt;Last Edit 14.02.18&lt;/p&gt;
+&lt;p&gt;Last Edit 25.04.18&lt;/p&gt;
 </description>
     </item>
     
@@ -958,12 +958,6 @@ Die Archive Funktion ermöglicht es Nachrichten für 1 Monat auf dem Server zu s
 
 &lt;p&gt;&lt;em&gt;Verschlüsselte Nachrichten werden natürlich auch verschlüsselt gespeichert.&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;6-4-search-settings&#34;&gt;6.4 Search settings&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Default = OFF&lt;/strong&gt;
-Diese Funktion sollte man sie aktivieren erlaubt es sie über die generelle Benutzersuche zu finden.
-&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/gajim/search settings.png&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
-
 &lt;h2 id=&#34;7-nützliche-links&#34;&gt;7. Nützliche Links&lt;/h2&gt;
 
 &lt;p&gt;Einige Webseiten die weitergehende Tutorials bzw. ausführlichere Tutorials zur Verfügung stellen.&lt;/p&gt;
@@ -998,7 +992,7 @@ Diese Funktion sollte man sie aktivieren erlaubt es sie über die generelle Benu
 
 &lt;h2 id=&#34;system&#34;&gt;System&lt;/h2&gt;
 
-&lt;p&gt;Das Hostsystem verwendet &lt;img src=&#34;https://magicbroccoli.de/icons/debian_icon.png&#34; alt=&#34;Debian&#34; /&gt; Debian 9.2 Stretch. Alle Komponenten werden regelmäßig aktualisiert. Teilweise nehme ich Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn sich dies allerdings nicht verhindern lässt, wird es zu einer möglichst kleinen Downtime für wichtige Updates kommen.&lt;/p&gt;
+&lt;p&gt;Das Hostsystem verwendet &lt;img src=&#34;https://magicbroccoli.de/icons/debian_icon.png&#34; alt=&#34;Debian&#34; /&gt; Debian 9.4 Stretch. Alle Komponenten werden regelmäßig aktualisiert. Teilweise nehme ich Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn sich dies allerdings nicht verhindern lässt, wird es zu einer möglichst kleinen Downtime für wichtige Updates kommen.&lt;/p&gt;
 
 &lt;h3 id=&#34;dns&#34;&gt;DNS&lt;/h3&gt;
 
@@ -1007,7 +1001,7 @@ Diese Funktion sollte man sie aktivieren erlaubt es sie über die generelle Benu
 &lt;h3 id=&#34;nginx&#34;&gt;nginx&lt;/h3&gt;
 
 &lt;p&gt;Alle Dienste die per HTTPS erreichbar sind, werden durch einen &lt;a href=&#34;https://nginx.org/&#34; target=&#34;_blank&#34;&gt;nginx&lt;/a&gt; Server veröffentlicht. Dieser ist konfiguriert ausschließlich &lt;a href=&#34;https://de.wikipedia.org/wiki/Transport_Layer_Security&#34; target=&#34;_blank&#34;&gt;TLS verschlüsselte Verbindungen&lt;/a&gt; zuzulassen. Unverschlüsselte Verbindungen werden direkt zu einer verschlüsselten Verbindung aufgewertet. Ist dies nicht möglich, wird die Verbindung verweigert.&lt;br&gt;
-Zur Verfügung stehen TLS1.2 sowie 1.3 mit eine definierten Auswahl an ciphers. Außerdem ist der Server in der Lage &lt;a href=&#34;https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP.2F1.1&#34; target=&#34;_blank&#34;&gt;HTTP 1.1&lt;/a&gt; sowie &lt;a href=&#34;https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP.2F2&#34; target=&#34;_blank&#34;&gt;HTTP 2&lt;/a&gt; Verbindungen zur Verfügung zu stellen.&lt;/p&gt;
+Zur Verfügung stehen TLS1.2 sowie 1.3 mit einer definierten Auswahl an ciphers. Außerdem ist der Server in der Lage &lt;a href=&#34;https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP.2F1.1&#34; target=&#34;_blank&#34;&gt;HTTP 1.1&lt;/a&gt; sowie &lt;a href=&#34;https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP.2F2&#34; target=&#34;_blank&#34;&gt;HTTP 2.0&lt;/a&gt; Verbindungen zur Verfügung zu stellen.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;ssl_prefer_server_ciphers	on;
 ssl_ciphers &#39;ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256&#39;;
@@ -1030,25 +1024,24 @@ add_header Content-Security-Policy &amp;quot;frame-ancestors &#39;self&#39;&amp;
 Besonders bekannt hierfür ist &lt;a href=&#34;https://www.ssllabs.com&#34; target=&#34;_blank&#34;&gt;Qualys SSL Labs&lt;/a&gt; dort sind &lt;a href=&#34;https://www.ssllabs.com/ssltest/analyze.html?d=magicbroccoli.de&#34; target=&#34;_blank&#34;&gt;meine Ergebnisse&lt;/a&gt; nachprüfbar. Die Ergebnisse werden dort leider nicht dauerhaft gespeichet.&lt;br&gt;
 ( &lt;em&gt;Der Test dauert ca. 1 Minute, daher kann der Test von jedem jederzeit wiederholt werden.&lt;/em&gt; )&lt;/p&gt;
 
-&lt;h3 id=&#34;prosody&#34;&gt;Prosody&lt;/h3&gt;
+&lt;h3 id=&#34;ejabberd&#34;&gt;Ejabberd&lt;/h3&gt;
 
-&lt;p&gt;Bei der XMPP Serversoftware handelt es ich um ein Prosody 0.10 stable nightly.&lt;br&gt;
-Mit stable nightly meine ich den aktuellsten Build im &lt;a href=&#34;https://hg.prosody.im/0.10/&#34; target=&#34;_blank&#34;&gt;branch 0.10&lt;/a&gt;. Auch der stable release wird mit diesem Branch gebaut, allerdings hängt dieser teilweise stark hinter dem aktuellen Build hinterher.&lt;br&gt;
-Ich verwende den stable nightly um einen stabilen Server zu garantieren. Allerdings lege ich auch Wert auf aktuelle Entwicklungen. Da es sich nicht um den testing branch handelt sind diese Features als stable anzusehen.&lt;/p&gt;
+&lt;p&gt;Bei der XMPP Serversoftware handelt es ich um ein Ejabberd 18.01.&lt;br&gt;
+Ich lege großen Wert auf Stabilität und Sicherheit, daher habe ich mich für einen Wechsel zu &lt;a href=&#34;https://www.ejabberd.im/&#34; target=&#34;_blank&#34;&gt;ejabberd&lt;/a&gt; entschieden. Die Konfiguration ist soweit angepasst das alle aktuellen Features unterstützt werden.&lt;/p&gt;
 
 &lt;h4 id=&#34;verschlüsselung&#34;&gt;Verschlüsselung&lt;/h4&gt;
 
-&lt;p&gt;Prosody ist so konfiguriert, ausschließlich verschlüsselte Verbindungen zuzulassen. Zusätzlich dazu ist der Server so konfiguriert ausschließlich Verschlüsselungsverfahren zu erlauben, die &lt;a href=&#34;https://wikipedia.org/wiki/Perfect_Forward_Secrecy&#34; target=&#34;_blank&#34;&gt;Perfect Forward Secrecy&lt;/a&gt; unterstützen.
-Ungesicherte Verbindungen, oder Verbindungen mit zu schwacher Verschlüsselung bei &lt;em&gt;c2s&lt;/em&gt; oder &lt;em&gt;s2s&lt;/em&gt; werden blockiert. Leider werden dadurch einige Server sowie einige ältere Clients ausgesperrt, allerdings ist unzureichende Verschlüsselng für mich ein Ausschlusskriterium.
-Eine Ansicht welche Verschlüsselungsverfahren zum Verbindungsaufbau zulässig sind ist hier zu finden: &lt;a href=&#34;https://check.messaging.one/result.php?domain=magicbroccoli.de&amp;amp;type=client#ciphers&#34; target=&#34;_blank&#34;&gt;zulässige Verschlüsselungsverfahren&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ejabberd ist so konfiguriert, ausschließlich verschlüsselte Verbindungen zuzulassen. Zusätzlich dazu ist der Server so konfiguriert ausschließlich Verschlüsselungsverfahren zu erlauben, die &lt;a href=&#34;https://wikipedia.org/wiki/Perfect_Forward_Secrecy&#34; target=&#34;_blank&#34;&gt;Perfect Forward Secrecy&lt;/a&gt; unterstützen.
+Ungesicherte Verbindungen, oder Verbindungen mit zu schwacher Verschlüsselung bei &lt;em&gt;c2s&lt;/em&gt; oder &lt;em&gt;s2s&lt;/em&gt; sind nicht zulässig. Leider werden dadurch einige Server sowie einige ältere Clients ausgesperrt, allerdings ist unzureichende Verschlüsselng für mich ein Ausschlusskriterium.
+Eine Übersicht welche Verschlüsselungsverfahren zum Verbindungsaufbau zulässig sind ist hier zu finden: &lt;a href=&#34;https://check.messaging.one/result.php?domain=magicbroccoli.de&amp;amp;type=client#ciphers&#34; target=&#34;_blank&#34;&gt;zulässige Verschlüsselungsverfahren&lt;/a&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;zertifikate&#34;&gt;Zertifikate&lt;/h4&gt;
 
-&lt;p&gt;Es gibt viele öffentliche XMPP Server, die unter selbstsignierten oder ungültigen Zertifikaten betrieben werden. Mein Server ist so konfiguriert ausschließlich Zertifikate zuzulassen, die gültig sind. Selbstsignierte Zertifikate werden nicht akzeptiert somit wird eine Verbindung blockiert.&lt;/p&gt;
+&lt;p&gt;Es gibt viele öffentliche XMPP Server, die unter selbstsignierten oder ungültigen Zertifikaten betrieben werden. Mein Server ist so konfiguriert ausschließlich Zertifikate zuzulassen, denen vertraut wird und welche gültig sind. Selbstsignierte Zertifikate werden nicht akzeptiert.&lt;/p&gt;
 
 &lt;h4 id=&#34;passwörter&#34;&gt;Passwörter&lt;/h4&gt;
 
-&lt;p&gt;Alle Passwöter werden gehashed in einer Datenbank gespeichert, die nicht von außen erreichbar ist. Als Authentifizierungsverfahren wird entweder &lt;a href=&#34;https://wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;SCRAM-SHA-1&lt;/em&gt;&lt;/a&gt; oder &lt;a href=&#34;https://wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;SCRAM-SHA-1-PLUS&lt;/em&gt;&lt;/a&gt; verwendet.&lt;br&gt;
+&lt;p&gt;Alle Passwöter werden gehashed in einer Datenbank gespeichert, die nicht von außen erreichbar ist. Als Authentifizierungsverfahren wird &lt;a href=&#34;https://wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;SCRAM-SHA-1&lt;/em&gt;&lt;/a&gt; verwendet.&lt;br&gt;
 Speziell das &lt;a href=&#34;https://wikipedia.org/wiki/HTTP-Authentifizierung#Digest_Access_Authentication&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;DIGEST-MD5&lt;/em&gt;&lt;/a&gt; Verfahren, welches ältere Clients und Bots häufiger verwenden, wird nicht unterstützt.&lt;/p&gt;
 
 &lt;h4 id=&#34;features&#34;&gt;Features&lt;/h4&gt;
@@ -1110,14 +1103,9 @@ Speziell das &lt;a href=&#34;https://wikipedia.org/wiki/HTTP-Authentifizierung#D
 
 &lt;p&gt;Mit dem Tool von &lt;a href=&#34;https://tls.imirhil.fr&#34; target=&#34;_blank&#34;&gt;tls.imirhil.fr&lt;/a&gt; lässt sich ähnlich zum IM Observer ein Server prüfen. MagicBroccoli XMPP hat dort ein Rating von A+ &lt;a href=&#34;https://tls.imirhil.fr/xmpp/magicbroccoli.de&#34; target=&#34;_blank&#34;&gt;CryptCheck Score&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h4 id=&#34;statistiken&#34;&gt;Statistiken&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_c2s-week.png&#34; width=&#34;45%&#34;&gt; &lt;img src=&#34;https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_s2s-week.png&#34; width=&#34;45%&#34;&gt;
-&lt;img src=&#34;https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_stanzas-week.png&#34; width=&#34;45%&#34;&gt; &lt;img src=&#34;https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_uptime-week.png&#34; width=&#34;45%&#34;&gt;&lt;/p&gt;
-
 &lt;hr /&gt;
 
-&lt;p&gt;Last Edit 30.03.18&lt;/p&gt;
+&lt;p&gt;Last Edit 25.04.18&lt;/p&gt;
 </description>
     </item>
     

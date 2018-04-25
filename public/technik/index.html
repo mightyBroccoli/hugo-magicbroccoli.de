@@ -57,7 +57,7 @@
     },
     "datePublished": "2017-06-27",
     "description": "verwendete Server Technik",
-    "wordCount": 751
+    "wordCount": 710
   }
 </script>
 
@@ -65,7 +65,7 @@
 
 <link rel="canonical" href="https://magicbroccoli.de/technik/" />
 
-<meta name="generator" content="Hugo 0.38.2" />
+<meta name="generator" content="Hugo 0.40.1" />
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
@@ -155,7 +155,7 @@
 
 <h2 id="system">System</h2>
 
-<p>Das Hostsystem verwendet <img src="https://magicbroccoli.de/icons/debian_icon.png" alt="Debian" /> Debian 9.2 Stretch. Alle Komponenten werden regelmäßig aktualisiert. Teilweise nehme ich Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn sich dies allerdings nicht verhindern lässt, wird es zu einer möglichst kleinen Downtime für wichtige Updates kommen.</p>
+<p>Das Hostsystem verwendet <img src="https://magicbroccoli.de/icons/debian_icon.png" alt="Debian" /> Debian 9.4 Stretch. Alle Komponenten werden regelmäßig aktualisiert. Teilweise nehme ich Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn sich dies allerdings nicht verhindern lässt, wird es zu einer möglichst kleinen Downtime für wichtige Updates kommen.</p>
 
 <h3 id="dns">DNS</h3>
 
@@ -164,7 +164,7 @@
 <h3 id="nginx">nginx</h3>
 
 <p>Alle Dienste die per HTTPS erreichbar sind, werden durch einen <a href="https://nginx.org/" target="_blank">nginx</a> Server veröffentlicht. Dieser ist konfiguriert ausschließlich <a href="https://de.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS verschlüsselte Verbindungen</a> zuzulassen. Unverschlüsselte Verbindungen werden direkt zu einer verschlüsselten Verbindung aufgewertet. Ist dies nicht möglich, wird die Verbindung verweigert.<br>
-Zur Verfügung stehen TLS1.2 sowie 1.3 mit eine definierten Auswahl an ciphers. Außerdem ist der Server in der Lage <a href="https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP.2F1.1" target="_blank">HTTP 1.1</a> sowie <a href="https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP.2F2" target="_blank">HTTP 2</a> Verbindungen zur Verfügung zu stellen.</p>
+Zur Verfügung stehen TLS1.2 sowie 1.3 mit einer definierten Auswahl an ciphers. Außerdem ist der Server in der Lage <a href="https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP.2F1.1" target="_blank">HTTP 1.1</a> sowie <a href="https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP.2F2" target="_blank">HTTP 2.0</a> Verbindungen zur Verfügung zu stellen.</p>
 
 <pre><code>ssl_prefer_server_ciphers	on;
 ssl_ciphers 'ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256';
@@ -187,25 +187,24 @@ add_header Content-Security-Policy &quot;frame-ancestors 'self'&quot;;
 Besonders bekannt hierfür ist <a href="https://www.ssllabs.com" target="_blank">Qualys SSL Labs</a> dort sind <a href="https://www.ssllabs.com/ssltest/analyze.html?d=magicbroccoli.de" target="_blank">meine Ergebnisse</a> nachprüfbar. Die Ergebnisse werden dort leider nicht dauerhaft gespeichet.<br>
 ( <em>Der Test dauert ca. 1 Minute, daher kann der Test von jedem jederzeit wiederholt werden.</em> )</p>
 
-<h3 id="prosody">Prosody</h3>
+<h3 id="ejabberd">Ejabberd</h3>
 
-<p>Bei der XMPP Serversoftware handelt es ich um ein Prosody 0.10 stable nightly.<br>
-Mit stable nightly meine ich den aktuellsten Build im <a href="https://hg.prosody.im/0.10/" target="_blank">branch 0.10</a>. Auch der stable release wird mit diesem Branch gebaut, allerdings hängt dieser teilweise stark hinter dem aktuellen Build hinterher.<br>
-Ich verwende den stable nightly um einen stabilen Server zu garantieren. Allerdings lege ich auch Wert auf aktuelle Entwicklungen. Da es sich nicht um den testing branch handelt sind diese Features als stable anzusehen.</p>
+<p>Bei der XMPP Serversoftware handelt es ich um ein Ejabberd 18.01.<br>
+Ich lege großen Wert auf Stabilität und Sicherheit, daher habe ich mich für einen Wechsel zu <a href="https://www.ejabberd.im/" target="_blank">ejabberd</a> entschieden. Die Konfiguration ist soweit angepasst das alle aktuellen Features unterstützt werden.</p>
 
 <h4 id="verschlüsselung">Verschlüsselung</h4>
 
-<p>Prosody ist so konfiguriert, ausschließlich verschlüsselte Verbindungen zuzulassen. Zusätzlich dazu ist der Server so konfiguriert ausschließlich Verschlüsselungsverfahren zu erlauben, die <a href="https://wikipedia.org/wiki/Perfect_Forward_Secrecy" target="_blank">Perfect Forward Secrecy</a> unterstützen.
-Ungesicherte Verbindungen, oder Verbindungen mit zu schwacher Verschlüsselung bei <em>c2s</em> oder <em>s2s</em> werden blockiert. Leider werden dadurch einige Server sowie einige ältere Clients ausgesperrt, allerdings ist unzureichende Verschlüsselng für mich ein Ausschlusskriterium.
-Eine Ansicht welche Verschlüsselungsverfahren zum Verbindungsaufbau zulässig sind ist hier zu finden: <a href="https://check.messaging.one/result.php?domain=magicbroccoli.de&amp;type=client#ciphers" target="_blank">zulässige Verschlüsselungsverfahren</a></p>
+<p>Ejabberd ist so konfiguriert, ausschließlich verschlüsselte Verbindungen zuzulassen. Zusätzlich dazu ist der Server so konfiguriert ausschließlich Verschlüsselungsverfahren zu erlauben, die <a href="https://wikipedia.org/wiki/Perfect_Forward_Secrecy" target="_blank">Perfect Forward Secrecy</a> unterstützen.
+Ungesicherte Verbindungen, oder Verbindungen mit zu schwacher Verschlüsselung bei <em>c2s</em> oder <em>s2s</em> sind nicht zulässig. Leider werden dadurch einige Server sowie einige ältere Clients ausgesperrt, allerdings ist unzureichende Verschlüsselng für mich ein Ausschlusskriterium.
+Eine Übersicht welche Verschlüsselungsverfahren zum Verbindungsaufbau zulässig sind ist hier zu finden: <a href="https://check.messaging.one/result.php?domain=magicbroccoli.de&amp;type=client#ciphers" target="_blank">zulässige Verschlüsselungsverfahren</a></p>
 
 <h4 id="zertifikate">Zertifikate</h4>
 
-<p>Es gibt viele öffentliche XMPP Server, die unter selbstsignierten oder ungültigen Zertifikaten betrieben werden. Mein Server ist so konfiguriert ausschließlich Zertifikate zuzulassen, die gültig sind. Selbstsignierte Zertifikate werden nicht akzeptiert somit wird eine Verbindung blockiert.</p>
+<p>Es gibt viele öffentliche XMPP Server, die unter selbstsignierten oder ungültigen Zertifikaten betrieben werden. Mein Server ist so konfiguriert ausschließlich Zertifikate zuzulassen, denen vertraut wird und welche gültig sind. Selbstsignierte Zertifikate werden nicht akzeptiert.</p>
 
 <h4 id="passwörter">Passwörter</h4>
 
-<p>Alle Passwöter werden gehashed in einer Datenbank gespeichert, die nicht von außen erreichbar ist. Als Authentifizierungsverfahren wird entweder <a href="https://wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism" target="_blank"><em>SCRAM-SHA-1</em></a> oder <a href="https://wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism" target="_blank"><em>SCRAM-SHA-1-PLUS</em></a> verwendet.<br>
+<p>Alle Passwöter werden gehashed in einer Datenbank gespeichert, die nicht von außen erreichbar ist. Als Authentifizierungsverfahren wird <a href="https://wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism" target="_blank"><em>SCRAM-SHA-1</em></a> verwendet.<br>
 Speziell das <a href="https://wikipedia.org/wiki/HTTP-Authentifizierung#Digest_Access_Authentication" target="_blank"><em>DIGEST-MD5</em></a> Verfahren, welches ältere Clients und Bots häufiger verwenden, wird nicht unterstützt.</p>
 
 <h4 id="features">Features</h4>
@@ -267,14 +266,9 @@ Speziell das <a href="https://wikipedia.org/wiki/HTTP-Authentifizierung#Digest_A
 
 <p>Mit dem Tool von <a href="https://tls.imirhil.fr" target="_blank">tls.imirhil.fr</a> lässt sich ähnlich zum IM Observer ein Server prüfen. MagicBroccoli XMPP hat dort ein Rating von A+ <a href="https://tls.imirhil.fr/xmpp/magicbroccoli.de" target="_blank">CryptCheck Score</a>.</p>
 
-<h4 id="statistiken">Statistiken</h4>
-
-<p><img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_c2s-week.png" width="45%"> <img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_s2s-week.png" width="45%">
-<img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_stanzas-week.png" width="45%"> <img src="https://magicbroccoli.de/munin-cgi/munin-cgi-graph/magicbroccoli.de/rosewood.magicbroccoli.de/prosody_uptime-week.png" width="45%"></p>
-
 <hr />
 
-<p>Last Edit 30.03.18</p>
+<p>Last Edit 25.04.18</p>
 
 </div>
 
