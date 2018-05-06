@@ -8,11 +8,6 @@
   </url>
   
   <url>
-    <loc>https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/</loc>
-    <lastmod>2018-03-30T13:37:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://magicbroccoli.de/post/keybase-omemo-verify/</loc>
     <lastmod>2018-02-03T15:00:00+02:00</lastmod>
   </url>
@@ -155,12 +150,6 @@
   <url>
     <loc>https://magicbroccoli.de/categories/debian/</loc>
     <lastmod>2017-08-28T13:30:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://magicbroccoli.de/categories/ejabberd/</loc>
-    <lastmod>2018-03-30T13:37:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
