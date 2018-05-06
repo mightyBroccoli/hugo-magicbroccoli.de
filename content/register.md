@@ -12,4 +12,4 @@ Mithilfe dieser Seite ist es Ihnen möglich, einen neuen Account auf dem MagicBr
 
 **Bitte notiere Sie sich Ihren Benutzernamen und Passwort sorgfältig! Passwort-Resets durch einen Administrator sind grundsätzlich möglich. Allerdings erfordert diese einen eindeutigen stichhaltigen Nachweis der Account-Inhaberschaft!**
 
-<center><iframe src="https://magicbroccoli.de/registerform" style="height: 800px; width: 100%;" frameBorder="0"></iframe></center>
+<center><iframe src="https://magicbroccoli.de/registerform" style="height: 800px; width: 100%;" overflow: hidden;" frameBorder="0"; scrolling="no"></iframe></center>
