@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ejabberd on Magic Broccoli</title>
+    <link>https://magicbroccoli.de/categories/ejabberd/</link>
+    <description>Recent content in Ejabberd on Magic Broccoli</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-DE</language>
+    <managingEditor>mightyBroccoli (nico)</managingEditor>
+    <webMaster>mightyBroccoli (nico)</webMaster>
+    <copyright>All rights reserved.</copyright>
+    <lastBuildDate>Fri, 30 Mar 2018 13:37:00 +0200</lastBuildDate>
+    
+        <atom:link href="https://magicbroccoli.de/categories/ejabberd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Migration to ejabberd</title>
+      <link>https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/</link>
+      <pubDate>Fri, 30 Mar 2018 13:37:00 +0200</pubDate>
+      <author>mightyBroccoli (nico)</author>
+      <guid>https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -87,6 +87,15 @@ renew_hook &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; /bin/run-par
     </item>
     
     <item>
+      <title>Migration to ejabberd</title>
+      <link>https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/</link>
+      <pubDate>Fri, 30 Mar 2018 13:37:00 +0200</pubDate>
+      <author>mightyBroccoli (nico)</author>
+      <guid>https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Prosody Datenbank Indizes</title>
       <link>https://magicbroccoli.de/post/prosody-db-index/</link>
       <pubDate>Thu, 07 Dec 2017 17:30:00 +0200</pubDate>

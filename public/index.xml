@@ -87,6 +87,15 @@ renew_hook &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; /bin/run-par
     </item>
     
     <item>
+      <title>Migration to ejabberd</title>
+      <link>https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/</link>
+      <pubDate>Fri, 30 Mar 2018 13:37:00 +0200</pubDate>
+      <author>mightyBroccoli (nico)</author>
+      <guid>https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Omemo Verification mit Keybase.io</title>
       <link>https://magicbroccoli.de/post/keybase-omemo-verify/</link>
       <pubDate>Sat, 03 Feb 2018 15:00:00 +0200</pubDate>
@@ -1106,25 +1115,6 @@ Speziell das &lt;a href=&#34;https://wikipedia.org/wiki/HTTP-Authentifizierung#D
 &lt;hr /&gt;
 
 &lt;p&gt;Last Edit 25.04.18&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Registrierung magicbroccoli.de XMPP</title>
-      <link>https://magicbroccoli.de/register/</link>
-      <pubDate>Sun, 25 Jun 2017 00:00:00 +0000</pubDate>
-      <author>mightyBroccoli (nico)</author>
-      <guid>https://magicbroccoli.de/register/</guid>
-      <description>
-
-&lt;h2 id=&#34;registrierung&#34;&gt;Registrierung&lt;/h2&gt;
-
-&lt;p&gt;Mithilfe dieser Seite ist es Ihnen möglich, einen neuen Account auf dem MagicBroccoli XMPP Server anzulegen.
-Über den erstellten Jabber Identifier (kurz JID; auch Jabber-ID), bestehend aus Benutzernamen und &amp;ldquo;magicbroccoli.de&amp;rdquo;, können andere Nutzer Sie zu ihren Kontakten hinzufügen.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Bitte notiere Sie sich Ihren Benutzernamen und Passwort sorgfältig! Passwort-Resets durch einen Administrator sind grundsätzlich möglich. Allerdings erfordert diese einen eindeutigen stichhaltigen Nachweis der Account-Inhaberschaft!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;&lt;iframe src=&#34;https://magicbroccoli.de/registerform&#34; style=&#34;height: 600px; width: 600px;&#34; frameBorder=&#34;0&#34;&gt;&lt;/iframe&gt;&lt;/center&gt;&lt;/p&gt;
 </description>
     </item>
     
