@@ -22,7 +22,7 @@ Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es [h
 
 **INHO** : _Die folgende Liste bezieht sich auf die Clients, die die meisten Features abdecken und mit möglichst vielen Standards konform sind. Außerdem werden ausschließlich Clients gelistet, die aktiv entwickelt werden._
 
-- Android: [Conversations](https://conversations.im/) (€ 2,39 im [Google Play Store](https://play.google.com/store/apps/details?id=eu.siacs.conversations) oder gratis auf [F-Droid](https://f-droid.org/repository/browse%20/?fdid=eu.siacs.conversations))
+- Android: [Conversations](https://conversations.im/) (€ 4,99 im [Google Play Store](https://play.google.com/store/apps/details?id=eu.siacs.conversations) oder gratis auf [F-Droid](https://f-droid.org/repository/browse%20/?fdid=eu.siacs.conversations))
 - Android: [Pix-Art Messenger](https://jabber.pix-art.de/) (Conversations Fork mit einigen Änderungen zur Verbesserung der Benutzerfreundlichkeit)
 - Android: [Xabber](https://www.xabber.com/)
 - iOS (iPhone): [ChatSecure](https://chatsecure.org/)
