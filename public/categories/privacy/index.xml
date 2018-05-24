@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Privacy on Magic Broccoli</title>
+    <link>https://magicbroccoli.de/categories/privacy/</link>
+    <description>Recent content in Privacy on Magic Broccoli</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-DE</language>
+    <managingEditor>mightyBroccoli (nico)</managingEditor>
+    <webMaster>mightyBroccoli (nico)</webMaster>
+    <copyright>All rights reserved.</copyright>
+    <lastBuildDate>Wed, 23 May 2018 00:00:00 +0200</lastBuildDate>
+    
+        <atom:link href="https://magicbroccoli.de/categories/privacy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Changes related to GDPR</title>
+      <link>https://magicbroccoli.de/post/gdpr/</link>
+      <pubDate>Wed, 23 May 2018 00:00:00 +0200</pubDate>
+      <author>mightyBroccoli (nico)</author>
+      <guid>https://magicbroccoli.de/post/gdpr/</guid>
+      <description>
+
+&lt;h2 id=&#34;general-data-protection-regulation-gdpr-https-gdpr-info-eu&#34;&gt;General Data Protection Regulation ( &lt;a href=&#34;https://gdpr-info.eu/&#34; target=&#34;_blank&#34;&gt;GDPR&lt;/a&gt; )&lt;/h2&gt;
+
+&lt;p&gt;The day has finally come. The new &lt;a href=&#34;https://gdpr-info.eu/&#34; target=&#34;_blank&#34;&gt;GDPR&lt;/a&gt; has become reality. I am writing this post to clear up the situation for every user using my server/ services.&lt;/p&gt;
+
+&lt;h3 id=&#34;changes-due-to-gdpr&#34;&gt;changes due to GDPR&lt;/h3&gt;
+
+&lt;p&gt;Due to the enforced changes with the GDPR I did rework the whole process logging of all programs which come in contact with users.&lt;/p&gt;
+
+&lt;h4 id=&#34;prior-to-the-gdpr&#34;&gt;prior to the GDPR&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;logging
+
+&lt;ul&gt;
+&lt;li&gt;log lifetime of 14 days&lt;/li&gt;
+&lt;li&gt;logs get archived after 14 days to allow me to react to error/ warning messages&lt;/li&gt;
+&lt;li&gt;logfiles/ archives are automatically deleted if older then 14 days&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;after-the-gdpr-changes&#34;&gt;after the GDPR changes&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;logging
+
+&lt;ul&gt;
+&lt;li&gt;log lifetime of 7 days&lt;/li&gt;
+&lt;li&gt;logs get archived after 7 days to allow me to react to error/ warning messages&lt;/li&gt;
+&lt;li&gt;logfiles/ archives are automatically deleted if older then 7 days&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

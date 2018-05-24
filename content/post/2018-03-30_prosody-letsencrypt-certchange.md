@@ -10,7 +10,7 @@ tags = [
 	"mildly-usefull"
 ]
 categories = [ "Prosody" ]
-banner = "https://certbot.eff.org/images/certbot-logo-1A.svg"
+banner = "/banner/certbot-logo-1A.svg"
 slug = "letsencrypt prosody cert hook"
 +++
 ### Prosody + Let's Encrypt certificates

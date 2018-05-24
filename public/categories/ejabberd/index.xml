@@ -9,18 +9,43 @@
     <managingEditor>mightyBroccoli (nico)</managingEditor>
     <webMaster>mightyBroccoli (nico)</webMaster>
     <copyright>All rights reserved.</copyright>
-    <lastBuildDate>Fri, 30 Mar 2018 13:37:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 07 May 2018 13:37:00 +0200</lastBuildDate>
     
         <atom:link href="https://magicbroccoli.de/categories/ejabberd/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Migration to ejabberd</title>
-      <link>https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/</link>
-      <pubDate>Fri, 30 Mar 2018 13:37:00 +0200</pubDate>
+      <link>https://magicbroccoli.de/post/migration-to-ejabberd/</link>
+      <pubDate>Mon, 07 May 2018 13:37:00 +0200</pubDate>
       <author>mightyBroccoli (nico)</author>
-      <guid>https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/</guid>
-      <description></description>
+      <guid>https://magicbroccoli.de/post/migration-to-ejabberd/</guid>
+      <description>
+
+&lt;h2 id=&#34;why-did-i-migrate&#34;&gt;why did I migrate?&lt;/h2&gt;
+
+&lt;h3 id=&#34;mam&#34;&gt;mam&lt;/h3&gt;
+
+&lt;p&gt;Regarding &lt;a href=&#34;https://xmpp.org/extensions/xep-0313.html&#34; target=&#34;_blank&#34;&gt;XEP-313: Message Archive Management&lt;/a&gt; Prosodys development has the policy to support only the latest namespace in thier core module. To achive the support for all namespace versions a community module is needed. This policy is quite annoying as changes always need to be applied to more then one set of files.&lt;/p&gt;
+
+&lt;h3 id=&#34;muc&#34;&gt;muc&lt;/h3&gt;
+
+&lt;p&gt;While I like the way Prosody implements MUC there are little options to actually configure the MUC Service. Ejabberd comes with widerange of possible severside config options. Ranging from rate_limits to interval settings to reduce presence spam.&lt;/p&gt;
+
+&lt;h3 id=&#34;sql&#34;&gt;sql&lt;/h3&gt;
+
+&lt;p&gt;This part is mainly based around growth; Prosody does use one single DB connection to manage the persistent storage. At the moment my server is not big enough that this bottlenecks the performance. Even wth MAM defaulting to false and the evergrowing support for &lt;a href=&#34;https://xmpp.org/extensions/xep-0313.html&#34; target=&#34;_blank&#34;&gt;XEP-313&lt;/a&gt; the amount of data increases rapidly.&lt;/p&gt;
+
+&lt;h3 id=&#34;upcoming-mix-support&#34;&gt;upcoming mix support&lt;/h3&gt;
+
+&lt;h3 id=&#34;managment&#34;&gt;managment&lt;/h3&gt;
+
+&lt;h2 id=&#34;what-did-change-from-the-user-perspective&#34;&gt;What did change from the user perspective?&lt;/h2&gt;
+
+&lt;h2 id=&#34;what-did-change-from-the-admin-perspective&#34;&gt;What did change from the admin perspective?&lt;/h2&gt;
+
+&lt;h2 id=&#34;all-in-all&#34;&gt;All in all&lt;/h2&gt;
+</description>
     </item>
     
   </channel>

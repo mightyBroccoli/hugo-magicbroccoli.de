@@ -44,10 +44,6 @@ Da es sich zudem um persönliche Daten handelt, ist meine [Datenschutzerklärung
 
 **TLDR** : _Für die Nutzung des Services müssen keine persönlichen Daten angegeben werden. Protokollierung von Nutzerinteraktionen mit dem Server sind auf das notwendige Minimum reduziert. Es gibt keine weiteren Personen die Zugriff zur Administration des Servers haben._
 
-### Kann ich meine Domain mitbringen? (XMPP Domain Hosting)
-Gerne können Sie Ihre Domain mitbringen und ich betreibe den Dienst für Sie. Damit erhalten sie volle administratorische Rechte *für Eure Domain*. Damit stehen Ihnen *innerhalb eurer Domain* alle Admin-Befehle zur Verfügung. Es ist Euch damit möglich eigene XMPP Accounts anzulegen, für Freunde und/ oder Familie.<br>
-Eine Übersicht über die nötigen Vorraussetzungen und notwendigen Einstellungen für ein Hosting findet Sie in der [Übersicht](/xmpp-hosting/). Bei Interesse [kontaktierten](/contact/) Sie mich und wir besprechen den Rest.
-
 ### Kann ich den Serverbetreiber unterstützen?
 Der Betrieb und vor allem die Wartung kosten Geld und viel Zeit. Finanziell wird das Projekt von mir privat getragen, jedoch ist finanzielle Unterstützung jederzeit gern gesehen. Näheres dazu ist hier zu finden: [Unterstützen](/donate/)
 

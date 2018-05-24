@@ -233,77 +233,6 @@ Das Ergebnis sollte diese Form haben. Das Bild zeigt mein Ergebnis für den &lt;
     </item>
     
     <item>
-      <title>Magical XMPP Hosting</title>
-      <link>https://magicbroccoli.de/xmpp-hosting/</link>
-      <pubDate>Tue, 07 Nov 2017 00:00:00 +0000</pubDate>
-      <author>mightyBroccoli (nico)</author>
-      <guid>https://magicbroccoli.de/xmpp-hosting/</guid>
-      <description>
-
-&lt;h2 id=&#34;magicbroccoli-xmpp-hosting&#34;&gt;MagicBroccoli XMPP Hosting&lt;/h2&gt;
-
-&lt;p&gt;MagicBroccoli XMPP Hosting bietet einen freien XMPP Server der ausgelegt ist auf Datenschutz und Sicherheit unter Verwendung &lt;em&gt;deiner eigenen Domain&lt;/em&gt;.&lt;br&gt;
-Auf Anfrage und speziellen Wunsch, ist es auch möglich eine Subdomain z.B. xmpp.example.de zu betreiben mit einem dazugehörigen LetsEncrypt Zertifikat.&lt;/p&gt;
-
-&lt;h3 id=&#34;administration&#34;&gt;Administration&lt;/h3&gt;
-
-&lt;p&gt;Zur Verwaltung des Jabber Servers stehen Ihnen 2 mögliche Wege zur Verfügung. Über das &lt;a href=&#34;https://magicbroccoli.de/admin/&#34;&gt;Webinterface&lt;/a&gt; können User hinzugefügt, entfernt oder geändert werden. Verfügt der verwendete XMPP-Client über die Möglichkeit Ad-Hoc Kommandos zu verwenden, kann die Verwaltung auch komplett über den Client vorgenommen werden.&lt;/p&gt;
-
-&lt;h3 id=&#34;vorraussetzungen&#34;&gt;Vorraussetzungen&lt;/h3&gt;
-
-&lt;p&gt;Um einen verantwortungsvollen Umgang zu gewährleisten, bestehen einige Voraussetzungen damit das Hosting funktionieren kann.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;regelkonformes Verhalten nach den &lt;a href=&#34;https://magicbroccoli.de/termsofuse/&#34;&gt;Terms of Service&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Aufklärung aller Nutzer über die &lt;a href=&#34;https://magicbroccoli.de/datenschutz/&#34;&gt;Datenschutzerklärung&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;begrenzungen&#34;&gt;Begrenzungen&lt;/h3&gt;
-
-&lt;p&gt;Da es sich um ein privates Projekt handelt, richtet sich dieses Angebot an private Gruppen bzw. kleine Firmen.&lt;br&gt;
-Um Spammern vorzubeugen ist eine public Registrierung sowie die in-line Registrierung deaktiviert. Nutzeraccounts müssen über das Webinterface oder Ad-Hoc erstellt werden. Die maximale Nutzerzahl beträgt 25 Accounts. Benötigen Sie mehr Accounts, muss dies explizit mit mir besprochen werden.&lt;/p&gt;
-
-&lt;h2 id=&#34;wie-funktioniert-es&#34;&gt;Wie funktioniert es?&lt;/h2&gt;
-
-&lt;p&gt;Damit der XMPP Server funktioniert müssten einige DNS SRV Einträge geändert/ hinzugefügt werden. Dies ist bei nahezu allen Providern möglich, falls nicht, müsste dies der betreffende Support des Providers übernehmen.&lt;br&gt;
-Falls auch dies nicht möglich ist und dennoch der Wunsch besteht, ist ein Wechsel des DNS Hosting Partners unumgänglich. Kontaktieren Sie mich, dann kann ich Ihnen sicherlich auch da weiterhelfen.&lt;/p&gt;
-
-&lt;h3 id=&#34;dns&#34;&gt;DNS&lt;/h3&gt;
-
-&lt;p&gt;Die zur Verwendung benötigten DNS Einträge sind hier aufgelistet. Enthalten sind Einträge für Client zum Server, Server zu Server sowie XMPP over TLS Einträge.&lt;br&gt;
-Im folgenden Beispiel habe ich die Domain &lt;em&gt;example.de&lt;/em&gt; verwendet, diese müsste durch Ihre eigene ersetzt werden.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-dns&#34;&gt;_xmpp-client._tcp.example.tld. IN SRV 0 0 5222 magicbroccoli.de.
-
-_xmpp-server._tcp.example.tld. IN SRV 0 0 5269 magicbroccoli.de.
-
-_xmpps-client._tcp.example.tld. IN SRV 0 0 443 xmpps.magicbroccoli.de.
-
-_xmppconnect.example.tld. IN TXT &amp;quot;_xmpp-client-xbosh=https://magicbroccoli.de/http-bind&amp;quot;
-
-_xmppconnect.example.tld. IN TXT &amp;quot;_xmpp-client-websocket=wss://magicbroccoli.de/xmpp-websocket&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Bei Problemen zörgere nicht mich zu &lt;a href=&#34;https://magicbroccoli.de/contact/&#34;&gt;kontaktieren&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;zertifikat&#34;&gt;Zertifikat&lt;/h3&gt;
-
-&lt;p&gt;Wenn der Wunsch besteht ein bereits bestehendes gültiges Zertifikat zu verwenden, bitte ich darum, das dieses mindestens 1 Jahr gültig ist. Falls kein Zertifikat zur Verfügung gestellt wird, wird das magicbroccoli.de Zertifikat verwendet.&lt;br&gt;
-In dem Fall, dass eine Subdomain von mir verwendet werden soll, kann damit ein LetsEncrypt Zertifikat bereitgestellt werden.&lt;/p&gt;
-
-&lt;h2 id=&#34;hosting-provider&#34;&gt;Hosting Provider&lt;/h2&gt;
-
-&lt;p&gt;Falls noch kein Hoster für die Domain gefunden wurde kann ich Netcup als Hoster empfehlen. Gerne können sie auf Nachfrage Coupon Codes von mir ausstellen lassen die einen Rabatt gewähren.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;center&gt;&lt;a href=&#34;https://www.netcup.de&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/netcup-hlogo-b220h100.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;
-
-&lt;p&gt;Last Edit 25.04.18&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Prosody housekeeping</title>
       <link>https://magicbroccoli.de/post/prosody-housekeeping/</link>
       <pubDate>Mon, 02 Oct 2017 13:30:00 +0200</pubDate>
@@ -1125,6 +1054,81 @@ Speziell das &lt;a href=&#34;https://wikipedia.org/wiki/HTTP-Authentifizierung#D
 &lt;p&gt;&lt;strong&gt;Bitte notiere Sie sich Ihren Benutzernamen und Passwort sorgfältig! Passwort-Resets durch einen Administrator sind grundsätzlich möglich. Allerdings erfordert diese einen eindeutigen stichhaltigen Nachweis der Account-Inhaberschaft!&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;center&gt;&lt;iframe src=&#34;https://magicbroccoli.de/registerform&#34; style=&#34;height: 800px; width: 100%;&#34; overflow: hidden;&#34; frameBorder=&#34;0&#34;; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;&lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>TeamSpeak XMPP Push</title>
+      <link>https://magicbroccoli.de/post/ts-xmpp-push/</link>
+      <pubDate>Thu, 22 Jun 2017 14:15:25 +0200</pubDate>
+      <author>mightyBroccoli (nico)</author>
+      <guid>https://magicbroccoli.de/post/ts-xmpp-push/</guid>
+      <description>
+
+&lt;h2 id=&#34;idee&#34;&gt;Idee&lt;/h2&gt;
+
+&lt;p&gt;Die Idee hinter diesem Skript ist, dass ein Admin/ Moderatoren nicht dauerhaft mit einem Server verbunden sein kann, um nach dem Rechten zu sehen.&lt;br&gt;
+Dieses Problem versuche ich hiermit anzugehen. Dafür durchsucht dieses nach verschiedenen Regeln die Logfiles, gefundene Zeilen werden anschließend an definierte Kontakte per XMPP sendet.&lt;/p&gt;
+
+&lt;h3 id=&#34;nutzen&#34;&gt;Nutzen&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;IMHO&lt;/strong&gt; gibt es genügend Beispiele, in denen eine schnellstmögliche Benachrichtigung sehr praktisch ist. Viele Server unterstützen eine Reihe von &amp;ldquo;Automatischen Moderationen&amp;rdquo;, dennoch finden User Möglichkeiten diese zu behindern oder sogar zu umgehen. Durch eine kurze Benachrichtigung ist es dem Admin/ Moderator möglich zu überblicken, was betroffen ist und ob sofortiges handeln notwendig ist.&lt;br&gt;
+Je nach Häufigkeit der Ausführung können die Benachrichtigung innerhalb von Sekunden gepushed werden.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---- Group change ----
+--- added ---
+2017-05-12 18:56:38.609377|INFO    |VirtualServer |1  |client (id:USER A) was added to servergroup &#39;SERVERGROUP NAME&#39;(id:SERVERGROUP ID) by client &#39;USERNAME&#39;(id:USER B)
+2017-05-12 22:09:01.658969|INFO    |VirtualServer |1  |client (id:USER ID) was added to servergroup &#39;SERVERGROUP NAME&#39;(id:SERVERGROUP ID) by client &#39;USERNAME&#39;(id:USER ID)
+---- Group change End ----
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;filter&#34;&gt;Filter&lt;/h2&gt;
+
+&lt;h4 id=&#34;server&#34;&gt;Server&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Accounting&lt;/li&gt;
+&lt;li&gt;ServerMain&lt;/li&gt;
+&lt;li&gt;Warning&lt;/li&gt;
+&lt;li&gt;ERROR&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;user-spezifisch&#34;&gt;User spezifisch&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Complaint&lt;/li&gt;
+&lt;li&gt;Kick&lt;/li&gt;
+&lt;li&gt;Ban ( added and deleted )&lt;/li&gt;
+&lt;li&gt;Group change&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;channel&#34;&gt;Channel&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;creation&lt;/li&gt;
+&lt;li&gt;deletion&lt;/li&gt;
+&lt;li&gt;changed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;github&#34;&gt;Github&lt;/h2&gt;
+
+&lt;p&gt;Das Projekt ist gehostet auf &lt;a href=&#34;https://github.com/mightyBroccoli/logwatch-scripts&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt;. Dort ist auch ein Bereich für &lt;a href=&#34;https://github.com/mightyBroccoli/logwatch-scripts/issues&#34; target=&#34;_blank&#34;&gt;Github - Issues&lt;/a&gt;, falls Probleme auftreten oder Verbesserungsvorschläge bestehen.&lt;/p&gt;
+
+&lt;h2 id=&#34;debian-9&#34;&gt;Debian 9&lt;/h2&gt;
+
+&lt;p&gt;Leider besteht mit Debian Stretch ein Problem mit perl wodurch &lt;em&gt;sendxmpp&lt;/em&gt;, das xmpp cli Modul des Skripts nicht mehr funktioniert. Leider kann ich da im Moment erst mal nichts machen, aber ich repariere das Skipt für Debian Stretch, sobald es möglich ist.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Update : 28.07.2017 Debian 9 Perl5 Problematik
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Use of uninitialized value in numeric eq &lt;span style=&#34;color:#f92672&#34;&gt;(==)&lt;/span&gt; at /usr/share/perl5/XML/Stream.pm line &lt;span style=&#34;color:#ae81ff&#34;&gt;631&lt;/span&gt;.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Ich hab mit etwas debugging herausgefunden, welche Zeilen geändert werden müssen, um perl-xmlstream wieder zu fixxen.
+Die Datei &lt;code&gt;/usr/share/perl5/XML/Stream.pm&lt;/code&gt; müsste geändert werden. (Pfad kann abweichen je nach OS)
+Mit nano lässt sich bequem nach der Zeile suchen, mit Shift + W. Danach ändert man Zeile 631.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-perl&#34; data-lang=&#34;perl&#34;&gt;$self&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;{SIDS}&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;{default}&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;{ssl_ca_path} &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+zu
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-perl&#34; data-lang=&#34;perl&#34;&gt;$self&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;{SIDS}&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;{default}&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;{ssl_ca_path} &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/etc/ssl/certs&amp;#39;&lt;/span&gt;;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Nach dieser Änderung hat sich das Problem eingestellt und sendxmpp funktionierte wieder genauso tadellos wie zuvor.&lt;/p&gt;
 </description>
     </item>
     

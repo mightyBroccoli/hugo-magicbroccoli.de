@@ -4,6 +4,7 @@ date = "2017-11-07"
 title = "Magical XMPP Hosting"
 description = "MagicBroccoli XMPP Hosting"
 keywords = [ "MagicBroccoli XMPP Hosting", "XMPP", "XMPP-Hosting", "MagicBroccoli XMPP", "Prosody", "Debian" ]
+draft = true
 +++
 ## MagicBroccoli XMPP Hosting
 MagicBroccoli XMPP Hosting bietet einen freien XMPP Server der ausgelegt ist auf Datenschutz und Sicherheit unter Verwendung *deiner eigenen Domain*.<br>
