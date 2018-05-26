@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://magicbroccoli.de/post/gdpr/</loc>
+    <lastmod>2018-05-23T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/</loc>
     <lastmod>2018-03-30T13:37:00+02:00</lastmod>
   </url>
@@ -168,13 +173,13 @@
   
   <url>
     <loc>https://magicbroccoli.de/</loc>
-    <lastmod>2018-03-30T13:37:00+02:00</lastmod>
+    <lastmod>2018-05-23T00:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/tags/maintenance/</loc>
-    <lastmod>2018-03-30T13:37:00+02:00</lastmod>
+    <lastmod>2018-05-23T00:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -210,7 +215,13 @@
   
   <url>
     <loc>https://magicbroccoli.de/post/</loc>
-    <lastmod>2018-03-30T13:37:00+02:00</lastmod>
+    <lastmod>2018-05-23T00:00:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://magicbroccoli.de/categories/privacy/</loc>
+    <lastmod>2018-05-23T00:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   

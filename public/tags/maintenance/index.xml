@@ -9,10 +9,60 @@
     <managingEditor>mightyBroccoli (nico)</managingEditor>
     <webMaster>mightyBroccoli (nico)</webMaster>
     <copyright>All rights reserved.</copyright>
-    <lastBuildDate>Fri, 30 Mar 2018 13:37:00 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 23 May 2018 00:00:00 +0200</lastBuildDate>
     
         <atom:link href="https://magicbroccoli.de/tags/maintenance/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GDPR changes</title>
+      <link>https://magicbroccoli.de/post/gdpr/</link>
+      <pubDate>Wed, 23 May 2018 00:00:00 +0200</pubDate>
+      <author>mightyBroccoli (nico)</author>
+      <guid>https://magicbroccoli.de/post/gdpr/</guid>
+      <description>
+
+&lt;h2 id=&#34;general-data-protection-regulation-gdpr-https-gdpr-info-eu&#34;&gt;General Data Protection Regulation ( &lt;a href=&#34;https://gdpr-info.eu/&#34; target=&#34;_blank&#34;&gt;GDPR&lt;/a&gt; )&lt;/h2&gt;
+
+&lt;p&gt;The day has finally come. The new &lt;a href=&#34;https://gdpr-info.eu/&#34; target=&#34;_blank&#34;&gt;General Data Protection Regulation (GDPR)&lt;/a&gt; has become reality. With this new law every user has the right to know what data a service is storing. This post tries to clear up the situation what that means and what actually changed.&lt;/p&gt;
+
+&lt;h2 id=&#34;privacy-policy&#34;&gt;privacy policy&lt;/h2&gt;
+
+&lt;p&gt;The new &lt;a href=&#34;https://magicbroccoli.de/datenschutz&#34;&gt;privacy policy&lt;/a&gt; describes which userdata gets processed and/or stored on my servers. In addition to that the storage duration is listed in detail.&lt;/p&gt;
+
+&lt;p&gt;The whole purpose of storing/ processing any user data on my services:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;provide the service the user registered for&lt;/li&gt;
+&lt;li&gt;guarantee that the server/ service operates correctly&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I do &lt;em&gt;&lt;strong&gt;not&lt;/strong&gt;&lt;/em&gt; profile, track and/ or monetize any of my users.&lt;/p&gt;
+
+&lt;h2 id=&#34;terms-of-service&#34;&gt;terms of service&lt;/h2&gt;
+
+&lt;p&gt;Due to the GDPR changes and users from different contries I updated and translated the &lt;a href=&#34;https://magicbroccoli.de/termsofuse&#34;&gt;terms of service&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;changes-to-the-system&#34;&gt;changes to the system&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;logging
+
+&lt;ul&gt;
+&lt;li&gt;log lifetime decreased from 14 to 7 days&lt;/li&gt;
+&lt;li&gt;logs archive lifetime decreased from 14 to 7 day (&lt;em&gt;allowing me to react to error/ warning messages&lt;/em&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;removal of all direkt Facebook like/ share eg buttons&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;todo&#34;&gt;TODO&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;replacement of the Disqus commentary system&lt;/li&gt;
+&lt;li&gt;better solution to prevent xmpp spam&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Let&#39;s Encrypt Prosody Cert Hook</title>

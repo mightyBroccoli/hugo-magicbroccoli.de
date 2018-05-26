@@ -262,7 +262,7 @@ _xmpp-client._tcp.example.com. 18000 IN SRV 0 5 5222 example.com.
 _xmpp-server._tcp.example.com. 18000 IN SRV 0 5 5269 example.com.
 
 # XMPP over TLS Settings
-_xmpps-client._tcp.example.com. 18000 IN SRV 10 5 xmpps.example.com.
+_xmpps-client._tcp.example.com. 18000 IN SRV 10 5 443 xmpps.example.com.
 
 # A record
 xmpps.example.com. 18000 IN A $zweite_ip_adresse&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
