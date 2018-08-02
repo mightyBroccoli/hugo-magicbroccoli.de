@@ -7,7 +7,7 @@ author = "nico"
 keywords = [ "Prosody", "Debian", "XMPP", "MagicBroccoli XMPP"]
 +++
 ## System
-Das Hostsystem verwendet ![Debian](/icons/debian_icon.png) Debian 9.4 Stretch. Alle Komponenten werden regelmäßig aktualisiert. Teilweise nehme ich Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn sich dies allerdings nicht verhindern lässt, wird es zu einer möglichst kleinen Downtime für wichtige Updates kommen.
+Das Hostsystem verwendet ![Debian](/icons/debian_icon.png) Debian 9.5 Stretch. Alle Komponenten werden regelmäßig aktualisiert. Teilweise nehme ich Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn sich dies allerdings nicht verhindern lässt, wird es zu einer möglichst kleinen Downtime für wichtige Updates kommen.
 
 ### DNS
 Die gesamte DNS-Zone von *magicbroccoli.de* ist mit DNSSEC signiert und lässt sich dahingehend überprüfen.
@@ -36,20 +36,17 @@ Besonders bekannt hierfür ist [Qualys SSL Labs](https://www.ssllabs.com) dort s
 ( _Der Test dauert ca. 1 Minute, daher kann der Test von jedem jederzeit wiederholt werden._ )
 
 ### Ejabberd
-Bei der XMPP Serversoftware handelt es ich um ein Ejabberd 18.01.<br>
-Ich lege großen Wert auf Stabilität und Sicherheit, daher habe ich mich für einen Wechsel zu [ejabberd](https://www.ejabberd.im/) entschieden. Die Konfiguration ist soweit angepasst das alle aktuellen Features unterstützt werden.
+Bei der XMPP Serversoftware handelt es ich um ein Ejabberd 18.06-1~bpo9+1.<br>
 
 #### Verschlüsselung
-Ejabberd ist so konfiguriert, ausschließlich verschlüsselte Verbindungen zuzulassen. Zusätzlich dazu ist der Server so konfiguriert ausschließlich Verschlüsselungsverfahren zu erlauben, die [Perfect Forward Secrecy](https://wikipedia.org/wiki/Perfect_Forward_Secrecy) unterstützen.
-Ungesicherte Verbindungen, oder Verbindungen mit zu schwacher Verschlüsselung bei *c2s* oder *s2s* sind nicht zulässig. Leider werden dadurch einige Server sowie einige ältere Clients ausgesperrt, allerdings ist unzureichende Verschlüsselng für mich ein Ausschlusskriterium.
-Eine Übersicht welche Verschlüsselungsverfahren zum Verbindungsaufbau zulässig sind ist hier zu finden: [zulässige Verschlüsselungsverfahren](https://check.messaging.one/result.php?domain=magicbroccoli.de&type=client#ciphers)
+Es werden generell ausschließlich verschlüsselte Verbindungen zugelassen, zusätzlich dazu werden ausschließlich Verschlüsselungsverfahren angeboten, die [Perfect Forward Secrecy](https://wikipedia.org/wiki/Perfect_Forward_Secrecy) unterstützen. Hierdurch kann es vorkommen das einige Server nicht erreichbar sind. Der Admin des jeweiligen Servers kann Ihnen hierbei weiterhelfen, unzureichende Verschlüsselng für mich ein Ausschlusskriterium; [zulässige Verschlüsselungsverfahren](https://check.messaging.one/result.php?domain=magicbroccoli.de&type=client#ciphers).
 
-#### Zertifikate
-Es gibt viele öffentliche XMPP Server, die unter selbstsignierten oder ungültigen Zertifikaten betrieben werden. Mein Server ist so konfiguriert ausschließlich Zertifikate zuzulassen, denen vertraut wird und welche gültig sind. Selbstsignierte Zertifikate werden nicht akzeptiert.
+##### Zertifikate
+Dieser XMPP Server ist dahingehend konfiguriert ausschließlich gültige und korrekt ausgestellte Zertifikate zuzulassen. Selbstsignierte Zertifikate werden nicht unterstützt.
 
 #### Passwörter
 Alle Passwöter werden gehashed in einer Datenbank gespeichert, die nicht von außen erreichbar ist. Als Authentifizierungsverfahren wird [*SCRAM-SHA-1*](https://wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism) verwendet.<br>
-Speziell das [*DIGEST-MD5*](https://wikipedia.org/wiki/HTTP-Authentifizierung#Digest_Access_Authentication) Verfahren, welches ältere Clients und Bots häufiger verwenden, wird nicht unterstützt.
+Das [*DIGEST-MD5*](https://wikipedia.org/wiki/HTTP-Authentifizierung#Digest_Access_Authentication) Verfahren ist explizit deaktiviert, welches ältere Clients und Bots häufiger verwenden.
 
 #### Features
 Der Server unterstützt eine Vielfalt an XMPP-Erweiterungen (XEPs). Jeder Client unterstützt dabei eine andere Teilmenge dieser Features. Speziell gebe ich Acht darauf, [Conversations (Android)](https://conversations.im/) in möglichst großem Umfang zu unterstützen.
@@ -85,11 +82,11 @@ Für Fans von [Tor](https://www.torproject.org/) biete ich nun einen Hidden Serv
 
 <font color="red">_Hinweise_:</font>
 
-- Es ist nicht möglich, ein gültiges TLS-Zertifikat für eine .onion-Adresse anzubieten. Durch die Verwendung von Tor sollte der Zugang allerdings auch schon stark genug gesichert sein das dieser Faktor entfallen kann.
-- Die Funktion http_upload verwendet bei Nutzung, auch mit konfigurierter .onion-Adresse, mit dem normalen DNS und klassischen Verbindungen ins Internet. Daher müsste für dessen Nutzung mindestens noch ein _normaler_ Zugang zum Internet bestehen.
+- Es ist nicht möglich, ein gültiges TLS-Zertifikat für eine .onion-Adresse anzubieten.
+- Die Funktion http_upload verwendet bei Nutzung, auch mit konfigurierter .onion-Adresse, den normalen DNS und klassischen Verbindungen ins Internet. Daher müsste für dessen Nutzung mindestens noch ein _normaler_ Zugang zum Internet bestehen.
 
 #### Registrieren
-Wenn dich diese Dinge überzeugt haben XMPP für dich und deine Freunde zu probieren. Kannst du dich hier direkt anmelden.
+Wenn Sie diese Dinge überzeugt haben XMPP zu probieren, ist es hier direkt möglich sich zu registrieren.
 <center><a style="display: block; margin-top: 50px; margin-left: auto; margin-right: auto; margin-bottom: 50px; height: 50px; width: 300px; background-color: #0069a1; color: white; border-radius: 5px; line-height: 50px; text-align: center; font-weight: bold;" href="/register/">Registrieren</a></center>
 
 #### IM Observer
@@ -100,4 +97,4 @@ IM Oberserver ist ein Testsuite die automatisiert XMPP Server auf verschiedene F
 Mit dem Tool von [tls.imirhil.fr](https://tls.imirhil.fr) lässt sich ähnlich zum IM Observer ein Server prüfen. MagicBroccoli XMPP hat dort ein Rating von A+ [CryptCheck Score](https://tls.imirhil.fr/xmpp/magicbroccoli.de).
 
 - - -
-Last Edit 25.04.18
+Last Edit 02.08.18

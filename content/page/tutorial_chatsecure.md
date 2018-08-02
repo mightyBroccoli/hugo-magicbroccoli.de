@@ -37,11 +37,11 @@ Das kleine gelbe Warndreieck symbolisiert, das die App ein Feature des Server ve
 <br><img src="/images/tutorials/chatsecure/settings.png" width="33%"><img src="/images/tutorials/chatsecure/settings_konto.png" width="33%"><img src="/images/tutorials/chatsecure/settings_profile.png" width="33%">
 Unter _Meine Schlüssel verwalten_ ist es möglich seine eigenen Omemo Schlüssel zu akzeptieren oder zu misstrauen.
 
-## 5. Plugins
-Bei Plugins ist Chatsecure sehr nah an Conversations dran. Viele Einstellungen werden automatisch vom Server übernommen und müssen vom Benutzer gar nicht bedacht werden. Einige Einstellungen müssen, um den Betrieb möglichst reibungslos zu gewährleisten, von Hand einmalig eingestellt werden.
+## 5. Features
+Bei Features ist Chatsecure der beste iOS Client. Einige Einstellungen müssen, um den Betrieb möglichst reibungslos zu gewährleisten, von Hand einmalig eingestellt werden.
 
 ### 5.1 Push Notifications
-Push Benachrichtigungen sind ein sehr nützliches Feature, welches nicht alle Server Anbieter anbieten. Beim ersten verbinden erfragt das Telefon automatisch die verfügbaren Serverfeatures. Sollte sich darunter Push befinden, wird Ihr Telefon sie folgendes Fragen.
+Push Benachrichtigungen sind ein sehr nützliches Feature, welches nicht alle Anbieter anbieten. Beim ersten verbinden erfragt das Telefon automatisch die verfügbaren Serverfeatures. Sollte sich darunter Push befinden, wird Ihr Telefon sie folgendes Fragen.
 <br><img src="/images/tutorials/chatsecure/push_enable_1.png" width="50%"><img src="/images/tutorials/chatsecure/push_enable_2.png" width="50%">
 Um erfolgreich Push Benachrichtigungen zu erhalten ist es notwendig beide Fragen zu akzeptieren. Diese Frage wird einmalig pro Account gestellt.
 Es ist möglich die Erlaubnis in den Einstellungen zurückzusetzen oder sogar ganz zu verbieten.
@@ -62,4 +62,4 @@ Einige Webseiten die weitergehende Informationen zur Verfügung stellen.
 [Zurück zur Übersicht](/xmpp/)
 
 - - -
-Last Edit 13.10.17
+Last Edit 02.08.18

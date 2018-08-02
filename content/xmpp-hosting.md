@@ -8,7 +8,6 @@ draft = true
 +++
 ## MagicBroccoli XMPP Hosting
 MagicBroccoli XMPP Hosting bietet einen freien XMPP Server der ausgelegt ist auf Datenschutz und Sicherheit unter Verwendung *deiner eigenen Domain*.<br>
-Auf Anfrage und speziellen Wunsch, ist es auch möglich eine Subdomain z.B. xmpp.example.de zu betreiben mit einem dazugehörigen LetsEncrypt Zertifikat.
 
 ### Administration
 Zur Verwaltung des Jabber Servers stehen Ihnen 2 mögliche Wege zur Verfügung. Über das [Webinterface](/admin/) können User hinzugefügt, entfernt oder geändert werden. Verfügt der verwendete XMPP-Client über die Möglichkeit Ad-Hoc Kommandos zu verwenden, kann die Verwaltung auch komplett über den Client vorgenommen werden.
@@ -18,10 +17,6 @@ Um einen verantwortungsvollen Umgang zu gewährleisten, bestehen einige Vorausse
 
 - regelkonformes Verhalten nach den [Terms of Service](/termsofuse/)
 - Aufklärung aller Nutzer über die [Datenschutzerklärung](/datenschutz/)
-
-### Begrenzungen
-Da es sich um ein privates Projekt handelt, richtet sich dieses Angebot an private Gruppen bzw. kleine Firmen.<br>
-Um Spammern vorzubeugen ist eine public Registrierung sowie die in-line Registrierung deaktiviert. Nutzeraccounts müssen über das Webinterface oder Ad-Hoc erstellt werden. Die maximale Nutzerzahl beträgt 25 Accounts. Benötigen Sie mehr Accounts, muss dies explizit mit mir besprochen werden.
 
 ## Wie funktioniert es?
 Damit der XMPP Server funktioniert müssten einige DNS SRV Einträge geändert/ hinzugefügt werden. Dies ist bei nahezu allen Providern möglich, falls nicht, müsste dies der betreffende Support des Providers übernehmen.<br>
@@ -47,12 +42,10 @@ Bei Problemen zörgere nicht mich zu [kontaktieren](/contact/).
 
 ### Zertifikat
 Wenn der Wunsch besteht ein bereits bestehendes gültiges Zertifikat zu verwenden, bitte ich darum, das dieses mindestens 1 Jahr gültig ist. Falls kein Zertifikat zur Verfügung gestellt wird, wird das magicbroccoli.de Zertifikat verwendet.<br>
-In dem Fall, dass eine Subdomain von mir verwendet werden soll, kann damit ein LetsEncrypt Zertifikat bereitgestellt werden.
+In dem Fall, dass eine Domain auf meinen Server zeigt, kann ein LetsEncrypt Zertifikat bereitgestellt werden.
 
-## Hosting Provider
-Falls noch kein Hoster für die Domain gefunden wurde kann ich Netcup als Hoster empfehlen. Gerne können sie auf Nachfrage Coupon Codes von mir ausstellen lassen die einen Rabatt gewähren.
 - - -
 
 <center>[![](/images/netcup-hlogo-b220h100.png)](https://www.netcup.de)</center>
 
-Last Edit 25.04.18
+Last Edit 02.08.18

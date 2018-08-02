@@ -44,19 +44,14 @@ Viele Funktionalitäten lassen sich bei Gajim mithilfe von Plugins stark erweite
 ### 4.1 Omemo
 Bei [Omemo](https://conversations.im/omemo/) handelt es sich um eine Weiterentwicklung des OTR ([Off the record](https://wikipedia.org/wiki/Off-the-Record_Messaging)) Verfahrens. Besonders hierbei ist, dass mehrere Ressourcen pro Account und auch Gruppenkonversationen verschlüsselt werden können. Zusätzlich dazu können auch verschickte Medien verschlüsselt versendet werden.
 
-### 4.2 HTTP Upload
-HTTP Upload ist eine Funktion des Medienversands, wie sie auch WhatsApp und Co verwenden. Dabei wird eine Mediendatei ( Bild, Video, etc. ) an den Server übertragen und dieser versendet anschließend einen Link zu der Datei an den/die Empfänger.
-
 Bei diesem Plugin sind die Serverrichtlinien zu beachten. Meistens gibt es vorgegebene Grenzen, wie groß eine einzelne versendete Datei sein darf bzw wie viele Dateien pro Zeiteinheit versendet werden können.
 
 *Wie [4.1](#4-1-omemo) erwähnt lässt dieses Plugin einen verschlüsselten Upload eines versendeten Mediums zu. Damit sind die versendeten Dateien, nach den Spezifikationen von Omemo nur für die*
 
-**Wichtig** : Das Plugin [Images](https://dev.gajim.org/gajim/gajim-plugins/wikis/ImagePlugin) verwendet **kein** HTTP Upload. Hierbei wird die Datei über das ältere Peer 2 Peer System übertragen. Viele mobile Geräte unterstützen diese Art der Übertragung nicht.
+### 4.2 URL Image Preview
+Um die volle Funktionalität von HTTP Upload auszuschöpfen sollte das [URL Image Preview Plugin](https://dev.gajim.org/gajim/gajim-plugins/wikis/UrlImagePreviewPlugin) installiert werden. Dieses ermöglicht Medien Dateien, die über HTTP Upload versendet wurden, direkt im Nachrichtenverlauf anzuzeigen.
 
-### 4.3 URL Image Preview
-Um die volle Funktionalität von HTTP Upload auszuschöpfen kann das [URL Image Preview Plugin](https://dev.gajim.org/gajim/gajim-plugins/wikis/UrlImagePreviewPlugin) verwendet werden. Dieses ermöglicht Medien Dateien, die über HTTP Upload versendet wurden, direkt im Nachrichtenverlauf anzuzeigen. Damit ist der Medien Versand/Empfang mit diesen beiden Plugins ( HTTP Upload / URL Image Preview ) vollständig integriert.
-
-*Besonders nützlich ist, dass dieses Plugin das  Öffnen von aesgcm:// Links unterstützt. Damit können auch mit Omemo verschlüsselt übertragene Medien direkt angezeigt werden.*
+*Besonders ist das auch OMEMO verschlüsselte Uploads mit dem aesgcm:// Schema unterstüzt werden. Damit können auch mit Omemo verschlüsselt übertragene Medien direkt angezeigt werden.*
 
 ## 5. Gruppenchats
 Aktionen > Chatraum betreten > Chatraum betreten führt zu einem Fenster das Ihnen einige Möglichkeiten bietet.
@@ -99,4 +94,4 @@ Einige Webseiten die weitergehende Tutorials bzw. ausführlichere Tutorials zur 
 [Zurück zur Übersicht](/xmpp/)
 
 - - -
-Last Edit 30.03.18
+Last Edit 02.08.18

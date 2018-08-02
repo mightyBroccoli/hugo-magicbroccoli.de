@@ -15,9 +15,8 @@ Auf dieser Seite möchte ich einige Tutorials sammeln, teilweise stammen diese v
 
 ## Android
 - [Conversations](https://www.jabber.de/clients/android-ios/conversations-guide)
-- [Chatsecure](/page/tutorial_chatsecure)
 
-## iPhone
+## iOS
 - [Chatsecure](/page/tutorial_chatsecure)
 
 ## Prosody
@@ -30,9 +29,6 @@ Auf dieser Seite möchte ich einige Tutorials sammeln, teilweise stammen diese v
 ### _IMHO_ Nützliche Links
 Einige Webseiten die weitergehende Tutorials bzw. ausführlichere Tutorials zur Verfügung stellen.
 
-##### Allgemein
-- [Datenschutzhelden.org - XMPP Server explained](https://datenschutzhelden.org/2017/07/12/daten-sparsame-xmpp-server/)
-
 ##### Omemo
 - [Maintainer Website von Omemo](https://conversations.im/omemo/)
 - [Omemo Audit (PDF Download)](https://conversations.im/omemo/audit.pdf)
@@ -44,4 +40,4 @@ Einige Webseiten die weitergehende Tutorials bzw. ausführlichere Tutorials zur 
 [Zurück zur Übersicht](/xmpp/)
 
 - - -
-Last Edit 22.01.18
+Last Edit 02.08.18

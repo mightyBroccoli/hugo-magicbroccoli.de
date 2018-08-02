@@ -7,7 +7,7 @@ keywords = [ "donate" ]
 +++
 ## Unterstützung
 Der Betrieb des Servers sowie dessen Wartung kosten viel Zeit und natürlich auch Geld. Momentan werden alle Kosten von mir privat getragen. Wenn Sie mich in meinem Bestreben Datenschutz für alle Verfügbar zu machen unterstützen möchten, sind sie hier gold richtig.<br>
-Über kleine Beiträge zur Finanzierung freue ich mich ungemein. Daueraufträge lassen sogar eine längerfristige Planung zu.
+Auch über kleine Beiträge zur Finanzierung freue ich mich ungemein. Daueraufträge lassen sogar eine längerfristige Planung zu.
 
 <i class="fa fa-paypal"></i> [PayPal](https://paypal.me/nwellpott)
 
@@ -15,7 +15,7 @@ Der Betrieb des Servers sowie dessen Wartung kosten viel Zeit und natürlich auc
 
 <i class="fa fa-university"></i> Banküberweisung: [auf Anfrage](/contact/)
 
-<i class="fa fa-credit-card"></i> [LiberaPay](https://liberapay.com/mightyBroccoli): <script src="https://liberapay.com/mightyBroccoli/widgets/button.js"></script>
+<i class="fa fa-credit-card"></i> LiberaPay: <script src="https://liberapay.com/mightyBroccoli/widgets/button.js"></script>
 <noscript><a href="https://liberapay.com/mightyBroccoli/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
 
 <i class="fa fa-btc"></i>  Bitcoin: `1QJZTWenBvdLWTUachpLLd2dLXAZMGeU87`<br>
@@ -25,5 +25,16 @@ Vielen vielen herzlichen Dank an alle, die sich einmalig oder dauerhaft an der F
 
 **Hinweis**: _Es handelt sich hierbei um Spenden im Sinne von Schenkungen nach § 516 BGB, nicht um steuerlich absetzbare Spenden im Sinne des Steuerrechts._
 
+Es gibt auch die Möglichkeit sich indirekt an der Finanzierung zu beteiligen. [netcup](https://www.netcup.de/bestellen/gutschein_einloesen.php) bietet für seine Kunden Referral Vorteile an, an dessen Umsätzen ich dann beteiligt würde.
+
+- [Gutschein 5 Euro (fuer Neukunden, keine Domains)](https://www.netcup.de)
+- [Webhosting 2000 - 30%](https://www.netcup.de/bestellen/produkt.php?produkt=1920)
+- [Webhosting 4000 - 30%](https://www.netcup.de/bestellen/produkt.php?produkt=1922)
+- [Webhosting 8000 - 30%](https://www.netcup.de/bestellen/produkt.php?produkt=1924)
+- [VPS 200 G8 - 10%](https://www.netcup.de/bestellen/produkt.php?produkt=2000)
+- [VPS 500 G8 - 10%](https://www.netcup.de/bestellen/produkt.php?produkt=2001)
+- [VPS 1000 G8 - 10%](https://www.netcup.de/bestellen/produkt.php?produkt=2002)
+- [VPS 2000 G8 - 10%](https://www.netcup.de/bestellen/produkt.php?produkt=2003)
+
 - - -
-Last Edit 22.01.18
+Last Edit 02.08.18

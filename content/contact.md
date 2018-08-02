@@ -15,6 +15,7 @@ keywords = [ "contact", "Kontakt","about me" ]
 
 #### Chat
 XMPP: [broccoli(at)magicbroccoli.de](xmpp:broccoli(at)magicbroccoli.de)<br>
+XMPP-MUC : [lobby(at)conference.magicbroccoli.de](xmpp:lobby(at)conference.magicbroccoli.de?join)<br>
 IRC: `mightyBroccoli`[^1]<br>
 
 ##### OMEMO Fingerabdrücke

@@ -9,20 +9,21 @@ keywords = [ "MagicBroccoli XMPP", "XMPP", "MagicBroccoli XMPP", "Prosody", "Deb
 MagicBroccoli XMPP ist ein freier XMPP Server ausgelegt auf Datenschutz und Sicherheit. [XMPP](https://wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol) ist ein Protokoll, welches ein Versenden von Nachrichten über das Internet ermöglicht. Es ist sehr ähnlich zu ICQ oder MSN besitzt dazu aber einige besondere Features.
 
 ### Wie funktioniert es?
-XMPP ist in einem dezentrales Netzwerk organisiert. Das bedeutet, dass es entgegen WhatsApp oder Facebook, weltweit viele Anbieter von XMPP Servern gibt. Daher kann theoretisch bei jedem Anbieter seinen Account registrieren. Ähnlich einem E-Mail Account besitzt jeder Account eine Adresse. Dieser besteht bei XMPP aus dem Username @ Servernamen.tld z.B. _"user@magicbroccoli.de"_
+XMPP ist in einem dezentrales Netzwerk organisiert. Das bedeutet, dass es entgegen WhatsApp oder Facebook, weltweit viele Anbieter von XMPP Servern gibt. Daher kann sich  bei theoretisch jedem Anbieter ein Account erstellt werden. Ähnlich einem E-Mail Account besitzt jeder Account eine Adresse. Dieser besteht bei XMPP aus dem Username @ Servernamen.tld z.B. _"user@magicbroccoli.de"_
 
 ### Vorteile von XMPP?
-- meistens kostenlos, nur sehr wenige Anbieter sind kostenpflichtig
-- Datenschutz und Sicherheit der User ist häufig ein Schwerpunkt daher werden für die Registrierung nur minimale Informationen benötigt.
+- meistens kostenlos, nur einige wenige Anbieter sind kostenpflichtig
+- minimalste Informationen zur Registrierung/ Nutzung notwendig
 - die freie Wahl, des Clients und des Servers. Für jedes Betriebssystem sind dutzende Clients mit unterschiedlichestem Funktionsumfang verfügbar.
+- Unabhängikeit von einem einzigen großen Anbieter ( WhatsApp/ Facebook )
 
 ### How to?
-XMPP Clients funktioniert analog zu Clients für ICQ/ MSN. Nach der Registrierung eines Accounts werden die persönlichen Login-Daten eingegeben und schon ist der Account einsatzbereit.
+XMPP Clients funktioniert analog zu Clients wie ICQ/ MSN. Nach der Registrierung eines Accounts werden die persönlichen Login-Daten eingegeben und schon ist der Account einsatzbereit.
 Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es [hier](https://xmpp.org/software/clients.html). Für einige der unten empfohlenen Clients sind [Tutorials](/tutorial/) vorhanden.
 
 **INHO** : _Die folgende Liste bezieht sich auf die Clients, die die meisten Features abdecken und mit möglichst vielen Standards konform sind. Außerdem werden ausschließlich Clients gelistet, die aktiv entwickelt werden._
 
-- Android: [Conversations](https://conversations.im/) (€ 4,99 im [Google Play Store](https://play.google.com/store/apps/details?id=eu.siacs.conversations) oder gratis auf [F-Droid](https://f-droid.org/repository/browse%20/?fdid=eu.siacs.conversations))
+- Android: [Conversations](https://conversations.im/) (€ 2,39 im [Google Play Store](https://play.google.com/store/apps/details?id=eu.siacs.conversations) oder gratis auf [F-Droid](https://f-droid.org/repository/browse%20/?fdid=eu.siacs.conversations))
 - Android: [Pix-Art Messenger](https://jabber.pix-art.de/) (Conversations Fork mit einigen Änderungen zur Verbesserung der Benutzerfreundlichkeit)
 - Android: [Xabber](https://www.xabber.com/)
 - iOS (iPhone): [ChatSecure](https://chatsecure.org/)
@@ -32,11 +33,10 @@ Eine ausführliche Liste von Clients für unterschiedlichste Systeme gibt es [h
 - macOS: [Adium](https://adium.im/)
 - macOS: [Dino](https://dino.im/) ( _muss noch selbstständig compiliert werden_ )
 - Windows: [Gajim](https://gajim.org/?lang=de)
-- Windows (XMPP - Anfänger): [Pidgin](https://pidgin.im/) *mit deutlich eingeschränktem Funktionsumfang der Server-Features*
 - Webbrowser: [Converse.js](https://conversejs.org/)
 
 ## Registrieren
-Wenn dich diese Dinge überzeugt haben XMPP für dich und deine Freunde zu probieren. Ist es dir hier direkt möglich dich anzumelden.
+Wenn Sie diese Dinge überzeugt haben XMPP zu probieren, ist es hier direkt möglich sich zu registrieren.
 <center><a style="display: block; margin-top: 50px; margin-left: auto; margin-right: auto; margin-bottom: 50px; height: 50px; width: 300px; background-color: #0069a1; color: white; border-radius: 5px; line-height: 50px; text-align: center; font-weight: bold;" href="/register/">Registrieren</a></center>
 
 #### Datenschutz
@@ -54,4 +54,4 @@ Alles weitere, wie aktivierte XEPs und näheres zur verwendeten Technik bzw Soft
 
 <center>[![](/images/netcup-hlogo-b220h100.png)](https://www.netcup.de)</center>
 
-Last Edit 14.02.18
+Last Edit 02.08.18
