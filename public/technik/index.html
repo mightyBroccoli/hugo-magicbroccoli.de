@@ -57,7 +57,7 @@
     },
     "datePublished": "2017-06-27",
     "description": "verwendete Server Technik",
-    "wordCount": 710
+    "wordCount": 614
   }
 </script>
 
@@ -65,7 +65,7 @@
 
 <link rel="canonical" href="https://magicbroccoli.de/technik/" />
 
-<meta name="generator" content="Hugo 0.40.3" />
+<meta name="generator" content="Hugo 0.45.1" />
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
@@ -155,7 +155,7 @@
 
 <h2 id="system">System</h2>
 
-<p>Das Hostsystem verwendet <img src="https://magicbroccoli.de/icons/debian_icon.png" alt="Debian" /> Debian 9.4 Stretch. Alle Komponenten werden regelmäßig aktualisiert. Teilweise nehme ich Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn sich dies allerdings nicht verhindern lässt, wird es zu einer möglichst kleinen Downtime für wichtige Updates kommen.</p>
+<p>Das Hostsystem verwendet <img src="https://magicbroccoli.de/icons/debian_icon.png" alt="Debian" /> Debian 9.5 Stretch. Alle Komponenten werden regelmäßig aktualisiert. Teilweise nehme ich Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn sich dies allerdings nicht verhindern lässt, wird es zu einer möglichst kleinen Downtime für wichtige Updates kommen.</p>
 
 <h3 id="dns">DNS</h3>
 
@@ -189,23 +189,20 @@ Besonders bekannt hierfür ist <a href="https://www.ssllabs.com" target="_blank"
 
 <h3 id="ejabberd">Ejabberd</h3>
 
-<p>Bei der XMPP Serversoftware handelt es ich um ein Ejabberd 18.01.<br>
-Ich lege großen Wert auf Stabilität und Sicherheit, daher habe ich mich für einen Wechsel zu <a href="https://www.ejabberd.im/" target="_blank">ejabberd</a> entschieden. Die Konfiguration ist soweit angepasst das alle aktuellen Features unterstützt werden.</p>
+<p>Bei der XMPP Serversoftware handelt es ich um ein Ejabberd 18.06-1~bpo9+1.<br></p>
 
 <h4 id="verschlüsselung">Verschlüsselung</h4>
 
-<p>Ejabberd ist so konfiguriert, ausschließlich verschlüsselte Verbindungen zuzulassen. Zusätzlich dazu ist der Server so konfiguriert ausschließlich Verschlüsselungsverfahren zu erlauben, die <a href="https://wikipedia.org/wiki/Perfect_Forward_Secrecy" target="_blank">Perfect Forward Secrecy</a> unterstützen.
-Ungesicherte Verbindungen, oder Verbindungen mit zu schwacher Verschlüsselung bei <em>c2s</em> oder <em>s2s</em> sind nicht zulässig. Leider werden dadurch einige Server sowie einige ältere Clients ausgesperrt, allerdings ist unzureichende Verschlüsselng für mich ein Ausschlusskriterium.
-Eine Übersicht welche Verschlüsselungsverfahren zum Verbindungsaufbau zulässig sind ist hier zu finden: <a href="https://check.messaging.one/result.php?domain=magicbroccoli.de&amp;type=client#ciphers" target="_blank">zulässige Verschlüsselungsverfahren</a></p>
+<p>Es werden generell ausschließlich verschlüsselte Verbindungen zugelassen, zusätzlich dazu werden ausschließlich Verschlüsselungsverfahren angeboten, die <a href="https://wikipedia.org/wiki/Perfect_Forward_Secrecy" target="_blank">Perfect Forward Secrecy</a> unterstützen. Hierdurch kann es vorkommen das einige Server nicht erreichbar sind. Der Admin des jeweiligen Servers kann Ihnen hierbei weiterhelfen, unzureichende Verschlüsselng für mich ein Ausschlusskriterium; <a href="https://check.messaging.one/result.php?domain=magicbroccoli.de&amp;type=client#ciphers" target="_blank">zulässige Verschlüsselungsverfahren</a>.</p>
 
-<h4 id="zertifikate">Zertifikate</h4>
+<h5 id="zertifikate">Zertifikate</h5>
 
-<p>Es gibt viele öffentliche XMPP Server, die unter selbstsignierten oder ungültigen Zertifikaten betrieben werden. Mein Server ist so konfiguriert ausschließlich Zertifikate zuzulassen, denen vertraut wird und welche gültig sind. Selbstsignierte Zertifikate werden nicht akzeptiert.</p>
+<p>Dieser XMPP Server ist dahingehend konfiguriert ausschließlich gültige und korrekt ausgestellte Zertifikate zuzulassen. Selbstsignierte Zertifikate werden nicht unterstützt.</p>
 
 <h4 id="passwörter">Passwörter</h4>
 
 <p>Alle Passwöter werden gehashed in einer Datenbank gespeichert, die nicht von außen erreichbar ist. Als Authentifizierungsverfahren wird <a href="https://wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism" target="_blank"><em>SCRAM-SHA-1</em></a> verwendet.<br>
-Speziell das <a href="https://wikipedia.org/wiki/HTTP-Authentifizierung#Digest_Access_Authentication" target="_blank"><em>DIGEST-MD5</em></a> Verfahren, welches ältere Clients und Bots häufiger verwenden, wird nicht unterstützt.</p>
+Das <a href="https://wikipedia.org/wiki/HTTP-Authentifizierung#Digest_Access_Authentication" target="_blank"><em>DIGEST-MD5</em></a> Verfahren ist explizit deaktiviert, welches ältere Clients und Bots häufiger verwenden.</p>
 
 <h4 id="features">Features</h4>
 
@@ -249,13 +246,13 @@ Speziell das <a href="https://wikipedia.org/wiki/HTTP-Authentifizierung#Digest_A
 <p><font color="red"><em>Hinweise</em>:</font></p>
 
 <ul>
-<li>Es ist nicht möglich, ein gültiges TLS-Zertifikat für eine .onion-Adresse anzubieten. Durch die Verwendung von Tor sollte der Zugang allerdings auch schon stark genug gesichert sein das dieser Faktor entfallen kann.</li>
-<li>Die Funktion http_upload verwendet bei Nutzung, auch mit konfigurierter .onion-Adresse, mit dem normalen DNS und klassischen Verbindungen ins Internet. Daher müsste für dessen Nutzung mindestens noch ein <em>normaler</em> Zugang zum Internet bestehen.</li>
+<li>Es ist nicht möglich, ein gültiges TLS-Zertifikat für eine .onion-Adresse anzubieten.</li>
+<li>Die Funktion http_upload verwendet bei Nutzung, auch mit konfigurierter .onion-Adresse, den normalen DNS und klassischen Verbindungen ins Internet. Daher müsste für dessen Nutzung mindestens noch ein <em>normaler</em> Zugang zum Internet bestehen.</li>
 </ul>
 
 <h4 id="registrieren">Registrieren</h4>
 
-<p>Wenn dich diese Dinge überzeugt haben XMPP für dich und deine Freunde zu probieren. Kannst du dich hier direkt anmelden.
+<p>Wenn Sie diese Dinge überzeugt haben XMPP zu probieren, ist es hier direkt möglich sich zu registrieren.
 <center><a style="display: block; margin-top: 50px; margin-left: auto; margin-right: auto; margin-bottom: 50px; height: 50px; width: 300px; background-color: #0069a1; color: white; border-radius: 5px; line-height: 50px; text-align: center; font-weight: bold;" href="https://magicbroccoli.de/register/">Registrieren</a></center></p>
 
 <h4 id="im-observer">IM Observer</h4>
@@ -268,7 +265,7 @@ Speziell das <a href="https://wikipedia.org/wiki/HTTP-Authentifizierung#Digest_A
 
 <hr />
 
-<p>Last Edit 25.04.18</p>
+<p>Last Edit 02.08.18</p>
 
 </div>
 

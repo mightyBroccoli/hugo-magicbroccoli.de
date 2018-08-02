@@ -708,10 +708,9 @@ Conversations users will except OMEMO to work with everyone. That’s why Conver
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.jabber.de/clients/android-ios/conversations-guide&#34; target=&#34;_blank&#34;&gt;Conversations&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://magicbroccoli.de/page/tutorial_chatsecure&#34;&gt;Chatsecure&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;iphone&#34;&gt;iPhone&lt;/h2&gt;
+&lt;h2 id=&#34;ios&#34;&gt;iOS&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://magicbroccoli.de/page/tutorial_chatsecure&#34;&gt;Chatsecure&lt;/a&gt;&lt;/li&gt;
@@ -731,12 +730,6 @@ Conversations users will except OMEMO to work with everyone. That’s why Conver
 
 &lt;p&gt;Einige Webseiten die weitergehende Tutorials bzw. ausführlichere Tutorials zur Verfügung stellen.&lt;/p&gt;
 
-&lt;h5 id=&#34;allgemein&#34;&gt;Allgemein&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://datenschutzhelden.org/2017/07/12/daten-sparsame-xmpp-server/&#34; target=&#34;_blank&#34;&gt;Datenschutzhelden.org - XMPP Server explained&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
 &lt;h5 id=&#34;omemo&#34;&gt;Omemo&lt;/h5&gt;
 
 &lt;ul&gt;
@@ -755,7 +748,7 @@ Conversations users will except OMEMO to work with everyone. That’s why Conver
 
 &lt;hr /&gt;
 
-&lt;p&gt;Last Edit 22.01.18&lt;/p&gt;
+&lt;p&gt;Last Edit 02.08.18&lt;/p&gt;
 </description>
     </item>
     
@@ -798,13 +791,13 @@ Das kleine gelbe Warndreieck symbolisiert, das die App ein Feature des Server ve
 &lt;br&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/settings.png&#34; width=&#34;33%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/settings_konto.png&#34; width=&#34;33%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/settings_profile.png&#34; width=&#34;33%&#34;&gt;
 Unter &lt;em&gt;Meine Schlüssel verwalten&lt;/em&gt; ist es möglich seine eigenen Omemo Schlüssel zu akzeptieren oder zu misstrauen.&lt;/p&gt;
 
-&lt;h2 id=&#34;5-plugins&#34;&gt;5. Plugins&lt;/h2&gt;
+&lt;h2 id=&#34;5-features&#34;&gt;5. Features&lt;/h2&gt;
 
-&lt;p&gt;Bei Plugins ist Chatsecure sehr nah an Conversations dran. Viele Einstellungen werden automatisch vom Server übernommen und müssen vom Benutzer gar nicht bedacht werden. Einige Einstellungen müssen, um den Betrieb möglichst reibungslos zu gewährleisten, von Hand einmalig eingestellt werden.&lt;/p&gt;
+&lt;p&gt;Bei Features ist Chatsecure der beste iOS Client. Einige Einstellungen müssen, um den Betrieb möglichst reibungslos zu gewährleisten, von Hand einmalig eingestellt werden.&lt;/p&gt;
 
 &lt;h3 id=&#34;5-1-push-notifications&#34;&gt;5.1 Push Notifications&lt;/h3&gt;
 
-&lt;p&gt;Push Benachrichtigungen sind ein sehr nützliches Feature, welches nicht alle Server Anbieter anbieten. Beim ersten verbinden erfragt das Telefon automatisch die verfügbaren Serverfeatures. Sollte sich darunter Push befinden, wird Ihr Telefon sie folgendes Fragen.
+&lt;p&gt;Push Benachrichtigungen sind ein sehr nützliches Feature, welches nicht alle Anbieter anbieten. Beim ersten verbinden erfragt das Telefon automatisch die verfügbaren Serverfeatures. Sollte sich darunter Push befinden, wird Ihr Telefon sie folgendes Fragen.
 &lt;br&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/push_enable_1.png&#34; width=&#34;50%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/push_enable_2.png&#34; width=&#34;50%&#34;&gt;
 Um erfolgreich Push Benachrichtigungen zu erhalten ist es notwendig beide Fragen zu akzeptieren. Diese Frage wird einmalig pro Account gestellt.
 Es ist möglich die Erlaubnis in den Einstellungen zurückzusetzen oder sogar ganz zu verbieten.&lt;/p&gt;
@@ -831,7 +824,7 @@ Wenn der Account mobil genutzt wird ist Omemo definitiv die bessere Wahl, da &lt
 
 &lt;hr /&gt;
 
-&lt;p&gt;Last Edit 13.10.17&lt;/p&gt;
+&lt;p&gt;Last Edit 02.08.18&lt;/p&gt;
 </description>
     </item>
     
@@ -885,21 +878,15 @@ Wenn Sie den Haken bei &amp;ldquo;Mein Profil setzten, wenn ich mich verbinde&am
 
 &lt;p&gt;Bei &lt;a href=&#34;https://conversations.im/omemo/&#34; target=&#34;_blank&#34;&gt;Omemo&lt;/a&gt; handelt es sich um eine Weiterentwicklung des OTR (&lt;a href=&#34;https://wikipedia.org/wiki/Off-the-Record_Messaging&#34; target=&#34;_blank&#34;&gt;Off the record&lt;/a&gt;) Verfahrens. Besonders hierbei ist, dass mehrere Ressourcen pro Account und auch Gruppenkonversationen verschlüsselt werden können. Zusätzlich dazu können auch verschickte Medien verschlüsselt versendet werden.&lt;/p&gt;
 
-&lt;h3 id=&#34;4-2-http-upload&#34;&gt;4.2 HTTP Upload&lt;/h3&gt;
-
-&lt;p&gt;HTTP Upload ist eine Funktion des Medienversands, wie sie auch WhatsApp und Co verwenden. Dabei wird eine Mediendatei ( Bild, Video, etc. ) an den Server übertragen und dieser versendet anschließend einen Link zu der Datei an den/die Empfänger.&lt;/p&gt;
-
 &lt;p&gt;Bei diesem Plugin sind die Serverrichtlinien zu beachten. Meistens gibt es vorgegebene Grenzen, wie groß eine einzelne versendete Datei sein darf bzw wie viele Dateien pro Zeiteinheit versendet werden können.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Wie &lt;a href=&#34;#4-1-omemo&#34;&gt;4.1&lt;/a&gt; erwähnt lässt dieses Plugin einen verschlüsselten Upload eines versendeten Mediums zu. Damit sind die versendeten Dateien, nach den Spezifikationen von Omemo nur für die&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Wichtig&lt;/strong&gt; : Das Plugin &lt;a href=&#34;https://dev.gajim.org/gajim/gajim-plugins/wikis/ImagePlugin&#34; target=&#34;_blank&#34;&gt;Images&lt;/a&gt; verwendet &lt;strong&gt;kein&lt;/strong&gt; HTTP Upload. Hierbei wird die Datei über das ältere Peer 2 Peer System übertragen. Viele mobile Geräte unterstützen diese Art der Übertragung nicht.&lt;/p&gt;
+&lt;h3 id=&#34;4-2-url-image-preview&#34;&gt;4.2 URL Image Preview&lt;/h3&gt;
 
-&lt;h3 id=&#34;4-3-url-image-preview&#34;&gt;4.3 URL Image Preview&lt;/h3&gt;
+&lt;p&gt;Um die volle Funktionalität von HTTP Upload auszuschöpfen sollte das &lt;a href=&#34;https://dev.gajim.org/gajim/gajim-plugins/wikis/UrlImagePreviewPlugin&#34; target=&#34;_blank&#34;&gt;URL Image Preview Plugin&lt;/a&gt; installiert werden. Dieses ermöglicht Medien Dateien, die über HTTP Upload versendet wurden, direkt im Nachrichtenverlauf anzuzeigen.&lt;/p&gt;
 
-&lt;p&gt;Um die volle Funktionalität von HTTP Upload auszuschöpfen kann das &lt;a href=&#34;https://dev.gajim.org/gajim/gajim-plugins/wikis/UrlImagePreviewPlugin&#34; target=&#34;_blank&#34;&gt;URL Image Preview Plugin&lt;/a&gt; verwendet werden. Dieses ermöglicht Medien Dateien, die über HTTP Upload versendet wurden, direkt im Nachrichtenverlauf anzuzeigen. Damit ist der Medien Versand/Empfang mit diesen beiden Plugins ( HTTP Upload / URL Image Preview ) vollständig integriert.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Besonders nützlich ist, dass dieses Plugin das  Öffnen von aesgcm:// Links unterstützt. Damit können auch mit Omemo verschlüsselt übertragene Medien direkt angezeigt werden.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Besonders ist das auch OMEMO verschlüsselte Uploads mit dem aesgcm:// Schema unterstüzt werden. Damit können auch mit Omemo verschlüsselt übertragene Medien direkt angezeigt werden.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;5-gruppenchats&#34;&gt;5. Gruppenchats&lt;/h2&gt;
 
@@ -957,7 +944,7 @@ Die Archive Funktion ermöglicht es Nachrichten für 1 Monat auf dem Server zu s
 
 &lt;hr /&gt;
 
-&lt;p&gt;Last Edit 30.03.18&lt;/p&gt;
+&lt;p&gt;Last Edit 02.08.18&lt;/p&gt;
 </description>
     </item>
     
@@ -971,7 +958,7 @@ Die Archive Funktion ermöglicht es Nachrichten für 1 Monat auf dem Server zu s
 
 &lt;h2 id=&#34;system&#34;&gt;System&lt;/h2&gt;
 
-&lt;p&gt;Das Hostsystem verwendet &lt;img src=&#34;https://magicbroccoli.de/icons/debian_icon.png&#34; alt=&#34;Debian&#34; /&gt; Debian 9.4 Stretch. Alle Komponenten werden regelmäßig aktualisiert. Teilweise nehme ich Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn sich dies allerdings nicht verhindern lässt, wird es zu einer möglichst kleinen Downtime für wichtige Updates kommen.&lt;/p&gt;
+&lt;p&gt;Das Hostsystem verwendet &lt;img src=&#34;https://magicbroccoli.de/icons/debian_icon.png&#34; alt=&#34;Debian&#34; /&gt; Debian 9.5 Stretch. Alle Komponenten werden regelmäßig aktualisiert. Teilweise nehme ich Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn sich dies allerdings nicht verhindern lässt, wird es zu einer möglichst kleinen Downtime für wichtige Updates kommen.&lt;/p&gt;
 
 &lt;h3 id=&#34;dns&#34;&gt;DNS&lt;/h3&gt;
 
@@ -1005,23 +992,20 @@ Besonders bekannt hierfür ist &lt;a href=&#34;https://www.ssllabs.com&#34; targ
 
 &lt;h3 id=&#34;ejabberd&#34;&gt;Ejabberd&lt;/h3&gt;
 
-&lt;p&gt;Bei der XMPP Serversoftware handelt es ich um ein Ejabberd 18.01.&lt;br&gt;
-Ich lege großen Wert auf Stabilität und Sicherheit, daher habe ich mich für einen Wechsel zu &lt;a href=&#34;https://www.ejabberd.im/&#34; target=&#34;_blank&#34;&gt;ejabberd&lt;/a&gt; entschieden. Die Konfiguration ist soweit angepasst das alle aktuellen Features unterstützt werden.&lt;/p&gt;
+&lt;p&gt;Bei der XMPP Serversoftware handelt es ich um ein Ejabberd 18.06-1~bpo9+1.&lt;br&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;verschlüsselung&#34;&gt;Verschlüsselung&lt;/h4&gt;
 
-&lt;p&gt;Ejabberd ist so konfiguriert, ausschließlich verschlüsselte Verbindungen zuzulassen. Zusätzlich dazu ist der Server so konfiguriert ausschließlich Verschlüsselungsverfahren zu erlauben, die &lt;a href=&#34;https://wikipedia.org/wiki/Perfect_Forward_Secrecy&#34; target=&#34;_blank&#34;&gt;Perfect Forward Secrecy&lt;/a&gt; unterstützen.
-Ungesicherte Verbindungen, oder Verbindungen mit zu schwacher Verschlüsselung bei &lt;em&gt;c2s&lt;/em&gt; oder &lt;em&gt;s2s&lt;/em&gt; sind nicht zulässig. Leider werden dadurch einige Server sowie einige ältere Clients ausgesperrt, allerdings ist unzureichende Verschlüsselng für mich ein Ausschlusskriterium.
-Eine Übersicht welche Verschlüsselungsverfahren zum Verbindungsaufbau zulässig sind ist hier zu finden: &lt;a href=&#34;https://check.messaging.one/result.php?domain=magicbroccoli.de&amp;amp;type=client#ciphers&#34; target=&#34;_blank&#34;&gt;zulässige Verschlüsselungsverfahren&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Es werden generell ausschließlich verschlüsselte Verbindungen zugelassen, zusätzlich dazu werden ausschließlich Verschlüsselungsverfahren angeboten, die &lt;a href=&#34;https://wikipedia.org/wiki/Perfect_Forward_Secrecy&#34; target=&#34;_blank&#34;&gt;Perfect Forward Secrecy&lt;/a&gt; unterstützen. Hierdurch kann es vorkommen das einige Server nicht erreichbar sind. Der Admin des jeweiligen Servers kann Ihnen hierbei weiterhelfen, unzureichende Verschlüsselng für mich ein Ausschlusskriterium; &lt;a href=&#34;https://check.messaging.one/result.php?domain=magicbroccoli.de&amp;amp;type=client#ciphers&#34; target=&#34;_blank&#34;&gt;zulässige Verschlüsselungsverfahren&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h4 id=&#34;zertifikate&#34;&gt;Zertifikate&lt;/h4&gt;
+&lt;h5 id=&#34;zertifikate&#34;&gt;Zertifikate&lt;/h5&gt;
 
-&lt;p&gt;Es gibt viele öffentliche XMPP Server, die unter selbstsignierten oder ungültigen Zertifikaten betrieben werden. Mein Server ist so konfiguriert ausschließlich Zertifikate zuzulassen, denen vertraut wird und welche gültig sind. Selbstsignierte Zertifikate werden nicht akzeptiert.&lt;/p&gt;
+&lt;p&gt;Dieser XMPP Server ist dahingehend konfiguriert ausschließlich gültige und korrekt ausgestellte Zertifikate zuzulassen. Selbstsignierte Zertifikate werden nicht unterstützt.&lt;/p&gt;
 
 &lt;h4 id=&#34;passwörter&#34;&gt;Passwörter&lt;/h4&gt;
 
 &lt;p&gt;Alle Passwöter werden gehashed in einer Datenbank gespeichert, die nicht von außen erreichbar ist. Als Authentifizierungsverfahren wird &lt;a href=&#34;https://wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;SCRAM-SHA-1&lt;/em&gt;&lt;/a&gt; verwendet.&lt;br&gt;
-Speziell das &lt;a href=&#34;https://wikipedia.org/wiki/HTTP-Authentifizierung#Digest_Access_Authentication&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;DIGEST-MD5&lt;/em&gt;&lt;/a&gt; Verfahren, welches ältere Clients und Bots häufiger verwenden, wird nicht unterstützt.&lt;/p&gt;
+Das &lt;a href=&#34;https://wikipedia.org/wiki/HTTP-Authentifizierung#Digest_Access_Authentication&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;DIGEST-MD5&lt;/em&gt;&lt;/a&gt; Verfahren ist explizit deaktiviert, welches ältere Clients und Bots häufiger verwenden.&lt;/p&gt;
 
 &lt;h4 id=&#34;features&#34;&gt;Features&lt;/h4&gt;
 
@@ -1065,13 +1049,13 @@ Speziell das &lt;a href=&#34;https://wikipedia.org/wiki/HTTP-Authentifizierung#D
 &lt;p&gt;&lt;font color=&#34;red&#34;&gt;&lt;em&gt;Hinweise&lt;/em&gt;:&lt;/font&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Es ist nicht möglich, ein gültiges TLS-Zertifikat für eine .onion-Adresse anzubieten. Durch die Verwendung von Tor sollte der Zugang allerdings auch schon stark genug gesichert sein das dieser Faktor entfallen kann.&lt;/li&gt;
-&lt;li&gt;Die Funktion http_upload verwendet bei Nutzung, auch mit konfigurierter .onion-Adresse, mit dem normalen DNS und klassischen Verbindungen ins Internet. Daher müsste für dessen Nutzung mindestens noch ein &lt;em&gt;normaler&lt;/em&gt; Zugang zum Internet bestehen.&lt;/li&gt;
+&lt;li&gt;Es ist nicht möglich, ein gültiges TLS-Zertifikat für eine .onion-Adresse anzubieten.&lt;/li&gt;
+&lt;li&gt;Die Funktion http_upload verwendet bei Nutzung, auch mit konfigurierter .onion-Adresse, den normalen DNS und klassischen Verbindungen ins Internet. Daher müsste für dessen Nutzung mindestens noch ein &lt;em&gt;normaler&lt;/em&gt; Zugang zum Internet bestehen.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&#34;registrieren&#34;&gt;Registrieren&lt;/h4&gt;
 
-&lt;p&gt;Wenn dich diese Dinge überzeugt haben XMPP für dich und deine Freunde zu probieren. Kannst du dich hier direkt anmelden.
+&lt;p&gt;Wenn Sie diese Dinge überzeugt haben XMPP zu probieren, ist es hier direkt möglich sich zu registrieren.
 &lt;center&gt;&lt;a style=&#34;display: block; margin-top: 50px; margin-left: auto; margin-right: auto; margin-bottom: 50px; height: 50px; width: 300px; background-color: #0069a1; color: white; border-radius: 5px; line-height: 50px; text-align: center; font-weight: bold;&#34; href=&#34;https://magicbroccoli.de/register/&#34;&gt;Registrieren&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;im-observer&#34;&gt;IM Observer&lt;/h4&gt;
@@ -1084,7 +1068,7 @@ Speziell das &lt;a href=&#34;https://wikipedia.org/wiki/HTTP-Authentifizierung#D
 
 &lt;hr /&gt;
 
-&lt;p&gt;Last Edit 25.04.18&lt;/p&gt;
+&lt;p&gt;Last Edit 02.08.18&lt;/p&gt;
 </description>
     </item>
     

@@ -57,7 +57,7 @@
     },
     "datePublished": "2017-07-22",
     "description": "Guide on how to use Gajim",
-    "wordCount": 800
+    "wordCount": 710
   }
 </script>
 
@@ -65,7 +65,7 @@
 
 <link rel="canonical" href="https://magicbroccoli.de/page/tutorial_gajim/" />
 
-<meta name="generator" content="Hugo 0.40.3" />
+<meta name="generator" content="Hugo 0.45.1" />
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
@@ -195,21 +195,15 @@ Wenn Sie den Haken bei &ldquo;Mein Profil setzten, wenn ich mich verbinde&rdquo;
 
 <p>Bei <a href="https://conversations.im/omemo/" target="_blank">Omemo</a> handelt es sich um eine Weiterentwicklung des OTR (<a href="https://wikipedia.org/wiki/Off-the-Record_Messaging" target="_blank">Off the record</a>) Verfahrens. Besonders hierbei ist, dass mehrere Ressourcen pro Account und auch Gruppenkonversationen verschlüsselt werden können. Zusätzlich dazu können auch verschickte Medien verschlüsselt versendet werden.</p>
 
-<h3 id="4-2-http-upload">4.2 HTTP Upload</h3>
-
-<p>HTTP Upload ist eine Funktion des Medienversands, wie sie auch WhatsApp und Co verwenden. Dabei wird eine Mediendatei ( Bild, Video, etc. ) an den Server übertragen und dieser versendet anschließend einen Link zu der Datei an den/die Empfänger.</p>
-
 <p>Bei diesem Plugin sind die Serverrichtlinien zu beachten. Meistens gibt es vorgegebene Grenzen, wie groß eine einzelne versendete Datei sein darf bzw wie viele Dateien pro Zeiteinheit versendet werden können.</p>
 
 <p><em>Wie <a href="#4-1-omemo">4.1</a> erwähnt lässt dieses Plugin einen verschlüsselten Upload eines versendeten Mediums zu. Damit sind die versendeten Dateien, nach den Spezifikationen von Omemo nur für die</em></p>
 
-<p><strong>Wichtig</strong> : Das Plugin <a href="https://dev.gajim.org/gajim/gajim-plugins/wikis/ImagePlugin" target="_blank">Images</a> verwendet <strong>kein</strong> HTTP Upload. Hierbei wird die Datei über das ältere Peer 2 Peer System übertragen. Viele mobile Geräte unterstützen diese Art der Übertragung nicht.</p>
+<h3 id="4-2-url-image-preview">4.2 URL Image Preview</h3>
 
-<h3 id="4-3-url-image-preview">4.3 URL Image Preview</h3>
+<p>Um die volle Funktionalität von HTTP Upload auszuschöpfen sollte das <a href="https://dev.gajim.org/gajim/gajim-plugins/wikis/UrlImagePreviewPlugin" target="_blank">URL Image Preview Plugin</a> installiert werden. Dieses ermöglicht Medien Dateien, die über HTTP Upload versendet wurden, direkt im Nachrichtenverlauf anzuzeigen.</p>
 
-<p>Um die volle Funktionalität von HTTP Upload auszuschöpfen kann das <a href="https://dev.gajim.org/gajim/gajim-plugins/wikis/UrlImagePreviewPlugin" target="_blank">URL Image Preview Plugin</a> verwendet werden. Dieses ermöglicht Medien Dateien, die über HTTP Upload versendet wurden, direkt im Nachrichtenverlauf anzuzeigen. Damit ist der Medien Versand/Empfang mit diesen beiden Plugins ( HTTP Upload / URL Image Preview ) vollständig integriert.</p>
-
-<p><em>Besonders nützlich ist, dass dieses Plugin das  Öffnen von aesgcm:// Links unterstützt. Damit können auch mit Omemo verschlüsselt übertragene Medien direkt angezeigt werden.</em></p>
+<p><em>Besonders ist das auch OMEMO verschlüsselte Uploads mit dem aesgcm:// Schema unterstüzt werden. Damit können auch mit Omemo verschlüsselt übertragene Medien direkt angezeigt werden.</em></p>
 
 <h2 id="5-gruppenchats">5. Gruppenchats</h2>
 
@@ -267,7 +261,7 @@ Die Archive Funktion ermöglicht es Nachrichten für 1 Monat auf dem Server zu s
 
 <hr />
 
-<p>Last Edit 30.03.18</p>
+<p>Last Edit 02.08.18</p>
 
 </div>
 

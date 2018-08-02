@@ -53,13 +53,13 @@ Das kleine gelbe Warndreieck symbolisiert, das die App ein Feature des Server ve
 &lt;br&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/settings.png&#34; width=&#34;33%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/settings_konto.png&#34; width=&#34;33%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/settings_profile.png&#34; width=&#34;33%&#34;&gt;
 Unter &lt;em&gt;Meine Schlüssel verwalten&lt;/em&gt; ist es möglich seine eigenen Omemo Schlüssel zu akzeptieren oder zu misstrauen.&lt;/p&gt;
 
-&lt;h2 id=&#34;5-plugins&#34;&gt;5. Plugins&lt;/h2&gt;
+&lt;h2 id=&#34;5-features&#34;&gt;5. Features&lt;/h2&gt;
 
-&lt;p&gt;Bei Plugins ist Chatsecure sehr nah an Conversations dran. Viele Einstellungen werden automatisch vom Server übernommen und müssen vom Benutzer gar nicht bedacht werden. Einige Einstellungen müssen, um den Betrieb möglichst reibungslos zu gewährleisten, von Hand einmalig eingestellt werden.&lt;/p&gt;
+&lt;p&gt;Bei Features ist Chatsecure der beste iOS Client. Einige Einstellungen müssen, um den Betrieb möglichst reibungslos zu gewährleisten, von Hand einmalig eingestellt werden.&lt;/p&gt;
 
 &lt;h3 id=&#34;5-1-push-notifications&#34;&gt;5.1 Push Notifications&lt;/h3&gt;
 
-&lt;p&gt;Push Benachrichtigungen sind ein sehr nützliches Feature, welches nicht alle Server Anbieter anbieten. Beim ersten verbinden erfragt das Telefon automatisch die verfügbaren Serverfeatures. Sollte sich darunter Push befinden, wird Ihr Telefon sie folgendes Fragen.
+&lt;p&gt;Push Benachrichtigungen sind ein sehr nützliches Feature, welches nicht alle Anbieter anbieten. Beim ersten verbinden erfragt das Telefon automatisch die verfügbaren Serverfeatures. Sollte sich darunter Push befinden, wird Ihr Telefon sie folgendes Fragen.
 &lt;br&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/push_enable_1.png&#34; width=&#34;50%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/push_enable_2.png&#34; width=&#34;50%&#34;&gt;
 Um erfolgreich Push Benachrichtigungen zu erhalten ist es notwendig beide Fragen zu akzeptieren. Diese Frage wird einmalig pro Account gestellt.
 Es ist möglich die Erlaubnis in den Einstellungen zurückzusetzen oder sogar ganz zu verbieten.&lt;/p&gt;
@@ -86,7 +86,7 @@ Wenn der Account mobil genutzt wird ist Omemo definitiv die bessere Wahl, da &lt
 
 &lt;hr /&gt;
 
-&lt;p&gt;Last Edit 13.10.17&lt;/p&gt;
+&lt;p&gt;Last Edit 02.08.18&lt;/p&gt;
 </description>
     </item>
     
