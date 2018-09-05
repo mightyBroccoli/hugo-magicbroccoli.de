@@ -1,4 +1,4 @@
 /public/assets/js/script.js*
-/public/*.gz
+/public/**/*.gz
 /public/register/register.css
 build.sh
