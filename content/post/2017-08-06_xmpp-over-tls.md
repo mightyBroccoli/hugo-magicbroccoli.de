@@ -6,7 +6,8 @@ author = "nico"
 description = ""
 keywords = [ "Prosody", "XMPP", "xep-0368", "XMPP over TLS" ]
 tags = [
-	"xep-0368"
+	"xep-0368",
+	"mildly useful"
 ]
 categories = [ "Prosody", "XMPP", "Guide" ]
 banner = ""

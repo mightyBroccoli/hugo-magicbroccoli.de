@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>Migration to ejabberd  &middot; Magic Broccoli</title>
+  <title>Nextcloud Munin Plugin  &middot; Magic Broccoli</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -11,25 +11,31 @@
 
 <meta name="description" content="Ein moderner, deutscher XMPP Server mit einem Schwerpunkt auf Privatsphäre und Datenschutz. Erstelle dir hier kostenlos einen Account." />
 
-<meta name="keywords" content="Prosody, ejabberd, ">
+<meta name="keywords" content="nextcloud, munin, munin-plugin, rrd, external-api, ">
 
 
-<meta property="og:title" content="Migration to ejabberd  &middot; Magic Broccoli ">
+<meta property="og:title" content="Nextcloud Munin Plugin  &middot; Magic Broccoli ">
 <meta property="og:site_name" content="Magic Broccoli"/>
-<meta property="og:url" content="https://magicbroccoli.de/post/migration-to-ejabberd/" />
+<meta property="og:url" content="https://magicbroccoli.de/post/nextcloud-munin/" />
 <meta property="og:locale" content="de-DE">
 
 
 <meta property="og:type" content="article" />
 <meta property="og:description" content=""/>
-<meta property="og:article:published_time" content="2018-05-07T13:37:00&#43;02:00" />
-<meta property="og:article:modified_time" content="2018-05-07T13:37:00&#43;02:00" />
+<meta property="og:article:published_time" content="2018-09-03T02:30:00&#43;02:00" />
+<meta property="og:article:modified_time" content="2018-09-03T02:30:00&#43;02:00" />
 
   
     
-<meta property="og:article:tag" content="Prosody">
+<meta property="og:article:tag" content="nextcloud">
     
-<meta property="og:article:tag" content="ejabberd">
+<meta property="og:article:tag" content="munin">
+    
+<meta property="og:article:tag" content="munin-plugin">
+    
+<meta property="og:article:tag" content="rrd">
+    
+<meta property="og:article:tag" content="external-api">
     
   
 
@@ -37,9 +43,9 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
-<meta name="twitter:title" content="Migration to ejabberd" />
+<meta name="twitter:title" content="Nextcloud Munin Plugin" />
 <meta name="twitter:description" content="" />
-<meta name="twitter:url" content="https://magicbroccoli.de/post/migration-to-ejabberd/" />
+<meta name="twitter:url" content="https://magicbroccoli.de/post/nextcloud-munin/" />
 <meta name="twitter:domain" content="https://magicbroccoli.de/">
   
 
@@ -47,21 +53,21 @@
   {
     "@context": "http://schema.org",
     "@type": "Article",
-    "headline": "Migration to ejabberd",
+    "headline": "Nextcloud Munin Plugin",
     "author": {
       "@type": "Person",
     },
-    "datePublished": "2018-05-07",
+    "datePublished": "2018-09-03",
     "description": "",
-    "wordCount": 168
+    "wordCount": 256
   }
 </script>
 
 
 
-<link rel="canonical" href="https://magicbroccoli.de/post/migration-to-ejabberd/" />
+<link rel="canonical" href="https://magicbroccoli.de/post/nextcloud-munin/" />
 
-<meta name="generator" content="Hugo 0.40.3" />
+<meta name="generator" content="Hugo 0.48" />
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha256-QUyqZrt5vIjBumoqQV0jM8CgGqscFfdGhN+nVCqX0vc=" crossorigin="anonymous" />
@@ -148,26 +154,26 @@
     <div class="col-xs-12 col-md-9 post-container">
       <div>
   
-<a href="https://magicbroccoli.de/post/migration-to-ejabberd/" itemprop="url">
+<a href="https://magicbroccoli.de/post/nextcloud-munin/" itemprop="url">
     
-      <img src="https://magicbroccoli.de/banner/ejabberd_slug.png" class="img-fluid" alt="Generic responsive image">
+      <img src="https://magicbroccoli.de/banner/nextcloud-munin.png" class="img-fluid" alt="Generic responsive image">
     
 </a>
 
 
-  <h1 class="post-title mb-1">Migration to ejabberd
+  <h1 class="post-title mb-1">Nextcloud Munin Plugin
 </h1>
 
   <div class="post-meta">
   <div class="post-meta-item">
     <i class="fa fa-calendar"></i>
-    <time datetime="2018-05-07">7 May, 2018</time>
+    <time datetime="2018-09-03">3 Sep, 2018</time>
 
     
       &middot; by nico
     
-    &middot; 1 Minute Read
-    &middot; 168 Words
+    &middot; 2 Minute Read
+    &middot; 256 Words
   </div>
 
   
@@ -176,7 +182,7 @@
       <div class="post-meta-item">
           <i class="fa fa-folder-open-o"></i>
           
-          <a class="article-category-link" href="https://magicbroccoli.de/categories/ejabberd/">ejabberd</a>
+          <a class="article-category-link" href="https://magicbroccoli.de/categories/nextcloud/">Nextcloud</a>
           
           
       </div>
@@ -189,7 +195,7 @@
         <div class="post-meta-item">
           <i class="fa fa-tags"></i>
           
-          <a href="https://magicbroccoli.de/tags/maintenance/">maintenance</a>
+          <a href="https://magicbroccoli.de/tags/mildly-useful/">mildly-useful</a>
           
           
         </div>
@@ -198,7 +204,7 @@
   
   <div class="post-meta-item">
     &nbsp;<i class="fa fa-comment-o"></i>
-    <a href="https://magicbroccoli.de/post/migration-to-ejabberd/#disqus_thread" class="article-comment-link">
+    <a href="https://magicbroccoli.de/post/nextcloud-munin/#disqus_thread" class="article-comment-link">
          Comments
     </a>
   </div>
@@ -211,29 +217,49 @@
       <div class="content pt-2">
   
 
-<h2 id="why-did-i-migrate">why did I migrate?</h2>
+<h1 id="basic-idea">basic idea</h1>
 
-<h3 id="mam">mam</h3>
+<p>For a longer period of time I was looking for a Munin plugin to monitor the activity, especially the user activity on my cloud instance. There are some plugins out there, but most of them depend on externally querying the database.<br>
+With the <a href="https://docs.nextcloud.com/server/13/developer_manual/core/externalapi.html" target="_blank">External API</a> and the <a href="https://github.com/nextcloud/serverinfo" target="_blank">server info dashboard</a> Nextcloud itself presents an endpoint to gather data from. This way the database action is handled by the cloud and I can just grab the data from the endpoint.</p>
 
-<p>Regarding <a href="https://xmpp.org/extensions/xep-0313.html" target="_blank">XEP-313: Message Archive Management</a> Prosodys development has the policy to support only the latest namespace in thier core module. To achive the support for all namespace versions a community module is needed. This policy is quite annoying as changes always need to be applied to more then one set of files.</p>
+<h2 id="why-python">why python?</h2>
 
-<h3 id="muc">muc</h3>
+<p>I choose python to utilize the immensely strong <a href="https://github.com/requests/requests" target="_blank">requests</a> module. In addition to that no extra json dump was necessary to work with the data which made the data extraction really easy.</p>
 
-<p>While I like the way Prosody implements MUC there are little options to actually configure the MUC Service. Ejabberd comes with widerange of possible severside config options. Ranging from rate_limits to interval settings to reduce presence spam.</p>
+<pre><code># init requests session with specific header and credentials
+s = requests.Session()
+s.auth = auth
+s.headers.update({'Accept': 'application/json'})
 
-<h3 id="sql">sql</h3>
+# request data from api
+r = s.get(URL)
+api_response = r.json()
+</code></pre>
 
-<p>This part is mainly based around growth; Prosody does use one single DB connection to manage the persistent storage. At the moment my server is not big enough that this bottlenecks the performance. Even wth MAM defaulting to false and the evergrowing support for <a href="https://xmpp.org/extensions/xep-0313.html" target="_blank">XEP-313</a> the amount of data increases rapidly.</p>
+<p>In this example <code>auth</code> and <code>url</code> are passed as variables which were defined earlier in the plugin to specific environment variables. All together those 5 lines do the complete request and conversion to json action of the plugin.</p>
 
-<h3 id="upcoming-mix-support">upcoming mix support</h3>
+<h2 id="munin-config">Munin config</h2>
 
-<h3 id="managment">managment</h3>
+<p>On running the plugins for the first time Munin will correctly recognize the configuration, even if the URL and authentication information is not set up until that point.</p>
 
-<h2 id="what-did-change-from-the-user-perspective">What did change from the user perspective?</h2>
+<h3 id="configuration">configuration</h3>
 
-<h2 id="what-did-change-from-the-admin-perspective">What did change from the admin perspective?</h2>
+<p>Both plugins need essentially the same configuration added to the the plugin-config <code>/etc/munin/plugin-config.d/munin-node</code>.</p>
 
-<h2 id="all-in-all">All in all</h2>
+<pre><code>[nextcloud_*]
+url = https://URL.TO.YOUR.NEXTCLOUD.tld/ocs/v2.php/apps/serverinfo/api/v1/info
+username = username
+password = password or logintoken
+</code></pre>
+
+<h2 id="results">results</h2>
+
+<p>If all necessary configuration parameters are set the resulting graphs should look something like this.
+<br><img src="https://magicbroccoli.de/images/posts/2018-09-03_nextcloud-munin/graph_share.png" width="50%"><img src="https://magicbroccoli.de/images/posts/2018-09-03_nextcloud-munin/graph_user.png" width="50%"></p>
+
+<hr />
+
+<p>Github : <a href="https://github.com/mightyBroccoli/nextcloud-munin-py" target="_blank">nextcloud-munin-py</a></p>
 
 </div>
 
@@ -245,18 +271,11 @@
     <ul class="pagination">
       
       <li class="page-item">
-        <a href="https://magicbroccoli.de/post/letsencrypt-prosody-cert-hook/" title="Let&#39;s Encrypt Prosody Cert Hook " class="page-link">
+        <a href="https://magicbroccoli.de/post/gdpr/" title="GDPR changes " class="page-link">
           <span aria-hidden="true">&larr;</span>Previous
         </a>
       </li>
        
-      
-      <li class="page-item">
-        <a href="https://magicbroccoli.de/post/gdpr/" title="Changes related to GDPR" class="page-link">
-          Next
-          <span aria-hidden="true">&rarr;</span>
-        </a>
-      </li>
       
     </ul>
   </nav>
@@ -266,7 +285,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="pt-4">
          <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -318,17 +337,17 @@
         </li>
         
         <li class="category-list-item">
-            <a href="https://magicbroccoli.de/categories/ejabberd/">
-                ejabberd
-            </a>
-            <span class="category-list-count">1</span>
-        </li>
-        
-        <li class="category-list-item">
             <a href="https://magicbroccoli.de/categories/guide/">
                 guide
             </a>
             <span class="category-list-count">5</span>
+        </li>
+        
+        <li class="category-list-item">
+            <a href="https://magicbroccoli.de/categories/nextcloud/">
+                nextcloud
+            </a>
+            <span class="category-list-count">1</span>
         </li>
         
         <li class="category-list-item">
@@ -404,7 +423,7 @@
         
           <li>
             <a href="https://magicbroccoli.de/tags/maintenance/">maintenance</a>
-            <span class="category-list-count">5</span>
+            <span class="category-list-count">4</span>
           </li>
         
           <li>
@@ -413,8 +432,8 @@
           </li>
         
           <li>
-            <a href="https://magicbroccoli.de/tags/mildly-usefull/">mildly-usefull</a>
-            <span class="category-list-count">3</span>
+            <a href="https://magicbroccoli.de/tags/mildly-useful/">mildly-useful</a>
+            <span class="category-list-count">5</span>
           </li>
         
           <li>
@@ -490,8 +509,8 @@
         mariadb
         </a>
     
-        <a href="https://magicbroccoli.de/tags/mildly-usefull/" class="badge badge-primary">
-        mildly-usefull
+        <a href="https://magicbroccoli.de/tags/mildly-useful/" class="badge badge-primary">
+        mildly-useful
         </a>
     
         <a href="https://magicbroccoli.de/tags/omemo/" class="badge badge-primary">

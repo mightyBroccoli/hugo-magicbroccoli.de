@@ -6,7 +6,7 @@ author = "nico"
 description = ""
 keywords = [ "XMPP", "Teamspeak", "Push" ]
 tags = [
-	"mildly usefull"
+	"mildly useful"
 ]
 categories = [ "Bash", "TeamSpeak", "XMPP" ]
 banner = ""

@@ -3,7 +3,7 @@
 ## Hugo Build script
 #
 ## variables
-Folders=( /home/nico/Programming/Github/hugo-magicbroccoli.de )
+Folders=( "/home/nico/Programming/Github/hugo-magicbroccoli.de" )
 
 ## script
 # remove the old public directory

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nextcloud on Magic Broccoli</title>
+    <link>https://magicbroccoli.de/categories/nextcloud/</link>
+    <description>Recent content in Nextcloud on Magic Broccoli</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-DE</language>
+    <managingEditor>mightyBroccoli (nico)</managingEditor>
+    <webMaster>mightyBroccoli (nico)</webMaster>
+    <copyright>All rights reserved.</copyright>
+    <lastBuildDate>Mon, 03 Sep 2018 02:30:00 +0200</lastBuildDate>
+    
+        <atom:link href="https://magicbroccoli.de/categories/nextcloud/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nextcloud Munin Plugin</title>
+      <link>https://magicbroccoli.de/post/nextcloud-munin/</link>
+      <pubDate>Mon, 03 Sep 2018 02:30:00 +0200</pubDate>
+      <author>mightyBroccoli (nico)</author>
+      <guid>https://magicbroccoli.de/post/nextcloud-munin/</guid>
+      <description>
+
+&lt;h1 id=&#34;basic-idea&#34;&gt;basic idea&lt;/h1&gt;
+
+&lt;p&gt;For a longer period of time I was looking for a Munin plugin to monitor the activity, especially the user activity on my cloud instance. There are some plugins out there, but most of them depend on externally querying the database.&lt;br&gt;
+With the &lt;a href=&#34;https://docs.nextcloud.com/server/13/developer_manual/core/externalapi.html&#34; target=&#34;_blank&#34;&gt;External API&lt;/a&gt; and the &lt;a href=&#34;https://github.com/nextcloud/serverinfo&#34; target=&#34;_blank&#34;&gt;server info dashboard&lt;/a&gt; Nextcloud itself presents an endpoint to gather data from. This way the database action is handled by the cloud and I can just grab the data from the endpoint.&lt;/p&gt;
+
+&lt;h2 id=&#34;why-python&#34;&gt;why python?&lt;/h2&gt;
+
+&lt;p&gt;I choose python to utilize the immensely strong &lt;a href=&#34;https://github.com/requests/requests&#34; target=&#34;_blank&#34;&gt;requests&lt;/a&gt; module. In addition to that no extra json dump was necessary to work with the data which made the data extraction really easy.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# init requests session with specific header and credentials
+s = requests.Session()
+s.auth = auth
+s.headers.update({&#39;Accept&#39;: &#39;application/json&#39;})
+
+# request data from api
+r = s.get(URL)
+api_response = r.json()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this example &lt;code&gt;auth&lt;/code&gt; and &lt;code&gt;url&lt;/code&gt; are passed as variables which were defined earlier in the plugin to specific environment variables. All together those 5 lines do the complete request and conversion to json action of the plugin.&lt;/p&gt;
+
+&lt;h2 id=&#34;munin-config&#34;&gt;Munin config&lt;/h2&gt;
+
+&lt;p&gt;On running the plugins for the first time Munin will correctly recognize the configuration, even if the URL and authentication information is not set up until that point.&lt;/p&gt;
+
+&lt;h3 id=&#34;configuration&#34;&gt;configuration&lt;/h3&gt;
+
+&lt;p&gt;Both plugins need essentially the same configuration added to the the plugin-config &lt;code&gt;/etc/munin/plugin-config.d/munin-node&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[nextcloud_*]
+url = https://URL.TO.YOUR.NEXTCLOUD.tld/ocs/v2.php/apps/serverinfo/api/v1/info
+username = username
+password = password or logintoken
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;results&#34;&gt;results&lt;/h2&gt;
+
+&lt;p&gt;If all necessary configuration parameters are set the resulting graphs should look something like this.
+&lt;br&gt;&lt;img src=&#34;https://magicbroccoli.de/images/posts/2018-09-03_nextcloud-munin/graph_share.png&#34; width=&#34;50%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/posts/2018-09-03_nextcloud-munin/graph_user.png&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Github : &lt;a href=&#34;https://github.com/mightyBroccoli/nextcloud-munin-py&#34; target=&#34;_blank&#34;&gt;nextcloud-munin-py&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

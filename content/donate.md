@@ -15,9 +15,6 @@ Auch über kleine Beiträge zur Finanzierung freue ich mich ungemein. Dauerauftr
 
 <i class="fa fa-university"></i> Banküberweisung: [auf Anfrage](/contact/)
 
-<i class="fa fa-credit-card"></i> LiberaPay: <script src="https://liberapay.com/mightyBroccoli/widgets/button.js"></script>
-<noscript><a href="https://liberapay.com/mightyBroccoli/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
-
 <i class="fa fa-btc"></i>  Bitcoin: `1QJZTWenBvdLWTUachpLLd2dLXAZMGeU87`<br>
 <img src="/images/bitcoin_qr.png" alt="bitcoin_qr" style="width: 150px;"/>
 

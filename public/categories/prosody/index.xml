@@ -26,12 +26,12 @@
 
 &lt;p&gt;As of right now Prosody is not able to update a live certificate while running. For the complete update it is necessary to restart Prosody, which is inconvenient.&lt;br&gt;
 With the &lt;a href=&#34;https://prosody.im/doc/console&#34; target=&#34;_blank&#34;&gt;telnet console&lt;/a&gt; however, it is possible to reload the config such that a changed certificate is updated correctly. The biggest problem lies in reloading all possible locations the &amp;ldquo;old&amp;rdquo; certificate is still active in. I use the Prosody Telnet console to invoke a reload, due to the fact that &lt;code&gt;prosodyctl reload&lt;/code&gt; is not actually reloading the modules just the config.&lt;br&gt;
-For this matter I hacked together a little bash script, which together with the &lt;a href=&#34;https://certbot.eff.org/&#34; target=&#34;_blank&#34;&gt;Let&amp;rsquo;sEncrypt&amp;rsquo;s certbot&lt;/a&gt; and the default letsecrypt cli is used to import and update the Prosody certificate without a need to restart the instanc.&lt;/p&gt;
+For this matter I hacked together a little bash script, which together with the &lt;a href=&#34;https://certbot.eff.org/&#34; target=&#34;_blank&#34;&gt;Let&amp;rsquo;sEncrypt&amp;rsquo;s certbot&lt;/a&gt; and the default letsecrypt cli is used to import and update the Prosody certificate without a need to restart the instance.&lt;/p&gt;
 
 &lt;h3 id=&#34;let-sencrypt-setup&#34;&gt;Let&amp;rsquo;sEncrypt Setup&lt;/h3&gt;
 
 &lt;p&gt;To use this script in a fully automatic way some configuration is needed.
-On install Let&amp;rsquo;sEncrypt creates the directory &lt;code&gt;renewal-hooks&lt;/code&gt;. Inside there are three subfolders which represent the time and/or occasion for invocation (&lt;a href=&#34;https://certbot.eff.org/docs/using.html#renewing-certificates&#34; target=&#34;_blank&#34;&gt;source&lt;/a&gt;). This script uses the deploy hook to only run when the certificate is actually renewed. As I am not checking the domain name after deployment it is needed to add another subdirectory to the deploy directory.&lt;/p&gt;
+On install Let&amp;rsquo;sEncrypt creates the directory &lt;code&gt;renewal-hooks&lt;/code&gt;. Inside there are three sub folders which represent the time and/or occasion for invocation (&lt;a href=&#34;https://certbot.eff.org/docs/using.html#renewing-certificates&#34; target=&#34;_blank&#34;&gt;source&lt;/a&gt;). This script uses the deploy hook to only run when the certificate is actually renewed. As I am not checking the domain name after deployment it is needed to add another subdirectory to the deploy directory.&lt;/p&gt;
 
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;/etc/letsencrypt/renewal-hooks/
 └── deploy

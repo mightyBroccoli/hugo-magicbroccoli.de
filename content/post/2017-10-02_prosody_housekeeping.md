@@ -9,7 +9,7 @@ tags = [
 	"xep-0313",
 	"MariaDB",
 	"maintenance",
-	"mildly usefull"
+	"mildly useful"
 ]
 categories = [ "Bash", "XMPP", "Prosody", "Guide" ]
 banner = "/banner/prosody.png"

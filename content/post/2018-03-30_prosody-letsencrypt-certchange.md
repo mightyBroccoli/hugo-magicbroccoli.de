@@ -7,7 +7,7 @@ description = ""
 keywords = [ "Prosody", "LetsEncrypt" ]
 tags = [
 	"maintenance",
-	"mildly-usefull"
+	"mildly-useful"
 ]
 categories = [ "Prosody" ]
 banner = "/banner/certbot-logo-1A.svg"
@@ -16,11 +16,11 @@ slug = "letsencrypt prosody cert hook"
 ### Prosody + Let's Encrypt certificates
 As of right now Prosody is not able to update a live certificate while running. For the complete update it is necessary to restart Prosody, which is inconvenient.<br>
 With the [telnet console](https://prosody.im/doc/console) however, it is possible to reload the config such that a changed certificate is updated correctly. The biggest problem lies in reloading all possible locations the "old" certificate is still active in. I use the Prosody Telnet console to invoke a reload, due to the fact that `prosodyctl reload` is not actually reloading the modules just the config.<br>
-For this matter I hacked together a little bash script, which together with the [Let'sEncrypt's certbot](https://certbot.eff.org/) and the default letsecrypt cli is used to import and update the Prosody certificate without a need to restart the instanc.
+For this matter I hacked together a little bash script, which together with the [Let'sEncrypt's certbot](https://certbot.eff.org/) and the default letsecrypt cli is used to import and update the Prosody certificate without a need to restart the instance.
 
 ### Let'sEncrypt Setup
 To use this script in a fully automatic way some configuration is needed.
-On install Let'sEncrypt creates the directory `renewal-hooks`. Inside there are three subfolders which represent the time and/or occasion for invocation ([source](https://certbot.eff.org/docs/using.html#renewing-certificates)). This script uses the deploy hook to only run when the certificate is actually renewed. As I am not checking the domain name after deployment it is needed to add another subdirectory to the deploy directory.
+On install Let'sEncrypt creates the directory `renewal-hooks`. Inside there are three sub folders which represent the time and/or occasion for invocation ([source](https://certbot.eff.org/docs/using.html#renewing-certificates)). This script uses the deploy hook to only run when the certificate is actually renewed. As I am not checking the domain name after deployment it is needed to add another subdirectory to the deploy directory.
 
 {{< highlight bash >}}
 /etc/letsencrypt/renewal-hooks/
