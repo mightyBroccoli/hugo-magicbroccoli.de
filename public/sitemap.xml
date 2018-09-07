@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://magicbroccoli.de/post/foreshadow/</loc>
+    <lastmod>2018-09-06T18:30:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://magicbroccoli.de/post/nextcloud-munin/</loc>
     <lastmod>2018-09-03T02:30:00+02:00</lastmod>
   </url>
@@ -154,7 +159,7 @@
   
   <url>
     <loc>https://magicbroccoli.de/categories/debian/</loc>
-    <lastmod>2017-08-28T13:30:00+02:00</lastmod>
+    <lastmod>2018-09-06T18:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -178,13 +183,13 @@
   
   <url>
     <loc>https://magicbroccoli.de/</loc>
-    <lastmod>2018-09-03T02:30:00+02:00</lastmod>
+    <lastmod>2018-09-06T18:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://magicbroccoli.de/tags/maintenance/</loc>
-    <lastmod>2018-05-23T00:00:00+02:00</lastmod>
+    <lastmod>2018-09-06T18:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -226,7 +231,7 @@
   
   <url>
     <loc>https://magicbroccoli.de/post/</loc>
-    <lastmod>2018-09-03T02:30:00+02:00</lastmod>
+    <lastmod>2018-09-06T18:30:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   

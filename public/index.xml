@@ -9,10 +9,32 @@
     <managingEditor>mightyBroccoli (nico)</managingEditor>
     <webMaster>mightyBroccoli (nico)</webMaster>
     <copyright>All rights reserved.</copyright>
-    <lastBuildDate>Mon, 03 Sep 2018 02:30:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 06 Sep 2018 18:30:00 +0200</lastBuildDate>
     
         <atom:link href="https://magicbroccoli.de/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Foreshadow</title>
+      <link>https://magicbroccoli.de/post/foreshadow/</link>
+      <pubDate>Thu, 06 Sep 2018 18:30:00 +0200</pubDate>
+      <author>mightyBroccoli (nico)</author>
+      <guid>https://magicbroccoli.de/post/foreshadow/</guid>
+      <description>
+
+&lt;h2 id=&#34;server-maintenance-schedule-notice&#34;&gt;Server Maintenance Schedule Notice&lt;/h2&gt;
+
+&lt;p&gt;Due to the Foreshadow bug and the resulting updates to the kernel a reboot is necessary.
+My host system is scheduled to reboot in the following time period:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;11.09.2018 12:00 - 14:00 CEST&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The downtime of the server is estimated to last approximately for 30 minutes. All services will automatically restart after the reboot. If services are not working right away I will try to fix them as quick as possible.&lt;br&gt;
+I hope that this early warning will help to mitigate issues with the approaching downtime.&lt;/p&gt;
+
+&lt;p&gt;If there are questions and/or suggestions please contact me with the subject &lt;em&gt;foreshadow: $details&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Nextcloud Munin Plugin</title>
@@ -995,130 +1017,6 @@ Die Archive Funktion ermöglicht es Nachrichten für 1 Monat auf dem Server zu s
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://magicbroccoli.de/xmpp/&#34;&gt;Zurück zur Übersicht&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Last Edit 02.08.18&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Server Technik</title>
-      <link>https://magicbroccoli.de/technik/</link>
-      <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
-      <author>mightyBroccoli (nico)</author>
-      <guid>https://magicbroccoli.de/technik/</guid>
-      <description>
-
-&lt;h2 id=&#34;system&#34;&gt;System&lt;/h2&gt;
-
-&lt;p&gt;Das Hostsystem verwendet &lt;img src=&#34;https://magicbroccoli.de/icons/debian_icon.png&#34; alt=&#34;Debian&#34; /&gt; Debian 9.5 Stretch. Alle Komponenten werden regelmäßig aktualisiert. Teilweise nehme ich Rücksicht darauf, dass es zu keinen reboot in Stoßzeiten kommt. Wenn sich dies allerdings nicht verhindern lässt, wird es zu einer möglichst kleinen Downtime für wichtige Updates kommen.&lt;/p&gt;
-
-&lt;h3 id=&#34;dns&#34;&gt;DNS&lt;/h3&gt;
-
-&lt;p&gt;Die gesamte DNS-Zone von &lt;em&gt;magicbroccoli.de&lt;/em&gt; ist mit DNSSEC signiert und lässt sich dahingehend überprüfen.&lt;/p&gt;
-
-&lt;h3 id=&#34;nginx&#34;&gt;nginx&lt;/h3&gt;
-
-&lt;p&gt;Alle Dienste die per HTTPS erreichbar sind, werden durch einen &lt;a href=&#34;https://nginx.org/&#34; target=&#34;_blank&#34;&gt;nginx&lt;/a&gt; Server veröffentlicht. Dieser ist konfiguriert ausschließlich &lt;a href=&#34;https://de.wikipedia.org/wiki/Transport_Layer_Security&#34; target=&#34;_blank&#34;&gt;TLS verschlüsselte Verbindungen&lt;/a&gt; zuzulassen. Unverschlüsselte Verbindungen werden direkt zu einer verschlüsselten Verbindung aufgewertet. Ist dies nicht möglich, wird die Verbindung verweigert.&lt;br&gt;
-Zur Verfügung stehen TLS1.2 sowie 1.3 mit einer definierten Auswahl an ciphers. Außerdem ist der Server in der Lage &lt;a href=&#34;https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP.2F1.1&#34; target=&#34;_blank&#34;&gt;HTTP 1.1&lt;/a&gt; sowie &lt;a href=&#34;https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP.2F2&#34; target=&#34;_blank&#34;&gt;HTTP 2.0&lt;/a&gt; Verbindungen zur Verfügung zu stellen.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ssl_prefer_server_ciphers	on;
-ssl_ciphers &#39;ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256&#39;;
-ssl_ecdh_curve	secp384r1:secp521r1;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Zusätzlich zu einer recht restriktiven TLS Konfiguration werden standartmäßig einige HTTP Header mitgesendet um die Sicherheit der Webpages zu gewährleisten.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;add_header Strict-Transport-Security &amp;quot;max-age=31536000; includeSubDomains; preload;&amp;quot;;
-add_header X-Content-Type-Options nosniff;
-add_header X-XSS-Protection &amp;quot;1; mode=block&amp;quot;;
-add_header X-Robots-Tag none;
-add_header X-Download-Options noopen;
-add_header X-Permitted-Cross-Domain-Policies none;
-add_header Referrer-Policy &amp;quot;no-referrer-when-downgrade&amp;quot;;
-add_header Content-Security-Policy &amp;quot;frame-ancestors &#39;self&#39;&amp;quot;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ähnlich zum XMPP Server, ist es möglich über externe Testsuites die Konfiguration auf Lücken bzw. Schwächen hin zu überprüfen.&lt;br&gt;
-Besonders bekannt hierfür ist &lt;a href=&#34;https://www.ssllabs.com&#34; target=&#34;_blank&#34;&gt;Qualys SSL Labs&lt;/a&gt; dort sind &lt;a href=&#34;https://www.ssllabs.com/ssltest/analyze.html?d=magicbroccoli.de&#34; target=&#34;_blank&#34;&gt;meine Ergebnisse&lt;/a&gt; nachprüfbar. Die Ergebnisse werden dort leider nicht dauerhaft gespeichet.&lt;br&gt;
-( &lt;em&gt;Der Test dauert ca. 1 Minute, daher kann der Test von jedem jederzeit wiederholt werden.&lt;/em&gt; )&lt;/p&gt;
-
-&lt;h3 id=&#34;ejabberd&#34;&gt;Ejabberd&lt;/h3&gt;
-
-&lt;p&gt;Bei der XMPP Serversoftware handelt es ich um ein Ejabberd 18.06-1~bpo9+1.&lt;br&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;verschlüsselung&#34;&gt;Verschlüsselung&lt;/h4&gt;
-
-&lt;p&gt;Es werden generell ausschließlich verschlüsselte Verbindungen zugelassen, zusätzlich dazu werden ausschließlich Verschlüsselungsverfahren angeboten, die &lt;a href=&#34;https://wikipedia.org/wiki/Perfect_Forward_Secrecy&#34; target=&#34;_blank&#34;&gt;Perfect Forward Secrecy&lt;/a&gt; unterstützen. Hierdurch kann es vorkommen das einige Server nicht erreichbar sind. Der Admin des jeweiligen Servers kann Ihnen hierbei weiterhelfen, unzureichende Verschlüsselng für mich ein Ausschlusskriterium; &lt;a href=&#34;https://check.messaging.one/result.php?domain=magicbroccoli.de&amp;amp;type=client#ciphers&#34; target=&#34;_blank&#34;&gt;zulässige Verschlüsselungsverfahren&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h5 id=&#34;zertifikate&#34;&gt;Zertifikate&lt;/h5&gt;
-
-&lt;p&gt;Dieser XMPP Server ist dahingehend konfiguriert ausschließlich gültige und korrekt ausgestellte Zertifikate zuzulassen. Selbstsignierte Zertifikate werden nicht unterstützt.&lt;/p&gt;
-
-&lt;h4 id=&#34;passwörter&#34;&gt;Passwörter&lt;/h4&gt;
-
-&lt;p&gt;Alle Passwöter werden gehashed in einer Datenbank gespeichert, die nicht von außen erreichbar ist. Als Authentifizierungsverfahren wird &lt;a href=&#34;https://wikipedia.org/wiki/Salted_Challenge_Response_Authentication_Mechanism&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;SCRAM-SHA-1&lt;/em&gt;&lt;/a&gt; verwendet.&lt;br&gt;
-Das &lt;a href=&#34;https://wikipedia.org/wiki/HTTP-Authentifizierung#Digest_Access_Authentication&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;DIGEST-MD5&lt;/em&gt;&lt;/a&gt; Verfahren ist explizit deaktiviert, welches ältere Clients und Bots häufiger verwenden.&lt;/p&gt;
-
-&lt;h4 id=&#34;features&#34;&gt;Features&lt;/h4&gt;
-
-&lt;p&gt;Der Server unterstützt eine Vielfalt an XMPP-Erweiterungen (XEPs). Jeder Client unterstützt dabei eine andere Teilmenge dieser Features. Speziell gebe ich Acht darauf, &lt;a href=&#34;https://conversations.im/&#34; target=&#34;_blank&#34;&gt;Conversations (Android)&lt;/a&gt; in möglichst großem Umfang zu unterstützen.&lt;/p&gt;
-
-&lt;h5 id=&#34;auszug-aus-den-speziellern-server-features&#34;&gt;Auszug aus den speziellern Server-Features:&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0033.html&#34; target=&#34;_blank&#34;&gt;XEP-0033: Extended Stanza Addressing&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0045.html&#34; target=&#34;_blank&#34;&gt;XEP-0045: Multi-User Chat&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0055.html&#34; target=&#34;_blank&#34;&gt;XEP-0055: Basic implementation of Jabber Search&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0065.html&#34; target=&#34;_blank&#34;&gt;XEP-0065: SOCKS5 Bytestreams&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0115.html&#34; target=&#34;_blank&#34;&gt;XEP-0115: Entity Capabilities&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0124.html&#34; target=&#34;_blank&#34;&gt;XEP-0124: Bidirectional-streams Over Synchronous HTTP (BOSH)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0156.html&#34; target=&#34;_blank&#34;&gt;XEP-0156: Discovering Alternative XMPP Connection Methods&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0163.html&#34; target=&#34;_blank&#34;&gt;XEP-0163: Personal Eventing Protocol&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0191.html&#34; target=&#34;_blank&#34;&gt;XEP-0191: Blocking Command&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0198.html&#34; target=&#34;_blank&#34;&gt;XEP-0198: Stream Managment&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0237.html&#34; target=&#34;_blank&#34;&gt;XEP-0237: Roster Versioning&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0280.html&#34; target=&#34;_blank&#34;&gt;XEP-0280: Message Carbons&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0288.html&#34; target=&#34;_blank&#34;&gt;XEP-0288: Bidirectional Server-to-Server Connections&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0313.html&#34; target=&#34;_blank&#34;&gt;XEP-0313: Message Archive Management&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0352.html&#34; target=&#34;_blank&#34;&gt;XEP-0352: Client State Indication&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0357.html&#34; target=&#34;_blank&#34;&gt;XEP-0357: Push Notifications&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0363.html&#34; target=&#34;_blank&#34;&gt;XEP-0363: HTTP File Upload&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xmpp.org/extensions/xep-0368.html&#34; target=&#34;_blank&#34;&gt;XEP-0368: SRV records for XMPP over TLS&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&#34;xep-0156-alternative-xmpp-connection-methods&#34;&gt;XEP-0156: Alternative XMPP Connection Methods&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;HTTP-Bind Adresse: &lt;a href=&#34;https://magicbroccoli.de/http-bind&#34; target=&#34;_blank&#34;&gt;https://magicbroccoli.de/http-bind&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Websocket Adresse: &lt;a href=&#34;https://magicbroccoli.de/xmpp-websocket&#34; target=&#34;_blank&#34;&gt;https://magicbroccoli.de/xmpp-websocket&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;XMPP over TLS: &lt;a href=&#34;https://xmpps.magicbroccoli.de&#34; target=&#34;_blank&#34;&gt;xmpps.magicbroccoli.de&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&#34;tor-hidden-service&#34;&gt;TOR Hidden Service&lt;/h5&gt;
-
-&lt;p&gt;Für Fans von &lt;a href=&#34;https://www.torproject.org/&#34; target=&#34;_blank&#34;&gt;Tor&lt;/a&gt; biete ich nun einen Hidden Service an. Mit diesem ist es möglich Client-to-Server Verbindungen zum XMPP-Server durch onion routing aufzubauen. Die Adresse lautet: &lt;a href=&#34;dyy2lc2at2hqfir6.onion:5222&#34; target=&#34;_blank&#34;&gt;dyy2lc2at2hqfir6.onion&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;font color=&#34;red&#34;&gt;&lt;em&gt;Hinweise&lt;/em&gt;:&lt;/font&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Es ist nicht möglich, ein gültiges TLS-Zertifikat für eine .onion-Adresse anzubieten.&lt;/li&gt;
-&lt;li&gt;Die Funktion http_upload verwendet bei Nutzung, auch mit konfigurierter .onion-Adresse, den normalen DNS und klassischen Verbindungen ins Internet. Daher müsste für dessen Nutzung mindestens noch ein &lt;em&gt;normaler&lt;/em&gt; Zugang zum Internet bestehen.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;registrieren&#34;&gt;Registrieren&lt;/h4&gt;
-
-&lt;p&gt;Wenn Sie diese Dinge überzeugt haben XMPP zu probieren, ist es hier direkt möglich sich zu registrieren.
-&lt;center&gt;&lt;a style=&#34;display: block; margin-top: 50px; margin-left: auto; margin-right: auto; margin-bottom: 50px; height: 50px; width: 300px; background-color: #0069a1; color: white; border-radius: 5px; line-height: 50px; text-align: center; font-weight: bold;&#34; href=&#34;https://magicbroccoli.de/register/&#34;&gt;Registrieren&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;im-observer&#34;&gt;IM Observer&lt;/h4&gt;
-
-&lt;p&gt;IM Oberserver ist ein Testsuite die automatisiert XMPP Server auf verschiedene Faktoren hin testet. Die Ergebnisse für meinen Server sind wie folgt.&lt;a href=&#39;https://check.messaging.one/result.php?domain=magicbroccoli.de&amp;amp;type=client&#39;&gt;
-    &lt;img src=&#39;https://check.messaging.one/badge.php?domain=magicbroccoli.de&#39; alt=&#39;IM observatory score&#39; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Mit dem Tool von &lt;a href=&#34;https://tls.imirhil.fr&#34; target=&#34;_blank&#34;&gt;tls.imirhil.fr&lt;/a&gt; lässt sich ähnlich zum IM Observer ein Server prüfen. MagicBroccoli XMPP hat dort ein Rating von A+ &lt;a href=&#34;https://tls.imirhil.fr/xmpp/magicbroccoli.de&#34; target=&#34;_blank&#34;&gt;CryptCheck Score&lt;/a&gt;.&lt;/p&gt;
 
 &lt;hr /&gt;
 

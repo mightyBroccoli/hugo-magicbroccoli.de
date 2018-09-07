@@ -9,10 +9,32 @@
     <managingEditor>mightyBroccoli (nico)</managingEditor>
     <webMaster>mightyBroccoli (nico)</webMaster>
     <copyright>All rights reserved.</copyright>
-    <lastBuildDate>Mon, 03 Sep 2018 02:30:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 06 Sep 2018 18:30:00 +0200</lastBuildDate>
     
         <atom:link href="https://magicbroccoli.de/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Foreshadow</title>
+      <link>https://magicbroccoli.de/post/foreshadow/</link>
+      <pubDate>Thu, 06 Sep 2018 18:30:00 +0200</pubDate>
+      <author>mightyBroccoli (nico)</author>
+      <guid>https://magicbroccoli.de/post/foreshadow/</guid>
+      <description>
+
+&lt;h2 id=&#34;server-maintenance-schedule-notice&#34;&gt;Server Maintenance Schedule Notice&lt;/h2&gt;
+
+&lt;p&gt;Due to the Foreshadow bug and the resulting updates to the kernel a reboot is necessary.
+My host system is scheduled to reboot in the following time period:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;11.09.2018 12:00 - 14:00 CEST&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The downtime of the server is estimated to last approximately for 30 minutes. All services will automatically restart after the reboot. If services are not working right away I will try to fix them as quick as possible.&lt;br&gt;
+I hope that this early warning will help to mitigate issues with the approaching downtime.&lt;/p&gt;
+
+&lt;p&gt;If there are questions and/or suggestions please contact me with the subject &lt;em&gt;foreshadow: $details&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Nextcloud Munin Plugin</title>
