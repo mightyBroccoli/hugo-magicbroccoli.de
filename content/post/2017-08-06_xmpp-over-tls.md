@@ -33,7 +33,7 @@ Es werden 2 IP Adressen benötigt, wenn Ihre IP Adresse bereits auf Port 443 lau
 - - -
 
 ### 1. DNS Einstellungen
-Den Anfang machen die DNS Einstellungen, da die Publizierung der neuen DNS Einstellungen bis zu 48 Stunden dauern kann.
+Den Anfang machen die DNS Einstellungen, da die Veröffentlichung der neuen DNS Einstellungen bis zu 48 Stunden dauern kann.
 Zusätzlich zu den [Standard SRV Einträgen](https://prosody.im/doc/dns) wird ein weiterer `_xmpps-client._tcp` Eintrag benötigt. Außerdem ein weiterer A Record für die gewünschte Subdomain.
 
 In diesem Beispiel ist die Domain `example.com` und XMPP over TLS soll über die SubDomain `xmpps.example.com` erreichbar sein.
@@ -120,7 +120,7 @@ server {
 </VirtualHost>
 {{< /highlight >}}
 
-Sind diese Änderungen vorgenommen, ist es leicht möglich via LetsEncrypt ein Zertifikat für die SubDomain auzustellen. Zusätzlich dazu ist es nun möglich direkt zu testen ob XMPP over TLS funktioniert.
+Sind diese Änderungen vorgenommen, ist es leicht möglich via LetsEncrypt ein Zertifikat für die SubDomain auszustellen. Zusätzlich dazu ist es nun möglich direkt zu testen ob XMPP over TLS funktioniert.
 
 ## Abschluss
 Sollten alle diese Schritte erfolgreich abgeschlossen sein, ist es sehr leicht möglich zu testen ob alles so funktioniert wie es soll. Hierfür lässt sich `curl -i` verwenden.

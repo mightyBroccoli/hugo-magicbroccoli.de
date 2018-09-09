@@ -92,7 +92,7 @@ renew_hook &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; /bin/run-par
       <pubDate>Wed, 20 Dec 2017 10:00:00 +0200</pubDate>
       <author>mightyBroccoli (nico)</author>
       <guid>https://magicbroccoli.de/post/omemo-complicance/</guid>
-      <description>&lt;p&gt;Seit gestern ist auf meinem Server ein neues OMEMO Modul aktiviert. Dieses ermöglicht es OMEMO verschlüsselte Konversationen zu beginnen, ohne das dafür eine gegenseitige presence subscription bestehen muss. Desweiteren hat dies Auswirkungen auf Chaträume, da es nun möglich ist in einem Chatraum OMEMO zu aktivieren ohne das sich alle Parteien hinzugefügt haben.&lt;/p&gt;
+      <description>&lt;p&gt;Seit gestern ist auf meinem Server ein neues OMEMO Modul aktiviert. Dieses ermöglicht es OMEMO verschlüsselte Konversationen zu beginnen, ohne das dafür eine gegenseitige presence subscription bestehen muss. Des weiteren hat dies Auswirkungen auf Chaträume, da es nun möglich ist in einem Chatraum OMEMO zu aktivieren ohne das sich alle Parteien hinzugefügt haben.&lt;/p&gt;
 
 &lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;I wrote a small &lt;a href=&#34;https://twitter.com/prosodyim?ref_src=twsrc%5Etfw&#34;&gt;@prosodyim&lt;/a&gt; module that gives non-contacts access to your OMEMO keys. It’s a  temporary work around until proper support for node configuration /  publish-options comes around. It&amp;#39;s an important step towards our »OMEMO  by default« goal.&lt;a href=&#34;https://t.co/rVPXOf7m9o&#34;&gt;https://t.co/rVPXOf7m9o&lt;/a&gt;&lt;/p&gt;&amp;mdash; Daniel Gultsch (@iNPUTmice) &lt;a href=&#34;https://twitter.com/iNPUTmice/status/943181435120340992?ref_src=twsrc%5Etfw&#34;&gt;December 19, 2017&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
@@ -195,7 +195,7 @@ Das Ergebnis sollte diese Form haben. Das Bild zeigt mein Ergebnis für den &lt;
 
 &lt;h1 id=&#34;grundidee&#34;&gt;Grundidee&lt;/h1&gt;
 
-&lt;p&gt;Ich habe mich in den letzen paar Tagen damit beschäftigt Dinge rund um den Prosody Server zu automatisieren.
+&lt;p&gt;Ich habe mich in den letzten paar Tagen damit beschäftigt Dinge rund um den Prosody Server zu automatisieren.
 Daher möchte ich hier einfach mal meine Lösung einiger kleiner Probleme vorstellen.&lt;/p&gt;
 
 &lt;h1 id=&#34;problem&#34;&gt;Problem&lt;/h1&gt;
@@ -210,7 +210,7 @@ Vor allem bei dem Modul mam bestehen Probleme, da die Einträge eines jeden User
 &lt;a href=&#34;https://thomas-leister.de/&#34; target=&#34;_blank&#34;&gt;Thomas Leister&lt;/a&gt; hat vor einiger Zeit einen sehr ähnlichen &lt;a href=&#34;https://thomas-leister.de/prosody-inaktive-accounts-loeschen&#34; target=&#34;_blank&#34;&gt;Lösungsansatz&lt;/a&gt; veröffentlicht, den ich in meinem Skript erweitert habe, um ihn vollständig zu automatisieren.&lt;br&gt;
 Das im Folgenden beschriebene Skript steht auf &lt;a href=&#34;https://github.com/mightyBroccoli/prosody_housekeeping&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt; zur Verfügung.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;WARNUNG&lt;/strong&gt;: Das Skript verfügt über einen &lt;em&gt;configtest&lt;/em&gt;; durch das ausführen mit &lt;code&gt;--configtest&lt;/code&gt; oder &lt;code&gt;-t&lt;/code&gt; werden alle Filter angewendet, ohne das Einträge gelöscht werden. So ist es möglich anschauenlich zu sehen was bei einem ausführen passiert wäre. Es ist äußerste Vorsicht geboten beim konfigurieren des Skripts, daher ist ein testen der Konfiguration sehr empfohlen.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;WARNUNG&lt;/strong&gt;: Das Skript verfügt über einen &lt;em&gt;configtest&lt;/em&gt;; durch das ausführen mit &lt;code&gt;--configtest&lt;/code&gt; oder &lt;code&gt;-t&lt;/code&gt; werden alle Filter angewendet, ohne das Einträge gelöscht werden. So ist es möglich anschaulich zu sehen was bei einem ausführen passiert wäre. Es ist äußerste Vorsicht geboten beim konfigurieren des Skripts, daher ist ein testen der Konfiguration sehr empfohlen.&lt;/p&gt;
 
 &lt;h1 id=&#34;skript&#34;&gt;Skript&lt;/h1&gt;
 
@@ -228,7 +228,7 @@ Das im Folgenden beschriebene Skript steht auf &lt;a href=&#34;https://github.co
 &lt;p&gt;mod_lastlog lässt sich einfach in die modules_enabled{} Sektion der Prosody Konfiguration eintragen. Für das Modul ist keine weitere Konfiguration notwendig.
 Der einfachste Weg ist, das gesamte Mercurial Archiv der Community Module zu klonen und in der Prosody Konfiguration zu referenzieren. Eine Anleitung wie das geht findet sich in der Prosody &lt;a href=&#34;https://prosody.im/doc/installing_modules#prosody-modules&#34; target=&#34;_blank&#34;&gt;Dokumentation&lt;/a&gt;.&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;Nun sollte im Skript selbst, über die Variabeln, eingestellt werden was für Zeiteinheiten gewünscht sind. Außerdem sollten eventuell abweichende Pfade auf die jeweiligen Systemverhältnisse angepasst werden.&lt;br&gt;
+&lt;p&gt;Nun sollte im Skript selbst, über die Variablen, eingestellt werden was für Zeiteinheiten gewünscht sind. Außerdem sollten eventuell abweichende Pfade auf die jeweiligen Systemverhältnisse angepasst werden.&lt;br&gt;
 Der Folgende Abschnitt zeigt einen Ausschnitt aus dem Skript, welcher die Konfigurationsvariablen, die Filter sowie den &lt;code&gt;--configtest&lt;/code&gt; catch zeigt.
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;###### CONFIGURATION ######
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# configuration variables
@@ -318,7 +318,7 @@ filter_expired_http_uploads&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span
 
 &lt;h1 id=&#34;update&#34;&gt;Update&lt;/h1&gt;
 
-&lt;p&gt;Die techniche Leitung des CCC Jabber Servers hat sich nun auch dazu entscheiden auf gültige Zertifikate umzusteigen. Daher ist dieser Blogpost überflüssig.&lt;/p&gt;
+&lt;p&gt;Die technische Leitung des CCC Jabber Servers hat sich nun auch dazu entscheiden auf gültige Zertifikate umzusteigen. Daher ist dieser Blogpost überflüssig.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -427,7 +427,7 @@ Es werden 2 IP Adressen benötigt, wenn Ihre IP Adresse bereits auf Port 443 lau
 
 &lt;h3 id=&#34;1-dns-einstellungen&#34;&gt;1. DNS Einstellungen&lt;/h3&gt;
 
-&lt;p&gt;Den Anfang machen die DNS Einstellungen, da die Publizierung der neuen DNS Einstellungen bis zu 48 Stunden dauern kann.
+&lt;p&gt;Den Anfang machen die DNS Einstellungen, da die Veröffentlichung der neuen DNS Einstellungen bis zu 48 Stunden dauern kann.
 Zusätzlich zu den &lt;a href=&#34;https://prosody.im/doc/dns&#34; target=&#34;_blank&#34;&gt;Standard SRV Einträgen&lt;/a&gt; wird ein weiterer &lt;code&gt;_xmpps-client._tcp&lt;/code&gt; Eintrag benötigt. Außerdem ein weiterer A Record für die gewünschte Subdomain.&lt;/p&gt;
 
 &lt;p&gt;In diesem Beispiel ist die Domain &lt;code&gt;example.com&lt;/code&gt; und XMPP over TLS soll über die SubDomain &lt;code&gt;xmpps.example.com&lt;/code&gt; erreichbar sein.&lt;/p&gt;
@@ -509,7 +509,7 @@ Im Folgenden habe ich die simpelste Möglichkeit eins vHosts angenommen. Dabei i
 
 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/VirtualHost&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Sind diese Änderungen vorgenommen, ist es leicht möglich via LetsEncrypt ein Zertifikat für die SubDomain auzustellen. Zusätzlich dazu ist es nun möglich direkt zu testen ob XMPP over TLS funktioniert.&lt;/p&gt;
+&lt;p&gt;Sind diese Änderungen vorgenommen, ist es leicht möglich via LetsEncrypt ein Zertifikat für die SubDomain auszustellen. Zusätzlich dazu ist es nun möglich direkt zu testen ob XMPP over TLS funktioniert.&lt;/p&gt;
 
 &lt;h2 id=&#34;abschluss&#34;&gt;Abschluss&lt;/h2&gt;
 
@@ -554,15 +554,15 @@ Auch wenn dies wirklich nur ein kleiner Hinweis ist, danken wir Herrn Gultsch de
 
 &lt;p&gt;Hintergrund ist, dass &lt;a href=&#34;https://twitter.com/iNPUTmice/status/888826898335322113&#34; target=&#34;_blank&#34;&gt;Daniel Gultsch empfiehlt&lt;/a&gt;, das das &lt;a href=&#34;https://xmpp.org/extensions/xep-0163.html&#34; target=&#34;_blank&#34;&gt;PEP-Modul&lt;/a&gt; der Server &lt;a href=&#34;https://xmpp.org/extensions/xep-0060.html#publisher-publish-options&#34; target=&#34;_blank&#34;&gt;publish-options&lt;/a&gt; unterstützen sollte (&lt;a href=&#34;https://gist.github.com/iNPUTmice/7c52785ed69787516abb60e31703dbd2&#34; target=&#34;_blank&#34;&gt;ausführlichere Beschreibung&lt;/a&gt;). Dies bewirkt, dass User in Conversations ab Version 1.20+, auch Personen verschlüsselt anschreiben kann, ohne sie vorher in seinen Roster hinzufügen zu müssen. Auch wir finden dieses Feature gut und würden es gern unterstützen, allerdings unterstützt das PEP Modul von prosody publish-options derzeit noch nicht.&lt;/p&gt;
 
-&lt;p&gt;Herr Gultsch selbst, schreibt an mehreren Stellen, dass es sich hierbei um &lt;strong&gt;kein&lt;/strong&gt; &lt;a href=&#34;https://github.com/iNPUTmice/ComplianceTester/issues/112#issuecomment-319008031&#34; target=&#34;_blank&#34;&gt;Security Risiko&lt;/a&gt;, handelt, sondern lediglich um ein &lt;a href=&#34;https://github.com/iNPUTmice/ComplianceTester/issues/112#issuecomment-319008031&#34; target=&#34;_blank&#34;&gt;Usability Problem&lt;/a&gt;. Das heißt, dass es sich nicht um eine Vorraussetzung handelt, sondern um eine Empfehlung.&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Server support for publish-options is strongly recommended but not required for OMEMO in Conversations 1.20.0+&lt;/p&gt;&amp;mdash; Daniel Gultsch (@iNPUTmice) &lt;a href=&#34;https://twitter.com/iNPUTmice/status/888826898335322113?ref_src=twsrc%5Etfw&#34;&gt;July 22, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;Herr Gultsch selbst, schreibt an mehreren Stellen, dass es sich hierbei um &lt;strong&gt;kein&lt;/strong&gt; &lt;a href=&#34;https://github.com/iNPUTmice/ComplianceTester/issues/112#issuecomment-319008031&#34; target=&#34;_blank&#34;&gt;Security Risiko&lt;/a&gt;, handelt, sondern lediglich um ein &lt;a href=&#34;https://github.com/iNPUTmice/ComplianceTester/issues/112#issuecomment-319008031&#34; target=&#34;_blank&#34;&gt;Usability Problem&lt;/a&gt;. Das heißt, dass es sich nicht um eine Voraussetzung handelt, sondern um eine Empfehlung.&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Server support for publish-options is strongly recommended but not required for OMEMO in Conversations 1.20.0+&lt;/p&gt;&amp;mdash; Daniel Gultsch (@iNPUTmice) &lt;a href=&#34;https://twitter.com/iNPUTmice/status/888826898335322113?ref_src=twsrc%5Etfw&#34;&gt;July 22, 2017&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
 
-&lt;a href=&#34;https://github.com/iNPUTmice/ComplianceTester/issues/112&#34; target=&#34;_blank&#34;&gt;Der Vorschlag&lt;/a&gt; eine kurze Erklärung zu der Spalte in seiner Liste hinzuzufügen, da das ganze sonst so eine falsche Aussage über die Server wiederspiegelt, wurde mit den folgenden Sätzen einfach ignoriert und das Ticket geschlossen:&lt;/p&gt;
+&lt;a href=&#34;https://github.com/iNPUTmice/ComplianceTester/issues/112&#34; target=&#34;_blank&#34;&gt;Der Vorschlag&lt;/a&gt; eine kurze Erklärung zu der Spalte in seiner Liste hinzuzufügen, da das ganze sonst so eine falsche Aussage über die Server widerspiegelt, wurde mit den folgenden Sätzen einfach ignoriert und das Ticket geschlossen:&lt;/p&gt;
 
 &lt;blockquote&gt;While not a security problems the lack of publish-options is a huge usability problem as this limits OMEMO to contacts you have mutual presence subscription with.
 Conversations users will except OMEMO to work with everyone. That’s why Conversations requires publish-options.&lt;/blockquote&gt;
 
-&lt;p&gt;Hauptproblem hierbei ist, das die Darstellung für alle Server sehr „rufschädigend“ sein kann. Ich und einige andere Hoster haben versucht Daniel Gultsch darauf aufmerksam zu machen, dies wird von ihm allerdings komplett ignoriert.&lt;/p&gt;
+&lt;p&gt;Hauptproblem hierbei ist, das die Darstellung für alle Server sehr „Ruf schädigend“ sein kann. Ich und einige andere Hoster haben versucht Daniel Gultsch darauf aufmerksam zu machen, dies wird von ihm allerdings komplett ignoriert.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Lange Rede kurzer Sinn&lt;/em&gt; – Ihr könnt mit Conversations und anderen Clients weiterhin OMEMO über unseren und die anderen Server verwenden, nur eben derzeit noch ohne das Feature Kontakte außerhalb eurer Kontaktliste direkt verschlüsselt anzuschreiben, ohne diese vorher zu adden.&lt;/p&gt;
 

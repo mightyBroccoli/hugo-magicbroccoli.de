@@ -532,7 +532,7 @@ With the telnet console however, it is possible to reload the config such that a
       <p>
   
     
-      Omemo Key Verification Um eine möglichst reibungslose Kommunikation zu ermöglichen, vertraut Conversations in der Standardeinstellung neuen OMEMO-Keys erstmal blind. Wenn aber eine spezifische Verifikation - über das Scannen eines QR-Codes - stattgefunden hat, werden neue Keys grundsätzlich misstraut. Dies bietet einen weitere Möglichkeit um Man-In-The-Middle-Angriffe zu unterbinden. Dieses Vertrauenmodell heißt Blind Trust Before Verification. Ohne Verifizierung ist eine explizit vertrauliche Kommunikation nur eingeschränkt möglich.
+      Omemo Key Verification Um eine möglichst reibungslose Kommunikation zu ermöglichen, vertraut Conversations in der Standardeinstellung neuen OMEMO-Keys zuerst blind. Wenn aber eine spezifische Verifikation - über das Scannen eines QR-Codes - stattgefunden hat, werden neue Keys grundsätzlich misstraut. Dies bietet einen weitere Möglichkeit um Man-In-The-Middle-Angriffe zu unterbinden. Dieses Vertrauensmodell heißt Blind Trust Before Verification. Ohne Verifizierung ist eine explizit vertrauliche Kommunikation nur eingeschränkt möglich.
  After such a verification happened Conversations will no longer blindly trust new devices that are created after the verification.
     
   
@@ -572,7 +572,7 @@ With the telnet console however, it is possible to reload the config such that a
       &middot; by nico
     
     &middot; 1 Minute Read
-    &middot; 134 Words
+    &middot; 135 Words
   </div>
 
   
@@ -628,7 +628,7 @@ With the telnet console however, it is possible to reload the config such that a
       <p>
   
     
-      Seit gestern ist auf meinem Server ein neues OMEMO Modul aktiviert. Dieses ermöglicht es OMEMO verschlüsselte Konversationen zu beginnen, ohne das dafür eine gegenseitige presence subscription bestehen muss. Desweiteren hat dies Auswirkungen auf Chaträume, da es nun möglich ist in einem Chatraum OMEMO zu aktivieren ohne das sich alle Parteien hinzugefügt haben.
+      Seit gestern ist auf meinem Server ein neues OMEMO Modul aktiviert. Dieses ermöglicht es OMEMO verschlüsselte Konversationen zu beginnen, ohne das dafür eine gegenseitige presence subscription bestehen muss. Des weiteren hat dies Auswirkungen auf Chaträume, da es nun möglich ist in einem Chatraum OMEMO zu aktivieren ohne das sich alle Parteien hinzugefügt haben.
 I wrote a small @prosodyim module that gives non-contacts access to your OMEMO keys. It’s a temporary work around until proper support for node configuration / publish-options comes around.
     
   

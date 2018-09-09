@@ -48,7 +48,7 @@ Es werden 2 IP Adressen benötigt, wenn Ihre IP Adresse bereits auf Port 443 lau
 
 &lt;h3 id=&#34;1-dns-einstellungen&#34;&gt;1. DNS Einstellungen&lt;/h3&gt;
 
-&lt;p&gt;Den Anfang machen die DNS Einstellungen, da die Publizierung der neuen DNS Einstellungen bis zu 48 Stunden dauern kann.
+&lt;p&gt;Den Anfang machen die DNS Einstellungen, da die Veröffentlichung der neuen DNS Einstellungen bis zu 48 Stunden dauern kann.
 Zusätzlich zu den &lt;a href=&#34;https://prosody.im/doc/dns&#34; target=&#34;_blank&#34;&gt;Standard SRV Einträgen&lt;/a&gt; wird ein weiterer &lt;code&gt;_xmpps-client._tcp&lt;/code&gt; Eintrag benötigt. Außerdem ein weiterer A Record für die gewünschte Subdomain.&lt;/p&gt;
 
 &lt;p&gt;In diesem Beispiel ist die Domain &lt;code&gt;example.com&lt;/code&gt; und XMPP over TLS soll über die SubDomain &lt;code&gt;xmpps.example.com&lt;/code&gt; erreichbar sein.&lt;/p&gt;
@@ -130,7 +130,7 @@ Im Folgenden habe ich die simpelste Möglichkeit eins vHosts angenommen. Dabei i
 
 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/VirtualHost&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Sind diese Änderungen vorgenommen, ist es leicht möglich via LetsEncrypt ein Zertifikat für die SubDomain auzustellen. Zusätzlich dazu ist es nun möglich direkt zu testen ob XMPP over TLS funktioniert.&lt;/p&gt;
+&lt;p&gt;Sind diese Änderungen vorgenommen, ist es leicht möglich via LetsEncrypt ein Zertifikat für die SubDomain auszustellen. Zusätzlich dazu ist es nun möglich direkt zu testen ob XMPP over TLS funktioniert.&lt;/p&gt;
 
 &lt;h2 id=&#34;abschluss&#34;&gt;Abschluss&lt;/h2&gt;
 

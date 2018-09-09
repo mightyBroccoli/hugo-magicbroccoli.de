@@ -10,7 +10,7 @@ tags = [
 ]
 categories = [ "XMPP", "Guide" ]
 +++
-**Hinweis**: _Ein Dank geht an [5222.de](//5222.de) die netterweise die Screenshots zur Verfügung gestellt haben. Da ich selbst kein iPhone besitzte wäre mir ein Tutorial sonst nicht möglich gewesen._
+**Hinweis**: _Ein Dank geht an [5222.de](//5222.de) die netterweise die Screenshots zur Verfügung gestellt haben. Da ich selbst kein iPhone besitze wäre mir ein Tutorial sonst nicht möglich gewesen._
 
 ## 1. Account Registrierung
 Zuerst muss sich ein Account erstellt werden. Dafür ist die Web Registrierung ein Anlaufpunkt.
@@ -27,7 +27,7 @@ Chatsecure lässt sich einfach über den AppStore installieren.
 Der Login zum Chat verläuft ähnlich zu jedem anderen Client. Da bereits ein Account in [Schritt 1](#1-account-registrierung) erstellt wurde, wird _Existing Account_ (en. bestehender Account) gewählt.<br>
 Daraufhin werden in den Feldern die zuvor gewählten Daten eingetragen. Ein Spitzname muss nicht eingetragen werden, ist allerdings für die Kontakte später sehr hilfreich.<br>
 Alle Einstellungen unter _Erweitert_ müssen nicht verändert werden, die Standarteinstellungen sind korrekt.<br>
-Beim ersten Verbindungsaufbau erscheint eine Benachrichtung dem SSL Zertifikat zu vertrauen, dies ist für den weiteren Verbindungsaufbau zwingend notwendig zu akzeptieren.
+Beim ersten Verbindungsaufbau erscheint eine Benachrichtigung dem SSL Zertifikat zu vertrauen, dies ist für den weiteren Verbindungsaufbau zwingend notwendig zu akzeptieren.
 <br><img src="/images/tutorials/chatsecure/login_existing_account.png" width="25%"><img src="/images/tutorials/chatsecure/login_creds.png" width="25%"><img src="/images/tutorials/chatsecure/login_trustssl.png" width="25%"><img src="/images/tutorials/chatsecure/login_successfull.png" width="25%">
 
 ## 4. Settings
@@ -48,7 +48,7 @@ Es ist möglich die Erlaubnis in den Einstellungen zurückzusetzen oder sogar ga
 
 ### 5.2 OMEMO
 Das aktivieren von Omemo ist sehr einfach und schnell erledigt. Über das Profil ( Erreichbar über das kleine **i** oben rechts ) lässt sich über _Erweiterte Verschlüsselungseinstellungen_ auswählen welches Verfahren gewünscht ist.<br>
-Dabei ist _Beste verfügbare_ die optimalste Option. Wichtig ist hierbei, dass dies eine Änderung ist die nur für diesen Kontakt gilt.<br>
+Dabei ist _Beste verfügbare_ die optimale Option. Wichtig ist hierbei, dass dies eine Änderung ist die nur für diesen Kontakt gilt.<br>
 Wenn der Account mobil genutzt wird ist Omemo definitiv die bessere Wahl, da _OTR_ sensibel auf eine schwankende Verbindungsqualität reagiert, was zu Fehlern, wie z.B. nicht empfangenen Nachrichten führen kann.
 <br><img src="/images/tutorials/chatsecure/omemo_profile.png" width="33%"><img src="/images/tutorials/chatsecure/omemo_enable_encrypt.png" width="33%"><img src="/images/tutorials/chatsecure/omemo_chat.png" width="33%">
 

@@ -49,7 +49,7 @@ Je nach Häufigkeit der Ausführung können die Benachrichtigung innerhalb von S
 Das Projekt ist gehostet auf [Github](https://github.com/mightyBroccoli/logwatch-scripts). Dort ist auch ein Bereich für [Github - Issues](https://github.com/mightyBroccoli/logwatch-scripts/issues), falls Probleme auftreten oder Verbesserungsvorschläge bestehen.
 
 ## Debian 9
-Leider besteht mit Debian Stretch ein Problem mit perl wodurch *sendxmpp*, das xmpp cli Modul des Skripts nicht mehr funktioniert. Leider kann ich da im Moment erst mal nichts machen, aber ich repariere das Skipt für Debian Stretch, sobald es möglich ist.
+Leider besteht mit Debian Stretch ein Problem mit perl wodurch *sendxmpp*, das xmpp cli Modul des Skripts nicht mehr funktioniert. Leider kann ich da im Moment erst mal nichts machen, aber ich repariere das Skript für Debian Stretch, sobald es möglich ist.
 
 -----
 Update : 28.07.2017 Debian 9 Perl5 Problematik

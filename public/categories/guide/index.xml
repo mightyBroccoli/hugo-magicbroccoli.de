@@ -107,7 +107,7 @@ Das Ergebnis sollte diese Form haben. Das Bild zeigt mein Ergebnis für den &lt;
 
 &lt;h1 id=&#34;grundidee&#34;&gt;Grundidee&lt;/h1&gt;
 
-&lt;p&gt;Ich habe mich in den letzen paar Tagen damit beschäftigt Dinge rund um den Prosody Server zu automatisieren.
+&lt;p&gt;Ich habe mich in den letzten paar Tagen damit beschäftigt Dinge rund um den Prosody Server zu automatisieren.
 Daher möchte ich hier einfach mal meine Lösung einiger kleiner Probleme vorstellen.&lt;/p&gt;
 
 &lt;h1 id=&#34;problem&#34;&gt;Problem&lt;/h1&gt;
@@ -122,7 +122,7 @@ Vor allem bei dem Modul mam bestehen Probleme, da die Einträge eines jeden User
 &lt;a href=&#34;https://thomas-leister.de/&#34; target=&#34;_blank&#34;&gt;Thomas Leister&lt;/a&gt; hat vor einiger Zeit einen sehr ähnlichen &lt;a href=&#34;https://thomas-leister.de/prosody-inaktive-accounts-loeschen&#34; target=&#34;_blank&#34;&gt;Lösungsansatz&lt;/a&gt; veröffentlicht, den ich in meinem Skript erweitert habe, um ihn vollständig zu automatisieren.&lt;br&gt;
 Das im Folgenden beschriebene Skript steht auf &lt;a href=&#34;https://github.com/mightyBroccoli/prosody_housekeeping&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt; zur Verfügung.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;WARNUNG&lt;/strong&gt;: Das Skript verfügt über einen &lt;em&gt;configtest&lt;/em&gt;; durch das ausführen mit &lt;code&gt;--configtest&lt;/code&gt; oder &lt;code&gt;-t&lt;/code&gt; werden alle Filter angewendet, ohne das Einträge gelöscht werden. So ist es möglich anschauenlich zu sehen was bei einem ausführen passiert wäre. Es ist äußerste Vorsicht geboten beim konfigurieren des Skripts, daher ist ein testen der Konfiguration sehr empfohlen.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;WARNUNG&lt;/strong&gt;: Das Skript verfügt über einen &lt;em&gt;configtest&lt;/em&gt;; durch das ausführen mit &lt;code&gt;--configtest&lt;/code&gt; oder &lt;code&gt;-t&lt;/code&gt; werden alle Filter angewendet, ohne das Einträge gelöscht werden. So ist es möglich anschaulich zu sehen was bei einem ausführen passiert wäre. Es ist äußerste Vorsicht geboten beim konfigurieren des Skripts, daher ist ein testen der Konfiguration sehr empfohlen.&lt;/p&gt;
 
 &lt;h1 id=&#34;skript&#34;&gt;Skript&lt;/h1&gt;
 
@@ -140,7 +140,7 @@ Das im Folgenden beschriebene Skript steht auf &lt;a href=&#34;https://github.co
 &lt;p&gt;mod_lastlog lässt sich einfach in die modules_enabled{} Sektion der Prosody Konfiguration eintragen. Für das Modul ist keine weitere Konfiguration notwendig.
 Der einfachste Weg ist, das gesamte Mercurial Archiv der Community Module zu klonen und in der Prosody Konfiguration zu referenzieren. Eine Anleitung wie das geht findet sich in der Prosody &lt;a href=&#34;https://prosody.im/doc/installing_modules#prosody-modules&#34; target=&#34;_blank&#34;&gt;Dokumentation&lt;/a&gt;.&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;Nun sollte im Skript selbst, über die Variabeln, eingestellt werden was für Zeiteinheiten gewünscht sind. Außerdem sollten eventuell abweichende Pfade auf die jeweiligen Systemverhältnisse angepasst werden.&lt;br&gt;
+&lt;p&gt;Nun sollte im Skript selbst, über die Variablen, eingestellt werden was für Zeiteinheiten gewünscht sind. Außerdem sollten eventuell abweichende Pfade auf die jeweiligen Systemverhältnisse angepasst werden.&lt;br&gt;
 Der Folgende Abschnitt zeigt einen Ausschnitt aus dem Skript, welcher die Konfigurationsvariablen, die Filter sowie den &lt;code&gt;--configtest&lt;/code&gt; catch zeigt.
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;###### CONFIGURATION ######
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# configuration variables
@@ -252,7 +252,7 @@ Es werden 2 IP Adressen benötigt, wenn Ihre IP Adresse bereits auf Port 443 lau
 
 &lt;h3 id=&#34;1-dns-einstellungen&#34;&gt;1. DNS Einstellungen&lt;/h3&gt;
 
-&lt;p&gt;Den Anfang machen die DNS Einstellungen, da die Publizierung der neuen DNS Einstellungen bis zu 48 Stunden dauern kann.
+&lt;p&gt;Den Anfang machen die DNS Einstellungen, da die Veröffentlichung der neuen DNS Einstellungen bis zu 48 Stunden dauern kann.
 Zusätzlich zu den &lt;a href=&#34;https://prosody.im/doc/dns&#34; target=&#34;_blank&#34;&gt;Standard SRV Einträgen&lt;/a&gt; wird ein weiterer &lt;code&gt;_xmpps-client._tcp&lt;/code&gt; Eintrag benötigt. Außerdem ein weiterer A Record für die gewünschte Subdomain.&lt;/p&gt;
 
 &lt;p&gt;In diesem Beispiel ist die Domain &lt;code&gt;example.com&lt;/code&gt; und XMPP over TLS soll über die SubDomain &lt;code&gt;xmpps.example.com&lt;/code&gt; erreichbar sein.&lt;/p&gt;
@@ -334,7 +334,7 @@ Im Folgenden habe ich die simpelste Möglichkeit eins vHosts angenommen. Dabei i
 
 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/VirtualHost&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Sind diese Änderungen vorgenommen, ist es leicht möglich via LetsEncrypt ein Zertifikat für die SubDomain auzustellen. Zusätzlich dazu ist es nun möglich direkt zu testen ob XMPP over TLS funktioniert.&lt;/p&gt;
+&lt;p&gt;Sind diese Änderungen vorgenommen, ist es leicht möglich via LetsEncrypt ein Zertifikat für die SubDomain auszustellen. Zusätzlich dazu ist es nun möglich direkt zu testen ob XMPP over TLS funktioniert.&lt;/p&gt;
 
 &lt;h2 id=&#34;abschluss&#34;&gt;Abschluss&lt;/h2&gt;
 
@@ -364,7 +364,7 @@ Im Folgenden habe ich die simpelste Möglichkeit eins vHosts angenommen. Dabei i
       <guid>https://magicbroccoli.de/page/tutorial_chatsecure/</guid>
       <description>
 
-&lt;p&gt;&lt;strong&gt;Hinweis&lt;/strong&gt;: &lt;em&gt;Ein Dank geht an &lt;a href=&#34;//5222.de&#34; target=&#34;_blank&#34;&gt;5222.de&lt;/a&gt; die netterweise die Screenshots zur Verfügung gestellt haben. Da ich selbst kein iPhone besitzte wäre mir ein Tutorial sonst nicht möglich gewesen.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hinweis&lt;/strong&gt;: &lt;em&gt;Ein Dank geht an &lt;a href=&#34;//5222.de&#34; target=&#34;_blank&#34;&gt;5222.de&lt;/a&gt; die netterweise die Screenshots zur Verfügung gestellt haben. Da ich selbst kein iPhone besitze wäre mir ein Tutorial sonst nicht möglich gewesen.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;1-account-registrierung&#34;&gt;1. Account Registrierung&lt;/h2&gt;
 
@@ -384,7 +384,7 @@ Durch den Klick auf &amp;ldquo;Registrieren&amp;rdquo; akzeptieren Sie die &lt;a
 &lt;p&gt;Der Login zum Chat verläuft ähnlich zu jedem anderen Client. Da bereits ein Account in &lt;a href=&#34;#1-account-registrierung&#34;&gt;Schritt 1&lt;/a&gt; erstellt wurde, wird &lt;em&gt;Existing Account&lt;/em&gt; (en. bestehender Account) gewählt.&lt;br&gt;
 Daraufhin werden in den Feldern die zuvor gewählten Daten eingetragen. Ein Spitzname muss nicht eingetragen werden, ist allerdings für die Kontakte später sehr hilfreich.&lt;br&gt;
 Alle Einstellungen unter &lt;em&gt;Erweitert&lt;/em&gt; müssen nicht verändert werden, die Standarteinstellungen sind korrekt.&lt;br&gt;
-Beim ersten Verbindungsaufbau erscheint eine Benachrichtung dem SSL Zertifikat zu vertrauen, dies ist für den weiteren Verbindungsaufbau zwingend notwendig zu akzeptieren.
+Beim ersten Verbindungsaufbau erscheint eine Benachrichtigung dem SSL Zertifikat zu vertrauen, dies ist für den weiteren Verbindungsaufbau zwingend notwendig zu akzeptieren.
 &lt;br&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/login_existing_account.png&#34; width=&#34;25%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/login_creds.png&#34; width=&#34;25%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/login_trustssl.png&#34; width=&#34;25%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/login_successfull.png&#34; width=&#34;25%&#34;&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;4-settings&#34;&gt;4. Settings&lt;/h2&gt;
@@ -409,7 +409,7 @@ Es ist möglich die Erlaubnis in den Einstellungen zurückzusetzen oder sogar ga
 &lt;h3 id=&#34;5-2-omemo&#34;&gt;5.2 OMEMO&lt;/h3&gt;
 
 &lt;p&gt;Das aktivieren von Omemo ist sehr einfach und schnell erledigt. Über das Profil ( Erreichbar über das kleine &lt;strong&gt;i&lt;/strong&gt; oben rechts ) lässt sich über &lt;em&gt;Erweiterte Verschlüsselungseinstellungen&lt;/em&gt; auswählen welches Verfahren gewünscht ist.&lt;br&gt;
-Dabei ist &lt;em&gt;Beste verfügbare&lt;/em&gt; die optimalste Option. Wichtig ist hierbei, dass dies eine Änderung ist die nur für diesen Kontakt gilt.&lt;br&gt;
+Dabei ist &lt;em&gt;Beste verfügbare&lt;/em&gt; die optimale Option. Wichtig ist hierbei, dass dies eine Änderung ist die nur für diesen Kontakt gilt.&lt;br&gt;
 Wenn der Account mobil genutzt wird ist Omemo definitiv die bessere Wahl, da &lt;em&gt;OTR&lt;/em&gt; sensibel auf eine schwankende Verbindungsqualität reagiert, was zu Fehlern, wie z.B. nicht empfangenen Nachrichten führen kann.
 &lt;br&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/omemo_profile.png&#34; width=&#34;33%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/omemo_enable_encrypt.png&#34; width=&#34;33%&#34;&gt;&lt;img src=&#34;https://magicbroccoli.de/images/tutorials/chatsecure/omemo_chat.png&#34; width=&#34;33%&#34;&gt;&lt;/p&gt;
 

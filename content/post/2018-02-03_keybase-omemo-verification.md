@@ -15,7 +15,7 @@ banner = "/banner/keybase-logo.png"
 slug = "Keybase Omemo verify"
 +++
 ## Omemo Key Verification
-Um eine möglichst reibungslose Kommunikation zu ermöglichen, vertraut Conversations in der Standardeinstellung neuen OMEMO-Keys erstmal blind. Wenn aber eine spezifische Verifikation - über das Scannen eines QR-Codes - stattgefunden hat, werden neue Keys grundsätzlich misstraut. Dies bietet einen weitere Möglichkeit um Man-In-The-Middle-Angriffe zu unterbinden. Dieses Vertrauenmodell heißt [Blind Trust Before Verification](https://gultsch.de/trust.html). Ohne Verifizierung ist eine explizit vertrauliche Kommunikation nur eingeschränkt möglich.
+Um eine möglichst reibungslose Kommunikation zu ermöglichen, vertraut Conversations in der Standardeinstellung neuen OMEMO-Keys zuerst blind. Wenn aber eine spezifische Verifikation - über das Scannen eines QR-Codes - stattgefunden hat, werden neue Keys grundsätzlich misstraut. Dies bietet einen weitere Möglichkeit um Man-In-The-Middle-Angriffe zu unterbinden. Dieses Vertrauensmodell heißt [Blind Trust Before Verification](https://gultsch.de/trust.html). Ohne Verifizierung ist eine explizit vertrauliche Kommunikation nur eingeschränkt möglich.
 
 > After such a verification happened Conversations will no longer blindly trust new devices that are created after the verification. By doing verification the user has proven three things a) they are capable of scanning barcodes b) they have some sort of out-of-band channel where such a verification can happen c) they have some interest in verified communication.
 

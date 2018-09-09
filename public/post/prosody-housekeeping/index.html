@@ -239,7 +239,7 @@
 
 <h1 id="grundidee">Grundidee</h1>
 
-<p>Ich habe mich in den letzen paar Tagen damit beschäftigt Dinge rund um den Prosody Server zu automatisieren.
+<p>Ich habe mich in den letzten paar Tagen damit beschäftigt Dinge rund um den Prosody Server zu automatisieren.
 Daher möchte ich hier einfach mal meine Lösung einiger kleiner Probleme vorstellen.</p>
 
 <h1 id="problem">Problem</h1>
@@ -254,7 +254,7 @@ Vor allem bei dem Modul mam bestehen Probleme, da die Einträge eines jeden User
 <a href="https://thomas-leister.de/" target="_blank">Thomas Leister</a> hat vor einiger Zeit einen sehr ähnlichen <a href="https://thomas-leister.de/prosody-inaktive-accounts-loeschen" target="_blank">Lösungsansatz</a> veröffentlicht, den ich in meinem Skript erweitert habe, um ihn vollständig zu automatisieren.<br>
 Das im Folgenden beschriebene Skript steht auf <a href="https://github.com/mightyBroccoli/prosody_housekeeping" target="_blank">Github</a> zur Verfügung.</p>
 
-<p><strong>WARNUNG</strong>: Das Skript verfügt über einen <em>configtest</em>; durch das ausführen mit <code>--configtest</code> oder <code>-t</code> werden alle Filter angewendet, ohne das Einträge gelöscht werden. So ist es möglich anschauenlich zu sehen was bei einem ausführen passiert wäre. Es ist äußerste Vorsicht geboten beim konfigurieren des Skripts, daher ist ein testen der Konfiguration sehr empfohlen.</p>
+<p><strong>WARNUNG</strong>: Das Skript verfügt über einen <em>configtest</em>; durch das ausführen mit <code>--configtest</code> oder <code>-t</code> werden alle Filter angewendet, ohne das Einträge gelöscht werden. So ist es möglich anschaulich zu sehen was bei einem ausführen passiert wäre. Es ist äußerste Vorsicht geboten beim konfigurieren des Skripts, daher ist ein testen der Konfiguration sehr empfohlen.</p>
 
 <h1 id="skript">Skript</h1>
 
@@ -272,7 +272,7 @@ Das im Folgenden beschriebene Skript steht auf <a href="https://github.com/might
 <p>mod_lastlog lässt sich einfach in die modules_enabled{} Sektion der Prosody Konfiguration eintragen. Für das Modul ist keine weitere Konfiguration notwendig.
 Der einfachste Weg ist, das gesamte Mercurial Archiv der Community Module zu klonen und in der Prosody Konfiguration zu referenzieren. Eine Anleitung wie das geht findet sich in der Prosody <a href="https://prosody.im/doc/installing_modules#prosody-modules" target="_blank">Dokumentation</a>.<br></p>
 
-<p>Nun sollte im Skript selbst, über die Variabeln, eingestellt werden was für Zeiteinheiten gewünscht sind. Außerdem sollten eventuell abweichende Pfade auf die jeweiligen Systemverhältnisse angepasst werden.<br>
+<p>Nun sollte im Skript selbst, über die Variablen, eingestellt werden was für Zeiteinheiten gewünscht sind. Außerdem sollten eventuell abweichende Pfade auf die jeweiligen Systemverhältnisse angepasst werden.<br>
 Der Folgende Abschnitt zeigt einen Ausschnitt aus dem Skript, welcher die Konfigurationsvariablen, die Filter sowie den <code>--configtest</code> catch zeigt.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">###### CONFIGURATION ######
 </span><span style="color:#75715e"># configuration variables

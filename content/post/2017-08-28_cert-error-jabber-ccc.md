@@ -15,7 +15,7 @@ slug = "CCC Jabber Connection"
 +++
 - - -
 # Update
-Die techniche Leitung des CCC Jabber Servers hat sich nun auch dazu entscheiden auf gültige Zertifikate umzusteigen. Daher ist dieser Blogpost überflüssig.
+Die technische Leitung des CCC Jabber Servers hat sich nun auch dazu entscheiden auf gültige Zertifikate umzusteigen. Daher ist dieser Blogpost überflüssig.
 
 - - -
 

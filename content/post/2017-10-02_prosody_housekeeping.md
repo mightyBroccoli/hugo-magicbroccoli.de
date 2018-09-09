@@ -16,7 +16,7 @@ banner = "/banner/prosody.png"
 slug = "Prosody housekeeping"
 +++
 # Grundidee
-Ich habe mich in den letzen paar Tagen damit beschäftigt Dinge rund um den Prosody Server zu automatisieren.
+Ich habe mich in den letzten paar Tagen damit beschäftigt Dinge rund um den Prosody Server zu automatisieren.
 Daher möchte ich hier einfach mal meine Lösung einiger kleiner Probleme vorstellen.
 
 # Problem
@@ -29,7 +29,7 @@ Als Lösungsansatz habe ich ein einfaches Skript geschrieben, das tägliche "hou
 [Thomas Leister](https://thomas-leister.de/) hat vor einiger Zeit einen sehr ähnlichen [Lösungsansatz](https://thomas-leister.de/prosody-inaktive-accounts-loeschen) veröffentlicht, den ich in meinem Skript erweitert habe, um ihn vollständig zu automatisieren.<br>
 Das im Folgenden beschriebene Skript steht auf [Github](https://github.com/mightyBroccoli/prosody_housekeeping) zur Verfügung.
 
-**WARNUNG**: Das Skript verfügt über einen _configtest_; durch das ausführen mit `--configtest` oder `-t` werden alle Filter angewendet, ohne das Einträge gelöscht werden. So ist es möglich anschauenlich zu sehen was bei einem ausführen passiert wäre. Es ist äußerste Vorsicht geboten beim konfigurieren des Skripts, daher ist ein testen der Konfiguration sehr empfohlen.
+**WARNUNG**: Das Skript verfügt über einen _configtest_; durch das ausführen mit `--configtest` oder `-t` werden alle Filter angewendet, ohne das Einträge gelöscht werden. So ist es möglich anschaulich zu sehen was bei einem ausführen passiert wäre. Es ist äußerste Vorsicht geboten beim konfigurieren des Skripts, daher ist ein testen der Konfiguration sehr empfohlen.
 
 # Skript
 Das Skript arbeitet nacheinander alle diese Probleme ab und beseitigt diese Probleme in mehreren Schritten ohne das Usereingaben notwendig sind.<br>
@@ -43,7 +43,7 @@ Für die Verwendung des Skriptes werden zwei Module benötigt. Diese sollten im 
 mod_lastlog lässt sich einfach in die modules_enabled{} Sektion der Prosody Konfiguration eintragen. Für das Modul ist keine weitere Konfiguration notwendig.
 Der einfachste Weg ist, das gesamte Mercurial Archiv der Community Module zu klonen und in der Prosody Konfiguration zu referenzieren. Eine Anleitung wie das geht findet sich in der Prosody [Dokumentation](https://prosody.im/doc/installing_modules#prosody-modules).<br>
 
-Nun sollte im Skript selbst, über die Variabeln, eingestellt werden was für Zeiteinheiten gewünscht sind. Außerdem sollten eventuell abweichende Pfade auf die jeweiligen Systemverhältnisse angepasst werden.<br>
+Nun sollte im Skript selbst, über die Variablen, eingestellt werden was für Zeiteinheiten gewünscht sind. Außerdem sollten eventuell abweichende Pfade auf die jeweiligen Systemverhältnisse angepasst werden.<br>
 Der Folgende Abschnitt zeigt einen Ausschnitt aus dem Skript, welcher die Konfigurationsvariablen, die Filter sowie den `--configtest` catch zeigt.
 {{< highlight bash >}}
 ###### CONFIGURATION ######

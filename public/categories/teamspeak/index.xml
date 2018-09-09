@@ -73,7 +73,7 @@ Je nach Häufigkeit der Ausführung können die Benachrichtigung innerhalb von S
 
 &lt;h2 id=&#34;debian-9&#34;&gt;Debian 9&lt;/h2&gt;
 
-&lt;p&gt;Leider besteht mit Debian Stretch ein Problem mit perl wodurch &lt;em&gt;sendxmpp&lt;/em&gt;, das xmpp cli Modul des Skripts nicht mehr funktioniert. Leider kann ich da im Moment erst mal nichts machen, aber ich repariere das Skipt für Debian Stretch, sobald es möglich ist.&lt;/p&gt;
+&lt;p&gt;Leider besteht mit Debian Stretch ein Problem mit perl wodurch &lt;em&gt;sendxmpp&lt;/em&gt;, das xmpp cli Modul des Skripts nicht mehr funktioniert. Leider kann ich da im Moment erst mal nichts machen, aber ich repariere das Skript für Debian Stretch, sobald es möglich ist.&lt;/p&gt;
 
 &lt;hr /&gt;
 
